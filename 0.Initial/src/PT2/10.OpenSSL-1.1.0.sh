@@ -5,7 +5,8 @@ git checkout OpenSSL_1_1_0-stable
 make clean
 sudo make uninstall
 git pull
-git submodule init && git submodule update --recursive
+git submodule init
+git submodule update --recursive
 
 ./config -Wl,--enable-new-dtags,-rpath,'$(LIBRPATH)'
 make -j 4

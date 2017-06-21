@@ -2,7 +2,7 @@
 
 #Node git install
 mkdir -p /opt/DEPS/node/nodejs
-sudo chown -R $USER/$USER /opt
+sudo chown -R $USER:$USER /opt
 cd /opt/DEPS/node/nodejs
 git clone https://github.com/nodejs/node
 cd node 
@@ -22,7 +22,7 @@ node -v
 #NPM git install
 
 mkdir -p /opt/DEPS/npm/npm
-sudo chown -R $USER/$USER /opt
+sudo chown -R $USER:$USER /opt
 cd /opt/DEPS/npm/npm
 git clone https://github.com/npm/npm
 cd npm

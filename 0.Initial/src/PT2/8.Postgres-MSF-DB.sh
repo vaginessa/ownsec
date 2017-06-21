@@ -1,11 +1,11 @@
 #!/bin/bash
+
 sudo ldconfig
 sudo updatedb
 #sudo xterm 
 
-
-sudo systemctl enable postgresql
-sudo systemctl start postgresql
+sudo service postgresql start
+sudo service postgresql status
 
 POSTGRES_USER="postgres"
 MSF_PASS=`cat /dev/urandom |base64 | head -c8`
@@ -32,6 +32,4 @@ echo "listen_addresses = 'localhost'" >> "/etc/postgresql/$PG_VER/main/postgresq
 exit
 EOF
 
-
-
-sudo systemctl restart postgresql
+sudo service postgresql restart

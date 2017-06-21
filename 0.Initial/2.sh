@@ -5,7 +5,7 @@
 #
 # 
 srcdPT2=/opt/ITSEC-Install-Scripts/0.Initial/src/PT2
-chkdir=/opt/ITSEC-Install-Scripts/0.Initial/src
+#chkdir=/opt/ITSEC-Install-Scripts/0.Initial/src
 #
 cd $srcdPT2
 ./1.DEB-Lists.sh
@@ -23,7 +23,7 @@ cd $srcdPT2
 ./13.dot.sh
 #
 #Calling the reboot-script to restart this script 
-echo "#helloworld" > $chkdir/rebootchkPT2.txt
+#echo "#helloworld" > $chkdir/rebootchkPT2.txt
 
 #reboot
 

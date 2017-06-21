@@ -3,8 +3,8 @@ sudo apt-get update
 sudo apt-get upgrade
 #packagelist=
 #xargs -a <(awk '/^\s*[^#]/' "$packagelist") -r -- sudo apt-get install -y
-sudo chown -R $USER/$USER /home/$USER
-sudo chown -R $USER/$USER /opt
+sudo chown -R $USER:$USER /home/$USER
+sudo chown -R $USER:$USER /opt
 
 xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/main/essential.txt") -r -- sudo apt-get install -y
 xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/main/libs.txt") -r -- sudo apt-get install -y
