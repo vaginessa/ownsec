@@ -25,7 +25,7 @@ wget http://download.java.net/java/jdk8u152/archive/b03/binaries/jre-8u152-ea-bi
 cat jre-8u152-ea-bin-b03-linux-x64-19_apr_2017.sha256
 sha256sum jre-8u152-ea-bin-b03-linux-x64-19_apr_2017.tar.gz
 make-jpkg jre-8u152-ea-bin-b03-linux-x64-19_apr_2017.tar.gz
-sudo dpkg -i oracle-java8-jre_8u152~ea-build-b03_amd64.deb
+yes | sudo dpkg -i oracle-java8-jre_8u152~ea-build-b03_amd64.deb
 cd ..
 
 mkdir jdk8
@@ -36,7 +36,7 @@ wget http://download.java.net/java/jdk8u152/archive/b03/binaries/jdk-8u152-ea-bi
 cat jdk-8u152-ea-bin-b03-linux-x64-19_apr_2017.sha256
 sha256sum jdk-8u152-ea-bin-b03-linux-x64-19_apr_2017.tar.gz
 make-jpkg jdk-8u152-ea-bin-b03-linux-x64-19_apr_2017.tar.gz
-sudo dpkg -i oracle-java8-jdk_8u152~ea-build-b03_amd64.deb
+yes | sudo dpkg -i oracle-java8-jdk_8u152~ea-build-b03_amd64.deb
 cd ..
 
 java -version
