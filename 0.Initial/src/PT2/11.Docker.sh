@@ -11,7 +11,7 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 cd ~
 sudo apt-get update
 sudo apt-get install -y docker-ce
-sudo docker run hello-world
+#sudo docker run hello-world
 sudo gpasswd -a $USER docker
 newgrp docker
 cd ~
