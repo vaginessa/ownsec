@@ -6,7 +6,7 @@ cd ~
 #sed -i.bak -e '/export PATH="$HOME/.rbenv/bin:$PATH"/d' ~/.bashrc
 #sed -i.bak '/eval "$(rbenv init -)"/d' ~/.bashrc 
 #sed -i.bak '/export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"/d' ~/.bashrc 
-
+sudo rm -r .rbenv 
 git clone git://github.com/sstephenson/rbenv.git .rbenv
 echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
 echo 'eval "$(rbenv init -)"' >> ~/.bashrc
@@ -25,5 +25,5 @@ rbenv rehash
 rbenv global $RUBYVERSION
 rbenv local $RUBYVERSION
 
-ruby -v
+
 

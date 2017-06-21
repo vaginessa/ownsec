@@ -1,9 +1,9 @@
 #!/bin/bash
 
-sudo chown -R $USER:$USER /opt
+
 sudo rm -rf /opt/DEPS/virtualbox
 mkdir -p /opt/DEPS/virtualbox
-sudo chown -R $USER:$USER /opt
+
 cd /opt/DEPS
 sudo rm -r virtualbox
 mkdir virtualbox

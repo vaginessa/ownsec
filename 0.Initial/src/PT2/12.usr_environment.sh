@@ -1,7 +1,6 @@
 #!/bin/bash
 
-sudo chown -R $USER:$USER /home/$USER
-sudo chown -R $USER:$USER /opt
+
 cp -R /opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.config /home/$USER
 mkdir -p /home/$USER/.local/share/applications/0.Services
 cp -R /opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/0.Services/ /home/$USER/.local/share/applications/
@@ -9,8 +8,8 @@ cp -R /opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/0.Se
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/Services
 DSKTPFLSDEST=/home/$USER/.local/share/applications/Services
 DSKTPFL=phpmyadmin.desktop
-sudo rm -f /etc/phpmyadmin/phpmyadmin.desktop
-sudo rm -f  /usr/share/applications/phpmyadmin.desktop
+#sudo rm -f /etc/phpmyadmin/phpmyadmin.desktop
+#sudo rm -f  /usr/share/applications/phpmyadmin.desktop
 mkdir -p $DSKTPFLSDEST 
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 
