@@ -26,17 +26,17 @@ which is
 
 ## PART 1 
 
-Part 1 simply upgrades the system, reboots if enabled in "`/opt/ITSEC-Install-Scripts/0.Initial/src/PT1/1-Upgrade.sh`", 
+upgrades the system && reboots if enabled [disabled by default] in "`/opt/ITSEC-Install-Scripts/0.Initial/src/PT1/1-Upgrade.sh`", 
 and writes reboot file if enabled in   "`/opt/ITSEC-Install-Scripts/0.Initial/1.sh`
 
-Part 1 relevant files:
- - upgade process
+PT1 relevant files:
+> upgade process
 `/opt/ITSEC-Install-Scripts/0.Initial/src/PT1/1-Upgrade.sh`
 
- - reboot checkfile, written by `/opt/ITSEC-Install-Scripts/0.Initial/1.sh`"
+> reboot checkfile, written by `/opt/ITSEC-Install-Scripts/0.Initial/1.sh`"
 `/opt/ITSEC-Install-Scripts/0.Initial/src/rebootchkPT1.txt`
 
-- runs `/opt/ITSEC-Install-Scripts/0.Initial/src/PT1/...` & writes reboot file
+> runs `/opt/ITSEC-Install-Scripts/0.Initial/src/PT1/...` & writes reboot file
 `/opt/ITSEC-Install-Scripts/0.Initial/1.sh`
 
 
