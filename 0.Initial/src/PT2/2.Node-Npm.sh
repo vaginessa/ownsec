@@ -4,13 +4,13 @@
 mkdir -p /opt/DEPS/node/nodejs
 sudo chown -R $USER:$USER /opt
 cd /opt/DEPS/node/nodejs
-git clone https://github.com/nodejs/node
+git clone https://github.com/nodejs/node.git
 cd node 
 
 make clean
 git clean -f 
 git fetch origin
-git reset --hard origin/master
+git reset --hard origin/v7.x
 git pull
 git checkout v7.x
 ./configure
@@ -24,13 +24,13 @@ node -v
 mkdir -p /opt/DEPS/npm/npm
 sudo chown -R $USER:$USER /opt
 cd /opt/DEPS/npm/npm
-git clone https://github.com/npm/npm
+git clone https://github.com/npm/npm.git
 cd npm
 
 make clean
 git clean -f 
 git fetch origin
-git reset --hard origin/master
+git reset --hard origin/latest
 git pull
 git checkout latest
 ./configure 
