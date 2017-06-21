@@ -20,7 +20,8 @@ from here there are two ways - install everything by running
 `cd /opt/ITSEC-Install-Scripts/0.Initial`
 and run the reboot parts one by one - 
 which is 
-`sudo ./1.sh` Upgrade the system
+
+`sudo ./1.sh` Upgrade the system;
 `sudo ./2.sh` Install dependencies & tools - located at `/opt/ITSEC-Install-Scripts/0.Initial/src/PT2`
 `sudo ./3.sh` To install the ITSEC applications by category.
 
