@@ -7,10 +7,7 @@ pre 21.06.2017 downloads need to hardfork, delete the install-scripts dir and gi
 
 ## INSTALL
 
-`sudo chown -R $USER:$USER /opt`
-
-`git clone https://github.com/alphaaurigae/ITSEC-Install-Scripts`
-`cd /opt/ITSEC-Install-Scripts`
+`sudo chown -R $USER:$USER /opt` && `git clone https://github.com/alphaaurigae/ITSEC-Install-Scripts` && `cd /opt/ITSEC-Install-Scripts`
 
 from here there are two ways - install everything by running 
 
