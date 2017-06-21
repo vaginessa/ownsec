@@ -46,10 +46,10 @@ Here you customize the installation with your on WIFI driver `/opt/ITSEC-Install
 and IDE `/opt/ITSEC-Install-Scripts/0.Initial/src/PT2/4.IDE.sh` - just uncomment if you dont need neither.
 
 1. Runs all scripts located in `/opt/ITSEC-Install-Scripts/0.Initial/src/PT2` .
-1.1 Writes reboot file to `/opt/ITSEC-Install-Scripts/0.Initial/src/rebootchkPT2.txt` . if enabled in `/opt/ITSEC-Install-Scripts/0.Initial/2.sh` ,
-1.2 Copies `/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/` config files to `/home/$USER` - these are panel and menu settings copied from the dev box.
-1.3 Configures Databases & Webserver
-1.4 Disables System Services
+ 1.1. Writes reboot file to `/opt/ITSEC-Install-Scripts/0.Initial/src/rebootchkPT2.txt` . if enabled in `/opt/ITSEC-Install-Scripts/0.Initial/2.sh` ,
+ 1.2. Copies `/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/` config files to `/home/$USER` - these are panel and menu settings copied from the dev box.
+ 1.3. Configures Databases & Webserver
+ 1.4. Disables System Services
 
 - Virtualbox extensions (not guest additions) need manual install but are downloaded to `/opt/ITSEC-Install-Scripts/0.Initial/src/PT2/virtualbox/Oracle_VM_VirtualBox_Extension_Pack-5.1.22-115126.vbox-extpack`
 - Node make process takes ~ 15 minutes on a netbook i5 w 4 gig ram. Some apps still need that.
