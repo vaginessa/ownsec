@@ -10,7 +10,7 @@ chkdir=/opt/ITSEC-Install-Scripts/0.Initial/src
 cd $srcdPT2
 ./1.DEB-Lists.sh
 ./2.Node-Npm.sh
-./3.replace-deb-w-dummy.sh
+#./3.replace-deb-w-dummy.sh
 ./4.IDE.sh
 ./5.Wifi-Firmware.sh
 ./6.Java-JDK-JRE.sh

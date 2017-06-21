@@ -21,8 +21,9 @@ source .bashrc
 RUBYVERSION=$(lynx --dump https://raw.githubusercontent.com/rapid7/metasploit-framework/master/.ruby-version )
 
 rbenv install $RUBYVERSION
+rbenv rehash
 rbenv global $RUBYVERSION
 rbenv local $RUBYVERSION
-rbenv rehash
+
 ruby -v
 

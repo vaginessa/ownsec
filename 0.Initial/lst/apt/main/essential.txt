@@ -61,6 +61,7 @@ iputils-tracepath
 intltool 
 isc-dhcp-server 
 iotop
+java-package
 kazam
 lame  
 lsb-release 

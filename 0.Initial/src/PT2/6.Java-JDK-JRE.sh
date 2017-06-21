@@ -9,16 +9,16 @@
 #http://jdk.java.net/8/
 
 
-sudo apt-get update && sudo apt-get upgrade
-sudo apt-get install java-package
-
 mkdir -p /opt/DEPS/Java
+sudo chown -R $USER/$USER /opt
 cd /opt/DEPS/Java
 mkdir java8_install-setup
+sudo chown -R $USER/$USER /opt
 cd java8_install-setup
 
 
 mkdir jre8
+sudo chown -R $USER/$USER /opt
 cd jre8
 wget http://download.java.net/java/jdk8u152/archive/b03/binaries/jre-8u152-ea-bin-b03-linux-x64-19_apr_2017.tar.gz
 wget http://download.java.net/java/jdk8u152/archive/b03/binaries/jre-8u152-ea-bin-b03-linux-x64-19_apr_2017.sha256
@@ -29,6 +29,7 @@ sudo dpkg -i oracle-java8-jre_8u152~ea-build-b03_amd64.deb
 cd ..
 
 mkdir jdk8
+sudo chown -R $USER/$USER /opt
 cd jdk8
 wget http://download.java.net/java/jdk8u152/archive/b03/binaries/jdk-8u152-ea-bin-b03-linux-x64-19_apr_2017.tar.gz
 wget http://download.java.net/java/jdk8u152/archive/b03/binaries/jdk-8u152-ea-bin-b03-linux-x64-19_apr_2017.sha256

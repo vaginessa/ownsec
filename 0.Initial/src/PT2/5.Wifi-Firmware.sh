@@ -3,6 +3,7 @@
 
 #rtl8812AU
 mkdir -p /opt/DRVR/WIFI/8812/rtl8812au/astsam
+sudo chown -R $USER/$USER /opt
 cd /opt/DRVR/WIFI/8812/rtl8812au/astsam
 git clone https://github.com/astsam/rtl8812au
 cd rtl8812au
@@ -18,6 +19,7 @@ sudo modprobe -a 8812au
 
 #RTL8192EU
 mkdir -p /opt/DRVR/WIFI/8192/rtl8192eu/masterzorag
+sudo chown -R $USER/$USER /opt
 cd /opt/DRVR/WIFI/8192/rtl8192eu/masterzorag
 git clone https://github.com/masterzorag/RTL8192EU-linux
 cd RTL8192EU-linux

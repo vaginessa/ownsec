@@ -1,7 +1,4 @@
 #!/bin/bash
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
 sudo updatedb
 sudo ldconfig
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -13,7 +10,7 @@ sudo add-apt-repository \
    $(lsb_release -cs) \
    stable"
 sudo apt-get update
-sudo apt-get install docker-ce
+sudo apt-get install -y docker-ce
 sudo docker run hello-world
 sudo gpasswd -a $USER docker
 newgrp docker

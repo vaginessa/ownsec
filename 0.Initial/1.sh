@@ -13,5 +13,5 @@ cd $srcdPT1
 #Calling the reboot-script to restart this script 
 echo "#helloworld" > $chkdir/rebootchkPT1.txt
 
-reboot
+#reboot
 
