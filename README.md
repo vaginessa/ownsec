@@ -8,6 +8,7 @@ pre 21.06.2017 downloads need to hardfork, delete the install-scripts dir and gi
 ## INSTALL
 
 `sudo chown -R $USER:$USER /opt`
+
 `git clone https://github.com/alphaaurigae/ITSEC-Install-Scripts`
 `cd /opt/ITSEC-Install-Scripts`
 
@@ -35,7 +36,7 @@ Part 1 relevant files:
  - reboot checkfile, written by `/opt/ITSEC-Install-Scripts/0.Initial/1.sh`"
 `/opt/ITSEC-Install-Scripts/0.Initial/src/rebootchkPT1.txt`
 
-- runs /opt/ITSEC-Install-Scripts/0.Initial/src/PT1/...` & writes reboot file
+- runs `/opt/ITSEC-Install-Scripts/0.Initial/src/PT1/...` & writes reboot file
 `/opt/ITSEC-Install-Scripts/0.Initial/1.sh`
 
 
@@ -46,7 +47,7 @@ and IDE `/opt/ITSEC-Install-Scripts/0.Initial/src/PT2/4.IDE.sh` - just uncomment
 
 1. Runs all scripts located in `/opt/ITSEC-Install-Scripts/0.Initial/src/PT2` .
 1.1 Writes reboot file to `/opt/ITSEC-Install-Scripts/0.Initial/src/rebootchkPT2.txt` . if enabled in `/opt/ITSEC-Install-Scripts/0.Initial/2.sh` ,
-1.2 Copies `/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/` config files to $USER - these are panel and menu settings copied from the dev box.
+1.2 Copies `/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/` config files to `/home/$USER` - these are panel and menu settings copied from the dev box.
 1.3 Configures Databases & Webserver
 1.4 Disables System Services
 
