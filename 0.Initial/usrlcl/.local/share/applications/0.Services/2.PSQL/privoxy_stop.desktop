@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=apache2 stop
+Encoding=UTF-8
+Exec=sh -c "sudo service apache2 stop;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=3.PROXY;

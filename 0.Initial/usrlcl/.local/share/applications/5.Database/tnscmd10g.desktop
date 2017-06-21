@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=tnscmd10g
+Encoding=UTF-8
+Exec=sh -c "tnscmd10g;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=5.Database;

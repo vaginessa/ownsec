@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=rainbowcrack-ng_rcrack
+Encoding=UTF-8
+Exec=sh -c "rainbowcrack-ng_rcrack;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=2.Local;

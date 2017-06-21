@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=p0f
+Encoding=UTF-8
+Exec=sh -c "p0f -h;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=7.Mitm;

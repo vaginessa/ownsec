@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=intrace
+Encoding=UTF-8
+Exec=sh -c "intrace;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=3.Route-Analysis;

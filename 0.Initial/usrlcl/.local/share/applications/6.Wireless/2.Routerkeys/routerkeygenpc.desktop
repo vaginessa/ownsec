@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=routerkeygenpc
+Encoding=UTF-8
+Exec=sh -c "routerkeygenpc;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=2.Routerkeys;
+

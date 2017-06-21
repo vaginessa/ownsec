@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=sqlmap
+Encoding=UTF-8
+Exec=sh -c "sqlmap -h;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=5.Database;

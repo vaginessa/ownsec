@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=ewfacquire
+Encoding=UTF-8
+Exec=sh -c "ewfacquire -h;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=11-07-forensic-imaging-tools;

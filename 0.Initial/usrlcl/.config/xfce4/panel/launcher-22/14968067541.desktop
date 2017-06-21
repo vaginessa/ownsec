@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=ifind
+Encoding=UTF-8
+Exec=sh -c "ifind;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=11-08-forensic-suites;
+X-XFCE-Source=file:///opt/Install-Scripts/0.Initial/usrlcl/.local/share/applications/ifind.desktop

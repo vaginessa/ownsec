@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=status
+Encoding=UTF-8
+Exec=sh -c "sudo nginx_status.sh;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=1.NGINX;

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=wol-e
+Encoding=UTF-8
+Exec=sh -c "wol-e -h;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=2.Live-Host;

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=thanos
+Encoding=UTF-8
+Exec=sh -c "thanos -h;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=1.Information-Gathering;1.Network_Portscanner;

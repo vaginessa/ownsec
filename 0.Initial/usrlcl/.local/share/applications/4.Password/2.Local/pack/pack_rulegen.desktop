@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=pack_rulegen
+Encoding=UTF-8
+Exec=sh -c "pack_rulegen -h;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=pack;

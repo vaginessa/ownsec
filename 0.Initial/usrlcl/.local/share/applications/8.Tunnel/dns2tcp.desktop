@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=dns2tcp
+Encoding=UTF-8
+Exec=sh -c "dns2tcp;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=8.Tunnel;

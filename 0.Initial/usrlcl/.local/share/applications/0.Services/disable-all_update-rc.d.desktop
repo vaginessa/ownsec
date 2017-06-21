@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=disable-all_update-rc.d
+Encoding=UTF-8
+Exec=sh -c "disable-all_update-rc.d.sh;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=0.Services;

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=gpsd status
+Encoding=UTF-8
+Exec=sh -c "sudo service gpsd status;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=3.PROXY;

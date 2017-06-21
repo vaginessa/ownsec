@@ -1,0 +1,31 @@
+#!/bin/bash
+
+
+mkdir -p /opt/ITSEC/1.Information-Gathering/13.OSINT/tekdefense-automater/1aN0rmus
+cd /opt/ITSEC/1.Information-Gathering/13.OSINT/tekdefense-automater/1aN0rmus
+git clone https://github.com/1aN0rmus/TekDefense-Automater.git
+
+sudo updatedb
+sudo ldconfig
+
+GITREPOROOT=/opt/ITSEC/1.Information-Gathering/13.OSINT/tekdefense-automater/1aN0rmus/TekDefense-Automater
+EXECUTEABLE1=Automater.py
+EXECUTEABLE2=automater
+
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/13.OSINT
+DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/13.OSINT
+DSKTPFL=automater.desktop
+
+cd $GITREPOROOT
+sudo rm -f /usr/local/bin/$EXECUTEABLE2
+sudo updatedb
+git clean -f
+git fetch origin
+git reset --hard origin/master
+git pull
+git submodule init
+git submodule update --recursive
+chmod +x $GITREPOROOT/$EXECUTEABLE1
+sudo ln -s $GITREPOROOT/$EXECUTEABLE1 /usr/local/bin/$EXECUTEABLE2
+mkdir -p $DSKTPFLSDEST
+cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL

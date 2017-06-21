@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Stop
+Encoding=UTF-8
+Exec=sh -c "sudo php7.0-fpm_stop.sh;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=3.PHP;

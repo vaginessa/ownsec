@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=smtp-user-enum
+Encoding=UTF-8
+Exec=sh -c "smtp-user-enum -h;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=7.SMTP;

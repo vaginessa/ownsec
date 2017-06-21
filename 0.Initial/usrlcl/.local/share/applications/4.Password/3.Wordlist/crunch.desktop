@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=crunch
+Encoding=UTF-8
+Exec=sh -c "crunch;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=3.Wordlist;

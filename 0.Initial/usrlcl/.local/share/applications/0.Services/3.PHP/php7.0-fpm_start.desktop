@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Start
+Encoding=UTF-8
+Exec=sh -c "sudo php7.0-fpm_start.sh;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=3.PHP;

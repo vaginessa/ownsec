@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=urlcrazy
+Encoding=UTF-8
+Exec=sh -c "urlcrazy -h;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=13.OSINT;

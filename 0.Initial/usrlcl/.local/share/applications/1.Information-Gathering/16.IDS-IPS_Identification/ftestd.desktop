@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=ftestd
+Encoding=UTF-8
+Exec=sh -c "ftestd;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=16.IDS-IPS_Identification;

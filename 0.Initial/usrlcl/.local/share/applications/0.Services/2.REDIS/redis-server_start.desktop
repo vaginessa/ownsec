@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Start
+Encoding=UTF-8
+Exec=sh -c "sudo redis-server_start.sh;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=2.REDIS;

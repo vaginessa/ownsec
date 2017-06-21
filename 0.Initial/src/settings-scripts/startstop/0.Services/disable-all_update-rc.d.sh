@@ -1,0 +1,16 @@
+sudo update-rc.d -f redis-server remove
+sudo update-rc.d -f tor remove
+sudo update-rc.d -f polipo remove
+sudo update-rc.d -f privoxy remove
+sudo update-rc.d -f postgresql remove
+sudo update-rc.d -f apache2 remove
+sudo update-rc.d -f nginx remove
+sudo update-rc.d -f lighttpd remove
+sudo update-rc.d -f bluetooth remove
+sudo update-rc.d -f gpsd remove
+sudo update-rc.d -f cups remove
+sudo update-rc.d -f cups-browsed remove
+sudo update-rc.d -f saned remove
+sudo update-rc.d -f dnsmasq remove
+sudo update-rc.d -f mysql remove
+sudo update-rc.d -f php7.0-fpm remove

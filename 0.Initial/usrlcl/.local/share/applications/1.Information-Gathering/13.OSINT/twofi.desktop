@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=twofi
+Encoding=UTF-8
+Exec=sh "rbenv 2.4.1 twofi -h;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=13.OSINT;

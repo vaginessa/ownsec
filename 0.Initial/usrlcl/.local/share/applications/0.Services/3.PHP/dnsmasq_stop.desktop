@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=dnsmasq stop
+Encoding=UTF-8
+Exec=sh -c "sudo service dnsmasq stop;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=3.PROXY;

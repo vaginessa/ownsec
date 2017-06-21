@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=dnsmap
+Encoding=UTF-8
+Exec=sh -c "dnsmap;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=5.DNS;

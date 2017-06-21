@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=pth-winexe
+Encoding=UTF-8
+Exec=sh -c "pth-winexe -h;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=05-04-pass-hash;
+
+

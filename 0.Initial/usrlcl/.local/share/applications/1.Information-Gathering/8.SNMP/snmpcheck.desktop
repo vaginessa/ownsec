@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=snmp-check
+Encoding=UTF-8
+Exec=sh -c "snmp-check -h;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=08.SNMP;

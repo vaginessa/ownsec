@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=pth-net
+Encoding=UTF-8
+Exec=sh -c "pth-net help;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=05-04-pass-hash;
+
+

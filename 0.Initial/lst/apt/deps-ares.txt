@@ -1,0 +1,4 @@
+python-compizconfig 
+binutils-mingw-w64 
+python-pil 
+python-requests

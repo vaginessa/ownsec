@@ -1,0 +1,9 @@
+jtreg 
+seccure 
+f2c 
+libf2c2-dev 
+libghc-digest-dev 
+libdigest-* 
+libdigest-sha-perl 
+libdigest-sha3-perl 
+libdigest-whirlpool-perl 

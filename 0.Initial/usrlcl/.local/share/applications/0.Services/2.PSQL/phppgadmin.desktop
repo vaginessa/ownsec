@@ -1,0 +1,7 @@
+Name=phppgadmin
+Comment=PSQL management over web
+Exec=sh -c "sensible-browser http://localhost/phppgadmin/;${SHELL:-bash}"
+Terminal=false
+Type=Application
+Icon=phppgadmin
+Categories=1.DB;

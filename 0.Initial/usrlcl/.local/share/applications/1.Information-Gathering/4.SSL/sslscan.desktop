@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=sslscan
+Encoding=UTF-8
+Exec=sh -c "sslscan;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=4.SSL;

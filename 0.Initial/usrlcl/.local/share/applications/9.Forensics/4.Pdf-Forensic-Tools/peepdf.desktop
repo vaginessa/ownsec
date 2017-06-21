@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=peepdf
+Encoding=UTF-8
+Exec=sh -c "peepdf -h;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=11-11-pdf-forensics-tools;

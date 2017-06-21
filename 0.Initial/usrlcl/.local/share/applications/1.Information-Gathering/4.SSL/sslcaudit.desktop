@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=sslcaudit
+Encoding=UTF-8
+Exec=sh -c "sslcaudit -h;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=4.SSL;

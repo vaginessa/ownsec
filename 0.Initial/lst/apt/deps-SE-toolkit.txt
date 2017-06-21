@@ -1,0 +1,10 @@
+apache2 
+build-essential 
+git 
+libapache2-mod-php 
+python-crypto 
+python-openssl
+python-pefile 
+python-pexpect 
+python-pymssql
+python-requests 

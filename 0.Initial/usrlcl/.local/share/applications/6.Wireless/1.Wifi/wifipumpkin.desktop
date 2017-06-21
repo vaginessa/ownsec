@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=wifipumpkin
+Encoding=UTF-8
+Exec=sh -c "wifipumpkin ;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=1.Wifi;
+

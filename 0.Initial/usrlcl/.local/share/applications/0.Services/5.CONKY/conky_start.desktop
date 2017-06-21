@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=start
+Encoding=UTF-8
+Exec=sh -c "conky_start.sh;${SHELL:-bash}"
+StartupNotify=false
+Terminal=false
+Type=Application
+Categories=5.CONKY;

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=mdk3
+Encoding=UTF-8
+Exec=sh -c "mdk3 --help;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=06-wireless-attacks;

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Status
+Encoding=UTF-8
+Exec=sh -c "sudo redis-server_status.sh;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=2.REDIS;

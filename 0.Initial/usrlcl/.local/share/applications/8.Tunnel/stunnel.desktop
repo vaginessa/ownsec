@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=stunnel4
+Encoding=UTF-8
+Exec=sh -c "stunnel4 -help;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=8.Tunnel;

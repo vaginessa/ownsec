@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=extundelete
+Encoding=UTF-8
+Exec=sh -c "extundelete --help;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=11-03-digital-forensics;

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=hydra
+Encoding=UTF-8
+Exec=sh -c "hydra -h;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=1.Network;
+
+

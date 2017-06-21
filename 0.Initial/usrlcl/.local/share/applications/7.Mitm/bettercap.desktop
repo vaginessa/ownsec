@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=bettercap
+Encoding=UTF-8
+Exec=sh "sudo rbenv 2.4.1 bettercap --help;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=7.Mitm;

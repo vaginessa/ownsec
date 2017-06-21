@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=cloud-buster
+Encoding=UTF-8
+Exec=sh -c "bust;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=2.Live-Host;

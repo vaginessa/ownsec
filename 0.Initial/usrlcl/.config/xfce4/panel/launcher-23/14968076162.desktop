@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=protos-sip
+Encoding=UTF-8
+Exec=sh -c "protos-sip -help;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=02-03-voip-tools;
+X-XFCE-Source=file:///opt/Install-Scripts/0.Initial/usrlcl/.local/share/applications/protos-sip.desktop

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=zenmap
+Encoding=UTF-8
+Exec=sh -c "zenmap;${SHELL:-bash}"
+StartupNotify=false
+Terminal=false
+Type=Application
+Categories=1.Network_Portscanner;1.Information-Gathering;

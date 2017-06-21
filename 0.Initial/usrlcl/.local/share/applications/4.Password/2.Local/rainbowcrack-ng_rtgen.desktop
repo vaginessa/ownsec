@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=rainbowcrack-ng_rtgen
+Encoding=UTF-8
+Exec=sh -c "rainbowcrack-ng_rtgen;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=2.Local;

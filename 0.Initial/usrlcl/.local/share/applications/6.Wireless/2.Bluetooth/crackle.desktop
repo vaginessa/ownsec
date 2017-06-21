@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=crackle
+Encoding=UTF-8
+Exec=sh -c "crackle;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=05-02-offline-attacks;06-02-bluetooth-tools;

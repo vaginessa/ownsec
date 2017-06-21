@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=ils-sleuthkit
+Encoding=UTF-8
+Exec=sh -c "ils;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=11-08-forensic-suites;

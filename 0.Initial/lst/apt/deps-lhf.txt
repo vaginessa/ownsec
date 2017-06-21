@@ -1,0 +1,2 @@
+python-psutil 
+python3-psutil

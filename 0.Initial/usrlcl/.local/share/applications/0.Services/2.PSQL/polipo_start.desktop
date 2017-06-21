@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=polipo start
+Encoding=UTF-8
+Exec=sh -c "sudo service polipo start;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=3.PROXY;

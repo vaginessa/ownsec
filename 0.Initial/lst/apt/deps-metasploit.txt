@@ -1,0 +1,15 @@
+libpcap-dev 
+libpq5 
+libpq-dev 
+libreadline5 
+libreadline-dev 
+libsqlite3-dev 
+libssl-dev 
+libxml2-dev 
+libxslt1-dev 
+libyaml-dev 
+pgadmin3  
+postgresql 
+vncviewer 
+zlib1g-dev
+zlib1g-dev 

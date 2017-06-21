@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=irpas-tctrace   
+Encoding=UTF-8
+Exec=sh -c "irpas-tctrace -h;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=3.Route-Analysis;

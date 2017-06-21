@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=nbtscan
+Encoding=UTF-8
+Exec=sh -c "nbtscan -h;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=6.SMB;

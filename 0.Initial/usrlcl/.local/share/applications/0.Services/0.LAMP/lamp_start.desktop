@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=LAMP Start
+Encoding=UTF-8
+Exec=sh -c "sudo lamp_start.sh;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=0.Services;0.LAMP;

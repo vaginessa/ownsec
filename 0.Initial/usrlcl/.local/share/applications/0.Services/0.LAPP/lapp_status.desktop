@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=LAPP Status
+Encoding=UTF-8
+Exec=sh -c "sudo lapp_status.sh;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=0.LAPP;

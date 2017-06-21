@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=proxychains
+Encoding=UTF-8
+Exec=sh -c "proxychains;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=8.Tunnel;

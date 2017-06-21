@@ -1,0 +1,15 @@
+apache2
+apache2-utils
+postgresql
+postgresql-9.5
+postgresql-client
+postgresql-client-9.5
+postgresql-common
+lighttpd
+mysql-server
+php
+php7.0
+php-mbstring
+php-gettext
+phpmyadmin
+phppgadmin

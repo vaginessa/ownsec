@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=weevely
+Encoding=UTF-8
+Exec=sh -c "weevely;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=6.Maintain-Access;
