@@ -15,8 +15,8 @@
 ######################   1.WPS   ####################
 ###########################################################################
 cd /opt/ITSEC-Install-Scripts/6.Wireless/1.Wifi/1.WPS
-./bully.sh  
 ./pixiewps.sh  
+./bully.sh  
 ./reaver-wps.sh  
 #
 #

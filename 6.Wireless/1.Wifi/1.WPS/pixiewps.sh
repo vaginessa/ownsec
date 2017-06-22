@@ -6,7 +6,7 @@ cd /opt/ITSEC/6.Wireless/1.Wifi/1.WPS/pixiewps/wiire-a
 git clone https://github.com/wiire-a/pixiewps.git
 
 
-GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/1.WPS/pixiewps/wiire/pixiewps
+GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/1.WPS/pixiewps/wiire-a/pixiewps
 #
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/6.Wireless/1.Wifi/1.WPS/
 DSKTPFLSDEST=/home/$USER/.local/share/applications/6.Wireless/1.Wifi/1.WPS
