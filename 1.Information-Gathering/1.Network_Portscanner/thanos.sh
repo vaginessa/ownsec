@@ -13,7 +13,7 @@ DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/1.Net
 DSKTPFL=thanos.desktop
 
 cd $GITREPOROOT
-make clean
+#make clean
 git clean -f
 git fetch origin
 git reset --hard origin/master

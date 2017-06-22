@@ -16,9 +16,9 @@ cd $srcdPT3
 ./6.Wireless.sh
 ./7.Mitm.sh
 ./8.Tunnel
-./9.Forensics.sh
+#./9.Forensics.sh
 
 #Calling the reboot-script to restart this script 
-echo "#helloworld" > $chkdir/rebootchkPT3.txt
+#echo "#helloworld" > $chkdir/rebootchkPT3.txt
 
 
