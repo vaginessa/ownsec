@@ -1,0 +1,17 @@
+gettext 
+make 
+intltool 
+build-essential 
+automake 
+autoconf 
+uuid 
+uuid-dev 
+dos2unix 
+curl 
+sudo 
+unzip 
+lsb-release 
+python-scapy 
+tcpdump 
+python-netifaces 
+python-pip
