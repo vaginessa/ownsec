@@ -36,10 +36,10 @@ sudo ./2.Node-Npm.sh
 ${normal}"
 sudo ./2.Node-Npm.sh
 #./3.replace-deb-w-dummy.sh
-echo "${bold}
-sudo ./4.IDE.sh  
-${normal}"
-sudo ./4.IDE.sh
+#echo "${bold}
+#sudo ./4.IDE.sh  
+#${normal}"
+#sudo ./4.IDE.sh
 echo "${bold}
 sudo ./5.Wifi-Firmware.sh 
 ${normal}"
