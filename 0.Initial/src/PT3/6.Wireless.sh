@@ -38,7 +38,7 @@ cd /opt/ITSEC-Install-Scripts/6.Wireless/1.Wifi/3.Jammer/
 ###############################################################################
 ######################   1.Wifi/4.Evil-Twin   ####################
 ###########################################################################
-#cd /opt/ITSEC-Install-Scripts/6.Wireless/1.Wifi/4.Evil-Twin
+cd /opt/ITSEC-Install-Scripts/6.Wireless/1.Wifi/4.Evil-Twin
 # didnt look much into it yet, needs more work mst probly.
 #./#hostapd-mana.sh 
 ./hostapd-wpe.sh
