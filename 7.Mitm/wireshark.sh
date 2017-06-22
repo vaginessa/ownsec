@@ -19,11 +19,7 @@ cd /opt/ITSEC/7.Mitm/wireshark/wireshark
 git clone https://github.com/wireshark/wireshark.git
 
 GITREPOROOT=/opt/ITSEC/7.Mitm/wireshark/wireshark/wireshark
-#cd build
-#sudo make uninstall
-#cd ..
-#sudo rm -r build
-#
+
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
 DSKTPFLSDEST=/home/$USER/.local/share/applications/applications/7.Mitm
 DSKTPFL=wireshark.desktop
@@ -32,6 +28,11 @@ DSKTPFL=wireshark.desktop
 
 
 cd $GITREPOROOT
+#cd build
+#sudo make uninstall
+cd $GITREPOROOT
+sudo rm -r build
+#
 make clean 
 git clean -f 
 git fetch origin
@@ -42,10 +43,12 @@ git submodule update --recursive
 #mkdir build
 #cd build
 #cmake ..
+./autogen.sh
 ./configure --with-gtk=3 --with-qt=no --with-ssl --enable-dumpcap --enable-setcap-install --enable-tfshark --enable-wireshark
 make -j 4
-sudo make install 
-
+sudo make install
+ 
+cd $GITREPOROOT
 sudo groupadd wireshark
 sudo usermod -a -G wireshark $USER
 sudo chgrp wireshark /usr/local/bin/dumpcap
@@ -53,7 +56,7 @@ sudo chgrp wireshark /usr/local/bin/dumpcap
 sudo chmod 750 /usr/local/bin/dumpcap
 sudo getcap /usr/local/bin/dumpcap
 sudo setcap 'CAP_NET_RAW+eip CAP_NET_ADMIN+eip' /usr/local/bin/dumpcap
-sudo make install 
+ 
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 
