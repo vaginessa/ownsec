@@ -29,7 +29,7 @@ ${normal}"
 cd $GITREPOROOT
 cd build
 sudo make uninstall
-cd ..
+cd $GITREPOROOT
 sudo rm -r build
 git clean -f 
 git fetch origin
