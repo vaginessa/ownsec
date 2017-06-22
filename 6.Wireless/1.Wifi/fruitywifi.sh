@@ -2,16 +2,6 @@
 
 # INSTALL LAST
 
-#
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/6.Wireless/1.Wifi
-DSKTPFLSDEST=/home/$USER/.local/share/applications/6.Wireless/1.Wifi
-DSKTPFL=fruity-wifi.desktop
-
-GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/fruitywifi/xtr4nge/FruityWifi
-
-mkdir -p /opt/ITSEC/6.Wireless/1.Wifi/fruitywifi/xtr4nge
-cd /opt/ITSEC/6.Wireless/1.Wifi/fruitywifi/xtr4nge
-git clone https://github.com/xtr4nge/FruityWifi.git
 
 bold=$(tput bold)
 normal=$(tput sgr0)
@@ -25,6 +15,18 @@ echo "${bold}
         
 ${normal}"
 
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/6.Wireless/1.Wifi
+DSKTPFLSDEST=/home/$USER/.local/share/applications/6.Wireless/1.Wifi
+DSKTPFL=fruity-wifi.desktop
+
+GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/fruitywifi/xtr4nge/FruityWifi
+
+mkdir -p /opt/ITSEC/6.Wireless/1.Wifi/fruitywifi/xtr4nge
+cd /opt/ITSEC/6.Wireless/1.Wifi/fruitywifi/xtr4nge
+git clone https://github.com/xtr4nge/FruityWifi.git
+
+
+
 
 version="2.4.1"
 fruitywifi_php_version="PHP7"
@@ -36,7 +38,7 @@ git clean -f
 git fetch origin
 git reset --hard origin/master
 git pull
-sudo ./install-FruityWiFi-PHP7.sh
+#sudo ./install-FruityWiFi-PHP7.sh
 
 sudo /etc/init.d/nginx restart
 
