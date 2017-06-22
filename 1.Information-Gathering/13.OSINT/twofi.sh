@@ -1,7 +1,8 @@
 #!/bin/bash
 . ~/.bashrc
 eval "$(rbenv init -)"
-rbenv install 2.4.1
+yes "N" | rbenv install 2.4.1
+rbenv rehash
 rbenv shell 2.4.1
 sudo updatedb
 sudo ldconfig
