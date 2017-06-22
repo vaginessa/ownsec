@@ -1,5 +1,17 @@
 #!/bin/bash
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+__        _____ ____  _____ ____  _   _    _    ____  _  __
+\ \      / /_ _|  _ \| ____/ ___|| | | |  / \  |  _ \| |/ /
+ \ \ /\ / / | || |_) |  _| \___ \| |_| | / _ \ | |_) | ' / 
+  \ V  V /  | ||  _ <| |___ ___) |  _  |/ ___ \|  _ <| . \ 
+   \_/\_/  |___|_| \_\_____|____/|_| |_/_/   \_\_| \_\_|\_\
+           
+${normal}"
+
 sudo udpatedb
 sudo ldconfig
 mkdir -p /opt/ITSEC/7.Mitm/wireshark/wireshark
@@ -16,17 +28,7 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7
 DSKTPFLSDEST=/home/$USER/.local/share/applications/applications/7.Mitm
 DSKTPFL=wireshark.desktop
 
-bold=$(tput bold)
-normal=$(tput sgr0)
 
-echo "${bold}
-__        _____ ____  _____ ____  _   _    _    ____  _  __
-\ \      / /_ _|  _ \| ____/ ___|| | | |  / \  |  _ \| |/ /
- \ \ /\ / / | || |_) |  _| \___ \| |_| | / _ \ | |_) | ' / 
-  \ V  V /  | ||  _ <| |___ ___) |  _  |/ ___ \|  _ <| . \ 
-   \_/\_/  |___|_| \_\_____|____/|_| |_/_/   \_\_| \_\_|\_\
-           
-${normal}"
 
 
 cd $GITREPOROOT
@@ -47,7 +49,7 @@ sudo make install
 sudo groupadd wireshark
 sudo usermod -a -G wireshark $USER
 sudo chgrp wireshark /usr/local/bin/dumpcap
-newgrp wireshark
+# newgrp wireshark newgrpbug - console hangs
 sudo chmod 750 /usr/local/bin/dumpcap
 sudo getcap /usr/local/bin/dumpcap
 sudo setcap 'CAP_NET_RAW+eip CAP_NET_ADMIN+eip' /usr/local/bin/dumpcap
