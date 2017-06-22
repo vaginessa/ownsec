@@ -1,9 +1,5 @@
 #!/bin/bash
 
-mkdir -p /opt/DEPS/node/nodejs
-cd /opt/DEPS/node/nodejs
-git clone https://github.com/nodejs/node.git
-
 bold=$(tput bold)
 normal=$(tput sgr0)
 
@@ -18,17 +14,26 @@ ${normal}"
 echo "${bold}
 THIS WILL TAKE A WHILE, APROX 15 MINUTES            
 ${normal}"
+
+sudo rm -r /opt/DEPS/node/nodejs
+mkdir -p /opt/DEPS/node/nodejs
+cd /opt/DEPS/node/nodejs
+git clone https://github.com/nodejs/node.git
+
+
+
 cd /opt/DEPS/node/nodejs/node 
 
-sudo make uninstall
+#sudo make uninstall
 #make clean
 #git clean -f 
-#git fetch origin
+#it fetch origin
 #git reset --hard origin/v7.x
 #git pull
-#git checkout v7.x
-#./configure
-#make -j 4 
+git checkout v7.x
+git pull
+./configure
+make -j 4 
 sudo make install
 
 

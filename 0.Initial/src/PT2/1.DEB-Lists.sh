@@ -23,8 +23,10 @@ xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/main/p
 xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/main/wifi-firmware.txt") -r -- sudo apt-get install -y
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password mysql'
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password mysql'
-sudo apt-get -y install mysql-server
-sudo apt-get -y install nginx
+
+sudo apt-get -y install mysql-server phpmyadmin
+
+yes "YES" | sudo apt-get -y install nginx
 echo "--------------------------------"
 echo "Create Nginx ssl certificate"
 echo "--------------------------------"
