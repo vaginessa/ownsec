@@ -28,26 +28,26 @@ sudo apt-get -y install nginx
 echo "--------------------------------"
 echo "Create Nginx ssl certificate"
 echo "--------------------------------"
-cd $root_path
-mkdir /etc/nginx/ssl
-openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl/nginx.key -out /etc/nginx/ssl/nginx.crt
+cd /opt/ITSEC/6.Wireless/1.Wifi/fruitywifi/xtr4nge/FruityWifi
+sudo mkdir /etc/nginx/ssl
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl/nginx.key -out /etc/nginx/ssl/nginx.crt
 
 # REMOVE DEFAULT SITE
-rm /etc/nginx/sites-enabled/default
+sudo rm -f /etc/nginx/sites-enabled/default
 
 # SETUP NGINX AND PHP5|PHP7
-cp nginx-setup/nginx.conf /etc/nginx/
+sudo cp nginx-setup/nginx.conf /etc/nginx/
 
 	# INSTALL PHP7
-	apt-get -y install php7.0-fpm php7.0-curl php7.0-cli php7.0-xml
+	sudo apt-get -y install php7.0-fpm php7.0-curl php7.0-cli php7.0-xml
 	
-	cp nginx-setup/FruityWiFi-PHP7 /etc/nginx/sites-enabled/
-	cp nginx-setup/fpm-PHP7/8000.conf /etc/php/7.0/fpm/pool.d/
-	cp nginx-setup/fpm-PHP7/8443.conf /etc/php/7.0/fpm/pool.d/
+	sudo cp nginx-setup/FruityWiFi-PHP7 /etc/nginx/sites-enabled/
+	sudo cp nginx-setup/fpm-PHP7/8000.conf /etc/php/7.0/fpm/pool.d/
+	sudo cp nginx-setup/fpm-PHP7/8443.conf /etc/php/7.0/fpm/pool.d/
 	
 	# RESTART NGINX + PHP7-FPM
-	/etc/init.d/nginx restart
-	/etc/init.d/php7.0-fpm restart
+	sudo /etc/init.d/nginx restart
+	sudo /etc/init.d/php7.0-fpm restart
 
 xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/main/database-webserver.txt") -r -- sudo apt-get install -y
 xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-miredo.txt") -r -- sudo apt-get install -y
