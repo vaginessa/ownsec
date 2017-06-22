@@ -2,7 +2,7 @@
 
 mkdir -p /opt/ITSEC/8.Tunnel/ptunnel/izderadicka
 cd /opt/ITSEC/8.Tunnel/ptunnel/izderadicka
-git clone https://github.com/izderadicka/ptunnel.sh
+git clone https://github.com/izderadicka/ptunnel.git
 
 sudo updatedb
 sudo ldconfig
