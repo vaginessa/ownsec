@@ -69,4 +69,4 @@ sudo ln -s /opt/ITSEC/6.Wireless/1.Wifi/kismet/kismetwireless/kismet/kismet.sh /
 #sudo rm -f /usr/local/bin/kismet
 sudo groupadd kismet
 sudo usermod -a -G kismet $USER 
-newgrp kismet
+#newgrp kismet #newgrp bug lets the script hang
