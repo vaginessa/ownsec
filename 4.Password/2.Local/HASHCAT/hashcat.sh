@@ -74,7 +74,7 @@ cd $GITREPOROOT
 git clone https://github.com/hashcat/statsprocessor
 
 
-cd /opt/ITSEC/4.Password/2.Local/1HASHCAT/hashcat/hashcat/statsprocessor
+cd /opt/ITSEC/4.Password/2.Local/HASHCAT/hashcat/hashcat/statsprocessor
 git clean -f 
 git fetch origin
 git reset --hard origin/master
