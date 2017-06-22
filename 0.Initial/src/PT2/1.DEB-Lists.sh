@@ -24,6 +24,31 @@ xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/main/w
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password mysql'
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password mysql'
 sudo apt-get -y install mysql-server
+sudo apt-get -y install nginx
+echo "--------------------------------"
+echo "Create Nginx ssl certificate"
+echo "--------------------------------"
+cd $root_path
+mkdir /etc/nginx/ssl
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl/nginx.key -out /etc/nginx/ssl/nginx.crt
+
+# REMOVE DEFAULT SITE
+rm /etc/nginx/sites-enabled/default
+
+# SETUP NGINX AND PHP5|PHP7
+cp nginx-setup/nginx.conf /etc/nginx/
+
+	# INSTALL PHP7
+	apt-get -y install php7.0-fpm php7.0-curl php7.0-cli php7.0-xml
+	
+	cp nginx-setup/FruityWiFi-PHP7 /etc/nginx/sites-enabled/
+	cp nginx-setup/fpm-PHP7/8000.conf /etc/php/7.0/fpm/pool.d/
+	cp nginx-setup/fpm-PHP7/8443.conf /etc/php/7.0/fpm/pool.d/
+	
+	# RESTART NGINX + PHP7-FPM
+	/etc/init.d/nginx restart
+	/etc/init.d/php7.0-fpm restart
+
 xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/main/database-webserver.txt") -r -- sudo apt-get install -y
 xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-miredo.txt") -r -- sudo apt-get install -y
 xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-virtualbox.txt") -r -- sudo apt-get install -y
