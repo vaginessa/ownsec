@@ -11,7 +11,7 @@ sudo updatedb
 GITREPOROOT=/opt/ITSEC/4.Password/2.Local/HASHCAT/hashcat/hashcat
 #
 #
-DSKTPFLS=/opt/Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/2.Local
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/2.Local
 DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/2.Local
 DSKTPFL=hashcat.desktop
 
