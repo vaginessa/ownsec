@@ -11,5 +11,5 @@
 ###########################################################################
 cd /opt/ITSEC-Install-Scripts/5.Database/1.SQL
 ./sqlmap.sh  
-./hexorbase
-
+./hexorbase.sh
+./bbqsql.sh
