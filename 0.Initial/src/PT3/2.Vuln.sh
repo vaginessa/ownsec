@@ -14,7 +14,7 @@ cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Analysis/1.Vulnerability-Scanner/o
 #
 #1.Vulnerability-Scanner ##########################################################
 cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Analysis/1.Vulnerability-Scanner/
-./arachni 
+./arachni.sh
 ./atscan.sh 
 #./ava.sh #didnt work, dont remember why, checkin later.
 ./bed.sh 
