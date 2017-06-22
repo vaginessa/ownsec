@@ -1,13 +1,13 @@
 #!/bin/bash
 
-mkdir -p /opt/ITSEC/4.Password/1.WEP_WPA/cowpatty/roobix
-cd /opt/ITSEC/4.Password/1.WEP_WPA/cowpatty/roobix
-git clone https://github.com/roobix/cowpatty.git
+mkdir -p /opt/ITSEC/4.Password/2.Local/1.WEP_WPA/cowpatty/roobixx
+cd /opt/ITSEC/4.Password/2.Local/1.WEP_WPA/cowpatty/roobixx
+git clone https://github.com/roobixx/cowpatty.git
 
 sudo ldconfig
 sudo updatedb
 #
-GITREPOROOT=/opt/ITSEC/4.Password/2.Local/1.WEP_WPA/cowpatty/roobix/cowpatty
+GITREPOROOT=/opt/ITSEC/4.Password/2.Local/1.WEP_WPA/cowpatty/roobixx/cowpatty
 EXECUTEABLE1=cowpatty
 #
 #
