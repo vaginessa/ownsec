@@ -1,7 +1,7 @@
 #!/bin/bash
 
-mkdir -p /opt/ITSEC/4.Password/2.Local/HASHCAT/hashcat/hashcat
-cd /opt/ITSEC/4.Password/2.Local/HASHCAT/hashcat/hashcat
+mkdir -p /opt/ITSEC/4.Password/2.Local/HASHCAT/hashcat
+cd /opt/ITSEC/4.Password/2.Local/HASHCAT/hashcat
 git clone https://github.com/hashcat/hashcat.git
 #
 
