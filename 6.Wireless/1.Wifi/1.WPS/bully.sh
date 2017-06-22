@@ -1,10 +1,10 @@
 #!/bin/bash
 
-mkdir -p /opt/ITSEC/6.Wireless/1.Wifi/1.WPS/bully/aanarchy
-cd /opt/ITSEC/6.Wireless/1.Wifi/1.WPS/bully/aanarchy
-git clone https://github.com/aanarchy/bully.git
+mkdir -p /opt/ITSEC/6.Wireless/1.Wifi/1.WPS/bully/aanarchyy
+cd /opt/ITSEC/6.Wireless/1.Wifi/1.WPS/bully/aanarchyy
+git clone https://github.com/aanarchyy/bully.git
 
-GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/1.WPS/bully/aanarchy/bully
+GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/1.WPS/bully/aanarchyy/bully
 #
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/6.Wireless/1.Wifi/1.WPS
 DSKTPFLSDEST=/home/$USER/.local/share/applications/6.Wireless/1.Wifi/1.WPS
