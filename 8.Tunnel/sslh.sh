@@ -13,6 +13,19 @@ DSKTPFLSDEST=/home/$USER/.local/share/applications
 DSKTPFL=sslh.desktop
 
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ ____ ____  _     _   _ 
+/ ___/ ___|| |   | | | |
+\___ \___ \| |   | |_| |
+ ___) |__) | |___|  _  |
+|____/____/|_____|_| |_|
+            
+${normal}"
+
+
 cd $GITREPOROOT
 
 make clean

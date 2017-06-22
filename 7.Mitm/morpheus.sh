@@ -17,6 +17,19 @@ sudo updatedb
 sudo ldconfig
 sudo rm -f /usr/local/bin/morpheus
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ __  __  ___  ____  ____  _   _ _____ _   _ ____  
+|  \/  |/ _ \|  _ \|  _ \| | | | ____| | | / ___| 
+| |\/| | | | | |_) | |_) | |_| |  _| | | | \___ \ 
+| |  | | |_| |  _ <|  __/|  _  | |___| |_| |___) |
+|_|  |_|\___/|_| \_\_|   |_| |_|_____|\___/|____/ 
+              
+${normal}"
+
+
 cd /opt/ITSEC/7.Mitm/morpheus/r00t-3xp10it/morpheus
 git clean -f 
 git fetch origin

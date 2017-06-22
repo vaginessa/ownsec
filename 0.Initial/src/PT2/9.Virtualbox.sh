@@ -4,6 +4,20 @@
 sudo rm -rf /opt/DEPS/virtualbox
 mkdir -p /opt/DEPS/virtualbox
 
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+__     _____ ____ _____ _   _   _    _     ____   _____  __
+\ \   / /_ _|  _ \_   _| | | | / \  | |   | __ ) / _ \ \/ /
+ \ \ / / | || |_) || | | | | |/ _ \ | |   |  _ \| | | \  / 
+  \ V /  | ||  _ < | | | |_| / ___ \| |___| |_) | |_| /  \ 
+   \_/  |___|_| \_\|_|  \___/_/   \_\_____|____/ \___/_/\_\
+  
+${normal}"
+
+
 cd /opt/DEPS
 sudo rm -r virtualbox
 mkdir virtualbox

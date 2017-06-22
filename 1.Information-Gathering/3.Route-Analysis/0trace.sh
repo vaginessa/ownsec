@@ -13,6 +13,19 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/3.Route-Analysis
 DSKTPFL=0trace.desktop
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+  ___ _____ ____      _    ____ _____ 
+ / _ \_   _|  _ \    / \  / ___| ____|
+| | | || | | |_) |  / _ \| |   |  _|  
+| |_| || | |  _ <  / ___ \ |___| |___ 
+ \___/ |_| |_| \_\/_/   \_\____|_____|
+             
+${normal}"
+
+
 cd /opt/ITSEC/1.Information-Gathering/3.Route-Analysis/0trace/BlackArch/0trace
 git clean -f
 git fetch origin

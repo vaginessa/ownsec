@@ -22,6 +22,19 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7
 DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
 DSKTPFL=bettercap.desktop
 
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ ____  _____ _____ _____ _____ ____   ____    _    ____  
+| __ )| ____|_   _|_   _| ____|  _ \ / ___|  / \  |  _ \ 
+|  _ \|  _|   | |   | | |  _| | |_) | |     / _ \ | |_) |
+| |_) | |___  | |   | | | |___|  _ <| |___ / ___ \|  __/ 
+|____/|_____| |_|   |_| |_____|_| \_\\____/_/   \_\_|    
+               
+${normal}"
+
 cd $GITREPOROOT
 
 git clean -f 

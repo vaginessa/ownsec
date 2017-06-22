@@ -4,12 +4,24 @@ mkdir -p /opt/ITSEC/1.Information-Gathering/2.Live-Host/3.IPv6/thc-ipv6/vanhause
 cd /opt/ITSEC/1.Information-Gathering/2.Live-Host/3.IPv6/thc-ipv6/vanhauser-thc
 git clone https://github.com/vanhauser-thc/thc-ipv6.git
 
-cd /opt/ITSEC/1.Information-Gathering/2.Live-Host/3.IPv6/thc-ipv6/vanhauser-thc/thc-ipv6
 
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/2.Live-Host/3.IPv6
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/2.Live-Host/3.IPv6
 DSKTPFL=thcping6.desktop
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ _____ _   _  ____     ___ ______     ____   
+|_   _| | | |/ ___|   |_ _|  _ \ \   / / /_  
+  | | | |_| | |   _____| || |_) \ \ / / '_ \ 
+  | | |  _  | |__|_____| ||  __/ \ V /| (_) |
+  |_| |_| |_|\____|   |___|_|     \_/  \___/ 
+       
+${normal}"
+
+cd /opt/ITSEC/1.Information-Gathering/2.Live-Host/3.IPv6/thc-ipv6/vanhauser-thc/thc-ipv6
 make clean
 git clean -f
 git fetch origin

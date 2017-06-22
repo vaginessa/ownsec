@@ -10,6 +10,19 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/1.Cloudflare
 DSKTPFL=cloud-buster.desktop
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+  ____ _     ___  _   _ ____        ____  _   _ ____ _____ _____ ____  
+ / ___| |   / _ \| | | |  _ \      | __ )| | | / ___|_   _| ____|  _ \ 
+| |   | |  | | | | | | | | | |_____|  _ \| | | \___ \ | | |  _| | |_) |
+| |___| |__| |_| | |_| | |_| |_____| |_) | |_| |___) || | | |___|  _ < 
+ \____|_____\___/ \___/|____/      |____/ \___/|____/ |_| |_____|_| \_\
+         
+${normal}"
+
+
 cd $GITREPOROOT
 git clean -f
 git fetch origin

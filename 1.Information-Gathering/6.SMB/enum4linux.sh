@@ -13,6 +13,19 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/6.SMB
 DSKTPFL=enum4linux.desktop
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ _____ _   _ _   _ __  __ _  _   _     ___ _   _ _   ___  __
+| ____| \ | | | | |  \/  | || | | |   |_ _| \ | | | | \ \/ /
+|  _| |  \| | | | | |\/| | || |_| |    | ||  \| | | | |\  / 
+| |___| |\  | |_| | |  | |__   _| |___ | || |\  | |_| |/  \ 
+|_____|_| \_|\___/|_|  |_|  |_| |_____|___|_| \_|\___//_/\_\
+   
+${normal}"
+
+
 cd $GITREPOROOT
 sudo rm -r /usr/local/bin/enum4linux
 

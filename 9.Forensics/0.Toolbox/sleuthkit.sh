@@ -12,17 +12,26 @@ GITREPOROOT=/opt/ITSEC/8.Forensics/0.Toolbox/sleuthkit/sleuthkit/sleuthkit
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications
 DSKTPFLSDEST=/home/$USER/.local/share/applications
 DSKTPFL=dnschef.desktop
-1
-2
-3
-4
-#
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ ____  _     _____ _   _ _____ _   _ _  _____ _____ 
+/ ___|| |   | ____| | | |_   _| | | | |/ /_ _|_   _|
+\___ \| |   |  _| | | | | | | | |_| | ' / | |  | |  
+ ___) | |___| |___| |_| | | | |  _  | . \ | |  | |  
+|____/|_____|_____|\___/  |_| |_| |_|_|\_\___| |_|  
+          
+${normal}"
+
 cd $GITREPOROOT
 git clean -f 
 git fetch origin
 git reset --hard origin/master
 git pull
-git submodule init && git submodule update --recursive
+git submodule init
+git submodule update --recursive
 ./bootstrap 
 ./configure
 make -j 4

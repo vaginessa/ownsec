@@ -10,6 +10,19 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/2.Live-Host
 DSKTPFL=fping.desktop
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ _____ ____ ___ _   _  ____ 
+|  ___|  _ \_ _| \ | |/ ___|
+| |_  | |_) | ||  \| | |  _ 
+|  _| |  __/| || |\  | |_| |
+|_|   |_|  |___|_| \_|\____|
+         
+${normal}"
+
+
 cd $GITREPOROOT
 #
 make clean

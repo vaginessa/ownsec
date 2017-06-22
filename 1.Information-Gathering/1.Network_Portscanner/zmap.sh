@@ -13,6 +13,19 @@ DSKTPFL=zmap.desktop
 sudo ldconfig
 sudo updatedb
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ _______  __    _    ____  
+|__  /  \/  |  / \  |  _ \ 
+  / /| |\/| | / _ \ | |_) |
+ / /_| |  | |/ ___ \|  __/ 
+/____|_|  |_/_/   \_\_|    
+            
+${normal}"
+
+
 cd $GITREPOROOT
 make clean
 git clean -f

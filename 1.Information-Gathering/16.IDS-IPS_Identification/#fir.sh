@@ -16,6 +16,19 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/16.IDS-IPS_Identification
 DSKTPFL=fir.desktop
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ _____ ___ ____  
+|  ___|_ _|  _ \ 
+| |_   | || |_) |
+|  _|  | ||  _ < 
+|_|   |___|_| \_\
+         
+${normal}"
+
+
 cd $GITREPOROOT
 
 sudo rm /usr/local/bin/$EXECUTEABLE2

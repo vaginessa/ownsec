@@ -20,6 +20,18 @@ DSKTPFL=atear.desktop
 
 sudo rm -f /usr/local/bin/$EXECUTEABLE2
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+    _  _____ _____    _    ____  
+   / \|_   _| ____|  / \  |  _ \ 
+  / _ \ | | |  _|   / _ \ | |_) |
+ / ___ \| | | |___ / ___ \|  _ < 
+/_/   \_\_| |_____/_/   \_\_| \_\
+           
+${normal}"
+
 cd $GITREPOROOT
 git clean -f
 git fetch origin

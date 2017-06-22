@@ -12,6 +12,19 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/5.DNS
 DSKTPFL=fierce.desktop
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ _____ ___ _____ ____   ____ _____ 
+|  ___|_ _| ____|  _ \ / ___| ____|
+| |_   | ||  _| | |_) | |   |  _|  
+|  _|  | || |___|  _ <| |___| |___ 
+|_|   |___|_____|_| \_\\____|_____|
+           
+${normal}"
+
+
 cd $GITREPOROOT
 make clean
 git clean -f

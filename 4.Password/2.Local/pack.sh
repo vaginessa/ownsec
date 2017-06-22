@@ -26,6 +26,18 @@ DSKTPFL3=pack_rulegen.desktop
 DSKTPFL4=pack_statsgen.desktop
 
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ ____   _    ____ _  __
+|  _ \ / \  / ___| |/ /
+| |_) / _ \| |   | ' / 
+|  __/ ___ \ |___| . \ 
+|_| /_/   \_\____|_|\_\
+                   
+${normal}"
+
 cd $GITREPOROOT
 sudo rm -f /usr/local/bin/$EXECUTEABLE2
 sudo rm -f /usr/local/bin/$EXECUTEABLE4

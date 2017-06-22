@@ -3,7 +3,22 @@
 mkdir -p /opt/DEPS/node/nodejs
 cd /opt/DEPS/node/nodejs
 git clone https://github.com/nodejs/node.git
-cd node 
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ _   _  ___  ____  _____ 
+| \ | |/ _ \|  _ \| ____|
+|  \| | | | | | | |  _|  
+| |\  | |_| | |_| | |___ 
+|_| \_|\___/|____/|_____|
+               
+${normal}"
+echo "${bold}
+THIS WILL TAKE A WHILE, APROX 15 MINUTES            
+${normal}"
+cd /opt/DEPS/node/nodejs/node 
 
 sudo make uninstall
 #make clean
@@ -15,6 +30,16 @@ sudo make uninstall
 #./configure
 #make -j 4 
 sudo make install
+
+
+echo "${bold}
+ _   _ ____  __  __ 
+| \ | |  _ \|  \/  |
+|  \| | |_) | |\/| |
+| |\  |  __/| |  | |
+|_| \_|_|   |_|  |_|
+               
+${normal}"
 
 
 mkdir -p /opt/DEPS/npm/npm

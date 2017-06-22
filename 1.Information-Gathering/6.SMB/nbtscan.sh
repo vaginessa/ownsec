@@ -15,6 +15,19 @@ DSKTPFL=nbtscan.desktop
 
 sudo rm -r /usr/local/bin/nbtscan
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ _   _ ____ _____ ____   ____    _    _   _ 
+| \ | | __ )_   _/ ___| / ___|  / \  | \ | |
+|  \| |  _ \ | | \___ \| |     / _ \ |  \| |
+| |\  | |_) || |  ___) | |___ / ___ \| |\  |
+|_| \_|____/ |_| |____/ \____/_/   \_\_| \_|
+         
+${normal}"
+
+
 cd $reporoot
 mkdir $name
 

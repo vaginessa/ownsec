@@ -4,6 +4,18 @@ sudo apt-get upgrade
 #packagelist=
 #xargs -a <(awk '/^\s*[^#]/' "$packagelist") -r -- sudo apt-get install -y
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+    _    ____ _____     ____  _____ ____       _     ___ ____ _____ ____  
+   / \  |  _ \_   _|   |  _ \| ____|  _ \     | |   |_ _/ ___|_   _/ ___| 
+  / _ \ | |_) || |_____| | | |  _| | |_) |____| |    | |\___ \ | | \___ \ 
+ / ___ \|  __/ | |_____| |_| | |___|  __/_____| |___ | | ___) || |  ___) |
+/_/   \_\_|    |_|     |____/|_____|_|        |_____|___|____/ |_| |____/ 
+        
+${normal}"
+
 
 xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/main/essential.txt") -r -- sudo apt-get install -y
 xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/main/libs.txt") -r -- sudo apt-get install -y
@@ -106,11 +118,22 @@ xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/main/r
 
 sudo apt-get install -y linux-image-extra-$(uname -r) 
 #sudo apt-get install -y linux-image-extra-virtual-$(uname -r)
+
+echo "${bold}
+sudo easy_install -U pip    
+${normal}"
+
 sudo easy_install -U pip
 
+echo "${bold}
+sudo apt-get install -y expect   
+${normal}"
 sudo apt-get install -y expect
 
 #sudo mysql_secure_installation 
+echo "${bold}
+MYSQL SETUP   
+${normal}"
 
 mysql -u root <<-EOF
 UPDATE mysql.user SET Password=PASSWORD('$,mysql') WHERE User='root';
@@ -120,10 +143,17 @@ DELETE FROM mysql.db WHERE Db='test' OR Db='test_%';
 FLUSH PRIVILEGES;
 EOF
 
+echo "${bold}
+sudo apt-get autoremove -y   
+${normal}"
 
 sudo apt-get autoremove -y
 sudo updatedb
 sudo ldconfig
+echo "${bold}
+cd /opt/ITSEC-Install-Scripts/0.Initial/src/settings-scripts/disable-services
+sudo ./disable-all.sh   
+${normal}"
 cd /opt/ITSEC-Install-Scripts/0.Initial/src/settings-scripts/disable-services
 sudo ./disable-all.sh
 

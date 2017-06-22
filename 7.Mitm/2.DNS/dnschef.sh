@@ -20,7 +20,18 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7
 DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm/2.DNS
 DSKTPFL=dnschef.desktop
 
-#
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ ____  _   _ ____   ____ _   _ _____ _____ 
+|  _ \| \ | / ___| / ___| | | | ____|  ___|
+| | | |  \| \___ \| |   | |_| |  _| | |_   
+| |_| | |\  |___) | |___|  _  | |___|  _|  
+|____/|_| \_|____/ \____|_| |_|_____|_|    
+           
+${normal}"
+
 cd $GITREPOROOT
 git clean -f 
 git fetch origin

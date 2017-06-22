@@ -18,6 +18,19 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/13.OSINT
 DSKTPFL=twofi.desktop
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ _______        _____  _____ ___ 
+|_   _\ \      / / _ \|  ___|_ _|
+  | |  \ \ /\ / / | | | |_   | | 
+  | |   \ V  V /| |_| |  _|  | | 
+  |_|    \_/\_/  \___/|_|   |___|
+    
+${normal}"
+
+
 cd $GITREPOROOT
 sudo rm /usr/local/bin/$EXECUTEABLE2
 sudo updatedb

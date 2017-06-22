@@ -1,5 +1,15 @@
 #!/bin/bash
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+USR ENV PT2         
+${normal}"
+
+echo "${bold}
+... setting up bash git support ....
+${normal}"
 cd ~
 
 git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt
@@ -10,6 +20,9 @@ rm -f .bashrc && cp /opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.bashrc .bashrc
 
 source .bashrc
 
+echo "${bold}
+... setting up CONKY ....
+${normal}"
 cp -R /opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.conky .conky
 
 

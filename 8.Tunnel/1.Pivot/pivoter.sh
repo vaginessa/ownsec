@@ -15,6 +15,20 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/8
 DSKTPFLSDEST=/home/$USER/.local/share/applications/8.Tunnel
 DSKTPFL=pivoter.desktop
 
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ ____ _____     _____ _____ _____ ____  
+|  _ \_ _\ \   / / _ \_   _| ____|  _ \ 
+| |_) | | \ \ / / | | || | |  _| | |_) |
+|  __/| |  \ V /| |_| || | | |___|  _ < 
+|_|  |___|  \_/  \___/ |_| |_____|_| \_\
+                                               
+${normal}"
+
+
 cd $GITREPOROOT
 make clean
 git clean -f

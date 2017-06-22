@@ -16,6 +16,19 @@ DSKTPFL=metagoofil.desktop
 
 sudo -H pip2 install google
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ __  __ _____ _____  _    ____  ___   ___  _____ ___ _     
+|  \/  | ____|_   _|/ \  / ___|/ _ \ / _ \|  ___|_ _| |    
+| |\/| |  _|   | | / _ \| |  _| | | | | | | |_   | || |    
+| |  | | |___  | |/ ___ \ |_| | |_| | |_| |  _|  | || |___ 
+|_|  |_|_____| |_/_/   \_\____|\___/ \___/|_|   |___|_____|
+          
+${normal}"
+
+
 cd $GITREPOROOT
 sudo rm /usr/local/bin/$EXECUTEABLE2
 sudo updatedb

@@ -28,6 +28,19 @@ DSKTPFL16=irpas-timestamp.desktop
 rm -f $DSKTPFLSDEST/irpas-*
 #
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ ___ ____  ____   _    ____  
+|_ _|  _ \|  _ \ / \  / ___| 
+ | || |_) | |_) / _ \ \___ \ 
+ | ||  _ <|  __/ ___ \ ___) |
+|___|_| \_\_| /_/   \_\____/ 
+          
+${normal}"
+
+
 cd $reporoot
 mkdir $irpas
 cd $irpas

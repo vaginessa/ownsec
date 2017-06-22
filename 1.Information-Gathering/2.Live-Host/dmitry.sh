@@ -6,15 +6,28 @@ cd /opt/ITSEC/1.Information-Gathering/2.Live-Host/dmitry/jaygreig86
 git clone https://github.com/jaygreig86/dmitry.git
 
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/2.Live-Host/dmitry/jaygreig86/dmitry
-#
+
+EXECUTEABLE1=dmitry
+EXECUTEABLE2=dmitry
+
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/2.Live-Host
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/2.Live-Host
 DSKTPFL=dmitry.desktop
 
-cd $GITREPOROOT
-EXECUTEABLE1=dmitry
-EXECUTEABLE2=dmitry
+bold=$(tput bold)
+normal=$(tput sgr0)
 
+echo "${bold}
+ ____  __  __ ___ _____ ______   __
+|  _ \|  \/  |_ _|_   _|  _ \ \ / /
+| | | | |\/| || |  | | | |_) \ V / 
+| |_| | |  | || |  | | |  _ < | |  
+|____/|_|  |_|___| |_| |_| \_\|_|  
+            
+${normal}"
+
+
+cd $GITREPOROOT
 make clean
 git clean -f
 git fetch origin

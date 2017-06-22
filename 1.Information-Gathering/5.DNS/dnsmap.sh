@@ -13,6 +13,19 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/5.DNS
 DSKTPFL=dnsmap.desktop
 
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ ____  _   _ ____  __  __    _    ____  
+|  _ \| \ | / ___||  \/  |  / \  |  _ \ 
+| | | |  \| \___ \| |\/| | / _ \ | |_) |
+| |_| | |\  |___) | |  | |/ ___ \|  __/ 
+|____/|_| \_|____/|_|  |_/_/   \_\_|    
+                                        
+${normal}"
+
 cd $reporoot
 sudo rm -r $dnsmapver
 wget $repourl

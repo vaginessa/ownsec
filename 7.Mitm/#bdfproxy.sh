@@ -15,6 +15,18 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7
 DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
 DSKTPFL=bdfproxy.desktop
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ ____  ____  _____ ____  ____   _____  ____   __
+| __ )|  _ \|  ___|  _ \|  _ \ / _ \ \/ /\ \ / /
+|  _ \| | | | |_  | |_) | |_) | | | \  /  \ V / 
+| |_) | |_| |  _| |  __/|  _ <| |_| /  \   | |  
+|____/|____/|_|   |_|   |_| \_\\___/_/\_\  |_|  
+       
+${normal}"
+
 cd $GITREPOROOT
 
 sudo rm /usr/local/bin/$EXECUTEABLE2

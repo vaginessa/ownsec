@@ -8,7 +8,19 @@ sudo updatedb
 sudo ldconfig
 
 GITREPOROOT=/opt/ITSEC/8.Tunnel/mallory/justmao945/mallory
-#
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ __  __    _    _     _     ___  ______   __
+|  \/  |  / \  | |   | |   / _ \|  _ \ \ / /
+| |\/| | / _ \ | |   | |  | | | | |_) \ V / 
+| |  | |/ ___ \| |___| |__| |_| |  _ < | |  
+|_|  |_/_/   \_\_____|_____\___/|_| \_\|_|  
+          
+${normal}"
+
 cd $GITREPOROOT
 git clean -f
 git fetch origin

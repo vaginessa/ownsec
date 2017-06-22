@@ -6,7 +6,18 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications
 DSKTPFLSDEST=/home/$USER/.local/share/applications
 DSKTPFL=bulk-extractor.desktop
 
-#
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ ____  _     _  _________  _______ ____   ____ _____ ____  
+| __ )| |   | |/ / ____\ \/ /_   _|  _ \ / ___|_   _|  _ \ 
+|  _ \| |   | ' /|  _|  \  /  | | | |_) | |     | | | |_) |
+| |_) | |___| . \| |___ /  \  | | |  _ <| |___  | | |  _ < 
+|____/|_____|_|\_\_____/_/\_\ |_| |_| \_\\____| |_| |_| \_\
+      
+${normal}"
+
 cd $GITREPOROOT
 make clean
 git clean -f 

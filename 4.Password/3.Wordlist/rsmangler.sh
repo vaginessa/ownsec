@@ -14,7 +14,19 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4
 DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/3.Wordlist
 DSKTPFL=rsmangler.desktop
 
-#
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ ____  ____  __  __    _    _   _  ____ _     _____ ____  
+|  _ \/ ___||  \/  |  / \  | \ | |/ ___| |   | ____|  _ \ 
+| |_) \___ \| |\/| | / _ \ |  \| | |  _| |   |  _| | |_) |
+|  _ < ___) | |  | |/ ___ \| |\  | |_| | |___| |___|  _ < 
+|_| \_\____/|_|  |_/_/   \_\_| \_|\____|_____|_____|_| \_\
+         
+${normal}"
+
 cd $GITREPOROOT
 sudo rm -f /usr/local/bin/$EXECUTEABLE2
 sudo updatedb

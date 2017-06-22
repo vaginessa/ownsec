@@ -13,6 +13,20 @@ DSKTPFL=lbd.desktop
 EXECUTEABLE1=lbd
 EXECUTEABLE2=lbd
 
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ _     ____  ____  
+| |   | __ )|  _ \ 
+| |   |  _ \| | | |
+| |___| |_) | |_| |
+|_____|____/|____/ 
+                     
+${normal}"
+
+
 cd $GITREPOROOT
 
 sudo rm -f /usr/local/bin/$EXECUTEABLE2

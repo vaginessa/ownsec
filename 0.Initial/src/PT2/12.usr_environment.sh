@@ -1,6 +1,16 @@
 #!/bin/bash
 
+bold=$(tput bold)
+normal=$(tput sgr0)
 
+echo "${bold}
+USR ENV PT1         
+${normal}"
+
+
+echo "${bold}
+... copy Menu and Panel Setup ....         
+${normal}"
 cp -R /opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.config /home/$USER
 mkdir -p /home/$USER/.local/share/applications/0.Services
 cp -R /opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/0.Services/ /home/$USER/.local/share/applications/
@@ -13,7 +23,9 @@ DSKTPFL=phpmyadmin.desktop
 mkdir -p $DSKTPFLSDEST 
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 
-
+echo "${bold}
+... Symlink Service Shortcuts ....         
+${normal}"
 sudo rm -f /usr/local/bin/LAMP_*
 sudo rm -f /usr/local/bin/LAPP_*
 sudo rm -f /usr/local/bin/apache2_*

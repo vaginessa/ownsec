@@ -10,6 +10,19 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/2.Live-Host
 DSKTPFL=arping.desktop
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+    _    ____  ____ ___ _   _  ____ 
+   / \  |  _ \|  _ \_ _| \ | |/ ___|
+  / _ \ | |_) | |_) | ||  \| | |  _ 
+ / ___ \|  _ <|  __/| || |\  | |_| |
+/_/   \_\_| \_\_|  |___|_| \_|\____|
+         
+${normal}"
+
+
 cd $GITREPOROOT
 make clean 
 git clean -f

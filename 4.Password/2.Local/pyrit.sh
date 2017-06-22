@@ -15,6 +15,21 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4
 DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/2.Local
 DSKTPFL=pyrit.desktop
 
+
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ ______   ______  ___ _____ 
+|  _ \ \ / /  _ \|_ _|_   _|
+| |_) \ V /| |_) || |  | |  
+|  __/ | | |  _ < | |  | |  
+|_|    |_| |_| \_\___| |_|  
+            
+${normal}"
+
+
 cd $GITREPOROOT
 git clean -f
 git fetch origin

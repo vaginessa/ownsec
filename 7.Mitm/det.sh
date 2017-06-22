@@ -19,6 +19,19 @@ sudo updatedb
 
 sudo rm /usr/local/bin/$EXECUTEABLE2
 sudo rm $GITREPOROOT/$EXECUTEABLE2
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ ____  _____ _____ 
+|  _ \| ____|_   _|
+| | | |  _|   | |  
+| |_| | |___  | |  
+|____/|_____| |_|  
+          
+${normal}"
+
 cd $GITREPOROOT
 git clean -f 
 git fetch origin

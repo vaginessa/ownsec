@@ -15,6 +15,19 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/7.SMTP
 DSKTPFL=swaks.desktop
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ ______        ___    _  ______  
+/ ___\ \      / / \  | |/ / ___| 
+\___ \\ \ /\ / / _ \ | ' /\___ \ 
+ ___) |\ V  V / ___ \| . \ ___) |
+|____/  \_/\_/_/   \_\_|\_\____/ 
+            
+${normal}"
+
+
 cd $GITREPOROOT
 sudo rm -f /usr/local/bin/$EXECUTEABLE2
 sudo updatedb

@@ -17,6 +17,20 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/5
 DSKTPFLSDEST=/home/$USER/.local/share/applications/5.Database/1.SQL
 DSKTPFL=sqlmap.desktop
 
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ ____   ___  _     __  __    _    ____  
+/ ___| / _ \| |   |  \/  |  / \  |  _ \ 
+\___ \| | | | |   | |\/| | / _ \ | |_) |
+ ___) | |_| | |___| |  | |/ ___ \|  __/ 
+|____/ \__\_\_____|_|  |_/_/   \_\_|    
+              
+${normal}"
+
+
 cd $GITREPOROOT
 git clean -f
 git fetch origin

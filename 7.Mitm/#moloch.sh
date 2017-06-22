@@ -4,6 +4,17 @@ mkdir -p /opt/ITSEC/7.Mitm/moloch/aol
 cd /opt/ITSEC/7.Mitm/moloch/aol
 git clone https://github.com/aol/moloch.git
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ __  __  ___  _     ___   ____ _   _ 
+|  \/  |/ _ \| |   / _ \ / ___| | | |
+| |\/| | | | | |  | | | | |   | |_| |
+| |  | | |_| | |__| |_| | |___|  _  |
+|_|  |_|\___/|_____\___/ \____|_| |_|
+           
+${normal}"
 
 
 does not work, build error

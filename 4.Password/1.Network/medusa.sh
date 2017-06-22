@@ -13,7 +13,19 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4
 DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/1.Network
 DSKTPFL=medusa.desktop
 
-#
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ __  __ _____ ____  _   _ ____    _    
+|  \/  | ____|  _ \| | | / ___|  / \   
+| |\/| |  _| | | | | | | \___ \ / _ \  
+| |  | | |___| |_| | |_| |___) / ___ \ 
+|_|  |_|_____|____/ \___/|____/_/   \_\
+              
+${normal}"
+
 cd $GITREPOROOT
 sudo rm -r $GITREPOROOT/deps
 git clean -f 

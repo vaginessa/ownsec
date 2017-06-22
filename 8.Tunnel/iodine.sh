@@ -14,6 +14,18 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/8
 DSKTPFLSDEST=/home/$USER/.local/share/applications/8.Tunnel
 DSKTPFL=iodine.desktop
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ ___ ___  ____ ___ _   _ _____ 
+|_ _/ _ \|  _ \_ _| \ | | ____|
+ | | | | | | | | ||  \| |  _|  
+ | | |_| | |_| | || |\  | |___ 
+|___\___/|____/___|_| \_|_____|
+               
+${normal}"
+
 cd $GITREPOROOT
 make clean
 git clean -f

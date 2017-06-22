@@ -8,12 +8,24 @@ sudo updatedb
 sudo ldconfig
 
 sudo rm -f /usr/local/bin/intrace
-cd /opt/ITSEC/1.Information-Gathering/3.Route-Analysis/intrace/robertswiecki/intrace
 
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/3.Route-Analysis
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/3.Route-Analysis
 DSKTPFL=intrace.desktop
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ ___ _   _ _____ ____      _    ____ _____ 
+|_ _| \ | |_   _|  _ \    / \  / ___| ____|
+ | ||  \| | | | | |_) |  / _ \| |   |  _|  
+ | || |\  | | | |  _ <  / ___ \ |___| |___ 
+|___|_| \_| |_| |_| \_\/_/   \_\____|_____|
+                                               
+${normal}"
+
+cd /opt/ITSEC/1.Information-Gathering/3.Route-Analysis/intrace/robertswiecki/intrace
 
 make clean
 git clean -f

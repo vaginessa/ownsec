@@ -9,7 +9,20 @@ GITREPOROOT=/opt/ITSEC/1.Information-Gathering/1.Network_Portscanner/masscan/rob
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/1.Network_Portscanner
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/1.Network_Portscanner
 DSKTPFL=masscan.desktop
-#
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ __  __    _    ____ ____   ____    _    _   _ 
+|  \/  |  / \  / ___/ ___| / ___|  / \  | \ | |
+| |\/| | / _ \ \___ \___ \| |     / _ \ |  \| |
+| |  | |/ ___ \ ___) |__) | |___ / ___ \| |\  |
+|_|  |_/_/   \_\____/____/ \____/_/   \_\_| \_|
+        
+${normal}"
+
+
 cd $GITREPOROOT
 make clean
 git clean -f

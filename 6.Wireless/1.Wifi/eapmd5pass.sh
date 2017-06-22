@@ -13,7 +13,19 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/6
 DSKTPFLSDEST=/home/$USER/.local/share/applications/6.Wireless/1.Wifi
 DSKTPFL=eapmd5pass.desktop
 
-#
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ _____    _    ____  __  __ ____  ____  ____   _    ____ ____  
+| ____|  / \  |  _ \|  \/  |  _ \| ___||  _ \ / \  / ___/ ___| 
+|  _|   / _ \ | |_) | |\/| | | | |___ \| |_) / _ \ \___ \___ \ 
+| |___ / ___ \|  __/| |  | | |_| |___) |  __/ ___ \ ___) |__) |
+|_____/_/   \_\_|   |_|  |_|____/|____/|_| /_/   \_\____/____/ 
+            
+${normal}"
+
 sudo rm -f /usr/local/bin/eapmd5pass
 cd $REPOROOT
 sudo rm -r $BINROOT

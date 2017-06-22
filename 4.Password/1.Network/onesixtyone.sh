@@ -14,7 +14,18 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4
 DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/1.Network
 DSKTPFL=onesixtyone.desktop
 
-#
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+  ___  _   _ _____ ____ _____  _________   _____  _   _ _____ 
+ / _ \| \ | | ____/ ___|_ _\ \/ /_   _\ \ / / _ \| \ | | ____|
+| | | |  \| |  _| \___ \| | \  /  | |  \ V / | | |  \| |  _|  
+| |_| | |\  | |___ ___) | | /  \  | |   | || |_| | |\  | |___ 
+ \___/|_| \_|_____|____/___/_/\_\ |_|   |_| \___/|_| \_|_____|
+               
+${normal}"
+
 cd $GITREPOROOT
 make clean
 git clean -f

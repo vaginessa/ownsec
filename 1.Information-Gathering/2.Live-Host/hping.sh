@@ -15,6 +15,19 @@ DSKTPFL=hping3.desktop
 sudo rm /usr/sbin/hping
 sudo rm /usr/sbin/hping2
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ _   _ ____ ___ _   _  ____ 
+| | | |  _ \_ _| \ | |/ ___|
+| |_| | |_) | ||  \| | |  _ 
+|  _  |  __/| || |\  | |_| |
+|_| |_|_|  |___|_| \_|\____|
+            
+${normal}"
+
+
 cd $GITREPOROOT
 make clean
 git clean -f

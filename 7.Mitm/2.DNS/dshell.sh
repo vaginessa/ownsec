@@ -16,12 +16,23 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7
 DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm/2.DNS
 DSKTPFL1=dshell.desktop
 DSKTPFL2=dshell-decode.desktop
-1
-2
-#
+
+
 sudo rm -f /usr/local/bin/$EXECUTEABLE2
 sudo rm -f /usr/local/bin/$EXECUTEABLE3
-#
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ ____  ____  _   _ _____ _     _     
+|  _ \/ ___|| | | | ____| |   | |    
+| | | \___ \| |_| |  _| | |   | |    
+| |_| |___) |  _  | |___| |___| |___ 
+|____/|____/|_| |_|_____|_____|_____|
+         
+${normal}"
+
 cd $GITREPOROOT
 
 make clean

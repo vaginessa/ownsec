@@ -13,10 +13,21 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/6
 DSKTPFLSDEST=/home/$USER/.local/share/applications/6.Wireless/1.Wifi/3.Jammer
 DSKTPFL=wifijammer.desktop
 
-#
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+__        _____ _____ ___    _   _    __  __ __  __ _____ ____  
+\ \      / /_ _|  ___|_ _|  | | / \  |  \/  |  \/  | ____|  _ \ 
+ \ \ /\ / / | || |_   | |_  | |/ _ \ | |\/| | |\/| |  _| | |_) |
+  \ V  V /  | ||  _|  | | |_| / ___ \| |  | | |  | | |___|  _ < 
+   \_/\_/  |___|_|   |___\___/_/   \_\_|  |_|_|  |_|_____|_| \_\
+            
+${normal}"
+
 cd $GITREPOROOT
 
-sudo rm /usr/local/bin/$EXECUTEABLE2
+sudo rm -f /usr/local/bin/$EXECUTEABLE2
 
 #sudo update
 #sudo apt-get upgrade

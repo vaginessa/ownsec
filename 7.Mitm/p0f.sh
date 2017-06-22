@@ -17,6 +17,18 @@ DSKTPFL=p0f.desktop
 sudo updatedb
 sudo ldconfig
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ ____   ___  _____ 
+|  _ \ / _ \|  ___|
+| |_) | | | | |_   
+|  __/| |_| |  _|  
+|_|    \___/|_|    
+                          
+${normal}"
+
 cd $GITREPOROOT
 sudo rm /usr/local/bin/$EXECUTEABLE2
 sudo updatedb

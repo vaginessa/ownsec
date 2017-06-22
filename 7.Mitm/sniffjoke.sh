@@ -10,6 +10,18 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7
 DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
 DSKTPFL=sniffjoke.desktop
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ ____  _   _ ___ _____ _____   _  ___  _  _______ 
+/ ___|| \ | |_ _|  ___|  ___| | |/ _ \| |/ / ____|
+\___ \|  \| || || |_  | |_ _  | | | | | ' /|  _|  
+ ___) | |\  || ||  _| |  _| |_| | |_| | . \| |___ 
+|____/|_| \_|___|_|   |_|  \___/ \___/|_|\_\_____|
+         
+${normal}"
+
 cd $GITREPOROOT
 
 sudo updatedb

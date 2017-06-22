@@ -16,7 +16,19 @@ DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/1.Network
 DSKTPFL=patator.desktop
 
 sudo rm -f /usr/local/bin/$EXECUTEABLE2
-#
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ ____   _  _____  _  _____ ___  ____  
+|  _ \ / \|_   _|/ \|_   _/ _ \|  _ \ 
+| |_) / _ \ | | / _ \ | || | | | |_) |
+|  __/ ___ \| |/ ___ \| || |_| |  _ < 
+|_| /_/   \_\_/_/   \_\_| \___/|_| \_\
+          
+${normal}"
+
 cd $GITREPOROOT 
 git clean -f
 git fetch origin

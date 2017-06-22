@@ -10,7 +10,18 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7
 DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
 DSKTPFL=nfspy.desktop
 
-#
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ _   _ _____ ____  ______   __
+| \ | |  ___/ ___||  _ \ \ / /
+|  \| | |_  \___ \| |_) \ V / 
+| |\  |  _|  ___) |  __/ | |  
+|_| \_|_|   |____/|_|    |_|  
+        
+${normal}"
+
 cd $GITREPOROOT
 
 sudo updatedb

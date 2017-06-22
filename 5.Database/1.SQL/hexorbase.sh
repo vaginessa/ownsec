@@ -17,7 +17,18 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/5
 DSKTPFLSDEST=/home/$USER/.local/share/applications/5.Database/1.SQL
 DSKTPFL=hexorbase.desktop
 
-#
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ _   _ _______  _____  ____  ____    _    ____  _____ 
+| | | | ____\ \/ / _ \|  _ \| __ )  / \  / ___|| ____|
+| |_| |  _|  \  / | | | |_) |  _ \ / _ \ \___ \|  _|  
+|  _  | |___ /  \ |_| |  _ <| |_) / ___ \ ___) | |___ 
+|_| |_|_____/_/\_\___/|_| \_\____/_/   \_\____/|_____|
+           
+${normal}"
+
 cd $GITREPOROOT
 git clean -f
 git fetch origin

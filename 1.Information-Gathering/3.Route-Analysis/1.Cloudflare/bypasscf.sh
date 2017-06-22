@@ -11,6 +11,20 @@ DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/3.Rou
 DSKTPFL=bypasscf.desktop
 
 sudo rm -f /usr/local/bin/bypasscf
+
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ ______   ______   _    ____ ____   ____ _____ 
+| __ ) \ / /  _ \ / \  / ___/ ___| / ___|  ___|
+|  _ \\ V /| |_) / _ \ \___ \___ \| |   | |_   
+| |_) || | |  __/ ___ \ ___) |__) | |___|  _|  
+|____/ |_| |_| /_/   \_\____/____/ \____|_|    
+      
+${normal}"
+
 cd $GITREPOROOT
 git clean -f 
 git fetch origin

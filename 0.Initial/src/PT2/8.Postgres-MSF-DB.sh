@@ -7,6 +7,19 @@ sudo updatedb
 sudo service postgresql start
 sudo service postgresql status
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ ____  ____   ___  _       __  __ ____  _____ 
+|  _ \/ ___| / _ \| |     |  \/  / ___||  ___|
+| |_) \___ \| | | | |     | |\/| \___ \| |_   
+|  __/ ___) | |_| | |___  | |  | |___) |  _|  
+|_|   |____/ \__\_\_____| |_|  |_|____/|_|    
+             
+${normal}"
+
+
 POSTGRES_USER="postgres"
 MSF_PASS=`cat /dev/urandom |base64 | head -c8`
 POSTGRES_PASS=`cat /dev/urandom |base64 | head -c8`

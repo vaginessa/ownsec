@@ -17,7 +17,19 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4
 DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/1.Network
 DSKTPFL=f-scrack.desktop
 
-#
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ _____    ____   ____ ____      _    ____ _  __
+|  ___|  / ___| / ___|  _ \    / \  / ___| |/ /
+| |_ ____\___ \| |   | |_) |  / _ \| |   | ' / 
+|  _|_____|__) | |___|  _ <  / ___ \ |___| . \ 
+|_|      |____/ \____|_| \_\/_/   \_\____|_|\_\
+             
+${normal}"
+
 cd $GITREPOROOT
 sudo updatedb
 sudo ldconfig

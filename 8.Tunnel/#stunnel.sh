@@ -14,6 +14,19 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/8
 DSKTPFLSDEST=/home/$USER/.local/share/applications/8.Tunnel
 DSKTPFL=stunnel.desktop
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ ____ _____ _   _ _   _ _   _ _____ _     
+/ ___|_   _| | | | \ | | \ | | ____| |    
+\___ \ | | | | | |  \| |  \| |  _| | |    
+ ___) || | | |_| | |\  | |\  | |___| |___ 
+|____/ |_|  \___/|_| \_|_| \_|_____|_____|
+             
+${normal}"
+
+
 cd $GITREPOROOT
 git clean -f
 git fetch origin

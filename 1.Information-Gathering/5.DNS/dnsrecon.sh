@@ -13,6 +13,19 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/5.DNS
 DSKTPFL=dnsrecon.desktop
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ ____  _   _ ____  ____  _____ ____ ___  _   _ 
+|  _ \| \ | / ___||  _ \| ____/ ___/ _ \| \ | |
+| | | |  \| \___ \| |_) |  _|| |  | | | |  \| |
+| |_| | |\  |___) |  _ <| |__| |__| |_| | |\  |
+|____/|_| \_|____/|_| \_\_____\____\___/|_| \_|
+           
+${normal}"
+
+
 cd $GITREPOROOT
 sudo rm -r /usr/local/bin/dnsrecon
 sudo rm -r /opt/ITSEC/1.Information-Gathering/5.DNS/dnsrecon/darkoperator/dnsrecon/dnsrecon

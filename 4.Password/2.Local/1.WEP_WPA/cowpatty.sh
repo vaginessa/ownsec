@@ -15,7 +15,18 @@ DSKTPFLS=/opt/Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Passw
 DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/2.Local/1.WEP_WPA
 DSKTPFL=cowpatty.desktop
 
-#
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+  ____ _____        ______   _  _____ _______   __
+ / ___/ _ \ \      / /  _ \ / \|_   _|_   _\ \ / /
+| |  | | | \ \ /\ / /| |_) / _ \ | |   | |  \ V / 
+| |__| |_| |\ V  V / |  __/ ___ \| |   | |   | |  
+ \____\___/  \_/\_/  |_| /_/   \_\_|   |_|   |_|  
+         
+${normal}"
+
 cd $GITREPOROOT
 make clean
 git clean -f 

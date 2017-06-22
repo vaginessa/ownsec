@@ -17,7 +17,19 @@ DSKTPFLSDEST=/home/$USER/.local/share/applications/6.Wireless/1.Wifi
 DSKTPFL=kismet.desktop
 mkdir -p $DSKTPFLSDEST 
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
-#
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ _  _____ ____  __  __ _____ _____ 
+| |/ /_ _/ ___||  \/  | ____|_   _|
+| ' / | |\___ \| |\/| |  _|   | |  
+| . \ | | ___) | |  | | |___  | |  
+|_|\_\___|____/|_|  |_|_____| |_|  
+           
+${normal}"
+
 cd $GITREPOROOT
 #git clean -f
 #git fetch origin

@@ -7,14 +7,27 @@ git clone https://github.com/Neohapsis/bbqsql.git
 sudo ldconfig
 sudo updatedb
 #
-sudo rm /usr/local/bin/sqlmapapi
-sudo rm /usr/local/bin/sqlmap
+sudo rm -f /usr/local/bin/sqlmapapi
+sudo rm -f /usr/local/bin/sqlmap
 #
 GITREPOROOT=/opt/ITSEC/5.Database/1.SQL/sqlmap/sqlmapproject/sqlmap
 #
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/5.Database/1.SQL
 DSKTPFLSDEST=/home/$USER/.local/share/applications/5.Database/1.SQL
 DSKTPFL=bbqsql.desktop
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ ____  ____   ___  ____   ___  _     
+| __ )| __ ) / _ \/ ___| / _ \| |    
+|  _ \|  _ \| | | \___ \| | | | |    
+| |_) | |_) | |_| |___) | |_| | |___ 
+|____/|____/ \__\_\____/ \__\_\_____|
+          
+${normal}"
+
 
 cd $GITREPOROOT
 git clean -f

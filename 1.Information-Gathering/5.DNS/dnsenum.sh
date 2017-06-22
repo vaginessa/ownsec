@@ -16,6 +16,19 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/5.DNS
 DSKTPFL=dnsenum.desktop
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ ____  _   _ ____  _____ _   _ _   _ __  __ 
+|  _ \| \ | / ___|| ____| \ | | | | |  \/  |
+| | | |  \| \___ \|  _| |  \| | | | | |\/| |
+| |_| | |\  |___) | |___| |\  | |_| | |  | |
+|____/|_| \_|____/|_____|_| \_|\___/|_|  |_|
+           
+${normal}"
+
+
 cd $GITREPOROOT
 git clean -f
 git fetch origin

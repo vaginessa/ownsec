@@ -13,6 +13,19 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/15.Web-Crawler_and_Directory-Bruteforce
 DSKTPFL=dirb.desktop
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ ____ ___ ____  ____  
+|  _ \_ _|  _ \| __ ) 
+| | | | || |_) |  _ \ 
+| |_| | ||  _ <| |_) |
+|____/___|_| \_\____/ 
+        
+${normal}"
+
+
 cd $GITREPOROOT
 #sudo rm  /usr/local/bin/$EXECUTEABLE2
 

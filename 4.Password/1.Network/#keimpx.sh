@@ -10,8 +10,23 @@ git clone https://github.com/inquisb/keimpx.git
 sudo udpatedb
 sudo ldconfig
 
+
 GITREPOROOT=/opt/ITSEC/4.Password/1.Network/keimpx/inquisb/keimpx
-#
+
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ _  _______ ___ __  __ ______  __
+| |/ / ____|_ _|  \/  |  _ \ \/ /
+| ' /|  _|  | || |\/| | |_) \  / 
+| . \| |___ | || |  | |  __//  \ 
+|_|\_\_____|___|_|  |_|_|  /_/\_\
+              
+${normal}"
+
+
 cd $GITREPOROOT
 git clean -f 
 git fetch origin

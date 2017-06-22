@@ -14,7 +14,18 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7
 DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
 DSKTPFL=netsniff.desktop
 
-#
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ _   _ _____ _____ ____  _   _ ___ _____ _____     _   _  ____ 
+| \ | | ____|_   _/ ___|| \ | |_ _|  ___|  ___|   | \ | |/ ___|
+|  \| |  _|   | | \___ \|  \| || || |_  | |_ _____|  \| | |  _ 
+| |\  | |___  | |  ___) | |\  || ||  _| |  _|_____| |\  | |_| |
+|_| \_|_____| |_| |____/|_| \_|___|_|   |_|       |_| \_|\____|
+             
+${normal}"
+
 cd $GITREPOROOT
 make clean
 git clean -f 

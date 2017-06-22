@@ -12,7 +12,19 @@ sudo updatedb
 sudo ldconfig
 #
 GITREPOROOT=/opt/ITSEC/8.Tunnel/miredo/darconeous/miredo
-#
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ __  __ ___ ____  _____ ____   ___  
+|  \/  |_ _|  _ \| ____|  _ \ / _ \ 
+| |\/| || || |_) |  _| | | | | | | |
+| |  | || ||  _ <| |___| |_| | |_| |
+|_|  |_|___|_| \_\_____|____/ \___/ 
+          
+${normal}"
+
 cd $GITREPOROOT
 
 git clean -f

@@ -27,6 +27,19 @@ sudo rm /usr/local/bin/$EXECUTEABLE2
 sudo rm /usr/local/bin/$EXECUTEABLE4
 sudo rm /usr/local/bin/$EXECUTEABLE6
 sudo rm /usr/local/bin/$EXECUTEABLE8
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ ____      _    ___ _   _ ____   _____        ______ ____      _    ____ _  __
+|  _ \    / \  |_ _| \ | | __ ) / _ \ \      / / ___|  _ \    / \  / ___| |/ /
+| |_) |  / _ \  | ||  \| |  _ \| | | \ \ /\ / / |   | |_) |  / _ \| |   | ' / 
+|  _ <  / ___ \ | || |\  | |_) | |_| |\ V  V /| |___|  _ <  / ___ \ |___| . \ 
+|_| \_\/_/   \_\___|_| \_|____/ \___/  \_/\_/  \____|_| \_\/_/   \_\____|_|\_\
+           
+${normal}"
+
 cd $GITREPOROOT
 make clean
 cd ..

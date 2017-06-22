@@ -16,6 +16,18 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/13.OSINT
 DSKTPFL=automater.desktop
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+    _   _   _ _____ ___  __  __    _  _____ _____ ____  
+   / \ | | | |_   _/ _ \|  \/  |  / \|_   _| ____|  _ \ 
+  / _ \| | | | | || | | | |\/| | / _ \ | | |  _| | |_) |
+ / ___ \ |_| | | || |_| | |  | |/ ___ \| | | |___|  _ < 
+/_/   \_\___/  |_| \___/|_|  |_/_/   \_\_| |_____|_| \_\
+          
+${normal}"
+
 cd $GITREPOROOT
 sudo rm -f /usr/local/bin/$EXECUTEABLE2
 sudo updatedb

@@ -12,6 +12,20 @@ DSKTPFL=ettercap.desktop
 
 sudo updatdb
 sudo ldconfig
+
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ _____ _____ _____ _____ ____   ____    _    ____  
+| ____|_   _|_   _| ____|  _ \ / ___|  / \  |  _ \ 
+|  _|   | |   | | |  _| | |_) | |     / _ \ | |_) |
+| |___  | |   | | | |___|  _ <| |___ / ___ \|  __/ 
+|_____| |_|   |_| |_____|_| \_\\____/_/   \_\_|    
+            
+${normal}"
+
 cd $GITREPOROOT
 cd build
 sudo make uninstall

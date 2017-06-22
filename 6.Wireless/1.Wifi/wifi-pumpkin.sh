@@ -15,6 +15,19 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/6
 DSKTPFLSDEST=/home/$USER/.local/share/applications/6.Wireless/1.Wifi
 DSKTPFL=wifipumpkin.desktop
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+__        _____ _____ ___ ____  _   _ __  __ ____  _  _____ _   _ 
+\ \      / /_ _|  ___|_ _|  _ \| | | |  \/  |  _ \| |/ /_ _| \ | |
+ \ \ /\ / / | || |_   | || |_) | | | | |\/| | |_) | ' / | ||  \| |
+  \ V  V /  | ||  _|  | ||  __/| |_| | |  | |  __/| . \ | || |\  |
+   \_/\_/  |___|_|   |___|_|    \___/|_|  |_|_|   |_|\_\___|_| \_|
+         
+${normal}"
+
+
 cd $GITREPOROOT
 git clean -f
 git fetch origin

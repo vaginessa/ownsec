@@ -10,6 +10,19 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/2.Live-Host
 DSKTPFL=netdiscover.desktop
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ _   _ _____ _____ ____ ___ ____   ____ _____     _______ ____  
+| \ | | ____|_   _|  _ \_ _/ ___| / ___/ _ \ \   / / ____|  _ \ 
+|  \| |  _|   | | | | | | |\___ \| |  | | | \ \ / /|  _| | |_) |
+| |\  | |___  | | | |_| | | ___) | |__| |_| |\ V / | |___|  _ < 
+|_| \_|_____| |_| |____/___|____/ \____\___/  \_/  |_____|_| \_\
+        
+${normal}"
+
+
 cd $GITREPOROOT
 cd build && make uninstall
 cd $GITREPOROOT

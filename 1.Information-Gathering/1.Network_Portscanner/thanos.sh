@@ -12,6 +12,19 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/1.Network_Portscanner
 DSKTPFL=thanos.desktop
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ _____ _   _    _    _   _  ___  ____  
+|_   _| | | |  / \  | \ | |/ _ \/ ___| 
+  | | | |_| | / _ \ |  \| | | | \___ \ 
+  | | |  _  |/ ___ \| |\  | |_| |___) |
+  |_| |_| |_/_/   \_\_| \_|\___/|____/ 
+        
+${normal}"
+
+
 cd $GITREPOROOT
 #make clean
 git clean -f

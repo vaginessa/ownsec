@@ -11,7 +11,18 @@ DSKTPFL=fruity-wifi.desktop
 mkdir -p /opt/ITSEC/6.Wireless/1.Wifi/fruitywifi/xtr4nge
 cd /opt/ITSEC/6.Wireless/1.Wifi/fruitywifi/xtr4nge
 git clone https://github.com/xtr4nge/FruityWifi.git
-#
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ _____ ____  _   _ ___ _______   ____        _____ _____ ___ 
+|  ___|  _ \| | | |_ _|_   _\ \ / /\ \      / /_ _|  ___|_ _|
+| |_  | |_) | | | || |  | |  \ V /  \ \ /\ / / | || |_   | | 
+|  _| |  _ <| |_| || |  | |   | |    \ V  V /  | ||  _|  | | 
+|_|   |_| \_\\___/|___| |_|   |_|     \_/\_/  |___|_|   |___|
+        
+${normal}"
 
 
 cd /opt/ITSEC/6.Wireless/1.Wifi/fruitywifi/xtr4nge/FruityWifi/

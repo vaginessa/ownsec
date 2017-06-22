@@ -11,7 +11,19 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/6
 DSKTPFLSDEST=/home/$USER/.local/share/applications/6.Wireless/1.Wifi/1.WPS
 DSKTPFL=reaver.desktop
 
-#
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ ____  _____    ___     _______ ____  
+|  _ \| ____|  / \ \   / / ____|  _ \ 
+| |_) |  _|   / _ \ \ / /|  _| | |_) |
+|  _ <| |___ / ___ \ V / | |___|  _ < 
+|_| \_\_____/_/   \_\_/  |_____|_| \_\
+            
+${normal}"
+
+
 cd $GITREPOROOT
 make clean
 

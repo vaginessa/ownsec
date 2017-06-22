@@ -7,6 +7,21 @@ git clone https://github.com/ShawnDEvans/smbmap.git
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/6.SMB/smbmap/ShawnDEvans/smbmap
 sudo rm -r /usr/local/bin/smbmap 
 sudo rm -r /opt/ITSEC/1.Information-Gathering/6.SMB/smbmap/ShawnDEvans/smbmap/smbmap.sh
+
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ ____  __  __ ____  __  __    _    ____  
+/ ___||  \/  | __ )|  \/  |  / \  |  _ \ 
+\___ \| |\/| |  _ \| |\/| | / _ \ | |_) |
+ ___) | |  | | |_) | |  | |/ ___ \|  __/ 
+|____/|_|  |_|____/|_|  |_/_/   \_\_|    
+     
+${normal}"
+
+
 cd $GITREPOROOT
 
 sudo apt-get purge --remove impacket

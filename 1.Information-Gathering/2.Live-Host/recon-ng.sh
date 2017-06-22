@@ -31,6 +31,19 @@ sudo rm -f /usr/local/bin/$EXECUTEABLE4
 sudo rm -f /usr/local/bin/$EXECUTEABLE6
 sudo rm -f /usr/local/bin/$EXECUTEABLE8
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ ____  _____ ____ ___  _   _       _   _  ____ 
+|  _ \| ____/ ___/ _ \| \ | |     | \ | |/ ___|
+| |_) |  _|| |  | | | |  \| |_____|  \| | |  _ 
+|  _ <| |__| |__| |_| | |\  |_____| |\  | |_| |
+|_| \_\_____\____\___/|_| \_|     |_| \_|\____|
+            
+${normal}"
+
+
 cd $GITREPOROOT
 git clean -f
 git fetch origin

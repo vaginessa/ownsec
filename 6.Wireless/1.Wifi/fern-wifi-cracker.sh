@@ -16,7 +16,19 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/6
 DSKTPFLSDEST=/home/$USER/.local/share/applications/6.Wireless/1.Wifi
 DSKTPFL=fern-wifi-cracker.desktop
 
-#
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ _____ _____ ____  _   _ 
+|  ___| ____|  _ \| \ | |
+| |_  |  _| | |_) |  \| |
+|  _| | |___|  _ <| |\  |
+|_|   |_____|_| \_\_| \_|
+          
+${normal}"
+
+
 cd $GITREPOROOT
 sudo rm -f /usr/local/bin/$EXECUTEABLE2
 git clean -f 

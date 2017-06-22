@@ -10,6 +10,19 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7
 DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
 DSKTPFL=sslsplit.desktop
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ ____ ____  _     ____  ____  _     ___ _____ 
+/ ___/ ___|| |   / ___||  _ \| |   |_ _|_   _|
+\___ \___ \| |   \___ \| |_) | |    | |  | |  
+ ___) |__) | |___ ___) |  __/| |___ | |  | |  
+|____/____/|_____|____/|_|   |_____|___| |_|  
+             
+${normal}"
+
+
 cd $GITREPOROOT
 sudo updatedb
 sudo ldconfig

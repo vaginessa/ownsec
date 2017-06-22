@@ -15,7 +15,18 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4
 DSKTPFLSDEST=/home/$USER/.local/share/applications/applications/4.Password/1.Network
 DSKTPFL=brut3k1t.desktop
 
-#
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ ____  ____  _   _ _____ _____ _  ___ _____ 
+| __ )|  _ \| | | |_   _|___ /| |/ / |_   _|
+|  _ \| |_) | | | | | |   |_ \| ' /| | | |  
+| |_) |  _ <| |_| | | |  ___) | . \| | | |  
+|____/|_| \_\\___/  |_| |____/|_|\_\_| |_|  
+          
+${normal}"
+
 cd $GITREPOROOT
 git clean -f 
 git fetch origin

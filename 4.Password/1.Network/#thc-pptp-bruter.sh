@@ -16,7 +16,19 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4
 DSKTPFLSDEST=/home/$USER/.local/share/applications
 DSKTPFL=thc-pptp-bruter.desktop
 
-#
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ _____ _   _  ____      ____  ____ _____ ____  
+|_   _| | | |/ ___|    |  _ \|  _ \_   _|  _ \ 
+  | | | |_| | |   _____| |_) | |_) || | | |_) |
+  | | |  _  | |__|_____|  __/|  __/ | | |  __/ 
+  |_| |_| |_|\____|    |_|   |_|    |_| |_|    
+                                               
+          
+${normal}"
+
 cd $GITREPOROOT
 sudo make uninstall
 make clean

@@ -18,6 +18,18 @@ DSKTPFL=wol-e.desktop
 EXECUTEABLE1=wol-e.py
 EXECUTEABLE2=wol-e
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+__        _____  _          _____ 
+\ \      / / _ \| |        | ____|
+ \ \ /\ / / | | | |   _____|  _|  
+  \ V  V /| |_| | |__|_____| |___ 
+   \_/\_/  \___/|_____|    |_____|
+            
+${normal}"
+
 cd $GITREPOROOT
 git clean -f
 git fetch origin

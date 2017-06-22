@@ -15,7 +15,18 @@ DSKTPFLS=/opt/Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Passw
 DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/2.Local
 DSKTPFL=hashcat.desktop
 
-#
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ _   _    _    ____  _   _  ____    _  _____ 
+| | | |  / \  / ___|| | | |/ ___|  / \|_   _|
+| |_| | / _ \ \___ \| |_| | |     / _ \ | |  
+|  _  |/ ___ \ ___) |  _  | |___ / ___ \| |  
+|_| |_/_/   \_\____/|_| |_|\____/_/   \_\_|  
+               
+${normal}"
+
 cd $GITREPOROOT
 
 make clean

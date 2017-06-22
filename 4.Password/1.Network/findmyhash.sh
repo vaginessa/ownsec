@@ -12,7 +12,20 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4
 DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/1.Network
 DSKTPFL=findmyhash.desktop
 
-rm -f/usr/local/bin/findmyhash
+rm -f /usr/local/bin/findmyhash
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ _____ ___ _   _ ____  __  ____   ___   _    _    ____  _   _ 
+|  ___|_ _| \ | |  _ \|  \/  \ \ / / | | |  / \  / ___|| | | |
+| |_   | ||  \| | | | | |\/| |\ V /| |_| | / _ \ \___ \| |_| |
+|  _|  | || |\  | |_| | |  | | | | |  _  |/ ___ \ ___) |  _  |
+|_|   |___|_| \_|____/|_|  |_| |_| |_| |_/_/   \_\____/|_| |_|
+           
+${normal}"
+
 cd $GITREPOROOT
 sudo updatedb
 sudo ldconfig

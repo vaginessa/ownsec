@@ -14,6 +14,19 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/5.DNS
 DSKTPFL=passivedns.desktop
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ ____   _    ____ ____ _____     _______ ____  _   _ ____  
+|  _ \ / \  / ___/ ___|_ _\ \   / / ____|  _ \| \ | / ___| 
+| |_) / _ \ \___ \___ \| | \ \ / /|  _| | | | |  \| \___ \ 
+|  __/ ___ \ ___) |__) | |  \ V / | |___| |_| | |\  |___) |
+|_| /_/   \_\____/____/___|  \_/  |_____|____/|_| \_|____/ 
+    
+${normal}"
+
+
 cd $GITREPOROOT
 git clean -f
 git fetch origin

@@ -15,7 +15,18 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7
 DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
 DSKTPFL=mitmf.desktop
 
-#
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ __  __ ___ _____ __  __ _____ 
+|  \/  |_ _|_   _|  \/  |  ___|
+| |\/| || |  | | | |\/| | |_   
+| |  | || |  | | | |  | |  _|  
+|_|  |_|___| |_| |_|  |_|_|    
+                                    
+${normal}"
+
 cd $GITREPOROOT
 git clean -f 
 git fetch origin

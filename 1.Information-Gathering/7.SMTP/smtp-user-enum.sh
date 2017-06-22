@@ -15,8 +15,21 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/7.SMTP
 DSKTPFL=smtp-user-enum.desktop
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ ____  __  __ _____ ____  _   _ ____  ____  _____ _   _ _   _ __  __ 
+/ ___||  \/  |_   _|  _ \| | | / ___||  _ \| ____| \ | | | | |  \/  |
+\___ \| |\/| | | | | |_) | | | \___ \| |_) |  _| |  \| | | | | |\/| |
+ ___) | |  | | | | |  __/| |_| |___) |  _ <| |___| |\  | |_| | |  | |
+|____/|_|  |_| |_| |_|    \___/|____/|_| \_\_____|_| \_|\___/|_|  |_|
+        
+${normal}"
+
+
 cd $GITREPOROOT
-sudo rm /usr/local/bin/$EXECUTEABLE2
+sudo rm -f /usr/local/bin/$EXECUTEABLE2
 sudo updatedb
 sudo ldconfig
 git clean -f

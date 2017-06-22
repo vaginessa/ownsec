@@ -15,7 +15,19 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4
 DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/2.Local
 DSKTPFL=johnny.desktop
 
-#
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+     _  ___  _   _ _   _ _   ___   __
+    | |/ _ \| | | | \ | | \ | \ \ / /
+ _  | | | | | |_| |  \| |  \| |\ V / 
+| |_| | |_| |  _  | |\  | |\  | | |  
+ \___/ \___/|_| |_|_| \_|_| \_| |_|  
+       
+${normal}"
+
+
 cd $GITREPOROOT
 sudo rm -r /usr/local/bin/johnny
 sudo updatedb

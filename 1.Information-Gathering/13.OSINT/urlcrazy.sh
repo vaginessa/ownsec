@@ -15,9 +15,21 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/13.OSINT
 DSKTPFL=urlcrazy.desktop
 
-#
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ _   _ ____  _     ____ ____      _     _______   __
+| | | |  _ \| |   / ___|  _ \    / \   |__  /\ \ / /
+| | | | |_) | |  | |   | |_) |  / _ \    / /  \ V / 
+| |_| |  _ <| |__| |___|  _ <  / ___ \  / /_   | |  
+ \___/|_| \_\_____\____|_| \_\/_/   \_\/____|  |_|  
+               
+${normal}"
+
+
 cd $GITREPOROOT
-sudo rm  /usr/local/bin/$EXECUTEABLE2
+sudo rm -f /usr/local/bin/$EXECUTEABLE2
 sudo updatedb
 git clean -f
 git fetch origin

@@ -19,6 +19,17 @@
 mkdir -p /opt/DEPS/Java/java8_install-setup
 cd /opt/DEPS/Java/java8_install-setup
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+     _ ____  _____ ___  
+    | |  _ \| ____( _ ) 
+ _  | | |_) |  _| / _ \ 
+| |_| |  _ <| |__| (_) |
+ \___/|_| \_\_____\___/ 
+             
+${normal}"
 
 mkdir jre8
 cd jre8
@@ -32,6 +43,15 @@ yes "Y" | sudo dpkg --force -i oracle-java8-jre_8u152~ea-build-b03_amd64.deb
 
 
 cd /opt/DEPS/Java/java8_install-setup
+
+echo "${bold}
+     _ ____  _  _____  
+    | |  _ \| |/ ( _ ) 
+ _  | | | | | ' // _ \ 
+| |_| | |_| | . \ (_) |
+ \___/|____/|_|\_\___/ 
+            
+${normal}"
 
 mkdir jdk8
 cd jdk8

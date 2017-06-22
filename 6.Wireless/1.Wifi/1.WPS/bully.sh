@@ -10,7 +10,18 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/6
 DSKTPFLSDEST=/home/$USER/.local/share/applications/6.Wireless/1.Wifi/1.WPS
 DSKTPFL=bully.desktop
 
-#
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ ____  _   _ _     _  __   __
+| __ )| | | | |   | | \ \ / /
+|  _ \| | | | |   | |  \ V / 
+| |_) | |_| | |___| |___| |  
+|____/ \___/|_____|_____|_|  
+       
+${normal}"
+
 cd $GITREPOROOT
 
 sudo updatedb
