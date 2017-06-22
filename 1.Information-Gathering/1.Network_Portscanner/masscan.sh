@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir -p /opt/ITSEC/1.Information-Gathering/1.Network_Portscanner/masscan/robertdavidgraham
-cd /opt/ITSEC/1.Information-Gathering/1.Network_Portscanner/masscan/robertdavidgrahamd
+cd /opt/ITSEC/1.Information-Gathering/1.Network_Portscanner/masscan/robertdavidgraham
 git clone https://github.com/robertdavidgraham/masscan.git
 #
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/1.Network_Portscanner/masscan/robertdavidgraham/masscan
