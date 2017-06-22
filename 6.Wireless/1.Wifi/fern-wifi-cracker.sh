@@ -2,7 +2,7 @@
 
 mkdir -p /opt/ITSEC/6.Wireless/1.Wifi/fern-wifi-cracker/savio-code
 cd /opt/ITSEC/6.Wireless/1.Wifi/fern-wifi-cracker/savio-code
-git clone https://github.com/savio-code/fern-wifi-cracker.sh
+git clone https://github.com/savio-code/fern-wifi-cracker.git
 
 sudo ldconfig
 sudo updatedb
