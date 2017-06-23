@@ -45,4 +45,4 @@ echo "listen_addresses = 'localhost'" >> "/etc/postgresql/$PG_VER/main/postgresq
 exit
 EOF
 
-sudo service postgresql restart
+#sudo service postgresql restart
