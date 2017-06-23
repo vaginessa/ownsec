@@ -17,11 +17,13 @@ pre 21.06.2017 downloads need to hardfork, delete the install-scripts dir and gi
 
 `cd /opt/ITSEC-Install-Scripts`
 
+`cd /opt/ITSEC-Install-Scripts/0.Initial`
 
-> `cd /opt/ITSEC-Install-Scripts/0.Initial`
-- `sudo ./1.sh` Upgrade the system;
-- `sudo ./2.sh` Install dependencies & tools - located at `/opt/ITSEC-Install-Scripts/0.Initial/src/PT2`
-- `sudo ./3.sh` To install the ITSEC applications by category.
+`sudo ./1.sh` Upgrade the system;
+
+`sudo ./2.sh` Install dependencies & tools - located at `/opt/ITSEC-Install-Scripts/0.Initial/src/PT2`
+
+`sudo ./3.sh` To install the ITSEC applications by category.
 
 
 or go to `/opt/ITSEC-Install-Scripts/0.Initial/src/PT*` 1-3 and run the respective parts. 
