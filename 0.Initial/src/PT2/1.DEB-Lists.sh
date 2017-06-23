@@ -44,7 +44,7 @@ ${normal}"
 #FLUSH PRIVILEGES;
 #EOF
 #####################################################
-
+sudo apt-get install -y macchanger 
 echo "${bold}
 Installing the apt-get lists - go get a coffee, will take a while ...   
 ${normal}"
