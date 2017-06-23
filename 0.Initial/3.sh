@@ -54,7 +54,7 @@ ${normal}"
 echo "${bold}
 ./8.Tunnel
 ${normal}"
-./8.Tunnel
+./8.Tunnel.sh
 #./9.Forensics.sh
 
 #Calling the reboot-script to restart this script 
