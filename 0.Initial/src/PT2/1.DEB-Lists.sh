@@ -16,37 +16,34 @@ echo "${bold}
         
 ${normal}"
 
+#####################################################
+# TEMP DISABLED MYSQL && PHPMYADMIN - No apps use it an install is not unattended
+#echo "${bold}
+#USING MYSQL AS DEFAULT MYSQL PASS - no default apps dependend on mysql yet, installed anyways     
+#${normal}"
+#echo "${bold}
+#Nginx installation still buggy, only used by fruity wifi
+#${normal}"
 
-echo "${bold}
-USING MYSQL AS DEFAULT MYSQL PASS - no default apps dependend on mysql yet, installed anyways     
-${normal}"
-echo "${bold}
-Nginx installation still buggy, only used by fruity wifi
-${normal}"
+## User interaction apps
+#sudo apt-get install -y macchanger 
+#sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password mysql'
+#sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password mysql'
 
-# User interaction apps
-sudo apt-get install -y macchanger 
-sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password mysql'
-sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password mysql'
+#sudo apt-get install -y mysql-server phpmyadmin
+##sudo mysql_secure_installation 
+#echo "${bold}
+#MYSQL SETUP   
+#${normal}"
 
-sudo apt-get install -y mysql-server phpmyadmin
-#sudo mysql_secure_installation 
-echo "${bold}
-MYSQL SETUP   
-${normal}"
-
-mysql -u root <<-EOF
-UPDATE mysql.user SET Password=PASSWORD('$,mysql') WHERE User='root';
-DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');
-DELETE FROM mysql.user WHERE User='';
-DELETE FROM mysql.db WHERE Db='test' OR Db='test_%';
-FLUSH PRIVILEGES;
-EOF
-
-echo "${bold}
-Nginx install moved back to fruitywifi installscript   
-${normal}"
-
+#mysql -u root <<-EOF
+#UPDATE mysql.user SET Password=PASSWORD('$,mysql') WHERE User='root';
+#DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');
+#DELETE FROM mysql.user WHERE User='';
+#DELETE FROM mysql.db WHERE Db='test' OR Db='test_%';
+#FLUSH PRIVILEGES;
+#EOF
+#####################################################
 
 echo "${bold}
 Installing the apt-get lists - go get a coffee, will take a while ...   
