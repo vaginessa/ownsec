@@ -1,9 +1,14 @@
 # ITSEC-Install-Scripts
 
+## BUGS (omg bugs, yeah lots of them - wont stop the script)
+- MYSQL-SERVER & PHPMYADMIN not fully unattended setup yet
+- redis setup maybe not working, onl needed for fruity wifi, be fixed later.
+- opt and home dir's change ownership to root during part 2 install, does not happen if scripts run without and pw enter on prompt - jst dont run as root.
+
+
 ## PREQUISITES
 
-- Blanc `16.04.2` based OS, build system is Xubuntu.
-- Current size of all installed apps aprox 19GB, havent measured how much bandwidth required 
+- Xubuntu 16.04 
 
 ## INSTALL
 
