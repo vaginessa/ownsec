@@ -11,19 +11,20 @@ pre 21.06.2017 downloads need to hardfork, delete the install-scripts dir and gi
 
 ## INSTALL
 
-`sudo chown -R $USER:$USER /opt` && `git clone https://github.com/alphaaurigae/ITSEC-Install-Scripts` && `cd /opt/ITSEC-Install-Scripts`
+`sudo chown -R $USER:$USER /opt`
 
-from here there are two ways - install everything by running 
+`git clone https://github.com/alphaaurigae/ITSEC-Install-Scripts`
 
-`sudo ./pwn.sh` # probably needs remake, meanwhile proceed ...
+`cd /opt/ITSEC-Install-Scripts`
 
-`cd /opt/ITSEC-Install-Scripts/0.Initial`
-and run the reboot parts one by one - 
-which is 
 
-`sudo ./1.sh` Upgrade the system;
-`sudo ./2.sh` Install dependencies & tools - located at `/opt/ITSEC-Install-Scripts/0.Initial/src/PT2`
-`sudo ./3.sh` To install the ITSEC applications by category.
+> `cd /opt/ITSEC-Install-Scripts/0.Initial`
+- `sudo ./1.sh` Upgrade the system;
+- `sudo ./2.sh` Install dependencies & tools - located at `/opt/ITSEC-Install-Scripts/0.Initial/src/PT2`
+- `sudo ./3.sh` To install the ITSEC applications by category.
+
+
+or go to `/opt/ITSEC-Install-Scripts/0.Initial/src/PT*` 1-3 and run the respective parts. 
 
 ## PART 1 
 
