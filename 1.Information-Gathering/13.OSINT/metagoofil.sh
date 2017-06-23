@@ -1,5 +1,20 @@
 #!/bin/bash
 
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ __  __ _____ _____  _    ____  ___   ___  _____ ___ _     
+|  \/  | ____|_   _|/ \  / ___|/ _ \ / _ \|  ___|_ _| |    
+| |\/| |  _|   | | / _ \| |  _| | | | | | | |_   | || |    
+| |  | | |___  | |/ ___ \ |_| | |_| | |_| |  _|  | || |___ 
+|_|  |_|_____| |_/_/   \_\____|\___/ \___/|_|   |___|_____|
+          
+${normal}"
+
+
+
 mkdir -p /opt/ITSEC/1.Information-Gathering/13.OSINT/metagoofil/opsdisk
 cd /opt/ITSEC/1.Information-Gathering/13.OSINT/metagoofil/opsdisk
 git clone https://github.com/opsdisk/metagoofil.git
@@ -15,19 +30,6 @@ DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/13.OS
 DSKTPFL=metagoofil.desktop
 
 sudo -H pip2 install google
-
-bold=$(tput bold)
-normal=$(tput sgr0)
-
-echo "${bold}
- __  __ _____ _____  _    ____  ___   ___  _____ ___ _     
-|  \/  | ____|_   _|/ \  / ___|/ _ \ / _ \|  ___|_ _| |    
-| |\/| |  _|   | | / _ \| |  _| | | | | | | |_   | || |    
-| |  | | |___  | |/ ___ \ |_| | |_| | |_| |  _|  | || |___ 
-|_|  |_|_____| |_/_/   \_\____|\___/ \___/|_|   |___|_____|
-          
-${normal}"
-
 
 cd $GITREPOROOT
 sudo rm /usr/local/bin/$EXECUTEABLE2

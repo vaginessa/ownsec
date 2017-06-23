@@ -1,6 +1,20 @@
 #!/bin/bash
 
 #works - rbenv ruby preinstalled with metasploit
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+__        _____  _          _____ 
+\ \      / / _ \| |        | ____|
+ \ \ /\ / / | | | |   _____|  _|  
+  \ V  V /| |_| | |__|_____| |___ 
+   \_/\_/  \___/|_____|    |_____|
+            
+${normal}"
+
+
+
 
 mkdir -p /opt/ITSEC/1.Information-Gathering/2.Live-Host/wol-e/dookie
 cd /opt/ITSEC/1.Information-Gathering/2.Live-Host/wol-e/dookie
@@ -18,17 +32,6 @@ DSKTPFL=wol-e.desktop
 EXECUTEABLE1=wol-e.py
 EXECUTEABLE2=wol-e
 
-bold=$(tput bold)
-normal=$(tput sgr0)
-
-echo "${bold}
-__        _____  _          _____ 
-\ \      / / _ \| |        | ____|
- \ \ /\ / / | | | |   _____|  _|  
-  \ V  V /| |_| | |__|_____| |___ 
-   \_/\_/  \___/|_____|    |_____|
-            
-${normal}"
 
 cd $GITREPOROOT
 git clean -f
@@ -38,12 +41,9 @@ git pull
 git submodule init
 git submodule update --recursive
 
+
 sudo ln -s $GITREPOROOT/$EXECUTEABLE1 /usr/local/bin/$EXECUTEABLE2
 mkdir -p $DSKTPFLSDEST 
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
-#rbenv shell 2.4.1
-#bundle install
-#gem install foreman
-#bundle exec rake db:migrate
 
 #foreman s
