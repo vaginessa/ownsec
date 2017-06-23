@@ -44,35 +44,10 @@ FLUSH PRIVILEGES;
 EOF
 
 echo "${bold}
-Nginx install still buggy  
+Nginx install moved back to fruitywifi installscript   
 ${normal}"
 
-yes "YES" | sudo apt-get install -y nginx
-echo "--------------------------------"
-echo "Create Nginx ssl certificate"
-echo "--------------------------------"
-cd /opt/ITSEC/6.Wireless/1.Wifi/fruitywifi/xtr4nge/FruityWifi
-sudo mkdir /etc/nginx/ssl
-sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl/nginx.key -out /etc/nginx/ssl/nginx.crt
 
-# REMOVE DEFAULT SITE
-sudo rm -f /etc/nginx/sites-enabled/default
-
-# SETUP NGINX AND PHP5|PHP7
-sudo cp nginx-setup/nginx.conf /etc/nginx/
-
-	# INSTALL PHP7
-	sudo apt-get -y install php7.0-fpm php7.0-curl php7.0-cli php7.0-xml
-	
-	sudo cp nginx-setup/FruityWiFi-PHP7 /etc/nginx/sites-enabled/
-	sudo cp nginx-setup/fpm-PHP7/8000.conf /etc/php/7.0/fpm/pool.d/
-	sudo cp nginx-setup/fpm-PHP7/8443.conf /etc/php/7.0/fpm/pool.d/
-	
-	# RESTART NGINX + PHP7-FPM
-	sudo /etc/init.d/nginx restart
-	sudo /etc/init.d/php7.0-fpm restart
-
-# MAIN
 echo "${bold}
 Installing the apt-get lists - go get a coffee, will take a while ...   
 ${normal}"

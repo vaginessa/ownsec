@@ -38,9 +38,18 @@ git clean -f
 git fetch origin
 git reset --hard origin/master
 git pull
-#sudo ./install-FruityWiFi-PHP7.sh
 
-sudo /etc/init.d/nginx restart
+
+sed -i 's/pip install netifaces/sudo -H pip install netifaces/g'
+sed -i 's/apt-get /sudo apt-get /g'
+sed -i 's#rm /#sudo rm /#g'
+sed -i 's#cp #sudo cp #g'
+sed -i 's#chown #sudo chown #g'
+sed -i 's#sed #sudo sed #g'
+sed -i 's#openssl #sudo openssl #g'
+sed -i 's#mkdir #sudo mkdir #g'
+sed -i 's#find #sudo find #g'
+./install-FruityWiFi-PHP7.sh
 
 echo "’!/bin/bash
 
@@ -53,79 +62,4 @@ chmod +x fruitywifi.sh
 sudo ln -s /opt/ITSEC/6.Wireless/1.Wifi/fruitywifi/xtr4nge/FruityWifi/fruitywifi.sh /usr/local/bin/fruitywify
 mkdir -p $DSKTPFLSDEST 
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
-
-find FruityWifi -type d -exec chmod 755 {} \;
-find FruityWifi -type f -exec chmod 644 {} \;
-
-mkdir tmp-install
-cd tmp-install
-
-sudo adduser --disabled-password --quiet --system --home /var/run/fruitywifi --no-create-home --gecos "FruityWiFi" --group fruitywifi
-sudo usermod -a -G inet fruitywifi
-
-sudo -H pip install netifaces
-
-DIR="/usr/share/fruitywifi"
-if [ -d "$DIR" ]; then
-	echo "--------------------------------"
-	echo "BACKUP CORE AND MODULES"
-	echo "--------------------------------"
-	cmd=`date +"%Y-%m-%d-%H-%M-%S"`
-	mv $DIR fruitywifi.BAK.$cmd	
-	echo
-fi
-
-echo "--------------------------------"
-echo "Setup FruityWiFi"
-echo "--------------------------------"
-cd $GITREPOROOT 
-echo
-
-echo "--------------------------------"
-echo "Config log path"
-echo "--------------------------------"
-
-EXEC="s,^\$log_path=.*,\$log_path=\""$fruitywifi_log_path"\";,g"
-sed -i "$EXEC" FruityWifi/www/config/config.php
-EXEC="s,^log-facility=.*,log-facility="$fruitywifi_log_path"/dnsmasq.log,g"
-sed -i "$EXEC" FruityWifi/conf/dnsmasq.conf
-EXEC="s,^dhcp-leasefile=.*,dhcp-leasefile="$fruitywifi_log_path"/dhcp.leases,g"
-sed -i "$EXEC" FruityWifi/conf/dnsmasq.conf
-EXEC="s,^Defaults:fruitywifi logfile =.*,Defaults:fruitywifi logfile = "$fruitywifi_log_path"/sudo.log,g"
-sed -i "$EXEC" sudo-setup/fruitywifi
-
-echo "[logs setup completed]"
-echo
-
-echo "--------------------------------"
-echo "Setup Sudo"
-echo "--------------------------------"
-cd $GITREPOROOT 
-sudo cp -a sudo-setup/fruitywifi /etc/sudoers.d/
-sudo chown root:root /etc/sudoers.d/fruitywifi
-
-echo "[sudo setup completed]"
-echo
-
-
-sudo cp -a FruityWifi /usr/share/fruitywifi
-#mkdir $fruitywifi_log_path
-ln -s $fruitywifi_log_path /usr/share/fruitywifi/www/logs
-
-
-
-sudo apt-get -y remove ifplugd
-
-echo
-echo "---------------------------"
-echo "WEB-INTERFACE"
-echo "---------------------------"
-echo "http://localhost:8000 [http]"
-echo "https://localhost:8443 [https]"
-echo "user: admin"
-echo "pass: admin"
-echo
-echo "GitHub: https://github.com/xtr4nge/FruityWifi"
-echo "Twitter: @xtr4nge, @FruityWifi"
-
 
