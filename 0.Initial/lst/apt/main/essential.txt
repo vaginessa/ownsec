@@ -67,7 +67,6 @@ lame
 lsb-release 
 lua-lpeg 
 lynx 
-macchanger 
 mcrypt
 memcached
 libmemcached-dev

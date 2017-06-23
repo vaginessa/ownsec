@@ -17,16 +17,37 @@ echo "${bold}
 ${normal}"
 
 
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/main/essential.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/main/libs.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/main/python.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/main/wifi-firmware.txt") -r -- sudo apt-get install -y
+echo "${bold}
+USING MYSQL AS DEFAULT MYSQL PASS - no default apps dependend on mysql yet, installed anyways     
+${normal}"
+echo "${bold}
+Nginx installation still buggy, only used by fruity wifi
+${normal}"
+
+# User interaction apps
+sudo apt-get install -y macchanger 
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password mysql'
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password mysql'
 
-sudo apt-get -y install mysql-server phpmyadmin
+sudo apt-get install -y mysql-server phpmyadmin
+#sudo mysql_secure_installation 
+echo "${bold}
+MYSQL SETUP   
+${normal}"
 
-yes "YES" | sudo apt-get -y install nginx
+mysql -u root <<-EOF
+UPDATE mysql.user SET Password=PASSWORD('$,mysql') WHERE User='root';
+DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');
+DELETE FROM mysql.user WHERE User='';
+DELETE FROM mysql.db WHERE Db='test' OR Db='test_%';
+FLUSH PRIVILEGES;
+EOF
+
+echo "${bold}
+Nginx install still buggy  
+${normal}"
+
+yes "YES" | sudo apt-get install -y nginx
 echo "--------------------------------"
 echo "Create Nginx ssl certificate"
 echo "--------------------------------"
@@ -51,14 +72,22 @@ sudo cp nginx-setup/nginx.conf /etc/nginx/
 	sudo /etc/init.d/nginx restart
 	sudo /etc/init.d/php7.0-fpm restart
 
+# MAIN
+echo "${bold}
+Installing the apt-get lists - go get a coffee, will take a while ...   
+${normal}"
 xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/main/essential.txt") -r -- sudo apt-get install -y
 xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/main/libs.txt") -r -- sudo apt-get install -y
 xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/main/python.txt") -r -- sudo apt-get install -y
 xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/main/wifi-firmware.txt") -r -- sudo apt-get install -y
 
 xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/main/database-webserver.txt") -r -- sudo apt-get install -y
+
+# Unsorted
 xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-miredo.txt") -r -- sudo apt-get install -y
 xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-virtualbox.txt") -r -- sudo apt-get install -y
+
+
 ## 1. INFO
 xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/main/docker.txt") -r -- sudo apt-get install -y
 
@@ -145,9 +174,23 @@ xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-e
 xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-sslh.txt") -r -- sudo apt-get install -y
 xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-stunnel.txt") -r -- sudo apt-get install -y
 
+echo "${bold}
+sudo apt-get install -y expect   
+${normal}"
+sudo apt-get install -y expect
+
+
+echo "${bold}
+apt-get remove list 
+${normal}"
 ###remove
 xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/main/remove-initial.txt") -r -- sudo apt-get purge --remove -y 
 
+echo "${bold}
+sudo apt-get autoremove -y   
+${normal}"
+
+sudo apt-get autoremove -y
 
 sudo apt-get install -y linux-image-extra-$(uname -r) 
 #sudo apt-get install -y linux-image-extra-virtual-$(uname -r)
@@ -158,37 +201,23 @@ ${normal}"
 
 sudo easy_install -U pip
 
-echo "${bold}
-sudo apt-get install -y expect   
-${normal}"
-sudo apt-get install -y expect
-
-#sudo mysql_secure_installation 
-echo "${bold}
-MYSQL SETUP   
-${normal}"
-
-mysql -u root <<-EOF
-UPDATE mysql.user SET Password=PASSWORD('$,mysql') WHERE User='root';
-DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');
-DELETE FROM mysql.user WHERE User='';
-DELETE FROM mysql.db WHERE Db='test' OR Db='test_%';
-FLUSH PRIVILEGES;
-EOF
-
-echo "${bold}
-sudo apt-get autoremove -y   
-${normal}"
-
-sudo apt-get autoremove -y
 sudo updatedb
 sudo ldconfig
+
 echo "${bold}
-cd /opt/ITSEC-Install-Scripts/0.Initial/src/settings-scripts/disable-services
-sudo ./disable-all.sh   
+cd /opt/ITSEC-Install-Scripts/0.Initial/src/settings-scripts/disable-services  
 ${normal}"
 cd /opt/ITSEC-Install-Scripts/0.Initial/src/settings-scripts/disable-services
+echo "${bold}
+sudo ./disable-all.sh   
+${normal}"
 sudo ./disable-all.sh
 
+echo "${bold}
+sudo phpenmod mcrypt  
+${normal}"
 sudo phpenmod mcrypt
+echo "${bold}
+sudo phpenmod mbstring 
+${normal}"
 sudo phpenmod mbstring
