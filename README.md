@@ -2,8 +2,8 @@
 
 ## BUGS (omg bugs, yeah lots of them - wont stop the script)
 - MYSQL-SERVER & PHPMYADMIN not fully unattended setup yet
-- redis setup maybe not working, onl needed for fruity wifi, be fixed later.
-- opt and home dir's change ownership to root during part 2 install, does not happen if scripts run without and pw enter on prompt - jst dont run as root.
+- nginx setup maybe not working, only needed for fruitywifi, be fixed later.
+- opt and home dir's change ownership to root during part 2 install, does not happen if scripts run without and pw enter on prompt - just dont run as root.
 
 
 ## PREQUISITES
