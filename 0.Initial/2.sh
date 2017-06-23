@@ -28,54 +28,54 @@ ${normal}"
 cd $srcdPT2
 
 echo "${bold}
-sudo ./1.DEB-Lists.sh    
+./1.DEB-Lists.sh    
 ${normal}"
-sudo ./1.DEB-Lists.sh
+./1.DEB-Lists.sh
 echo "${bold}
-sudo ./2.Node-Npm.sh   
+./2.Node-Npm.sh   
 ${normal}"
-sudo ./2.Node-Npm.sh
+./2.Node-Npm.sh
 #./3.replace-deb-w-dummy.sh
 #echo "${bold}
-#sudo ./4.IDE.sh  
+#./4.IDE.sh  
 #${normal}"
-#sudo ./4.IDE.sh
+#./4.IDE.sh
 echo "${bold}
-sudo ./5.Wifi-Firmware.sh 
+./5.Wifi-Firmware.sh 
 ${normal}"
-sudo ./5.Wifi-Firmware.sh
+./5.Wifi-Firmware.sh
 echo "${bold}
-sudo ./6.Java-JDK-JRE.sh
+./6.Java-JDK-JRE.sh
 ${normal}"
-sudo ./6.Java-JDK-JRE.sh
+./6.Java-JDK-JRE.sh
 echo "${bold}
-sudo ./7.RBENV-RUBY.sh
+./7.RBENV-RUBY.sh
 ${normal}"
-sudo ./7.RBENV-RUBY.sh
+./7.RBENV-RUBY.sh
 echo "${bold}
-sudo ./8.Postgres-MSF-DB.sh
+./8.Postgres-MSF-DB.sh
 ${normal}"
-sudo ./8.Postgres-MSF-DB.sh
+./8.Postgres-MSF-DB.sh
 echo "${bold}
-sudo ./9.Virtualbox.sh
+./9.Virtualbox.sh
 ${normal}"
-sudo ./9.Virtualbox.sh
+./9.Virtualbox.sh
 #./10.OpenSSL-1.1.0.sh doesent really work out of the box due to the system installed openssl depencies.
 echo "${bold}
-sudo ./11.Docker.sh
+./11.Docker.sh
 ${normal}"
-sudo ./11.Docker.sh
+./11.Docker.sh
 echo "${bold}
-sudo ./12.usr_environment.sh
+./12.usr_environment.sh
 ${normal}"
-sudo ./12.usr_environment.sh
+./12.usr_environment.sh
 echo "${bold}
-sudo ./13.dot.sh
+./13.dot.sh
 ${normal}"
-sudo ./13.dot.sh
+./13.dot.sh
 #
-sudo updatedb
-sudo ldconfig
+updatedb
+ldconfig
 
 node -v
 npm -v
