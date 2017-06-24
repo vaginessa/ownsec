@@ -1,5 +1,17 @@
 #!/bin/bash
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ ___ ____  ____   _    ____  
+|_ _|  _ \|  _ \ / \  / ___| 
+ | || |_) | |_) / _ \ \___ \ 
+ | ||  _ <|  __/ ___ \ ___) |
+|___|_| \_\_| /_/   \_\____/ 
+          
+${normal}"
+
 reporoot=/opt/ITSEC/1.Information-Gathering/3.Route-Analysis/irpas/phenoelit.org
 irpas=irpas_0.10
 irpasurl=http://www.phenoelit.org/irpas/irpas_0.10.tar.gz
@@ -28,17 +40,6 @@ DSKTPFL16=irpas-timestamp.desktop
 rm -f $DSKTPFLSDEST/irpas-*
 #
 
-bold=$(tput bold)
-normal=$(tput sgr0)
-
-echo "${bold}
- ___ ____  ____   _    ____  
-|_ _|  _ \|  _ \ / \  / ___| 
- | || |_) | |_) / _ \ \___ \ 
- | ||  _ <|  __/ ___ \ ___) |
-|___|_| \_\_| /_/   \_\____/ 
-          
-${normal}"
 
 
 cd $reporoot

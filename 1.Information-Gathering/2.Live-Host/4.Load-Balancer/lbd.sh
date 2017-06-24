@@ -1,5 +1,19 @@
 #!/bin/bash
 
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ _     ____  ____  
+| |   | __ )|  _ \ 
+| |   |  _ \| | | |
+| |___| |_) | |_| |
+|_____|____/|____/ 
+                     
+${normal}"
+
+
 mkdir -p /opt/ITSEC/1.Information-Gathering/2.Live-Host/4.Load-Balancer/lbd/KALI
 cd /opt/ITSEC/1.Information-Gathering/2.Live-Host/4.Load-Balancer/lbd/KALI
 git clone git://git.kali.org/packages/lbd.git
@@ -13,18 +27,6 @@ DSKTPFL=lbd.desktop
 EXECUTEABLE1=lbd
 EXECUTEABLE2=lbd
 
-
-bold=$(tput bold)
-normal=$(tput sgr0)
-
-echo "${bold}
- _     ____  ____  
-| |   | __ )|  _ \ 
-| |   |  _ \| | | |
-| |___| |_) | |_| |
-|_____|____/|____/ 
-                     
-${normal}"
 
 
 cd $GITREPOROOT

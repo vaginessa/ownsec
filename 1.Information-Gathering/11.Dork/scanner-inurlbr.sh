@@ -1,5 +1,18 @@
 #!/bin/bash
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ ____   ____ _   _      ___ _   _ _   _ ____  _     ____  ____  
+/ ___| / ___| \ | |    |_ _| \ | | | | |  _ \| |   | __ )|  _ \ 
+\___ \| |   |  \| |_____| ||  \| | | | | |_) | |   |  _ \| |_) |
+ ___) | |___| |\  |_____| || |\  | |_| |  _ <| |___| |_) |  _ < 
+|____/ \____|_| \_|    |___|_| \_|\___/|_| \_\_____|____/|_| \_\
+         
+${normal}"
+
+
 mkdir -p /opt/ITSEC/1.Information-Gathering/11.Dork/scanner-inurlbr/googleinurl
 cd /opt/ITSEC/1.Information-Gathering/11.Dork/scanner-inurlbr/googleinurl
 git clone https://github.com/googleinurl/SCANNER-INURLBR.git
@@ -14,18 +27,6 @@ EXECUTEABLE2=inurlbr
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/11.Dork
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/11.Dork
 DSKTPFL=scanner-inurlbr.desktop
-
-bold=$(tput bold)
-normal=$(tput sgr0)
-
-echo "${bold}
- ____   ____ _   _      ___ _   _ _   _ ____  _     ____  ____  
-/ ___| / ___| \ | |    |_ _| \ | | | | |  _ \| |   | __ )|  _ \ 
-\___ \| |   |  \| |_____| ||  \| | | | | |_) | |   |  _ \| |_) |
- ___) | |___| |\  |_____| || |\  | |_| |  _ <| |___| |_) |  _ < 
-|____/ \____|_| \_|    |___|_| \_|\___/|_| \_\_____|____/|_| \_\
-         
-${normal}"
 
 
 cd $GITREPOROOT

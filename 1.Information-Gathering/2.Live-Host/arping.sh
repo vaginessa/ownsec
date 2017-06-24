@@ -1,14 +1,5 @@
 #!/bin/bash
 
-mkdir -p /opt/ITSEC/1.Information-Gathering/2.Live-Host/arping/ThomasHabets
-cd /opt/ITSEC/1.Information-Gathering/2.Live-Host/arping/ThomasHabets
-git clone https://github.com/ThomasHabets/arping.git
-
-GITREPOROOT=/opt/ITSEC/1.Information-Gathering/2.Live-Host/arping/ThomasHabets/arping
-#
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/2.Live-Host
-DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/2.Live-Host
-DSKTPFL=arping.desktop
 
 bold=$(tput bold)
 normal=$(tput sgr0)
@@ -21,6 +12,17 @@ echo "${bold}
 /_/   \_\_| \_\_|  |___|_| \_|\____|
          
 ${normal}"
+
+
+mkdir -p /opt/ITSEC/1.Information-Gathering/2.Live-Host/arping/ThomasHabets
+cd /opt/ITSEC/1.Information-Gathering/2.Live-Host/arping/ThomasHabets
+git clone https://github.com/ThomasHabets/arping.git
+
+GITREPOROOT=/opt/ITSEC/1.Information-Gathering/2.Live-Host/arping/ThomasHabets/arping
+#
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/2.Live-Host
+DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/2.Live-Host
+DSKTPFL=arping.desktop
 
 
 cd $GITREPOROOT

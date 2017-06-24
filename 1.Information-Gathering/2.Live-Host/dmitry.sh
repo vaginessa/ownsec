@@ -1,5 +1,16 @@
 #!/bin/bash
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ ____  __  __ ___ _____ ______   __
+|  _ \|  \/  |_ _|_   _|  _ \ \ / /
+| | | | |\/| || |  | | | |_) \ V / 
+| |_| | |  | || |  | | |  _ < | |  
+|____/|_|  |_|___| |_| |_| \_\|_|  
+            
+${normal}"
 
 mkdir -p /opt/ITSEC/1.Information-Gathering/2.Live-Host/dmitry/jaygreig86
 cd /opt/ITSEC/1.Information-Gathering/2.Live-Host/dmitry/jaygreig86
@@ -14,17 +25,6 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/2.Live-Host
 DSKTPFL=dmitry.desktop
 
-bold=$(tput bold)
-normal=$(tput sgr0)
-
-echo "${bold}
- ____  __  __ ___ _____ ______   __
-|  _ \|  \/  |_ _|_   _|  _ \ \ / /
-| | | | |\/| || |  | | | |_) \ V / 
-| |_| | |  | || |  | | |  _ < | |  
-|____/|_|  |_|___| |_| |_| \_\|_|  
-            
-${normal}"
 
 
 cd $GITREPOROOT

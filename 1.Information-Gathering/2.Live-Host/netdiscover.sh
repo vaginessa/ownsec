@@ -1,15 +1,5 @@
 #!/bin/sh
 
-mkdir -p /opt/ITSEC/1.Information-Gathering/2.Live-Host/netdiscover/alexxy
-cd /opt/ITSEC/1.Information-Gathering/2.Live-Host/netdiscover/alexxy
-git clone https://github.com/alexxy/netdiscover.git
-
-GITREPOROOT=/opt/ITSEC/1.Information-Gathering/2.Live-Host/netdiscover/alexxy/netdiscover
-#
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/2.Live-Host
-DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/2.Live-Host
-DSKTPFL=netdiscover.desktop
-
 bold=$(tput bold)
 normal=$(tput sgr0)
 
@@ -21,6 +11,18 @@ echo "${bold}
 |_| \_|_____| |_| |____/___|____/ \____\___/  \_/  |_____|_| \_\
         
 ${normal}"
+
+
+mkdir -p /opt/ITSEC/1.Information-Gathering/2.Live-Host/netdiscover/alexxy
+cd /opt/ITSEC/1.Information-Gathering/2.Live-Host/netdiscover/alexxy
+git clone https://github.com/alexxy/netdiscover.git
+
+GITREPOROOT=/opt/ITSEC/1.Information-Gathering/2.Live-Host/netdiscover/alexxy/netdiscover
+#
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/2.Live-Host
+DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/2.Live-Host
+DSKTPFL=netdiscover.desktop
+
 
 
 cd $GITREPOROOT

@@ -1,5 +1,18 @@
 #!/bin/bash
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ ____ ____  _  __   ____________ 
+/ ___/ ___|| | \ \ / /__  / ____|
+\___ \___ \| |  \ V /  / /|  _|  
+ ___) |__) | |___| |  / /_| |___ 
+|____/____/|_____|_| /____|_____|
+           
+${normal}"
+
+
 mkdir -p /opt/ITSEC/1.Information-Gathering/4.SSL/sslyze/nabla-c0d3
 cd /opt/ITSEC/1.Information-Gathering/4.SSL/sslyze/nabla-c0d3
 git clone https://github.com/nabla-c0d3/sslyze.git
@@ -13,17 +26,6 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/4.SSL
 DSKTPFL=sslyze.desktop
 
-bold=$(tput bold)
-normal=$(tput sgr0)
-
-echo "${bold}
- ____ ____  _  __   ____________ 
-/ ___/ ___|| | \ \ / /__  / ____|
-\___ \___ \| |  \ V /  / /|  _|  
- ___) |__) | |___| |  / /_| |___ 
-|____/____/|_____|_| /____|_____|
-           
-${normal}"
 
 
 cd $GITREPOROOT

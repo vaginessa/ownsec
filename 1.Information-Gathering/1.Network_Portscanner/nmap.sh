@@ -1,5 +1,19 @@
 #!/bin/bash
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ _   _ __  __    _    ____  
+| \ | |  \/  |  / \  |  _ \ 
+|  \| | |\/| | / _ \ | |_) |
+| |\  | |  | |/ ___ \|  __/ 
+|_| \_|_|  |_/_/   \_\_|    
+            
+${normal}"
+
+
+
 mkdir -p /opt/ITSEC/1.Information-Gathering/1.Network_Portscanner/nmap/nmap
 cd /opt/ITSEC/1.Information-Gathering/1.Network_Portscanner/nmap/nmap
 git clone https://github.com/nmap/nmap.git
@@ -12,18 +26,6 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/1.Network_Portscanner
 DSKTPFL=nmap.desktop
 
-
-bold=$(tput bold)
-normal=$(tput sgr0)
-
-echo "${bold}
- _   _ __  __    _    ____  
-| \ | |  \/  |  / \  |  _ \ 
-|  \| | |\/| | / _ \ | |_) |
-| |\  | |  | |/ ___ \|  __/ 
-|_| \_|_|  |_/_/   \_\_|    
-            
-${normal}"
 
 
 cd $GITREPOROOT

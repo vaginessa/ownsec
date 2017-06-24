@@ -1,5 +1,19 @@
 #!/bin/bash
 
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ ____ ___ _   _  ____  ___   ___  
+| __ )_ _| \ | |/ ___|/ _ \ / _ \ 
+|  _ \| ||  \| | |  _| | | | | | |
+| |_) | || |\  | |_| | |_| | |_| |
+|____/___|_| \_|\____|\___/ \___/ 
+    
+${normal}"
+
+
 mkdir -p /opt/ITSEC/1.Information-Gathering/11.Dork/bingoo/Hood3dRob1n
 cd /opt/ITSEC/1.Information-Gathering/11.Dork/bingoo/Hood3dRob1n
 git clone https://github.com/Hood3dRob1n/BinGoo.git
@@ -14,20 +28,6 @@ EXECUTEABLE2=bingoo
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/11.Dork
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/11.Dork
 DSKTPFL=bingoo.desktop
-
-
-bold=$(tput bold)
-normal=$(tput sgr0)
-
-echo "${bold}
- ____ ___ _   _  ____  ___   ___  
-| __ )_ _| \ | |/ ___|/ _ \ / _ \ 
-|  _ \| ||  \| | |  _| | | | | | |
-| |_) | || |\  | |_| | |_| | |_| |
-|____/___|_| \_|\____|\___/ \___/ 
-    
-${normal}"
-
 
 cd $GITREPOROOT
 

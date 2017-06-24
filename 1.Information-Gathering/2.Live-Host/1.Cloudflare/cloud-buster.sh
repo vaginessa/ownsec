@@ -1,14 +1,5 @@
 #!/bin/bash
 
-mkdir -p /opt/ITSEC/1.Information-Gathering/2.Live-Host/1.Cloudflare/cloud-buster/SageHack
-cd /opt/ITSEC/1.Information-Gathering/2.Live-Host/1.Cloudflare/cloud-buster/SageHack
-git clone https://github.com/SageHack/cloud-buster.git
-
-GITREPOROOT=/opt/ITSEC/1.Information-Gathering/2.Live-Host/1.Cloudflare/cloud-buster/SageHack/cloud-buster
-#
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/2.Live-Host/1.Cloudflare
-DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/1.Cloudflare
-DSKTPFL=cloud-buster.desktop
 
 bold=$(tput bold)
 normal=$(tput sgr0)
@@ -21,6 +12,17 @@ echo "${bold}
  \____|_____\___/ \___/|____/      |____/ \___/|____/ |_| |_____|_| \_\
          
 ${normal}"
+
+
+mkdir -p /opt/ITSEC/1.Information-Gathering/2.Live-Host/1.Cloudflare/cloud-buster/SageHack
+cd /opt/ITSEC/1.Information-Gathering/2.Live-Host/1.Cloudflare/cloud-buster/SageHack
+git clone https://github.com/SageHack/cloud-buster.git
+
+GITREPOROOT=/opt/ITSEC/1.Information-Gathering/2.Live-Host/1.Cloudflare/cloud-buster/SageHack/cloud-buster
+#
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/2.Live-Host/1.Cloudflare
+DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/1.Cloudflare
+DSKTPFL=cloud-buster.desktop
 
 
 cd $GITREPOROOT

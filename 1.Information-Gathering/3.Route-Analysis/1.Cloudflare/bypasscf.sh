@@ -1,18 +1,5 @@
 #!/bin/bash
 
-mkdir -p /opt/ITSEC/1.Information-Gathering/3.Route-Analysis/1.Cloudflare/bypasscf/HackerOrientado
-cd /opt/ITSEC/1.Information-Gathering/3.Route-Analysis/1.Cloudflare/bypasscf/HackerOrientado
-git clone https://github.com/HackerOrientado/BypassCF.git
-
-GITREPOROOT=/opt/ITSEC/1.Information-Gathering/3.Route-Analysis/1.Cloudflare/bypasscf/HackerOrientado/BypassCF
-
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/3.Route-Analysis/1.Cloudflare
-DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/3.Route-Analysis/1.Cloudflare
-DSKTPFL=bypasscf.desktop
-
-sudo rm -f /usr/local/bin/bypasscf
-
-
 bold=$(tput bold)
 normal=$(tput sgr0)
 
@@ -24,6 +11,18 @@ echo "${bold}
 |____/ |_| |_| /_/   \_\____/____/ \____|_|    
       
 ${normal}"
+
+mkdir -p /opt/ITSEC/1.Information-Gathering/3.Route-Analysis/1.Cloudflare/bypasscf/HackerOrientado
+cd /opt/ITSEC/1.Information-Gathering/3.Route-Analysis/1.Cloudflare/bypasscf/HackerOrientado
+git clone https://github.com/HackerOrientado/BypassCF.git
+
+GITREPOROOT=/opt/ITSEC/1.Information-Gathering/3.Route-Analysis/1.Cloudflare/bypasscf/HackerOrientado/BypassCF
+
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/3.Route-Analysis/1.Cloudflare
+DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/3.Route-Analysis/1.Cloudflare
+DSKTPFL=bypasscf.desktop
+
+sudo rm -f /usr/local/bin/bypasscf
 
 cd $GITREPOROOT
 git clean -f 

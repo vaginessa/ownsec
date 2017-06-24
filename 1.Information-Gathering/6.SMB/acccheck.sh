@@ -1,5 +1,18 @@
 #!/bin/bash
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+    _    ____ ____ ____ _   _ _____ ____ _  __
+   / \  / ___/ ___/ ___| | | | ____/ ___| |/ /
+  / _ \| |  | |  | |   | |_| |  _|| |   | ' / 
+ / ___ \ |__| |__| |___|  _  | |__| |___| . \ 
+/_/   \_\____\____\____|_| |_|_____\____|_|\_\
+            
+${normal}"
+
+
 mkdir -p /opt/ITSEC/1.Information-Gathering/6.SMB/accceck/labs.portcullis.co.uk
 
 sudo udpatedb
@@ -13,17 +26,6 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/6.SMB
 DSKTPFL=acccheck.desktop
 
-bold=$(tput bold)
-normal=$(tput sgr0)
-
-echo "${bold}
-    _    ____ ____ ____ _   _ _____ ____ _  __
-   / \  / ___/ ___/ ___| | | | ____/ ___| |/ /
-  / _ \| |  | |  | |   | |_| |  _|| |   | ' / 
- / ___ \ |__| |__| |___|  _  | |__| |___| . \ 
-/_/   \_\____\____\____|_| |_|_____\____|_|\_\
-            
-${normal}"
 
 
 cd $reporoot

@@ -1,14 +1,5 @@
 #!/bin/bash
 
-mkdir -p /opt/ITSEC/1.Information-Gathering/6.SMB/smbmap/ShawnDEvans
-cd /opt/ITSEC/1.Information-Gathering/6.SMB/smbmap/ShawnDEvans
-git clone https://github.com/ShawnDEvans/smbmap.git
-
-GITREPOROOT=/opt/ITSEC/1.Information-Gathering/6.SMB/smbmap/ShawnDEvans/smbmap
-sudo rm -r /usr/local/bin/smbmap 
-sudo rm -r /opt/ITSEC/1.Information-Gathering/6.SMB/smbmap/ShawnDEvans/smbmap/smbmap.sh
-
-
 bold=$(tput bold)
 normal=$(tput sgr0)
 
@@ -21,6 +12,14 @@ echo "${bold}
      
 ${normal}"
 
+
+mkdir -p /opt/ITSEC/1.Information-Gathering/6.SMB/smbmap/ShawnDEvans
+cd /opt/ITSEC/1.Information-Gathering/6.SMB/smbmap/ShawnDEvans
+git clone https://github.com/ShawnDEvans/smbmap.git
+
+GITREPOROOT=/opt/ITSEC/1.Information-Gathering/6.SMB/smbmap/ShawnDEvans/smbmap
+sudo rm -r /usr/local/bin/smbmap 
+sudo rm -r /opt/ITSEC/1.Information-Gathering/6.SMB/smbmap/ShawnDEvans/smbmap/smbmap.sh
 
 cd $GITREPOROOT
 

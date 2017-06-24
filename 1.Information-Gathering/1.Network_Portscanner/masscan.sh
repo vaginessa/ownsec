@@ -1,15 +1,5 @@
 #!/bin/bash
 
-mkdir -p /opt/ITSEC/1.Information-Gathering/1.Network_Portscanner/masscan/robertdavidgraham
-cd /opt/ITSEC/1.Information-Gathering/1.Network_Portscanner/masscan/robertdavidgraham
-git clone https://github.com/robertdavidgraham/masscan.git
-#
-GITREPOROOT=/opt/ITSEC/1.Information-Gathering/1.Network_Portscanner/masscan/robertdavidgraham/masscan
-#
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/1.Network_Portscanner
-DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/1.Network_Portscanner
-DSKTPFL=masscan.desktop
-
 bold=$(tput bold)
 normal=$(tput sgr0)
 
@@ -21,6 +11,17 @@ echo "${bold}
 |_|  |_/_/   \_\____/____/ \____/_/   \_\_| \_|
         
 ${normal}"
+
+
+mkdir -p /opt/ITSEC/1.Information-Gathering/1.Network_Portscanner/masscan/robertdavidgraham
+cd /opt/ITSEC/1.Information-Gathering/1.Network_Portscanner/masscan/robertdavidgraham
+git clone https://github.com/robertdavidgraham/masscan.git
+#
+GITREPOROOT=/opt/ITSEC/1.Information-Gathering/1.Network_Portscanner/masscan/robertdavidgraham/masscan
+#
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/1.Network_Portscanner
+DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/1.Network_Portscanner
+DSKTPFL=masscan.desktop
 
 
 cd $GITREPOROOT

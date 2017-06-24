@@ -1,5 +1,19 @@
 #!/bin/bash
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ _______  __    _    ____  
+|__  /  \/  |  / \  |  _ \ 
+  / /| |\/| | / _ \ | |_) |
+ / /_| |  | |/ ___ \|  __/ 
+/____|_|  |_/_/   \_\_|    
+            
+${normal}"
+
+
+
 mkdir -p /opt/ITSEC/1.Information-Gathering/1.Network_Portscanner/zmap/zmap
 cd /opt/ITSEC/1.Information-Gathering/1.Network_Portscanner/zmap/zmap
 git clone https://github.com/zmap/zmap.git
@@ -12,18 +26,6 @@ DSKTPFL=zmap.desktop
 
 sudo ldconfig
 sudo updatedb
-
-bold=$(tput bold)
-normal=$(tput sgr0)
-
-echo "${bold}
- _______  __    _    ____  
-|__  /  \/  |  / \  |  _ \ 
-  / /| |\/| | / _ \ | |_) |
- / /_| |  | |/ ___ \|  __/ 
-/____|_|  |_/_/   \_\_|    
-            
-${normal}"
 
 
 cd $GITREPOROOT
