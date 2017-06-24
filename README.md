@@ -23,7 +23,7 @@
 `./1.sh` Upgrade the system - scripts located at `/opt/ITSEC-Install-Scripts/0.Initial/src/PT1`
 
 > Part 1 asciinema 23.6.17 ...
-<a href="https://asciinema.org/a/UsI7HP7zTjCUPDL6jHOeJ9Kfd" target="_blank"><img src="https://asciinema.org/a/UsI7HP7zTjCUPDL6jHOeJ9Kfd.png" width="835"/></a>
+<a href="https://asciinema.org/a/UsI7HP7zTjCUPDL6jHOeJ9Kfd" target="_blank"><img src="https://asciinema.org/a/UsI7HP7zTjCUPDL6jHOeJ9Kfd.png" width="250"/></a>
 
 
 `./2.sh` Install dependencies & tools - scripts located at `/opt/ITSEC-Install-Scripts/0.Initial/src/PT2`
