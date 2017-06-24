@@ -12,9 +12,9 @@
 
 `sudo chown -R $USER:$USER /opt`
 
-`git clone https://github.com/alphaaurigae/ITSEC-Install-Scripts`
+`cd /opt`
 
-`cd /opt/ITSEC-Install-Scripts`
+`git clone https://github.com/alphaaurigae/ITSEC-Install-Scripts`
 
 `cd /opt/ITSEC-Install-Scripts/0.Initial`
 
