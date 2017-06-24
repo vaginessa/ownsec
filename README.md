@@ -22,14 +22,8 @@
 
 `./1.sh` Upgrade the system - scripts located at `/opt/ITSEC-Install-Scripts/0.Initial/src/PT1`
 
-> Part 1 asciinema 23.6.17 ...
-<a href="https://asciinema.org/a/UsI7HP7zTjCUPDL6jHOeJ9Kfd" target="_blank"><img src="https://asciinema.org/a/UsI7HP7zTjCUPDL6jHOeJ9Kfd.png" width="250"/></a>
-
 
 `./2.sh` Install dependencies & tools - scripts located at `/opt/ITSEC-Install-Scripts/0.Initial/src/PT2`
-
-> Part 2 asciinema 23.6.17 ... 
-https://asciinema.org/a/uVxomq9RM4m9oYqe6riw41iBL
 
 
 `./3.sh` Install applications by category - scripts located at `/opt/ITSEC-Install-Scripts/0.Initial/src/PT3`
@@ -42,9 +36,16 @@ https://asciinema.org/a/uVxomq9RM4m9oYqe6riw41iBL
 
 ## PART 1 
 
+> Part 1 asciinema 23.6.17 ...
+
+<a href="https://asciinema.org/a/UsI7HP7zTjCUPDL6jHOeJ9Kfd" target="_blank"><img src="https://asciinema.org/a/UsI7HP7zTjCUPDL6jHOeJ9Kfd.png" width="250"/></a>
+
 
 ## PART 2 
 
+> Part 2 asciinema 23.6.17 ... 
+
+<a href="https://asciinema.org/a/uVxomq9RM4m9oYqe6riw41iBL" target="_blank"><img src="https://asciinema.org/a/uVxomq9RM4m9oYqe6riw41iBL.png" width="250"/></a>
 
 ## PART 3
 
