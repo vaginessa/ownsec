@@ -19,6 +19,7 @@
 `cd /opt/ITSEC-Install-Scripts/0.Initial`
 
 ###Dont run the script as root/sudo - sudo will be prompted if needed.
+
 `./1.sh` Upgrade the system - scripts located at `/opt/ITSEC-Install-Scripts/0.Initial/src/PT1`
 
 > Part 1 asciinema 23.6.17 ...
