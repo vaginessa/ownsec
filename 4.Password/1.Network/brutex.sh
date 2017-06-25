@@ -12,11 +12,11 @@ echo "${bold}
       
 ${normal}"
 
-mkdir -p /opt/ITSEC-Install-Scripts/4.Password/1.Network/brutex/1N3
-cd /opt/ITSEC-Install-Scripts/4.Password/1.Network/brutex/1N3
+mkdir -p /opt/ITSEC/4.Password/1.Network/brutex/1N3
+cd /opt/ITSEC/4.Password/1.Network/brutex/1N3
 git clone https://github.com/1N3/BruteX
 
-cd /opt/ITSEC-Install-Scripts/4.Password/1.Network/brutex/1N3/BruteX
+cd /opt/ITSEC/4.Password/1.Network/brutex/1N3/BruteX
 
 # Install script for BruteX
 #
@@ -37,13 +37,13 @@ echo -e "$COLOR1 + -- --=[BruteX v1.5 by 1N3$RESET"
 echo -e "$COLOR1 + -- --=[http://crowdshield.com$RESET"
 echo -e "$RESET"
 
-BRUTEX_INSTALL_DIR=/opt/ITSEC-Install-Scripts/4.Password/1.Network/brutex/1N3/BruteX
+BRUTEX_INSTALL_DIR=/opt/ITSEC/4.Password/1.Network/brutex/1N3/BruteX
 
 echo -e "$OKGREEN + -- --=[This script will install brutex under $BRUTEX_INSTALL_DIR."
 cd $BRUTEX_INSTALL_DIR
 mkdir loot
 chmod +x $BRUTEX_INSTALL_DIR/brutex
-sudo rm -f /usr/bin/brutex
-sudo ln -s /usr/share/brutex/brutex /usr/bin/brutex
+sudo rm -f /usr/local/bin/brutex
+sudo ln -s $BRUTEX_INSTALL_DIR/brutex /usr/local/bin/brutex
 
 echo -e "$OKORANGE + -- --=[Done!$RESET"
