@@ -1,7 +1,7 @@
 # ITSEC-Install-Scripts
 
 
-## BUGS (omg bugs, yeah lots of them - wont stop the script)
+## BUGS
  
 > somehow default jre is installed during the setup, if its not removed some java programs fail.
 
