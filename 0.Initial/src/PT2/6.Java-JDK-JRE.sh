@@ -17,7 +17,6 @@
 ############################# INSTALL JAVA8 END #############################
 
 mkdir -p /opt/DEPS/Java/java8_install-setup
-cd /opt/DEPS/Java/java8_install-setup
 
 bold=$(tput bold)
 normal=$(tput sgr0)
@@ -31,18 +30,22 @@ echo "${bold}
              
 ${normal}"
 
-mkdir jre8
-cd jre8
-wget http://download.java.net/java/jdk8u152/archive/b03/binaries/jre-8u152-ea-bin-b03-linux-x64-19_apr_2017.tar.gz
-wget http://download.java.net/java/jdk8u152/archive/b03/binaries/jre-8u152-ea-bin-b03-linux-x64-19_apr_2017.sha256
-cat jre-8u152-ea-bin-b03-linux-x64-19_apr_2017.sha256
-sha256sum jre-8u152-ea-bin-b03-linux-x64-19_apr_2017.tar.gz
-yes "Y" | make-jpkg jre-8u152-ea-bin-b03-linux-x64-19_apr_2017.tar.gz
-yes "Y" | sudo dpkg -i oracle-java8-jre_8u152~ea-build-b03_amd64.deb 
-
-
+releasename_url_jre=http://download.java.net/java/jdk8u152/archive/b03/binaries/jre-8u152-ea-bin-b03-linux-x64-19_apr_2017
+releasename_jre=jre-8u152-ea-bin-b03-linux-x64-19_apr_2017
+dpkgname_jre=oracle-java8-jre_8u152~ea-build-b03_amd64
 
 cd /opt/DEPS/Java/java8_install-setup
+mkdir jre8
+cd jre8
+wget $releasename_url_jre.tar.gz
+wget $releasename_url_jre.sha256
+cat $releasename_jre.sha256
+sha256sum $releasename_jre.tar.gz
+yes "Y" | make-jpkg $releasename_jre.tar.gz
+yes "Y" | sudo dpkg -i $dpkgname_jre.deb 
+
+
+
 
 echo "${bold}
      _ ____  _  _____  
@@ -53,13 +56,16 @@ echo "${bold}
             
 ${normal}"
 
+releasename_url_jdk=http://download.java.net/java/jdk8u152/archive/b03/binaries/jdk-8u152-ea-bin-b03-linux-x64-19_apr_2017
+releasename_jdk=jdk-8u152-ea-bin-b03-linux-x64-19_apr_2017
+dpkgname_jdk=oracle-java8-jdk_8u152~ea-build-b03_amd64
+
+cd /opt/DEPS/Java/java8_install-setup
 mkdir jdk8
 cd jdk8
-wget http://download.java.net/java/jdk8u152/archive/b03/binaries/jdk-8u152-ea-bin-b03-linux-x64-19_apr_2017.tar.gz
-#wget http://download.java.net/java/jdk8u152/archive/b03/binaries/jdk-8u152-ea-bin-b03-linux-x64-19_apr_2017.sha256
-cat jdk-8u152-ea-bin-b03-linux-x64-19_apr_2017.sha256
-sha256sum jdk-8u152-ea-bin-b03-linux-x64-19_apr_2017.tar.gz
-yes "Y" | make-jpkg jdk-8u152-ea-bin-b03-linux-x64-19_apr_2017.tar.gz
-yes "Y" | sudo dpkg -i oracle-java8-jdk_8u152~ea-build-b03_amd64.deb 
-cd ..
-
+wget $releasename_url_jdk.tar.gz
+wget $releasename_url_jdk.sha256
+cat $releasename_jdk.sha256
+sha256sum $releasename_jre.tar.gz
+yes "Y" | make-jpkg $releasename_jdk.tar.gz
+yes "Y" | sudo dpkg -i $dpkgname_jdk.deb 

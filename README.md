@@ -7,6 +7,9 @@
  
 > msfdb setup not working on current install , worked prev, checking on next install
 
+> somehow default jre is installed during the setup, if its not removed some java programs fail.
+
+
 ## PREQUISITES
 
 - Xubuntu 16.04 
