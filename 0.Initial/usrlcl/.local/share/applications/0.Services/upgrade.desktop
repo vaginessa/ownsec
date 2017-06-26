@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=sudo apt-get update & upgrade
+Encoding=UTF-8
+Exec=sh -c "upgrade.sh;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=0.Services;
