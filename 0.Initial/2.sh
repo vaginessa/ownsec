@@ -81,7 +81,9 @@ node -v
 npm -v
 ruby -v
 rbenv -v
+rbenv local 2.4.1
 rbenv local
+rbenv global 2.4.1
 rbenv global
 docker -v 
 java -version

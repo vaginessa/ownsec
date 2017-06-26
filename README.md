@@ -1,8 +1,11 @@
 # ITSEC-Install-Scripts
 
-## BUGS (omg bugs, yeah lots of them - wont stop the script)
 - opt and home dir's change ownership to root during part 2 install, does not happen if scripts run without and pw enter on prompt - just dont run as root.
 
+
+## BUGS (omg bugs, yeah lots of them - wont stop the script)
+ 
+> msfdb setup not working on current install , worked prev, checking on next install
 
 ## PREQUISITES
 
