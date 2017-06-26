@@ -1,7 +1,7 @@
 #!/bin/bash
 
-mkdir -p /opt/ITSEC/6.Wireless/1.Wifi/3.Jammer/hostapd-wpe/OpenSecurityResearch
-cd /opt/ITSEC/6.Wireless/1.Wifi/3.Jammer/hostapd-wpe/OpenSecurityResearch
+mkdir -p /opt/ITSEC/6.Wireless/1.Wifi/4.Evil-Twin/hostapd-wpe/OpenSecurityResearch
+cd /opt/ITSEC/6.Wireless/1.Wifi/4.Evil-Twin/hostapd-wpe/OpenSecurityResearch
 git clone https://github.com/OpenSecurityResearch/hostapd-wpe.git
 
 GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/4.Evil-Twin/hostapd-wpe/OpenSecurityResearch/hostapd-wpe
