@@ -39,9 +39,9 @@
 > or go to `/opt/ITSEC-Install-Scripts/0.Initial/src/PT*` 1-3 and run the respective parts. 
 
 
+# XFCE Desktop 
 
-
-![menu](http://i.imgur.com/UZOA2Yp.png)
+![menu](http://i.imgur.com/T8AtF9E.png)
 
 
 
