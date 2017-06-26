@@ -19,6 +19,7 @@ echo "${bold}
        
 ${normal}"
 
+sudo apt-get purge -remove -y default-jre
 echo "${bold}
 cd /opt/ITSEC-Install-Scripts/0.Initial/src/PT3   
 ${normal}"

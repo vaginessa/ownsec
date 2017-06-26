@@ -172,6 +172,7 @@ ${normal}"
 
 sudo easy_install -U pip
 
+sudo apt-get purge --remove -y openjdk-8-jre openjdk-8-jre openjdk-8-jre-headless
 sudo updatedb
 sudo ldconfig
 
