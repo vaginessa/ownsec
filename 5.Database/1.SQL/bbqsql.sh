@@ -1,7 +1,7 @@
 #!/bin/bash
 
-mkdir -p /opt/ITSEC/5.Database/1.SQL/bbqsql/Neohapsis/
-cd /opt/ITSEC/5.Database/1.SQL/bbqsql/Neohapsis/
+mkdir -p /opt/ITSEC/5.Database/1.SQL/bbqsql/Neohapsis
+cd /opt/ITSEC/5.Database/1.SQL/bbqsql/Neohapsis
 git clone https://github.com/Neohapsis/bbqsql.git
 
 sudo ldconfig
@@ -10,7 +10,7 @@ sudo updatedb
 sudo rm -f /usr/local/bin/sqlmapapi
 sudo rm -f /usr/local/bin/sqlmap
 #
-GITREPOROOT=/opt/ITSEC/5.Database/1.SQL/sqlmap/sqlmapproject/sqlmap
+GITREPOROOT=/opt/ITSEC/5.Database/1.SQL/bbqsql/Neohapsis/bbqsql
 #
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/5.Database/1.SQL
 DSKTPFLSDEST=/home/$USER/.local/share/applications/5.Database/1.SQL
