@@ -1,7 +1,5 @@
 # ITSEC-Install-Scripts
 
-- opt and home dir's change ownership to root during part 2 install, does not happen if scripts run without and pw enter on prompt - just dont run as root.
-
 
 ## BUGS (omg bugs, yeah lots of them - wont stop the script)
  
@@ -25,7 +23,7 @@
 
 `cd /opt/ITSEC-Install-Scripts/0.Initial`
 
-###Dont run the script as root/sudo - sudo will be prompted if needed.
+### Dont run the script as root/sudo - sudo will be prompted if needed.
 
 `./1.sh` Upgrade the system - scripts located at `/opt/ITSEC-Install-Scripts/0.Initial/src/PT1`
 
@@ -41,6 +39,9 @@
 > or go to `/opt/ITSEC-Install-Scripts/0.Initial/src/PT*` 1-3 and run the respective parts. 
 
 
+
+
+![menu](http://i.imgur.com/UZOA2Yp.png)
 
 
 
