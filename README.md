@@ -49,28 +49,19 @@ rec 26.6.17
 > Part 3 - 1.Information-Gathering 
 <a href="https://asciinema.org/a/h7gFFym7QCS9IUx3ftmBw4mro" target="_blank"><img src="https://asciinema.org/a/h7gFFym7QCS9IUx3ftmBw4mro.png" width="150"/></a>
 
-> Part 3 - 2.Vulnerability-Analysis 
-- asciinema crash
+> 2.Vulnerability-Analysis - asciinema crash
 
-> Part 3 - 3.Exploitation-Tools
-<a href="https://asciinema.org/a/8rSMLOLR5WWuimIuzY5HBkStx" target="_blank"><img src="https://asciinema.org/a/8rSMLOLR5WWuimIuzY5HBkStx.png" width="150"/></a>
+> 3.Exploitation-Tools https://asciinema.org/a/8rSMLOLR5WWuimIuzY5HBkStx
 
-> Part 3 - 4.Password
-<a href="https://asciinema.org/a/XcZq5mryCjEjBvo2fE4PXIFSW" target="_blank"><img src="https://asciinema.org/a/XcZq5mryCjEjBvo2fE4PXIFSW.png" width="150"/></a>
+> 4.Password https://asciinema.org/a/XcZq5mryCjEjBvo2fE4PXIFSW
 
-> Part 3 - 5.Database 
-<a href="https://asciinema.org/a/p6rcGGpA0joGLH2f6dZsWA87p" target="_blank"><img src="https://asciinema.org/a/p6rcGGpA0joGLH2f6dZsWA87p.png" width="150"/></a>
+> 5.Database https://asciinema.org/a/p6rcGGpA0joGLH2f6dZsWA87p
 
-> Part 3 - 6.Wireless 
-<a href="https://asciinema.org/a/p6rcGGpA0joGLH2f6dZsWA87p" target="_blank"><img src="https://asciinema.org/a/p6rcGGpA0joGLH2f6dZsWA87p.png" width="150"/></a>
+> 6.Wireless https://asciinema.org/a/JfuSr0z9IMkJSMydI9fc29bV8
 
-> Part 3 - 7.Mitm
-<a href="https://asciinema.org/a/MsrLiYpAqzLQ79kMSe82ZgYBE" target="_blank"><img src="https://asciinema.org/a/MsrLiYpAqzLQ79kMSe82ZgYBE.png" width="150"/></a>
+> 7.Mitm https://asciinema.org/a/MsrLiYpAqzLQ79kMSe82ZgYBE
 
-> Part 3 - 8.Tunnel
-<a href="https://asciinema.org/a/jVRefqc8nXXhQKxIuqjHw2bjw" target="_blank"><img src="https://asciinema.org/a/jVRefqc8nXXhQKxIuqjHw2bjw.png" width="150"/></a>
-
-
+> 8.Tunnel https://asciinema.org/a/jVRefqc8nXXhQKxIuqjHw2bjw
 
 ## PART 2 
 > Install Dependencies and base applications see `.../0.Initial/src/PT2/` and `.../0.Initial/lst/apt/`.
