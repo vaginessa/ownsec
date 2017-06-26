@@ -40,18 +40,23 @@ git reset --hard origin/master
 git pull
 
 
-sed -i 's/pip install netifaces/sudo -H pip install netifaces/g'
-sed -i 's/apt-get /sudo apt-get /g'
-sed -i 's#rm /#sudo rm /#g'
-sed -i 's#cp #sudo cp #g'
-sed -i 's#chown #sudo chown #g'
-sed -i 's#sed #sudo sed #g'
-sed -i 's#openssl #sudo openssl #g'
-sed -i 's#mkdir #sudo mkdir #g'
-sed -i 's#find #sudo find #g'
+sed -i 's/pip install netifaces/sudo -H pip install netifaces/g' install-FruityWiFi-PHP7.sh
+sed -i 's/apt-get /sudo apt-get /g' install-FruityWiFi-PHP7.sh
+sed -i 's#rm /#sudo rm /#g' install-FruityWiFi-PHP7.sh
+sed -i 's#cp #sudo cp #g' install-FruityWiFi-PHP7.sh
+sed -i 's#chown #sudo chown #g' install-FruityWiFi-PHP7.sh
+sed -i 's#sed #sudo sed #g' install-FruityWiFi-PHP7.sh
+sed -i 's#openssl #sudo openssl #g' install-FruityWiFi-PHP7.sh
+sed -i 's#mkdir #sudo mkdir #g' install-FruityWiFi-PHP7.sh
+sed -i 's#find #sudo find #g' install-FruityWiFi-PHP7.sh
+sed -i 's#update-rc.d#sudo update-rc.d#g' install-FruityWiFi-PHP7.sh
+sed -i 's#/etc/init.d#sudo /etc/init.d#g' install-FruityWiFi-PHP7.sh
+sed -i 's#ln -s#sudo ln -s#g' install-FruityWiFi-PHP7.sh
+sed -i 's#adduser#sudo adduser#g' install-FruityWiFi-PHP7.sh
+sed -i 's#usermod#sudo usermod#g' install-FruityWiFi-PHP7.sh
 ./install-FruityWiFi-PHP7.sh
 
-echo "’!/bin/bash
+echo "!/bin/bash
 
 cd /opt/ITSEC/6.Wireless/1.Wifi/fruitywifi/xtr4nge/FruityWifi
 sudo nginx_start.sh
