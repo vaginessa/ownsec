@@ -5,6 +5,8 @@
  
 > somehow default jre is installed during the setup, if its not removed some java programs fail.
 
+> at aprox the middle of part 2 node/npm ask for sudo, just after the node make - thats ugly bec else only macchanger in the beginning asks for prompt.
+
 
 ## PREQUISITES
 
