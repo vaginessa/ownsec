@@ -46,6 +46,6 @@ cd /opt/ITSEC-Install-Scripts/4.Password/1.Network
 ######################   3.Wordlist   ####################
 ###########################################################################
 #### 2.Generator/2.Local/# #####
-cd /opt/ITSEC-Install-Scripts/4.Password/3.Wordlist/2.Generator/2.Local/
+cd /opt/ITSEC-Install-Scripts/4.Password/3.Wordlist
 ./crunch_menu.sh # menu only #instaled w apt - build prob as i rememb
 ./rsmangler.sh  
