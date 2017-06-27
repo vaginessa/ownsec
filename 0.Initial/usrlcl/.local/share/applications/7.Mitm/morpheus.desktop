@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=morpheus
 Encoding=UTF-8
-Exec=sudo sh -c "morpheus --help;${SHELL:-bash}"
+Exec=sh -c "sudo morpheus;${SHELL:-bash}"
 StartupNotify=false
 Terminal=true
 Type=Application

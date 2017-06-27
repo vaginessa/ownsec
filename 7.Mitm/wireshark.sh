@@ -21,7 +21,7 @@ git clone https://github.com/wireshark/wireshark.git
 GITREPOROOT=/opt/ITSEC/7.Mitm/wireshark/wireshark/wireshark
 
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
-DSKTPFLSDEST=/home/$USER/.local/share/applications/applications/7.Mitm
+DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
 DSKTPFL=wireshark.desktop
 
 
