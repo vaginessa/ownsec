@@ -1,5 +1,18 @@
 #!/bin/bash
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ ____  _____ _____ 
+|  _ \| ____|_   _|
+| | | |  _|   | |  
+| |_| | |___  | |  
+|____/|_____| |_|  
+          
+${normal}"
+
+
 mkdir -p /opt/ITSEC/7.Mitm/det/sensepost
 cd /opt/ITSEC/7.Mitm/det/sensepost
 git clone https://github.com/sensepost/DET.git
@@ -18,19 +31,8 @@ sudo ldconfig
 sudo updatedb
 
 sudo rm /usr/local/bin/$EXECUTEABLE2
-sudo rm $GITREPOROOT/$EXECUTEABLE2
+sudo rm $GITREPOROOT/$EXECUTEABLE3
 
-bold=$(tput bold)
-normal=$(tput sgr0)
-
-echo "${bold}
- ____  _____ _____ 
-|  _ \| ____|_   _|
-| | | |  _|   | |  
-| |_| | |___  | |  
-|____/|_____| |_|  
-          
-${normal}"
 
 cd $GITREPOROOT
 git clean -f 
@@ -41,10 +43,10 @@ git submodule init
 git submodule update --recursive
 sudo -H pip2 install -r requirements.txt 
 
-echo "#!/bin/bash
+echo "#!/bin/bash -i 
 
 cd /opt/ITSEC/7.Mitm/det/sensepost/DET
-python det.py" >> det.sh
+python det.py $*" > det.sh
 chmod +x $GITREPOROOT/$EXECUTEABLE1
 chmod +x $GITREPOROOT/$EXECUTEABLE3
 sudo ln -s $GITREPOROOT/$EXECUTEABLE3 /usr/local/bin/$EXECUTEABLE2
