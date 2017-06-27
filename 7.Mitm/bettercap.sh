@@ -89,7 +89,7 @@ cd /opt/ITSEC/7.Mitm/bettercap/evilsocket/bettercap/bin/
 source ~/.bashrc
 eval "$(rbenv init -)"
 rbenv shell 2.4.1
-./bettercap
+./bettercap $*
 ' > bettercap.sh
 
 echo "${bold}
