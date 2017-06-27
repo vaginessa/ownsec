@@ -5,4 +5,4 @@ Exec=sh -c "bdfproxy;${SHELL:-bash}"
 StartupNotify=false
 Terminal=true
 Type=Application
-Categories=09-sniffing-spoofing;10-maintaining-access;
+Categories=7.Mitm;

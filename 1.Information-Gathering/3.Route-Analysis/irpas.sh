@@ -15,8 +15,8 @@ ${normal}"
 reporoot=/opt/ITSEC/1.Information-Gathering/3.Route-Analysis/irpas/phenoelit.org
 irpas=irpas_0.10
 irpasurl=http://www.phenoelit.org/irpas/irpas_0.10.tar.gz
-for bin in dhcpx itrace tctrace ass file2cable dfkaa cdp hsrp icmp_redirect igrp irdp irdpresponder netenum netmask protos timestamp
-do sudo rm /usr/local/bin/irpas-$bindone
+#for bin in dhcpx itrace tctrace ass file2cable dfkaa cdp hsrp icmp_redirect igrp irdp irdpresponder netenum netmask protos timestamp
+#do sudo rm /usr/local/bin/irpas-$bindone
 
 #
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/3.Route-Analysis/irpas
@@ -41,16 +41,14 @@ rm -f $DSKTPFLSDEST/irpas-*
 #
 
 
-
+mkdir -p $reporoot
 cd $reporoot
-mkdir $irpas
-cd $irpas
 wget $irpasurl
 tar xvfz $irpas.tar.gz
 sudo rm -r $irpas.tar.gz
-make -j 2
-for bin in dhcpx itrace tctrace ass file2cable dfkaa cdp hsrp icmp_redirect igrp irdp irdpresponder netenum netmask protos timestamp
-do sudo ln -s $reporoot/$irpas/$bin /usr/local/bin/irpas-$bindone
+cd $irpas
+make -j 4
+for bin in dhcpx itrace tctrace ass file2cable dfkaa cdp hsrp icmp_redirect igrp irdp irdpresponder netenum netmask protos timestamp do sudo ln -s $reporoot/$irpas/$bin /usr/local/bin/irpas-$bindone
 #
 cp $DSKTPFLS/$DSKTPFL1 $DSKTPFLSDEST/$DSKTPFL1
 cp $DSKTPFLS/$DSKTPFL2 $DSKTPFLSDEST/$DSKTPFL2
@@ -69,4 +67,3 @@ cp $DSKTPFLS/$DSKTPFL14 $DSKTPFLSDEST/$DSKTPFL14
 cp $DSKTPFLS/$DSKTPFL15 $DSKTPFLSDEST/$DSKTPFL15
 cp $DSKTPFLS/$DSKTPFL16 $DSKTPFLSDEST/$DSKTPFL16
 sudo updatedb
-sudo locate /usr/local/bin | grep protos

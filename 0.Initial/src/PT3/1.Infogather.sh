@@ -51,7 +51,7 @@ cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/2.Live-Host/4.Load-Balance
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/3.Route-Analysis
 ./0trace  #PIPdependencies 
 ./intrace #probaly problems, check again 
-./irpas 
+# ./irpas source site down - script worked
 #
 # 3.Route-Analysis - 1.Cloudflare ###
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/3.Route-Analysis/1.Cloudflare

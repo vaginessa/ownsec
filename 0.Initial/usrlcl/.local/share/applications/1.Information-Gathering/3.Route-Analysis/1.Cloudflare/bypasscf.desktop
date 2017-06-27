@@ -5,4 +5,4 @@ Exec=sh -c "bypasscf;${SHELL:-bash}"
 StartupNotify=false
 Terminal=true
 Type=Application
-Categories=1.Cloudflare;
+Categories=3.Route-Analysis;1.Cloudflare;

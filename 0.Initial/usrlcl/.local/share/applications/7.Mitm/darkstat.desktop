@@ -5,4 +5,4 @@ Exec=sh -c "darkstat;${SHELL:-bash}"
 StartupNotify=false
 Terminal=true
 Type=Application
-Categories=09-01-network-sniffers;
+Categories=7.Mitm;

@@ -5,4 +5,4 @@ Exec=sh -c "dshell-decode -h;${SHELL:-bash}"
 StartupNotify=false
 Terminal=true
 Type=Application
-Categories=1.DNS;
+Categories=2.DNS;

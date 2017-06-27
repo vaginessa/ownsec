@@ -5,4 +5,4 @@ Exec=sh -c "dnschef -h;${SHELL:-bash}"
 StartupNotify=false
 Terminal=true
 Type=Application
-Categories=2.DNS;
+Categories=7.Mitm; 2.DNS;

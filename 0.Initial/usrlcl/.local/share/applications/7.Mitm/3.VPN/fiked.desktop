@@ -5,5 +5,5 @@ Exec=sh -c "fiked -h;${SHELL:-bash}"
 StartupNotify=false
 Terminal=true
 Type=Application
-Categories=09-02-network-spoofing;
+Categories=7.Mitm;3.VPN/;
 
