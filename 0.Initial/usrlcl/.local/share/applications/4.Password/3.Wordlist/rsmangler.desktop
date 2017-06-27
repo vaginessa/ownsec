@@ -5,4 +5,4 @@ Exec=sh -c "rsmangler -h;${SHELL:-bash}"
 StartupNotify=false
 Terminal=true
 Type=Application
-Categories=2.Generator;
+Categories=3.Wordlist;
