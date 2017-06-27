@@ -18,6 +18,9 @@ git clone https://github.com/1N3/BruteX
 
 cd /opt/ITSEC/4.Password/1.Network/brutex/1N3/BruteX
 
+
+sed -i 's#/usr/share/brutex#/opt/ITSEC/4.Password/1.Network/brutex/1N3/BruteX#g' brutex
+
 # Install script for BruteX
 #
 # VARS
