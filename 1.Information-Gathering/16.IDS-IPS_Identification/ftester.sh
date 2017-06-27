@@ -9,11 +9,9 @@ sudo updatedb
 sudo ldconfig
 
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/16.IDS-IPS_Identification/ftester/inversepath/ftester
-EXECUTEABLE1=ftest
+
 EXECUTEABLE2=ftest
-EXECUTEABLE3=ftestd
 EXECUTEABLE4=ftestd
-EXECUTEABLE5=freport
 EXECUTEABLE6=freport
 #
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/16.IDS-IPS_Identification
@@ -25,6 +23,10 @@ DSKTPFL3=freport.desktop
 sudo rm /usr/local/bin/$EXECUTEABLE2
 sudo rm /usr/local/bin/$EXECUTEABLE4
 sudo rm /usr/local/bin/$EXECUTEABLE6
+
+rm -f $EXECUTEABLE1
+rm -f $EXECUTEABLE3
+rm -f $EXECUTEABLE5
 
 bold=$(tput bold)
 normal=$(tput sgr0)
@@ -46,12 +48,14 @@ git reset --hard origin/master
 git pull
 git submodule init 
 git submodule update --recursive
-chmod +x $GITREPOROOT/$EXECUTEABLE1
-sudo ln -s $GITREPOROOT/$EXECUTEABLE1 /usr/local/bin/$EXECUTEABLE2
-chmod +x $GITREPOROOT/$EXECUTEABLE3
-sudo ln -s $GITREPOROOT/$EXECUTEABLE3 /usr/local/bin/$EXECUTEABLE4
-chmod +x $GITREPOROOT/$EXECUTEABLE5
-sudo ln -s $GITREPOROOT/$EXECUTEABLE5 /usr/local/bin/$EXECUTEABLE6
+
+
+chmod +x $GITREPOROOT/$EXECUTEABLE2
+sudo ln -s $GITREPOROOT/$EXECUTEABLE2 /usr/local/bin/$EXECUTEABLE2
+chmod +x $GITREPOROOT/$EXECUTEABLE4
+sudo ln -s $GITREPOROOT/$EXECUTEABLE4 /usr/local/bin/$EXECUTEABLE4
+chmod +x $GITREPOROOT/$EXECUTEABLE6
+sudo ln -s $GITREPOROOT/$EXECUTEABLE6 /usr/local/bin/$EXECUTEABLE6
 mkdir -p $DSKTPFLSDEST 
 cp $DSKTPFLS/$DSKTPFL1 $DSKTPFLSDEST/$DSKTPFL1
 mkdir -p $DSKTPFLSDEST 
