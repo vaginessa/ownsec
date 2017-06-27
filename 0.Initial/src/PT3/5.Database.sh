@@ -12,4 +12,4 @@
 cd /opt/ITSEC-Install-Scripts/5.Database/1.SQL
 ./sqlmap.sh  
 ./hexorbase.sh
-./bbqsql.sh
+###./bbqsql.sh outdated, bugs ,,,,
