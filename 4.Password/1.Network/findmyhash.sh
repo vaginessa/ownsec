@@ -40,8 +40,9 @@ echo "#!/bin/bash
 
 cd /opt/ITSEC/4.Password/1.Network/findmyhash/frdmn/findmyhash
 
-python findmyhash.py" > findmyhash.sh
+python findmyhash.py $*" > findmyhash.sh
 chmod +x findmyhash.sh
+sudo rm -f /usr/local/bin/findmyhash
 sudo ln -s /opt/ITSEC/4.Password/1.Network/findmyhash/frdmn/findmyhash/findmyhash.sh /usr/local/bin/findmyhash
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
