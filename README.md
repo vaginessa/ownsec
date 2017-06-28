@@ -1,6 +1,22 @@
 # ITSEC-Install-Scripts
 
 
+## TODO
+
+- phishingfrenzy depends mysql-server - not installed during setup
+
+- mysql-server && phpmyadmin unattended install during part 2
+
+- phppgadmin menu link
+
+- some perl & python apps dont work due to environment paths, created sh scripts to cd into path but thats not enough.
+
+- nginx install for fruitywifi wants userinteraction.
+
+- menu links for itsec packaes installed by default apt and auto cp during part to as done w crunch.
+
+- test everything ....
+
 ## BUGS
  
 > somehow default jre is installed during the setup, if its not removed some java programs fail.
@@ -97,6 +113,8 @@
 - Part 1 asciinema recording 23.6.17 ...rec 26.6.17
 
 > /opt/ITSEC-Install-Scripts/0.Initial/1.sh ... https://asciinema.org/a/8xbF6r2xYeFVzhnRxlBC74IWf
+
+
 
 
 
