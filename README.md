@@ -82,7 +82,7 @@
 
 > Part 2 Install dependencies and base apps ... rec 26.6.17
 
-<a href="https://asciinema.org/a/EqaRM6605RBbo25vnPi6BE08c" target="_blank"><img src="https://asciinema.org/a/EqaRM6605RBbo25vnPi6BE08c.png" width="150"/></a>
+<a href="https://asciinema.org/a/EqaRM6605RBbo25vnPi6BE08c" target="_blank"><img src="https://asciinema.org/a/EqaRM6605RBbo25vnPi6BE08c.png" width="450"/></a>
 
 
 
@@ -97,7 +97,7 @@
 
 - Part 1 asciinema recording 23.6.17 ...rec 26.6.17
 
-<a href="https://asciinema.org/a/8xbF6r2xYeFVzhnRxlBC74IWf" target="_blank"><img src="https://asciinema.org/a/8xbF6r2xYeFVzhnRxlBC74IWf.png" width="150"/></a>
+<a href="https://asciinema.org/a/8xbF6r2xYeFVzhnRxlBC74IWf" target="_blank"><img src="https://asciinema.org/a/8xbF6r2xYeFVzhnRxlBC74IWf.png" width="450"/></a>
 
 
 
