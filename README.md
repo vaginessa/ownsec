@@ -51,9 +51,9 @@
 
 ## PART 3 
 
-> Part 3 - 1.Information-Gathering ... rec 26.6.17
+> 1.Information-Gathering ... rec 26.6.17
 
-<a href="https://asciinema.org/a/h7gFFym7QCS9IUx3ftmBw4mro" target="_blank"><img src="https://asciinema.org/a/h7gFFym7QCS9IUx3ftmBw4mro.png" width="150"/></a>
+<a href="https://asciinema.org/a/h7gFFym7QCS9IUx3ftmBw4mro" target="_blank"><img src="https://asciinema.org/a/h7gFFym7QCS9IUx3ftmBw4mro.png" width="350"/></a>
 
 > 2.Vulnerability-Analysis - asciinema crash
 
@@ -80,8 +80,8 @@
 
 > Configures XFCE menu & panel, .bashrc, console shortcuts, conky and more - see part2 items ... 
 
-> Part 2 Install dependencies and base apps 23.6.17 ... 
-rec 26.6.17
+> Part 2 Install dependencies and base apps ... rec 26.6.17
+
 <a href="https://asciinema.org/a/EqaRM6605RBbo25vnPi6BE08c" target="_blank"><img src="https://asciinema.org/a/EqaRM6605RBbo25vnPi6BE08c.png" width="150"/></a>
 
 
