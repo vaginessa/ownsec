@@ -94,9 +94,8 @@ rec 26.6.17
 
 > Update && Upgrade the base install of Xubuntu 16.04
 
-- Part 1 asciinema recording 23.6.17 ...
+- Part 1 asciinema recording 23.6.17 ...rec 26.6.17
 
-rec 26.6.17
 <a href="https://asciinema.org/a/8xbF6r2xYeFVzhnRxlBC74IWf" target="_blank"><img src="https://asciinema.org/a/8xbF6r2xYeFVzhnRxlBC74IWf.png" width="150"/></a>
 
 
