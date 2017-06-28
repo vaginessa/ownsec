@@ -50,8 +50,9 @@
 
 
 ## PART 3 
-rec 26.6.17
-> Part 3 - 1.Information-Gathering 
+
+> Part 3 - 1.Information-Gathering ... rec 26.6.17
+
 <a href="https://asciinema.org/a/h7gFFym7QCS9IUx3ftmBw4mro" target="_blank"><img src="https://asciinema.org/a/h7gFFym7QCS9IUx3ftmBw4mro.png" width="150"/></a>
 
 > 2.Vulnerability-Analysis - asciinema crash
