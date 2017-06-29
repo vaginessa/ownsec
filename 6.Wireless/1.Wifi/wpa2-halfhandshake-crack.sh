@@ -31,7 +31,9 @@ echo "#!/bin/bash
 cd /opt/ITSEC/6.Wireless/1.Wifi/wpa2-halfhandshake-crack/dxa4481/WPA2-HalfHandshake-Crack
 
 
-./halfHandshake.py" > halfHandshake.sh
+python halfHandshake.py" > halfHandshake.sh
+
+chmod +x halfHandshake.py
 
 chmod +x halfHandshake.sh
 sudo rm -f /usr/local/bin/halfHandshake

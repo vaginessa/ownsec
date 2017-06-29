@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=wpa2-halfhandshake-crack
 Encoding=UTF-8
-Exec=sh -c "halfhandshake;${SHELL:-bash}"
+Exec=sh -c "halfHandshake;${SHELL:-bash}"
 StartupNotify=false
 Terminal=true
 Type=Application
