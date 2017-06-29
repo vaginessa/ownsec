@@ -1,5 +1,18 @@
 #!/bin/bash
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ _  _____ ____  __  __ _____ _____ 
+| |/ /_ _/ ___||  \/  | ____|_   _|
+| ' / | |\___ \| |\/| |  _|   | |  
+| . \ | | ___) | |  | | |___  | |  
+|_|\_\___|____/|_|  |_|_____| |_|  
+           
+${normal}"
+
+
 mkdir -p /opt/ITSEC/6.Wireless/1.Wifi/kismet/kismetwireless
 cd /opt/ITSEC/6.Wireless/1.Wifi/kismet/kismetwireless
 git clone https://github.com/kismetwireless/kismet.git
@@ -18,17 +31,6 @@ DSKTPFL=kismet.desktop
 mkdir -p $DSKTPFLSDEST 
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 
-bold=$(tput bold)
-normal=$(tput sgr0)
-
-echo "${bold}
- _  _____ ____  __  __ _____ _____ 
-| |/ /_ _/ ___||  \/  | ____|_   _|
-| ' / | |\___ \| |\/| |  _|   | |  
-| . \ | | ___) | |  | | |___  | |  
-|_|\_\___|____/|_|  |_|_____| |_|  
-           
-${normal}"
 
 cd $GITREPOROOT
 #git clean -f
