@@ -28,11 +28,12 @@ cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 rm -f kismet.sh
 echo "#!/bin/bash
 
-cd cd /opt/ITSEC/6.Wireless/1.Wifi/wpa2-halfhandshake-crack/dxa4481/WPA2-HalfHandshake-Crack
+cd /opt/ITSEC/6.Wireless/1.Wifi/wpa2-halfhandshake-crack/dxa4481/WPA2-HalfHandshake-Crack
 
 
 ./halfHandshake.py" > halfHandshake.sh
 
 chmod +x halfHandshake.sh
+sudo rm -f /usr/local/bin/halfHandshake
 sudo ln -s /opt/ITSEC/6.Wireless/1.Wifi/wpa2-halfhandshake-crack/dxa4481/WPA2-HalfHandshake-Crack/halfHandshake.sh /usr/local/bin/halfHandshake
 
