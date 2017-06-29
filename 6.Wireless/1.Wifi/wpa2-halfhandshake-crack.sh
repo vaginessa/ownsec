@@ -11,7 +11,7 @@ echo "${bold}
 |_| |_|_____|_|   |_| |_|_| \_|____/|____/|_| |_|_|\_\_____|
                                                            
 ${normal}"
-
+sudo rm -r /opt/ITSEC/6.Wireless/1.Wifi/wpa2-halfhandshake-crack/dxa4481
 mkdir -p /opt/ITSEC/6.Wireless/1.Wifi/wpa2-halfhandshake-crack/dxa4481
 cd /opt/ITSEC/6.Wireless/1.Wifi/wpa2-halfhandshake-crack/dxa4481
 git clone https://github.com/dxa4481/WPA2-HalfHandshake-Crack
@@ -25,13 +25,12 @@ DSKTPFL=wpa2-halfhandshake-crack.desktop
 mkdir -p $DSKTPFLSDEST 
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 
-rm -f kismet.sh
-echo "#!/bin/bash
+rm -f halfHandshake.sh
+echo '#!/bin/bash
 
-cd /opt/ITSEC/6.Wireless/1.Wifi/wpa2-halfhandshake-crack/dxa4481/WPA2-HalfHandshake-Crack
+echo "cd /opt/ITSEC/6.Wireless/1.Wifi/wpa2-halfhandshake-crack/dxa4481/WPA2-HalfHandshake-Crack/"
 
-
-python halfHandshake.py" > halfHandshake.sh
+echo "python halfHandshake.py -arguments"' > halfHandshake.sh
 
 chmod +x halfHandshake.py
 
