@@ -28,9 +28,9 @@ cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 rm -f halfHandshake.sh
 echo '#!/bin/bash
 
-echo "cd /opt/ITSEC/6.Wireless/1.Wifi/wpa2-halfhandshake-crack/dxa4481/WPA2-HalfHandshake-Crack/"
+cd /opt/ITSEC/6.Wireless/1.Wifi/wpa2-halfhandshake-crack/dxa4481/WPA2-HalfHandshake-Crack/
 
-echo "python halfHandshake.py -arguments"' > halfHandshake.sh
+python halfHandshake.py $@ ' > halfHandshake.sh
 
 chmod +x halfHandshake.py
 
