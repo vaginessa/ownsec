@@ -17,6 +17,10 @@ cp -R /opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/0.Se
 mkdir -p /home/$USER/.local/share/applications/00.Scripts
 cp -R /opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/00.Scripts/ /home/$USER/.local/share/applications/
 
+mkdir -p /home/$USER/.local/share/applications/0.Resources
+cp -R /opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/0.Resources/ /home/$USER/.local/share/applications/
+
+
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/Services
 DSKTPFLSDEST=/home/$USER/.local/share/applications/Services
 DSKTPFL=phpmyadmin.desktop

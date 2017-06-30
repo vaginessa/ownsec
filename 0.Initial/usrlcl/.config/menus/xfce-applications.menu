@@ -29,7 +29,7 @@
         </Include>
     <Menu>
         <Name>0.ITsec-Install-Scripts</Name>
-        <Directory>0.ITsec-Install-Scripts</Directory>
+        <Directory>0.ITsec-Install-Scripts.directory</Directory>
         <Include>
             <And>
                 <Category>0.ITsec-Install-Scripts</Category>
@@ -55,6 +55,26 @@
             </And>
         </Include>
     </Menu>
+
+    <Menu>
+        <Name>0.Resources</Name>
+        <Directory>0.Resources.directory</Directory>
+        <Include>
+            <And>
+                <Category>0.Resources</Category>
+            </And>
+        </Include>
+    <Menu>
+        <Name>0.ITsec</Name>
+        <Directory>0.ITsec.directory</Directory>
+        <Include>
+            <And>
+                <Category>0.ITsec</Category>
+            </And>
+        </Include>
+    </Menu>
+    </Menu>
+
     <Menu>
         <Name>0.LAPP</Name>
         <Directory>0.LAPP.directory</Directory>
