@@ -1,5 +1,8 @@
 # ITSEC-Install-Scripts
 
+### A set of bash scripts to dl, build and install ITsec related soft from source & its dependencies on 16.04 Xfce -. menu/console entries and and pre config - semi unattended(yet)
+
+
 # XFCE Desktop 
 
 [![Alt text](http://i.imgur.com/GH36YFw.png)](https://www.youtube.com/watch?v=DMvz7BR2pUc)
