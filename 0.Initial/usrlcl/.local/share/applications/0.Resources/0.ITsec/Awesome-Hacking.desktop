@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=ITsec-Install-Scripts_cp-conf
+Name=https://github.com/Hack-with-Github/Awesome-Hacking
 Encoding=UTF-8
 Exec=sh -c "sensible-browser https://github.com/Hack-with-Github/Awesome-Hacking;${SHELL:-bash}"
 StartupNotify=false

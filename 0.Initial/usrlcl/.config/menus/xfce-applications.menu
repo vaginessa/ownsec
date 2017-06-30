@@ -57,25 +57,6 @@
     </Menu>
 
     <Menu>
-        <Name>0.Resources</Name>
-        <Directory>0.Resources.directory</Directory>
-        <Include>
-            <And>
-                <Category>0.Resources</Category>
-            </And>
-        </Include>
-    <Menu>
-        <Name>0.ITsec</Name>
-        <Directory>0.ITsec.directory</Directory>
-        <Include>
-            <And>
-                <Category>0.ITsec</Category>
-            </And>
-        </Include>
-    </Menu>
-    </Menu>
-
-    <Menu>
         <Name>0.LAPP</Name>
         <Directory>0.LAPP.directory</Directory>
         <Include>
@@ -176,6 +157,27 @@
     </Menu>
 
     </Menu>
+
+    <Menu>
+        <Name>0.Resources</Name>
+        <Directory>0.Resources.directory</Directory>
+        <Include>
+            <And>
+                <Category>0.Resources</Category>
+            </And>
+        </Include>
+    <Menu>
+        <Name>0.ITsec</Name>
+        <Directory>0.ITsec.directory</Directory>
+        <Include>
+            <And>
+                <Category>0.ITsec</Category>
+            </And>
+        </Include>
+    </Menu>
+    </Menu>
+
+
     <Menu>
         <Name>1.Information-Gathering</Name>
         <Directory>1.Information-Gathering.directory</Directory>
