@@ -1,31 +1,5 @@
 #!/bin/sh
 
-mkdir -p /opt/ITSEC/4.Password/2.Local/pack/iphelix
-cd /opt/ITSEC/4.Password/2.Local/pack/iphelix
-git clone https://github.com/iphelix/pack.git
-
-sudo ldconfig
-sudo updatedb
-#
-GITREPOROOT=/opt/ITSEC/4.Password/2.Local/pack/iphelix/pack 
-EXECUTEABLE1=maskgen.py
-EXECUTEABLE2=pack_maskgen
-EXECUTEABLE3=policygen.py
-EXECUTEABLE4=pack_poplicygen
-EXECUTEABLE5=rulegen.py
-EXECUTEABLE6=pack_rulegen
-EXECUTEABLE7=statsgen.py
-EXECUTEABLE8=pack_statsgen
-#
-#
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/2.Local/pack
-DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/2.Local/pack
-DSKTPFL1=pack_maskgen.desktop
-DSKTPFL2=pack_policygen.desktop
-DSKTPFL3=pack_rulegen.desktop
-DSKTPFL4=pack_statsgen.desktop
-
-
 bold=$(tput bold)
 normal=$(tput sgr0)
 
@@ -38,7 +12,28 @@ echo "${bold}
                    
 ${normal}"
 
-cd $GITREPOROOT
+mkdir -p /opt/ITSEC/4.Password/2.Local/pack/iphelix
+cd /opt/ITSEC/4.Password/2.Local/pack/iphelix
+git clone https://github.com/iphelix/pack.git
+
+GITREPOROOT=/opt/ITSEC/4.Password/2.Local/pack/iphelix/pack 
+EXECUTEABLE1=maskgen.py
+EXECUTEABLE2=pack_maskgen
+EXECUTEABLE3=policygen.py
+EXECUTEABLE4=pack_poplicygen
+EXECUTEABLE5=rulegen.py
+EXECUTEABLE6=pack_rulegen
+EXECUTEABLE7=statsgen.py
+EXECUTEABLE8=pack_statsgen
+
+
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/2.Local/pack
+DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/2.Local/pack
+DSKTPFL1=pack_maskgen.desktop
+DSKTPFL2=pack_policygen.desktop
+DSKTPFL3=pack_rulegen.desktop
+DSKTPFL4=pack_statsgen.desktop
+
 sudo rm -f /usr/local/bin/$EXECUTEABLE2
 sudo rm -f /usr/local/bin/$EXECUTEABLE4
 sudo rm -f /usr/local/bin/$EXECUTEABLE6
@@ -47,7 +42,8 @@ sudo rm -f /usr/local/bin/maskgen
 sudo rm -f /usr/local/bin/poplicygen
 sudo rm -f /usr/local/bin/rulegen
 sudo rm -f /usr/local/bin/statsgen
-#
+
+cd $GITREPOROOT
 git clean -f 
 git fetch origin
 git reset --hard origin/master

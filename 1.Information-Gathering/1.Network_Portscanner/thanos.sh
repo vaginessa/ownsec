@@ -12,8 +12,6 @@ echo "${bold}
         
 ${normal}"
 
-
-
 mkdir -p /opt/ITSEC/1.Information-Gathering/1.Network_Portscanner/thanos/P0cL4bs
 cd /opt/ITSEC/1.Information-Gathering/1.Network_Portscanner/thanos/P0cL4bs
 git clone https://github.com/P0cL4bs/Thanos.git
@@ -25,7 +23,6 @@ EXECUTEABLE2=thanos
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/1.Network_Portscanner
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/1.Network_Portscanner
 DSKTPFL=thanos.desktop
-
 
 cd $GITREPOROOT
 #make clean

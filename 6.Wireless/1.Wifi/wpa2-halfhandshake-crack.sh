@@ -30,7 +30,7 @@ echo '#!/bin/bash
 
 cd /opt/ITSEC/6.Wireless/1.Wifi/wpa2-halfhandshake-crack/dxa4481/WPA2-HalfHandshake-Crack/
 
-python halfHandshake.py $@ ' > halfHandshake.sh
+python halfHandshake.py "$@" ' > halfHandshake.sh
 
 chmod +x halfHandshake.py
 

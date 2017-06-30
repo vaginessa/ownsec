@@ -1,14 +1,5 @@
 #!/bin/bash
 
-mkdir -p /opt/ITSEC/4.Password/1.Network/ncrack/nmap
-cd /opt/ITSEC/4.Password/1.Network/ncrack/nmap
-git clone https://github.com/nmap/ncrack.git
-
-sudo udpatedb
-sudo ldconfig
-
-GITREPOROOT=/opt/ITSEC/4.Password/1.Network/ncrack/nmap/ncrack
-
 bold=$(tput bold)
 normal=$(tput sgr0)
 
@@ -21,6 +12,14 @@ echo "${bold}
           
 ${normal}"
 
+mkdir -p /opt/ITSEC/4.Password/1.Network/ncrack/nmap
+cd /opt/ITSEC/4.Password/1.Network/ncrack/nmap
+git clone https://github.com/nmap/ncrack.git
+
+sudo udpatedb
+sudo ldconfig
+
+GITREPOROOT=/opt/ITSEC/4.Password/1.Network/ncrack/nmap/ncrack
 
 cd $GITREPOROOT
 #

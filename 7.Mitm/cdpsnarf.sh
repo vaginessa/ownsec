@@ -1,19 +1,6 @@
 #does not work 16.04 24-5-17
 #!/bin/bash
 
-
-mkdir -p /opt/ITSEC/7.Mitm/cdpsnarf/Zapotek
-cd /opt/ITSEC/7.Mitm/cdpsnarf/Zapotek
-git clone https://github.com/Zapotek/cdpsnarf.git
-
-
-GITREPOROOT=/opt/ITSEC/7.Mitm/cdpsnarf/Zapotek/cdpsnarf
-#
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
-DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
-DSKTPFL=cdpsnarf.desktop
-
-
 bold=$(tput bold)
 normal=$(tput sgr0)
 
@@ -26,6 +13,17 @@ echo "${bold}
         
 ${normal}"
 
+
+mkdir -p /opt/ITSEC/7.Mitm/cdpsnarf/Zapotek
+cd /opt/ITSEC/7.Mitm/cdpsnarf/Zapotek
+git clone https://github.com/Zapotek/cdpsnarf.git
+
+
+GITREPOROOT=/opt/ITSEC/7.Mitm/cdpsnarf/Zapotek/cdpsnarf
+#
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
+DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
+DSKTPFL=cdpsnarf.desktop
 
 cd $GITREPOROOT
 make clean

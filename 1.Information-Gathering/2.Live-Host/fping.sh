@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 bold=$(tput bold)
 normal=$(tput sgr0)
 
@@ -13,7 +12,6 @@ echo "${bold}
          
 ${normal}"
 
-
 mkdir -p /opt/ITSEC/1.Information-Gathering/2.Live-Host/fping/schweikert
 cd /opt/ITSEC/1.Information-Gathering/2.Live-Host/fping/schweikert
 git clone https://github.com/schweikert/fping.git
@@ -24,9 +22,8 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/2.Live-Host
 DSKTPFL=fping.desktop
 
-
 cd $GITREPOROOT
-#
+
 make clean
 git clean -f
 git fetch origin

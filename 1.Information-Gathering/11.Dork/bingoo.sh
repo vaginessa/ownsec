@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 bold=$(tput bold)
 normal=$(tput sgr0)
 
@@ -12,7 +11,6 @@ echo "${bold}
 |____/___|_| \_|\____|\___/ \___/ 
     
 ${normal}"
-
 
 mkdir -p /opt/ITSEC/1.Information-Gathering/11.Dork/bingoo/Hood3dRob1n
 cd /opt/ITSEC/1.Information-Gathering/11.Dork/bingoo/Hood3dRob1n

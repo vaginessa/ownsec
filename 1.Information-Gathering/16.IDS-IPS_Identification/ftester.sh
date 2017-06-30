@@ -1,5 +1,16 @@
 #!/bin/bash
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ _____ _____ _____ ____ _____ _____ ____  
+|  ___|_   _| ____/ ___|_   _| ____|  _ \ 
+| |_    | | |  _| \___ \ | | |  _| | |_) |
+|  _|   | | | |___ ___) || | | |___|  _ < 
+|_|     |_| |_____|____/ |_| |_____|_| \_\
+              
+${normal}"
 
 mkdir -p /opt/ITSEC/1.Information-Gathering/16.IDS-IPS_Identification/ftester/inversepath
 cd /opt/ITSEC/1.Information-Gathering/16.IDS-IPS_Identification/ftester/inversepath
@@ -13,7 +24,7 @@ GITREPOROOT=/opt/ITSEC/1.Information-Gathering/16.IDS-IPS_Identification/ftester
 EXECUTEABLE2=ftest
 EXECUTEABLE4=ftestd
 EXECUTEABLE6=freport
-#
+
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/16.IDS-IPS_Identification
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/16.IDS-IPS_Identification
 DSKTPFL1=ftester.desktop
@@ -28,19 +39,6 @@ rm -f $EXECUTEABLE1
 rm -f $EXECUTEABLE3
 rm -f $EXECUTEABLE5
 
-bold=$(tput bold)
-normal=$(tput sgr0)
-
-echo "${bold}
- _____ _____ _____ ____ _____ _____ ____  
-|  ___|_   _| ____/ ___|_   _| ____|  _ \ 
-| |_    | | |  _| \___ \ | | |  _| | |_) |
-|  _|   | | | |___ ___) || | | |___|  _ < 
-|_|     |_| |_____|____/ |_| |_____|_| \_\
-              
-${normal}"
-
-
 cd $GITREPOROOT
 git clean -f
 git fetch origin
@@ -48,7 +46,6 @@ git reset --hard origin/master
 git pull
 git submodule init 
 git submodule update --recursive
-
 
 chmod +x $GITREPOROOT/$EXECUTEABLE2
 sudo ln -s $GITREPOROOT/$EXECUTEABLE2 /usr/local/bin/$EXECUTEABLE2

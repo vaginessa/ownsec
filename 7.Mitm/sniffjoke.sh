@@ -1,15 +1,5 @@
 #!/bin/bash
 
-mkdir -p /opt/ITSEC/7.Mitm/sniffjoke/vecna
-cd /opt/ITSEC/7.Mitm/sniffjoke/vecna
-git clone https://github.com/vecna/sniffjoke.git
-
-GITREPOROOT=/opt/ITSEC/7.Mitm/sniffjoke/vecna/sniffjoke
-#
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
-DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
-DSKTPFL=sniffjoke.desktop
-
 bold=$(tput bold)
 normal=$(tput sgr0)
 
@@ -21,6 +11,18 @@ echo "${bold}
 |____/|_| \_|___|_|   |_|  \___/ \___/|_|\_\_____|
          
 ${normal}"
+
+
+mkdir -p /opt/ITSEC/7.Mitm/sniffjoke/vecna
+cd /opt/ITSEC/7.Mitm/sniffjoke/vecna
+git clone https://github.com/vecna/sniffjoke.git
+
+GITREPOROOT=/opt/ITSEC/7.Mitm/sniffjoke/vecna/sniffjoke
+#
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
+DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
+DSKTPFL=sniffjoke.desktop
+
 
 cd $GITREPOROOT
 

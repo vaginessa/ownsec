@@ -43,10 +43,11 @@ git submodule init
 git submodule update --recursive
 sudo -H pip2 install -r requirements.txt 
 
-echo "#!/bin/bash -i 
+echo '#!/bin/bash -i 
 
 cd /opt/ITSEC/7.Mitm/det/sensepost/DET
-python det.py $*" > det.sh
+python det.py "$@"' > det.sh
+
 chmod +x $GITREPOROOT/$EXECUTEABLE1
 chmod +x $GITREPOROOT/$EXECUTEABLE3
 sudo ln -s $GITREPOROOT/$EXECUTEABLE3 /usr/local/bin/$EXECUTEABLE2

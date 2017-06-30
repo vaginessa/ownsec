@@ -1,15 +1,5 @@
 #!/bin/bash
 
-mkdir -p /opt/ITSEC/6.Wireless/1.Wifi/1.WPS/bully/aanarchyy
-cd /opt/ITSEC/6.Wireless/1.Wifi/1.WPS/bully/aanarchyy
-git clone https://github.com/aanarchyy/bully.git
-
-GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/1.WPS/bully/aanarchyy/bully
-#
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/6.Wireless/1.Wifi/1.WPS
-DSKTPFLSDEST=/home/$USER/.local/share/applications/6.Wireless/1.Wifi/1.WPS
-DSKTPFL=bully.desktop
-
 bold=$(tput bold)
 normal=$(tput sgr0)
 
@@ -21,6 +11,17 @@ echo "${bold}
 |____/ \___/|_____|_____|_|  
        
 ${normal}"
+
+
+mkdir -p /opt/ITSEC/6.Wireless/1.Wifi/1.WPS/bully/aanarchyy
+cd /opt/ITSEC/6.Wireless/1.Wifi/1.WPS/bully/aanarchyy
+git clone https://github.com/aanarchyy/bully.git
+
+GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/1.WPS/bully/aanarchyy/bully
+#
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/6.Wireless/1.Wifi/1.WPS
+DSKTPFLSDEST=/home/$USER/.local/share/applications/6.Wireless/1.Wifi/1.WPS
+DSKTPFL=bully.desktop
 
 cd $GITREPOROOT
 

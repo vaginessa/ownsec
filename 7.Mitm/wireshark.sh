@@ -24,9 +24,6 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7
 DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
 DSKTPFL=wireshark.desktop
 
-
-
-
 cd $GITREPOROOT
 #cd build
 #sudo make uninstall

@@ -12,7 +12,6 @@ echo "${bold}
     
 ${normal}"
 
-
 . ~/.bashrc
 eval "$(rbenv init -)"
 yes "N" | rbenv install 2.4.1
@@ -32,8 +31,6 @@ EXECUTEABLE2=twofi
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/13.OSINT
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/13.OSINT
 DSKTPFL=twofi.desktop
-
-
 
 cd $GITREPOROOT
 sudo rm /usr/local/bin/$EXECUTEABLE2

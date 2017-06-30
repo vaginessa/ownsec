@@ -1,6 +1,5 @@
 #!/bin/bash
 
-#works - rbenv ruby preinstalled with metasploit
 bold=$(tput bold)
 normal=$(tput sgr0)
 
@@ -12,9 +11,6 @@ __        _____  _          _____
    \_/\_/  \___/|_____|    |_____|
             
 ${normal}"
-
-
-
 
 mkdir -p /opt/ITSEC/1.Information-Gathering/2.Live-Host/wol-e/dookie
 cd /opt/ITSEC/1.Information-Gathering/2.Live-Host/wol-e/dookie
@@ -32,7 +28,6 @@ DSKTPFL=wol-e.desktop
 EXECUTEABLE1=wol-e.py
 EXECUTEABLE2=wol-e
 
-
 cd $GITREPOROOT
 git clean -f
 git fetch origin
@@ -40,7 +35,6 @@ git reset --hard origin/master
 git pull
 git submodule init
 git submodule update --recursive
-
 
 sudo ln -s $GITREPOROOT/$EXECUTEABLE1 /usr/local/bin/$EXECUTEABLE2
 mkdir -p $DSKTPFLSDEST 

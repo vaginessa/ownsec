@@ -12,7 +12,6 @@ echo "${bold}
         
 ${normal}"
 
-
 mkdir -p /opt/ITSEC/1.Information-Gathering/8.SNMP/braa/mteg
 cd /opt/ITSEC/1.Information-Gathering/8.SNMP/braa/mteg
 git clone https://github.com/mteg/braa.git
@@ -27,8 +26,6 @@ EXECUTEABLE2=braa
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/8.SNMP
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/8.SNMP
 DSKTPFL=braa.desktop
-
-
 
 cd $GITREPOROOT
 sudo rm /usr/local/bin/$EXECUTEABLE2

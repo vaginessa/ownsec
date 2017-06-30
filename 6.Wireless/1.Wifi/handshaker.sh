@@ -12,8 +12,6 @@ echo "${bold}
                 
 ${normal}"
 
-
-
 mkdir -p /opt/ITSEC/6.Wireless/1.Wifi/handshaker/d4rkcat
 cd /opt/ITSEC/6.Wireless/1.Wifi/handshaker/d4rkcat
 https://github.com/d4rkcat/HandShaker

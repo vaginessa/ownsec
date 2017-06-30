@@ -1,5 +1,17 @@
 #!/bin/bash
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ _______     _____ _     ____ ____      _    ____  _____ 
+| ____\ \   / /_ _| |   / ___|  _ \    / \  |  _ \| ____|
+|  _|  \ \ / / | || |  | |  _| |_) |  / _ \ | | | |  _|  
+| |___  \ V /  | || |__| |_| |  _ <  / ___ \| |_| | |___ 
+|_____|  \_/  |___|_____\____|_| \_\/_/   \_\____/|_____|
+           
+${normal}"
+
 mkdir -p /opt/ITSEC/6.Wireless/1.Wifi/evilgrade/infobyte
 cd /opt/ITSEC/6.Wireless/1.Wifi/evilgrade/infobyte
 git clone https://github.com/infobyte/evilgrade.git
@@ -18,18 +30,6 @@ sudo ln -s /opt/ITSEC/6.Wireless/1.Wifi/evilgrade/infobyte/evilgrade/isrcore /et
 
 sudo rm -f /usr/local/bin/$EXECUTEABLE1
 
-bold=$(tput bold)
-normal=$(tput sgr0)
-
-echo "${bold}
- _______     _____ _     ____ ____      _    ____  _____ 
-| ____\ \   / /_ _| |   / ___|  _ \    / \  |  _ \| ____|
-|  _|  \ \ / / | || |  | |  _| |_) |  / _ \ | | | |  _|  
-| |___  \ V /  | || |__| |_| |  _ <  / ___ \| |_| | |___ 
-|_____|  \_/  |___|_____\____|_| \_\/_/   \_\____/|_____|
-           
-${normal}"
-
 cd $GITREPOROOT
 rm -f evilgrade.sh
 git clean -f 
@@ -40,13 +40,10 @@ git submodule init
 git submodule update --recursive
 #
 
-echo "#!/bin/bash
+echo '#!/bin/bash
 
 cd /opt/ITSEC/6.Wireless/1.Wifi/evilgrade/infobyte/evilgrade
-./evilgrade
-
-
-" > evilgrade.sh
+./evilgrade "$@"' > evilgrade.sh
 sudo chmod +x $EXECUTEABLE1
 sudo chmod +x $EXECUTEABLE2
 sudo ln -s $GITREPOROOT/$EXECUTEABLE2 /usr/local/bin/$EXECUTEABLE1

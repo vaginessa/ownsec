@@ -25,9 +25,6 @@ mkdir -p /opt/ITSEC/6.Wireless/1.Wifi/fruitywifi/xtr4nge
 cd /opt/ITSEC/6.Wireless/1.Wifi/fruitywifi/xtr4nge
 git clone https://github.com/xtr4nge/FruityWifi.git
 
-
-
-
 version="2.4.1"
 fruitywifi_php_version="PHP7"
 fruitywifi_log_path="/usr/share/fruitywifi/logs"

@@ -12,8 +12,6 @@ echo "${bold}
             
 ${normal}"
 
-
-
 mkdir -p /opt/ITSEC/1.Information-Gathering/1.Network_Portscanner/zmap/zmap
 cd /opt/ITSEC/1.Information-Gathering/1.Network_Portscanner/zmap/zmap
 git clone https://github.com/zmap/zmap.git
@@ -26,7 +24,6 @@ DSKTPFL=zmap.desktop
 
 sudo ldconfig
 sudo updatedb
-
 
 cd $GITREPOROOT
 make clean

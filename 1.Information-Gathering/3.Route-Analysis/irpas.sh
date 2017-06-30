@@ -38,8 +38,6 @@ DSKTPFL14=irpas-netmask.desktop
 DSKTPFL15=irpas-protos.desktop
 DSKTPFL16=irpas-timestamp.desktop
 rm -f $DSKTPFLSDEST/irpas-*
-#
-
 
 mkdir -p $reporoot
 cd $reporoot

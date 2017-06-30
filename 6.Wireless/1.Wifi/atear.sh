@@ -1,25 +1,5 @@
 #!/bin/bash
 
-mkdir -p /opt/ITSEC/6.Wireless/1.Wifi/atear/NORMA-Inc
-cd /opt/ITSEC/6.Wireless/1.Wifi/atear/NORMA-Inc
-git clone https://github.com/NORMA-Inc/AtEar.git
-
-sudo ldconfig
-sudo updatedb
-#
-sudo rm /usr/local/bin/atear
-#
-GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/atear/NORMA-Inc/AtEar
-EXECUTEABLE1=run.py
-EXECUTEABLE2=atear
-EXECUTEABLE3=atear.sh
-
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/6.Wireless/1.Wifi
-DSKTPFLSDEST=/home/$USER/.local/share/applications/6.Wireless/1.Wifi
-DSKTPFL=atear.desktop
-
-sudo rm -f /usr/local/bin/$EXECUTEABLE2
-
 bold=$(tput bold)
 normal=$(tput sgr0)
 
@@ -31,6 +11,23 @@ echo "${bold}
 /_/   \_\_| |_____/_/   \_\_| \_\
            
 ${normal}"
+
+mkdir -p /opt/ITSEC/6.Wireless/1.Wifi/atear/NORMA-Inc
+cd /opt/ITSEC/6.Wireless/1.Wifi/atear/NORMA-Inc
+git clone https://github.com/NORMA-Inc/AtEar.git
+
+sudo rm /usr/local/bin/atear
+
+GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/atear/NORMA-Inc/AtEar
+EXECUTEABLE1=run.py
+EXECUTEABLE2=atear
+EXECUTEABLE3=atear.sh
+
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/6.Wireless/1.Wifi
+DSKTPFLSDEST=/home/$USER/.local/share/applications/6.Wireless/1.Wifi
+DSKTPFL=atear.desktop
+
+sudo rm -f /usr/local/bin/$EXECUTEABLE2
 
 cd $GITREPOROOT
 git clean -f

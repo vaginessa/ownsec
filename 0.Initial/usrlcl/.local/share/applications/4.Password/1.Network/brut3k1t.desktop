@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=brut3k1t
 Encoding=UTF-8
-Exec=sh -c "brut3k1t;${SHELL:-bash}"
+Exec=sh -c "brut3k1t -h;${SHELL:-bash}"
 StartupNotify=false
 Terminal=true
 Type=Application

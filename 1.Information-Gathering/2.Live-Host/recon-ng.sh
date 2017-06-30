@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 bold=$(tput bold)
 normal=$(tput sgr0)
 
@@ -24,18 +23,14 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/2.Live-Host
 DSKTPFL=recon-ng.desktop
 
-#
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/2.Live-Host/recon-ng/LaNMaSteR53/recon-ng
 
 EXECUTEABLE1=recon-ng
 EXECUTEABLE2=recon-ng
-
 EXECUTEABLE3=recon-cli
 EXECUTEABLE4=recon-cli
-
 EXECUTEABLE5=recon-rpc
 EXECUTEABLE6=recon-rpc
-
 EXECUTEABLE7=recon-web
 EXECUTEABLE8=recon-web
 
@@ -43,7 +38,6 @@ sudo rm -f /usr/local/bin/$EXECUTEABLE2
 sudo rm -f /usr/local/bin/$EXECUTEABLE4
 sudo rm -f /usr/local/bin/$EXECUTEABLE6
 sudo rm -f /usr/local/bin/$EXECUTEABLE8
-
 
 cd $GITREPOROOT
 git clean -f

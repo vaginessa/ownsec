@@ -12,7 +12,6 @@ echo "${bold}
                                                
 ${normal}"
 
-
 mkdir -p /opt/ITSEC/1.Information-Gathering/3.Route-Analysis/intrace/robertswiecki
 cd /opt/ITSEC/1.Information-Gathering/3.Route-Analysis/intrace/robertswiecki
 git clone https://github.com/robertswiecki/intrace.git

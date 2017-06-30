@@ -12,7 +12,6 @@ echo "${bold}
            
 ${normal}"
 
-
 mkdir -p /opt/ITSEC/1.Information-Gathering/4.SSL/sslyze/nabla-c0d3
 cd /opt/ITSEC/1.Information-Gathering/4.SSL/sslyze/nabla-c0d3
 git clone https://github.com/nabla-c0d3/sslyze.git
@@ -25,8 +24,6 @@ GITREPOROOT=/opt/ITSEC/1.Information-Gathering/4.SSL/sslyze/nabla-c0d3/sslyze
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/4.SSL
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/4.SSL
 DSKTPFL=sslyze.desktop
-
-
 
 cd $GITREPOROOT
 git clean -f

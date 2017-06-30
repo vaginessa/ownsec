@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 bold=$(tput bold)
 normal=$(tput sgr0)
 
@@ -12,8 +11,6 @@ echo "${bold}
 |____/|_|  |_| |_| |_|    \___/|____/|_| \_\_____|_| \_|\___/|_|  |_|
         
 ${normal}"
-
-
 
 mkdir -p /opt/ITSEC/1.Information-Gathering/7.SMTP/smtp-user-enum/pentestmonkey
 cd /opt/ITSEC/1.Information-Gathering/7.SMTP/smtp-user-enum/pentestmonkey

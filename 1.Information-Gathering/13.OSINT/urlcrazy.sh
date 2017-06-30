@@ -12,7 +12,6 @@ echo "${bold}
                
 ${normal}"
 
-
 mkdir -p /opt/ITSEC/1.Information-Gathering/13.OSINT/urlcrazy/hardwaterhacker
 cd /opt/ITSEC/1.Information-Gathering/13.OSINT/urlcrazy/hardwaterhacker
 git clone https://github.com/hardwaterhacker/URLCrazy.git
@@ -27,7 +26,6 @@ EXECUTEABLE2=urlcrazy
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/13.OSINT
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/13.OSINT
 DSKTPFL=urlcrazy.desktop
-
 
 cd $GITREPOROOT
 sudo rm -f /usr/local/bin/$EXECUTEABLE2

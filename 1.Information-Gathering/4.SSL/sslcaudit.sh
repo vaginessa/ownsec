@@ -1,15 +1,5 @@
 #!/bin/bash
 
-mkdir -p /opt/ITSEC/1.Information-Gathering/4.SSL/sslaudit/grwl
-cd /opt/ITSEC/1.Information-Gathering/4.SSL/sslaudit/grwl
-git clone https://github.com/grwl/sslcaudit.git
-
-
-GITREPOROOT=/opt/ITSEC/1.Information-Gathering/4.SSL/sslaudit/grwl/sslcaudit
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/4.SSL
-DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/4.SSL
-DSKTPFL=sslcaudit.desktop
-
 bold=$(tput bold)
 normal=$(tput sgr0)
 
@@ -21,6 +11,15 @@ echo "${bold}
 |____/____/|_____/_/   \_\___/|____/___| |_|  
             
 ${normal}"
+
+mkdir -p /opt/ITSEC/1.Information-Gathering/4.SSL/sslaudit/grwl
+cd /opt/ITSEC/1.Information-Gathering/4.SSL/sslaudit/grwl
+git clone https://github.com/grwl/sslcaudit.git
+
+GITREPOROOT=/opt/ITSEC/1.Information-Gathering/4.SSL/sslaudit/grwl/sslcaudit
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/4.SSL
+DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/4.SSL
+DSKTPFL=sslcaudit.desktop
 
 cd $GITREPOROOT
 git clean -f

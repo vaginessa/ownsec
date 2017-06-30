@@ -1,5 +1,18 @@
 #!/bin/bash
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ _____ ___ _  _______ ____  
+|  ___|_ _| |/ / ____|  _ \ 
+| |_   | || ' /|  _| | | | |
+|  _|  | || . \| |___| |_| |
+|_|   |___|_|\_\_____|____/ 
+           
+${normal}"
+
+
 mkdir -p /opt/ITSEC/7.Mitm/3.VPN/fiked/droe
 cd /opt/ITSEC/7.Mitm/3.VPN/fiked/droe
 git clone https://github.com/droe/fiked.git
@@ -13,17 +26,6 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7
 DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm/3.VPN
 DSKTPFL=fiked.desktop
 
-bold=$(tput bold)
-normal=$(tput sgr0)
-
-echo "${bold}
- _____ ___ _  _______ ____  
-|  ___|_ _| |/ / ____|  _ \ 
-| |_   | || ' /|  _| | | | |
-|  _|  | || . \| |___| |_| |
-|_|   |___|_|\_\_____|____/ 
-           
-${normal}"
 
 
 cd $GITREPOROOT

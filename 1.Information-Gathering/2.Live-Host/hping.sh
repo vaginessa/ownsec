@@ -12,7 +12,6 @@ echo "${bold}
             
 ${normal}"
 
-
 mkdir -p /opt/ITSEC/1.Information-Gathering/2.Live-Host/hping3/antirez
 cd /opt/ITSEC/1.Information-Gathering/2.Live-Host/hping3/antirez
 git clone https://github.com/antirez/hping.git
@@ -27,8 +26,6 @@ DSKTPFL=hping3.desktop
 
 sudo rm /usr/sbin/hping
 sudo rm /usr/sbin/hping2
-
-
 
 cd $GITREPOROOT
 make clean

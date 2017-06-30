@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 bold=$(tput bold)
 normal=$(tput sgr0)
 
@@ -12,8 +11,6 @@ echo "${bold}
 |_|  |_|_____| |_/_/   \_\____|\___/ \___/|_|   |___|_____|
           
 ${normal}"
-
-
 
 mkdir -p /opt/ITSEC/1.Information-Gathering/13.OSINT/metagoofil/opsdisk
 cd /opt/ITSEC/1.Information-Gathering/13.OSINT/metagoofil/opsdisk

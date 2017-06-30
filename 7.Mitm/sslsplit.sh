@@ -1,15 +1,5 @@
 #!/bin/bash
 
-mkdir -p /opt/ITSEC/7.Mitm/sslsplit/droe
-cd /opt/ITSEC/7.Mitm/sslsplit/droe
-git clone https://github.com/droe/sslsplit.git
-
-GITREPOROOT=/opt/ITSEC/7.Mitm/sslsplit/droe/sslsplit
-#
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
-DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
-DSKTPFL=sslsplit.desktop
-
 bold=$(tput bold)
 normal=$(tput sgr0)
 
@@ -21,6 +11,18 @@ echo "${bold}
 |____/____/|_____|____/|_|   |_____|___| |_|  
              
 ${normal}"
+
+
+mkdir -p /opt/ITSEC/7.Mitm/sslsplit/droe
+cd /opt/ITSEC/7.Mitm/sslsplit/droe
+git clone https://github.com/droe/sslsplit.git
+
+GITREPOROOT=/opt/ITSEC/7.Mitm/sslsplit/droe/sslsplit
+#
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
+DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
+DSKTPFL=sslsplit.desktop
+
 
 
 cd $GITREPOROOT

@@ -1,7 +1,6 @@
 #!/bin/bash
 # needs makefile fix for pip "sudo -H pip install ..."
 
-
 mkdir -p /opt/ITSEC/1.Information-Gathering/16.IDS-IPS_Identification/1.Web-Firewalls/wafw00f/EnableSecurity
 cd /opt/ITSEC/1.Information-Gathering/16.IDS-IPS_Identification/1.Web-Firewalls/wafw00f/EnableSecurity
 git clone https://github.com/EnableSecurity/wafw00f.git
@@ -26,7 +25,6 @@ __        ___    _______        _____   ___  _____
    \_/\_/_/   \_\_|      \_/\_/  \___/ \___/|_|    
        
 ${normal}"
-
 
 cd $GITREPOROOT
 git clean -f

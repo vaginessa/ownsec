@@ -12,7 +12,6 @@ echo "${bold}
           
 ${normal}"
 
-
 mkdir -p /opt/ITSEC/1.Information-Gathering/13.OSINT/tekdefense-automater/1aN0rmus
 cd /opt/ITSEC/1.Information-Gathering/13.OSINT/tekdefense-automater/1aN0rmus
 git clone https://github.com/1aN0rmus/TekDefense-Automater.git

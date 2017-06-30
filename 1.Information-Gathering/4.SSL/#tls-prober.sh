@@ -1,8 +1,5 @@
 #unfinished
 #!/bin/bash
-mkdir -p /opt/ITSEC/1.Information-Gathering/4.SSL/tls_prober/WestpointLtd
-cd /opt/ITSEC/1.Information-Gathering/4.SSL/tls_prober/WestpointLtd
-git clone https://github.com/WestpointLtd/tls_prober.git
 
 bold=$(tput bold)
 normal=$(tput sgr0)
@@ -15,6 +12,11 @@ echo "${bold}
   |_| |_____|____/|_|   |_| \_\\___/|____/|_____|_| \_\
              
 ${normal}"
+
+mkdir -p /opt/ITSEC/1.Information-Gathering/4.SSL/tls_prober/WestpointLtd
+cd /opt/ITSEC/1.Information-Gathering/4.SSL/tls_prober/WestpointLtd
+git clone https://github.com/WestpointLtd/tls_prober.git
+
 
 cd /opt/ITSEC/1.Information-Gathering/4.SSL/tls_prober/WestpointLtd/tls_prober
 

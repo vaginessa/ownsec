@@ -12,8 +12,6 @@ echo "${bold}
             
 ${normal}"
 
-
-
 mkdir -p /opt/ITSEC/1.Information-Gathering/1.Network_Portscanner/nmap/nmap
 cd /opt/ITSEC/1.Information-Gathering/1.Network_Portscanner/nmap/nmap
 git clone https://github.com/nmap/nmap.git
@@ -25,8 +23,6 @@ GITREPOROOT=/opt/ITSEC/1.Information-Gathering/1.Network_Portscanner/nmap/nmap/n
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/1.Network_Portscanner
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/1.Network_Portscanner
 DSKTPFL=nmap.desktop
-
-
 
 cd $GITREPOROOT
 make clean

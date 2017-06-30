@@ -1,22 +1,5 @@
 #!/bin/bash
 
-mkdir -p /opt/ITSEC/5.Database/1.SQL/hexorbase/savio-code
-cd /opt/ITSEC/5.Database/1.SQL/hexorbase/savio-code
-git clone https://github.com/savio-code/hexorbase.git
-#
-sudo ldconfig
-sudo updatedb
-#
-sudo rm -f /usr/local/bin/hexorbase
-s
-#
-GITREPOROOT=/opt/ITSEC/5.Database/1.SQL/hexorbase/savio-code/hexorbase
-GITREPOBINROOT=/opt/ITSEC/5.Database/1.SQL/hexorbase/savio-code/hexorbase/HexorBase
-#
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/5.Database/1.SQL
-DSKTPFLSDEST=/home/$USER/.local/share/applications/5.Database/1.SQL
-DSKTPFL=hexorbase.desktop
-
 bold=$(tput bold)
 normal=$(tput sgr0)
 
@@ -29,6 +12,19 @@ echo "${bold}
            
 ${normal}"
 
+mkdir -p /opt/ITSEC/5.Database/1.SQL/hexorbase/savio-code
+cd /opt/ITSEC/5.Database/1.SQL/hexorbase/savio-code
+git clone https://github.com/savio-code/hexorbase.git
+
+sudo rm -f /usr/local/bin/hexorbase
+
+GITREPOROOT=/opt/ITSEC/5.Database/1.SQL/hexorbase/savio-code/hexorbase
+GITREPOBINROOT=/opt/ITSEC/5.Database/1.SQL/hexorbase/savio-code/hexorbase/HexorBase
+
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/5.Database/1.SQL
+DSKTPFLSDEST=/home/$USER/.local/share/applications/5.Database/1.SQL
+DSKTPFL=hexorbase.desktop
+
 cd $GITREPOROOT
 git clean -f
 git fetch origin
@@ -39,11 +35,11 @@ git submodule update --recursive
 #
 cd $GITREPOBINROOT
 
-echo "#!/bin/bash
+echo '#!/bin/bash
 
 cd /opt/ITSEC/5.Database/1.SQL/hexorbase/savio-code/hexorbase/HexorBase
 
-python execute.py" > hexorbase.sh
+python execute.py "$@"' > hexorbase.sh
 
 chmod +x hexorbase.sh
 

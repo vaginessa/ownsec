@@ -1,5 +1,17 @@
 #!/bin/bash
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ ____  _   _ ____   ____ _   _ _____ _____ 
+|  _ \| \ | / ___| / ___| | | | ____|  ___|
+| | | |  \| \___ \| |   | |_| |  _| | |_   
+| |_| | |\  |___) | |___|  _  | |___|  _|  
+|____/|_| \_|____/ \____|_| |_|_____|_|    
+           
+${normal}"
+
 mkdir -p /opt/ITSEC/7.Mitm/2.DNS/dnschef/iphelix
 cd /opt/ITSEC/7.Mitm/2.DNS/dnschef/iphelix
 git clone https://github.com/iphelix/dnschef.git
@@ -15,22 +27,9 @@ EXECUTEABLE3=dnschef
 sudo rm /usr/local/bin/$EXECUTEABLE2
 sudo rm $GITREPOROOT/$EXECUTEABLE2
 
-#
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm/2.DNS
 DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm/2.DNS
 DSKTPFL=dnschef.desktop
-
-bold=$(tput bold)
-normal=$(tput sgr0)
-
-echo "${bold}
- ____  _   _ ____   ____ _   _ _____ _____ 
-|  _ \| \ | / ___| / ___| | | | ____|  ___|
-| | | |  \| \___ \| |   | |_| |  _| | |_   
-| |_| | |\  |___) | |___|  _  | |___|  _|  
-|____/|_| \_|____/ \____|_| |_|_____|_|    
-           
-${normal}"
 
 cd $GITREPOROOT
 git clean -f 
@@ -40,11 +39,11 @@ git pull
 git submodule init
 git submodule update --recursive
 
-echo "#!/bin/bash 
+echo '#!/bin/bash 
 
-cd /opt/ITSEC/7.Mitm/7.Mitm/2.DNS/dnschef/iphelix/dnschef
+cd /opt/ITSEC/7.Mitm/2.DNS/dnschef/iphelix/dnschef
 
-python dnschef.py" > dnschef.sh
+python dnschef.py "$@"' > dnschef.sh
 chmod +x $GITREPOROOT/$EXECUTEABLE2
 sudo ln -s $GITREPOROOT/$EXECUTEABLE2 /usr/local/bin/$EXECUTEABLE3
 mkdir -p $DSKTPFLSDEST

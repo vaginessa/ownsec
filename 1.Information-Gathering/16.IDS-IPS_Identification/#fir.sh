@@ -1,6 +1,18 @@
 #!/bin/bash
 # doesent work local or docker either
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ _____ ___ ____  
+|  ___|_ _|  _ \ 
+| |_   | || |_) |
+|  _|  | ||  _ < 
+|_|   |___|_| \_\
+         
+${normal}"
+
 mkdir -p /opt/ITSEC/1.Information-Gathering/16.IDS-IPS_Identification/fir/certsocietegenerale
 cd /opt/ITSEC/1.Information-Gathering/16.IDS-IPS_Identification/fir/certsocietegenerale
 git clone https://github.com/certsocietegenerale/FIR.git
@@ -15,19 +27,6 @@ EXECUTEABLE2=fir
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/16.IDS-IPS_Identification
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/16.IDS-IPS_Identification
 DSKTPFL=fir.desktop
-
-bold=$(tput bold)
-normal=$(tput sgr0)
-
-echo "${bold}
- _____ ___ ____  
-|  ___|_ _|  _ \ 
-| |_   | || |_) |
-|  _|  | ||  _ < 
-|_|   |___|_| \_\
-         
-${normal}"
-
 
 cd $GITREPOROOT
 

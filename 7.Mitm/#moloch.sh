@@ -1,8 +1,7 @@
+#####
 
+does not work, build error
 
-mkdir -p /opt/ITSEC/7.Mitm/moloch/aol
-cd /opt/ITSEC/7.Mitm/moloch/aol
-git clone https://github.com/aol/moloch.git
 
 bold=$(tput bold)
 normal=$(tput sgr0)
@@ -17,8 +16,11 @@ echo "${bold}
 ${normal}"
 
 
-does not work, build error
+mkdir -p /opt/ITSEC/7.Mitm/moloch/aol
+cd /opt/ITSEC/7.Mitm/moloch/aol
+git clone https://github.com/aol/moloch.git
 
+####################
 03:30 $ make -j 2
 Making all in capture
 make[1]: Entering directory '/opt/ITSEC/7.Mitm/7.Mitm/moloch/aol/moloch/capture'

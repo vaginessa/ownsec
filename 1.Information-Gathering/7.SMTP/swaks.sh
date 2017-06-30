@@ -12,7 +12,6 @@ echo "${bold}
             
 ${normal}"
 
-
 mkdir -p /opt/ITSEC/1.Information-Gathering/7.SMTP/swaks/roman-rybalko
 cd /opt/ITSEC/1.Information-Gathering/7.SMTP/swaks/roman-rybalko
 git clone https://github.com/roman-rybalko/swaks.git
@@ -27,8 +26,6 @@ EXECUTEABLE2=swaks
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/7.SMTP
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/7.SMTP
 DSKTPFL=swaks.desktop
-
-
 
 cd $GITREPOROOT
 sudo rm -f /usr/local/bin/$EXECUTEABLE2

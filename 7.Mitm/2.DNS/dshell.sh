@@ -1,5 +1,19 @@
 #!/bin/bash
 
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}
+ ____  ____  _   _ _____ _     _     
+|  _ \/ ___|| | | | ____| |   | |    
+| | | \___ \| |_| |  _| | |   | |    
+| |_| |___) |  _  | |___| |___| |___ 
+|____/|____/|_| |_|_____|_____|_____|
+         
+${normal}"
+
+
 mkdir -p /opt/ITSEC/7.Mitm/2.DNS/dshell/USArmyResearchLab
 cd /opt/ITSEC/7.Mitm/2.DNS/dshell/USArmyResearchLab
 git clone https://github.com/USArmyResearchLab/Dshell
@@ -20,18 +34,6 @@ DSKTPFL2=dshell-decode.desktop
 
 sudo rm -f /usr/local/bin/$EXECUTEABLE2
 sudo rm -f /usr/local/bin/$EXECUTEABLE3
-
-bold=$(tput bold)
-normal=$(tput sgr0)
-
-echo "${bold}
- ____  ____  _   _ _____ _     _     
-|  _ \/ ___|| | | | ____| |   | |    
-| | | \___ \| |_| |  _| | |   | |    
-| |_| |___) |  _  | |___| |___| |___ 
-|____/|____/|_| |_|_____|_____|_____|
-         
-${normal}"
 
 cd $GITREPOROOT
 
