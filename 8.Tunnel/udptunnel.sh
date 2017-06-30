@@ -1,18 +1,5 @@
 #!/bin/bash
 
-mkdir -p /opt/ITSEC/8.Tunnel/udptunnel/astroza
-cd /opt/ITSEC/8.Tunnel/udptunnel/astroza
-git clone https://github.com/astroza/udptunnel.git
-
-sudo updatedb
-sudo ldconfig
-
-GITREPOROOT=/opt/ITSEC/8.Tunnel/udptunnel/astroza/udptunnel
-
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/8.Tunnel
-DSKTPFLSDEST=/home/$USER/.local/share/applications/8.Tunnel
-DSKTPFL=udptunnel.desktop
-
 bold=$(tput bold)
 normal=$(tput sgr0)
 
@@ -25,6 +12,18 @@ echo "${bold}
           
 ${normal}"
 
+mkdir -p /opt/ITSEC/8.Tunnel/udptunnel/astroza
+cd /opt/ITSEC/8.Tunnel/udptunnel/astroza
+git clone https://github.com/astroza/udptunnel.git
+
+sudo updatedb
+sudo ldconfig
+
+GITREPOROOT=/opt/ITSEC/8.Tunnel/udptunnel/astroza/udptunnel
+
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/8.Tunnel
+DSKTPFLSDEST=/home/$USER/.local/share/applications/8.Tunnel
+DSKTPFL=udptunnel.desktop
 
 cd $GITREPOROOT
 make clean

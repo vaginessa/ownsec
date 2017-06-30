@@ -1,22 +1,5 @@
 #!/bin/bash
 
-mkdir -p /opt/ITSEC/8.Tunnel/pwnat/samyk
-cd /opt/ITSEC/8.Tunnel/pwnat/samyk
-git clone https://github.com/samyk/pwnat.git
-
-sudo updatedb
-sudo ldconfig
-
-GITREPOROOT=/opt/ITSEC/8.Tunnel/pwnat/samyk/pwnat
-EXECUTEABLE1=pwnat	
-EXECUTEABLE2=pwnat
-#
-#
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/8.Tunnel
-DSKTPFLSDEST=/home/$USER/.local/share/applications/8.Tunnel
-DSKTPFL=pwnat.desktop
-
-
 bold=$(tput bold)
 normal=$(tput sgr0)
 
@@ -29,6 +12,17 @@ echo "${bold}
              
 ${normal}"
 
+mkdir -p /opt/ITSEC/8.Tunnel/pwnat/samyk
+cd /opt/ITSEC/8.Tunnel/pwnat/samyk
+git clone https://github.com/samyk/pwnat.git
+
+GITREPOROOT=/opt/ITSEC/8.Tunnel/pwnat/samyk/pwnat
+EXECUTEABLE1=pwnat	
+EXECUTEABLE2=pwnat
+
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/8.Tunnel
+DSKTPFLSDEST=/home/$USER/.local/share/applications/8.Tunnel
+DSKTPFL=pwnat.desktop
 
 cd $GITREPOROOT
 make clean

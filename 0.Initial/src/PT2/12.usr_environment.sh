@@ -14,6 +14,8 @@ ${normal}"
 cp -R /opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.config /home/$USER
 mkdir -p /home/$USER/.local/share/applications/0.Services
 cp -R /opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/0.Services/ /home/$USER/.local/share/applications/
+mkdir -p /home/$USER/.local/share/applications/00.Scripts
+cp -R /opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/00.Scripts/ /home/$USER/.local/share/applications/
 
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/Services
 DSKTPFLSDEST=/home/$USER/.local/share/applications/Services
@@ -56,8 +58,7 @@ cd /opt/ITSEC-Install-Scripts/0.Initial/src/settings-scripts/startstop/0.Service
 sudo bash -c 'for SHfiles in $(ls *.sh); do ln -s /opt/ITSEC-Install-Scripts/0.Initial/src/settings-scripts/startstop/0.Services/2.REDIS/$SHfiles /usr/local/bin/$SHfiles;done'
 cd /opt/ITSEC-Install-Scripts/0.Initial/src/settings-scripts/startstop/0.Services/3.PHP/
 sudo bash -c 'for SHfiles in $(ls *.sh); do ln -s /opt/ITSEC-Install-Scripts/0.Initial/src/settings-scripts/startstop/0.Services/3.PHP/$SHfiles /usr/local/bin/$SHfiles;done'
-
-
 cd /opt/ITSEC-Install-Scripts/0.Initial/src/settings-scripts/startstop/0.Services
 sudo bash -c 'for SHfiles in $(ls *.sh); do ln -s /opt/ITSEC-Install-Scripts/0.Initial/src/settings-scripts/startstop/0.Services/$SHfiles /usr/local/bin/$SHfiles;done'
 
+sudo ln -s /opt/ITSEC-Install-Scripts/0.Initial/src/settings-scripts/this-repo/cp-conf.sh /usr/local/bin/ITsec-Install-Scripts_cp-conf

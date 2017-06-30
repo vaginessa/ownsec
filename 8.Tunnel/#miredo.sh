@@ -3,16 +3,6 @@
 
 #!/bin/bash
 #
-#
-mkdir -p /opt/ITSEC/8.Tunnel/miredo/darconeous
-cd /opt/ITSEC/8.Tunnel/miredo/darconeous
-git clone https://github.com/darconeous/miredo.git
-
-sudo updatedb
-sudo ldconfig
-#
-GITREPOROOT=/opt/ITSEC/8.Tunnel/miredo/darconeous/miredo
-
 bold=$(tput bold)
 normal=$(tput sgr0)
 
@@ -24,6 +14,15 @@ echo "${bold}
 |_|  |_|___|_| \_\_____|____/ \___/ 
           
 ${normal}"
+
+mkdir -p /opt/ITSEC/8.Tunnel/miredo/darconeous
+cd /opt/ITSEC/8.Tunnel/miredo/darconeous
+git clone https://github.com/darconeous/miredo.git
+
+sudo updatedb
+sudo ldconfig
+
+GITREPOROOT=/opt/ITSEC/8.Tunnel/miredo/darconeous/miredo
 
 cd $GITREPOROOT
 

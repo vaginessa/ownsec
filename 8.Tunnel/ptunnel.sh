@@ -1,19 +1,5 @@
 #!/bin/bash
 
-mkdir -p /opt/ITSEC/8.Tunnel/ptunnel/izderadicka
-cd /opt/ITSEC/8.Tunnel/ptunnel/izderadicka
-git clone https://github.com/izderadicka/ptunnel.git
-
-sudo updatedb
-sudo ldconfig
-
-GITREPOROOT=/opt/ITSEC/8.Tunnel/ptunnel/izderadicka/ptunnel
-BINDIR=/opt/ITSEC/8.Tunnel/ptunnel/izderadicka/ptunnel/src
-
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/8.Tunnel
-DSKTPFLSDEST=/home/$USER/.local/share/applications
-DSKTPFL=ptunnel.desktop
-
 bold=$(tput bold)
 normal=$(tput sgr0)
 
@@ -26,6 +12,16 @@ echo "${bold}
            
 ${normal}"
 
+mkdir -p /opt/ITSEC/8.Tunnel/ptunnel/izderadicka
+cd /opt/ITSEC/8.Tunnel/ptunnel/izderadicka
+git clone https://github.com/izderadicka/ptunnel.git
+
+GITREPOROOT=/opt/ITSEC/8.Tunnel/ptunnel/izderadicka/ptunnel
+BINDIR=/opt/ITSEC/8.Tunnel/ptunnel/izderadicka/ptunnel/src
+
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/8.Tunnel
+DSKTPFLSDEST=/home/$USER/.local/share/applications
+DSKTPFL=ptunnel.desktop
 
 cd $GITREPOROOT
 git clean -f

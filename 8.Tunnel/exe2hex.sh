@@ -1,20 +1,5 @@
 #!/bin/bash
 
-mkdir -p /opt/ITSEC/8.Tunnel/exe2hex/g0tmi1k
-cd /opt/ITSEC/8.Tunnel/exe2hex/g0tmi1k
-git clone https://github.com/g0tmi1k/exe2hex.git
-
-sudo updatedb
-sudo ldconfig
-#
-GITREPOROOT=/opt/ITSEC/8.Tunnel/exe2hex/g0tmi1k/exe2hex
-EXECUTEABLE1=exe2hex.py
-EXECUTEABLE2=exe2hex
-
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/8.Tunnel
-DSKTPFLSDEST=/home/$USER/.local/share/applications/8.Tunnel
-DSKTPFL=exe2hex.desktop
-
 bold=$(tput bold)
 normal=$(tput sgr0)
 
@@ -27,6 +12,24 @@ echo "${bold}
             
 ${normal}"
 
+mkdir -p /opt/ITSEC/8.Tunnel/exe2hex/g0tmi1k
+cd /opt/ITSEC/8.Tunnel/exe2hex/g0tmi1k
+git clone https://github.com/g0tmi1k/exe2hex.git
+
+sudo updatedb
+sudo ldconfig
+#
+GITREPOROOT=/opt/ITSEC/8.Tunnel/exe2hex/g0tmi1k/exe2hex
+EXECUTEABLE1=exe2hex.py
+EXECUTEABLE2=exe2hex
+EXECUTEABLE3=exe2hex.sh
+
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/8.Tunnel
+DSKTPFLSDEST=/home/$USER/.local/share/applications/8.Tunnel
+DSKTPFL=exe2hex.desktop
+
+sudo rm -f /usr/local/bin/$EXECUTEABLE2
+
 cd $GITREPOROOT
 git clean -f
 git fetch origin
@@ -36,9 +39,14 @@ git submodule init
 git submodule update --recursive
 
 
-#
+echo '#!/bin/bash
+
+cd /opt/ITSEC/8.Tunnel/exe2hex/g0tmi1k/exe2hex
+
+python3 exe2hex.py "$@"' > exe2hex.sh
+chmod +x exe2hex.sh
 chmod +x $GITREPOROOT/$EXECUTEABLE1
-sudo ln -s $GITREPOROOT/$EXECUTEABLE1 /usr/local/bin/$EXECUTEABLE2
+sudo ln -s $GITREPOROOT/$EXECUTEABLE3 /usr/local/bin/$EXECUTEABLE2
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 
