@@ -9,11 +9,9 @@
 
 - phppgadmin menu link
 
-- some perl & python apps dont work due to environment paths, created sh scripts to cd into path but thats not enough.
-
 - nginx install for fruitywifi wants userinteraction.
 
-- menu links for itsec packaes installed by default apt and auto cp during part to as done w crunch.
+- menu links for itsec packages installed by default apt and auto cp during part to as done w crunch.
 
 - test everything ....
 
