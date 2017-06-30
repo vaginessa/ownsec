@@ -39,6 +39,25 @@
     </Menu>
 
     <Menu>
+        <Name>00.Resources</Name>
+        <Directory>00.Resources.directory</Directory>
+        <Include>
+            <And>
+                <Category>00.Resources</Category>
+            </And>
+        </Include>
+    <Menu>
+        <Name>1.Networking</Name>
+        <Directory>1.Networking.directory</Directory>
+        <Include>
+            <And>
+                <Category>1.Networking</Category>
+            </And>
+        </Include>
+    </Menu>
+    </Menu>
+
+    <Menu>
         <Name>0.Services</Name>
         <Directory>0.Services.directory</Directory>
         <Include>
