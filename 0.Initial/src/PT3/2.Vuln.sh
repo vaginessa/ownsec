@@ -1,7 +1,5 @@
 #!/bin/bash
-###############################
 
-#
 ###############################################################################
 ######################   1.Vulnerability-Scanner   ####################
 ###########################################################################
@@ -18,7 +16,7 @@ cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner/
 ./commix.sh 
 ./d-tect.sh # (needs console linking through d-tect.sh)
 ./golismero.sh  
-./hellraiser.sh #needs check - some sort of ruby clstrfk
+./hellraiser.sh
 ./joomscan.sh 
 ./lhf.sh 
 ./lightbulb-framework.sh #PIP dependency  - needs check - 
@@ -41,7 +39,7 @@ cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner/
 ###############################################################################
 ######################   2.Cisco-Tools   ####################
 ###########################################################################
-cd /opt/ITSEC-Install-Scripts/2.Cisco-Tools/
+cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner/2.Cisco-Tools/
 ./cisco-auditing-tool.sh 
 ./cisco-global-exploiter.sh 
 ##cisco-ocs.sh #greyd out earl, no idea why
@@ -52,12 +50,10 @@ cd /opt/ITSEC-Install-Scripts/2.Cisco-Tools/
 ###############################################################################
 ######################   3.Fuzzer   ####################
 ###########################################################################
-cd /opt/ITSEC-Install-Scripts/3.Fuzzer/
+cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner/3.Fuzzer/
 ./dotdotpwn.sh 
 ./simplefuzzer.sh # call w sfuzz 
 ./siparmyknife.sh 
-#
-t.sh 
 #
 ###############################################################################
 ######################   5.Voip   ####################
