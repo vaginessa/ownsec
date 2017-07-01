@@ -26,8 +26,7 @@ cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner/
 #./proxystrike.sh # complains openssl 1.1.0 which does not really work on the setup- breaks all sorts of things.
 ./pyfiscan.sh #PIP dependency  - needs check - 
 ./sn1per.sh # check plugin errors  /usr/share/sniper/plugins/Findsploit/: No such file or directory
-./sparta.sh  # ./sparta.sh: 11: ./sparta.sh: Syntax error: "(" unexpected - see also/opt/ITSEC-Install-Scripts/0.Initial/src/PT2/1.DEB-Lists.sh
-./uniscan.sh # err: you may need to install the Uniscan::Crawler module)
+./sparta.sh  # 
 ./v3n0m-scanner.sh #PIP dependencies - 
 ./vbscan.sh 
 #./w3af.sh
