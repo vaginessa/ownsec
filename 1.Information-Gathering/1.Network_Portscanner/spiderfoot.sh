@@ -20,7 +20,8 @@ GITREPOROOT=/opt/ITSEC/1.Information-Gathering/1.Network_Portscanner/spiderfoot/
 
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/1.Network_Portscanner
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/1.Network_Portscanner
-DSKTPFL=spiderfoot.desktop
+DSKTPFL1=spiderfoot.desktop
+DSKTPFL2=spiderfoot_cli.desktop
 
 cd $GITREPOROOT
 make clean
@@ -51,5 +52,6 @@ chmod +x sfcli.sh
 sudo ln -s $GITREPOROOT/sf.sh /usr/local/bin/spiderfoot
 sudo ln -s $GITREPOROOT/sfcli.sh /usr/local/bin/spiderfoot_cli
 mkdir -p $DSKTPFLSDEST
-cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+cp $DSKTPFLS/$DSKTPFL1 $DSKTPFLSDEST/$DSKTPFL1
+cp $DSKTPFLS/$DSKTPFL2 $DSKTPFLSDEST/$DSKTPFL2
 
