@@ -13,4 +13,4 @@ cd /opt/ITSEC-Install-Scripts/10.Stresstest/
 ./slowhttptest.sh 
 ./t50.sh 
 ./udpflooder.sh 
-./ufone
+./ufonet.sh
