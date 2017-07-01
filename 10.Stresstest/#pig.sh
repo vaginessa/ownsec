@@ -13,11 +13,11 @@ echo "${bold}
               
 ${normal}"
 
-mkdir -p /opt/ITSEC/2.Vulnerability-Analysis/4.Stresstest/pig/rafael-santiago
-cd /opt/ITSEC/2.Vulnerability-Analysis/4.Stresstest/pig/rafael-santiago
+mkdir -p /opt/ITSEC/2.Vulnerability-Analysis/10.Stresstest/pig/rafael-santiago
+cd /opt/ITSEC/2.Vulnerability-Analysis/10.Stresstest/pig/rafael-santiago
 git clone https://github.com/rafael-santiago/pig
 
-GITREPOROOT=/opt/ITSEC/2.Vulnerability-Analysis/4.Stresstest/pig/rafael-santiago/pig
+GITREPOROOT=/opt/ITSEC/2.Vulnerability-Analysis/10.Stresstest/pig/rafael-santiago/pig
 #EXECUTEABLE1=pig.py
 #EXECUTEABLE2=dhcpPIG
 
@@ -35,7 +35,7 @@ cd hefesto
 git clean -f 
 git pull
 git submodule init && git submodule update --recursive
-cd /opt/ITSEC/2.Vulnerability-Analysis/4.Stresstest/pig/rafael-santiago/pig/hefesto/src/
+cd /opt/ITSEC/2.Vulnerability-Analysis/10.Stresstest/pig/rafael-santiago/pig/hefesto/src/
 
 ./build.sh
 #chmod +x $GITREPOROOT/$EXECUTEABLE1

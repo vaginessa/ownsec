@@ -12,15 +12,15 @@ echo "${bold}
               
 ${normal}"
 
-mkdir -p /opt/ITSEC/2.Vulnerability-Analysis/4.Stresstest/rtp-flooder
+mkdir -p /opt/ITSEC/2.Vulnerability-Analysis/10.Stresstest/rtp-flooder
 
-DOWNLOADDIR=/opt/ITSEC/2.Vulnerability-Analysis/4.Stresstest/rtp-flooder
-BINROOT=/opt/ITSEC/2.Vulnerability-Analysis/4.Stresstest/rtp-flooder/rtpflood
+DOWNLOADDIR=/opt/ITSEC/2.Vulnerability-Analysis/10.Stresstest/rtp-flooder
+BINROOT=/opt/ITSEC/2.Vulnerability-Analysis/10.Stresstest/rtp-flooder/rtpflood
 
 EXECUTEABLE1=rtpflood
 EXECUTEABLE2=rtpflood
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/2.Vulnerability-Analysis/4.Stresstest
-DSKTPFLSDEST=/home/$USER/.local/share/applications/2.Vulnerability-Analysis/4.Stresstest
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/2.Vulnerability-Analysis/10.Stresstest
+DSKTPFLSDEST=/home/$USER/.local/share/applications/2.Vulnerability-Analysis/10.Stresstest
 DSKTPFL=rtpflood.desktop
 
 cd $DOWNLOADDIR

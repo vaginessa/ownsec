@@ -12,15 +12,15 @@ echo "${bold}
              
 ${normal}"
 
-mkdir -p /opt/ITSEC/2.Vulnerability-Analysis/4.Stresstest/iax-flooder
+mkdir -p /opt/ITSEC/2.Vulnerability-Analysis/10.Stresstest/iax-flooder
 
-DOWNLOADDIR=/opt/ITSEC/2.Vulnerability-Analysis/4.Stresstest/iax-flooder
-BINROOT=/opt/ITSEC/2.Vulnerability-Analysis/4.Stresstest/iax-flooder/iaxflood
+DOWNLOADDIR=/opt/ITSEC/2.Vulnerability-Analysis/10.Stresstest/iax-flooder
+BINROOT=/opt/ITSEC/2.Vulnerability-Analysis/10.Stresstest/iax-flooder/iaxflood
 EXECUTEABLE1=iaxflood
 EXECUTEABLE2=iaxflood
 
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/2.Vulnerability-Analysis/4.Stresstest
-DSKTPFLSDEST=/home/$USER/.local/share/applications/2.Vulnerability-Analysis/4.Stresstest
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/2.Vulnerability-Analysis/10.Stresstest
+DSKTPFLSDEST=/home/$USER/.local/share/applications/2.Vulnerability-Analysis/10.Stresstest
 DSKTPFL=iaxflood.desktop
 
 cd $DOWNLOADDIR
