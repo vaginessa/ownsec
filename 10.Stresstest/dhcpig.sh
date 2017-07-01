@@ -12,16 +12,16 @@ echo "${bold}
             
 ${normal}"
 
-mkdir -p /opt/ITSEC/2.Vulnerability-Analysis/10.Stresstest/dhcpig/kamorin
-cd /opt/ITSEC/2.Vulnerability-Analysis/10.Stresstest/dhcpig/kamorin
+mkdir -p /opt/ITSEC/10.Stresstest/dhcpig/kamorin
+cd /opt/ITSEC/10.Stresstest/dhcpig/kamorin
 git clone https://github.com/kamorin/DHCPig
 
-GITREPOROOT=/opt/ITSEC/2.Vulnerability-Analysis/10.Stresstest/dhcpig/kamorin/DHCPig
+GITREPOROOT=/opt/ITSEC/10.Stresstest/dhcpig/kamorin/DHCPig
 EXECUTEABLE1=pig.py
 EXECUTEABLE2=dhcPIG
 
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/2.Vulnerability-Analysis/10.Stresstest
-DSKTPFLSDEST=/home/$USER/.local/share/applications/2.Vulnerability-Analysis/10.Stresstest
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/10.Stresstest
+DSKTPFLSDEST=/home/$USER/.local/share/applications/10.Stresstest
 DSKTPFL=dhcpig.desktop
 
 cd $GITREPOROOT

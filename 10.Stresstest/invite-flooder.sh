@@ -13,17 +13,17 @@ echo "${bold}
           
 ${normal}"
 
-mkdir -p /opt/ITSEC/2.Vulnerability-Analysis/10.Stresstest/invite-flooder
+mkdir -p /opt/ITSEC/10.Stresstest/invite-flooder
 
-DOWNLOADDIR=/opt/ITSEC/2.Vulnerability-Analysis/10.Stresstest/invite-flooder
-BINROOT=/opt/ITSEC/2.Vulnerability-Analysis/10.Stresstest/invite-flooder/inviteflood
+DOWNLOADDIR=/opt/ITSEC/10.Stresstest/invite-flooder
+BINROOT=/opt/ITSEC/10.Stresstest/invite-flooder/inviteflood
 #EXECUTEABLE1=pig.py
 #EXECUTEABLE2=pig
 EXECUTEABLE1=inviteflood
 EXECUTEABLE2=inviteflood
 
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/2.Vulnerability-Analysis/10.Stresstest
-DSKTPFLSDEST=/home/$USER/.local/share/applications/2.Vulnerability-Analysis/10.Stresstest
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/10.Stresstest
+DSKTPFLSDEST=/home/$USER/.local/share/applications/10.Stresstest
 DSKTPFL=inviteflood.desktop
 
 cd $DOWNLOADDIR

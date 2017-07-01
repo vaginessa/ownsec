@@ -12,11 +12,11 @@ echo "${bold}
           
 ${normal}"
 
-mkdir -p /opt/ITSEC/2.Vulnerability-Analysis/10.Stresstest/siege/JoeDog
-cd /opt/ITSEC/2.Vulnerability-Analysis/10.Stresstest/siege/JoeDog
+mkdir -p /opt/ITSEC/10.Stresstest/siege/JoeDog
+cd /opt/ITSEC/10.Stresstest/siege/JoeDog
 git clone https://github.com/JoeDog/siege
 
-GITREPOROOT=/opt/ITSEC/2.Vulnerability-Analysis/10.Stresstest/siege/JoeDog/siege
+GITREPOROOT=/opt/ITSEC/10.Stresstest/siege/JoeDog/siege
 EXECUTEABLE1=siege
 EXECUTEABLE2=siege
 

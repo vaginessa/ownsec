@@ -12,16 +12,16 @@ echo "${bold}
            
 ${normal}"
 
-mkdir -p /opt/ITSEC/2.Vulnerability-Analysis/10.Stresstest/ufonet/epsylon
-cd /opt/ITSEC/2.Vulnerability-Analysis/10.Stresstest/ufonet/epsylon
+mkdir -p /opt/ITSEC/10.Stresstest/ufonet/epsylon
+cd /opt/ITSEC/10.Stresstest/ufonet/epsylon
 git clone https://github.com/epsylon/ufonet
 
-GITREPOROOT=/opt/ITSEC/2.Vulnerability-Analysis/10.Stresstest/ufonet/epsylon/ufonet
+GITREPOROOT=/opt/ITSEC/10.Stresstest/ufonet/epsylon/ufonet
 EXECUTEABLE1=ufonet
 EXECUTEABLE2=ufonet.sh
 
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/2.Vulnerability-Analysis/10.Stresstest
-DSKTPFLSDEST=/home/$USER/.local/share/applications/2.Vulnerability-Analysis/10.Stresstest
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/10.Stresstest
+DSKTPFLSDEST=/home/$USER/.local/share/applications/10.Stresstest
 DSKTPFL=ufonet.desktop
 
 cd $GITREPOROOT
@@ -35,7 +35,7 @@ git submodule init && git submodule update --recursive
 #sudo python setup.py install
 
 echo '#!/bin/bash
-cd /opt/ITSEC/2.Vulnerability-Analysis/10.Stresstest/ufonet/epsylon/ufonet
+cd /opt/ITSEC/10.Stresstest/ufonet/epsylon/ufonet
 ./ufonet "$@"' > ufonet.sh
 chmod +x $GITREPOROOT/$EXECUTEABLE1
 chmod +x $GITREPOROOT/$EXECUTEABLE2

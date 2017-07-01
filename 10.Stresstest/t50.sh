@@ -12,14 +12,14 @@ echo "${bold}
              
 ${normal}"
 
-mkdir -p /opt/ITSEC/2.Vulnerability-Analysis/10.Stresstest/t50/fredericopissarra
-cd /opt/ITSEC/2.Vulnerability-Analysis/10.Stresstest/t50/fredericopissarra
+mkdir -p /opt/ITSEC/10.Stresstest/t50/fredericopissarra
+cd /opt/ITSEC/10.Stresstest/t50/fredericopissarra
 git clone https://github.com/fredericopissarra/t50
 
-DOWNLOADDIR=/opt/ITSEC/2.Vulnerability-Analysis/10.Stresstest/t50/fredericopissarra/t50 
+DOWNLOADDIR=/opt/ITSEC/10.Stresstest/t50/fredericopissarra/t50 
 #
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/2.Vulnerability-Analysis/10.Stresstest
-DSKTPFLSDEST=/home/$USER/.local/share/applications/2.Vulnerability-Analysis/10.Stresstest
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/10.Stresstest
+DSKTPFLSDEST=/home/$USER/.local/share/applications/10.Stresstest
 DSKTPFL=t50.desktop
 
 cd $DOWNLOADDIR
