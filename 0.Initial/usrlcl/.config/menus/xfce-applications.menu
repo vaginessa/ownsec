@@ -609,6 +609,8 @@
                 </And>
             </Include>
         </Menu>
+    </Menu>
+
 	<Menu>
 	    <Name>10.Stresstest</Name>
 	    <Directory>10.Stresstest.directory</Directory>
@@ -618,8 +620,6 @@
 		</And>
 	    </Include>
 	</Menu>
-    </Menu>
-
 
     <Menu>
         <Name>Development</Name>
