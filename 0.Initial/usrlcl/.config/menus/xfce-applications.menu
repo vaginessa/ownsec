@@ -19,43 +19,7 @@
 
     </Layout>
 
-    <Menu>
-        <Name>00.Scripts</Name>
-        <Directory>00.Scripts.directory</Directory>
-        <Include>
-            <And>
-                <Category>00.Scripts</Category>
-            </And>
-        </Include>
-    <Menu>
-        <Name>0.ITsec-Install-Scripts</Name>
-        <Directory>0.ITsec-Install-Scripts.directory</Directory>
-        <Include>
-            <And>
-                <Category>0.ITsec-Install-Scripts</Category>
-            </And>
-        </Include>
-    </Menu>
-    </Menu>
 
-    <Menu>
-        <Name>00.Resources</Name>
-        <Directory>00.Resources.directory</Directory>
-        <Include>
-            <And>
-                <Category>00.Resources</Category>
-            </And>
-        </Include>
-    <Menu>
-        <Name>1.Networking</Name>
-        <Directory>1.Networking.directory</Directory>
-        <Include>
-            <And>
-                <Category>1.Networking</Category>
-            </And>
-        </Include>
-    </Menu>
-    </Menu>
 
     <Menu>
         <Name>0.Services</Name>
