@@ -1,19 +1,15 @@
 #!/bin/bash
 ###############################
-#
-######################################################
-######################   2.Vulnerability-Analysis   #
-####################################################
-#
+
 #
 ###############################################################################
 ######################   1.Vulnerability-Scanner   ####################
 ###########################################################################
-cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Analysis/1.Vulnerability-Scanner/openvas-setup-files
+cd /opt/ITSEC-Install-Scripts/1.Vulnerability-Scanner/openvas-setup-files
 ./openvas9-setup.sh  # disbbled to debug other scripts
 #
 #1.Vulnerability-Scanner ##########################################################
-cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Analysis/1.Vulnerability-Scanner/
+cd /opt/ITSEC-Install-Scripts/1.Vulnerability-Scanner/
 ./arachni.sh
 ./atscan.sh 
 #./ava.sh #didnt work, dont remember why, checkin later.
@@ -45,7 +41,7 @@ cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Analysis/1.Vulnerability-Scanner/
 ###############################################################################
 ######################   2.Cisco-Tools   ####################
 ###########################################################################
-cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Analysis/2.Cisco-Tools/
+cd /opt/ITSEC-Install-Scripts/2.Cisco-Tools/
 ./cisco-auditing-tool.sh 
 ./cisco-global-exploiter.sh 
 ##cisco-ocs.sh #greyd out earl, no idea why
@@ -56,39 +52,26 @@ cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Analysis/2.Cisco-Tools/
 ###############################################################################
 ######################   3.Fuzzer   ####################
 ###########################################################################
-cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Analysis/3.Fuzzer/
+cd /opt/ITSEC-Install-Scripts/3.Fuzzer/
 ./dotdotpwn.sh 
 ./simplefuzzer.sh # call w sfuzz 
 ./siparmyknife.sh 
 #
-###############################################################################
-######################   4.Stresstest   ####################
-###########################################################################
-cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Analysis/4.Stresstest/
-./dhcpig.sh #call w dhcPIG 
-./iax-flooder.sh #call w iaxfloof 
-./invite-flooder.sh 
-#./#pig.sh #disable for unknown reason, checking latr
-./rtp-flooder.sh 
-#./#siege.sh #disabled die to build err, check back latr
-./slowhttptest.sh 
-./t50.sh 
-./udpflooder.sh 
-./ufonet.sh 
+t.sh 
 #
 ###############################################################################
 ######################   5.Voip   ####################
 ###########################################################################
-#cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Analysis/5.Voip/
+#cd /opt/ITSEC-Install-Scripts/5.Voip/
 #
 ###############################################################################
 ######################   6.Webapp-Identification   ####################
 ###########################################################################
-#cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Analysis/6.Webapp-Identification/
+#cd /opt/ITSEC-Install-Scripts/6.Webapp-Identification/
 #
 ###############################################################################
 ######################   7.Webapp-Proxies   ####################
 ###########################################################################
-#cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Analysis/7.Webapp-Proxies/
+#cd /opt/ITSEC-Install-Scripts/7.Webapp-Proxies/
 #
 

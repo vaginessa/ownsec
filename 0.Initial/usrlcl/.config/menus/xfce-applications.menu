@@ -307,28 +307,21 @@
         </Menu>
     </Menu>
 
+
 <Menu>
-<Name>2.Vulnerability-Analysis</Name>
-<Directory>2.Vulnerability-Analysis.directory</Directory>
+<Name>2.Vulnerability-Scanner</Name>
+<Directory>2.Vulnerability-Scanner.directory</Directory>
 <Include>
     <And>
-        <Category>2.Vulnerability-Analysis</Category>
+        <Category>2.Vulnerability-Scanner</Category>
     </And>
 </Include>
 <Menu>
-    <Name>1.Vulnerability-Scanner</Name>
-    <Directory>1.Vulnerability-Scanner.directory</Directory>
+    <Name>1.Openvas</Name>
+    <Directory>1.Openvas.directory</Directory>
     <Include>
         <And>
-            <Category>1.Vulnerability-Scanner</Category>
-        </And>
-    </Include>
-<Menu>
-    <Name>Openvas</Name>
-    <Directory>Openvas.directory</Directory>
-    <Include>
-        <And>
-            <Category>Openvas</Category>
+            <Category>1.Openvas</Category>
         </And>
     </Include>
 </Menu>
@@ -349,15 +342,6 @@
     <Include>
         <And>
             <Category>3.Fuzzer</Category>
-        </And>
-    </Include>
-</Menu>
-<Menu>
-    <Name>4.Stresstest</Name>
-    <Directory>4.Stresstest.directory</Directory>
-    <Include>
-        <And>
-            <Category>4.Stresstest</Category>
         </And>
     </Include>
 </Menu>
@@ -596,6 +580,8 @@
             </Include>
         </Menu>
     </Menu>
+
+
    <Menu>
         <Name>7.Mitm</Name>
         <Directory>7.Mitm.directory</Directory>
@@ -632,6 +618,8 @@
             </Include>
         </Menu>
     </Menu>
+
+
     <Menu>
         <Name>8.Tunnel</Name>
         <Directory>8.Tunnel.directory</Directory>
@@ -649,7 +637,17 @@
                 </And>
             </Include>
         </Menu>
+	<Menu>
+	    <Name>10.Stresstest</Name>
+	    <Directory>10.Stresstest.directory</Directory>
+	    <Include>
+		<And>
+		    <Category>10.Stresstest</Category>
+		</And>
+	    </Include>
+	</Menu>
     </Menu>
+
 
     <Menu>
         <Name>Development</Name>
