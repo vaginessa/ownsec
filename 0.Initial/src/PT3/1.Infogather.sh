@@ -14,6 +14,7 @@ cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/1.Network_Portscanner/
 ./masscan.sh 
 ./thanos.sh 
 ./zmap.sh 
+./spiderfoot.sh
 #
 #
 ###############################################################################
