@@ -14,3 +14,4 @@ sudo update-rc.d -f saned remove
 sudo update-rc.d -f dnsmasq remove
 sudo update-rc.d -f mysql remove
 sudo update-rc.d -f php7.0-fpm remove
+sudo update-rc.d -f docker remove

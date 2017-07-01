@@ -166,6 +166,15 @@
         </Include>
     </Menu>
     <Menu>
+        <Name>6.Docker</Name>
+        <Directory>6.Docker.directory</Directory>
+        <Include>
+            <And>
+                <Category>6.Docker</Category>
+            </And>
+        </Include>
+    </Menu>
+    <Menu>
         <Name>6.PRINT-SCAN</Name>
         <Directory>6.PRINT-SCAN.directory</Directory>
         <Include>

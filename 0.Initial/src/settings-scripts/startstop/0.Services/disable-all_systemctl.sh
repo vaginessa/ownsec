@@ -16,4 +16,5 @@ sudo systemctl disable saned.service
 sudo systemctl disable dnsmasq.service
 sudo systemctl disable mysql.service 
 sudo systemctl disable php7.0-fpm.service 
+sudo systemctl disable docker.service 
 
