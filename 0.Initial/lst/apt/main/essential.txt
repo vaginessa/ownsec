@@ -14,11 +14,12 @@ bison
 binutils-dev
 bridge-utils
 build-essential 
+bleachbit 
 cargo
 catfish
 cmake 
+conky-all
 curl
-bleachbit 
 connect-proxy
 crunch
 darkstat
