@@ -5,11 +5,11 @@
 ###############################################################################
 ######################   1.Vulnerability-Scanner   ####################
 ###########################################################################
-cd /opt/ITSEC-Install-Scripts/1.Vulnerability-Scanner/openvas-setup-files
+cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner/openvas-setup-files
 ./openvas9-setup.sh  # disbbled to debug other scripts
 #
 #1.Vulnerability-Scanner ##########################################################
-cd /opt/ITSEC-Install-Scripts/1.Vulnerability-Scanner/
+cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner/
 ./arachni.sh
 ./atscan.sh 
 #./ava.sh #didnt work, dont remember why, checkin later.
