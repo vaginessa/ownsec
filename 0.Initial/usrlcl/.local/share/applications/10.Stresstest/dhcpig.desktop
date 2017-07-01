@@ -5,4 +5,4 @@ Exec=sh -c "dhcPIG -h;${SHELL:-bash}"
 StartupNotify=false
 Terminal=true
 Type=Application
-Categories=4.Stresstest;
+Categories=10.Stresstest;

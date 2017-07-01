@@ -3,7 +3,7 @@
 ###############################################################################
 ######################   10.Stresstest   ####################
 ###########################################################################
-cd /opt/ITSEC-Install-Scripts/4.Stresstest/
+cd /opt/ITSEC-Install-Scripts/10.Stresstest/
 ./dhcpig.sh #call w dhcPIG 
 ./iax-flooder.sh #call w iaxfloof 
 ./invite-flooder.sh 
