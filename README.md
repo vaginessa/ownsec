@@ -1,7 +1,7 @@
 
 # STATUS: 
 
-> if installed after 01.07.2017 - sudo rm -r /opt/ITSEC//2.Vulnerability-Analysis and reinstall the vulnerability stack.
+> if installed before 01.07.2017 - sudo rm -r /opt/ITSEC/2.Vulnerability-Analysis and reinstall the vulnerability stack.
 
 
 # ITSEC-Install-Scripts
