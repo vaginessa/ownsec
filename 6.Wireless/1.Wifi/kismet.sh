@@ -46,7 +46,7 @@ sudo make suidinstall
 #
 mkdir -p /home/$USER/.kismet
 echo "
-#ssid_map" >> /home/$USER/.kismet/ssid_map.conf
+#ssid_map" > /home/$USER/.kismet/ssid_map.conf
 sudo mkdir -p /usr/share/wireshark/wireshark
 sudo ln -s  /usr/local/share/wireshark/manuf /usr/share/wireshark/wireshark/manuf 
 
