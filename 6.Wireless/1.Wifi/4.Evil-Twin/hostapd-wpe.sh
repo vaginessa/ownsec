@@ -1,15 +1,5 @@
 #!/bin/bash
 
-mkdir -p /opt/ITSEC/6.Wireless/1.Wifi/4.Evil-Twin/hostapd-wpe/OpenSecurityResearch
-cd /opt/ITSEC/6.Wireless/1.Wifi/4.Evil-Twin/hostapd-wpe/OpenSecurityResearch
-git clone https://github.com/OpenSecurityResearch/hostapd-wpe.git
-
-GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/4.Evil-Twin/hostapd-wpe/OpenSecurityResearch/hostapd-wpe
-
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/6.Wireless/1.Wifi/4.Evil-Twin
-DSKTPFLSDEST=/home/$USER/.local/share/applications/6.Wireless/1.Wifi/4.Evil-Twin
-DSKTPFL=hostapd-wpe.desktop
-
 bold=$(tput bold)
 normal=$(tput sgr0)
 
@@ -21,6 +11,16 @@ echo "${bold}
 |_| |_|\___/|____/ |_/_/   \_\_|   |____/       \_/\_/  |_|   |_____|
         
 ${normal}"
+
+mkdir -p /opt/ITSEC/6.Wireless/1.Wifi/4.Evil-Twin/hostapd-wpe/OpenSecurityResearch
+cd /opt/ITSEC/6.Wireless/1.Wifi/4.Evil-Twin/hostapd-wpe/OpenSecurityResearch
+git clone https://github.com/OpenSecurityResearch/hostapd-wpe.git
+
+GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/4.Evil-Twin/hostapd-wpe/OpenSecurityResearch/hostapd-wpe
+
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/6.Wireless/1.Wifi/4.Evil-Twin
+DSKTPFLSDEST=/home/$USER/.local/share/applications/6.Wireless/1.Wifi/4.Evil-Twin
+DSKTPFL=hostapd-wpe.desktop
 
 cd $GITREPOROOT
 git clean -f

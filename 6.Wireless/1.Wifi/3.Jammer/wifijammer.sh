@@ -1,18 +1,5 @@
 #!/bin/bash
 
-mkdir -p /opt/ITSEC/6.Wireless/1.Wifi/3.Jammer/wifijammer/DanMcInerney
-cd /opt/ITSEC/6.Wireless/1.Wifi/3.Jammer/wifijammer/DanMcInerney
-git clone https://github.com/DanMcInerney/wifijammer.git
-
-
-GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/3.Jammer/wifijammer/DanMcInerney/wifijammer
-EXECUTEABLE1=wifijammer.py
-EXECUTEABLE2=wifijammer
-#
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/6.Wireless/1.Wifi/3.Jammer
-DSKTPFLSDEST=/home/$USER/.local/share/applications/6.Wireless/1.Wifi/3.Jammer
-DSKTPFL=wifijammer.desktop
-
 bold=$(tput bold)
 normal=$(tput sgr0)
 
@@ -24,6 +11,18 @@ __        _____ _____ ___    _   _    __  __ __  __ _____ ____
    \_/\_/  |___|_|   |___\___/_/   \_\_|  |_|_|  |_|_____|_| \_\
             
 ${normal}"
+
+mkdir -p /opt/ITSEC/6.Wireless/1.Wifi/3.Jammer/wifijammer/DanMcInerney
+cd /opt/ITSEC/6.Wireless/1.Wifi/3.Jammer/wifijammer/DanMcInerney
+git clone https://github.com/DanMcInerney/wifijammer.git
+
+GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/3.Jammer/wifijammer/DanMcInerney/wifijammer
+EXECUTEABLE1=wifijammer.py
+EXECUTEABLE2=wifijammer
+#
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/6.Wireless/1.Wifi/3.Jammer
+DSKTPFLSDEST=/home/$USER/.local/share/applications/6.Wireless/1.Wifi/3.Jammer
+DSKTPFL=wifijammer.desktop
 
 cd $GITREPOROOT
 

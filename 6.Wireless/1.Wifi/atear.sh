@@ -41,17 +41,18 @@ sudo -H pip2 install -r requirements.txt
 #
 
 rm -f $EXECUTEABLE3
-echo "#!/bin/bash
+echo "#!/bin/bash -i
 
-wifiadapter=(ifconfig -a | sed 's/[ \t].*//;/^\(lo\|\)$/d' | sed '/enp*/d' | sed '/docker*/d')
+# wifiadapter=(ifconfig -a | sed 's/[ \t].*//;/^\(lo\|\)$/d' | sed '/enp*/d' | sed '/docker*/d')
  
 cd /opt/ITSEC/6.Wireless/1.Wifi/atear/NORMA-Inc/AtEar 
 
-python run.py --iface $wifiadapter
+#python run.py --iface $wifiadapter
+python run.py --iface wlan0
 " > $EXECUTEABLE3
 
-sed -i 's#=(#=$(#g' $EXECUTEABLE3
-sed -i 's#--iface #--iface $wifiadapter#g' $EXECUTEABLE3
+#sed -i 's#=(#=$(#g' $EXECUTEABLE3
+#sed -i 's#--iface #--iface $wifiadapter#g' $EXECUTEABLE3
 
 chmod +x $GITREPOROOT/$EXECUTEABLE3
 chmod +x $GITREPOROOT/$EXECUTEABLE1
