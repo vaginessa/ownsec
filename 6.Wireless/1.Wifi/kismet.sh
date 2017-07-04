@@ -51,22 +51,22 @@ sudo mkdir -p /usr/share/wireshark/wireshark
 sudo ln -s  /usr/local/share/wireshark/manuf /usr/share/wireshark/wireshark/manuf 
 
 rm -f kismet.sh
-echo "#!/bin/bash
+#echo "#!/bin/bash
 
-kismetadapter=(ifconfig -a | sed 's/[ \t].*//;/^\(lo\|\)$/d' | sed '/enp*/d' | sed '/docker*/d' | sed '/br*/d')
+#kismetadapter=(ifconfig -a | sed 's/[ \t].*//;/^\(lo\|\)$/d' | sed '/enp*/d' | sed '/docker*/d' | sed '/br*/d')
  
-cd /opt/ITSEC/6.Wireless/1.Wifi/kismet/kismetwireless/kismet
+#cd /opt/ITSEC/6.Wireless/1.Wifi/kismet/kismetwireless/kismet
 
 
-./kismet -c $kismetadapter" > kismet.sh
+#./kismet -c $kismetadapter" > kismet.sh
 
- sed -i 's#=(#=$(#g' kismet.sh
- sed -i 's#-c #-c $kismetadapter#g' kismet.sh
+# sed -i 's#=(#=$(#g' kismet.sh
+# sed -i 's#-c #-c $kismetadapter#g' kismet.sh
+#chmod +x kismet.sh
 
-
-
-chmod +x kismet.sh
-sudo ln -s /opt/ITSEC/6.Wireless/1.Wifi/kismet/kismetwireless/kismet/kismet.sh /usr/local/bin/kismet.sh
+sudo rm /opt/ITSEC-Install-Scripts/6.Wireless/1.Wifi/kismet-files/kismet.conf
+sudo cp /opt/ITSEC-Install-Scripts/6.Wireless/1.Wifi/kismet-files/kismet.conf /usr/local/etc/kismet.conf
+sudo ln -s /opt/ITSEC/6.Wireless/1.Wifi/kismet/kismetwireless/kismet/kismet /usr/local/bin/kismet.sh
 
 #sudo rm -f /usr/local/bin/kismet
 sudo groupadd kismet
