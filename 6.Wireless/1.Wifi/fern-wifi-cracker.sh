@@ -39,7 +39,7 @@ echo "#!/bin/bash
 
 cd /opt/ITSEC/6.Wireless/1.Wifi/fern-wifi-cracker/savio-code/fern-wifi-cracker/Fern-Wifi-Cracker
 
-python execute.py" > $EXECUTEABLE2
+sudo python execute.py" > $EXECUTEABLE2
 sudo chmod +x $EXECUTEABLE1
 sudo chmod +x $EXECUTEABLE2
 sudo ln -s $GITREPOROOT/$EXECUTEABLE2 /usr/local/bin/$EXECUTEABLE2

@@ -1,8 +1,5 @@
 #!/bin/bash
-mkdir -p /opt/ITSEC/3.Exploitation-Tools/6.Maintain-Access/1.OS-Backdoors/custom-ssh-backdoor/joridos/custom-ssh-backdoor
 
-cd /opt/ITSEC/3.Exploitation-Tools/6.Maintain-Access/1.OS-Backdoors/custom-ssh-backdoor/joridos/custom-ssh-backdoor
-git clone https://github.com/joridos/custom-ssh-backdoor
 
 bold=$(tput bold)
 normal=$(tput sgr0)
@@ -16,7 +13,12 @@ echo "${bold}
                  
 ${normal}"
 
-cd /opt/ITSEC/3.Exploitation-Tools/6.Maintain-Access/1.OS-Backdoors/custom-ssh-backdoor/joridos/custom-ssh-backdoor/custom-ssh-backdoor
+mkdir -p /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/custom-ssh-backdoor/joridos/custom-ssh-backdoor
+
+cd /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/custom-ssh-backdoor/joridos/custom-ssh-backdoor
+git clone https://github.com/joridos/custom-ssh-backdoor
+
+cd /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/custom-ssh-backdoor/joridos/custom-ssh-backdoor/custom-ssh-backdoor
 
 git clean -f
 git fetch origin

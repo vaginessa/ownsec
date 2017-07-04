@@ -15,8 +15,8 @@ ${normal}"
 echo "${bold}
 mkdir, git clone and cd         
 ${normal}"
-mkdir -p /opt/ITSEC/3.Exploitation-Tools/6.Maintain-Access/7.Generate/thefatrat/Screetsec
-cd /opt/ITSEC/3.Exploitation-Tools/6.Maintain-Access/7.Generate/thefatrat/Screetsec
+mkdir -p /opt/ITSEC/9.Maintain-Access/2.Generate/thefatrat/Screetsec
+cd /opt/ITSEC/9.Maintain-Access/2.Generate/thefatrat/Screetsec
 git clone https://github.com/Screetsec/TheFatRat
 
 sudo updatedb
@@ -27,11 +27,11 @@ echo "${bold}
 setting vars       
 ${normal}"
 
-GITREPOROOT=/opt/ITSEC/3.Exploitation-Tools/6.Maintain-Access/7.Generate/thefatrat/Screetsec/TheFatRat
+GITREPOROOT=/opt/ITSEC/9.Maintain-Access/2.Generate/thefatrat/Screetsec/TheFatRat
 EXECUTEABLE1=fatrat
 EXECUTEABLE2=fatrat.sh
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/3.Exploitation-Tools/6.Maintain-Access/7.Generate
-DSKTPFLSDEST=/home/$USER/.local/share/applications/3.Exploitation-Tools/6.Maintain-Access/7.Generate
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/9.Maintain-Access/2.Generate
+DSKTPFLSDEST=/home/$USER/.local/share/applications/9.Maintain-Access/2.Generate
 DSKTPFL=thefatrat.desktop
 #
 
@@ -84,7 +84,7 @@ ${normal}"
 
 echo "#!/bin/bash
 
-cd /opt/ITSEC/3.Exploitation-Tools/6.Maintain-Access/7.Generate/thefatrat/Screetsec/TheFatRat
+cd /opt/ITSEC/9.Maintain-Access/2.Generate/thefatrat/Screetsec/TheFatRat
 
 ./fatrat" >> $EXECUTEABLE2
 chmod +x $GITREPOROOT/$EXECUTEABLE2

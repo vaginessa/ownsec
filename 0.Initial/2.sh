@@ -77,6 +77,13 @@ ${normal}"
 updatedb
 ldconfig
 
+sudo cp /opt/ITSEC-Install-Scripts/0.Initial/src/settings-scripts/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf
+
+sudo cp /opt/ITSEC-Install-Scripts/0.Initial/src/settings-scripts/grub /etc/default/grub
+sudo update-grub
+
+updatedb
+ldconfig
 node -v
 npm -v
 ruby -v

@@ -12,16 +12,16 @@ echo "${bold}
            
 ${normal}"
 
-mkdir -p /opt/ITSEC/3.Exploitation-Tools/6.Maintain-Access/7.Generate/the-backdoor-factory/secretsquirrel
-cd /opt/ITSEC/3.Exploitation-Tools/6.Maintain-Access/7.Generate/the-backdoor-factory/secretsquirrel
+mkdir -p /opt/ITSEC/9.Maintain-Access/2.Generate/the-backdoor-factory/secretsquirrel
+cd /opt/ITSEC/9.Maintain-Access/2.Generate/the-backdoor-factory/secretsquirrel
 git clone https://github.com/secretsquirrel/the-backdoor-factory
 
-GITREPOROOT=/opt/ITSEC/3.Exploitation-Tools/6.Maintain-Access/7.Generate/the-backdoor-factory/secretsquirrel/the-backdoor-factory
+GITREPOROOT=/opt/ITSEC/9.Maintain-Access/2.Generate/the-backdoor-factory/secretsquirrel/the-backdoor-factory
 EXECUTEABLE1=backdoor.py
 EXECUTEABLE2=backdoor-factory
 
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/3.Exploitation-Tools/6.Maintain-Access/7.Generate
-DSKTPFLSDEST=/home/$USER/.local/share/applications/3.Exploitation-Tools/6.Maintain-Access/7.Generate
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/9.Maintain-Access/2.Generate
+DSKTPFLSDEST=/home/$USER/.local/share/applications/9.Maintain-Access/2.Generate
 DSKTPFL=backdoorfactory.desktop
 
 cd $GITREPOROOT

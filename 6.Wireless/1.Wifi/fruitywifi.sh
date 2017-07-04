@@ -57,8 +57,8 @@ echo "!/bin/bash
 
 cd /opt/ITSEC/6.Wireless/1.Wifi/fruitywifi/xtr4nge/FruityWifi
 sudo nginx_start.sh
-php7.0-fpm_start.sh
-firefox -silent https://localhost:8443" > fruitywifi.sh
+sudo php7.0-fpm_start.sh
+firefox https://localhost:8443 </dev/null &>/dev/null &" > fruitywifi.sh
 chmod +x fruitywifi.sh
 sudo ln -s /opt/ITSEC/6.Wireless/1.Wifi/fruitywifi/xtr4nge/FruityWifi/fruitywifi.sh /usr/local/bin/fruitywify
 mkdir -p $DSKTPFLSDEST 

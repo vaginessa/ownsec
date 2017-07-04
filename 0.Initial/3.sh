@@ -57,14 +57,17 @@ echo "${bold}
 ${normal}"
 ./8.Tunnel.sh
 echo "${bold}
-./9.Forensics not maintained yet
+./9.Maintain-Access
 ${normal}"
-#./9.Forensics.sh
+./9.Maintain-Access
 echo "${bold}
 ./10.Stresstest
 ${normal}"
 ./10.Stresstest.sh
-
+echo "${bold}
+./11.Forensics not maintained yet
+${normal}"
+#./11.Forensics.sh
 #Calling the reboot-script to restart this script 
 #echo "#helloworld" > $chkdir/rebootchkPT3.txt
 

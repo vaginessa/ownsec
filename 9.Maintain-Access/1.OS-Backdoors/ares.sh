@@ -13,8 +13,8 @@ echo "${bold}
 ${normal}"
 
 
-GITREPOROOT=/opt/ITSEC/3.Exploitation-Tools/6.Maintain-Access/1.OS-Backdoors/ares/sweetsoftware/ares
-GITREPOCLONEDIR=/opt/ITSEC/3.Exploitation-Tools/6.Maintain-Access/1.OS-Backdoors/ares/sweetsoftware
+GITREPOROOT=/opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/ares/sweetsoftware/ares
+GITREPOCLONEDIR=/opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/ares/sweetsoftware
 
 
 mkdir -p $GITREPOCLONEDIR 
@@ -78,10 +78,10 @@ cd server
 #rm -f server.sh
 #echo "#!/bin/bash
 
-#cd /opt/ITSEC/3.Exploitation-Tools/6.Maintain-Access/1.OS-Backdoors/ares/sweetsoftware/Ares/server
+#cd /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/ares/sweetsoftware/Ares/server
 #python server.py" >> server.sh
 #
-#ln -s /opt/ITSEC/3.Exploitation-Tools/6.Maintain-Access/1.OS-Backdoors/ares/sweetsoftware/Ares/server/server.sh /usr/local/bin/ares_server
+#ln -s /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/ares/sweetsoftware/Ares/server/server.sh /usr/local/bin/ares_server
 # python server.py #run
 
 

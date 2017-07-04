@@ -12,14 +12,14 @@ echo "${bold}
            
 ${normal}"
 
-mkdir -p /opt/ITSEC/3.Exploitation-Tools/6.Maintain-Access/7.Generate/shellnoob/reyammer
-cd /opt/ITSEC/3.Exploitation-Tools/6.Maintain-Access/7.Generate/shellnoob/reyammer
+mkdir -p /opt/ITSEC/9.Maintain-Access/2.Generate/shellnoob/reyammer
+cd /opt/ITSEC/9.Maintain-Access/2.Generate/shellnoob/reyammer
 git clone https://github.com/reyammer/shellnoob
 
-GITREPOROOT=/opt/ITSEC/3.Exploitation-Tools/6.Maintain-Access/7.Generate/shellnoob/reyammer/shellnoob
+GITREPOROOT=/opt/ITSEC/9.Maintain-Access/2.Generate/shellnoob/reyammer/shellnoob
 
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/3.Exploitation-Tools/6.Maintain-Access/7.Generate
-DSKTPFLSDEST=/home/$USER/.local/share/applications/3.Exploitation-Tools/6.Maintain-Access/7.Generate
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/9.Maintain-Access/2.Generate
+DSKTPFLSDEST=/home/$USER/.local/share/applications/9.Maintain-Access/2.Generate
 DSKTPFL=shellnoob.desktop
 
 cd $GITREPOROOT

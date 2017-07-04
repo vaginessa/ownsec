@@ -12,14 +12,14 @@ echo "${bold}
                 
 ${normal}"
 
-mkdir -p /opt/ITSEC/3.Exploitation-Tools/6.Maintain-Access/7.Generate/l0l/m3pt0r
-cd /opt/ITSEC/3.Exploitation-Tools/6.Maintain-Access/7.Generate/l0l/m3pt0r
+mkdir -p /opt/ITSEC/9.Maintain-Access/2.Generate/l0l/m3pt0r
+cd /opt/ITSEC/9.Maintain-Access/2.Generate/l0l/m3pt0r
 git clone https://github.com/m3pt0r/l0l
 
-GITREPOROOT=/opt/ITSEC/3.Exploitation-Tools/6.Maintain-Access/7.Generate/l0l/m3pt0r/l0l
+GITREPOROOT=/opt/ITSEC/9.Maintain-Access/2.Generate/l0l/m3pt0r/l0l
 
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/3.Exploitation-Tools/6.Maintain-Access/7.Generate
-DSKTPFLSDEST=/home/$USER/.local/share/applications/3.Exploitation-Tools/6.Maintain-Access/7.Generate
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/9.Maintain-Access/2.Generate
+DSKTPFLSDEST=/home/$USER/.local/share/applications/9.Maintain-Access/2.Generate
 DSKTPFL=l0l.desktop
 
 cd $GITREPOROOT

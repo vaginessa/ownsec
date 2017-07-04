@@ -1,8 +1,4 @@
 #!/bin/bash
-mkdir -p /opt/ITSEC/3.Exploitation-Tools/6.Maintain-Access/1.OS-Backdoors/gcat/byt3bl33d3r/
-
-cd /opt/ITSEC/3.Exploitation-Tools/6.Maintain-Access/1.OS-Backdoors/gcat/byt3bl33d3r/
-git clone https://github.com/joridos/custom-ssh-backdoor
 
 bold=$(tput bold)
 normal=$(tput sgr0)
@@ -17,7 +13,12 @@ echo "${bold}
 ${normal}"
 
 
-cd /opt/ITSEC/3.Exploitation-Tools/6.Maintain-Access/1.OS-Backdoors/gcat/byt3bl33d3r/gcat/
+mkdir -p /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/gcat/byt3bl33d3r/
+
+cd /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/gcat/byt3bl33d3r/
+git clone https://github.com/joridos/custom-ssh-backdoor
+
+cd /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/gcat/byt3bl33d3r/gcat/
 
 git clean -f
 git fetch origin

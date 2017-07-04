@@ -12,14 +12,14 @@ echo "${bold}
                  
 ${normal}"
 
-mkdir -p /opt/ITSEC/3.Exploitation-Tools/6.Maintain-Access/7.Generate/owasp-zsc/zscproject
-cd /opt/ITSEC/3.Exploitation-Tools/6.Maintain-Access/7.Generate/owasp-zsc/zscproject
+mkdir -p /opt/ITSEC/9.Maintain-Access/2.Generate/owasp-zsc/zscproject
+cd /opt/ITSEC/9.Maintain-Access/2.Generate/owasp-zsc/zscproject
 git clone https://github.com/zscproject/OWASP-ZSC
 
-GITREPOROOT=/opt/ITSEC/3.Exploitation-Tools/6.Maintain-Access/7.Generate/owasp-zsc/zscproject/OWASP-ZSC
+GITREPOROOT=/opt/ITSEC/9.Maintain-Access/2.Generate/owasp-zsc/zscproject/OWASP-ZSC
 
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/3.Exploitation-Tools/6.Maintain-Access/7.Generate
-DSKTPFLSDEST=/home/$USER/.local/share/applications/3.Exploitation-Tools/6.Maintain-Access/7.Generate
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/9.Maintain-Access/2.Generate
+DSKTPFLSDEST=/home/$USER/.local/share/applications/9.Maintain-Access/2.Generate
 DSKTPFL=owasp-zsc.desktop
 
 cd $GITREPOROOT
