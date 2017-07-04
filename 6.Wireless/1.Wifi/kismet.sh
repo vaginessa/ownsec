@@ -33,15 +33,15 @@ cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 
 
 cd $GITREPOROOT
-#git clean -f
-#git fetch origin
-#git reset --hard origin/master
-#git pull
-#git submodule init
-#git submodule update --recursive
+git clean -f
+git fetch origin
+git reset --hard origin/master
+git pull
+git submodule init
+git submodule update --recursive
 #
-#./configure
-#make -j 4
+./configure
+make -j 4
 sudo make suidinstall
 #
 mkdir -p /home/$USER/.kismet
@@ -53,7 +53,7 @@ sudo ln -s  /usr/local/share/wireshark/manuf /usr/share/wireshark/wireshark/manu
 rm -f kismet.sh
 echo "#!/bin/bash
 
-kismetadapter=(ifconfig -a | sed 's/[ \t].*//;/^\(lo\|\)$/d' | sed '/enp*/d' | sed '/docker*/d')
+kismetadapter=(ifconfig -a | sed 's/[ \t].*//;/^\(lo\|\)$/d' | sed '/enp*/d' | sed '/docker*/d' | sed '/br*/d')
  
 cd /opt/ITSEC/6.Wireless/1.Wifi/kismet/kismetwireless/kismet
 

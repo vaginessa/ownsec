@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=start
 Encoding=UTF-8
-Exec=sh -c "sudo apache2start.sh;${SHELL:-bash}"
+Exec=sh -c "sudo apache2_start.sh;${SHELL:-bash}"
 StartupNotify=false
 Terminal=true
 Type=Application

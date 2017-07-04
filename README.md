@@ -1,4 +1,7 @@
 
+make network adapter names static again , going to put that in part 2 asap
+https://askubuntu.com/questions/767786/changing-network-interfaces-name-ubuntu-16-04
+
 # STATUS: 
 
 > if installed before 01.07.2017 - sudo rm -r /opt/ITSEC/2.Vulnerability-Analysis and reinstall the vulnerability stack.

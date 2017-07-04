@@ -1,14 +1,5 @@
 #!/bin/bash
 
-mkdir -p /opt/ITSEC/6.Wireless/1.Wifi/2.Routerkeys/routerkeygenpc/routerkeygen
-cd /opt/ITSEC/6.Wireless/1.Wifi/2.Routerkeys/routerkeygenpc/routerkeygen
-git clone https://github.com/routerkeygen/routerkeygenPC.git
-
-sudo updatedb
-sudo ldconfig
-#
-GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/2.Routerkeys/routerkeygenpc/routerkeygen/routerkeygenPC
-
 bold=$(tput bold)
 normal=$(tput sgr0)
 
@@ -20,6 +11,16 @@ echo "${bold}
 |_| \_\|_| |_| \_\_|\_\_____| |_| \____|_____|_| \_|_|    \____|
        
 ${normal}"
+
+mkdir -p /opt/ITSEC/6.Wireless/1.Wifi/2.Routerkeys/routerkeygenpc/routerkeygen
+cd /opt/ITSEC/6.Wireless/1.Wifi/2.Routerkeys/routerkeygenpc/routerkeygen
+git clone https://github.com/routerkeygen/routerkeygenPC.git
+
+sudo updatedb
+sudo ldconfig
+#
+GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/2.Routerkeys/routerkeygenpc/routerkeygen/routerkeygenPC
+
 
 cd $GITREPOROOT
 sudo rm -r build
