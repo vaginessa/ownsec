@@ -328,14 +328,6 @@
             </And>
         </Include>
         <Menu>
-            <Name>1.Toolbox</Name>
-            <Directory>1.Toolbox.directory</Directory>
-            <Include>
-                <And>
-                    <Category>1.Toolbox</Category>
-                </And>
-            </Include>
-        <Menu>
             <Name>1.MSF</Name>
             <Directory>1.MSF.directory</Directory>
             <Include>
@@ -343,7 +335,6 @@
                     <Category>1.MSF</Category>
                 </And>
             </Include>
-        </Menu>
         </Menu>
         <Menu>
             <Name>2.Search</Name>
