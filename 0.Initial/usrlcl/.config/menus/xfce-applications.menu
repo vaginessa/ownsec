@@ -392,25 +392,6 @@
             </Include>
         </Menu>
         </Menu>
-        <Menu>
-            <Name>6.Maintain-Access</Name>
-            <Directory>6.Maintain-Access.directory</Directory>
-            <Include>
-                <And>
-                    <Category>6.Maintain-Access</Category>
-                </And>
-            </Include>
-        <Menu>
-            <Name>7.Generate</Name>
-            <Directory>7.Generate.directory</Directory>
-            <Include>
-                <And>
-                    <Category>7.Generate</Category>
-                </And>
-            </Include>
-
-        </Menu>
-        </Menu>
     </Menu>
 
     <Menu>
@@ -610,6 +591,26 @@
             </Include>
         </Menu>
     </Menu>
+
+        <Menu>
+            <Name>9.Maintain-Access</Name>
+            <Directory>9.Maintain-Access.directory</Directory>
+            <Include>
+                <And>
+                    <Category>9.Maintain-Access</Category>
+                </And>
+            </Include>
+        <Menu>
+            <Name>2.Generate</Name>
+            <Directory>2.Generate.directory</Directory>
+            <Include>
+                <And>
+                    <Category>2.Generate</Category>
+                </And>
+            </Include>
+
+        </Menu>
+        </Menu>
 
 	<Menu>
 	    <Name>10.Stresstest</Name>
