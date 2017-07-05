@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=affcat
+Encoding=UTF-8
+Exec=sh -c "affcat -h;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=11-07-forensic-imaging-tools;
+

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=tsk_recover
+Encoding=UTF-8
+Exec=sh -c "tsk_recover;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=11-08-forensic-suites;

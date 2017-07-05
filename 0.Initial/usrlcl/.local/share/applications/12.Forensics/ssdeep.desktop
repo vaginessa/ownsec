@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=ssdeep
+Encoding=UTF-8
+Exec=sh -c "ssdeep -h;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=11-forensics;
