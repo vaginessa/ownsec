@@ -1,5 +1,5 @@
 #!/bin/bash
 
-sudo service postgres stop
-sudo service postgres status
+sudo service postgresql stop
+sudo service postgresql status
 

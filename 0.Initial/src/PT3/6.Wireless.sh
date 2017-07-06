@@ -46,7 +46,7 @@ cd /opt/ITSEC-Install-Scripts/6.Wireless/1.Wifi/4.Evil-Twin
 ######################   1.Wifi MAIN   ###############
 #####################################################
 cd /opt/ITSEC-Install-Scripts/6.Wireless/1.Wifi
-./aircrack.sh 
+./aircrack-ng.sh 
 ./atear.sh #PIP deps 
 ./eapmd5pass.sh 
 ./evilgrade.sh 
@@ -54,7 +54,7 @@ cd /opt/ITSEC-Install-Scripts/6.Wireless/1.Wifi
  #install last # needs fixes.
 #kismet config last line remove dash end of path.
 ./kismet.sh #needs check
-./wifi-pumpkin depends openssl 1.1
+./wifi-pumpkin #depends openssl 1.1
 ./fruitywifi.sh 
 ###################################################################################
 ###################### WIFI END
