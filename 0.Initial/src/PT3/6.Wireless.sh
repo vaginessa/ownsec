@@ -55,7 +55,9 @@ cd /opt/ITSEC-Install-Scripts/6.Wireless/1.Wifi
 #kismet config last line remove dash end of path.
 ./kismet.sh #needs check
 ./wifi-pumpkin #depends openssl 1.1
-./fruitywifi.sh 
+./fruitywifi.sh  # install last
+./airgeddon.sh #install last
+../aircrack.sh # install last
 ###################################################################################
 ###################### WIFI END
 
