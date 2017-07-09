@@ -1,6 +1,4 @@
-
-make network adapter names static again , going to put that in part 2 asap
-https://askubuntu.com/questions/767786/changing-network-interfaces-name-ubuntu-16-04
+### Screenshots outdated, quite a few updates & fixes meanwhile 
 
 # STATUS: 
 
