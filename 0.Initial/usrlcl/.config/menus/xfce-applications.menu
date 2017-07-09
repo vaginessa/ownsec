@@ -592,6 +592,16 @@
                 </And>
             </Include>
         <Menu>
+            <Name>1.OS-Backdoors</Name>
+            <Directory>1.OS-Backdoors.directory</Directory>
+            <Include>
+                <And>
+                    <Category>1.OS-Backdoors</Category>
+                </And>
+            </Include>
+
+        </Menu>
+        <Menu>
             <Name>2.Generate</Name>
             <Directory>2.Generate.directory</Directory>
             <Include>

@@ -17,5 +17,7 @@ cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/2.Generate/
 # 1.OS-Backdoors/3.Botnet
 cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/2.Generate/1.OS-Backdoors
 ./ares.sh
+cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/1.OS-Backdoors/2.Win
+./Dr0p1t-Framework.sh
 cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/2.Generate/1.OS-Backdoors/3.Mac
 ./bella.sh
