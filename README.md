@@ -7,7 +7,7 @@
 
 # ITSEC-Install-Scripts
 
-### A set of bash scripts to dl, build and install ITsec related soft from source & its dependencies on 16.04 Xfce -. menu/console entries and and pre config - semi unattended(yet)
+> A set of bash scripts to dl, build and install ITsec related soft from source & its dependencies on 16.04 Xfce -. menu/console entries and and pre config - semi unattended(yet)
 
 # XFCE Desktop 
 
@@ -20,6 +20,8 @@
 
 
 ## TODO
+
+- build "reinstall/update" scripts and possibly link console / menu 
 
 - phishingfrenzy depends mysql-server - not installed during setup
 
