@@ -1,11 +1,11 @@
 #!/bin/bash
 
-mkdir -p /opt/DEV/eclipse
-sudo chown -R $USER/$USER /opt
-cd /opt/DEV/eclipse
-wget http://ftp-stud.fht-esslingen.de/pub/Mirrors/eclipse/oomph/epp/neon/R3/eclipse-inst-linux64.tar.gz
-tar xvf eclipse-inst-linux64.tar.gz 
-cd eclipse-installer
+#mkdir -p /opt/DEV/eclipse
+#sudo chown -R $USER/$USER /opt
+#cd /opt/DEV/eclipse
+#wget http://ftp-stud.fht-esslingen.de/pub/Mirrors/eclipse/oomph/epp/neon/R3/eclipse-inst-linux64.tar.gz
+#tar xvf eclipse-inst-linux64.tar.gz 
+#cd eclipse-installer
 
 #mkdir -p /opt/DEV/phpstorm
 #cd /opt/DEV/phpstorm
