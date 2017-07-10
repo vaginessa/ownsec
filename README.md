@@ -2,9 +2,7 @@
 
 # STATUS: 
 
-> if installed before 01.07.2017 - sudo rm -r /opt/ITSEC/2.Vulnerability-Analysis and reinstall the vulnerability stack.
-
-
+> so to say a development branch, updates daily at random times. to fetch latest updates make sure to cp https://github.com/alphaaurigae/ITSEC-Install-Scripts/tree/master/0.Initial/usrlcl to $USER. Depending if categories get reshuffled, it might be nessary to remove ihe respective /opt/ITSEC/ dirs to avoid stacking files - the installer overwrite symlinks and desktop files, that not a problem.
 # ITSEC-Install-Scripts
 
 > A set of bash scripts to dl, build and install ITsec related soft from source & its dependencies on 16.04 Xfce -. menu/console entries and and pre config - semi unattended(yet)
