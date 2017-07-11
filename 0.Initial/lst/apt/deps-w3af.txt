@@ -71,3 +71,5 @@ stunnel4
 tclxml-dev
 python-jinja2 
 xdot 
+python-gtksourceview2 
+python-gtk2

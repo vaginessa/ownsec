@@ -108,6 +108,7 @@ unzip
 uuid 
 uuid-dev 
 vim  
+virtualenv
 vlc 
 vorbis-tools 
 wavpack

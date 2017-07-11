@@ -29,3 +29,4 @@ python-twisted-web dsniff
 python-yaml 
 python-beautifulsoup
 python-libssh2
+python-virtualenv
