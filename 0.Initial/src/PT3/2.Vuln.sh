@@ -29,7 +29,7 @@ cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner/
 ./sparta.sh  # 
 ./v3n0m-scanner.sh #PIP dependencies - 
 ./vbscan.sh 
-#./w3af.sh
+./w3af.sh
 #./wapiti.sh # did not work but worked prev.ubu1604_4.8.0-53-generic_04-06-2017 
 ./whatweb.sh 
 #./wpscan.sh ruby app - see readme - rbenv shell doesent work yet
