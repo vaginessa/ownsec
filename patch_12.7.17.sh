@@ -2,14 +2,14 @@
 
 # run if installed < 12.7.17 
 
-sudo rm -r /home/tux/.local/share/applications/1.Information-Gathering/15.Web-Crawler_and_Directory-Bruteforce
-sudo rm -r /home/tux/.local/share/applications/2.Vulnerability-Scanner/3.Fuzzer
-sudo rm -r /home/tux/.local/share/applications/3.Exploitation-Tools/3.LFI-RFI
+sudo rm -r /home/$USER/.local/share/applications/1.Information-Gathering/15.Web-Crawler_and_Directory-Bruteforce
+sudo rm -r /home/$USER/.local/share/applications/2.Vulnerability-Scanner/3.Fuzzer
+sudo rm -r /home/$USER/.local/share/applications/3.Exploitation-Tools/3.LFI-RFI
 sudo rm -r /opt/ITSEC/1.Information-Gathering/15.Web-Crawler_and_Directory-Bruteforce
 sudo rm -r /opt/ITSEC/2.Vulnerability-Scanner/3.Fuzzer
 sudo rm -r /opt/ITSEC/3.Exploitation-Tools/3.LFI-RFI
 
-cp /opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.config/menus/xfce-applications.menu /home/tux/.config/menus/xfce-applications.menu
+cp /opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.config/menus/xfce-applications.menu /home/$USER/.config/menus/xfce-applications.menu
 
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/15.Fuzzer
 ./dotdotpwn.sh 
