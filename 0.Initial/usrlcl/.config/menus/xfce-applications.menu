@@ -359,22 +359,13 @@
         </Menu>
 
         <Menu>
-            <Name>5.Social-Engineering</Name>
-            <Directory>5.Social-Engineering.directory</Directory>
+            <Name>5.SE_Phishing</Name>
+            <Directory>5.SE_Phishing.directory</Directory>
             <Include>
                 <And>
-                    <Category>5.Social-Engineering</Category>
+                    <Category>5.SE_Phishing</Category>
                 </And>
             </Include>
-        <Menu>
-            <Name>2.Phishing</Name>
-            <Directory>2.Phishing.directory</Directory>
-            <Include>
-                <And>
-                    <Category>2.Phishing</Category>
-                </And>
-            </Include>
-        </Menu>
         </Menu>
     </Menu>
 

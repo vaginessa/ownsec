@@ -9,6 +9,9 @@ sudo rm -r /opt/ITSEC/1.Information-Gathering/15.Web-Crawler_and_Directory-Brute
 sudo rm -r /opt/ITSEC/2.Vulnerability-Scanner/3.Fuzzer
 sudo rm -r /opt/ITSEC/3.Exploitation-Tools/3.LFI-RFI
 
+sudo rm -r /opt/ITSEC/5.Social-Engineering
+sudo rm -r /home/$USER/.local/share/applications/3.Exploitation-Tools/5.Social-Engineering
+
 cp /opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.config/menus/xfce-applications.menu /home/$USER/.config/menus/xfce-applications.menu
 
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/15.Fuzzer
@@ -23,3 +26,12 @@ cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner/3.LFI-RFI
 ./kadimus.sh 
 ./lfifreak.sh 
 ./liffy.sh 
+
+cd /opt/ITSEC-Install-Scripts/3.Exploitation-Tools/5.SE_Phishing/
+./beef.sh 
+./phishing-frenzy.sh #builds but didnt tried out - check back.
+./weeman.sh
+./ghost-phisher.sh # ruby 
+./social-engineering-toolkit.sh #msf path config missing 
+
+echo "reboot ..."
