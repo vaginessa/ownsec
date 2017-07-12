@@ -1,23 +1,22 @@
 ### Screenshots outdated, quite a few updates & fixes meanwhile 
 
-# STATUS: 
+## STATUS: 
 
 > so to say a development branch, updates daily at random times. to fetch latest updates make sure to cp https://github.com/alphaaurigae/ITSEC-Install-Scripts/tree/master/0.Initial/usrlcl to $USER. Depending if categories get reshuffled, it might be nessary to remove ihe respective /opt/ITSEC/ dirs to avoid stacking files - the installer overwrite symlinks and desktop files, that not a problem.
 # ITSEC-Install-Scripts
 
 > A set of bash scripts to dl, build and install ITsec related soft from source & its dependencies on 16.04 Xfce -. menu/console entries and and pre config - semi unattended(yet)
 
-# XFCE Desktop 
+## XFCE Desktop 
 
-## Youtube Menu demo https://www.youtube.com/watch?v=DMvz7BR2pUc
-[![Alt text](http://i.imgur.com/GH36YFw.png)](https://www.youtube.com/watch?v=DMvz7BR2pUc)
+https://github.com/alphaaurigae/ITSEC-Install-Scripts/wiki/Menu-Screenshots
 
-## Panel Screenshot ...
+### Panel Screenshot ...
 ![menu](http://i.imgur.com/T8AtF9E.png)
 
 
 
-## TODO
+### TODO
 
 - build "reinstall/update" scripts and possibly link console / menu 
 
@@ -33,7 +32,7 @@
 
 - test everything ....
 
-## BUGS
+### BUGS
  
 > somehow default jre is installed during the setup, if its not removed some java programs fail.
 
