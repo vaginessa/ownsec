@@ -12,11 +12,11 @@ echo "${bold}
                 
 ${normal}"
 
-mkdir -p /opt/ITSEC/2.Vulnerability-Scanner/3.Fuzzer/siparmyknife/foreni-packages
-cd /opt/ITSEC/2.Vulnerability-Scanner/3.Fuzzer/siparmyknife/foreni-packages
+mkdir -p /opt/ITSEC/1.Information-Gathering/15.Fuzzer/siparmyknife/foreni-packages
+cd /opt/ITSEC/1.Information-Gathering/15.Fuzzer/siparmyknife/foreni-packages
 git clone https://github.com/foreni-packages/siparmyknife.git
 
-GITREPOROOT=/opt/ITSEC/2.Vulnerability-Scanner/3.Fuzzer/siparmyknife/foreni-packages/siparmyknife
+GITREPOROOT=/opt/ITSEC/1.Information-Gathering/15.Fuzzer/siparmyknife/foreni-packages/siparmyknife
 EXECUTEABLE1=siparmyknife.pl
 EXECUTEABLE2=siparmyknife
 EXECUTEABLE3=siparmyknife.sh
@@ -29,7 +29,7 @@ git submodule init
 git submodule update --recursive
 
 echo '#!/bin/bash
-cd /opt/ITSEC/2.Vulnerability-Scanner/3.Fuzzer/siparmyknife/foreni-packages/siparmyknife
+cd /opt/ITSEC/1.Information-Gathering/15.Fuzzer/siparmyknife/foreni-packages/siparmyknife
 ./siparmyknife.pl "$@"' >> $EXECUTEABLE3
 chmod +x $GITREPOROOT/$EXECUTEABLE1
 chmod +x $GITREPOROOT/$EXECUTEABLE3

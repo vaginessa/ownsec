@@ -5,4 +5,4 @@ Exec=sh -c "dotdotpwn;${SHELL:-bash}"
 StartupNotify=false
 Terminal=true
 Type=Application
-Categories=02-03-voip-tools;3.Fuzzer;
+Categories=15.Fuzzer;

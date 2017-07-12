@@ -45,14 +45,16 @@ cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner/2.Cisco-Tools/
 ##cisco-torch.sh #greyd out earl, no idea why
 #./copy-router-config.sh #stopped working somehow,chk bk ltr. 
 ./yersinia.sh  - wild building lots warnings.
-#
+
 ###############################################################################
-######################   3.Fuzzer   ####################
+######################   3.LFI-RFI   ####################
 ###########################################################################
-cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner/3.Fuzzer/
-./dotdotpwn.sh 
-./simplefuzzer.sh # call w sfuzz 
-./siparmyknife.sh 
+cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner/3.LFI-RFI
+./fimap.sh 
+./kadabra.sh 
+./kadimus.sh 
+./lfifreak.sh 
+./liffy.sh # runs BUT: AttributeError: 'NoneType' object has no attribute 'find'
 #
 ###############################################################################
 ######################   5.Voip   ####################

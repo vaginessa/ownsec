@@ -260,15 +260,15 @@
                 </And>
             </Include>
         </Menu>
-        <Menu>
-            <Name>15.Web-Crawler_and_Directory-Bruteforce</Name>
-            <Directory>15.Web-Crawler_and_Directory-Bruteforce.directory</Directory>
-            <Include>
-                <And>
-                    <Category>15.Web-Crawler_and_Directory-Bruteforce</Category>
-                </And>
-            </Include>
-        </Menu>
+<Menu>
+    <Name>15.Fuzzer</Name>
+    <Directory>15.Fuzzer.directory</Directory>
+    <Include>
+        <And>
+            <Category>15.Fuzzer</Category>
+        </And>
+    </Include>
+</Menu>
         <Menu>
             <Name>16.IDS-IPS_Identification</Name>
             <Directory>16.IDS-IPS_Identification.directory</Directory>
@@ -308,15 +308,16 @@
         </And>
     </Include>
 </Menu>
-<Menu>
-    <Name>3.Fuzzer</Name>
-    <Directory>3.Fuzzer.directory</Directory>
-    <Include>
-        <And>
-            <Category>3.Fuzzer</Category>
-        </And>
-    </Include>
-</Menu>
+
+        <Menu>
+            <Name>3.LFI-RFI</Name>
+            <Directory>3.LFI-RFI.directory</Directory>
+            <Include>
+                <And>
+                    <Category>3.LFI-RFI</Category>
+                </And>
+            </Include>
+        </Menu>
 </Menu>
 
     <Menu>
@@ -346,15 +347,7 @@
             </Include>
         </Menu>
 
-        <Menu>
-            <Name>3.LFI-RFI</Name>
-            <Directory>3.LFI-RFI.directory</Directory>
-            <Include>
-                <And>
-                    <Category>3.LFI-RFI</Category>
-                </And>
-            </Include>
-        </Menu>
+
         <Menu>
             <Name>4.MSF_payload-generator</Name>
             <Directory>4.MSF_payload-generator.directory</Directory>

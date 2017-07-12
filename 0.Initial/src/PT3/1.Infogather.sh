@@ -129,7 +129,7 @@ cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/11.Dork/
 ###############################################################################
 ######################   13.OSINT   ####################
 ###########################################################################
-cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/13.OSINT/
+cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/13.OSINT
 ./metagoofil.sh 
 ./tekdefense-automater.sh 
 ./theharvester.sh 
@@ -143,12 +143,16 @@ cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/13.OSINT/
 # nothing todo here
 #
 #
-###############################################################################
-######################   15.Web-Crawler_and_Directory-Bruteforce   ####################
-###########################################################################
-cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/15.Web-Crawler_and_Directory-Bruteforce/
-./dirb.sh
+
 #
+###############################################################################
+######################   15.Fuzzer   ####################
+###########################################################################
+cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/15.Fuzzer
+./dotdotpwn.sh 
+./simplefuzzer.sh # call w sfuzz 
+./siparmyknife.sh 
+./dirb.sh
 #
 ###############################################################################
 ######################   16.IDS-IPS_Identification   ####################

@@ -5,4 +5,4 @@ Exec=sh -c "siparmyknife;${SHELL:-bash}"
 StartupNotify=false
 Terminal=true
 Type=Application
-Categories=02-03-voip-tools;02-02-fuzzers;
+Categories=15.Fuzzer;

@@ -12,16 +12,16 @@ echo "${bold}
            
 ${normal}"
 
-mkdir -p /opt/ITSEC/2.Vulnerability-Scanner/3.Fuzzer/dotdotpwn/wireghoul
-cd /opt/ITSEC/2.Vulnerability-Scanner/3.Fuzzer/dotdotpwn/wireghoul
+mkdir -p /opt/ITSEC/1.Information-Gathering/15.Fuzzer/dotdotpwn/wireghoul
+cd /opt/ITSEC/1.Information-Gathering/15.Fuzzer/dotdotpwn/wireghoul
 git clone https://github.com/wireghoul/dotdotpwn.git
 
-GITREPOROOT=/opt/ITSEC/2.Vulnerability-Scanner/3.Fuzzer/dotdotpwn/wireghoul/dotdotpwn
+GITREPOROOT=/opt/ITSEC/1.Information-Gathering/15.Fuzzer/dotdotpwn/wireghoul/dotdotpwn
 EXECUTEABLE1=dotdotpwn.pl
 EXECUTEABLE2=dotdotpwn
 
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/2.Vulnerability-Scanner/3.Fuzzer
-DSKTPFLSDEST=/home/$USER/.local/share/applications/2.Vulnerability-Scanner/3.Fuzzer
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/15.Fuzzer
+DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/15.Fuzzer
 DSKTPFL=dotdotpwn.desktop
 
 sudo rm -f /usr/local/bin/$EXECUTEABLE2
@@ -33,7 +33,7 @@ git submodule init
 git submodule update --recursive
 
 echo '#!/bin/bash
-cd /opt/ITSEC/2.Vulnerability-Scanner/3.Fuzzer/dotdotpwn/wireghoul/dotdotpwn
+cd /opt/ITSEC/1.Information-Gathering/15.Fuzzer/dotdotpwn/wireghoul/dotdotpwn
 perl dotdotpwn.pl "$@"' > $EXECUTEABLE2
 chmod +x $GITREPOROOT/$EXECUTEABLE1
 chmod +x $GITREPOROOT/$EXECUTEABLE2

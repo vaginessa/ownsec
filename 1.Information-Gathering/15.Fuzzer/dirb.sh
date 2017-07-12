@@ -12,16 +12,16 @@ echo "${bold}
         
 ${normal}"
 
-mkdir -p /opt/ITSEC/1.Information-Gathering/15.Web-Crawler_and_Directory-Bruteforce/dirb/seifreed
-cd /opt/ITSEC/1.Information-Gathering/15.Web-Crawler_and_Directory-Bruteforce/dirb/seifreed
+mkdir -p /opt/ITSEC/1.Information-Gathering/15.Fuzzer/dirb/seifreed
+cd /opt/ITSEC/1.Information-Gathering/15.Fuzzer/dirb/seifreed
 git clone https://github.com/seifreed/dirb.git
 
 sudo updatedb
 sudo ldconfig
-GITREPOROOT=/opt/ITSEC/1.Information-Gathering/15.Web-Crawler_and_Directory-Bruteforce/dirb/seifreed/dirb
+GITREPOROOT=/opt/ITSEC/1.Information-Gathering/15.Fuzzer/dirb/seifreed/dirb
 
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/15.Web-Crawler_and_Directory-Bruteforce/
-DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/15.Web-Crawler_and_Directory-Bruteforce
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/15.Fuzzer/
+DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/15.Fuzzer
 DSKTPFL=dirb.desktop
 
 cd $GITREPOROOT

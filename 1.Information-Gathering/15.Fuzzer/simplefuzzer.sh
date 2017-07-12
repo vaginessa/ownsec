@@ -12,12 +12,12 @@ echo "${bold}
              
 ${normal}"
 
-sudo rm -r /opt/ITSEC/2.Vulnerability-Scanner/3.Fuzzer/simple-fuzzer/orgcandman
-mkdir -p /opt/ITSEC/2.Vulnerability-Scanner/3.Fuzzer/simple-fuzzer/orgcandman
-cd /opt/ITSEC/2.Vulnerability-Scanner/3.Fuzzer/simple-fuzzer/orgcandman
+sudo rm -r /opt/ITSEC/1.Information-Gathering/15.Fuzzer/simple-fuzzer/orgcandman
+mkdir -p /opt/ITSEC/1.Information-Gathering/15.Fuzzer/simple-fuzzer/orgcandman
+cd /opt/ITSEC/1.Information-Gathering/15.Fuzzer/simple-fuzzer/orgcandman
 git clone https://github.com/orgcandman/simple-fuzzer.git
 
-GITREPOROOT=/opt/ITSEC/2.Vulnerability-Scanner/3.Fuzzer/simple-fuzzer/orgcandman/simple-fuzzer
+GITREPOROOT=/opt/ITSEC/1.Information-Gathering/15.Fuzzer/simple-fuzzer/orgcandman/simple-fuzzer
 
 cd $GITREPOROOT
 git clean -f 
