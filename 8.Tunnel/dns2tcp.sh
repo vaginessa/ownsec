@@ -1,18 +1,5 @@
 #!/bin/bash
 
-mkdir -p /opt/ITSEC/8.Tunnel/dns2tcp/risent
-cd /opt/ITSEC/8.Tunnel/dns2tcp/risent
-git clone https://github.com/risent/dns2tcp.git
-
-sudo updatedb
-sudo ldconfig
-
-GITREPOROOT=/opt/ITSEC/8.Tunnel/dns2tcp/risent/dns2tcp
-
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/8.Tunnel
-DSKTPFLSDEST=/home/$USER/.local/share/applications/8.Tunnel
-DSKTPFL=dns2tcp.desktop
-
 bold=$(tput bold)
 normal=$(tput sgr0)
 
@@ -24,6 +11,16 @@ echo "${bold}
 |____/|_| \_|____/_____||_| \____|_|    
                                              
 ${normal}"
+
+mkdir -p /opt/ITSEC/8.Tunnel/dns2tcp/risent
+cd /opt/ITSEC/8.Tunnel/dns2tcp/risent
+git clone https://github.com/risent/dns2tcp.git
+
+GITREPOROOT=/opt/ITSEC/8.Tunnel/dns2tcp/risent/dns2tcp
+
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/8.Tunnel
+DSKTPFLSDEST=/home/$USER/.local/share/applications/8.Tunnel
+DSKTPFL=dns2tcp.desktop
 
 
 cd $GITREPOROOT

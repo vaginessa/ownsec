@@ -13,13 +13,6 @@ echo "${bold}
 ${normal}"
 
 
-. ~/.bashrc
-eval "$(rbenv init -)"
-yes "N" | rbenv install 2.4.1
-rbenv rehash
-rbenv shell 2.4.1
-sudo updatedb
-sudo ldconfig
 
 
 mkdir -p /opt/ITSEC/7.Mitm/bettercap/evilsocket
@@ -40,6 +33,14 @@ DSKTPFL=bettercap.desktop
 
 
 cd $GITREPOROOT
+
+. ~/.bashrc
+eval "$(rbenv init -)"
+yes "N" | rbenv install 2.4.1
+rbenv rehash
+rbenv shell 2.4.1
+sudo updatedb
+sudo ldconfig
 
 git clean -f 
 git fetch origin

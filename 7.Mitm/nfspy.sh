@@ -1,15 +1,5 @@
 #!/bin/bash
 
-mkdir -p /opt/ITSEC/7.Mitm/nfspy/bonsaiviking
-cd /opt/ITSEC/7.Mitm/nfspy/bonsaiviking
-git clone https://github.com/bonsaiviking/NfSpy.git
-
-GITREPOROOT=/opt/ITSEC/7.Mitm/nfspy/bonsaiviking/NfSpy
-#
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
-DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
-DSKTPFL=nfspy.desktop
-
 bold=$(tput bold)
 normal=$(tput sgr0)
 
@@ -22,10 +12,17 @@ echo "${bold}
         
 ${normal}"
 
-cd $GITREPOROOT
+mkdir -p /opt/ITSEC/7.Mitm/nfspy/bonsaiviking
+cd /opt/ITSEC/7.Mitm/nfspy/bonsaiviking
+git clone https://github.com/bonsaiviking/NfSpy.git
 
-sudo updatedb
-sudo ldconfig
+GITREPOROOT=/opt/ITSEC/7.Mitm/nfspy/bonsaiviking/NfSpy
+#
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
+DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
+DSKTPFL=nfspy.desktop
+
+cd $GITREPOROOT
 git clean -f 
 git fetch origin
 git reset --hard origin/master

@@ -21,7 +21,7 @@ ${normal}"
 
 mkdir -p /opt/ITSEC/7.Mitm/hyperfox/malfunkt
 cd /opt/ITSEC/7.Mitm/hyperfox/malfunkt
-#git clone https://github.com/malfunkt/hyperfox.git
+git clone https://github.com/malfunkt/hyperfox.git
 
 GITREPOROOT=/opt/ITSEC/7.Mitm/hyperfox/malfunkt/hyperfox
 

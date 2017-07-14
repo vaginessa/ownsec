@@ -3,6 +3,6 @@ Name=stop
 Encoding=UTF-8
 Exec=sh -c "conky_stop.sh;${SHELL:-bash}"
 StartupNotify=false
-Terminal=true
+Terminal=false
 Type=Application
 Categories=5.CONKY;

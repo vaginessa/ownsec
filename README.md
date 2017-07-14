@@ -13,7 +13,7 @@
 https://github.com/alphaaurigae/ITSEC-Install-Scripts/wiki/Menu-Screenshots
 
 ### Panel Screenshot ...
-![menu](http://i.imgur.com/T8AtF9E.png)
+![menu](http://i.imgur.com/hUs1wM1.png)
 
 
 
