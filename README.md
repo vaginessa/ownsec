@@ -39,6 +39,7 @@ https://github.com/alphaaurigae/ITSEC-Install-Scripts/wiki/Menu-Screenshots
 
 > At aprox the middle of part 2 node/npm ask for sudo, just after the node make - thats ugly bec else only macchanger in the beginning asks for prompt.
 
+> fruitywifi nginx setup
 ### Install all the scripts ...
 
 https://github.com/alphaaurigae/ITSEC-Install-Scripts/wiki/Install

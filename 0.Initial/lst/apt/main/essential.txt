@@ -69,8 +69,6 @@ lsb-release
 lua-lpeg 
 lynx 
 mcrypt
-memcached
-libmemcached-dev
 mitmproxy
 mono-xbuild
 mono-devel

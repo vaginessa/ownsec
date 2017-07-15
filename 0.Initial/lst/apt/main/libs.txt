@@ -25,7 +25,8 @@ libldns-dev
 liblinear3 
 liblua5.2-dev 
 liblz4-dev 
-libssh-dev 
+libssh-dev b
+libmemcached-dev
 libmad0
 libmicrohttpd-dev
 libmicrohttpd10
