@@ -66,6 +66,8 @@ sudo bash -c 'for SHfiles in $(ls *.sh); do ln -s /opt/ITSEC-Install-Scripts/0.I
 cd /opt/ITSEC-Install-Scripts/0.Initial/src/settings-scripts/startstop/0.Services/3.DNS/
 sudo bash -c 'for SHfiles in $(ls *.sh); do ln -s /opt/ITSEC-Install-Scripts/0.Initial/src/settings-scripts/startstop/0.Services/3.DNS/$SHfiles /usr/local/bin/$SHfiles;done'
 
+cd /opt/ITSEC-Install-Scripts/0.Initial/src/settings-scripts/startstop/0.Services/4.TOR/
+sudo bash -c 'for SHfiles in $(ls *.sh); do ln -s /opt/ITSEC-Install-Scripts/0.Initial/src/settings-scripts/startstop/0.Services/4.TOR/$SHfiles /usr/local/bin/$SHfiles;done'
 
 cd /opt/ITSEC-Install-Scripts/0.Initial/src/settings-scripts/startstop/0.Services/6.Docker/
 sudo bash -c 'for SHfiles in $(ls *.sh); do ln -s /opt/ITSEC-Install-Scripts/0.Initial/src/settings-scripts/startstop/0.Services/6.Docker/$SHfiles /usr/local/bin/$SHfiles;done'

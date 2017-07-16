@@ -112,6 +112,15 @@
         </Include>
     </Menu>
     <Menu>
+        <Name>3.DNS</Name>
+        <Directory>3.DNS.directory</Directory>
+        <Include>
+            <And>
+                <Category>3.DNS</Category>
+            </And>
+        </Include>
+    </Menu>
+    <Menu>
         <Name>4.TOR</Name>
         <Directory>4.TOR.directory</Directory>
         <Include>
