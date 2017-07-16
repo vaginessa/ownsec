@@ -1,7 +1,7 @@
 [Desktop Entry]
-Name=systemctl_enable
+Name=systemctl_disable
 Encoding=UTF-8
-Exec=sh -c "sudo nginx_systemctl_enable.sh;${SHELL:-bash}"
+Exec=sh -c "sudo nginx_systemctl_disable.sh;${SHELL:-bash}"
 StartupNotify=false
 Terminal=true
 Type=Application
