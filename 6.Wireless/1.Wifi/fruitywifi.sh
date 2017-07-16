@@ -25,21 +25,18 @@ mkdir -p /opt/ITSEC/6.Wireless/1.Wifi/fruitywifi/xtr4nge
 cd /opt/ITSEC/6.Wireless/1.Wifi/fruitywifi/xtr4nge
 git clone https://github.com/xtr4nge/FruityWifi.git
 
-version="2.4.1"
-fruitywifi_php_version="PHP7"
-fruitywifi_log_path="/usr/share/fruitywifi/logs"
-fruitywifi_init_defaults="onboot"
-
 cd $GITREPOROOT 
 git clean -f 
 git fetch origin
 git reset --hard origin/master
 git pull
 
-
+sudo systemctl enable dnsmasq.service 
+sed -i 's#/usr/share/fruitywifi/logs#/opt/ITSEC/6.Wireless/1.Wifi/fruitywifi/xtr4nge/FruityWifi/FruityWifi/logs/#g' install-FruityWiFi-PHP7.sh
 sed -i 's/pip install netifaces/sudo -H pip install netifaces/g' install-FruityWiFi-PHP7.sh
 sed -i 's/apt-get /sudo apt-get /g' install-FruityWiFi-PHP7.sh
 sed -i 's#rm /#sudo rm /#g' install-FruityWiFi-PHP7.sh
+sed -i 's#update-alternatives#sudo update-alternatives#g' install-FruityWiFi-PHP7.sh
 sed -i 's#cp #sudo cp #g' install-FruityWiFi-PHP7.sh
 sed -i 's#chown #sudo chown #g' install-FruityWiFi-PHP7.sh
 sed -i 's#sed #sudo sed #g' install-FruityWiFi-PHP7.sh
@@ -51,7 +48,18 @@ sed -i 's#/etc/init.d#sudo /etc/init.d#g' install-FruityWiFi-PHP7.sh
 sed -i 's#ln -s#sudo ln -s#g' install-FruityWiFi-PHP7.sh
 sed -i 's#adduser#sudo adduser#g' install-FruityWiFi-PHP7.sh
 sed -i 's#usermod#sudo usermod#g' install-FruityWiFi-PHP7.sh
+sed -i 's#root_path=`pwd`#root_path=/opt/ITSEC/6.Wireless/1.Wifi/fruitywifi/xtr4nge/FruityWifi#g' install-FruityWiFi-PHP7.sh
+#sed -i 's#sudo apt-get -y install nginx#echo -e "GB\somecity\somecompany\somesection\someserver\Y" | sudo apt-get -y install nginx#g' install-FruityWiFi-PHP7.sh
+sed -i 's#sudo apt-get -y install nginx#yes "GB" | sudo apt-get -y install nginx#g' install-FruityWiFi-PHP7.sh
+
+#sed -i 's#sudo openssl req#echo -e "GB\somecity\somecompany\somesection\someserver\Y" | sudo openssl req #g' install-FruityWiFi-PHP7.sh
+sed -i 's#sudo openssl req#yes "GB" | sudo openssl req #g' install-FruityWiFi-PHP7.sh
+
+sed -i 's#/usr/share/fruitywifi/www#/opt/ITSEC/6.Wireless/1.Wifi/fruitywifi/xtr4nge/FruityWifi/FruityWifi/www/#g' nginx-setup/FruityWiFi-PHP7
+
+
 ./install-FruityWiFi-PHP7.sh
+
 
 echo "!/bin/bash
 
@@ -60,7 +68,10 @@ sudo nginx_start.sh
 sudo php7.0-fpm_start.sh
 firefox https://localhost:8443 </dev/null &>/dev/null &" > fruitywifi.sh
 chmod +x fruitywifi.sh
+sudo rm -f /usr/local/bin/fruitywify
 sudo ln -s /opt/ITSEC/6.Wireless/1.Wifi/fruitywifi/xtr4nge/FruityWifi/fruitywifi.sh /usr/local/bin/fruitywify
 mkdir -p $DSKTPFLSDEST 
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+
 

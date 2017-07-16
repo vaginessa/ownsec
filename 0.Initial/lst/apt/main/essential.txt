@@ -75,7 +75,8 @@ mono-devel
 mppenc 
 ndiff 
 netmask
-nfqueue-bindings-python 
+nfqueue-bindings-python
+ntp
 openssl
 osmo-sdr 
 pbuilder
