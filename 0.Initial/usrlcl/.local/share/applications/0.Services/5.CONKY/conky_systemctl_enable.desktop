@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=systemctl_enable
+Encoding=UTF-8
+Exec=sh -c "sudo conky_systemctl_enable.sh;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=5.CONKY;

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=systemctl_disable
+Encoding=UTF-8
+Exec=sh -c "sudo mysql_systemctl_disable.sh;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=2.MYSQL;
