@@ -1,6 +1,6 @@
 ## STATUS: 
 
-### implementation of update scripts in progres, paths may not work as expected
+### implementation of update scripts in progress, paths may not work as expected
 > See git-root for patch files, ill try to write them to adopt changes so that a complete wipe and reinstall is not nessecary. 
 
 > So to say a development branch, updates daily at random times. to fetch latest updates make sure to cp https://github.com/alphaaurigae/ITSEC-Install-Scripts/tree/master/0.Initial/usrlcl to $USER. Depending if categories get reshuffled, it might be nessary to remove ihe respective /opt/ITSEC/ dirs to avoid stacking files - the installer overwrite symlinks and desktop files, that not a problem.
