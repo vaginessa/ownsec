@@ -24,6 +24,7 @@ DSKTPFLSDEST=/home/$USER/.local/share/applications/6.Wireless/1.Wifi
 DSKTPFL=fruity-wifi.desktop
 
 GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/fruitywifi/xtr4nge/FruityWifi
+GITREPOGITFILE=$GITREPOROOT/.git
 
 cd $GITREPOROOT 
 git clean -f 

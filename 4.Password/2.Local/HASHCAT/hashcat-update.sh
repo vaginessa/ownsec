@@ -17,7 +17,7 @@ cd /opt/ITSEC/4.Password/2.Local/HASHCAT/hashcat
 git clone https://github.com/hashcat/hashcat.git
 
 GITREPOROOT=/opt/ITSEC/4.Password/2.Local/HASHCAT/hashcat/hashcat
-
+GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/2.Local
 DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/2.Local
 DSKTPFL=hashcat.desktop

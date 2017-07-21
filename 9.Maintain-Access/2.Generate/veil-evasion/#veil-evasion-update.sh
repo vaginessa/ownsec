@@ -17,6 +17,7 @@ __     _______ ___ _          _______     ___    ____ ___ ___  _   _
             
 ${normal}"
 
+GITREPOGITFILE=$GITREPOROOT/.git
 
 cd /opt/ITSEC/9.Maintain-Access/2.Generate/veil-evasion/Veil-Framework/Veil-Evasion
 

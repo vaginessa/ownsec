@@ -12,7 +12,7 @@ echo "${bold}
              
 ${normal}"
 
-
+GITREPOGITFILE=$GITREPOROOT/.git
 
 
 git clean -f 

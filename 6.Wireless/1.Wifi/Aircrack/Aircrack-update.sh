@@ -19,6 +19,7 @@ git clone https://github.com/Ethical-H4CK3R/Aircrack
 sudo rm /usr/local/bin/aircrack
 
 GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/aircrack/Ethical-H4CK3R/Aircrack
+GITREPOGITFILE=$GITREPOROOT/.git
 EXECUTEABLE1=aircrack.py
 EXECUTEABLE2=aircrack
 EXECUTEABLE3=aircrack.sh

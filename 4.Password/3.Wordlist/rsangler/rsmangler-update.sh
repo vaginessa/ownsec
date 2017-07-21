@@ -17,6 +17,7 @@ cd /opt/ITSEC/4.Password/3.Wordlist/rsmangler/digininja
 git clone https://github.com/digininja/RSMangler
 
 GITREPOROOT=/opt/ITSEC/4.Password/3.Wordlist/rsmangler/digininja/RSMangler
+GITREPOGITFILE=$GITREPOROOT/.git
 EXECUTEABLE1=rsmangler.rb
 EXECUTEABLE2=rsmangler
 EXECUTEABLE3=rsmangler.sh

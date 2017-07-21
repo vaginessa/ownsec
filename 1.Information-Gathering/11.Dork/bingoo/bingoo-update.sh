@@ -17,6 +17,7 @@ cd /opt/ITSEC/1.Information-Gathering/11.Dork/bingoo/Hood3dRob1n
 git clone https://github.com/Hood3dRob1n/BinGoo.git
 
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/11.Dork/bingoo/Hood3dRob1n/BinGoo
+GITREPOGITFILE=$GITREPOROOT/.git
 EXECUTEABLE1=bingoo
 EXECUTEABLE2=bingoo.sh
 #

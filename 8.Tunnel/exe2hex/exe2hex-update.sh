@@ -17,6 +17,7 @@ cd /opt/ITSEC/8.Tunnel/exe2hex/g0tmi1k
 git clone https://github.com/g0tmi1k/exe2hex.git
 
 GITREPOROOT=/opt/ITSEC/8.Tunnel/exe2hex/g0tmi1k/exe2hex
+GITREPOGITFILE=$GITREPOROOT/.git
 EXECUTEABLE1=exe2hex.py
 EXECUTEABLE2=exe2hex
 EXECUTEABLE3=exe2hex.sh

@@ -20,7 +20,7 @@ sudo updatedb
 sudo ldconfig
 
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/16.IDS-IPS_Identification/ftester/inversepath/ftester
-
+GITREPOGITFILE=$GITREPOROOT/.git
 EXECUTEABLE2=ftest
 EXECUTEABLE4=ftestd
 EXECUTEABLE6=freport

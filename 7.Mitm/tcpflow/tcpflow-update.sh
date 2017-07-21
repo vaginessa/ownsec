@@ -14,6 +14,7 @@ ${normal}"
 
 
 GITREPOROOT=/opt/ITSEC/7.Mitm/tcpflow/simsong/tcpflow
+GITREPOGITFILE=$GITREPOROOT/.git
 EXECUTEABLE1=tcpflow
 EXECUTEABLE2=tcpflow
 #

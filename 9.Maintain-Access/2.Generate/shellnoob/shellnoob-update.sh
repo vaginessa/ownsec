@@ -17,7 +17,7 @@ cd /opt/ITSEC/9.Maintain-Access/2.Generate/shellnoob/reyammer
 git clone https://github.com/reyammer/shellnoob
 
 GITREPOROOT=/opt/ITSEC/9.Maintain-Access/2.Generate/shellnoob/reyammer/shellnoob
-
+GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/9.Maintain-Access/2.Generate
 DSKTPFLSDEST=/home/$USER/.local/share/applications/9.Maintain-Access/2.Generate
 DSKTPFL=shellnoob.desktop

@@ -17,7 +17,7 @@ cd /opt/ITSEC/4.Password/2.Local/pyrit/JPaulMora
 git clone https://github.com/JPaulMora/Pyrit.git
 
 GITREPOROOT=/opt/ITSEC/4.Password/2.Local/pyrit/JPaulMora/Pyrit
-
+GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/2.Local
 DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/2.Local
 DSKTPFL=pyrit.desktop

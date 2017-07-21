@@ -18,6 +18,7 @@ cd /opt/ITSEC/1.Information-Gathering/13.OSINT/theharvester/laramies
 git clone https://github.com/laramies/theHarvester.git
 
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/13.OSINT/theharvester/laramies/theHarvester
+GITREPOGITFILE=$GITREPOROOT/.git
 EXECUTEABLE1=theHarvester.py
 EXECUTEABLE2=theharvester
 EXECUTEABLE3=myparser.py

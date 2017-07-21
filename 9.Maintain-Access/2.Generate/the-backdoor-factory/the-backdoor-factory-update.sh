@@ -17,6 +17,7 @@ cd /opt/ITSEC/9.Maintain-Access/2.Generate/the-backdoor-factory/secretsquirrel
 git clone https://github.com/secretsquirrel/the-backdoor-factory
 
 GITREPOROOT=/opt/ITSEC/9.Maintain-Access/2.Generate/the-backdoor-factory/secretsquirrel/the-backdoor-factory
+GITREPOGITFILE=$GITREPOROOT/.git
 EXECUTEABLE1=backdoor.py
 EXECUTEABLE2=backdoor-factory
 

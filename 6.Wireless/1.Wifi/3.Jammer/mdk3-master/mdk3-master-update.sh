@@ -17,6 +17,7 @@ cd /opt/ITSEC/6.Wireless/1.Wifi/3.Jammer/mdk3-master/camerony
 git clone https://github.com/camerony/mdk3-master.git
 
 GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/3.Jammer/mdk3-master/camerony/mdk3-master
+GITREPOGITFILE=$GITREPOROOT/.git
 #cd /opt/ITSEC/6.Wireless/1.Wifi/3.Jammer/mdk3-master/wi-fi-analyzer/mdk3-master/
 
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/6.Wireless/1.Wifi/3.Jammer

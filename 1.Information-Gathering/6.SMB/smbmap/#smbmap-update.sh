@@ -18,6 +18,7 @@ cd /opt/ITSEC/1.Information-Gathering/6.SMB/smbmap/ShawnDEvans
 git clone https://github.com/ShawnDEvans/smbmap.git
 
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/6.SMB/smbmap/ShawnDEvans/smbmap
+GITREPOGITFILE=$GITREPOROOT/.git
 sudo rm -r /usr/local/bin/smbmap 
 sudo rm -r /opt/ITSEC/1.Information-Gathering/6.SMB/smbmap/ShawnDEvans/smbmap/smbmap.sh
 

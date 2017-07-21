@@ -17,7 +17,7 @@ cd /opt/ITSEC/9.Maintain-Access/2.Generate/webacoo/anestisb
 git clone https://github.com/anestisb/WeBaCoo
 
 GITREPOROOT=/opt/ITSEC/9.Maintain-Access/2.Generate/webacoo/anestisb/WeBaCoo/
-
+GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/9.Maintain-Access/2.Generate
 DSKTPFLSDEST=/home/$USER/.local/share/applications/9.Maintain-Access/2.Generate
 DSKTPFL=webacoo.desktop

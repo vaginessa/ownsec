@@ -17,6 +17,7 @@ cd /opt/ITSEC/1.Information-Gathering/7.SMTP/smtp-user-enum/pentestmonkey
 git clone https://github.com/pentestmonkey/smtp-user-enum.git
 
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/7.SMTP/smtp-user-enum/pentestmonkey/smtp-user-enum
+GITREPOGITFILE=$GITREPOROOT/.git
 EXECUTEABLE1=smtp-user-enum.pl
 EXECUTEABLE2=smtp-user-enum
 #

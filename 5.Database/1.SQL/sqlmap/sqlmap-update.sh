@@ -20,7 +20,7 @@ sudo rm /usr/local/bin/sqlmapapi
 sudo rm /usr/local/bin/sqlmap
 #	
 GITREPOROOT=/opt/ITSEC/5.Database/1.SQL/sqlmap/sqlmapproject/sqlmap
-
+GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/5.Database/1.SQL
 DSKTPFLSDEST=/home/$USER/.local/share/applications/5.Database/1.SQL
 DSKTPFL=sqlmap.desktop

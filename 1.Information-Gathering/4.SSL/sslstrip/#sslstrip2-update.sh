@@ -12,6 +12,8 @@ echo "${bold}
      
 ${normal}"
 
+GITREPOGITFILE=$GITREPOROOT/.git
+
 cd /opt/ITSEC/1.Information-Gathering/4.SSL/sslstrip2/byt3bl33d3r/sslstrip2
 
 git clean -f 

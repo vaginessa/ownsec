@@ -17,7 +17,7 @@ cd /opt/ITSEC/1.Information-Gathering/16.IDS-IPS_Identification/ftester/inversep
 git clone https://github.com/inversepath/ftester.git
 
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/16.IDS-IPS_Identification/ftester/inversepath/ftester
-
+GITREPOGITFILE=$GITREPOROOT/.git
 EXECUTEABLE2=ftest
 EXECUTEABLE4=ftestd
 EXECUTEABLE6=freport

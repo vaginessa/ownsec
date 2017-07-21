@@ -16,7 +16,8 @@ mkdir -p /opt/ITSEC/4.Password/2.Local/pack/iphelix
 cd /opt/ITSEC/4.Password/2.Local/pack/iphelix
 git clone https://github.com/iphelix/pack.git
 
-GITREPOROOT=/opt/ITSEC/4.Password/2.Local/pack/iphelix/pack 
+GITREPOROOT=/opt/ITSEC/4.Password/2.Local/pack/iphelix/pack
+GITREPOGITFILE=$GITREPOROOT/.git
 EXECUTEABLE1=maskgen.py
 EXECUTEABLE2=pack_maskgen
 EXECUTEABLE3=policygen.py

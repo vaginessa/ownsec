@@ -13,7 +13,7 @@ echo "${bold}
 ${normal}"
 
 GITREPOROOT=/opt/ITSEC/10.Stresstest/slowhttptest/shekyan/slowhttptest
-
+GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/10.Stresstest
 DSKTPFLSDEST=/home/$USER/.local/share/applications/10.Stresstest
 DSKTPFL=slowhttptest.desktop

@@ -17,6 +17,7 @@ cd /opt/ITSEC/1.Information-Gathering/15.Fuzzer/siparmyknife/foreni-packages
 git clone https://github.com/foreni-packages/siparmyknife.git
 
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/15.Fuzzer/siparmyknife/foreni-packages/siparmyknife
+GITREPOGITFILE=$GITREPOROOT/.git
 EXECUTEABLE1=siparmyknife.pl
 EXECUTEABLE2=siparmyknife
 EXECUTEABLE3=siparmyknife.sh

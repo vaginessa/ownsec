@@ -17,6 +17,7 @@ cd /opt/ITSEC/8.Tunnel/pwnat/samyk
 git clone https://github.com/samyk/pwnat.git
 
 GITREPOROOT=/opt/ITSEC/8.Tunnel/pwnat/samyk/pwnat
+GITREPOGITFILE=$GITREPOROOT/.git
 EXECUTEABLE1=pwnat	
 EXECUTEABLE2=pwnat
 

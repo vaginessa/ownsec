@@ -17,7 +17,7 @@ cd /opt/ITSEC/4.Password/1.Network/thc-hydra/vanhauser-thc
 git clone https://github.com/vanhauser-thc/thc-hydra.git
 
 GITREPOROOT=/opt/ITSEC/4.Password/1.Network/thc-hydra/vanhauser-thc/thc-hydra
-
+GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/1.Network
 DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/1.Network
 DSKTPFL1=hydra-gtk.desktop

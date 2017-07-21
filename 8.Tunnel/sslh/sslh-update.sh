@@ -17,7 +17,7 @@ cd /opt/ITSEC/8.Tunnel/sslh/yrutschle
 git clone https://github.com/yrutschle/sslh.git
 
 GITREPOROOT=/opt/ITSEC/8.Tunnel/sslh/yrutschle/sslh
-#
+GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/4.SSL
 DSKTPFLSDEST=/home/$USER/.local/share/applications
 DSKTPFL=sslh.desktop

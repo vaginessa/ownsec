@@ -14,7 +14,7 @@ echo "${bold}
 ${normal}"
 
 GITREPOROOT=/opt/ITSEC/7.Mitm/ettercap/Ettercap/ettercap
-#
+GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
 DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
 DSKTPFL=ettercap.desktop

@@ -13,10 +13,24 @@ echo "${bold}
 ${normal}"
 
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/1.Network_Portscanner/nmap/nmap/nmap
-#
+GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/1.Network_Portscanner
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/1.Network_Portscanner
 DSKTPFL=nmap.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/1.Information-Gathering/1.Network_Portscanner/nmap/nmap
+cd /opt/ITSEC/1.Information-Gathering/1.Network_Portscanner/nmap/nmap
+git clone https://github.com/nmap/nmap.git
+
+else
+
+echo "repo exists"
+
+fi
 
 cd $GITREPOROOT
 

@@ -18,7 +18,7 @@ cd /opt/ITSEC/4.Password/1.Network/ncrack/nmap
 git clone https://github.com/nmap/ncrack.git
 
 GITREPOROOT=/opt/ITSEC/4.Password/1.Network/ncrack/nmap/ncrack
-
+GITREPOGITFILE=$GITREPOROOT/.git
 cd $GITREPOROOT
 #
 sudo make uninstall

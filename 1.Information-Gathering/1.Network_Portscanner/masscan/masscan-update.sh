@@ -10,13 +10,35 @@ echo "${bold}
 | |  | |/ ___ \ ___) |__) | |___ / ___ \| |\  |
 |_|  |_/_/   \_\____/____/ \____/_/   \_\_| \_|
         
+UPDATE
 ${normal}"
 
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/1.Network_Portscanner/masscan/robertdavidgraham/masscan
-
+GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/1.Network_Portscanner
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/1.Network_Portscanner
 DSKTPFL=masscan.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/1.Information-Gathering/1.Network_Portscanner/masscan/robertdavidgraham
+cd /opt/ITSEC/1.Information-Gathering/1.Network_Portscanner/masscan/robertdavidgraham
+git clone https://github.com/robertdavidgraham/masscan.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
 
 cd $GITREPOROOT
 sudo make uninstall
@@ -33,5 +55,6 @@ rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 
+fi
 
 

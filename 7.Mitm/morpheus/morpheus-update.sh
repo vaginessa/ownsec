@@ -13,6 +13,7 @@ echo "${bold}
 ${normal}"
 
 GITREPOROOT=/opt/ITSEC/7.Mitm/morpheus/r00t-3xp10it/morpheus
+GITREPOGITFILE=$GITREPOROOT/.git
 sudo rm -f /usr/local/bin/morpheus
 #
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm

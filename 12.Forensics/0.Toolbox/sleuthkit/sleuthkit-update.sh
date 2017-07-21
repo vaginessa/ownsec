@@ -20,7 +20,7 @@ sudo udpatedb
 sudo ldconfig
 
 GITREPOROOT=/opt/ITSEC/8.Forensics/0.Toolbox/sleuthkit/sleuthkit/sleuthkit
-#
+GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications
 DSKTPFLSDEST=/home/$USER/.local/share/applications
 DSKTPFL=dnschef.desktop

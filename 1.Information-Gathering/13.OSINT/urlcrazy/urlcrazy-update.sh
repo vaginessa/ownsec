@@ -18,6 +18,7 @@ git clone https://github.com/hardwaterhacker/URLCrazy.git
 
 
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/13.OSINT/urlcrazy/hardwaterhacker/URLCrazy
+GITREPOGITFILE=$GITREPOROOT/.git
 EXECUTEABLE1=urlcrazy
 EXECUTEABLE2=urlcrazy
 #

@@ -12,3 +12,6 @@ echo "${bold}
 |_| |_|_____/_/\_\___|_| \_|\___/|_____\____| |_|  
          
 ${normal}"
+
+
+GITREPOGITFILE=$GITREPOROOT/.git

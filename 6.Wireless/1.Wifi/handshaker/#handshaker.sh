@@ -12,6 +12,8 @@ echo "${bold}
                 
 ${normal}"
 
+GITREPOGITFILE=$GITREPOROOT/.git
+
 rm -rf /opt/ITSEC/6.Wireless/1.Wifi/handshaker/d4rkcat
 mkdir -p /opt/ITSEC/6.Wireless/1.Wifi/handshaker/d4rkcat
 cd /opt/ITSEC/6.Wireless/1.Wifi/handshaker/d4rkcat

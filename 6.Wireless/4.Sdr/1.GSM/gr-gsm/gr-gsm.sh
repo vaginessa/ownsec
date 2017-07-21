@@ -6,7 +6,8 @@ git clone https://github.com/ptrkrysik/gr-gsm
 
 
 GITREPOROOT=/opt/ITSEC/6.Wireless/4.Sdr/1.GSM/gr-gsm/ptrkrysik/gr-gsm
-#
+GITREPOGITFILE=$GITREPOROOT/.git
+
 cd $GITREPOROOT
 sudo rm -r build
 git clean -f

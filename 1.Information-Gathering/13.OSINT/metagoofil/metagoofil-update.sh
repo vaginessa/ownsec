@@ -17,6 +17,7 @@ cd /opt/ITSEC/1.Information-Gathering/13.OSINT/metagoofil/opsdisk
 git clone https://github.com/opsdisk/metagoofil.git
 
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/13.OSINT/metagoofil/opsdisk/metagoofil
+GITREPOGITFILE=$GITREPOROOT/.git
 EXECUTEABLE1=metagoofil.py
 EXECUTEABLE2=metagoofil
 

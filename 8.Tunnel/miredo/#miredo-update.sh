@@ -20,6 +20,7 @@ cd /opt/ITSEC/8.Tunnel/miredo/darconeous
 git clone https://github.com/darconeous/miredo.git
 
 GITREPOROOT=/opt/ITSEC/8.Tunnel/miredo/darconeous/miredo
+GITREPOGITFILE=$GITREPOROOT/.git
 
 cd $GITREPOROOT
 

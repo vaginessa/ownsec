@@ -17,6 +17,7 @@ cd /opt/ITSEC/1.Information-Gathering/15.Fuzzer/dotdotpwn/wireghoul
 git clone https://github.com/wireghoul/dotdotpwn.git
 
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/15.Fuzzer/dotdotpwn/wireghoul/dotdotpwn
+GITREPOGITFILE=$GITREPOROOT/.git
 EXECUTEABLE1=dotdotpwn.pl
 EXECUTEABLE2=dotdotpwn
 

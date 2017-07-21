@@ -18,7 +18,7 @@ cd /opt/ITSEC/9.Maintain-Access/2.Generate/l0l/m3pt0r
 git clone https://github.com/m3pt0r/l0l
 
 GITREPOROOT=/opt/ITSEC/9.Maintain-Access/2.Generate/l0l/m3pt0r/l0l
-
+GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/9.Maintain-Access/2.Generate
 DSKTPFLSDEST=/home/$USER/.local/share/applications/9.Maintain-Access/2.Generate
 DSKTPFL=l0l.desktop

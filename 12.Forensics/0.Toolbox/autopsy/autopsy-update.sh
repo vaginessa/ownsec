@@ -18,6 +18,7 @@ echo "${bold}
          
 ${normal}"
 
+GITREPOGITFILE=$GITREPOROOT/.git
 
 cd /opt/ITSEC/8.Forensics/0.Toolbox/autopsy/sleuthkit/autopsy/
 git clean -f 

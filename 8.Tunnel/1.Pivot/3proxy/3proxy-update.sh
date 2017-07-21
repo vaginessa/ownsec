@@ -19,7 +19,7 @@ cd /opt/ITSEC/8.Tunnel/1.Pivot/3proxy/z3APA3A
 git clone https://github.com/z3APA3A/3proxy
 
 GITREPOROOT=/opt/ITSEC/8.Tunnel/1.Pivot/3proxy/z3APA3A/3proxy
-
+GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/8.Tunnel/1.Pivot
 DSKTPFLSDEST=/home/$USER/.local/share/applications/8.Tunnel/1.Pivot
 DSKTPFL=3proxy.desktop

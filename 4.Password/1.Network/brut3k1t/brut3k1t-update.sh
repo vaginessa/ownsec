@@ -21,7 +21,7 @@ sudo updatedb
 sudo ldconfig
 #
 GITREPOROOT=/opt/ITSEC/4.Password/1.Network/brut3k1t/ex0dus-0x/brut3k1t
-#
+GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/1.Network/
 DSKTPFLSDEST=/home/$USER/.local/share/applications/applications/4.Password/1.Network
 DSKTPFL=brut3k1t.desktop

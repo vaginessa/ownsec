@@ -17,6 +17,7 @@ cd /opt/ITSEC/8.Tunnel/mallory/justmao945
 git clone https://github.com/justmao945/mallory.git
 
 GITREPOROOT=/opt/ITSEC/8.Tunnel/mallory/justmao945/mallory
+GITREPOGITFILE=$GITREPOROOT/.git
 
 cd $GITREPOROOT
 git clean -f

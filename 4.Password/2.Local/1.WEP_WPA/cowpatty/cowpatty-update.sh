@@ -17,6 +17,7 @@ cd /opt/ITSEC/4.Password/2.Local/1.WEP_WPA/cowpatty/roobixx
 git clone https://github.com/roobixx/cowpatty.git
 
 GITREPOROOT=/opt/ITSEC/4.Password/2.Local/1.WEP_WPA/cowpatty/roobixx/cowpatty
+GITREPOGITFILE=$GITREPOROOT/.git
 EXECUTEABLE1=cowpatty
 
 DSKTPFLS=/opt/Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/2.Local/1.WEP_WPA

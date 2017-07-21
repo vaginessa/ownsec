@@ -15,7 +15,7 @@ ${normal}"
 
 
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/16.IDS-IPS_Identification/1.Web-Firewalls/wafw00f/EnableSecurity/wafw00f
-
+GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/16.IDS-IPS_Identification/1.Web-Firewalls
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/16.IDS-IPS_Identification/1.Web-Firewalls
 DSKTPFL=wafw00f.desktop

@@ -21,6 +21,7 @@ sudo updatedb
 sudo ldconfig
 
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/16.IDS-IPS_Identification/fir/certsocietegenerale/FIR
+GITREPOGITFILE=$GITREPOROOT/.git
 EXECUTEABLE1=manage.py
 EXECUTEABLE2=fir
 #

@@ -11,12 +11,13 @@ echo "${bold}
 |___|_|\_\_____|   |____/ \____/_/   \_\_| \_|
    
 ${normal}"
-
+GITREPOROOT=/opt/ITSEC/1.Information-Gathering/2.Live-Host/2.VPN/ike-scan/royhills/ike-scan
+GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/2.Live-Host/2.VPN
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/2.Live-Host/2.VPN
 DSKTPFL=ike-scan.desktop
 
-cd /opt/ITSEC/1.Information-Gathering/2.Live-Host/2.VPN/ike-scan/royhills/ike-scan
+cd $GITREPOROOT
 sudo make uninstall
 make clean
 git clean -f

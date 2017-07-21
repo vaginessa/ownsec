@@ -13,6 +13,7 @@ echo "${bold}
 ${normal}"
 
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/1.Network_Portscanner/thanos/P0cL4bs/Thanos
+GITREPOGITFILE=$GITREPOROOT/.git
 EXECUTEABLE1=thanos	
 EXECUTEABLE2=thanos
 

@@ -17,6 +17,7 @@ cd /opt/ITSEC/10.Stresstest/dhcpig/kamorin
 git clone https://github.com/kamorin/DHCPig
 
 GITREPOROOT=/opt/ITSEC/10.Stresstest/dhcpig/kamorin/DHCPig
+GITREPOGITFILE=$GITREPOROOT/.git
 EXECUTEABLE1=pig.py
 EXECUTEABLE2=dhcPIG
 

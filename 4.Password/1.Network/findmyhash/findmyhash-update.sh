@@ -17,7 +17,7 @@ cd /opt/ITSEC/4.Password/1.Network/findmyhash/frdmn
 git clone https://github.com/frdmn/findmyhash.git
 
 GITREPOROOT=/opt/ITSEC/4.Password/1.Network/findmyhash/frdmn/findmyhash
-
+GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/1.Network/
 DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/1.Network
 DSKTPFL=findmyhash.desktop

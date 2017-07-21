@@ -17,7 +17,7 @@ cd /opt/ITSEC/1.Information-Gathering/2.Live-Host/wol-e/dookie
 git clone git://git.kali.org/packages/wol-e.git
 
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/2.Live-Host/wol-e/dookie/wol-e
-#
+GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/2.Live-Host
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/2.Live-Host
 DSKTPFL=wol-e.desktop

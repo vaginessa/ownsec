@@ -18,7 +18,7 @@ git clone https://github.com/izderadicka/ptunnel.git
 
 GITREPOROOT=/opt/ITSEC/8.Tunnel/ptunnel/izderadicka/ptunnel
 BINDIR=/opt/ITSEC/8.Tunnel/ptunnel/izderadicka/ptunnel/src
-
+GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/8.Tunnel
 DSKTPFLSDEST=/home/$USER/.local/share/applications
 DSKTPFL=ptunnel.desktop

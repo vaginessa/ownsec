@@ -13,6 +13,8 @@ echo "${bold}
           
 ${normal}"
 
+GITREPOGITFILE=$GITREPOROOT/.git
+
 cd /opt/ITSEC/7.Mitm/mitmproxy
 git clean -f 
 git fetch origin

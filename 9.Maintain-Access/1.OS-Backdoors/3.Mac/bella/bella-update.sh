@@ -17,7 +17,7 @@ cd /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/3.Mac/bella/Trietptm-on-Security
 git clone https://github.com/Trietptm-on-Security/Bella.git
 
 GITREPOROOT=/opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/3.Mac/bella/Trietptm-on-Security/Bella
-
+GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/9.Maintain-Access/1.OS-Backdoors/3.Mac/
 DSKTPFLSDEST=/home/$USER/.local/share/applications/9.Maintain-Access/1.OS-Backdoors/3.Mac
 DSKTPFL=bella-builder.desktop

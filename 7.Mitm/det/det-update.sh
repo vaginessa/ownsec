@@ -13,6 +13,7 @@ echo "${bold}
 ${normal}"
 
 GITREPOROOT=/opt/ITSEC/7.Mitm/det/sensepost/DET
+GITREPOGITFILE=$GITREPOROOT/.git
 EXECUTEABLE1=det.py
 EXECUTEABLE2=det
 EXECUTEABLE3=det.sh

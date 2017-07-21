@@ -17,7 +17,7 @@ cd /opt/ITSEC/1.Information-Gathering/15.Fuzzer/dirb/seifreed
 git clone https://github.com/seifreed/dirb.git
 
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/15.Fuzzer/dirb/seifreed/dirb
-
+GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/15.Fuzzer/
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/15.Fuzzer
 DSKTPFL=dirb.desktop

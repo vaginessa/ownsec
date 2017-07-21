@@ -17,6 +17,7 @@ cd /opt/ITSEC/8.Tunnel/anonym8/HiroshiManRise
 git clone https://github.com/HiroshiManRise/anonym8
 
 GITREPOROOT=/opt/ITSEC/8.Tunnel/anonym8/HiroshiManRise/anonym8
+GITREPOGITFILE=$GITREPOROOT/.git
 
 cd $GITREPOROOT
 git clean -f

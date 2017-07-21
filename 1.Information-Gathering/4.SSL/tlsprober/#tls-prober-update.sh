@@ -13,6 +13,8 @@ echo "${bold}
              
 ${normal}"
 
+GITREPOGITFILE=$GITREPOROOT/.git
+
 cd /opt/ITSEC/1.Information-Gathering/4.SSL/tls_prober/WestpointLtd/tls_prober
 
 git clean -f

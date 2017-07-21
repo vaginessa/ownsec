@@ -18,6 +18,7 @@ cd /opt/ITSEC/4.Password/2.Local/johnny/shinnok
 git clone https://github.com/shinnok/johnny.git
 
 GITREPOROOT=/opt/ITSEC/4.Password/2.Local/johnny/shinnok/johnny
+GITREPOGITFILE=$GITREPOROOT/.git
 EXECUTEABLE1=johnny
 
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/2.Local

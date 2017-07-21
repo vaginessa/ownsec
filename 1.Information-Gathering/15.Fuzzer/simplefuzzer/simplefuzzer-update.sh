@@ -18,6 +18,7 @@ cd /opt/ITSEC/1.Information-Gathering/15.Fuzzer/simple-fuzzer/orgcandman
 git clone https://github.com/orgcandman/simple-fuzzer.git
 
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/15.Fuzzer/simple-fuzzer/orgcandman/simple-fuzzer
+GITREPOGITFILE=$GITREPOROOT/.git
 
 cd $GITREPOROOT
 sudo make uninstall

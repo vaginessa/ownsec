@@ -13,6 +13,7 @@ echo "${bold}
 ${normal}"
 
 GITREPOROOT=/opt/ITSEC/10.Stresstest/siege/JoeDog/siege
+GITREPOGITFILE=$GITREPOROOT/.git
 EXECUTEABLE1=siege
 EXECUTEABLE2=siege
 

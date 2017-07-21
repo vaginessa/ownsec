@@ -13,6 +13,7 @@ echo "${bold}
 ${normal}"
 
 GITREPOROOT=/opt/ITSEC/7.Mitm/responder/SpiderLabs/Responder
+GITREPOGITFILE=$GITREPOROOT/.git
 EXECUTEABLE1=Responder.py
 
 EXECUTEABLE2=responder

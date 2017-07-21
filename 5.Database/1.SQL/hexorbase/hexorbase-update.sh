@@ -20,7 +20,7 @@ sudo rm -f /usr/local/bin/hexorbase
 
 GITREPOROOT=/opt/ITSEC/5.Database/1.SQL/hexorbase/savio-code/hexorbase
 GITREPOBINROOT=/opt/ITSEC/5.Database/1.SQL/hexorbase/savio-code/hexorbase/HexorBase
-
+GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/5.Database/1.SQL
 DSKTPFLSDEST=/home/$USER/.local/share/applications/5.Database/1.SQL
 DSKTPFL=hexorbase.desktop

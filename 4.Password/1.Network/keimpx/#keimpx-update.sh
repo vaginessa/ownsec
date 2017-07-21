@@ -18,7 +18,7 @@ cd /opt/ITSEC/4.Password/1.Network/keimpx/inquisb
 git clone https://github.com/inquisb/keimpx.git
 
 GITREPOROOT=/opt/ITSEC/4.Password/1.Network/keimpx/inquisb/keimpx
-
+GITREPOGITFILE=$GITREPOROOT/.git
 cd $GITREPOROOT
 git clean -f 
 git fetch origin

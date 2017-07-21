@@ -19,7 +19,7 @@ git clone https://github.com/fwaeytens/dnsenum.git
 sudo rm -f /usr/local/bin/dnsenum
 sudo rm -f /opt/ITSEC/1.Information-Gathering/5.DNS/dnsenum/fwaeytens/dnsenum/dnsenum.sh 
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/5.DNS/dnsenum/fwaeytens/dnsenum
-
+GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/5.DNS
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/5.DNS
 DSKTPFL=dnsenum.desktop

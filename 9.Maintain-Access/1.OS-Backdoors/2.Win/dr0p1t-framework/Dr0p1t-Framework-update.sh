@@ -18,7 +18,7 @@ git clone https://github.com/D4Vinci/Dr0p1t-Framework
 
 
 GITREPOROOT=/opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/2.Win/dr0p1t-framework/D4Vinci/Dr0p1t-Framework
-
+GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/9.Maintain-Access/1.OS-Backdoors/2.Win
 DSKTPFLSDEST=/home/$USER/.local/share/applications/applications/9.Maintain-Access/1.OS-Backdoors/2.Win
 DSKTPFL=Dr0p1t-Framework.desktop

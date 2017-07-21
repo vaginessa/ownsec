@@ -13,6 +13,7 @@ echo "${bold}
 ${normal}"
 
 GITREPOROOT=/opt/ITSEC/7.Mitm/bdfproxy/secretsquirrel/BDFProxy
+GITREPOGITFILE=$GITREPOROOT/.git
 EXECUTEABLE1=bdf_proxy.py
 EXECUTEABLE2=bdfproxy
 EXECUTEABLE3=wpBDF.sh

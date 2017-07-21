@@ -17,7 +17,7 @@ cd /opt/ITSEC/6.Wireless/1.Wifi/aircrack-ng/aircrack-ng
 git clone https://github.com/aircrack-ng/aircrack-ng
 
 GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/aircrack-ng/aircrack-ng/aircrack-ng
-
+GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/6.Wireless/1.Wifi
 DSKTPFLSDEST=/home/$USER/.local/share/applications/6.Wireless/1.Wifi
 DSKTPFL=aircrack-ng.desktop

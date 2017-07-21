@@ -17,7 +17,7 @@ cd /opt/ITSEC/9.Maintain-Access/2.Generate/owasp-zsc/zscproject
 git clone https://github.com/zscproject/OWASP-ZSC
 
 GITREPOROOT=/opt/ITSEC/9.Maintain-Access/2.Generate/owasp-zsc/zscproject/OWASP-ZSC
-
+GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/9.Maintain-Access/2.Generate
 DSKTPFLSDEST=/home/$USER/.local/share/applications/9.Maintain-Access/2.Generate
 DSKTPFL=owasp-zsc.desktop

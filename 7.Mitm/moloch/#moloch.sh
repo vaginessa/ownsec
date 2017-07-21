@@ -15,6 +15,7 @@ echo "${bold}
            
 ${normal}"
 
+GITREPOGITFILE=$GITREPOROOT/.git
 
 mkdir -p /opt/ITSEC/7.Mitm/moloch/aol
 cd /opt/ITSEC/7.Mitm/moloch/aol

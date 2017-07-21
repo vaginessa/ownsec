@@ -17,7 +17,7 @@ cd /opt/ITSEC/1.Information-Gathering/6.SMB/enum4linux/portcullislabs
 git clone https://github.com/portcullislabs/enum4linux.git
 
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/6.SMB/enum4linux/portcullislabs/enum4linux
-#
+GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/6.SMB
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/6.SMB
 DSKTPFL=enum4linux.desktop

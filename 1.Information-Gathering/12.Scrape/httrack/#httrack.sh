@@ -11,6 +11,7 @@ sudo updatedb
 sudo ldconfig
 
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/12.Scrape/httrack/xroche/httrack
+GITREPOGITFILE=$GITREPOROOT/.git
 #EXECUTEABLE1=
 #EXECUTEABLE2=
 

@@ -20,6 +20,7 @@ git clone https://github.com/NORMA-Inc/AtEar.git
 sudo rm /usr/local/bin/atear
 
 GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/atear/NORMA-Inc/AtEar
+GITREPOGITFILE=$GITREPOROOT/.git
 EXECUTEABLE1=run.py
 EXECUTEABLE2=atear
 EXECUTEABLE3=atear.sh

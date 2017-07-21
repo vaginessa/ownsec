@@ -17,6 +17,7 @@ cd /opt/ITSEC/1.Information-Gathering/8.SNMP/braa/mteg
 git clone https://github.com/mteg/braa.git
 
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/8.SNMP/braa/mteg/braa
+GITREPOGITFILE=$GITREPOROOT/.git
 EXECUTEABLE1=braa
 EXECUTEABLE2=braa
 #

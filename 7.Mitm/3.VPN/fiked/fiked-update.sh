@@ -13,7 +13,7 @@ echo "${bold}
 ${normal}"
 
 GITREPOROOT=/opt/ITSEC/7.Mitm/3.VPN/fiked/droe/fiked
-#
+GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm/3.VPN
 DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm/3.VPN
 DSKTPFL=fiked.desktop

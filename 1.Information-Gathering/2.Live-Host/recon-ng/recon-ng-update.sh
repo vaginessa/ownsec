@@ -16,11 +16,13 @@ mkdir -p /opt/ITSEC/1.Information-Gathering/2.Live-Host/recon-ng/LaNMaSteR53
 cd /opt/ITSEC/1.Information-Gathering/2.Live-Host/recon-ng/LaNMaSteR53
 git clone https://bitbucket.org/LaNMaSteR53/recon-ng.git
 
+
+GITREPOROOT=/opt/ITSEC/1.Information-Gathering/2.Live-Host/recon-ng/LaNMaSteR53/recon-ng
+GITREPOGITFILE=$GITREPOROOT/.git
+
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/2.Live-Host
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/2.Live-Host
 DSKTPFL=recon-ng.desktop
-
-GITREPOROOT=/opt/ITSEC/1.Information-Gathering/2.Live-Host/recon-ng/LaNMaSteR53/recon-ng
 
 EXECUTEABLE1=recon-ng
 EXECUTEABLE2=recon-ng

@@ -12,6 +12,8 @@ echo "${bold}
                                                            
 ${normal}"
 
+GITREPOGITFILE=$GITREPOROOT/.git
+
 sudo rm -r /opt/ITSEC/6.Wireless/1.Wifi/wpa2-halfhandshake-crack/dxa4481
 mkdir -p /opt/ITSEC/6.Wireless/1.Wifi/wpa2-halfhandshake-crack/dxa4481
 cd /opt/ITSEC/6.Wireless/1.Wifi/wpa2-halfhandshake-crack/dxa4481

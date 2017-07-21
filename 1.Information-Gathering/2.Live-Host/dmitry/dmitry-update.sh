@@ -18,7 +18,7 @@ git clone https://github.com/jaygreig86/dmitry.git
 
 
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/2.Live-Host/dmitry/jaygreig86/dmitry
-
+GITREPOGITFILE=$GITREPOROOT/.git
 EXECUTEABLE1=dmitry
 EXECUTEABLE2=dmitry
 

@@ -12,6 +12,8 @@ echo "${bold}
       
 ${normal}"
 
+GITREPOGITFILE=$GITREPOROOT/.git
+
 mkdir -p /opt/ITSEC/4.Password/1.Network/brutex/1N3
 cd /opt/ITSEC/4.Password/1.Network/brutex/1N3
 git clone https://github.com/1N3/BruteX

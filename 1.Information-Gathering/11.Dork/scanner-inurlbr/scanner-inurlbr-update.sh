@@ -17,6 +17,7 @@ cd /opt/ITSEC/1.Information-Gathering/11.Dork/scanner-inurlbr/googleinurl
 git clone https://github.com/googleinurl/SCANNER-INURLBR.git
 
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/11.Dork/scanner-inurlbr/googleinurl/SCANNER-INURLBR
+GITREPOGITFILE=$GITREPOROOT/.git
 EXECUTEABLE1=inurlbr.php
 EXECUTEABLE2=inurlbr
 #

@@ -14,6 +14,7 @@ echo "${bold}
 ${normal}"
 
 GITREPOROOT=/opt/ITSEC/10.Stresstest/pig/rafael-santiago/pig
+GITREPOGITFILE=$GITREPOROOT/.git
 #EXECUTEABLE1=pig.py
 #EXECUTEABLE2=dhcpPIG
 

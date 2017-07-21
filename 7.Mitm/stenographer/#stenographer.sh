@@ -4,7 +4,7 @@
 #	($GOPATH not set)
 
 GITREPOROOT=/opt/ITSEC/7.Mitm/7.Mitm/stenographer/google/stenographer
-
+GITREPOGITFILE=$GITREPOROOT/.git
 bold=$(tput bold)
 normal=$(tput sgr0)
 

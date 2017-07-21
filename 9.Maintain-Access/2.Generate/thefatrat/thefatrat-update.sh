@@ -24,6 +24,7 @@ setting vars
 ${normal}"
 
 GITREPOROOT=/opt/ITSEC/9.Maintain-Access/2.Generate/thefatrat/Screetsec/TheFatRat
+GITREPOGITFILE=$GITREPOROOT/.git
 EXECUTEABLE1=fatrat
 EXECUTEABLE2=fatrat.sh
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/9.Maintain-Access/2.Generate

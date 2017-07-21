@@ -19,7 +19,7 @@ git clone https://github.com/BlackArch/thc-pptp-bruter.git
 
 
 GITREPOROOT=/opt/ITSEC/4.Password/1.Network/thc-pptp-bruter/BlackArch/thc-pptp-bruter
-#
+GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/1.Network
 DSKTPFLSDEST=/home/$USER/.local/share/applications
 DSKTPFL=thc-pptp-bruter.desktop

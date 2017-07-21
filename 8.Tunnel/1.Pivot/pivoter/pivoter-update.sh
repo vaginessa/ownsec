@@ -17,7 +17,7 @@ cd /opt/ITSEC/8.Tunnel/1.Pivot/pivoter/trustedsec
 git clone https://github.com/trustedsec/pivoter.git
 
 GITREPOROOT=/opt/ITSEC/8.Tunnel/1.Pivot/pivoter/trustedsec/pivoter/
-
+GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/8.Tunnel/1.Pivot
 DSKTPFLSDEST=/home/$USER/.local/share/applications/8.Tunnel/1.Pivot
 DSKTPFL=pivoter.desktop

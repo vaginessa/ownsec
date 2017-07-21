@@ -18,6 +18,7 @@ git clone https://github.com/roman-rybalko/swaks.git
 
 
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/7.SMTP/swaks/roman-rybalko/swaks/
+GITREPOGITFILE=$GITREPOROOT/.git
 EXECUTEABLE1=swaks
 EXECUTEABLE2=swaks
 #

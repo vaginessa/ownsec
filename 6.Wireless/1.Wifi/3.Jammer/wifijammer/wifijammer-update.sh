@@ -18,6 +18,7 @@ cd /opt/ITSEC/6.Wireless/1.Wifi/3.Jammer/wifijammer/DanMcInerney
 git clone https://github.com/DanMcInerney/wifijammer.git
 
 GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/3.Jammer/wifijammer/DanMcInerney/wifijammer
+GITREPOGITFILE=$GITREPOROOT/.git
 EXECUTEABLE1=wifijammer.py
 EXECUTEABLE2=wifijammer
 #

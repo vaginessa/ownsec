@@ -17,7 +17,7 @@ cd /opt/ITSEC/1.Information-Gathering/5.DNS/fierce/mschwager/
 git clone https://github.com/mschwager/fierce.git
 
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/5.DNS/fierce/mschwager/fierce
-#
+GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/5.DNS
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/5.DNS
 DSKTPFL=fierce.desktop

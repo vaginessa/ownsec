@@ -17,7 +17,7 @@ cd /opt/ITSEC/8.Tunnel/udptunnel/astroza
 git clone https://github.com/astroza/udptunnel.git
 
 GITREPOROOT=/opt/ITSEC/8.Tunnel/udptunnel/astroza/udptunnel
-
+GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/8.Tunnel
 DSKTPFLSDEST=/home/$USER/.local/share/applications/8.Tunnel
 DSKTPFL=udptunnel.desktop

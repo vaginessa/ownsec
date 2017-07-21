@@ -17,7 +17,7 @@ cd /opt/ITSEC/1.Information-Gathering/2.Live-Host/arping/ThomasHabets
 git clone https://github.com/ThomasHabets/arping.git
 
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/2.Live-Host/arping/ThomasHabets/arping
-
+GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/2.Live-Host
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/2.Live-Host
 DSKTPFL=arping.desktop

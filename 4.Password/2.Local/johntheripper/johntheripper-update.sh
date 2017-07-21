@@ -18,6 +18,7 @@ cd /opt/ITSEC/4.Password/2.Local/johntheripper/magnumripper
 git clone https://github.com/magnumripper/JohnTheRipper.git
 
 GITREPOROOT=/opt/ITSEC/4.Password/2.Local/johntheripper/magnumripper/JohnTheRipper
+GITREPOGITFILE=$GITREPOROOT/.git
 binarydir=/opt/ITSEC/4.Password/2.Local/johntheripper/magnumripper/JohnTheRipper/run
 mainexec=john
 exec2=john.sh

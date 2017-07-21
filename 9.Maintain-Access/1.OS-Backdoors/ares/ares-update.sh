@@ -12,13 +12,12 @@ echo "${bold}
           
 ${normal}"
 
-mkdir -p $GITREPOCLONEDIR 
-cd $GITREPOCLONEDIR 
+mkdir -p /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/ares/sweetsoftware 
+cd /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/ares/sweetsoftware
 git clone https://github.com/sweetsoftware/ares
 
 GITREPOROOT=/opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/ares/sweetsoftware/ares
-GITREPOCLONEDIR=/opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/ares/sweetsoftware
-
+GITREPOGITFILE=$GITREPOROOT/.git
 
 
 cd $GITREPOROOT

@@ -13,6 +13,7 @@ echo "${bold}
 ${normal}"
 
 GITREPOROOT=/opt/ITSEC/7.Mitm/2.DNS/dnschef/iphelix/dnschef
+GITREPOGITFILE=$GITREPOROOT/.git
 EXECUTEABLE1=dnschef.py
 EXECUTEABLE2=dnschef.sh
 EXECUTEABLE3=dnschef

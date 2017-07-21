@@ -17,6 +17,7 @@ cd /opt/ITSEC/4.Password/1.Network/patator/lanjelot
 git clone https://github.com/lanjelot/patator.git
 
 GITREPOROOT=/opt/ITSEC/4.Password/1.Network/patator/lanjelot/patator
+GITREPOGITFILE=$GITREPOROOT/.git
 EXECUTEABLE1=patator.py
 EXECUTEABLE2=patator
 EXECUTEABLE3=patator.sh

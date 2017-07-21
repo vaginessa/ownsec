@@ -17,6 +17,7 @@ cd /opt/ITSEC/10.Stresstest/ufonet/epsylon
 git clone https://github.com/epsylon/ufonet
 
 GITREPOROOT=/opt/ITSEC/10.Stresstest/ufonet/epsylon/ufonet
+GITREPOGITFILE=$GITREPOROOT/.git
 EXECUTEABLE1=ufonet
 EXECUTEABLE2=ufonet.sh
 

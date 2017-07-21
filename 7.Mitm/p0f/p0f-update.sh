@@ -13,6 +13,7 @@ echo "${bold}
 ${normal}"
 
 GITREPOROOT=/opt/ITSEC/7.Mitm/p0f/p0f/p0f
+GITREPOGITFILE=$GITREPOROOT/.git
 EXECUTEABLE1=p0f
 EXECUTEABLE2=p0f
 #

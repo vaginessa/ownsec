@@ -17,12 +17,13 @@ cd /opt/ITSEC/1.Information-Gathering/3.Route-Analysis/intrace/robertswiecki
 git clone https://github.com/robertswiecki/intrace.git
 
 sudo rm -f /usr/local/bin/intrace
-
+GITREPOROOT=/opt/ITSEC/1.Information-Gathering/3.Route-Analysis/intrace/robertswiecki/intrace
+GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/3.Route-Analysis
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/3.Route-Analysis
 DSKTPFL=intrace.desktop
 
-cd /opt/ITSEC/1.Information-Gathering/3.Route-Analysis/intrace/robertswiecki/intrace
+cd $GITREPOROOT
 
 make clean
 git clean -f

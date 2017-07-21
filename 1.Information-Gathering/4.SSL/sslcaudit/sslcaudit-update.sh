@@ -17,6 +17,7 @@ cd /opt/ITSEC/1.Information-Gathering/4.SSL/sslaudit/grwl
 git clone https://github.com/grwl/sslcaudit.git
 
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/4.SSL/sslaudit/grwl/sslcaudit
+GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/4.SSL
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/4.SSL
 DSKTPFL=sslcaudit.desktop

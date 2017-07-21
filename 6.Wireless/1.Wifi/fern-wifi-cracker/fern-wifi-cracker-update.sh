@@ -17,6 +17,7 @@ cd /opt/ITSEC/6.Wireless/1.Wifi/fern-wifi-cracker/savio-code
 git clone https://github.com/savio-code/fern-wifi-cracker.git
 
 GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/fern-wifi-cracker/savio-code/fern-wifi-cracker/Fern-Wifi-Cracker
+GITREPOGITFILE=$GITREPOROOT/.git
 EXECUTEABLE1=execute.py
 EXECUTEABLE2=fern-wifi-cracker
 

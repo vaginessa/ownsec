@@ -17,7 +17,7 @@ sudo updatedb
 sudo ldconfig
 
 GITREPOROOT=/opt/ITSEC/7.Mitm/bettercap/evilsocket/bettercap
-#
+GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
 DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
 DSKTPFL=bettercap.desktop

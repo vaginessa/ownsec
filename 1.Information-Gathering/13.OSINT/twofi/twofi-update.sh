@@ -25,6 +25,7 @@ cd /opt/ITSEC/1.Information-Gathering/13.OSINT/twofi/digininja
 git clone https://github.com/digininja/twofi.git
 
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/13.OSINT/twofi/digininja/twofi
+GITREPOGITFILE=$GITREPOROOT/.git
 EXECUTEABLE1=twofi.rb
 EXECUTEABLE2=twofi
 

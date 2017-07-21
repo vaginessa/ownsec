@@ -13,6 +13,8 @@ echo "${bold}
                  
 ${normal}"
 
+GITREPOGITFILE=$GITREPOROOT/.git
+
 mkdir -p /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/custom-ssh-backdoor/joridos/custom-ssh-backdoor
 
 cd /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/custom-ssh-backdoor/joridos/custom-ssh-backdoor

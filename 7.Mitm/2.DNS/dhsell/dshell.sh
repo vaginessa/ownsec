@@ -22,6 +22,7 @@ sudo ldconfig
 sudo updatedb
 
 GITREPOROOT=/opt/ITSEC/7.Mitm/2.DNS/dshell/USArmyResearchLab/Dshell
+GITREPOGITFILE=$GITREPOROOT/.git
 #EXECUTEABLE1=
 EXECUTEABLE2=dshell
 EXECUTEABLE3=dshell-decode

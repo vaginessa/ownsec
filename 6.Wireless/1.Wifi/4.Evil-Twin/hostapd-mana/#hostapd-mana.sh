@@ -6,6 +6,7 @@ git clone https://github.com/sensepost/hostapd-mana
 
 
 GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/4.Evil-Twin/hostapd-mana/sensepost/hostapd-mana
+GITREPOGITFILE=$GITREPOROOT/.git
 REPOBINDIR=/opt/ITSEC/6.Wireless/1.Wifi/4.Evil-Twin/hostapd-mana/sensepost/hostapd-mana/hostapd
 #
 
