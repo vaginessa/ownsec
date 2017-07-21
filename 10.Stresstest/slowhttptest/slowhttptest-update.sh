@@ -18,6 +18,27 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1
 DSKTPFLSDEST=/home/$USER/.local/share/applications/10.Stresstest
 DSKTPFL=slowhttptest.desktop
 
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/10.Stresstest/slowhttptest/shekyan
+cd /opt/ITSEC/10.Stresstest/slowhttptest/shekyan
+git clone https://github.com/shekyan/slowhttptest
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
+
 cd $GITREPOROOT
 sudo updatedb
 sudo ldconfig
@@ -33,3 +54,6 @@ sudo make install
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+fi
+

@@ -12,16 +12,35 @@ echo "${bold}
                
 ${normal}"
 
-mkdir -p /opt/ITSEC/8.Tunnel/iodine/yarrick
-cd /opt/ITSEC/8.Tunnel/iodine/yarrick
-git clone https://github.com/yarrick/iodine.git
-
 GITREPOROOT=/opt/ITSEC/8.Tunnel/iodine/yarrick/iodine
 GITREPOGITFILE=$GITREPOROOT/.git
 
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/8.Tunnel
 DSKTPFLSDEST=/home/$USER/.local/share/applications/8.Tunnel
 DSKTPFL=iodine.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+
+mkdir -p /opt/ITSEC/8.Tunnel/iodine/yarrick
+cd /opt/ITSEC/8.Tunnel/iodine/yarrick
+git clone https://github.com/yarrick/iodine.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
+
 
 cd $GITREPOROOT
 sudo make uninstall
@@ -38,3 +57,6 @@ sudo make install
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+fi
+

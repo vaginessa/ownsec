@@ -12,12 +12,30 @@ echo "${bold}
           
 ${normal}"
 
+
+GITREPOROOT=/opt/ITSEC/8.Tunnel/mallory/justmao945/mallory
+GITREPOGITFILE=$GITREPOROOT/.git
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
 mkdir -p /opt/ITSEC/8.Tunnel/mallory/justmao945
 cd /opt/ITSEC/8.Tunnel/mallory/justmao945
 git clone https://github.com/justmao945/mallory.git
 
-GITREPOROOT=/opt/ITSEC/8.Tunnel/mallory/justmao945/mallory
-GITREPOGITFILE=$GITREPOROOT/.git
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
 
 cd $GITREPOROOT
 git clean -f
@@ -28,3 +46,6 @@ git submodule init
  git submodule update --recursive
 #
 #nothing todo here
+
+fi
+

@@ -12,21 +12,39 @@ echo "${bold}
              
 ${normal}"
 
-mkdir -p /opt/ITSEC/1.Information-Gathering/3.Route-Analysis/0trace/BlackArch
-cd /opt/ITSEC/1.Information-Gathering/3.Route-Analysis/0trace/BlackArch
-git clone https://github.com/BlackArch/0trace.git
-
-sudo rm -f  /usr/local/bin/0trace
-
-sudo -H pip2 install pydnet
-sudo -H pip2 install dpkt
-
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/3.Route-Analysis/0trace/BlackArch/0trace
 GITREPOGITFILE=$GITREPOROOT/.git
 
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/3.Route-Analysis
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/3.Route-Analysis
 DSKTPFL=0trace.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/1.Information-Gathering/3.Route-Analysis/0trace/BlackArch
+cd /opt/ITSEC/1.Information-Gathering/3.Route-Analysis/0trace/BlackArch
+git clone https://github.com/BlackArch/0trace.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
+
+
+sudo rm -f  /usr/local/bin/0trace
+
+sudo -H pip2 install pydnet
+sudo -H pip2 install dpkt
 
 cd $GITREPOROOT
 git clean -f
@@ -43,4 +61,4 @@ sudo updatedb
 mkdir -p $DSKTPFLSDEST  
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 
-
+fi

@@ -15,12 +15,31 @@ echo "${bold}
           
 ${normal}"
 
+GITREPOROOT=/opt/ITSEC/8.Tunnel/miredo/darconeous/miredo
+GITREPOGITFILE=$GITREPOROOT/.git
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+
 mkdir -p /opt/ITSEC/8.Tunnel/miredo/darconeous
 cd /opt/ITSEC/8.Tunnel/miredo/darconeous
 git clone https://github.com/darconeous/miredo.git
 
-GITREPOROOT=/opt/ITSEC/8.Tunnel/miredo/darconeous/miredo
-GITREPOGITFILE=$GITREPOROOT/.git
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
+
 
 cd $GITREPOROOT
 
@@ -32,3 +51,6 @@ git submodule init
 git submodule update --recursive
 #
 ./autogen.sh
+
+fi
+

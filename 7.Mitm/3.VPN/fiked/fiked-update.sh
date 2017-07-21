@@ -18,6 +18,32 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7
 DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm/3.VPN
 DSKTPFL=fiked.desktop
 
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/7.Mitm/3.VPN/fiked/droe
+cd /opt/ITSEC/7.Mitm/3.VPN/fiked/droe
+git clone https://github.com/droe/fiked.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
+
+sudo ldconfig
+sudo updatedb
+
+
 cd $GITREPOROOT
 
 sudo make uninstall
@@ -36,3 +62,6 @@ sudo make install
 sudo rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+fi
+

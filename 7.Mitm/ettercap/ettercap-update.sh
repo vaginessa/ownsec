@@ -19,6 +19,27 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7
 DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
 DSKTPFL=ettercap.desktop
 
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/7.Mitm/ettercap/Ettercap
+cd /opt/ITSEC/7.Mitm/ettercap/Ettercap
+git clone https://github.com/Ettercap/ettercap.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
+
 sudo updatedb
 sudo ldconfig
 
@@ -45,3 +66,6 @@ sudo make install
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 rm -f $DSKTPFLSDEST/$DSKTPFL
+
+fi
+

@@ -20,6 +20,26 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/16.IDS-IPS_Identification/1.Web-Firewalls
 DSKTPFL=wafw00f.desktop
 
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/1.Information-Gathering/16.IDS-IPS_Identification/1.Web-Firewalls/wafw00f/EnableSecurity
+cd /opt/ITSEC/1.Information-Gathering/16.IDS-IPS_Identification/1.Web-Firewalls/wafw00f/EnableSecurity
+git clone https://github.com/EnableSecurity/wafw00f.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
 
 cd $GITREPOROOT
 git clean -f
@@ -33,3 +53,5 @@ make -j 4
 sudo python setup.py install
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+fi

@@ -13,10 +13,6 @@ echo "${bold}
            
 ${normal}"
 
-mkdir -p /opt/ITSEC/4.Password/2.Local/rainbowcrack/kholia
-cd /opt/ITSEC/4.Password/2.Local/rainbowcrack/kholia
-git clone https://github.com/kholia/rainbowcrack-ng.git
-
 GITREPOROOT=/opt/ITSEC/4.Password/2.Local/rainbowcrack/kholia/rainbowcrack-ng
 GITREPOBINDIR=/opt/ITSEC/4.Password/2.Local/rainbowcrack/kholia/rainbowcrack-ng/src
 GITREPOGITFILE=$GITREPOROOT/.git
@@ -32,6 +28,28 @@ EXECUTEABLE8=rainbowcrack-ng_rtsort
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/2.Local
 DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/2.Local
 DSKTPFL1=rainbowcrack-ng_rcrack.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+
+mkdir -p /opt/ITSEC/4.Password/2.Local/rainbowcrack/kholia
+cd /opt/ITSEC/4.Password/2.Local/rainbowcrack/kholia
+git clone https://github.com/kholia/rainbowcrack-ng.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
 
 sudo rm /usr/local/bin/$EXECUTEABLE2
 sudo rm /usr/local/bin/$EXECUTEABLE4
@@ -71,3 +89,5 @@ mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL3 $DSKTPFLSDEST/$DSKTPFL3
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL4 $DSKTPFLSDEST/$DSKTPFL4
+
+fi

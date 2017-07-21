@@ -12,15 +12,33 @@ echo "${bold}
               
 ${normal}"
 
-mkdir -p /opt/ITSEC/4.Password/2.Local/ophcrack/luisgg
-cd /opt/ITSEC/4.Password/2.Local/ophcrack/luisgg
-git clone https://github.com/luisgg/ophcrack.git
 
 GITREPOROOT=/opt/ITSEC/4.Password/2.Local/ophcrack/luisgg/ophcrack
 GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/2.Local
 DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/2.Local
 DSKTPFL=ophcrack.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/4.Password/2.Local/ophcrack/luisgg
+cd /opt/ITSEC/4.Password/2.Local/ophcrack/luisgg
+git clone https://github.com/luisgg/ophcrack.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
 
 cd $GITREPOROOT
 sudo make uninstall
@@ -36,3 +54,6 @@ make -j 4
 sudo make install
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+fi
+

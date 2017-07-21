@@ -1,8 +1,5 @@
 #!/bin/bash
 
-mkdir -p /opt/ITSEC/7.Mitm/bdfproxy/secretsquirrel
-cd /opt/ITSEC/7.Mitm/bdfproxy/secretsquirrel
-git clone https://github.com/secretsquirrel/BDFProxy.git
 
 
 GITREPOROOT=/opt/ITSEC/7.Mitm/bdfproxy/secretsquirrel/BDFProxy
@@ -26,6 +23,10 @@ echo "${bold}
 |____/|____/|_|   |_|   |_| \_\\___/_/\_\  |_|  
        
 ${normal}"
+
+mkdir -p /opt/ITSEC/7.Mitm/bdfproxy/secretsquirrel
+cd /opt/ITSEC/7.Mitm/bdfproxy/secretsquirrel
+git clone https://github.com/secretsquirrel/BDFProxy.git
 
 cd $GITREPOROOT
 

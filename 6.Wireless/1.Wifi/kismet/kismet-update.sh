@@ -12,15 +12,6 @@ echo "${bold}
            
 ${normal}"
 
-mkdir -p /opt/ITSEC/6.Wireless/1.Wifi/kismet/kismetwireless
-cd /opt/ITSEC/6.Wireless/1.Wifi/kismet/kismetwireless
-git clone https://github.com/kismetwireless/kismet.git
-
-sudo mv /usr/local/share/wireshark/manuf_old /usr/local/share/wireshark/manuf
-
-sudo ldconfig
-sudo updatedb
-#
 GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/kismet/kismetwireless/kismet
 GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/6.Wireless/1.Wifi
@@ -30,6 +21,32 @@ rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST 
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/6.Wireless/1.Wifi/kismet/kismetwireless
+cd /opt/ITSEC/6.Wireless/1.Wifi/kismet/kismetwireless
+git clone https://github.com/kismetwireless/kismet.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
+
+sudo mv /usr/local/share/wireshark/manuf_old /usr/local/share/wireshark/manuf
+
+sudo ldconfig
+sudo updatedb
+#
 
 cd $GITREPOROOT
 sudo make suiduninstall
@@ -72,3 +89,5 @@ sudo ln -s /opt/ITSEC/6.Wireless/1.Wifi/kismet/kismetwireless/kismet/kismet /usr
 sudo groupadd kismet
 sudo usermod -a -G kismet $USER 
 #newgrp kismet #newgrp bug lets the script hang
+fi
+

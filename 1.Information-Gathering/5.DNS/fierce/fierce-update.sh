@@ -12,15 +12,32 @@ echo "${bold}
            
 ${normal}"
 
-mkdir -p /opt/ITSEC/1.Information-Gathering/5.DNS/fierce/mschwager/
-cd /opt/ITSEC/1.Information-Gathering/5.DNS/fierce/mschwager/
-git clone https://github.com/mschwager/fierce.git
-
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/5.DNS/fierce/mschwager/fierce
 GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/5.DNS
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/5.DNS
 DSKTPFL=fierce.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/1.Information-Gathering/5.DNS/fierce/mschwager/
+cd /opt/ITSEC/1.Information-Gathering/5.DNS/fierce/mschwager/
+git clone https://github.com/mschwager/fierce.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
 
 cd $GITREPOROOT
 make clean
@@ -35,3 +52,5 @@ sudo python3 setup.py install
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+fi

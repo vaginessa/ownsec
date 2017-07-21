@@ -12,15 +12,32 @@ echo "${bold}
               
 ${normal}"
 
-mkdir -p /opt/ITSEC/4.Password/1.Network/medusa/jmk-foofus
-cd /opt/ITSEC/4.Password/1.Network/medusa/jmk-foofus
-git clone https://github.com/jmk-foofus/medusa.git
-
 GITREPOROOT=/opt/ITSEC/4.Password/1.Network/medusa/jmk-foofus/medusa
 GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/1.Network
 DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/1.Network
 DSKTPFL=medusa.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/4.Password/1.Network/medusa/jmk-foofus
+cd /opt/ITSEC/4.Password/1.Network/medusa/jmk-foofus
+git clone https://github.com/jmk-foofus/medusa.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
 
 cd $GITREPOROOT
 sudo rm -r $GITREPOROOT/deps
@@ -59,5 +76,6 @@ cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 
 
 
+fi
 
 

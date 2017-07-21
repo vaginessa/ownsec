@@ -12,9 +12,6 @@ echo "${bold}
               
 ${normal}"
 
-mkdir -p /opt/ITSEC/1.Information-Gathering/16.IDS-IPS_Identification/ftester/inversepath
-cd /opt/ITSEC/1.Information-Gathering/16.IDS-IPS_Identification/ftester/inversepath
-git clone https://github.com/inversepath/ftester.git
 
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/16.IDS-IPS_Identification/ftester/inversepath/ftester
 GITREPOGITFILE=$GITREPOROOT/.git
@@ -27,6 +24,27 @@ DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/16.ID
 DSKTPFL1=ftester.desktop
 DSKTPFL2=ftestd.desktop
 DSKTPFL3=freport.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/1.Information-Gathering/16.IDS-IPS_Identification/ftester/inversepath
+cd /opt/ITSEC/1.Information-Gathering/16.IDS-IPS_Identification/ftester/inversepath
+git clone https://github.com/inversepath/ftester.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
 
 sudo rm /usr/local/bin/$EXECUTEABLE2
 sudo rm /usr/local/bin/$EXECUTEABLE4
@@ -60,3 +78,5 @@ mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL2 $DSKTPFLSDEST/$DSKTPFL2
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL3 $DSKTPFLSDEST/$DSKTPFL3
+
+fi

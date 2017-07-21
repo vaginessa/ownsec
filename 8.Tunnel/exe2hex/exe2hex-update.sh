@@ -12,10 +12,6 @@ echo "${bold}
             
 ${normal}"
 
-mkdir -p /opt/ITSEC/8.Tunnel/exe2hex/g0tmi1k
-cd /opt/ITSEC/8.Tunnel/exe2hex/g0tmi1k
-git clone https://github.com/g0tmi1k/exe2hex.git
-
 GITREPOROOT=/opt/ITSEC/8.Tunnel/exe2hex/g0tmi1k/exe2hex
 GITREPOGITFILE=$GITREPOROOT/.git
 EXECUTEABLE1=exe2hex.py
@@ -25,6 +21,27 @@ EXECUTEABLE3=exe2hex.sh
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/8.Tunnel
 DSKTPFLSDEST=/home/$USER/.local/share/applications/8.Tunnel
 DSKTPFL=exe2hex.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/8.Tunnel/exe2hex/g0tmi1k
+cd /opt/ITSEC/8.Tunnel/exe2hex/g0tmi1k
+git clone https://github.com/g0tmi1k/exe2hex.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
 
 sudo rm -f /usr/local/bin/$EXECUTEABLE2
 
@@ -48,4 +65,7 @@ sudo ln -s $GITREPOROOT/$EXECUTEABLE3 /usr/local/bin/$EXECUTEABLE2
 rm -f  $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+fi
+
 

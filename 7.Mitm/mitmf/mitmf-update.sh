@@ -13,16 +13,36 @@ echo "${bold}
                                     
 ${normal}"
 
-sudo -H pip2 install virtualenvwrapper
-
-sudo ldconfig
-sudo udpatedb
-
 GITREPOROOT=/opt/ITSEC/7.Mitm/mitmf/byt3bl33d3r/MITMf
 GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
 DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
 DSKTPFL=mitmf.desktop
+
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+mkdir -p /opt/ITSEC/7.Mitm/mitmf/byt3bl33d3r
+cd /opt/ITSEC/7.Mitm/mitmf/byt3bl33d3r
+git clone https://github.com/byt3bl33d3r/MITMf.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
+sudo -H pip2 install virtualenvwrapper
+
+sudo ldconfig
+sudo udpatedb
 
 cd $GITREPOROOT
 git clean -f 
@@ -46,3 +66,6 @@ sudo ln -s /opt/ITSEC/7.Mitm/mitmf/byt3bl33d3r/MITMf/mitmf.sh /usr/local/bin/mit
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+fi
+

@@ -12,10 +12,6 @@ echo "${bold}
            
 ${normal}"
 
-mkdir -p /opt/ITSEC/1.Information-Gathering/15.Fuzzer/dotdotpwn/wireghoul
-cd /opt/ITSEC/1.Information-Gathering/15.Fuzzer/dotdotpwn/wireghoul
-git clone https://github.com/wireghoul/dotdotpwn.git
-
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/15.Fuzzer/dotdotpwn/wireghoul/dotdotpwn
 GITREPOGITFILE=$GITREPOROOT/.git
 EXECUTEABLE1=dotdotpwn.pl
@@ -24,6 +20,27 @@ EXECUTEABLE2=dotdotpwn
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/15.Fuzzer
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/15.Fuzzer
 DSKTPFL=dotdotpwn.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/1.Information-Gathering/15.Fuzzer/dotdotpwn/wireghoul
+cd /opt/ITSEC/1.Information-Gathering/15.Fuzzer/dotdotpwn/wireghoul
+git clone https://github.com/wireghoul/dotdotpwn.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
 
 sudo rm -f /usr/local/bin/$EXECUTEABLE2
 
@@ -42,3 +59,5 @@ sudo ln -s $GITREPOROOT/$EXECUTEABLE2 /usr/local/bin/$EXECUTEABLE2
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+fi

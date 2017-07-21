@@ -12,18 +12,35 @@ echo "${bold}
            
 ${normal}"
 
-mkdir -p /opt/ITSEC/5.Database/1.SQL/hexorbase/savio-code
-cd /opt/ITSEC/5.Database/1.SQL/hexorbase/savio-code
-git clone https://github.com/savio-code/hexorbase.git
-
-sudo rm -f /usr/local/bin/hexorbase
-
 GITREPOROOT=/opt/ITSEC/5.Database/1.SQL/hexorbase/savio-code/hexorbase
 GITREPOBINROOT=/opt/ITSEC/5.Database/1.SQL/hexorbase/savio-code/hexorbase/HexorBase
 GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/5.Database/1.SQL
 DSKTPFLSDEST=/home/$USER/.local/share/applications/5.Database/1.SQL
 DSKTPFL=hexorbase.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/5.Database/1.SQL/hexorbase/savio-code
+cd /opt/ITSEC/5.Database/1.SQL/hexorbase/savio-code
+git clone https://github.com/savio-code/hexorbase.git
+
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
+sudo rm -f /usr/local/bin/hexorbase
 
 cd $GITREPOROOT
 git clean -f
@@ -52,4 +69,7 @@ cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 
 
 #wget 'http://download.oracle.com/otn/linux/instantclient/122010/instantclient-basic-linux.x64-12.2.0.1.0.zip' 
+
+fi
+
 

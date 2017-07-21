@@ -12,15 +12,34 @@ echo "${bold}
          
 ${normal}"
 
-mkdir -p /opt/ITSEC/1.Information-Gathering/2.Live-Host/arping/ThomasHabets
-cd /opt/ITSEC/1.Information-Gathering/2.Live-Host/arping/ThomasHabets
-git clone https://github.com/ThomasHabets/arping.git
 
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/2.Live-Host/arping/ThomasHabets/arping
 GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/2.Live-Host
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/2.Live-Host
 DSKTPFL=arping.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/1.Information-Gathering/2.Live-Host/arping/ThomasHabets
+cd /opt/ITSEC/1.Information-Gathering/2.Live-Host/arping/ThomasHabets
+git clone https://github.com/ThomasHabets/arping.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
+
 
 cd $GITREPOROOT
 sudo make uninstall
@@ -39,3 +58,4 @@ sudo make install
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+fi

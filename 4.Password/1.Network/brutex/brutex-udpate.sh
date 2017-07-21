@@ -12,18 +12,35 @@ echo "${bold}
       
 ${normal}"
 
+GITREPOROOT=/opt/ITSEC/4.Password/1.Network/brutex/1N3/BruteX
 GITREPOGITFILE=$GITREPOROOT/.git
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
 
 mkdir -p /opt/ITSEC/4.Password/1.Network/brutex/1N3
 cd /opt/ITSEC/4.Password/1.Network/brutex/1N3
 git clone https://github.com/1N3/BruteX
 
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
+
 cd /opt/ITSEC/4.Password/1.Network/brutex/1N3/BruteX
 sed -i 's#/usr/share/brutex#/opt/ITSEC/4.Password/1.Network/brutex/1N3/BruteX#g' brutex
 
-BRUTEX_INSTALL_DIR=/opt/ITSEC/4.Password/1.Network/brutex/1N3/BruteX
 
-cd $BRUTEX_INSTALL_DIR
+cd $GITREPOROOT
 
 git clean -f
 git fetch origin
@@ -34,8 +51,9 @@ git submodule init
 git submodule update --recursive
 
 mkdir loot
-chmod +x $BRUTEX_INSTALL_DIR/brutex
+chmod +x $GITREPOROOT/brutex
 sudo rm -f /usr/local/bin/brutex
-sudo ln -s $BRUTEX_INSTALL_DIR/brutex /usr/local/bin/brutex
+sudo ln -s $GITREPOROOT/brutex /usr/local/bin/brutex
 
+fi
 

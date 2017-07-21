@@ -12,15 +12,33 @@ __        _______ ____    _    ____ ___   ___
           
 ${normal}"
 
-mkdir -p /opt/ITSEC/9.Maintain-Access/2.Generate/webacoo/anestisb
-cd /opt/ITSEC/9.Maintain-Access/2.Generate/webacoo/anestisb
-git clone https://github.com/anestisb/WeBaCoo
-
 GITREPOROOT=/opt/ITSEC/9.Maintain-Access/2.Generate/webacoo/anestisb/WeBaCoo/
 GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/9.Maintain-Access/2.Generate
 DSKTPFLSDEST=/home/$USER/.local/share/applications/9.Maintain-Access/2.Generate
 DSKTPFL=webacoo.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+
+mkdir -p /opt/ITSEC/9.Maintain-Access/2.Generate/webacoo/anestisb
+cd /opt/ITSEC/9.Maintain-Access/2.Generate/webacoo/anestisb
+git clone https://github.com/anestisb/WeBaCoo
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
 
 cd $GITREPOROOT
 git clean -f 
@@ -36,3 +54,7 @@ sudo ln -s /opt/ITSEC/9.Maintain-Access/2.Generate/webacoo/anestisb/WeBaCoo/weba
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST 
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+fi
+
+

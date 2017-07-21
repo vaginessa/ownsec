@@ -11,15 +11,31 @@ echo "${bold}
 |_| |_/_/   \_\_| \_|____/|____/|_| |_/_/   \_\_|\_\_____|_| \_\
                 
 ${normal}"
-
+GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/handshaker/d4rkcat/HandShaker
 GITREPOGITFILE=$GITREPOROOT/.git
 
-rm -rf /opt/ITSEC/6.Wireless/1.Wifi/handshaker/d4rkcat
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
 mkdir -p /opt/ITSEC/6.Wireless/1.Wifi/handshaker/d4rkcat
 cd /opt/ITSEC/6.Wireless/1.Wifi/handshaker/d4rkcat
 git clone https://github.com/d4rkcat/HandShaker
-#
-cd /opt/ITSEC/6.Wireless/1.Wifi/handshaker/d4rkcat/HandShaker
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
+
+cd $GITREPOROOT
 
 sudo make
 
@@ -38,4 +54,6 @@ DSKTPFLSDEST=/home/$USER/.local/share/applications/6.Wireless/1.Wifi
 DSKTPFL=handshaker.desktop
 mkdir -p $DSKTPFLSDEST 
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+fi
 

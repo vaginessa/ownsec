@@ -12,16 +12,32 @@ echo "${bold}
                
 ${normal}"
 
-mkdir -p /opt/ITSEC/4.Password/1.Network/onesixtyone/trailofbits
-cd /opt/ITSEC/4.Password/1.Network/onesixtyone/trailofbits
-git clone https://github.com/trailofbits/onesixtyone.git
-
-
 GITREPOROOT=/opt/ITSEC/4.Password/1.Network/onesixtyone/trailofbits/onesixtyone
 GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/1.Network
 DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/1.Network
 DSKTPFL=onesixtyone.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/4.Password/1.Network/onesixtyone/trailofbits
+cd /opt/ITSEC/4.Password/1.Network/onesixtyone/trailofbits
+git clone https://github.com/trailofbits/onesixtyone.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
 
 cd $GITREPOROOT
 make clean
@@ -45,3 +61,5 @@ sudo ln -s /opt/ITSEC/4.Password/1.Network/onesixtyone/trailofbits/onesixtyone/o
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+fi

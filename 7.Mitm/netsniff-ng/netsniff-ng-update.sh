@@ -18,6 +18,28 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7
 DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
 DSKTPFL=netsniff.desktop
 
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/7.Mitm/netsniff-ng/netsniff-ng
+cd /opt/ITSEC/7.Mitm/netsniff-ng/netsniff-ng
+git clone https://github.com/netsniff-ng/netsniff-ng.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
+
+
 cd $GITREPOROOT
 sudo make uninstall
 make clean
@@ -33,3 +55,5 @@ make -j 4
 sudo make install
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+fi

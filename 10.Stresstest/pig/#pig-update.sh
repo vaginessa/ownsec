@@ -18,6 +18,27 @@ GITREPOGITFILE=$GITREPOROOT/.git
 #EXECUTEABLE1=pig.py
 #EXECUTEABLE2=dhcpPIG
 
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/10.Stresstest/pig/rafael-santiago
+cd /opt/ITSEC/10.Stresstest/pig/rafael-santiago
+git clone https://github.com/rafael-santiago/pig
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
+
 cd $GITREPOROOT
 #sudo rm  /usr/local/bin/$EXECUTEABLE2
 sudo updatedb
@@ -37,3 +58,6 @@ cd /opt/ITSEC/10.Stresstest/pig/rafael-santiago/pig/hefesto/src/
 ./build.sh
 #chmod +x $GITREPOROOT/$EXECUTEABLE1
 #sudo ln -s $GITREPOROOT/$EXECUTEABLE1 /usr/local/bin/$EXECUTEABLE2
+
+fi
+

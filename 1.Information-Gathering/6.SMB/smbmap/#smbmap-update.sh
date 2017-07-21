@@ -13,12 +13,30 @@ echo "${bold}
 ${normal}"
 
 
+GITREPOROOT=/opt/ITSEC/1.Information-Gathering/6.SMB/smbmap/ShawnDEvans/smbmap
+GITREPOGITFILE=$GITREPOROOT/.git
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
 mkdir -p /opt/ITSEC/1.Information-Gathering/6.SMB/smbmap/ShawnDEvans
 cd /opt/ITSEC/1.Information-Gathering/6.SMB/smbmap/ShawnDEvans
 git clone https://github.com/ShawnDEvans/smbmap.git
 
-GITREPOROOT=/opt/ITSEC/1.Information-Gathering/6.SMB/smbmap/ShawnDEvans/smbmap
-GITREPOGITFILE=$GITREPOROOT/.git
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
+
 sudo rm -r /usr/local/bin/smbmap 
 sudo rm -r /opt/ITSEC/1.Information-Gathering/6.SMB/smbmap/ShawnDEvans/smbmap/smbmap.sh
 
@@ -51,4 +69,4 @@ python smbmap.py" > $GITREPOROOT/smbmap.sh
 chmod +x $GITREPOROOT/smbmap.sh
 sudo ln -s $GITREPOROOT/smbmap.sh /usr/local/bin/smbmap 
 
-l
+fi

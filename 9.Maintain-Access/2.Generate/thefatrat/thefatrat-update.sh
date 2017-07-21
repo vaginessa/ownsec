@@ -12,12 +12,6 @@ echo "${bold}
             
 ${normal}"
 
-echo "${bold}
-mkdir, git clone and cd         
-${normal}"
-mkdir -p /opt/ITSEC/9.Maintain-Access/2.Generate/thefatrat/Screetsec
-cd /opt/ITSEC/9.Maintain-Access/2.Generate/thefatrat/Screetsec
-git clone https://github.com/Screetsec/TheFatRat
 
 echo "${bold}
 setting vars       
@@ -40,6 +34,31 @@ yellow='\e[0;33m'
 blue='\e[0;34m'
 purple='\e[0;35m'
 orange='\e[38;5;166m'
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+echo "${bold}
+mkdir, git clone and cd         
+${normal}"
+
+mkdir -p /opt/ITSEC/9.Maintain-Access/2.Generate/thefatrat/Screetsec
+cd /opt/ITSEC/9.Maintain-Access/2.Generate/thefatrat/Screetsec
+git clone https://github.com/Screetsec/TheFatRat
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
 
 echo "${bold}
 mkdir and cp desktop file       
@@ -287,4 +306,5 @@ echo "d2j-dex2jar" | tee -a "$config" >> /dev/null 2>&1
 echo -e $green "[ ✔ ] Dex2Jar 2.0"
 echo "Dex2Jar -> OK" >> "$inst"
 
+fi
 

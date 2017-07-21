@@ -18,12 +18,36 @@ EXECUTEABLE1=dnschef.py
 EXECUTEABLE2=dnschef.sh
 EXECUTEABLE3=dnschef
 
-sudo rm /usr/local/bin/$EXECUTEABLE2
-sudo rm $GITREPOROOT/$EXECUTEABLE2
-
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm/2.DNS
 DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm/2.DNS
 DSKTPFL=dnschef.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/7.Mitm/2.DNS/dnschef/iphelix
+cd /opt/ITSEC/7.Mitm/2.DNS/dnschef/iphelix
+git clone https://github.com/iphelix/dnschef.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
+
+sudo ldconfig
+sudo updatedb
+
+sudo rm /usr/local/bin/$EXECUTEABLE2
+sudo rm $GITREPOROOT/$EXECUTEABLE2
 
 cd $GITREPOROOT
 git clean -f 
@@ -43,3 +67,6 @@ sudo ln -s $GITREPOROOT/$EXECUTEABLE2 /usr/local/bin/$EXECUTEABLE3
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+fi
+

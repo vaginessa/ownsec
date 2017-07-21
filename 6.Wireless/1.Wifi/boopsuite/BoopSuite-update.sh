@@ -12,17 +12,35 @@ echo "${bold}
                   |_|                    
 ${normal}"
 
-mkdir -p /opt/ITSEC/6.Wireless/1.Wifi/boopsuite/MisterBianco
-cd /opt/ITSEC/6.Wireless/1.Wifi/boopsuite/MisterBianco
-git clone https://github.com/MisterBianco/BoopSuite
-
-sudo rm /usr/local/bin/boopsuite
-
 GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/boopsuite/MisterBianco/BoopSuite
 GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/6.Wireless/1.Wifi
 DSKTPFLSDEST=/home/$USER/.local/share/applications/6.Wireless/1.Wifi
 DSKTPFL=boopsniff_gui.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/6.Wireless/1.Wifi/boopsuite/MisterBianco
+cd /opt/ITSEC/6.Wireless/1.Wifi/boopsuite/MisterBianco
+git clone https://github.com/MisterBianco/BoopSuite
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
+
+
+sudo rm /usr/local/bin/boopsuite
 
 sudo rm -f /usr/local/bin/$EXECUTEABLE2
 
@@ -40,3 +58,7 @@ sudo python install.py
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST 
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+fi
+
+

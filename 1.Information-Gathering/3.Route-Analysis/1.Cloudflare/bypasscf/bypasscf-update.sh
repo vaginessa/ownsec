@@ -12,15 +12,32 @@ echo "${bold}
       
 ${normal}"
 
-mkdir -p /opt/ITSEC/1.Information-Gathering/3.Route-Analysis/1.Cloudflare/bypasscf/HackerOrientado
-cd /opt/ITSEC/1.Information-Gathering/3.Route-Analysis/1.Cloudflare/bypasscf/HackerOrientado
-git clone https://github.com/HackerOrientado/BypassCF.git
-
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/3.Route-Analysis/1.Cloudflare/bypasscf/HackerOrientado/BypassCF
 GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/3.Route-Analysis/1.Cloudflare
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/3.Route-Analysis/1.Cloudflare
 DSKTPFL=bypasscf.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/1.Information-Gathering/3.Route-Analysis/1.Cloudflare/bypasscf/HackerOrientado
+cd /opt/ITSEC/1.Information-Gathering/3.Route-Analysis/1.Cloudflare/bypasscf/HackerOrientado
+git clone https://github.com/HackerOrientado/BypassCF.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
 
 sudo rm -f /usr/local/bin/bypasscf
 
@@ -46,3 +63,4 @@ rm -f  $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST 
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 
+fi

@@ -12,15 +12,32 @@ echo "${bold}
         
 ${normal}"
 
-mkdir -p /opt/ITSEC/1.Information-Gathering/2.Live-Host/netdiscover/alexxy
-cd /opt/ITSEC/1.Information-Gathering/2.Live-Host/netdiscover/alexxy
-git clone https://github.com/alexxy/netdiscover.git
-
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/2.Live-Host/netdiscover/alexxy/netdiscover
 GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/2.Live-Host
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/2.Live-Host
 DSKTPFL=netdiscover.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/1.Information-Gathering/2.Live-Host/netdiscover/alexxy
+cd /opt/ITSEC/1.Information-Gathering/2.Live-Host/netdiscover/alexxy
+git clone https://github.com/alexxy/netdiscover.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
 
 cd $GITREPOROOT
 cd build && sudo make uninstall
@@ -40,3 +57,5 @@ sudo make install
 rm -f 
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+fi

@@ -13,16 +13,33 @@ echo "${bold}
 UPDATE      
 ${normal}"
 
-mkdir -p /opt/ITSEC/8.Tunnel/proxytunnel/proxytunnel
-cd /opt/ITSEC/8.Tunnel/proxytunnel/proxytunnel
-git clone https://github.com/proxytunnel/proxytunnel
-
 GITREPOROOT=/opt/ITSEC/8.Tunnel/proxytunnel/proxytunnel/proxytunnel
 GITREPOGITFILE=$GITREPOROOT/.git
 
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications
 DSKTPFLSDEST=/home/$USER/.local/share/applications
 DSKTPFL=proxytunnel.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/8.Tunnel/proxytunnel/proxytunnel
+cd /opt/ITSEC/8.Tunnel/proxytunnel/proxytunnel
+git clone https://github.com/proxytunnel/proxytunnel
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
 
 cd $GITREPOROOT
 sudo make uninstall
@@ -39,3 +56,5 @@ sudo make install
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+fi

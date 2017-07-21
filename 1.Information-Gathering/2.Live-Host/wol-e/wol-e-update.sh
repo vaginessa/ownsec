@@ -12,10 +12,6 @@ __        _____  _          _____
             
 ${normal}"
 
-mkdir -p /opt/ITSEC/1.Information-Gathering/2.Live-Host/wol-e/dookie
-cd /opt/ITSEC/1.Information-Gathering/2.Live-Host/wol-e/dookie
-git clone git://git.kali.org/packages/wol-e.git
-
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/2.Live-Host/wol-e/dookie/wol-e
 GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/2.Live-Host
@@ -24,6 +20,27 @@ DSKTPFL=wol-e.desktop
 
 EXECUTEABLE1=wol-e.py
 EXECUTEABLE2=wol-e
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/1.Information-Gathering/2.Live-Host/wol-e/dookie
+cd /opt/ITSEC/1.Information-Gathering/2.Live-Host/wol-e/dookie
+git clone git://git.kali.org/packages/wol-e.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
 
 cd $GITREPOROOT
 git clean -f
@@ -39,3 +56,5 @@ mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 
 #foreman s
+
+fi

@@ -23,6 +23,27 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7
 DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
 DSKTPFL=bdfproxy.desktop
 
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/7.Mitm/bdfproxy/secretsquirrel
+cd /opt/ITSEC/7.Mitm/bdfproxy/secretsquirrel
+git clone https://github.com/secretsquirrel/BDFProxy.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
+
 cd $GITREPOROOT
 
 sudo rm /usr/local/bin/$EXECUTEABLE2
@@ -37,3 +58,6 @@ sudo ln -s $GITREPOROOT/$EXECUTEABLE3 /usr/local/bin/$EXECUTEABLE4
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+fi
+

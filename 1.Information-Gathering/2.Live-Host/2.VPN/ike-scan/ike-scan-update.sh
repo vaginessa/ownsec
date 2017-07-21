@@ -17,6 +17,28 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/2.Live-Host/2.VPN
 DSKTPFL=ike-scan.desktop
 
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/1.Information-Gathering/2.Live-Host/2.VPN/ike-scan/royhills
+cd /opt/ITSEC/1.Information-Gathering/2.Live-Host/2.VPN/ike-scan/royhills
+git clone https://github.com/royhills/ike-scan.git
+
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
+
 cd $GITREPOROOT
 sudo make uninstall
 make clean
@@ -33,3 +55,5 @@ sudo make install
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+fi

@@ -12,13 +12,30 @@ echo "${bold}
           
 ${normal}"
 
+GITREPOROOT=/opt/ITSEC/4.Password/1.Network/ncrack/nmap/ncrack
+GITREPOGITFILE=$GITREPOROOT/.git
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
 
 mkdir -p /opt/ITSEC/4.Password/1.Network/ncrack/nmap
 cd /opt/ITSEC/4.Password/1.Network/ncrack/nmap
 git clone https://github.com/nmap/ncrack.git
 
-GITREPOROOT=/opt/ITSEC/4.Password/1.Network/ncrack/nmap/ncrack
-GITREPOGITFILE=$GITREPOROOT/.git
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
+
 cd $GITREPOROOT
 #
 sudo make uninstall
@@ -30,4 +47,5 @@ git pull
 git submodule init
 git submodule update --recursive
 
+fi
 

@@ -18,6 +18,27 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/5.DNS
 DSKTPFL=dnsrecon.desktop
 
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/1.Information-Gathering/5.DNS/dnsrecon/darkoperator
+cd /opt/ITSEC/1.Information-Gathering/5.DNS/dnsrecon/darkoperator
+git clone https://github.com/darkoperator/dnsrecon.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
+
 cd $GITREPOROOT
 sudo rm -r /usr/local/bin/dnsrecon
 sudo rm -r /opt/ITSEC/1.Information-Gathering/5.DNS/dnsrecon/darkoperator/dnsrecon/dnsrecon
@@ -38,4 +59,4 @@ rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 
-
+fi

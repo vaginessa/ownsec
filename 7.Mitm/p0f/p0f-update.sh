@@ -21,6 +21,28 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7
 DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
 DSKTPFL=p0f.desktop
 
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/7.Mitm/p0f/p0f
+cd /opt/ITSEC/7.Mitm/p0f/p0f
+git clone https://github.com/p0f/p0f.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
+
+
 cd $GITREPOROOT
 sudo rm /usr/local/bin/$EXECUTEABLE2
 sudo updatedb
@@ -37,3 +59,5 @@ sudo ln -s $GITREPOROOT/$EXECUTEABLE1 /usr/local/bin/$EXECUTEABLE2
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+fi

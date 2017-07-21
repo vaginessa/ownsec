@@ -12,9 +12,6 @@ echo "${bold}
           
 ${normal}"
 
-mkdir -p /opt/ITSEC/1.Information-Gathering/13.OSINT/metagoofil/opsdisk
-cd /opt/ITSEC/1.Information-Gathering/13.OSINT/metagoofil/opsdisk
-git clone https://github.com/opsdisk/metagoofil.git
 
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/13.OSINT/metagoofil/opsdisk/metagoofil
 GITREPOGITFILE=$GITREPOROOT/.git
@@ -25,7 +22,32 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/13.OSINT
 DSKTPFL=metagoofil.desktop
 
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/1.Information-Gathering/13.OSINT/metagoofil/opsdisk
+cd /opt/ITSEC/1.Information-Gathering/13.OSINT/metagoofil/opsdisk
+git clone https://github.com/opsdisk/metagoofil.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
+
+
 sudo -H pip2 install google
+
+sudo updatedb
+sudo ldconfig
 
 cd $GITREPOROOT
 sudo rm /usr/local/bin/$EXECUTEABLE2
@@ -40,3 +62,5 @@ sudo ln -s $GITREPOROOT/$EXECUTEABLE1 /usr/local/bin/$EXECUTEABLE2
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST  
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+fi

@@ -12,9 +12,6 @@ echo "${bold}
          
 ${normal}"
 
-mkdir -p /opt/ITSEC/1.Information-Gathering/11.Dork/scanner-inurlbr/googleinurl
-cd /opt/ITSEC/1.Information-Gathering/11.Dork/scanner-inurlbr/googleinurl
-git clone https://github.com/googleinurl/SCANNER-INURLBR.git
 
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/11.Dork/scanner-inurlbr/googleinurl/SCANNER-INURLBR
 GITREPOGITFILE=$GITREPOROOT/.git
@@ -24,6 +21,28 @@ EXECUTEABLE2=inurlbr
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/11.Dork
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/11.Dork
 DSKTPFL=scanner-inurlbr.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+
+mkdir -p /opt/ITSEC/1.Information-Gathering/11.Dork/scanner-inurlbr/googleinurl
+cd /opt/ITSEC/1.Information-Gathering/11.Dork/scanner-inurlbr/googleinurl
+git clone https://github.com/googleinurl/SCANNER-INURLBR.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
 
 cd $GITREPOROOT
 
@@ -46,3 +65,5 @@ sudo ln -s $GITREPOROOT/$EXECUTEABLE1 /usr/local/bin/$EXECUTEABLE2
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+fi

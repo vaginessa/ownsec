@@ -12,15 +12,34 @@ echo "${bold}
    
 ${normal}"
 
-mkdir -p /opt/ITSEC/1.Information-Gathering/6.SMB/enum4linux/portcullislabs
-cd /opt/ITSEC/1.Information-Gathering/6.SMB/enum4linux/portcullislabs
-git clone https://github.com/portcullislabs/enum4linux.git
 
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/6.SMB/enum4linux/portcullislabs/enum4linux
 GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/6.SMB
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/6.SMB
 DSKTPFL=enum4linux.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/1.Information-Gathering/6.SMB/enum4linux/portcullislabs
+cd /opt/ITSEC/1.Information-Gathering/6.SMB/enum4linux/portcullislabs
+git clone https://github.com/portcullislabs/enum4linux.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
+
 
 cd $GITREPOROOT
 sudo rm -r /usr/local/bin/enum4linux
@@ -37,5 +56,5 @@ sudo updatedb
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST 
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
-
+fi
 

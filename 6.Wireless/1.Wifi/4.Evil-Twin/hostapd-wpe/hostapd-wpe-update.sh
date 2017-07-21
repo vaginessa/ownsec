@@ -11,16 +11,34 @@ echo "${bold}
 |_| |_|\___/|____/ |_/_/   \_\_|   |____/       \_/\_/  |_|   |_____|
         
 ${normal}"
-mkdir -p /opt/ITSEC/6.Wireless/1.Wifi/4.Evil-Twin/hostapd-wpe/OpenSecurityResearch
-cd /opt/ITSEC/6.Wireless/1.Wifi/4.Evil-Twin/hostapd-wpe/OpenSecurityResearch
-git clone https://github.com/OpenSecurityResearch/hostapd-wpe.git
-
 
 GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/4.Evil-Twin/hostapd-wpe/OpenSecurityResearch/hostapd-wpe
 GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/6.Wireless/1.Wifi/4.Evil-Twin
 DSKTPFLSDEST=/home/$USER/.local/share/applications/6.Wireless/1.Wifi/4.Evil-Twin
 DSKTPFL=hostapd-wpe.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+
+mkdir -p /opt/ITSEC/6.Wireless/1.Wifi/4.Evil-Twin/hostapd-wpe/OpenSecurityResearch
+cd /opt/ITSEC/6.Wireless/1.Wifi/4.Evil-Twin/hostapd-wpe/OpenSecurityResearch
+git clone https://github.com/OpenSecurityResearch/hostapd-wpe.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
 
 cd $GITREPOROOT
 git clean -f
@@ -51,3 +69,6 @@ chmod +x hostapd-wpe.sh
 mkdir -p $DSKTPFLSDEST 
 rm -f $DSKTPFLSDEST/$DSKTPFL
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+fi
+

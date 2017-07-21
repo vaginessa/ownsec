@@ -12,13 +12,29 @@ echo "${bold}
           
 ${normal}"
 
+GITREPOROOT=/opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/ares/sweetsoftware/ares
+GITREPOGITFILE=$GITREPOROOT/.git
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
 mkdir -p /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/ares/sweetsoftware 
 cd /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/ares/sweetsoftware
 git clone https://github.com/sweetsoftware/ares
 
-GITREPOROOT=/opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/ares/sweetsoftware/ares
-GITREPOGITFILE=$GITREPOROOT/.git
+else
 
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
 
 cd $GITREPOROOT
 
@@ -87,4 +103,6 @@ cd server
 #pyinstaller --onefile agent.py
 
 cd $GITREPOROOT 
+
+fi
 

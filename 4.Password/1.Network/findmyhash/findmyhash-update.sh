@@ -12,15 +12,34 @@ echo "${bold}
            
 ${normal}"
 
-mkdir -p /opt/ITSEC/4.Password/1.Network/findmyhash/frdmn
-cd /opt/ITSEC/4.Password/1.Network/findmyhash/frdmn
-git clone https://github.com/frdmn/findmyhash.git
-
 GITREPOROOT=/opt/ITSEC/4.Password/1.Network/findmyhash/frdmn/findmyhash
 GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/1.Network/
 DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/1.Network
 DSKTPFL=findmyhash.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+
+mkdir -p /opt/ITSEC/4.Password/1.Network/findmyhash/frdmn
+cd /opt/ITSEC/4.Password/1.Network/findmyhash/frdmn
+git clone https://github.com/frdmn/findmyhash.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
+
 
 cd $GITREPOROOT
 git clean -f
@@ -41,3 +60,5 @@ sudo ln -s /opt/ITSEC/4.Password/1.Network/findmyhash/frdmn/findmyhash/findmyhas
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+fi

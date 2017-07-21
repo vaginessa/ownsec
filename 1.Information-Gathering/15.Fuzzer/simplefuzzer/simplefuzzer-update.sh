@@ -12,13 +12,32 @@ echo "${bold}
              
 ${normal}"
 
-sudo rm -r /opt/ITSEC/1.Information-Gathering/15.Fuzzer/simple-fuzzer/orgcandman
+GITREPOROOT=/opt/ITSEC/1.Information-Gathering/15.Fuzzer/simple-fuzzer/orgcandman/simple-fuzzer
+GITREPOGITFILE=$GITREPOROOT/.git
+
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
 mkdir -p /opt/ITSEC/1.Information-Gathering/15.Fuzzer/simple-fuzzer/orgcandman
 cd /opt/ITSEC/1.Information-Gathering/15.Fuzzer/simple-fuzzer/orgcandman
 git clone https://github.com/orgcandman/simple-fuzzer.git
 
-GITREPOROOT=/opt/ITSEC/1.Information-Gathering/15.Fuzzer/simple-fuzzer/orgcandman/simple-fuzzer
-GITREPOGITFILE=$GITREPOROOT/.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
+
 
 cd $GITREPOROOT
 sudo make uninstall
@@ -32,3 +51,5 @@ git submodule update --recursive
 make -j 4
 sudo make install
 
+
+fi

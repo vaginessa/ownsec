@@ -12,15 +12,34 @@ echo "${bold}
                 
 ${normal}"
 
-mkdir -p /opt/ITSEC/1.Information-Gathering/15.Fuzzer/siparmyknife/foreni-packages
-cd /opt/ITSEC/1.Information-Gathering/15.Fuzzer/siparmyknife/foreni-packages
-git clone https://github.com/foreni-packages/siparmyknife.git
-
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/15.Fuzzer/siparmyknife/foreni-packages/siparmyknife
 GITREPOGITFILE=$GITREPOROOT/.git
 EXECUTEABLE1=siparmyknife.pl
 EXECUTEABLE2=siparmyknife
 EXECUTEABLE3=siparmyknife.sh
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/1.Information-Gathering/15.Fuzzer/siparmyknife/foreni-packages
+cd /opt/ITSEC/1.Information-Gathering/15.Fuzzer/siparmyknife/foreni-packages
+git clone https://github.com/foreni-packages/siparmyknife.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
+
+
 cd $GITREPOROOT
 sudo rm /usr/local/bin/$EXECUTEABLE2
 
@@ -35,3 +54,5 @@ cd /opt/ITSEC/1.Information-Gathering/15.Fuzzer/siparmyknife/foreni-packages/sip
 chmod +x $GITREPOROOT/$EXECUTEABLE1
 chmod +x $GITREPOROOT/$EXECUTEABLE3
 sudo ln -s $GITREPOROOT/$EXECUTEABLE3 /usr/local/bin/$EXECUTEABLE2
+
+fi

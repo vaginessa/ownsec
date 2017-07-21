@@ -12,15 +12,32 @@ echo "${bold}
                
 ${normal}"
 
-mkdir -p /opt/ITSEC/4.Password/2.Local/HASHCAT/hashcat
-cd /opt/ITSEC/4.Password/2.Local/HASHCAT/hashcat
-git clone https://github.com/hashcat/hashcat.git
-
 GITREPOROOT=/opt/ITSEC/4.Password/2.Local/HASHCAT/hashcat/hashcat
 GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/2.Local
 DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/2.Local
 DSKTPFL=hashcat.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/4.Password/2.Local/HASHCAT/hashcat
+cd /opt/ITSEC/4.Password/2.Local/HASHCAT/hashcat
+git clone https://github.com/hashcat/hashcat.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
 
 cd $GITREPOROOT
 sudo make uninstall
@@ -96,3 +113,7 @@ sudo make install
 sudo rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+fi
+
+

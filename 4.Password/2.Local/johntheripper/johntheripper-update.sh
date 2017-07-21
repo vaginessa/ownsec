@@ -13,10 +13,6 @@ echo "${bold}
              
 ${normal}"
 
-mkdir -p /opt/ITSEC/4.Password/2.Local/johntheripper/magnumripper
-cd /opt/ITSEC/4.Password/2.Local/johntheripper/magnumripper
-git clone https://github.com/magnumripper/JohnTheRipper.git
-
 GITREPOROOT=/opt/ITSEC/4.Password/2.Local/johntheripper/magnumripper/JohnTheRipper
 GITREPOGITFILE=$GITREPOROOT/.git
 binarydir=/opt/ITSEC/4.Password/2.Local/johntheripper/magnumripper/JohnTheRipper/run
@@ -26,6 +22,28 @@ exec2=john.sh
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/2.Local
 DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/2.Local
 DSKTPFL=john.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+
+mkdir -p /opt/ITSEC/4.Password/2.Local/johntheripper/magnumripper
+cd /opt/ITSEC/4.Password/2.Local/johntheripper/magnumripper
+git clone https://github.com/magnumripper/JohnTheRipper.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
 
 cd $GITREPOROOT
 cd src
@@ -60,3 +78,4 @@ rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 
+fi

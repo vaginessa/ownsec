@@ -12,9 +12,6 @@ echo "${bold}
               
 ${normal}"
 
-mkdir -p /opt/ITSEC/4.Password/1.Network/thc-hydra/vanhauser-thc
-cd /opt/ITSEC/4.Password/1.Network/thc-hydra/vanhauser-thc
-git clone https://github.com/vanhauser-thc/thc-hydra.git
 
 GITREPOROOT=/opt/ITSEC/4.Password/1.Network/thc-hydra/vanhauser-thc/thc-hydra
 GITREPOGITFILE=$GITREPOROOT/.git
@@ -22,6 +19,28 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4
 DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/1.Network
 DSKTPFL1=hydra-gtk.desktop
 DSKTPFL2=hydra.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+
+mkdir -p /opt/ITSEC/4.Password/1.Network/thc-hydra/vanhauser-thc
+cd /opt/ITSEC/4.Password/1.Network/thc-hydra/vanhauser-thc
+git clone https://github.com/vanhauser-thc/thc-hydra.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
 
 cd $GITREPOROOT
 sudo make uninstall
@@ -41,3 +60,5 @@ rm -f $DSKTPFLSDEST/$DSKTPFL2
 
 cp $DSKTPFLS/$DSKTPFL1 $DSKTPFLSDEST/$DSKTPFL1
 cp $DSKTPFLS/$DSKTPFL2 $DSKTPFLSDEST/$DSKTPFL2
+
+fi

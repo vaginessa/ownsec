@@ -12,12 +12,32 @@ __  ______  _     ___ ____ ___
             
 ${normal}"
 
+GITREPOROOT=/opt/ITSEC/1.Information-Gathering/1.Network_Portscanner/xplico/xplico/xplico
 GITREPOGITFILE=$GITREPOROOT/.git
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
 
 mkdir -p /opt/ITSEC/1.Information-Gathering/1.Network_Portscanner/xplico/xplico
 cd /opt/ITSEC/1.Information-Gathering/1.Network_Portscanner/xplico/xplico
 git clone https://github.com/xplico/xplico.git
-#
 
+else
 
-cd /opt/ITSEC/1.Information-Gathering/1.Network_Portscanner/xplico/xplico/xplico
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
+
+cd $GITREPOROOT
+
+#installroutine
+
+fi

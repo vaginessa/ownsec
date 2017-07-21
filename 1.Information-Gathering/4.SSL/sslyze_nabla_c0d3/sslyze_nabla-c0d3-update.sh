@@ -12,15 +12,33 @@ echo "${bold}
            
 ${normal}"
 
-mkdir -p /opt/ITSEC/1.Information-Gathering/4.SSL/sslyze/nabla-c0d3
-cd /opt/ITSEC/1.Information-Gathering/4.SSL/sslyze/nabla-c0d3
-git clone https://github.com/nabla-c0d3/sslyze.git
 
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/4.SSL/sslyze/nabla-c0d3/sslyze
 GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/4.SSL
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/4.SSL
 DSKTPFL=sslyze.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/1.Information-Gathering/4.SSL/sslyze/nabla-c0d3
+cd /opt/ITSEC/1.Information-Gathering/4.SSL/sslyze/nabla-c0d3
+git clone https://github.com/nabla-c0d3/sslyze.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
 
 cd $GITREPOROOT
 git clean -f
@@ -35,3 +53,4 @@ sudo python3 setup.py install
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+fi

@@ -15,10 +15,6 @@ echo "${bold}
         
 ${normal}"
 
-mkdir -p /opt/ITSEC/6.Wireless/1.Wifi/fruitywifi/xtr4nge
-cd /opt/ITSEC/6.Wireless/1.Wifi/fruitywifi/xtr4nge
-git clone https://github.com/xtr4nge/FruityWifi.git
-
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/6.Wireless/1.Wifi
 DSKTPFLSDEST=/home/$USER/.local/share/applications/6.Wireless/1.Wifi
 DSKTPFL=fruity-wifi.desktop
@@ -26,6 +22,26 @@ DSKTPFL=fruity-wifi.desktop
 GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/fruitywifi/xtr4nge/FruityWifi
 GITREPOGITFILE=$GITREPOROOT/.git
 
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/6.Wireless/1.Wifi/fruitywifi/xtr4nge
+cd /opt/ITSEC/6.Wireless/1.Wifi/fruitywifi/xtr4nge
+git clone https://github.com/xtr4nge/FruityWifi.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
 cd $GITREPOROOT 
 git clean -f 
 git fetch origin
@@ -75,5 +91,5 @@ rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST 
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 
-
+fi
 

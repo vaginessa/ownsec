@@ -12,20 +12,38 @@ echo "${bold}
              
 ${normal}"
 
-mkdir -p /opt/ITSEC/4.Password/1.Network/f-scrack/ysrc
-cd /opt/ITSEC/4.Password/1.Network/f-scrack/ysrc
-git clone https://github.com/ysrc/F-Scrack.git
-
 GITREPOROOT=/opt/ITSEC/4.Password/1.Network/f-scrack/ysrc/F-Scrack
 EXECUTEABLE1=F-Scrack.py
 EXECUTEABLE2=fscrack
 EXECUTEABLE3=fscrack.sh
 #
-sudo rm -f /usr/local/bin/$EXECUTEABLE2
-#
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/1.Network
 DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/1.Network
 DSKTPFL=f-scrack.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/4.Password/1.Network/f-scrack/ysrc
+cd /opt/ITSEC/4.Password/1.Network/f-scrack/ysrc
+git clone https://github.com/ysrc/F-Scrack.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
+
+sudo rm -f /usr/local/bin/$EXECUTEABLE2
+
 
 cd $GITREPOROOT
 sudo updatedb
@@ -47,3 +65,6 @@ sudo ln -s $GITREPOROOT/$EXECUTEABLE3 /usr/local/bin/$EXECUTEABLE2
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+fi
+

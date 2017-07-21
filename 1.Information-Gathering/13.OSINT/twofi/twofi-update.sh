@@ -20,10 +20,6 @@ rbenv shell 2.4.1
 sudo updatedb
 sudo ldconfig
 
-mkdir -p /opt/ITSEC/1.Information-Gathering/13.OSINT/twofi/digininja
-cd /opt/ITSEC/1.Information-Gathering/13.OSINT/twofi/digininja
-git clone https://github.com/digininja/twofi.git
-
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/13.OSINT/twofi/digininja/twofi
 GITREPOGITFILE=$GITREPOROOT/.git
 EXECUTEABLE1=twofi.rb
@@ -32,6 +28,28 @@ EXECUTEABLE2=twofi
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/13.OSINT
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/13.OSINT
 DSKTPFL=twofi.desktop
+
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/1.Information-Gathering/13.OSINT/twofi/digininja
+cd /opt/ITSEC/1.Information-Gathering/13.OSINT/twofi/digininja
+git clone https://github.com/digininja/twofi.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
 
 cd $GITREPOROOT
 sudo rm /usr/local/bin/$EXECUTEABLE2
@@ -48,3 +66,5 @@ sudo ln -s $GITREPOROOT/$EXECUTEABLE1 /usr/local/bin/$EXECUTEABLE2
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST 
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+fi

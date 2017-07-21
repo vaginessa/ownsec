@@ -12,16 +12,34 @@ echo "${bold}
                                                
 ${normal}"
 
-mkdir -p /opt/ITSEC/1.Information-Gathering/3.Route-Analysis/intrace/robertswiecki
-cd /opt/ITSEC/1.Information-Gathering/3.Route-Analysis/intrace/robertswiecki
-git clone https://github.com/robertswiecki/intrace.git
-
-sudo rm -f /usr/local/bin/intrace
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/3.Route-Analysis/intrace/robertswiecki/intrace
 GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/3.Route-Analysis
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/3.Route-Analysis
 DSKTPFL=intrace.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/1.Information-Gathering/3.Route-Analysis/intrace/robertswiecki
+cd /opt/ITSEC/1.Information-Gathering/3.Route-Analysis/intrace/robertswiecki
+git clone https://github.com/robertswiecki/intrace.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
+
+sudo rm -f /usr/local/bin/intrace
 
 cd $GITREPOROOT
 
@@ -39,3 +57,5 @@ sudo ln -s /opt/ITSEC/1.Information-Gathering/3.Route-Analysis/intrace/robertswi
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+fi

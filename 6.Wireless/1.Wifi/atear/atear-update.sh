@@ -12,13 +12,6 @@ echo "${bold}
            
 ${normal}"
 
-mkdir -p /opt/ITSEC/6.Wireless/1.Wifi/atear/NORMA-Inc
-cd /opt/ITSEC/6.Wireless/1.Wifi/atear/NORMA-Inc
-git clone https://github.com/NORMA-Inc/AtEar.git
-
-
-sudo rm /usr/local/bin/atear
-
 GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/atear/NORMA-Inc/AtEar
 GITREPOGITFILE=$GITREPOROOT/.git
 EXECUTEABLE1=run.py
@@ -28,6 +21,29 @@ EXECUTEABLE3=atear.sh
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/6.Wireless/1.Wifi
 DSKTPFLSDEST=/home/$USER/.local/share/applications/6.Wireless/1.Wifi
 DSKTPFL=atear.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/6.Wireless/1.Wifi/atear/NORMA-Inc
+cd /opt/ITSEC/6.Wireless/1.Wifi/atear/NORMA-Inc
+git clone https://github.com/NORMA-Inc/AtEar.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
+
+sudo rm /usr/local/bin/atear
 
 sudo rm -f /usr/local/bin/$EXECUTEABLE2
 
@@ -58,3 +74,6 @@ sudo ln -s $GITREPOROOT/$EXECUTEABLE3 /usr/local/bin/$EXECUTEABLE2
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST 
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+fi
+

@@ -12,11 +12,6 @@ echo "${bold}
     
 ${normal}"
 
-
-mkdir -p /opt/ITSEC/1.Information-Gathering/13.OSINT/theharvester/laramies
-cd /opt/ITSEC/1.Information-Gathering/13.OSINT/theharvester/laramies
-git clone https://github.com/laramies/theHarvester.git
-
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/13.OSINT/theharvester/laramies/theHarvester
 GITREPOGITFILE=$GITREPOROOT/.git
 EXECUTEABLE1=theHarvester.py
@@ -27,6 +22,27 @@ EXECUTEABLE4=myparser
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/13.OSINT
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/13.OSINT
 DSKTPFL=theharvester.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/1.Information-Gathering/13.OSINT/theharvester/laramies
+cd /opt/ITSEC/1.Information-Gathering/13.OSINT/theharvester/laramies
+git clone https://github.com/laramies/theHarvester.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
 
 cd $GITREPOROOT
 sudo rm -f /usr/local/bin/$EXECUTEABLE2
@@ -45,3 +61,5 @@ sudo ln -s $GITREPOROOT/$EXECUTEABLE3 /usr/local/bin/$EXECUTEABLE4
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+fi

@@ -12,16 +12,33 @@ echo "${bold}
            
 ${normal}"
 
-mkdir -p /opt/ITSEC/8.Tunnel/ptunnel/izderadicka
-cd /opt/ITSEC/8.Tunnel/ptunnel/izderadicka
-git clone https://github.com/izderadicka/ptunnel.git
-
 GITREPOROOT=/opt/ITSEC/8.Tunnel/ptunnel/izderadicka/ptunnel
 BINDIR=/opt/ITSEC/8.Tunnel/ptunnel/izderadicka/ptunnel/src
 GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/8.Tunnel
 DSKTPFLSDEST=/home/$USER/.local/share/applications
 DSKTPFL=ptunnel.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/8.Tunnel/ptunnel/izderadicka
+cd /opt/ITSEC/8.Tunnel/ptunnel/izderadicka
+git clone https://github.com/izderadicka/ptunnel.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
 
 cd $GITREPOROOT
 git clean -f
@@ -38,3 +55,6 @@ sudo ln -s $BINDIR/ptunnel.py /usr/local/bin/ptunnel
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+fi
+

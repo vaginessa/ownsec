@@ -12,10 +12,6 @@ echo "${bold}
           
 ${normal}"
 
-mkdir -p /opt/ITSEC/4.Password/1.Network/patator/lanjelot
-cd /opt/ITSEC/4.Password/1.Network/patator/lanjelot
-git clone https://github.com/lanjelot/patator.git
-
 GITREPOROOT=/opt/ITSEC/4.Password/1.Network/patator/lanjelot/patator
 GITREPOGITFILE=$GITREPOROOT/.git
 EXECUTEABLE1=patator.py
@@ -25,6 +21,27 @@ EXECUTEABLE3=patator.sh
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/1.Network
 DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/1.Network
 DSKTPFL=patator.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/4.Password/1.Network/patator/lanjelot
+cd /opt/ITSEC/4.Password/1.Network/patator/lanjelot
+git clone https://github.com/lanjelot/patator.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
 
 sudo rm -f /usr/local/bin/$EXECUTEABLE2
 
@@ -50,3 +67,7 @@ sudo ln -s $GITREPOROOT/$EXECUTEABLE3 /usr/local/bin/$EXECUTEABLE2
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+fi
+
+

@@ -12,10 +12,6 @@ echo "${bold}
                   
 ${normal}"
 
-mkdir -p /opt/ITSEC/6.Wireless/1.Wifi/3.Jammer/mdk3-master/camerony
-cd /opt/ITSEC/6.Wireless/1.Wifi/3.Jammer/mdk3-master/camerony
-git clone https://github.com/camerony/mdk3-master.git
-
 GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/3.Jammer/mdk3-master/camerony/mdk3-master
 GITREPOGITFILE=$GITREPOROOT/.git
 #cd /opt/ITSEC/6.Wireless/1.Wifi/3.Jammer/mdk3-master/wi-fi-analyzer/mdk3-master/
@@ -23,6 +19,27 @@ GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/6.Wireless/1.Wifi/3.Jammer
 DSKTPFLSDEST=/home/$USER/.local/share/applications/6.Wireless/1.Wifi/3.Jammer
 DSKTPFL=mdk3-master.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/6.Wireless/1.Wifi/3.Jammer/mdk3-master/camerony
+cd /opt/ITSEC/6.Wireless/1.Wifi/3.Jammer/mdk3-master/camerony
+git clone https://github.com/camerony/mdk3-master.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
 
 cd $GITREPOROOT
 sudo make uninstall
@@ -36,3 +53,6 @@ sudo make install
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+fi
+

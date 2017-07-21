@@ -12,9 +12,6 @@ echo "${bold}
            
 ${normal}"
 
-mkdir -p /opt/ITSEC/9.Maintain-Access/2.Generate/the-backdoor-factory/secretsquirrel
-cd /opt/ITSEC/9.Maintain-Access/2.Generate/the-backdoor-factory/secretsquirrel
-git clone https://github.com/secretsquirrel/the-backdoor-factory
 
 GITREPOROOT=/opt/ITSEC/9.Maintain-Access/2.Generate/the-backdoor-factory/secretsquirrel/the-backdoor-factory
 GITREPOGITFILE=$GITREPOROOT/.git
@@ -24,6 +21,27 @@ EXECUTEABLE2=backdoor-factory
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/9.Maintain-Access/2.Generate
 DSKTPFLSDEST=/home/$USER/.local/share/applications/9.Maintain-Access/2.Generate
 DSKTPFL=backdoorfactory.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/9.Maintain-Access/2.Generate/the-backdoor-factory/secretsquirrel
+cd /opt/ITSEC/9.Maintain-Access/2.Generate/the-backdoor-factory/secretsquirrel
+git clone https://github.com/secretsquirrel/the-backdoor-factory
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
 
 cd $GITREPOROOT
 sudo rm -f /usr/local/bin/$EXECUTEABLE2
@@ -60,3 +78,7 @@ sudo ln -s $GITREPOROOT/$EXECUTEABLE1 /usr/local/bin/$EXECUTEABLE2
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+fi
+
+

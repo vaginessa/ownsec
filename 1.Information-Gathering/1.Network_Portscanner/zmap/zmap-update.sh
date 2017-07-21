@@ -18,6 +18,21 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/1.Network_Portscanner
 DSKTPFL=zmap.desktop
 
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/1.Information-Gathering/1.Network_Portscanner/zmap/zmap
+cd /opt/ITSEC/1.Information-Gathering/1.Network_Portscanner/zmap/zmap
+git clone https://github.com/zmap/zmap.git
+
+
+else
+
+echo "repo exists"
+
+fi
+
 cd $GITREPOROOT
 
 if git diff-index --quiet HEAD --; then
@@ -26,6 +41,7 @@ if git diff-index --quiet HEAD --; then
 else
 
 cd $GITREPOROOT
+
 cd build
 make clean
 cd $GITREPOROOT

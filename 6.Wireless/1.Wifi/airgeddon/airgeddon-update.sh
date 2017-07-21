@@ -22,14 +22,26 @@ DSKTPFL=airgeddon.desktop
 
 cd $GITREPOROOT
 
-if git diff-index --quiet HEAD --; then
-    echo "UP TO DATE"
+if [ ! -d $GITREPOGITFILE ]
 
-else
+then
 
 mkdir -p /opt/ITSEC/6.Wireless/1.Wifi/airgeddon/v1s1t0r1sh3r3
 cd /opt/ITSEC/6.Wireless/1.Wifi/airgeddon/v1s1t0r1sh3r3
 git clone https://github.com/v1s1t0r1sh3r3/airgeddon
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
 
 sudo rm /usr/local/bin/airgeddon
 

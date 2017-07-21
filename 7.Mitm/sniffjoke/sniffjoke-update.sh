@@ -19,6 +19,28 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7
 DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
 DSKTPFL=sniffjoke.desktop
 
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/7.Mitm/sniffjoke/vecna
+cd /opt/ITSEC/7.Mitm/sniffjoke/vecna
+git clone https://github.com/vecna/sniffjoke.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
+
+
 cd $GITREPOROOT
 sudo make uninstall
 sudo updatedb
@@ -37,3 +59,6 @@ make -j 4
 sudo make install
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+fi
+

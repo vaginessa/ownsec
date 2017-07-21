@@ -12,15 +12,32 @@ echo "${bold}
         
 ${normal}"
 
-mkdir -p /opt/ITSEC/8.Tunnel/proxychains-ng/rofl0r
-cd /opt/ITSEC/8.Tunnel/proxychains-ng/rofl0r
-git clone https://github.com/rofl0r/proxychains-ng
-
 GITREPOROOT=/opt/ITSEC/8.Tunnel/proxychains-ng/rofl0r/proxychains-ng
 GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/8.Tunnel
 DSKTPFLSDEST=/home/$USER/.local/share/applications/8.Tunnel
 DSKTPFL=proxychains-ng.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/8.Tunnel/proxychains-ng/rofl0r
+cd /opt/ITSEC/8.Tunnel/proxychains-ng/rofl0r
+git clone https://github.com/rofl0r/proxychains-ng
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
 
 cd $GITREPOROOT
 sudo make uninstall
@@ -38,3 +55,6 @@ sudo make install
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+fi
+

@@ -50,4 +50,3 @@ python smbmap.py" > $GITREPOROOT/smbmap.sh
 chmod +x $GITREPOROOT/smbmap.sh
 sudo ln -s $GITREPOROOT/smbmap.sh /usr/local/bin/smbmap 
 
-l

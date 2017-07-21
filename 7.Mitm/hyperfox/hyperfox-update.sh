@@ -26,6 +26,28 @@ DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
 DSKTPFL1=hyperfox.desktop
 DSKTPFL1=arpfox.desktop
 
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/7.Mitm/hyperfox/malfunkt
+cd /opt/ITSEC/7.Mitm/hyperfox/malfunkt
+git clone https://github.com/malfunkt/hyperfox.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
+
 sudo rm -f $DSKTPFLSDEST/$DSKTPFL1
 sudo rm -f $DSKTPFLSDEST/$DSKTPFL2
 sudo rm -f /usr/local/bin/hyperfox
@@ -44,3 +66,6 @@ rm -f $DSKTPFLSDEST/$DSKTPFL2
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL1 $DSKTPFLSDEST/$DSKTPFL1
 cp $DSKTPFLS/$DSKTPFL2 $DSKTPFLSDEST/$DSKTPFL2
+
+
+fi

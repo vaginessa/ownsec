@@ -12,15 +12,33 @@ echo "${bold}
             
 ${normal}"
 
-mkdir -p /opt/ITSEC/4.Password/2.Local/pyrit/JPaulMora
-cd /opt/ITSEC/4.Password/2.Local/pyrit/JPaulMora
-git clone https://github.com/JPaulMora/Pyrit.git
-
 GITREPOROOT=/opt/ITSEC/4.Password/2.Local/pyrit/JPaulMora/Pyrit
 GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/2.Local
 DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/2.Local
 DSKTPFL=pyrit.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/4.Password/2.Local/pyrit/JPaulMora
+cd /opt/ITSEC/4.Password/2.Local/pyrit/JPaulMora
+git clone https://github.com/JPaulMora/Pyrit.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
+
 
 cd $GITREPOROOT
 git clean -f
@@ -34,3 +52,5 @@ sudo python setup.py install
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+fi

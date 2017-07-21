@@ -12,17 +12,35 @@ echo "${bold}
           
 ${normal}"
 
-mkdir -p /opt/ITSEC/5.Database/1.SQL/bbqsql/Neohapsis
-cd /opt/ITSEC/5.Database/1.SQL/bbqsql/Neohapsis
-git clone https://github.com/Neohapsis/bbqsql.git
-
-sudo rm -f /usr/local/bin/bbqsql
-#
 GITREPOROOT=/opt/ITSEC/5.Database/1.SQL/bbqsql/Neohapsis/bbqsql
 GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/5.Database/1.SQL
 DSKTPFLSDEST=/home/$USER/.local/share/applications/5.Database/1.SQL
 DSKTPFL=bbqsql.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/5.Database/1.SQL/bbqsql/Neohapsis
+cd /opt/ITSEC/5.Database/1.SQL/bbqsql/Neohapsis
+git clone https://github.com/Neohapsis/bbqsql.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
+
+sudo rm -f /usr/local/bin/bbqsql
+#
 
 cd $GITREPOROOT
 git clean -f
@@ -36,3 +54,6 @@ sudo -H python setup.py install
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST 
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+fi
+

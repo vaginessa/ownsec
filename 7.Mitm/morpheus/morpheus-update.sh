@@ -14,11 +14,31 @@ ${normal}"
 
 GITREPOROOT=/opt/ITSEC/7.Mitm/morpheus/r00t-3xp10it/morpheus
 GITREPOGITFILE=$GITREPOROOT/.git
-sudo rm -f /usr/local/bin/morpheus
 #
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
 DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
 DSKTPFL=morpheus.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/7.Mitm/morpheus/r00t-3xp10it
+cd /opt/ITSEC/7.Mitm/morpheus/r00t-3xp10it
+git clone https://github.com/r00t-3xp10it/morpheus.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
 
 sudo updatedb
 sudo ldconfig
@@ -36,3 +56,6 @@ sudo ln -s /opt/ITSEC/7.Mitm/morpheus/r00t-3xp10it/morpheus/morpheus.sh /usr/loc
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+fi
+

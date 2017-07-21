@@ -23,6 +23,30 @@ DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm/2.DNS
 DSKTPFL1=dshell.desktop
 DSKTPFL2=dshell-decode.desktop
 
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+
+mkdir -p /opt/ITSEC/7.Mitm/2.DNS/dshell/USArmyResearchLab
+cd /opt/ITSEC/7.Mitm/2.DNS/dshell/USArmyResearchLab
+git clone https://github.com/USArmyResearchLab/Dshell
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
+sudo ldconfig
+sudo updatedb
+
 sudo rm -f /usr/local/bin/$EXECUTEABLE2
 sudo rm -f /usr/local/bin/$EXECUTEABLE3
 
@@ -44,3 +68,6 @@ sudo ln -s $GITREPOROOT/$EXECUTEABLE2 /usr/local/bin/$EXECUTEABLE2
 sudo ln -s $GITREPOROOT/$EXECUTEABLE3 /usr/local/bin/$EXECUTEABLE3
 cp $DSKTPFLS/$DSKTPFL1 $DSKTPFLSDEST/$DSKTPFL1
 cp $DSKTPFLS/$DSKTPFL2 $DSKTPFLSDEST/$DSKTPFL2
+
+fi
+

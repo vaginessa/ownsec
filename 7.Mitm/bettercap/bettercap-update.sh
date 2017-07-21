@@ -12,15 +12,38 @@ echo "${bold}
                
 ${normal}"
 
-#gem update
-sudo updatedb
-sudo ldconfig
 
 GITREPOROOT=/opt/ITSEC/7.Mitm/bettercap/evilsocket/bettercap
 GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
 DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
 DSKTPFL=bettercap.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/7.Mitm/bettercap/evilsocket
+cd /opt/ITSEC/7.Mitm/bettercap/evilsocket
+git clone https://github.com/evilsocket/bettercap.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
+
+#gem update
+sudo updatedb
+sudo ldconfig
+
 
 cd $GITREPOROOT
 
@@ -109,3 +132,5 @@ cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 echo "${bold}
 done running the bettercap setup   
 ${normal}"
+
+fi

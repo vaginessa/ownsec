@@ -12,16 +12,33 @@ echo "${bold}
             
 ${normal}"
 
-mkdir -p /opt/ITSEC/1.Information-Gathering/2.Live-Host/hping3/antirez
-cd /opt/ITSEC/1.Information-Gathering/2.Live-Host/hping3/antirez
-git clone https://github.com/antirez/hping.git
-
 
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/2.Live-Host/hping3/antirez/hping 
 GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/2.Live-Host
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/2.Live-Host
 DSKTPFL=hping3.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/1.Information-Gathering/2.Live-Host/hping3/antirez
+cd /opt/ITSEC/1.Information-Gathering/2.Live-Host/hping3/antirez
+git clone https://github.com/antirez/hping.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
 
 sudo rm /usr/sbin/hping
 sudo rm /usr/sbin/hping2
@@ -42,3 +59,5 @@ sudo make install
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+fi

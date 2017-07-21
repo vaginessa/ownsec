@@ -12,9 +12,6 @@ echo "${bold}
             
 ${normal}"
 
-mkdir -p /opt/ITSEC/1.Information-Gathering/2.Live-Host/dmitry/jaygreig86
-cd /opt/ITSEC/1.Information-Gathering/2.Live-Host/dmitry/jaygreig86
-git clone https://github.com/jaygreig86/dmitry.git
 
 
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/2.Live-Host/dmitry/jaygreig86/dmitry
@@ -25,6 +22,28 @@ EXECUTEABLE2=dmitry
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/2.Live-Host
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/2.Live-Host
 DSKTPFL=dmitry.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/1.Information-Gathering/2.Live-Host/dmitry/jaygreig86
+cd /opt/ITSEC/1.Information-Gathering/2.Live-Host/dmitry/jaygreig86
+git clone https://github.com/jaygreig86/dmitry.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
+
 
 cd $GITREPOROOT
 make clean
@@ -47,3 +66,5 @@ sudo ln -s $GITREPOROOT/$EXECUTEABLE1 /usr/local/bin/$EXECUTEABLE2
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+fi

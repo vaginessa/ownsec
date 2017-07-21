@@ -12,10 +12,6 @@ echo "${bold}
         
 ${normal}"
 
-mkdir -p /opt/ITSEC/1.Information-Gathering/7.SMTP/smtp-user-enum/pentestmonkey
-cd /opt/ITSEC/1.Information-Gathering/7.SMTP/smtp-user-enum/pentestmonkey
-git clone https://github.com/pentestmonkey/smtp-user-enum.git
-
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/7.SMTP/smtp-user-enum/pentestmonkey/smtp-user-enum
 GITREPOGITFILE=$GITREPOROOT/.git
 EXECUTEABLE1=smtp-user-enum.pl
@@ -24,6 +20,27 @@ EXECUTEABLE2=smtp-user-enum
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/7.SMTP
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/7.SMTP
 DSKTPFL=smtp-user-enum.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/1.Information-Gathering/7.SMTP/smtp-user-enum/pentestmonkey
+cd /opt/ITSEC/1.Information-Gathering/7.SMTP/smtp-user-enum/pentestmonkey
+git clone https://github.com/pentestmonkey/smtp-user-enum.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
 
 cd $GITREPOROOT
 sudo rm -f /usr/local/bin/$EXECUTEABLE2
@@ -40,3 +57,5 @@ sudo ln -s $GITREPOROOT/$EXECUTEABLE1 /usr/local/bin/$EXECUTEABLE2
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+fi

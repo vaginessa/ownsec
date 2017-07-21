@@ -12,12 +12,30 @@ echo "${bold}
            
 ${normal}"
 
-mkdir -p /opt/ITSEC/8.Tunnel/anonym8/HiroshiManRise
-cd /opt/ITSEC/8.Tunnel/anonym8/HiroshiManRise
-git clone https://github.com/HiroshiManRise/anonym8
 
 GITREPOROOT=/opt/ITSEC/8.Tunnel/anonym8/HiroshiManRise/anonym8
 GITREPOGITFILE=$GITREPOROOT/.git
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/8.Tunnel/anonym8/HiroshiManRise
+cd /opt/ITSEC/8.Tunnel/anonym8/HiroshiManRise
+git clone https://github.com/HiroshiManRise/anonym8
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
+
 
 cd $GITREPOROOT
 git clean -f
@@ -28,3 +46,6 @@ git submodule init && git submodule update --recursive
 #
 chmod +x ./INSTALL.sh
 #sudo ./INSTALL.sh
+
+fi
+

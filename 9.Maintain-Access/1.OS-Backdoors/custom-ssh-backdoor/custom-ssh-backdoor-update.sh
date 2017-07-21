@@ -13,14 +13,32 @@ echo "${bold}
                  
 ${normal}"
 
+GITREPOROOT=/opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/custom-ssh-backdoor/joridos/custom-ssh-backdoor/custom-ssh-backdoor
+
 GITREPOGITFILE=$GITREPOROOT/.git
 
-mkdir -p /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/custom-ssh-backdoor/joridos/custom-ssh-backdoor
+if [ ! -d $GITREPOGITFILE ]
 
+then
+
+mkdir -p /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/custom-ssh-backdoor/joridos/custom-ssh-backdoor
 cd /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/custom-ssh-backdoor/joridos/custom-ssh-backdoor
 git clone https://github.com/joridos/custom-ssh-backdoor
 
-cd /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/custom-ssh-backdoor/joridos/custom-ssh-backdoor/custom-ssh-backdoor
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
+
+cd $GITREPOROOT
 
 git clean -f
 git fetch origin
@@ -29,4 +47,4 @@ git pull
 git submodule init
 git submodule update --recursive
 
-
+fi

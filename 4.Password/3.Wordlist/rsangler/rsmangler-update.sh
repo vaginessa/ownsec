@@ -12,10 +12,6 @@ echo "${bold}
          
 ${normal}"
 
-mkdir -p /opt/ITSEC/4.Password/3.Wordlist/rsmangler/digininja
-cd /opt/ITSEC/4.Password/3.Wordlist/rsmangler/digininja
-git clone https://github.com/digininja/RSMangler
-
 GITREPOROOT=/opt/ITSEC/4.Password/3.Wordlist/rsmangler/digininja/RSMangler
 GITREPOGITFILE=$GITREPOROOT/.git
 EXECUTEABLE1=rsmangler.rb
@@ -25,6 +21,27 @@ EXECUTEABLE3=rsmangler.sh
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/3.Wordlist
 DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/3.Wordlist
 DSKTPFL=rsmangler.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/4.Password/3.Wordlist/rsmangler/digininja
+cd /opt/ITSEC/4.Password/3.Wordlist/rsmangler/digininja
+git clone https://github.com/digininja/RSMangler
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
 
 sudo rm -f /usr/local/bin/$EXECUTEABLE2
 
@@ -47,3 +64,5 @@ sudo ln -s $GITREPOROOT/$EXECUTEABLE3 /usr/local/bin/$EXECUTEABLE2
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST 
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+fi

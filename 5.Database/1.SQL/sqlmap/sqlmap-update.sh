@@ -11,19 +11,37 @@ echo "${bold}
 |____/ \__\_\_____|_|  |_/_/   \_\_|    
               
 ${normal}"
-
-mkdir -p /opt/ITSEC/5.Database/1.SQL/sqlmap/sqlmapproject
-cd /opt/ITSEC/5.Database/1.SQL/sqlmap/sqlmapproject
-git clone https://github.com/sqlmapproject/sqlmap.git
-
-sudo rm /usr/local/bin/sqlmapapi
-sudo rm /usr/local/bin/sqlmap
-#	
+	
 GITREPOROOT=/opt/ITSEC/5.Database/1.SQL/sqlmap/sqlmapproject/sqlmap
 GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/5.Database/1.SQL
 DSKTPFLSDEST=/home/$USER/.local/share/applications/5.Database/1.SQL
 DSKTPFL=sqlmap.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/5.Database/1.SQL/sqlmap/sqlmapproject
+cd /opt/ITSEC/5.Database/1.SQL/sqlmap/sqlmapproject
+git clone https://github.com/sqlmapproject/sqlmap.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
+
+sudo rm /usr/local/bin/sqlmapapi
+sudo rm /usr/local/bin/sqlmap
+
 
 cd $GITREPOROOT
 git clean -f
@@ -55,3 +73,6 @@ sudo ln -s /opt/ITSEC/5.Database/1.SQL/sqlmap/sqlmapproject/sqlmap/sqlmapapi.sh 
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST 
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+fi
+

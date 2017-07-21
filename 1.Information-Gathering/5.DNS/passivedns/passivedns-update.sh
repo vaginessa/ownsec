@@ -12,15 +12,33 @@ echo "${bold}
     
 ${normal}"
 
-mkdir -p /opt/ITSEC/1.Information-Gathering/5.DNS/passivedns/gamelinux
-cd /opt/ITSEC/1.Information-Gathering/5.DNS/passivedns/gamelinux
-git clone https://github.com/gamelinux/passivedns.git
-
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/5.DNS/passivedns/gamelinux/passivedns
 GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/5.DNS
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/5.DNS
 DSKTPFL=passivedns.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/1.Information-Gathering/5.DNS/passivedns/gamelinux
+cd /opt/ITSEC/1.Information-Gathering/5.DNS/passivedns/gamelinux
+git clone https://github.com/gamelinux/passivedns.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
+
 
 cd $GITREPOROOT
 sudo make uninstall
@@ -41,3 +59,4 @@ sudo make install
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+fi

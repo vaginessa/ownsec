@@ -12,10 +12,33 @@ echo "${bold}
   |_| |_____|____/|_|   |_| \_\\___/|____/|_____|_| \_\
              
 ${normal}"
+GITREPOROOT=/opt/ITSEC/1.Information-Gathering/4.SSL/tls_prober/WestpointLtd/tls_prober
 
 GITREPOGITFILE=$GITREPOROOT/.git
 
-cd /opt/ITSEC/1.Information-Gathering/4.SSL/tls_prober/WestpointLtd/tls_prober
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/1.Information-Gathering/4.SSL/tls_prober/WestpointLtd
+cd /opt/ITSEC/1.Information-Gathering/4.SSL/tls_prober/WestpointLtd
+git clone https://github.com/WestpointLtd/tls_prober.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
+
+
+cd $GITREPOROOT
 
 git clean -f
 git pull
@@ -23,4 +46,4 @@ git pull
 git submodule init
 git submodule update --recursive
 
-
+fi

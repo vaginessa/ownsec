@@ -12,11 +12,6 @@ echo "${bold}
             
 ${normal}"
 
-mkdir -p /opt/ITSEC/1.Information-Gathering/2.Live-Host/recon-ng/LaNMaSteR53
-cd /opt/ITSEC/1.Information-Gathering/2.Live-Host/recon-ng/LaNMaSteR53
-git clone https://bitbucket.org/LaNMaSteR53/recon-ng.git
-
-
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/2.Live-Host/recon-ng/LaNMaSteR53/recon-ng
 GITREPOGITFILE=$GITREPOROOT/.git
 
@@ -32,6 +27,28 @@ EXECUTEABLE5=recon-rpc
 EXECUTEABLE6=recon-rpc
 EXECUTEABLE7=recon-web
 EXECUTEABLE8=recon-web
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/1.Information-Gathering/2.Live-Host/recon-ng/LaNMaSteR53
+cd /opt/ITSEC/1.Information-Gathering/2.Live-Host/recon-ng/LaNMaSteR53
+git clone https://bitbucket.org/LaNMaSteR53/recon-ng.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
+
 
 sudo rm -f /usr/local/bin/$EXECUTEABLE2
 sudo rm -f /usr/local/bin/$EXECUTEABLE4
@@ -63,4 +80,5 @@ mkdir -p $DSKTPFLSDEST
 rm -f $DSKTPFLSDEST/$DSKTPFL
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 
+fi
 

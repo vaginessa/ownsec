@@ -12,15 +12,32 @@ echo "${bold}
                       
 ${normal}"
 
-mkdir -p /opt/ITSEC/1.Information-Gathering/4.SSL/sslaudit/grwl
-cd /opt/ITSEC/1.Information-Gathering/4.SSL/sslaudit/grwl
-git clone https://github.com/grwl/sslcaudit.git
-
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/4.SSL/sslaudit/grwl/sslcaudit
 GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/4.SSL
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/4.SSL
 DSKTPFL=sslcaudit.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/1.Information-Gathering/4.SSL/sslaudit/grwl
+cd /opt/ITSEC/1.Information-Gathering/4.SSL/sslaudit/grwl
+git clone https://github.com/grwl/sslcaudit.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
 
 cd $GITREPOROOT
 git clean -f
@@ -37,3 +54,4 @@ sudo python setup.py install
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 
+fi

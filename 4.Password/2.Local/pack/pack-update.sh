@@ -12,10 +12,6 @@ echo "${bold}
                    
 ${normal}"
 
-mkdir -p /opt/ITSEC/4.Password/2.Local/pack/iphelix
-cd /opt/ITSEC/4.Password/2.Local/pack/iphelix
-git clone https://github.com/iphelix/pack.git
-
 GITREPOROOT=/opt/ITSEC/4.Password/2.Local/pack/iphelix/pack
 GITREPOGITFILE=$GITREPOROOT/.git
 EXECUTEABLE1=maskgen.py
@@ -34,6 +30,28 @@ DSKTPFL1=pack_maskgen.desktop
 DSKTPFL2=pack_policygen.desktop
 DSKTPFL3=pack_rulegen.desktop
 DSKTPFL4=pack_statsgen.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+
+mkdir -p /opt/ITSEC/4.Password/2.Local/pack/iphelix
+cd /opt/ITSEC/4.Password/2.Local/pack/iphelix
+git clone https://github.com/iphelix/pack.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
 
 sudo rm -f /usr/local/bin/$EXECUTEABLE2
 sudo rm -f /usr/local/bin/$EXECUTEABLE4
@@ -75,3 +93,4 @@ cp $DSKTPFLS/$DSKTPFL3 $DSKTPFLSDEST/$DSKTPFL3
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL4 $DSKTPFLSDEST/$DSKTPFL4
 
+fi

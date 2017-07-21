@@ -12,15 +12,32 @@ echo "${bold}
           
 ${normal}"
 
-mkdir -p /opt/ITSEC/8.Tunnel/udptunnel/astroza
-cd /opt/ITSEC/8.Tunnel/udptunnel/astroza
-git clone https://github.com/astroza/udptunnel.git
-
 GITREPOROOT=/opt/ITSEC/8.Tunnel/udptunnel/astroza/udptunnel
 GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/8.Tunnel
 DSKTPFLSDEST=/home/$USER/.local/share/applications/8.Tunnel
 DSKTPFL=udptunnel.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/8.Tunnel/udptunnel/astroza
+cd /opt/ITSEC/8.Tunnel/udptunnel/astroza
+git clone https://github.com/astroza/udptunnel.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
 
 cd $GITREPOROOT
 make clean
@@ -39,3 +56,5 @@ sudo ln -s $GITREPOROOT/client /usr/local/bin/udptunnel
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+fi

@@ -12,15 +12,33 @@ echo "${bold}
             
 ${normal}"
 
-mkdir -p /opt/ITSEC/1.Information-Gathering/5.DNS/dnstracer/pcoder
-cd /opt/ITSEC/1.Information-Gathering/5.DNS/dnstracer/pcoder
-git clone https://github.com/pcoder/DNSTracer.git
 
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/5.DNS/dnstracer/pcoder/DNSTracer
 GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/5.DNS
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/5.DNS
 DSKTPFL=dnstracer.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/1.Information-Gathering/5.DNS/dnstracer/pcoder
+cd /opt/ITSEC/1.Information-Gathering/5.DNS/dnstracer/pcoder
+git clone https://github.com/pcoder/DNSTracer.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
 
 cd $GITREPOROOT
 git clean -f
@@ -38,3 +56,5 @@ sudo ln -s //opt/ITSEC/1.Information-Gathering/5.DNS/dnstracer/pcoder/DNSTracer/
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+fi

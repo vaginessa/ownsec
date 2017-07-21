@@ -12,10 +12,6 @@ echo "${bold}
     
 ${normal}"
 
-mkdir -p /opt/ITSEC/1.Information-Gathering/11.Dork/bingoo/Hood3dRob1n
-cd /opt/ITSEC/1.Information-Gathering/11.Dork/bingoo/Hood3dRob1n
-git clone https://github.com/Hood3dRob1n/BinGoo.git
-
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/11.Dork/bingoo/Hood3dRob1n/BinGoo
 GITREPOGITFILE=$GITREPOROOT/.git
 EXECUTEABLE1=bingoo
@@ -24,6 +20,27 @@ EXECUTEABLE2=bingoo.sh
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/11.Dork
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/11.Dork
 DSKTPFL=bingoo.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/1.Information-Gathering/11.Dork/bingoo/Hood3dRob1n
+cd /opt/ITSEC/1.Information-Gathering/11.Dork/bingoo/Hood3dRob1n
+git clone https://github.com/Hood3dRob1n/BinGoo.git
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
 
 cd $GITREPOROOT
 
@@ -48,3 +65,4 @@ sudo ln -s $GITREPOROOT/$EXECUTEABLE2 /usr/local/bin/$EXECUTEABLE1
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST 
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+fi

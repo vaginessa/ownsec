@@ -12,16 +12,33 @@ echo "${bold}
                 
 ${normal}"
 
-
-mkdir -p /opt/ITSEC/9.Maintain-Access/2.Generate/l0l/m3pt0r
-cd /opt/ITSEC/9.Maintain-Access/2.Generate/l0l/m3pt0r
-git clone https://github.com/m3pt0r/l0l
-
 GITREPOROOT=/opt/ITSEC/9.Maintain-Access/2.Generate/l0l/m3pt0r/l0l
 GITREPOGITFILE=$GITREPOROOT/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/9.Maintain-Access/2.Generate
 DSKTPFLSDEST=/home/$USER/.local/share/applications/9.Maintain-Access/2.Generate
 DSKTPFL=l0l.desktop
+
+if [ ! -d $GITREPOGITFILE ]
+
+then
+
+mkdir -p /opt/ITSEC/9.Maintain-Access/2.Generate/l0l/m3pt0r
+cd /opt/ITSEC/9.Maintain-Access/2.Generate/l0l/m3pt0r
+git clone https://github.com/m3pt0r/l0l
+
+else
+
+echo "repo exists"
+
+fi
+
+cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
+
 
 cd $GITREPOROOT
 sudo make uninstall
@@ -36,3 +53,6 @@ sudo make install
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+fi
+
