@@ -21,6 +21,14 @@ DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/1.Net
 DSKTPFL=thanos.desktop
 
 cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
+
+
+cd $GITREPOROOT
 #make clean
 git clean -f
 git fetch origin
@@ -37,6 +45,9 @@ chmod +x $GITREPOROOT/$EXECUTEABLE1
 sudo ln -s $GITREPOROOT/$EXECUTEABLE1 /usr/local/bin/$EXECUTEABLE2
 mkdir -p $DSKTPFLSDEST
 rm -f $DSKTPFLSDEST/$DSKTPFL
+
+
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 
 thanos --new-db banner_grabber.db
+fi

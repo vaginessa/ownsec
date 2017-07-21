@@ -35,14 +35,13 @@ echo "repo exists"
 
 fi
 
-cd $GITREPOROOT
 
-if git diff-index --quiet HEAD --; then
-    echo "UP TO DATE"
-
-else
 
 sudo rm -rf /opt/ITSEC/6.Wireless/1.Wifi/wifi-pumpkin/P0cL4bs/WiFi-Pumpkin/deb_tmp/wifi*
+#cd $GITREPOROOT
+#mkdir deb_tmp
+#cd /opt/ITSEC/6.Wireless/1.Wifi/wifi-pumpkin/P0cL4bs/WiFi-Pumpkin/deb_tmp/
+#sudo bash -c 'for DEBWP in $(ls wifi-pumpkin_*); do rm -rf $DEBWP;done'
 
 cd $GITREPOROOT
 #sed -i -e 's#deb_tmp/##g' .gitignore
@@ -67,7 +66,7 @@ rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 
-fi
+
 
 
 

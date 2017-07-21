@@ -21,6 +21,14 @@ DSKTPFL2=spiderfoot_cli.desktop
 
 cd $GITREPOROOT
 
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
+
+
+cd $GITREPOROOT
+
 git clean -f
 git fetch origin
 git reset --hard origin/master
@@ -55,3 +63,4 @@ mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL1 $DSKTPFLSDEST/$DSKTPFL1
 cp $DSKTPFLS/$DSKTPFL2 $DSKTPFLSDEST/$DSKTPFL2
 
+fi

@@ -19,6 +19,13 @@ DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/1.Net
 DSKTPFL=zmap.desktop
 
 cd $GITREPOROOT
+
+if git diff-index --quiet HEAD --; then
+    echo "UP TO DATE"
+
+else
+
+cd $GITREPOROOT
 cd build
 make clean
 cd $GITREPOROOT
@@ -38,3 +45,8 @@ sudo make install
 rm -f  $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+
+fi
+
+
