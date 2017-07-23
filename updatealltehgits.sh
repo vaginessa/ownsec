@@ -21,4 +21,5 @@ cd /opt/ITSEC-Install-Scripts/0.Initial/src/settings-scripts/update-allthethings
 
 cd /opt/ITSEC-Install-Scripts
 chmod +x updatealltehgits.sh
-sudo ln -s updatealltehgits.sh /usr/local/bin/updatealltehgits.sh
+sudo rm -f /usr/local/bin/updatealltehgits.sh
+sudo ln -s /opt/ITSEC-Install-Scripts/updatealltehgits.sh /usr/local/bin/updatealltehgits.sh
