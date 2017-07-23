@@ -1,6 +1,7 @@
 ## STATUS: 
 
-### implementation of update scripts in progress, update script works but i want it faster - its slowed because of files created during the install progress - the update script thinks the remote repo is ahead and installs everything again.
+### implementation of update scripts in progress, update script works but i want it faster ....
+.... Its slowed because of files created during the install progress - the update script thinks the remote repo is ahead and installs everything again.
 
 ### https://stackoverflow.com/questions/5143795/how-can-i-check-in-a-bash-script-if-my-local-git-repo-has-changes
 
