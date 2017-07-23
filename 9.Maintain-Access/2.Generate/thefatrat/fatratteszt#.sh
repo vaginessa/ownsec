@@ -4,17 +4,17 @@ bold=$(tput bold)
 normal=$(tput sgr0)
 
 echo "${bold}
- _____ _   _ _____ _____ _  _____ ____      _  _____ 
+ _____ _   _ _____ _____ _  _____ ____      _  _____
 |_   _| | | | ____|  ___/ \|_   _|  _ \    / \|_   _|
-  | | | |_| |  _| | |_ / _ \ | | | |_) |  / _ \ | |  
-  | | |  _  | |___|  _/ ___ \| | |  _ <  / ___ \| |  
-  |_| |_| |_|_____|_|/_/   \_\_| |_| \_\/_/   \_\_|  
-            
+  | | | |_| |  _| | |_ / _ \ | | | |_) |  / _ \ | |
+  | | |  _  | |___|  _/ ___ \| | |  _ <  / ___ \| |
+  |_| |_| |_|_____|_|/_/   \_\_| |_| \_\/_/   \_\_|
+
 ${normal}"
 
 
 echo "${bold}
-setting vars       
+setting vars
 ${normal}"
 
 GITREPOROOT=/opt/ITSEC/9.Maintain-Access/2.Generate/thefatrat/Screetsec/TheFatRat
@@ -35,36 +35,13 @@ blue='\e[0;34m'
 purple='\e[0;35m'
 orange='\e[38;5;166m'
 
-if [ ! -d $GITREPOGITFILE ]
 
-then
 
 echo "${bold}
-mkdir, git clone and cd         
-${normal}"
-
-mkdir -p /opt/ITSEC/9.Maintain-Access/2.Generate/thefatrat/Screetsec
-cd /opt/ITSEC/9.Maintain-Access/2.Generate/thefatrat/Screetsec
-git clone https://github.com/Screetsec/TheFatRat
-
-else
-
-echo "repo exists"
-
-fi
-
-cd $GITREPOROOT
-
-if git diff-index --quiet HEAD --; then
-    echo "UP TO DATE"
-
-else
-
-echo "${bold}
-mkdir and cp desktop file       
+mkdir and cp desktop file
 ${normal}"
 rm -f $DSKTPFLSDEST/$DSKTPFL
-mkdir -p $DSKTPFLSDEST 
+mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 
 echo "${bold}
@@ -72,7 +49,7 @@ cd GITREPOROOT
 ${normal}"
 
 cd $GITREPOROOT
-git clean -f 
+git clean -f
 git fetch origin
 git reset --hard origin/master
 git pull
@@ -80,7 +57,7 @@ git submodule init
 git submodule update --recursive
 
 echo "${bold}
-chmod +x exec 
+chmod +x exec
 ${normal}"
 
 chmod +x $GITREPOROOT/backdoor_apk
@@ -134,15 +111,15 @@ log=$GITREPOROOT/logs/setup.log
 config=$GITREPOROOT/config/config.path
 
 echo "${bold}
-#Checking for DX and in case exists then check if it is version 1.8 used in fatrat (latest android sdk) 
+#Checking for DX and in case exists then check if it is version 1.8 used in fatrat (latest android sdk)
 ${normal}"
 
 touch "$config"
-#Checking for DX and in case exists then check if it is version 1.8 used in fatrat (latest android sdk) 
+
 which dx > /dev/null 2>&1
 if [ "$?" -eq "0" ]; then
 dxg=`dx --version 2>&1 | tee temp/dx`
-dxv=`cat temp/dx | awk '{print $3}'` 
+dxv=`cat temp/dx | awk '{print $3}'`
 case $dxv in
 1.8)
 #DX exists and it is version 1.8
@@ -172,6 +149,7 @@ echo "DX -> Not OK" >> "$inst"
 fi
 ;;
 esac
+
 else
 sudo unlink "/usr/local/sbin/dx" > /dev/null 2>&1
 sudo ln -s "$GITREPOROOT/tools/android-sdk/dx" "/usr/local/sbin/dx" > /dev/null 2>&1
@@ -223,6 +201,7 @@ echo "Aapt -> Not OK" >> "$inst"
 fi
 ;;
 esac
+
 else
 sudo unlink "/usr/local/sbin/aapt" > /dev/null 2>&1
 sudo ln -s "$GITREPOROOT/tools/android-sdk/aapt" "/usr/local/sbin/aapt" > /dev/null 2>&1
@@ -247,7 +226,7 @@ ${normal}"
 which apktool > /dev/null 2>&1
 if [ "$?" -eq "0" ]; then
 apk=`apktool | sed -n 1p | awk '{print $2}'` > /dev/null 2>&1
-case $apk in 
+case $apk in
 v.2.2.2)
 which apktool >> "$log" 2>&1
 echo "apktool" | tee -a "$config" >> /dev/null 2>&1
@@ -273,6 +252,7 @@ echo "Apktool -> Not OK" >> "$inst"
 fi
 ;;
 esac
+
 else
 sudo unlink "/usr/local/sbin/apktool" > /dev/null 2>&1
 sudo ln -s "$GITREPOROOT/tools/apktool2.2.2/apktool" "/usr/local/sbin/apktool" > /dev/null 2>&1
@@ -369,5 +349,3 @@ echo "0" > "$stp"
 echo "Dex2Jar -> Not OK" >> "$inst"
 fi
 fi
-fi
-
