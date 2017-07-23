@@ -22,7 +22,7 @@ then
 
 mkdir -p /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/gcat/byt3bl33d3r/
 cd /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/gcat/byt3bl33d3r/
-git clone https://github.com/joridos/custom-ssh-backdoor
+git clone https://github.com/byt3bl33d3r/gcat
 
 else
 

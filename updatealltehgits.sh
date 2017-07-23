@@ -19,5 +19,6 @@ cd /opt/ITSEC-Install-Scripts/0.Initial/src/settings-scripts/update-allthethings
 ./UPDATE-10.Stresstest.sh
 #./UPDATE-12.Forensics.sh
 
+cd /opt/ITSEC-Install-Scripts
 chmod +x updatealltehgits.sh
 sudo ln -s updatealltehgits.sh /usr/local/bin/updatealltehgits.sh
