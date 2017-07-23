@@ -1,7 +1,7 @@
 ## STATUS: 
 
-### implementation of update scripts in progress, paths may not work as expected
-###  git status check to be implemented - else update take way too long 
+### implementation of update scripts in progress, update script works but i want it faster - its slowed because of files created during the install progress - the update script think the remore repo is ahead and installs everything again.
+
 ### https://stackoverflow.com/questions/5143795/how-can-i-check-in-a-bash-script-if-my-local-git-repo-has-changes
 
 > See git-root for patch files, ill try to write them to adopt changes so that a complete wipe and reinstall is not nessecary. 
