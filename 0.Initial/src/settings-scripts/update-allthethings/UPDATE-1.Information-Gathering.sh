@@ -93,7 +93,7 @@ cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/3.Route-Analysis/1.Cloudfl
 
 ################## 4.SSL ##################
 
-cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/4.SSL/sslaudit/
+cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/4.SSL/sslcaudit/
 ./sslcaudit-update.sh
 
 # install apt

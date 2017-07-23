@@ -114,7 +114,7 @@ xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-t
 xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-cowpatty.txt") -r -- sudo apt-get install -y
 xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-johnny.txt") -r -- sudo apt-get install -y
 xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-johntheripper.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-ophcrack.txt") -r -- sudo apt-get install -y
+#xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-ophcrack.txt") -r -- sudo apt-get install -y
 xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-rainbowcrack-ng.txt") -r -- sudo apt-get install -y
 xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-patator-ng.txt") -r -- sudo apt-get install -y
 

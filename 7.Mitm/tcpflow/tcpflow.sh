@@ -36,7 +36,7 @@ git reset --hard origin/master
 git pull
 git submodule init
 git submodule update --recursive
-./bootstrap.sh
+./bootstrap.bash
 ./configure
 make -j 4
 sudo make install

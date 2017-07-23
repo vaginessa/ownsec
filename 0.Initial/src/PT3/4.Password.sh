@@ -23,8 +23,8 @@ cd /opt/ITSEC-Install-Scripts/4.Password/2.Local/johnny
 ./johnny.sh
 cd /opt/ITSEC-Install-Scripts/4.Password/2.Local/johntheripper
 ./johntheripper.sh
-cd /opt/ITSEC-Install-Scripts/4.Password/2.Local/ophcrack
-./ophcrack.sh #works but had to remove libqwt-dev for libqwt5-qt4-dev hope nothing else broke. # building works #make: *** No rule to make target 'install'.  Stop.
+#cd /opt/ITSEC-Install-Scripts/4.Password/2.Local/ophcrack
+#./ophcrack.sh #23.7.17 - stopped working 
 cd /opt/ITSEC-Install-Scripts/4.Password/2.Local/pack
 ./pack.sh 
 cd /opt/ITSEC-Install-Scripts/4.Password/2.Local/pyrit

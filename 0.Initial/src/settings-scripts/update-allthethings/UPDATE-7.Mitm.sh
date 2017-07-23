@@ -23,8 +23,8 @@ cd /opt/ITSEC-Install-Scripts/7.Mitm/cdpsnarf
 ./cdpsnarf-update.sh
 cd /opt/ITSEC-Install-Scripts/7.Mitm/det
 ./det-update.sh
-cd /opt/ITSEC-Install-Scripts/7.Mitm/dripcap
-./dripcap-update.sh
+#cd /opt/ITSEC-Install-Scripts/7.Mitm/dripcap
+#./dripcap-update.sh
 cd /opt/ITSEC-Install-Scripts/7.Mitm/ettercap
 ./ettercap-update.sh
 cd /opt/ITSEC-Install-Scripts/7.Mitm/hexinject
