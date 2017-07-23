@@ -12,7 +12,7 @@ echo "${bold}
              
 ${normal}"
 
-DOWNLOADDIR=/opt/ITSEC/10.Stresstest/t50/fredericopissarra/t50 
+GITREPOROOT=/opt/ITSEC/10.Stresstest/t50/fredericopissarra/t50 
 #
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/10.Stresstest
 DSKTPFLSDEST=/home/$USER/.local/share/applications/10.Stresstest
@@ -40,7 +40,7 @@ if git diff-index --quiet HEAD --; then
 
 else
 
-cd $DOWNLOADDIR
+cd $GITREPOROOT
 sudo updatedb
 sudo ldconfig
 sudo make uninstall

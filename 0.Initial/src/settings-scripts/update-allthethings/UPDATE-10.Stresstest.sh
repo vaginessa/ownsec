@@ -30,10 +30,10 @@ cd /opt/ITSEC-Install-Scripts/10.Stresstest/dhcpig
 # greyd out for some unknown reason - check again
 #cd /opt/ITSEC-Install-Scripts/10.Stresstest/siege
 #./
-cd /opt/ITSEC-Install-Scripts/10.Stresstest/slowhttptest
-./slowhttptest-update.sh
-cd /opt/ITSEC-Install-Scripts/10.Stresstest/t50
-./t50-update.sh
+#cd /opt/ITSEC-Install-Scripts/10.Stresstest/slowhttptest
+#./slowhttptest-update.sh #build fail
+#cd /opt/ITSEC-Install-Scripts/10.Stresstest/t50
+#./t50-update.sh #build fail
 # not a git repo
 #cd /opt/ITSEC-Install-Scripts/10.Stresstest/udpflooder
 #./

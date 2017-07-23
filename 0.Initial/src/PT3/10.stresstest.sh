@@ -15,10 +15,10 @@ cd /opt/ITSEC-Install-Scripts/10.Stresstest/rtp-flooder
 ./rtp-flooder.sh 
 #cd /opt/ITSEC-Install-Scripts/10.Stresstest/siege
 #./#siege.sh #disabled die to build err, check back latr
-cd /opt/ITSEC-Install-Scripts/10.Stresstest/slowhttptest
-./slowhttptest.sh 
-cd /opt/ITSEC-Install-Scripts/10.Stresstest/t50
-./t50.sh
+#cd /opt/ITSEC-Install-Scripts/10.Stresstest/slowhttptest
+#./slowhttptest.sh #build fail
+#cd /opt/ITSEC-Install-Scripts/10.Stresstest/t50
+#./t50.sh #build fail
 cd /opt/ITSEC-Install-Scripts/10.Stresstest/udpflooder
 ./udpflooder.sh
 cd /opt/ITSEC-Install-Scripts/10.Stresstest/ufonet
