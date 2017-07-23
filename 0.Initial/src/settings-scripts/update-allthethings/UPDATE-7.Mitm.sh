@@ -27,14 +27,14 @@ cd /opt/ITSEC-Install-Scripts/7.Mitm/det
 #./dripcap-update.sh
 cd /opt/ITSEC-Install-Scripts/7.Mitm/ettercap
 ./ettercap-update.sh
-cd /opt/ITSEC-Install-Scripts/7.Mitm/hexinject
-./hexinject-update.sh
+#cd /opt/ITSEC-Install-Scripts/7.Mitm/hexinject
+#./hexinject-update.sh
 cd /opt/ITSEC-Install-Scripts/7.Mitm/hyperfox
 ./hyperfox-update.sh
 cd /opt/ITSEC-Install-Scripts/7.Mitm/mitmf
 ./mitmf-update.sh
-cd /opt/ITSEC-Install-Scripts/7.Mitm/mitmproxy
-./mitmproxy-update.sh
+#cd /opt/ITSEC-Install-Scripts/7.Mitm/mitmproxy
+#./mitmproxy-update.sh
 # cd /opt/ITSEC-Install-Scripts/7.Mitm/moloch
 #./moloch-update.sh
 cd /opt/ITSEC-Install-Scripts/7.Mitm/morpheus

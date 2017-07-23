@@ -17,7 +17,7 @@ ${normal}"
 ## 1.Network
 cd /opt/ITSEC-Install-Scripts/4.Password/1.Network/brut3k1t
 ./brut3k1t-update.sh
-cd /opt/ITSEC-Install-Scripts/4.Password/1.Network/brutex/
+cd /opt/ITSEC-Install-Scripts/4.Password/1.Network/brutex
 ./brutex-update.sh
 cd /opt/ITSEC-Install-Scripts/4.Password/1.Network/findmyhash
 ./findmyhash-update.sh
@@ -46,8 +46,8 @@ cd /opt/ITSEC-Install-Scripts/4.Password/2.Local/johnny
 ./johnny-update.sh
 cd /opt/ITSEC-Install-Scripts/4.Password/2.Local/johntheripper
 ./johntheripper-update.sh
-cd /opt/ITSEC-Install-Scripts/4.Password/2.Local/ophcrack
-./ophcrack-update.sh
+#cd /opt/ITSEC-Install-Scripts/4.Password/2.Local/ophcrack
+#./ophcrack-update.sh
 cd /opt/ITSEC-Install-Scripts/4.Password/2.Local/pack
 ./pack-update.sh
 cd /opt/ITSEC-Install-Scripts/4.Password/2.Local/pyrit

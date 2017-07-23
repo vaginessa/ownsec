@@ -32,6 +32,7 @@ cd /opt/ITSEC-Install-Scripts/6.Wireless/1.Wifi/2.Routerkeys/routerkeygenpc
 
 cd /opt/ITSEC-Install-Scripts/6.Wireless/1.Wifi/3.Jammer/mdk3-master
 ./mdk3-master-update.sh
+cd /opt/ITSEC-Install-Scripts/6.Wireless/1.Wifi/3.Jammer/wifijammer
 ./wifijammer-update.sh
 
 ### 4.Evil-Twin
