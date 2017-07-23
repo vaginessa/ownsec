@@ -298,7 +298,7 @@ rm -rf temp/dex >/dev/null 2>&1
 #Dex2jar does not exists or it is not the 2.0 version , so uninstall it & copy dex2jar from
 #fatrat tools folder to /usr/local/sbin
 xterm -T "☣ Removing Your Current Dex2Jar ☣" -geometry 100x30 -e "sudo apt-get remove --purge dex2jar --force-yes -y"
-cp $path/tools/dex2jar/* /usr/local/sbin/ > /dev/null 2>&1
+cp $GITREPOROOT/tools/dex2jar/* /usr/local/sbin/ > /dev/null 2>&1
 chmod +x /usr/local/sbin/d2j-baksmali > /dev/null 2>&1
 chmod +x /usr/local/sbin/d2j-dex-recompute-checksum > /dev/null 2>&1
 chmod +x /usr/local/sbin/d2j-dex2jar > /dev/null 2>&1
@@ -312,7 +312,7 @@ chmod +x /usr/local/sbin/d2j-std-apk > /dev/null 2>&1
 # and copy the new ones to there from fatrat tools dir
 rm -rf /usr/local/share/dex2jar > /dev/null 2>&1
 mkdir /usr/local/share/dex2jar > /dev/null 2>&1
-cp -r $path/tools/dex2jar/lib /usr/local/share/dex2jar/lib > /dev/null 2>&1
+cp -r $GITREPOROOT/tools/dex2jar/lib /usr/local/share/dex2jar/lib > /dev/null 2>&1
 which d2j-dex2jar > /dev/null 2>&1
 #After new instalation , check if dex2jar is working
 if [ "$?" -eq "0" ]; then
@@ -331,7 +331,7 @@ fi
 esac
 else
 #dex2jar does not exist in user linux OS , proceed with a clean manual installation
-cp $path/tools/dex2jar/* /usr/local/sbin/ > /dev/null 2>&1
+cp $GITREPOROOT/tools/dex2jar/* /usr/local/sbin/ > /dev/null 2>&1
 chmod +x /usr/local/sbin/d2j-baksmali > /dev/null 2>&1
 chmod +x /usr/local/sbin/d2j-dex-recompute-checksum > /dev/null 2>&1
 chmod +x /usr/local/sbin/d2j-dex2jar > /dev/null 2>&1
@@ -343,7 +343,7 @@ chmod +x /usr/local/sbin/d2j-smali > /dev/null 2>&1
 chmod +x /usr/local/sbin/d2j-std-apk > /dev/null 2>&1
 rm -rf /usr/local/share/dex2jar > /dev/null 2>&1
 mkdir /usr/local/share/dex2jar > /dev/null 2>&1
-cp -r $path/tools/dex2jar/lib /usr/local/share/dex2jar/lib > /dev/null 2>&1
+cp -r $GITREPOROOT/tools/dex2jar/lib /usr/local/share/dex2jar/lib > /dev/null 2>&1
 which d2j-dex2jar > /dev/null 2>&1
 if [ "$?" -eq "0" ]; then
 echo -e $green "[ ✔ ] Dex2Jar 2.0"
