@@ -5,5 +5,5 @@ Exec=sh -c "aircrack;${SHELL:-bash}"
 StartupNotify=false
 Terminal=true
 Type=Application
-Categories=9.Wireless;1.Wifi;
+Categories=6.Wireless;1.Wifi;
 
