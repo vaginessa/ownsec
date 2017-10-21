@@ -31,12 +31,12 @@ git clone git://github.com/dcarley/rbenv-sudo.git ~/.rbenv/plugins/rbenv-sudo
 source ~/.bashrc
 ~/.rbenv/bin/rbenv init
 RUBYVERSION=$(lynx --dump https://raw.githubusercontent.com/rapid7/metasploit-framework/master/.ruby-version )
-exec -l $SHELL
+#exec -l $SHELL
 cd ~
-rbenv install $RUBYVERSION
-rbenv rehash
-rbenv global $RUBYVERSION
-rbenv local $RUBYVERSION
-exit
+exec -l  rbenv install $RUBYVERSION
+exec -l  rbenv rehash
+sudo exec -l  rbenv global $RUBYVERSION
+exec -l  rbenv local $RUBYVERSION
+#exit 1
 
 

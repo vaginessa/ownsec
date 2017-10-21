@@ -64,6 +64,6 @@ make -j 4
 sudo make install
 
 
-sudo udpatedb
+sudo updatedb
 sudo ldconfig
 

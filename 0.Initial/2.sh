@@ -85,20 +85,20 @@ sudo cp /opt/ITSEC-Install-Scripts/0.Initial/src/settings-scripts/lightdm-gtk-gr
 
 sudo cp /opt/ITSEC-Install-Scripts/0.Initial/src/settings-scripts/grub /etc/default/grub
 sudo update-grub
-exec -l $SHELL
+#exec -l $SHELL
 updatedb
 ldconfig
 node -v
 npm -v
 ruby -v
 rbenv -v
-rbenv local 2.4.1
+#rbenv local 2.4.1
 rbenv local
-rbenv global 2.4.1
+#rbenv global 2.4.1
 rbenv global
 docker -v 
 java -version
-exit
+#exit 0
 
 #Calling the reboot-script to restart this script 
 #echo "#helloworld" > $chkdir/rebootchkPT2.txt
