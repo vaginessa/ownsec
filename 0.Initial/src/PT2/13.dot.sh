@@ -23,6 +23,7 @@ source .bashrc
 echo "${bold}
 ... setting up CONKY ....
 ${normal}"
+sudo sh -c "echo '/usr/local/lib' >> /etc/ld.so.conf"
 cp -R /opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.conky .conky
 
 
