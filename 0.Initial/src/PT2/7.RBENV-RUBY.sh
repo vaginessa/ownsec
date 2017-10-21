@@ -31,7 +31,8 @@ git clone git://github.com/dcarley/rbenv-sudo.git ~/.rbenv/plugins/rbenv-sudo
 source ~/.bashrc
 ~/.rbenv/bin/rbenv init
 RUBYVERSION=$(lynx --dump https://raw.githubusercontent.com/rapid7/metasploit-framework/master/.ruby-version )
-
+exec -l $SHELL
+cd ~
 rbenv install $RUBYVERSION
 rbenv rehash
 rbenv global $RUBYVERSION
