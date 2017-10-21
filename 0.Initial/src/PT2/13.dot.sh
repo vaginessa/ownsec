@@ -14,11 +14,11 @@ cd ~
 
 git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt
 
-cp .bashrc ._bak_bashrc 
+cp ~/.bashrc ~/._bak_bashrc 
 rm -f .bashrc && cp /opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.bashrc .bashrc 
 
 
-source .bashrc
+source ~/.bashrc
 
 echo "${bold}
 ... setting up CONKY ....

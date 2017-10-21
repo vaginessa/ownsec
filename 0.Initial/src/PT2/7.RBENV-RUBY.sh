@@ -37,6 +37,6 @@ rbenv install $RUBYVERSION
 rbenv rehash
 rbenv global $RUBYVERSION
 rbenv local $RUBYVERSION
-
+exit
 
 

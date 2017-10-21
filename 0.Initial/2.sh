@@ -50,8 +50,10 @@ ${normal}"
 ./6.Java-JDK-JRE.sh
 echo "${bold}
 ./7.RBENV-RUBY.sh
+source ~/.bashrc
 ${normal}"
 ./7.RBENV-RUBY.sh
+source ~/.bashrc
 echo "${bold}
 ./8.Postgres-MSF-DB.sh
 ${normal}"
@@ -67,8 +69,10 @@ ${normal}"
 ./11.Docker.sh
 echo "${bold}
 ./12.usr_environment.sh
+source ~/.bashrc
 ${normal}"
 ./12.usr_environment.sh
+source ~/.bashrc
 echo "${bold}
 ./13.dot.sh
 ${normal}"
@@ -81,7 +85,7 @@ sudo cp /opt/ITSEC-Install-Scripts/0.Initial/src/settings-scripts/lightdm-gtk-gr
 
 sudo cp /opt/ITSEC-Install-Scripts/0.Initial/src/settings-scripts/grub /etc/default/grub
 sudo update-grub
-
+exec -l $SHELL
 updatedb
 ldconfig
 node -v
@@ -94,7 +98,7 @@ rbenv global 2.4.1
 rbenv global
 docker -v 
 java -version
-
+exit
 
 #Calling the reboot-script to restart this script 
 #echo "#helloworld" > $chkdir/rebootchkPT2.txt
