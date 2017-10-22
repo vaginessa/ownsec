@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -i
 ####################################################################
 #### Welcome - letzs roll - FUCKYEAH :) ############################
 ####################################################################
@@ -99,7 +99,9 @@ rbenv global
 docker -v 
 java -version
 #exit 0
-
+echo "${bold}
+Done, reboot now         
+${normal}"
 #Calling the reboot-script to restart this script 
 #echo "#helloworld" > $chkdir/rebootchkPT2.txt
 

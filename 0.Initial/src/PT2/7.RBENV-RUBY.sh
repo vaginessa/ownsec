@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -i
 
 bold=$(tput bold)
 normal=$(tput sgr0)
@@ -33,10 +33,20 @@ source ~/.bashrc
 RUBYVERSION=$(lynx --dump https://raw.githubusercontent.com/rapid7/metasploit-framework/master/.ruby-version )
 #exec -l $SHELL
 cd ~
-exec -l  rbenv install $RUBYVERSION
-exec -l  rbenv rehash
-sudo exec -l  rbenv global $RUBYVERSION
-exec -l  rbenv local $RUBYVERSION
+
+
+rbenv install $RUBYVERSION
+
+
+rbenv rehash
+
+
+sudo rbenv global $RUBYVERSION
+
+
+rbenv local $RUBYVERSION
+
+rbenv -v && ruby -v && sudo ruby -v
 #exit 1
 
 
