@@ -1,15 +1,7 @@
 ## STATUS: 
 
-### implementation of update scripts in progress, update script works but i want it faster ....
-.... Its slowed because of files created during the install progress - the update script thinks the remote repo is ahead and installs everything again.
+last tested & fixed 22.10.17 - minor bugs, "works" :)
 
-### https://stackoverflow.com/questions/5143795/how-can-i-check-in-a-bash-script-if-my-local-git-repo-has-changes
-
-> See git-root for patch files, ill try to write them to adopt changes so that a complete wipe and reinstall is not nessecary. 
-
-> So to say a development branch, updates daily at random times. to fetch latest updates make sure to cp https://github.com/alphaaurigae/ITSEC-Install-Scripts/tree/master/0.Initial/usrlcl to $USER. Depending if categories get reshuffled, it might be nessary to remove ihe respective /opt/ITSEC/ dirs to avoid stacking files - the installer overwrite symlinks and desktop files, that not a problem.
-
-> Ive bookmarked quite a few interesting apps to be added, however, ill probably first make the reinstall script for each existing app.
 # ITSEC-Install-Scripts
 
 > A set of bash scripts to dl, build and install ITsec related soft from source & its dependencies on 16.04 Xfce -. menu/console entries and and pre config - semi unattended(yet)
