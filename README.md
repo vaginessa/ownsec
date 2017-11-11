@@ -1,6 +1,15 @@
 ## STATUS: 
 
+TODO:
+Tidy up, add some of the starred repos, may remove some, fix initial setup bugs so that everything works out of the box again.
+
 last tested & fixed 22.10.17 - minor bugs, "works" :)
+- bettercap 
+- msf ruby version, not sure what went wrong - tough works running bundler after reboot.
+
+11.11.17
+added some rootkits , git clone into /opt/ITSEC/9.Maintain-Access/3.Rootkit/ 
+folder accessible through menu 9.Maintain-Access/3.Rootkit/
 
 # ITSEC-Install-Scripts
 

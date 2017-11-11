@@ -15,7 +15,7 @@ echo "${bold}
 THIS WILL TAKE A WHILE, APROX 15 MINUTES            
 ${normal}"
 
-#sudo rm -r /opt/DEPS/node/nodejs
+sudo rm -r /opt/DEPS/node/nodejs
 mkdir -p /opt/DEPS/node/nodejs
 cd /opt/DEPS/node/nodejs
 git clone https://github.com/nodejs/node.git
@@ -30,7 +30,8 @@ cd /opt/DEPS/node/nodejs/node
 #it fetch origin
 #git reset --hard origin/v7.x
 #git pull
-git checkout v7.x
+git checkout v7.10.1
+#git checkout v7.x
 git pull
 ./configure
 make -j 4 
@@ -52,13 +53,14 @@ cd /opt/DEPS/npm/npm
 git clone https://github.com/npm/npm.git
 cd npm
 
-#sudo make uninstall
+sudo make uninstall
 #make clean
 #git clean -f 
 #git fetch origin
 #git reset --hard origin/master
 #git pull
-git checkout latest
+#git checkout latest
+git checkout v4.2.0
 ./configure 
 make -j 4
 sudo make install

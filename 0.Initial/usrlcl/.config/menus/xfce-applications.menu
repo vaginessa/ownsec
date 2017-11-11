@@ -604,6 +604,16 @@
             </Include>
 
         </Menu>
+        <Menu>
+            <Name>3.Rootkit</Name>
+            <Directory>3.Rootkit.directory</Directory>
+            <Include>
+                <And>
+                    <Category>3.Rootkit</Category>
+                </And>
+            </Include>
+
+        </Menu>
         </Menu>
 
 	<Menu>

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Open Rootkit DIR
+Encoding=UTF-8
+Exec=sh -c "thunar /opt/ITSEC/9.Maintain-Access/3.Rootkit/;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=3.Rootkit;
