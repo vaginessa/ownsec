@@ -12,7 +12,7 @@ __        _____ ____  _____ ____  _   _    _    ____  _  __
            
 ${normal}"
 
-sudo udpatedb
+sudo updatedb
 sudo ldconfig
 mkdir -p /opt/ITSEC/7.Mitm/wireshark/wireshark
 cd /opt/ITSEC/7.Mitm/wireshark/wireshark
