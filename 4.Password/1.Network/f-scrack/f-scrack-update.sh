@@ -12,7 +12,8 @@ echo "${bold}
              
 ${normal}"
 
-GITREPOROOT=/opt/ITSEC/4.Password/1.Network/f-scrack/ysrc/F-Scrack
+#GITREPOROOT=/opt/ITSEC/4.Password/1.Network/f-scrack/ysrc/F-Scrack
+GITREPOROOT=/opt/ITSEC/4.Password/1.Network/f-scrack/zgwdg/F-Scrack
 EXECUTEABLE1=F-Scrack.py
 EXECUTEABLE2=fscrack
 EXECUTEABLE3=fscrack.sh
@@ -57,7 +58,9 @@ git submodule update --recursive
 
 echo '#!/bin/bash
 
-cd /opt/ITSEC/4.Password/1.Network/f-scrack/ysrc/F-Scrack
+#cd /opt/ITSEC/4.Password/1.Network/f-scrack/ysrc/F-Scrack
+cd /opt/ITSEC/4.Password/1.Network/f-scrack/zgwdg/F-Scrack
+
 python F-Scrack.py "$@"' > $EXECUTEABLE3
 chmod +x $GITREPOROOT/$EXECUTEABLE1
 chmod +x $GITREPOROOT/$EXECUTEABLE3

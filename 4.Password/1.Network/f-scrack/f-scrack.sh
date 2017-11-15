@@ -18,11 +18,20 @@ ${normal}"
 
 #GITREPOROOT=/opt/ITSEC/4.Password/1.Network/f-scrack/ysrc/F-Scrack
 
-mkdir -p /opt/ITSEC/4.Password/1.Network/f-scrack/y1ng1996
-cd /opt/ITSEC/4.Password/1.Network/f-scrack/y1ng1996
-git clone https://github.com/y1ng1996/F-Scrack.git
+# https://github.com/zgwdg/F-Scrack - another fork/branch
 
-GITREPOROOT=/opt/ITSEC/4.Password/1.Network/f-scrack/y1ng1996/F-Scrack
+mkdir -p /opt/ITSEC/4.Password/1.Network/f-scrack/zgwdg
+cd /opt/ITSEC/4.Password/1.Network/f-scrack/zgwdg
+git clone https://github.com/zgwdg/F-Scrack.git
+
+GITREPOROOT=/opt/ITSEC/4.Password/1.Network/f-scrack/zgwdg/F-Scrack
+
+
+#mkdir -p /opt/ITSEC/4.Password/1.Network/f-scrack/y1ng1996
+#cd /opt/ITSEC/4.Password/1.Network/f-scrack/y1ng1996
+#git clone https://github.com/y1ng1996/F-Scrack.git
+
+#GITREPOROOT=/opt/ITSEC/4.Password/1.Network/f-scrack/y1ng1996/F-Scrack
 
 EXECUTEABLE1=F-Scrack.py
 EXECUTEABLE2=fscrack
@@ -47,7 +56,8 @@ git submodule update --recursive
 echo '#!/bin/bash
 
 #cd /opt/ITSEC/4.Password/1.Network/f-scrack/ysrc/F-Scrack
-cd /opt/ITSEC/4.Password/1.Network/f-scrack/y1ng1996/F-Scrack
+#cd /opt/ITSEC/4.Password/1.Network/f-scrack/y1ng1996/F-Scrack
+cd /opt/ITSEC/4.Password/1.Network/f-scrack/zgwdg/F-Scrack
 
 python F-Scrack.py "$@"' > $EXECUTEABLE3
 chmod +x $GITREPOROOT/$EXECUTEABLE1
