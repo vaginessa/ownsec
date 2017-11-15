@@ -26,6 +26,8 @@ mkdir -p /opt/ITSEC/7.Mitm/moloch/aol/moloch
 cd /opt/ITSEC/7.Mitm/moloch/aol/moloch
 wget https://files.molo.ch/builds/ubuntu-16.04/moloch_0.20.1-1_amd64.deb
 sudo dpkg -i moloch_0.20.1-1_amd64.deb
+/data/moloch/bin/Configure
+
 systemctl start elasticsearch.service
 /data/moloch/db/db.pl http://localhost:9200 init
 echo '
