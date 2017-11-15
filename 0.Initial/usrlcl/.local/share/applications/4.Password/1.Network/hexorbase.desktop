@@ -5,4 +5,4 @@ Exec=sh -c "hexorbase"
 StartupNotify=false
 Terminal=false
 Type=Application
-Categories=5.Database;
+Categories=1.Network;

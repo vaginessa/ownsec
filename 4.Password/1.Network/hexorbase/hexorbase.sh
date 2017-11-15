@@ -12,17 +12,17 @@ echo "${bold}
            
 ${normal}"
 
-mkdir -p /opt/ITSEC/5.Database/1.SQL/hexorbase/savio-code
-cd /opt/ITSEC/5.Database/1.SQL/hexorbase/savio-code
+mkdir -p /opt/ITSEC/4.Password/1.Network/hexorbase/savio-code
+cd /opt/ITSEC/4.Password/1.Network/hexorbase/savio-code
 git clone https://github.com/savio-code/hexorbase.git
 
 sudo rm -f /usr/local/bin/hexorbase
 
-GITREPOROOT=/opt/ITSEC/5.Database/1.SQL/hexorbase/savio-code/hexorbase
-GITREPOBINROOT=/opt/ITSEC/5.Database/1.SQL/hexorbase/savio-code/hexorbase/HexorBase
+GITREPOROOT=/opt/ITSEC/4.Password/1.Network/hexorbase/savio-code/hexorbase
+GITREPOBINROOT=/opt/ITSEC/4.Password/1.Network/hexorbase/savio-code/hexorbase/HexorBase
 
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/5.Database/1.SQL
-DSKTPFLSDEST=/home/$USER/.local/share/applications/5.Database/1.SQL
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/1.Network
+DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/1.Network
 DSKTPFL=hexorbase.desktop
 
 cd $GITREPOROOT
@@ -37,7 +37,7 @@ cd $GITREPOBINROOT
 
 echo '#!/bin/bash
 
-cd /opt/ITSEC/5.Database/1.SQL/hexorbase/savio-code/hexorbase/HexorBase
+cd /opt/ITSEC/4.Password/1.Network/hexorbase/savio-code/hexorbase/HexorBase
 
 python execute.py "$@"' > hexorbase.sh
 
@@ -45,7 +45,7 @@ chmod +x hexorbase.sh
 
 chmod +x execute.py
 sudo rm -f /usr/local/bin/hexorbase
-sudo ln -s /opt/ITSEC/5.Database/1.SQL/hexorbase/savio-code/hexorbase/HexorBase/hexorbase.sh /usr/local/bin/hexorbase
+sudo ln -s /opt/ITSEC/4.Password/1.Network/hexorbase/savio-code/hexorbase/HexorBase/hexorbase.sh /usr/local/bin/hexorbase
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 

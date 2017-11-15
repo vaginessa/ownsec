@@ -14,18 +14,18 @@ __        ___    _______        _____   ___  _____
 ${normal}"
 
 
-GITREPOROOT=/opt/ITSEC/1.Information-Gathering/16.IDS-IPS_Identification/1.Web-Firewalls/wafw00f/EnableSecurity/wafw00f
+GITREPOROOT=/opt/ITSEC/1.Information-Gathering/14.Web-Firewalls/wafw00f/EnableSecurity/wafw00f
 GITREPOGITFILE=$GITREPOROOT/.git
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/16.IDS-IPS_Identification/1.Web-Firewalls
-DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/16.IDS-IPS_Identification/1.Web-Firewalls
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/14.Web-Firewalls
+DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/14.Web-Firewalls
 DSKTPFL=wafw00f.desktop
 
 if [ ! -d $GITREPOGITFILE ]
 
 then
 
-mkdir -p /opt/ITSEC/1.Information-Gathering/16.IDS-IPS_Identification/1.Web-Firewalls/wafw00f/EnableSecurity
-cd /opt/ITSEC/1.Information-Gathering/16.IDS-IPS_Identification/1.Web-Firewalls/wafw00f/EnableSecurity
+mkdir -p /opt/ITSEC/1.Information-Gathering/14.Web-Firewalls/wafw00f/EnableSecurity
+cd /opt/ITSEC/1.Information-Gathering/14.Web-Firewalls/wafw00f/EnableSecurity
 git clone https://github.com/EnableSecurity/wafw00f.git
 
 else

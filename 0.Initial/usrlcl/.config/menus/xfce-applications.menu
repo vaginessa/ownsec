@@ -269,15 +269,24 @@
                 </And>
             </Include>
         </Menu>
-<Menu>
-    <Name>15.Fuzzer</Name>
-    <Directory>15.Fuzzer.directory</Directory>
-    <Include>
-        <And>
-            <Category>15.Fuzzer</Category>
-        </And>
-    </Include>
-</Menu>
+	<Menu>
+	    <Name>14.Web-Firewalls</Name>
+	    <Directory>14.Web-Firewalls.directory</Directory>
+	    <Include>
+		<And>
+		    <Category>14.Web-Firewalls</Category>
+		</And>
+	    </Include>
+	</Menu>
+	<Menu>
+	    <Name>15.Fuzzer</Name>
+	    <Directory>15.Fuzzer.directory</Directory>
+	    <Include>
+		<And>
+		    <Category>15.Fuzzer</Category>
+		</And>
+	    </Include>
+	</Menu>
         <Menu>
             <Name>16.IDS-IPS_Identification</Name>
             <Directory>16.IDS-IPS_Identification.directory</Directory>
