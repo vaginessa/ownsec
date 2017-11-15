@@ -27,7 +27,8 @@ cd $GITREPOROOT
 #
 
 
-
+sudo apt-get update
+sudo apt-get upgrade
 sudo apt-get install python-compizconfig binutils-mingw-w64 python-pil python-requests
 
 cd $GITREPOROOT 
