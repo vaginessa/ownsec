@@ -1,7 +1,11 @@
 #!/bin/bash
 #
-GITREPOROOT=/opt/ITSEC/3.Exploitation-Tools/6.Maintain-Access/1.OS-Backdoors/ares/sweetsoftware/ares
-GITREPOCLONEDIR=/opt/ITSEC/3.Exploitation-Tools/6.Maintain-Access/1.OS-Backdoors/ares/sweetsoftware
+GITREPOROOT=/opt/ITSEC/3.Exploitation-Tools/6.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/ares/sweetsoftware/ares
+GITREPOCLONEDIR=/opt/ITSEC/3.Exploitation-Tools/6.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/ares/sweetsoftware
+
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor
+DSKTPFLSDEST=/home/$USER/.local/share/applications/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor
+DSKTPFL=ares.desktop
 
 bold=$(tput bold)
 normal=$(tput sgr0)
@@ -109,10 +113,10 @@ cd server
 rm -f server.sh
 echo "#!/bin/bash
 
-cd /opt/ITSEC/3.Exploitation-Tools/6.Maintain-Access/1.OS-Backdoors/ares/sweetsoftware/Ares/server
+cd /opt/ITSEC/3.Exploitation-Tools/6.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/ares/sweetsoftware/Ares/server
 python server.py" >> server.sh
 #
-ln -s /opt/ITSEC/3.Exploitation-Tools/6.Maintain-Access/1.OS-Backdoors/ares/sweetsoftware/Ares/server/server.sh /usr/local/bin/ares_server
+ln -s /opt/ITSEC/3.Exploitation-Tools/6.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/ares/sweetsoftware/Ares/server/server.sh /usr/local/bin/ares_server
 # python server.py #run
 echo "done"
 else
@@ -132,3 +136,5 @@ echo "done"
 else
 echo "aborted Agent build"
 cd $GITREPOROOT 
+
+mkdir -p $DSKTPFLSDEST && cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL

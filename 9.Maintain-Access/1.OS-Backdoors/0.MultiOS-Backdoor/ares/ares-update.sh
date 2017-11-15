@@ -12,15 +12,19 @@ echo "${bold}
           
 ${normal}"
 
-GITREPOROOT=/opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/ares/sweetsoftware/ares
+GITREPOROOT=/opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/ares/sweetsoftware/ares
 GITREPOGITFILE=$GITREPOROOT/.git
+
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor
+DSKTPFLSDEST=/home/$USER/.local/share/applications/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor
+DSKTPFL=ares.desktop
 
 if [ ! -d $GITREPOGITFILE ]
 
 then
 
-mkdir -p /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/ares/sweetsoftware 
-cd /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/ares/sweetsoftware
+mkdir -p /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/ares/sweetsoftware 
+cd /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/ares/sweetsoftware
 git clone https://github.com/sweetsoftware/ares
 
 else
@@ -91,10 +95,10 @@ cd server
 #rm -f server.sh
 #echo "#!/bin/bash
 
-#cd /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/ares/sweetsoftware/Ares/server
+#cd /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/ares/sweetsoftware/Ares/server
 #python server.py" >> server.sh
 #
-#ln -s /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/ares/sweetsoftware/Ares/server/server.sh /usr/local/bin/ares_server
+#ln -s /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/ares/sweetsoftware/Ares/server/server.sh /usr/local/bin/ares_server
 # python server.py #run
 
 
@@ -106,3 +110,4 @@ cd $GITREPOROOT
 
 fi
 
+mkdir -p $DSKTPFLSDEST && cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL

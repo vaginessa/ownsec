@@ -13,12 +13,12 @@ echo "${bold}
                  
 ${normal}"
 
-mkdir -p /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/custom-ssh-backdoor/joridos/custom-ssh-backdoor
+mkdir -p /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/custom-ssh-backdoor/joridos/custom-ssh-backdoor
 
-cd /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/custom-ssh-backdoor/joridos/custom-ssh-backdoor
+cd /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/custom-ssh-backdoor/joridos/custom-ssh-backdoor
 git clone https://github.com/joridos/custom-ssh-backdoor
 
-cd /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/custom-ssh-backdoor/joridos/custom-ssh-backdoor/custom-ssh-backdoor
+cd /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/custom-ssh-backdoor/joridos/custom-ssh-backdoor/custom-ssh-backdoor
 
 git clean -f
 git fetch origin

@@ -3,7 +3,7 @@
 ###############################################################################
 ######################   9.Maintain-Access   ####################
 ###########################################################################
-
+# 1.OS-Backdoors
 cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/l0l
 ./l0l.sh
 cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/owasp-zsc
@@ -18,14 +18,16 @@ cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoo
 #./veil-evasion.sh
 cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/webacoo
 ./webacoo.sh 
+cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/pupy
+./pupy.sh
 
-# 1.OS-Backdoors
 #cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/2.Generate/1.OS-Backdoors/ares
 #./ares.sh
 cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/1.OS-Backdoors/2.Win-Backdoor/dr0p1t-framework
 ./Dr0p1t-Framework.sh
 cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/1.OS-Backdoors/3.Mac-Backdoor/bella
 ./bella.sh
+
 
 # 99.Misc
 cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/99.Misc/exe2hex
