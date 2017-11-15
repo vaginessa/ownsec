@@ -1,8 +1,8 @@
 [Desktop Entry]
-Name=wordlists
+Name=cd-wordlist-dir
 Encoding=UTF-8
 Exec=sh -c "cd /usr/share/wordlists && ls -l;${SHELL:-bash}"
 StartupNotify=false
 Terminal=true
 Type=Application
-Categories=05-05-profile;05-password-attacks;
+Categories=3.Wordlist;

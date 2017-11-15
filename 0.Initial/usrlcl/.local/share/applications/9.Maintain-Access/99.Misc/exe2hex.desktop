@@ -5,4 +5,4 @@ Exec=sh -c "exe2hex;${SHELL:-bash}"
 StartupNotify=false
 Terminal=true
 Type=Application
-Categories=8.Tunnel;
+Categories=99.Misc;
