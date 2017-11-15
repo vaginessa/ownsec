@@ -595,15 +595,37 @@
 
         </Menu>
         <Menu>
-            <Name>2.Generate</Name>
-            <Directory>2.Generate.directory</Directory>
+            <Name>1.OS-Backdoors</Name>
+            <Directory>1.OS-Backdoors.directory</Directory>
             <Include>
                 <And>
-                    <Category>2.Generate</Category>
+                    <Category>1.OS-Backdoors</Category>
+                </And>
+            </Include>
+
+
+        <Menu>
+            <Name>2.Win-Backdoor</Name>
+            <Directory>2.Win-Backdoor.directory</Directory>
+            <Include>
+                <And>
+                    <Category>2.Win-Backdoor</Category>
                 </And>
             </Include>
 
         </Menu>
+        <Menu>
+            <Name>3.Mac-Backdoor</Name>
+            <Directory>3.Mac-Backdoor.directory</Directory>
+            <Include>
+                <And>
+                    <Category>3.Mac-Backdoor</Category>
+                </And>
+            </Include>
+
+        </Menu>
+        </Menu>
+
         <Menu>
             <Name>3.Rootkit</Name>
             <Directory>3.Rootkit.directory</Directory>

@@ -5,4 +5,4 @@ Exec=sh -c "dr0p1t;${SHELL:-bash}"
 StartupNotify=false
 Terminal=true
 Type=Application
-Categories=1.OS-Backdoors;1.Win;
+Categories=2.Win-Backdoor;

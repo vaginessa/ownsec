@@ -13,14 +13,10 @@ echo "${bold}
 ${normal}"
 
 
-
-
 mkdir -p /opt/ITSEC/7.Mitm/bettercap/evilsocket
 cd /opt/ITSEC/7.Mitm/bettercap/evilsocket
 git clone https://github.com/evilsocket/bettercap.git
 
-
-#gem update
 sudo updatedb
 sudo ldconfig
 
@@ -31,14 +27,18 @@ DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
 DSKTPFL=bettercap.desktop
 
 
+echo "${bold}
+gem install bundler            
+${normal}"
+gem install bundler
 
 cd $GITREPOROOT
 
-. ~/.bashrc
-eval "$(rbenv init -)"
-yes "N" | rbenv install 2.4.1
-rbenv rehash
-rbenv shell 2.4.1
+#. ~/.bashrc
+#eval "$(rbenv init -)"
+#yes "N" | rbenv install 2.4.1
+#rbenv rehash
+#rbenv shell 2.4.1
 sudo updatedb
 sudo ldconfig
 
@@ -48,10 +48,7 @@ git reset --hard origin/master
 git pull
 git submodule init
 git submodule update --recursive
-echo "${bold}
-gem install bundler            
-${normal}"
-gem install bundler
+
 echo "${bold}
 bundle update         
 ${normal}"
@@ -69,43 +66,53 @@ echo "${bold}
 gem build bettercap.gemspec          
 ${normal}"
 gem build bettercap.gemspec
-echo "${bold}
-cd to bin dir          
-${normal}"
-cd /opt/ITSEC/7.Mitm/bettercap/evilsocket/bettercap/bin/
 
-#gem install bettercap*.gem
+
+echo "${bold}
+sudo gem install bettercap*.gem        
+${normal}"
+
+sudo gem install bettercap*.gem
+
 #echo "${bold}
 #test3            
 #${normal}"
 #rbenv sudo bettercap
 
 echo "${bold}
-write sh file to run with the desired rbenv ruby            
+cd to bin dir          
 ${normal}"
-echo '#!/bin/bash -i
-
 cd /opt/ITSEC/7.Mitm/bettercap/evilsocket/bettercap/bin/
 
-source ~/.bashrc
-eval "$(rbenv init -)"
-rbenv shell 2.4.1
-./bettercap $*
-' > bettercap.sh
+echo "${bold}
+write sh file to run with the desired rbenv ruby            
+${normal}"
+#echo '#!/bin/bash -i
 
-echo "${bold}
-chmod +x the sh file        
-${normal}"
-chmod +x bettercap.sh
+#cd /opt/ITSEC/7.Mitm/bettercap/evilsocket/bettercap/bin
 
-echo "${bold}
-rm the old usr bin link       
-${normal}"
-sudo rm -f /usr/local/bin/bettercap
-echo "${bold}
-symlink the sh file      
-${normal}"
-sudo ln -s /opt/ITSEC/7.Mitm/bettercap/evilsocket/bettercap/bin/bettercap.sh /usr/local/bin/bettercap
+#source ~/.bashrc
+#eval "$(rbenv init -)"
+#rbenv shell 2.4.1
+#ruby -v
+#./bettercap $*
+#' > bettercap.sh
+
+
+
+#echo "${bold}
+#chmod +x the sh file        
+#${normal}"
+#chmod +x bettercap.sh
+
+#echo "${bold}
+#rm the old usr bin link       
+#${normal}"
+#sudo rm -f /usr/local/bin/bettercap
+#echo "${bold}
+#symlink the sh file      
+#${normal}"
+#sudo ln -s /opt/ITSEC/7.Mitm/bettercap/evilsocket/bettercap/bin/bettercap.sh /usr/local/bin/bettercap
 
 echo "${bold}
 make desktop file dir      

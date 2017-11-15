@@ -47,13 +47,13 @@ sudo ldconfig
 
 cd $GITREPOROOT
 
-. ~/.bashrc
-eval "$(rbenv init -)"
-yes "N" | rbenv install 2.4.1
-rbenv rehash
-rbenv shell 2.4.1
-sudo updatedb
-sudo ldconfig
+#. ~/.bashrc
+#eval "$(rbenv init -)"
+#yes "N" | rbenv install 2.4.1
+#rbenv rehash
+#rbenv shell 2.4.1
+#sudo updatedb
+#sudo ldconfig
 
 git clean -f 
 git fetch origin
@@ -82,10 +82,18 @@ echo "${bold}
 gem build bettercap.gemspec          
 ${normal}"
 gem build bettercap.gemspec
+
 echo "${bold}
-cd to bin dir          
+sudo gem install bettercap*.gem        
 ${normal}"
-cd /opt/ITSEC/7.Mitm/bettercap/evilsocket/bettercap/bin/
+
+sudo gem install bettercap*.gem
+
+
+#echo "${bold}
+#cd to bin dir          
+#${normal}"
+#cd /opt/ITSEC/7.Mitm/bettercap/evilsocket/bettercap/bin/
 
 #gem install bettercap*.gem
 #echo "${bold}
@@ -93,32 +101,32 @@ cd /opt/ITSEC/7.Mitm/bettercap/evilsocket/bettercap/bin/
 #${normal}"
 #rbenv sudo bettercap
 
-echo "${bold}
-write sh file to run with the desired rbenv ruby            
-${normal}"
-echo '#!/bin/bash -i
+#echo "${bold}
+#write sh file to run with the desired rbenv ruby            
+#${normal}"
+#echo '#!/bin/bash -i
 
-cd /opt/ITSEC/7.Mitm/bettercap/evilsocket/bettercap/bin/
+#cd /opt/ITSEC/7.Mitm/bettercap/evilsocket/bettercap/bin/
 
-source ~/.bashrc
-eval "$(rbenv init -)"
-rbenv shell 2.4.1
-./bettercap $*
-' > bettercap.sh
+#source ~/.bashrc
+#eval "$(rbenv init -)"
+#rbenv shell 2.4.1
+#./bettercap $*
+#' > bettercap.sh
 
-echo "${bold}
-chmod +x the sh file        
-${normal}"
-chmod +x bettercap.sh
+#echo "${bold}
+#chmod +x the sh file        
+#${normal}"
+#chmod +x bettercap.sh
 
-echo "${bold}
-rm the old usr bin link       
-${normal}"
-sudo rm -f /usr/local/bin/bettercap
-echo "${bold}
-symlink the sh file      
-${normal}"
-sudo ln -s /opt/ITSEC/7.Mitm/bettercap/evilsocket/bettercap/bin/bettercap.sh /usr/local/bin/bettercap
+#echo "${bold}
+#rm the old usr bin link       
+#${normal}"
+#sudo rm -f /usr/local/bin/bettercap
+#echo "${bold}
+#symlink the sh file      
+#${normal}"
+#sudo ln -s /opt/ITSEC/7.Mitm/bettercap/evilsocket/bettercap/bin/bettercap.sh /usr/local/bin/bettercap
 
 echo "${bold}
 make desktop file dir      

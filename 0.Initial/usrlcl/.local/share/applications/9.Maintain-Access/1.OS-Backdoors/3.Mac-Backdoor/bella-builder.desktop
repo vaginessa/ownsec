@@ -5,4 +5,4 @@ Exec=sh -c "bella-builder;${SHELL:-bash}"
 StartupNotify=false
 Terminal=true
 Type=Application
-Categories=1.OS-Backdoors;3.Mac;
+Categories=3.Mac-Backdoor;

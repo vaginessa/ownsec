@@ -54,6 +54,10 @@ source ~/.bashrc
 ${normal}"
 ./7.RBENV-RUBY.sh
 source ~/.bashrc
+RUBYVERSION=$(lynx --dump https://raw.githubusercontent.com/rapid7/metasploit-framework/master/.ruby-version )
+
+rbenv install $RUBYVERSION
+rbenv rehash
 echo "${bold}
 ./8.Postgres-MSF-DB.sh
 ${normal}"
@@ -92,9 +96,9 @@ node -v
 npm -v
 ruby -v
 rbenv -v
-#rbenv local 2.4.1
+rbenv local $RUBYVERSION
 rbenv local
-#rbenv global 2.4.1
+rbenv global $RUBYVERSION
 rbenv global
 docker -v 
 java -version
