@@ -8,8 +8,6 @@
 #./anonym8.sh
 cd /opt/ITSEC-Install-Scripts/8.Tunnel/dns2tcp
 ./dns2tcp.sh
-cd /opt/ITSEC-Install-Scripts/8.Tunnel/exe2hex
-./exe2hex.sh
 cd /opt/ITSEC-Install-Scripts/8.Tunnel/iodine
 ./iodine.sh
 #cd /opt/ITSEC-Install-Scripts/8.Tunnel/mallory

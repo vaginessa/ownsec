@@ -27,6 +27,10 @@ cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/1.OS-Backdoors/2.Win/dr0p1t-fram
 cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/1.OS-Backdoors/3.Mac/bella
 ./bella.sh
 
+# 99.Misc
+cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/99.Misc/exe2hex
+./exe2hex.sh
+
 
 # ..../3.Rootkit/1.Kernel/1.Linux/
 # clone repos

@@ -614,6 +614,16 @@
             </Include>
 
         </Menu>
+        <Menu>
+            <Name>3.Rootkit</Name>
+            <Directory>99.Misc.directory</Directory>
+            <Include>
+                <And>
+                    <Category>99.Misc</Category>
+                </And>
+            </Include>
+
+        </Menu>
         </Menu>
 
 	<Menu>
