@@ -4,27 +4,27 @@
 ######################   9.Maintain-Access   ####################
 ###########################################################################
 
-cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/2.Generate/l0l
+cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/l0l
 ./l0l.sh
-cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/2.Generate/owasp-zsc
+cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/owasp-zsc
 ./owasp-zsc.sh
-cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/2.Generate/shellnoob
+cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/shellnoob
 ./shellnoob.sh # exec w snoob 
-cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/2.Generate/the-backdoor-factory
+cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/the-backdoor-factory
 ./the-backdoor-factory.sh 
-cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/2.Generate/thefatrat
+cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/thefatrat
 ./thefatrat.sh #appears to work - check again - on 2nd test [ x ] Aapt v0.2-3821160 
-cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/2.Generate/veil-evasion
+cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/veil-evasion
 #./veil-evasion.sh
-cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/2.Generate/webacoo
+cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/webacoo
 ./webacoo.sh 
 
 # 1.OS-Backdoors
 #cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/2.Generate/1.OS-Backdoors/ares
 #./ares.sh
-cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/1.OS-Backdoors/2.Win/dr0p1t-framework
+cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/1.OS-Backdoors/2.Win-Backdoor/dr0p1t-framework
 ./Dr0p1t-Framework.sh
-cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/1.OS-Backdoors/3.Mac/bella
+cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/1.OS-Backdoors/3.Mac-Backdoor/bella
 ./bella.sh
 
 # 99.Misc

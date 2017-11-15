@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=backdoor-factory
+Encoding=UTF-8
+Exec=sh -c "backdoor-factory -h;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=0.MultiOS-Backdoor;
