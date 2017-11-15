@@ -615,7 +615,7 @@
 
         </Menu>
         <Menu>
-            <Name>3.Rootkit</Name>
+            <Name>99.Misc</Name>
             <Directory>99.Misc.directory</Directory>
             <Include>
                 <And>
