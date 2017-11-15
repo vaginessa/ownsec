@@ -64,6 +64,7 @@ xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-v
 xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/main/docker.txt") -r -- sudo apt-get install -y
 
 xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-nmap.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-masscan.txt.txt") -r -- sudo apt-get install -y
 ###xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-xplico.txt") -r -- sudo apt-get install -y
 xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-zmap.txt") -r -- sudo apt-get install -y
 xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-recon-ng.txt") -r -- sudo apt-get install -y

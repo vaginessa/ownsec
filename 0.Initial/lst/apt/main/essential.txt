@@ -2,6 +2,7 @@ rfkill
 iw 
 ethtool 
 wireless-tools 
+shellcheck
 asciidoc 
 asciinema
 apt-transport-https 
