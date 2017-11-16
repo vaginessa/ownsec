@@ -3,6 +3,28 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPO=https://github.com/pentestmonkey/smtp-user-enum.git
+GITREPOROOT=/opt/ITSEC/1.Information-Gathering/7.SMTP/smtp-user-enum/pentestmonkey/smtp-user-enum
+GITCONFDIR=/opt/ITSEC/1.Information-Gathering/7.SMTP/smtp-user-enum/pentestmonkey/smtp-user-enum/.git
+GITCLONEDIR=/opt/ITSEC/1.Information-Gathering/7.SMTP/smtp-user-enum/pentestmonkey
+EXECUTEABLE1=smtp-user-enum.pl
+EXECUTEABLE2=smtp-user-enum
+BINDIR=/usr/local/bin
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/7.SMTP
+DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/7.SMTP
+DSKTPFL=smtp-user-enum.desktop
+GITRESET () {
+	git clean -f
+	git fetch origin
+	git reset --hard origin/master
+	git pull
+}
+GITSBMDLINIT () {
+	git submodule init
+	git submodule update --recursive
+	sudo updatedb && sudo ldconfig
+}
+
 echo "${bold}
  ____  __  __ _____ ____  _   _ ____  ____  _____ _   _ _   _ __  __ 
 / ___||  \/  |_   _|  _ \| | | / ___||  _ \| ____| \ | | | | |  \/  |
@@ -12,50 +34,49 @@ echo "${bold}
         
 ${normal}"
 
-GITREPOROOT=/opt/ITSEC/1.Information-Gathering/7.SMTP/smtp-user-enum/pentestmonkey/smtp-user-enum
-GITREPOGITFILE=$GITREPOROOT/.git
-EXECUTEABLE1=smtp-user-enum.pl
-EXECUTEABLE2=smtp-user-enum
-#
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/7.SMTP
-DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/7.SMTP
-DSKTPFL=smtp-user-enum.desktop
-
-if [ ! -d $GITREPOGITFILE ]
+if [ ! -d $GITCONFDIR ]
 
 then
 
-mkdir -p /opt/ITSEC/1.Information-Gathering/7.SMTP/smtp-user-enum/pentestmonkey
-cd /opt/ITSEC/1.Information-Gathering/7.SMTP/smtp-user-enum/pentestmonkey
-git clone https://github.com/pentestmonkey/smtp-user-enum.git
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone $GITREPO
 
 else
 
-echo "repo exists"
+echo "${bold}REPO EXISTS, skip clone...${normal}"
 
 fi
 
 cd $GITREPOROOT
 
-if git diff-index --quiet HEAD --; then
-    echo "UP TO DATE"
-
-else
-
+if git checkout master &&
+    git fetch origin master &&
+    [ `git rev-list HEAD...origin/master --count` != 0 ] &&
+    git merge origin/master
+then
+    
 cd $GITREPOROOT
-sudo rm -f /usr/local/bin/$EXECUTEABLE2
-sudo updatedb
-sudo ldconfig
-git clean -f
-git fetch origin
-git reset --hard origin/master
-git pull
-git submodule init
-git submodule update --recursive
+
+GITRESET
+
+GITSBMDLINIT
+
 chmod +x $GITREPOROOT/$EXECUTEABLE1
-sudo ln -s $GITREPOROOT/$EXECUTEABLE1 /usr/local/bin/$EXECUTEABLE2
+sudo rm -f $BINDIR/$EXECUTEABLE2
+sudo ln -s $GITREPOROOT/$EXECUTEABLE1 $BINDIR/$EXECUTEABLE2
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 
+echo "${bold}
+UPDATED
+${normal}"
+
+else
+
+echo "${bold}
+UP TO DATE
+${normal}"
+	
 fi

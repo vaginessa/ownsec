@@ -3,6 +3,18 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPO=https://github.com/antirez/hping.git
+GITREPOROOT=/opt/ITSEC/1.Information-Gathering/2.Live-Host/hping3/antirez/hping 
+GITCLONEDIR=/opt/ITSEC/1.Information-Gathering/2.Live-Host/hping3/antirez
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/2.Live-Host
+DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/2.Live-Host
+DSKTPFL=hping3.desktop
+GITSBMDLINIT () {
+	git submodule init
+	git submodule update --recursive
+	sudo updatedb && sudo ldconfig
+}
+
 echo "${bold}
  _   _ ____ ___ _   _  ____ 
 | | | |  _ \_ _| \ | |/ ___|
@@ -12,29 +24,18 @@ echo "${bold}
             
 ${normal}"
 
-mkdir -p /opt/ITSEC/1.Information-Gathering/2.Live-Host/hping3/antirez
-cd /opt/ITSEC/1.Information-Gathering/2.Live-Host/hping3/antirez
-git clone https://github.com/antirez/hping.git
 
-sudo updatedb
-sudo ldconfig
-GITREPOROOT=/opt/ITSEC/1.Information-Gathering/2.Live-Host/hping3/antirez/hping 
-#
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/2.Live-Host
-DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/2.Live-Host
-DSKTPFL=hping3.desktop
+sudo rm -f /usr/sbin/hping
+sudo rm -f /usr/sbin/hping2
 
-sudo rm /usr/sbin/hping
-sudo rm /usr/sbin/hping2
-
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone $GITREPO
 cd $GITREPOROOT
+
 make clean
-git clean -f
-git fetch origin
-git reset --hard origin/master
-git pull
-git submodule init
-git submodule update --recursive
+GITSBMDLINIT
+
 sudo ln -s /usr/include/pcap/bpf.h /usr/include/net/bpf.h
 
 ./configure 

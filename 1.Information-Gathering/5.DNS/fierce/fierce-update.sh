@@ -3,6 +3,25 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPO=https://github.com/mschwager/fierce.git
+GITREPOROOT=/opt/ITSEC/1.Information-Gathering/5.DNS/fierce/mschwager/fierce
+GITCONFDIR=/opt/ITSEC/1.Information-Gathering/5.DNS/fierce/mschwager/fierce/.git
+GITCLONEDIR=/opt/ITSEC/1.Information-Gathering/5.DNS/fierce/mschwager
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/5.DNS
+DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/5.DNS
+DSKTPFL=fierce.desktop
+GITRESET () {
+	git clean -f
+	git fetch origin
+	git reset --hard origin/master
+	git pull
+}
+GITSBMDLINIT () {
+	git submodule init
+	git submodule update --recursive
+	sudo updatedb && sudo ldconfig
+}
+
 echo "${bold}
  _____ ___ _____ ____   ____ _____ 
 |  ___|_ _| ____|  _ \ / ___| ____|
@@ -12,45 +31,49 @@ echo "${bold}
            
 ${normal}"
 
-GITREPOROOT=/opt/ITSEC/1.Information-Gathering/5.DNS/fierce/mschwager/fierce
-GITREPOGITFILE=$GITREPOROOT/.git
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/5.DNS
-DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/5.DNS
-DSKTPFL=fierce.desktop
-
-if [ ! -d $GITREPOGITFILE ]
+if [ ! -d $GITCONFDIR ]
 
 then
 
-mkdir -p /opt/ITSEC/1.Information-Gathering/5.DNS/fierce/mschwager/
-cd /opt/ITSEC/1.Information-Gathering/5.DNS/fierce/mschwager/
-git clone https://github.com/mschwager/fierce.git
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone $GITREPO
 
 else
 
-echo "repo exists"
+echo "${bold}REPO EXISTS, skip clone...${normal}"
 
 fi
 
 cd $GITREPOROOT
 
-if git diff-index --quiet HEAD --; then
-    echo "UP TO DATE"
-
-else
-
+if git checkout master &&
+    git fetch origin master &&
+    [ `git rev-list HEAD...origin/master --count` != 0 ] &&
+    git merge origin/master
+then
+    
 cd $GITREPOROOT
+
 make clean
-git clean -f
-git fetch origin
-git reset --hard origin/master
-git pull
-git submodule init
-git submodule update --recursive
+GITRESET
+
+GITSBMDLINIT
 sudo -H pip3 install -r requirements.txt
 sudo python3 setup.py install
+
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 
+echo "${bold}
+UPDATED
+${normal}"
+
+else
+
+echo "${bold}
+UP TO DATE
+${normal}"
+	
 fi

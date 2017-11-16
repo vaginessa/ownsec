@@ -3,6 +3,22 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPO=https://github.com/fwaeytens/dnsenum.git
+GITREPOROOT=/opt/ITSEC/1.Information-Gathering/5.DNS/dnsenum/fwaeytens/dnsenum
+GITCLONEDIR=/opt/ITSEC/1.Information-Gathering/5.DNS/dnsenum/fwaeytens
+EXECUTEABLE1=dnsenum.sh 
+EXECUTEABLE2=dnsenum
+BINDIR=/usr/local/bin
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/5.DNS
+DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/5.DNS
+DSKTPFL=dnsenum.desktop
+GITSBMDLINIT () {
+	git submodule init
+	git submodule update --recursive
+	sudo updatedb && sudo ldconfig
+}
+
+
 echo "${bold}
  ____  _   _ ____  _____ _   _ _   _ __  __ 
 |  _ \| \ | / ___|| ____| \ | | | | |  \/  |
@@ -12,33 +28,19 @@ echo "${bold}
            
 ${normal}"
 
-
-mkdir -p /opt/ITSEC/1.Information-Gathering/5.DNS/dnsenum/fwaeytens
-cd /opt/ITSEC/1.Information-Gathering/5.DNS/dnsenum/fwaeytens
-git clone https://github.com/fwaeytens/dnsenum.git
-
-sudo rm -f /usr/local/bin/dnsenum
-sudo rm -f /opt/ITSEC/1.Information-Gathering/5.DNS/dnsenum/fwaeytens/dnsenum/dnsenum.sh 
-GITREPOROOT=/opt/ITSEC/1.Information-Gathering/5.DNS/dnsenum/fwaeytens/dnsenum
-
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/5.DNS
-DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/5.DNS
-DSKTPFL=dnsenum.desktop
-
-
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone $GITREPO
 cd $GITREPOROOT
-git clean -f
-git fetch origin
-git reset --hard origin/master
-git pull
-git submodule init
-git submodule update --recursive
+
+GITSBMDLINIT
 
 echo "#!/bin/bash 
 cd /opt/ITSEC/1.Information-Gathering/5.DNS/dnsenum/fwaeytens/dnsenum
-perl dnsenum.pl" > /opt/ITSEC/1.Information-Gathering/5.DNS/dnsenum/fwaeytens/dnsenum/dnsenum.sh
-chmod +x /opt/ITSEC/1.Information-Gathering/5.DNS/dnsenum/fwaeytens/dnsenum/dnsenum.sh
-sudo ln -s /opt/ITSEC/1.Information-Gathering/5.DNS/dnsenum/fwaeytens/dnsenum/dnsenum.sh /usr/local/bin/dnsenum
+perl dnsenum.pl" > $EXECUTEABLE1
+
+chmod +x $EXECUTEABLE1
+sudo ln -s $GITREPOROOT/$EXECUTEABLE1 $BINDIR/$EXECUTEABLE2
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 

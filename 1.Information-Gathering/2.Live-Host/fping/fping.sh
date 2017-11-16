@@ -3,6 +3,19 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPO=https://github.com/schweikert/fping.git
+GITREPOROOT=/opt/ITSEC/1.Information-Gathering/2.Live-Host/fping/schweikert/fping
+GITCLONEDIR=/opt/ITSEC/1.Information-Gathering/2.Live-Host/fping/schweikert
+
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/2.Live-Host
+DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/2.Live-Host
+DSKTPFL=fping.desktop
+GITSBMDLINIT () {
+	git submodule init
+	git submodule update --recursive
+	sudo updatedb && sudo ldconfig
+}
+
 echo "${bold}
  _____ ____ ___ _   _  ____ 
 |  ___|  _ \_ _| \ | |/ ___|
@@ -10,27 +23,17 @@ echo "${bold}
 |  _| |  __/| || |\  | |_| |
 |_|   |_|  |___|_| \_|\____|
          
+INSTALL
 ${normal}"
 
-mkdir -p /opt/ITSEC/1.Information-Gathering/2.Live-Host/fping/schweikert
-cd /opt/ITSEC/1.Information-Gathering/2.Live-Host/fping/schweikert
-git clone https://github.com/schweikert/fping.git
-
-GITREPOROOT=/opt/ITSEC/1.Information-Gathering/2.Live-Host/fping/schweikert/fping
-#
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/2.Live-Host
-DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/2.Live-Host
-DSKTPFL=fping.desktop
-
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone $GITREPO
+cd $GITREPOROOT
 cd $GITREPOROOT
 
 make clean
-git clean -f
-git fetch origin
-git reset --hard origin/master
-git pull
-git submodule init
-git submodule update --recursive
+GITSBMDLINIT
 
 ./autogen.sh
 ./configure

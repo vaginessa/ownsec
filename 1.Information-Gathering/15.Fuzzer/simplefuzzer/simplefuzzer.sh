@@ -3,6 +3,15 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPO=https://github.com/orgcandman/simple-fuzzer.git
+GITREPOROOT=/opt/ITSEC/1.Information-Gathering/15.Fuzzer/simple-fuzzer/orgcandman/simple-fuzzer
+GITCLONEDIR=/opt/ITSEC/1.Information-Gathering/15.Fuzzer/simple-fuzzer/orgcandman
+GITSBMDLINIT () {
+	git submodule init
+	git submodule update --recursive
+	sudo updatedb && sudo ldconfig
+}
+
 echo "${bold}
  ____ ___ __  __ ____  _     _____ _____ _   _ _______________ ____  
 / ___|_ _|  \/  |  _ \| |   | ____|  ___| | | |__  /__  / ____|  _ \ 
@@ -12,18 +21,14 @@ echo "${bold}
              
 ${normal}"
 
-sudo rm -r /opt/ITSEC/1.Information-Gathering/15.Fuzzer/simple-fuzzer/orgcandman
-mkdir -p /opt/ITSEC/1.Information-Gathering/15.Fuzzer/simple-fuzzer/orgcandman
-cd /opt/ITSEC/1.Information-Gathering/15.Fuzzer/simple-fuzzer/orgcandman
-git clone https://github.com/orgcandman/simple-fuzzer.git
-
-GITREPOROOT=/opt/ITSEC/1.Information-Gathering/15.Fuzzer/simple-fuzzer/orgcandman/simple-fuzzer
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone $GITREPO
+cd $GITREPOROOT
 
 cd $GITREPOROOT
-git clean -f 
-git pull
-git submodule init
-git submodule update --recursive
+
+GITSBMDLINIT
 
 ./configure
 make -j 4

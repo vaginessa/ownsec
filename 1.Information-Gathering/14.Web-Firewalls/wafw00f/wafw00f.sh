@@ -1,21 +1,19 @@
 #!/bin/bash
-# needs makefile fix for pip "sudo -H pip install ..."
-
-mkdir -p /opt/ITSEC/1.Information-Gathering/14.Web-Firewalls/wafw00f/EnableSecurity
-cd /opt/ITSEC/1.Information-Gathering/14.Web-Firewalls/wafw00f/EnableSecurity
-git clone https://github.com/EnableSecurity/wafw00f.git
-
-sudo updatedb
-sudo ldconfig
-
-GITREPOROOT=/opt/ITSEC/1.Information-Gathering/14.Web-Firewalls/wafw00f/EnableSecurity/wafw00f
-
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/14.Web-Firewalls
-DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/14.Web-Firewalls
-DSKTPFL=wafw00f.desktop
 
 bold=$(tput bold)
 normal=$(tput sgr0)
+
+GITREPO=https://github.com/EnableSecurity/wafw00f.git
+GITREPOROOT=/opt/ITSEC/1.Information-Gathering/14.Web-Firewalls/wafw00f/EnableSecurity/wafw00f
+GITCLONEDIR=/opt/ITSEC/1.Information-Gathering/14.Web-Firewalls/wafw00f/EnableSecurity
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/14.Web-Firewalls
+DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/14.Web-Firewalls
+DSKTPFL=wafw00f.desktop
+GITSBMDLINIT () {
+	git submodule init
+	git submodule update --recursive
+	sudo updatedb && sudo ldconfig
+}
 
 echo "${bold}
 __        ___    _______        _____   ___  _____ 
@@ -23,18 +21,20 @@ __        ___    _______        _____   ___  _____
  \ \ /\ / / _ \ | |_   \ \ /\ / / | | | | | | |_   
   \ V  V / ___ \|  _|   \ V  V /| |_| | |_| |  _|  
    \_/\_/_/   \_\_|      \_/\_/  \___/ \___/|_|    
-       
+INSTALL
 ${normal}"
 
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone $GITREPO
 cd $GITREPOROOT
-git clean -f
-git fetch origin
-git reset --hard origin/master
-git pull
-git submodule init  
-git submodule update --recursive
+
+GITSBMDLINIT
+
+# needs makefile fix for pip "sudo -H pip install ..."
 sed -i -e 's/pip install/sudo -H pip install/g' Makefile
 make -j 4
 sudo python setup.py install
+
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL

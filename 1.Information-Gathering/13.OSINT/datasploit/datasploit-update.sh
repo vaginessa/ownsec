@@ -1,16 +1,18 @@
+#!/bin/bash
+
 bold=$(tput bold)
 normal=$(tput sgr0)
 
-GITREPO=https://github.com/opsdisk/metagoofil.git
-GITREPOROOT=/opt/ITSEC/1.Information-Gathering/13.OSINT/metagoofil/opsdisk/metagoofil
-GITCONFDIR=/opt/ITSEC/1.Information-Gathering/13.OSINT/metagoofil/opsdisk/metagoofil/.git
-GITCLONEDIR=/opt/ITSEC/1.Information-Gathering/13.OSINT/metagoofil/opsdisk
-EXECUTEABLE1=metagoofil.py
-EXECUTEABLE2=metagoofil
+GITREPO=https://github.com/DataSploit/datasploit.git
+GITREPOROOT=/opt/ITSEC/1.Information-Gathering/13.OSINT/datasploit/DataSploit/datasploit
+GITCONFDIR=/opt/ITSEC/1.Information-Gathering/13.OSINT/datasploit/DataSploit/datasploit/.git
+GITCLONEDIR=/opt/ITSEC/1.Information-Gathering/13.OSINT/datasploit/DataSploit
+EXECUTEABLE1=datasploit.py
+EXECUTEABLE2=datasploit
 BINDIR=/usr/local/bin
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/13.OSINT
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/13.OSINT
-DSKTPFL=metagoofil.desktop
+DSKTPFL=datasploit.desktop
 GITRESET () {
 	git clean -f
 	git fetch origin
@@ -22,14 +24,18 @@ GITSBMDLINIT () {
 	git submodule update --recursive
 	sudo updatedb && sudo ldconfig
 }
+PIPRQRMNTS () {
+	sudo -H pip install -r requirements.txt
+	sudo updatedb && sudo ldconfig
+}
 
 echo "${bold}
- __  __ _____ _____  _    ____  ___   ___  _____ ___ _     
-|  \/  | ____|_   _|/ \  / ___|/ _ \ / _ \|  ___|_ _| |    
-| |\/| |  _|   | | / _ \| |  _| | | | | | | |_   | || |    
-| |  | | |___  | |/ ___ \ |_| | |_| | |_| |  _|  | || |___ 
-|_|  |_|_____| |_/_/   \_\____|\___/ \___/|_|   |___|_____|
-UPDATE
+ ____    _  _____  _    ____  ____  _     ___ ___ _____ 
+|  _ \  / \|_   _|/ \  / ___||  _ \| |   / _ \_ _|_   _|
+| | | |/ _ \ | | / _ \ \___ \| |_) | |  | | | | |  | |  
+| |_| / ___ \| |/ ___ \ ___) |  __/| |__| |_| | |  | |  
+|____/_/   \_\_/_/   \_\____/|_|   |_____\___/___| |_|  
+UPDATE                                             
 ${normal}"
 
 if [ ! -d $GITCONFDIR ]
@@ -56,17 +62,21 @@ then
     
 cd $GITREPOROOT
 
-sudo -H pip2 install google
-
 GITRESET
 
 GITSBMDLINIT
 
+PIPRQRMNTS
+
+mv config_sample.py config.py
+# vim config.py
+
+# python datasploit.py test.com
+
 chmod +x $GITREPOROOT/$EXECUTEABLE1
 sudo rm -f $BINDIR/$EXECUTEABLE2
 sudo ln -s $GITREPOROOT/$EXECUTEABLE1 $BINDIR/$EXECUTEABLE2
-rm -f $DSKTPFLSDEST/$DSKTPFL
-mkdir -p $DSKTPFLSDEST  
+mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 
 echo "${bold}

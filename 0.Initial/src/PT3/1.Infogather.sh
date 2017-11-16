@@ -186,8 +186,9 @@ cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/15.Fuzzer/simplefuzzer
 ./simplefuzzer.sh # call w sfuzz 
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/15.Fuzzer/siparmyknife
 ./siparmyknife.sh 
-cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/15.Fuzzer/dirb
-./dirb.sh
+# dirb repository not available on git anymore??!
+#cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/15.Fuzzer/dirb
+#./dirb.sh
 #
 ###############################################################################
 ######################   16.IDS-IPS_Identification   ####################

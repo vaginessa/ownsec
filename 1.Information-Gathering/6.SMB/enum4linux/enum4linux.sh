@@ -3,6 +3,21 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPO=https://github.com/portcullislabs/enum4linux.git
+GITREPOROOT=/opt/ITSEC/1.Information-Gathering/6.SMB/enum4linux/portcullislabs/enum4linux
+GITCLONEDIR=/opt/ITSEC/1.Information-Gathering/6.SMB/enum4linux/portcullislabs
+EXECUTEABLE1=enum4linux.pl 
+EXECUTEABLE2=enum4linux
+BINDIR=/usr/local/bin
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/6.SMB
+DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/6.SMB
+DSKTPFL=enum4linux.desktop
+GITSBMDLINIT () {
+	git submodule init
+	git submodule update --recursive
+	sudo updatedb && sudo ldconfig
+}
+
 echo "${bold}
  _____ _   _ _   _ __  __ _  _   _     ___ _   _ _   ___  __
 | ____| \ | | | | |  \/  | || | | |   |_ _| \ | | | | \ \/ /
@@ -12,34 +27,16 @@ echo "${bold}
    
 ${normal}"
 
-
-mkdir -p /opt/ITSEC/1.Information-Gathering/6.SMB/enum4linux/portcullislabs
-cd /opt/ITSEC/1.Information-Gathering/6.SMB/enum4linux/portcullislabs
-git clone https://github.com/portcullislabs/enum4linux.git
-
-sudo updatedb
-sudo ldconfig
-
-GITREPOROOT=/opt/ITSEC/1.Information-Gathering/6.SMB/enum4linux/portcullislabs/enum4linux
-#
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/6.SMB
-DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/6.SMB
-DSKTPFL=enum4linux.desktop
-
-
-
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone $GITREPO
 cd $GITREPOROOT
-sudo rm -r /usr/local/bin/enum4linux
 
-git clean -f
-git fetch origin
-git reset --hard origin/master
-git pull
+GITSBMDLINIT
 
-chmod +x $GITREPOROOT/enum4linux.pl
-sudo ln -s $GITREPOROOT/enum4linux.pl /usr/local/bin/enum4linux
+chmod +x $EXECUTEABLE1
+sudo ln -s $GITREPOROOT/$EXECUTEABLE1 $BINDIR/$EXECUTEABLE2
 
-sudo updatedb
 mkdir -p $DSKTPFLSDEST 
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 

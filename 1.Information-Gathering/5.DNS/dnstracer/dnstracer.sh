@@ -1,21 +1,22 @@
 #!/bin/bash
 
-mkdir -p /opt/ITSEC/1.Information-Gathering/5.DNS/dnstracer/pcoder
-cd /opt/ITSEC/1.Information-Gathering/5.DNS/dnstracer/pcoder
-git clone https://github.com/pcoder/DNSTracer.git
+bold=$(tput bold)
+normal=$(tput sgr0)
 
-sudo updatedb
-sudo ldconfig
-
+GITREPO=https://github.com/pcoder/DNSTracer.git
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/5.DNS/dnstracer/pcoder/DNSTracer
-
+GITCLONEDIR=/opt/ITSEC/1.Information-Gathering/5.DNS/dnstracer/pcoder
+EXECUTEABLE1=mypydig.py
+EXECUTEABLE2=dnstracer
+BINDIR=/usr/local/bin
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/5.DNS
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/5.DNS
 DSKTPFL=dnstracer.desktop
-
-
-bold=$(tput bold)
-normal=$(tput sgr0)
+GITSBMDLINIT () {
+	git submodule init
+	git submodule update --recursive
+	sudo updatedb && sudo ldconfig
+}
 
 echo "${bold}
  ____  _   _ ____ _____ ____      _    ____ _____ ____  
@@ -26,21 +27,16 @@ echo "${bold}
             
 ${normal}"
 
-
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone $GITREPO
 cd $GITREPOROOT
-git clean -f
-git fetch origin
-git reset --hard origin/master
-git pull
-git submodule init
-git submodule update --recursive
 
-sudo rm -f /usr/local/bin/dnstracer
+GITSBMDLINIT
 
-chmod +x /opt/ITSEC/1.Information-Gathering/5.DNS/dnstracer/pcoder/DNSTracer/mypydig.py
-sudo ln -s //opt/ITSEC/1.Information-Gathering/5.DNS/dnstracer/pcoder/DNSTracer/mypydig.py /usr/local/bin/dnstracer
+chmod +x $EXECUTEABLE1
+sudo rm -f $BINDIR/$EXECUTEABLE2
+sudo ln -s $GITREPOROOT/$EXECUTEABLE1 $BINDIR/$EXECUTEABLE2
 
-sudo updatedb
-sudo locate /usr/local/bin | grep dnstracer
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL

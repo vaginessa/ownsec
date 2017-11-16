@@ -3,6 +3,21 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPO=https://github.com/BlackArch/0trace.git
+GITREPOROOT=/opt/ITSEC/1.Information-Gathering/3.Route-Analysis/0trace/BlackArch/0trace
+GITCLONEDIR=/opt/ITSEC/1.Information-Gathering/3.Route-Analysis/0trace/BlackArch
+EXECUTEABLE1=0trace.py
+EXECUTEABLE2=0trace
+BINDIR=/usr/local/bin
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/3.Route-Analysis
+DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/3.Route-Analysis
+DSKTPFL=0trace.desktop
+GITSBMDLINIT () {
+	git submodule init
+	git submodule update --recursive
+	sudo updatedb && sudo ldconfig
+}
+
 echo "${bold}
   ___ _____ ____      _    ____ _____ 
  / _ \_   _|  _ \    / \  / ___| ____|
@@ -12,31 +27,18 @@ echo "${bold}
              
 ${normal}"
 
-mkdir -p /opt/ITSEC/1.Information-Gathering/3.Route-Analysis/0trace/BlackArch
-cd /opt/ITSEC/1.Information-Gathering/3.Route-Analysis/0trace/BlackArch
-git clone https://github.com/BlackArch/0trace.git
-
-sudo rm -f  /usr/local/bin/0trace
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone $GITREPO
+cd $GITREPOROOT
 
 sudo -H pip2 install pydnet
 sudo -H pip2 install dpkt
 
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/3.Route-Analysis
-DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/3.Route-Analysis
-DSKTPFL=0trace.desktop
+GITSBMDLINIT
 
-cd /opt/ITSEC/1.Information-Gathering/3.Route-Analysis/0trace/BlackArch/0trace
-git clean -f
-git fetch origin
-git reset --hard origin/master
-git pull
-git submodule init
-git submodule update --recursive
-
-chmod +x /opt/ITSEC/1.Information-Gathering/3.Route-Analysis/0trace/BlackArch/0trace/0trace.py
-sudo ln -s /opt/ITSEC/1.Information-Gathering/3.Route-Analysis/0trace/BlackArch/0trace/0trace.py /usr/local/bin/0trace
-
-sudo updatedb
+chmod +x $EXECUTEABLE1
+sudo ln -s $GITREPOROOT/$EXECUTEABLE1 $BINDIR/$EXECUTEABLE2
 mkdir -p $DSKTPFLSDEST  
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 

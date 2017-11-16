@@ -3,6 +3,27 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPO=https://bitbucket.org/LaNMaSteR53/recon-ng.git
+GITREPOROOT=/opt/ITSEC/1.Information-Gathering/2.Live-Host/recon-ng/LaNMaSteR53/recon-ng
+GITCLONEDIR=/opt/ITSEC/1.Information-Gathering/2.Live-Host/recon-ng/LaNMaSteR53
+EXECUTEABLE1=recon-ng
+EXECUTEABLE2=recon-ng
+EXECUTEABLE3=recon-cli
+EXECUTEABLE4=recon-cli
+EXECUTEABLE5=recon-rpc
+EXECUTEABLE6=recon-rpc
+EXECUTEABLE7=recon-web
+EXECUTEABLE8=recon-web
+BINDIR=/usr/local/bin
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/2.Live-Host
+DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/2.Live-Host
+DSKTPFL=recon-ng.desktop
+GITSBMDLINIT () {
+	git submodule init
+	git submodule update --recursive
+	sudo updatedb && sudo ldconfig
+}
+
 echo "${bold}
  ____  _____ ____ ___  _   _       _   _  ____ 
 |  _ \| ____/ ___/ _ \| \ | |     | \ | |/ ___|
@@ -12,51 +33,29 @@ echo "${bold}
             
 ${normal}"
 
-sudo updatedb
-sudo ldconfig
 
-mkdir -p /opt/ITSEC/1.Information-Gathering/2.Live-Host/recon-ng/LaNMaSteR53
-cd /opt/ITSEC/1.Information-Gathering/2.Live-Host/recon-ng/LaNMaSteR53
-git clone https://bitbucket.org/LaNMaSteR53/recon-ng.git
-
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/2.Live-Host
-DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/2.Live-Host
-DSKTPFL=recon-ng.desktop
-
-GITREPOROOT=/opt/ITSEC/1.Information-Gathering/2.Live-Host/recon-ng/LaNMaSteR53/recon-ng
-
-EXECUTEABLE1=recon-ng
-EXECUTEABLE2=recon-ng
-EXECUTEABLE3=recon-cli
-EXECUTEABLE4=recon-cli
-EXECUTEABLE5=recon-rpc
-EXECUTEABLE6=recon-rpc
-EXECUTEABLE7=recon-web
-EXECUTEABLE8=recon-web
-
-sudo rm -f /usr/local/bin/$EXECUTEABLE2
-sudo rm -f /usr/local/bin/$EXECUTEABLE4
-sudo rm -f /usr/local/bin/$EXECUTEABLE6
-sudo rm -f /usr/local/bin/$EXECUTEABLE8
-
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone $GITREPO
 cd $GITREPOROOT
-git clean -f
-git fetch origin
-git reset --hard origin/master
-git pull
-git submodule init 
-git submodule update --recursive
+
+sudo rm -f $BINDIR/$EXECUTEABLE2
+sudo rm -f $BINDIR/$EXECUTEABLE4
+sudo rm -f $BINDIR/$EXECUTEABLE6
+sudo rm -f $BINDIR/$EXECUTEABLE8
+
+GITSBMDLINIT
 chmod +x $GITREPOROOT/$EXECUTEABLE1
-sudo ln -s $GITREPOROOT/$EXECUTEABLE1 /usr/local/bin/$EXECUTEABLE2
+sudo ln -s $GITREPOROOT/$EXECUTEABLE1 $BINDIR/$EXECUTEABLE2
 
 chmod +x $GITREPOROOT/$EXECUTEABLE3
-sudo ln -s $GITREPOROOT/$EXECUTEABLE3 /usr/local/bin/$EXECUTEABLE4
+sudo ln -s $GITREPOROOT/$EXECUTEABLE3 $BINDIR/$EXECUTEABLE4
 
 chmod +x $GITREPOROOT/$EXECUTEABLE5
-sudo ln -s $GITREPOROOT/$EXECUTEABLE5 /usr/local/bin/$EXECUTEABLE6
+sudo ln -s $GITREPOROOT/$EXECUTEABLE5 $BINDIR/$EXECUTEABLE6
 
 chmod +x $GITREPOROOT/$EXECUTEABLE7
-sudo ln -s $GITREPOROOT/$EXECUTEABLE7 /usr/local/bin/$EXECUTEABLE8
+sudo ln -s $GITREPOROOT/$EXECUTEABLE7 $BINDIR/$EXECUTEABLE8
 #
 mkdir -p $DSKTPFLSDEST 
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL

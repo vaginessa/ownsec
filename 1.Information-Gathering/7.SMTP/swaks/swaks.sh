@@ -3,6 +3,21 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPO=https://github.com/roman-rybalko/swaks.git
+GITREPOROOT=/opt/ITSEC/1.Information-Gathering/7.SMTP/swaks/roman-rybalko/swaks
+GITCLONEDIR=/opt/ITSEC/1.Information-Gathering/7.SMTP/swaks/roman-rybalko
+EXECUTEABLE1=swaks
+EXECUTEABLE2=swaks
+BINDIR=/usr/local/bin
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/7.SMTP
+DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/7.SMTP
+DSKTPFL=swaks.desktop
+GITSBMDLINIT () {
+	git submodule init
+	git submodule update --recursive
+	sudo updatedb && sudo ldconfig
+}
+
 echo "${bold}
  ______        ___    _  ______  
 / ___\ \      / / \  | |/ / ___| 
@@ -10,35 +25,17 @@ echo "${bold}
  ___) |\ V  V / ___ \| . \ ___) |
 |____/  \_/\_/_/   \_\_|\_\____/ 
             
+INSTALL
 ${normal}"
 
-mkdir -p /opt/ITSEC/1.Information-Gathering/7.SMTP/swaks/roman-rybalko
-cd /opt/ITSEC/1.Information-Gathering/7.SMTP/swaks/roman-rybalko
-git clone https://github.com/roman-rybalko/swaks.git
-
-sudo ldconfig
-sudo updatedb
-
-GITREPOROOT=/opt/ITSEC/1.Information-Gathering/7.SMTP/swaks/roman-rybalko/swaks/
-EXECUTEABLE1=swaks
-EXECUTEABLE2=swaks
-#
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/7.SMTP
-DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/7.SMTP
-DSKTPFL=swaks.desktop
-
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone $GITREPO
 cd $GITREPOROOT
-sudo rm -f /usr/local/bin/$EXECUTEABLE2
-sudo updatedb
-sudo ldconfig
-git clean -f
-git fetch origin
-git reset --hard origin/master
-git pull
-git submodule init 
-git submodule update --recursive
+
+GITSBMDLINIT
 
 chmod +x $GITREPOROOT/$EXECUTEABLE1
-sudo ln -s $GITREPOROOT/$EXECUTEABLE1 /usr/local/bin/$EXECUTEABLE2
+sudo ln -s $GITREPOROOT/$EXECUTEABLE1 $BINDIR/$EXECUTEABLE2
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL

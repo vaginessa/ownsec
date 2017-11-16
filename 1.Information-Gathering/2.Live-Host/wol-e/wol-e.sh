@@ -3,6 +3,21 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPO=git://git.kali.org/packages/wol-e.git
+GITREPOROOT=/opt/ITSEC/1.Information-Gathering/2.Live-Host/wol-e/dookie/wol-e
+GITCLONEDIR=/opt/ITSEC/1.Information-Gathering/2.Live-Host/wol-e/dookie
+EXECUTEABLE1=wol-e.py
+EXECUTEABLE2=wol-e
+BINDIR=/usr/local/bin
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/2.Live-Host
+DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/2.Live-Host
+DSKTPFL=wol-e.desktop
+GITSBMDLINIT () {
+	git submodule init
+	git submodule update --recursive
+	sudo updatedb && sudo ldconfig
+}
+
 echo "${bold}
 __        _____  _          _____ 
 \ \      / / _ \| |        | ____|
@@ -10,33 +25,17 @@ __        _____  _          _____
   \ V  V /| |_| | |__|_____| |___ 
    \_/\_/  \___/|_____|    |_____|
             
+INSTALL
 ${normal}"
 
-mkdir -p /opt/ITSEC/1.Information-Gathering/2.Live-Host/wol-e/dookie
-cd /opt/ITSEC/1.Information-Gathering/2.Live-Host/wol-e/dookie
-git clone git://git.kali.org/packages/wol-e.git
-
-sudo ldconfig
-sudo updatedb
-#
-GITREPOROOT=/opt/ITSEC/1.Information-Gathering/2.Live-Host/wol-e/dookie/wol-e
-#
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/2.Live-Host
-DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/2.Live-Host
-DSKTPFL=wol-e.desktop
-
-EXECUTEABLE1=wol-e.py
-EXECUTEABLE2=wol-e
-
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone $GITREPO
 cd $GITREPOROOT
-git clean -f
-git fetch origin
-git reset --hard origin/master
-git pull
-git submodule init
-git submodule update --recursive
 
-sudo ln -s $GITREPOROOT/$EXECUTEABLE1 /usr/local/bin/$EXECUTEABLE2
+GITSBMDLINIT
+
+sudo ln -s $GITREPOROOT/$EXECUTEABLE1 $BINDIR/$EXECUTEABLE2
 mkdir -p $DSKTPFLSDEST 
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 
