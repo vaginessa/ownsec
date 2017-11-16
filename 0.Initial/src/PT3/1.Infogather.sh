@@ -164,7 +164,9 @@ cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/13.OSINT/theharvester
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/13.OSINT/twofi
 ./twofi.sh
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/13.OSINT/urlcrazy
-./urlcrazy 
+./urlcrazy.sh
+cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/13.OSINT/datasploit
+./datasploit.sh
 #
 #
 ###############################################################################
