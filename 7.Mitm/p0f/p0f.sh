@@ -1,9 +1,7 @@
 #!/bin/bash
 
-mkdir -p /opt/ITSEC/7.Mitm/p0f/p0f
-cd /opt/ITSEC/7.Mitm/p0f/p0f
-git clone https://github.com/p0f/p0f.git
-
+bold=$(tput bold)
+normal=$(tput sgr0)
 
 GITREPOROOT=/opt/ITSEC/7.Mitm/p0f/p0f/p0f
 EXECUTEABLE1=p0f
@@ -14,12 +12,6 @@ DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
 DSKTPFL=p0f.desktop
 
 
-sudo updatedb
-sudo ldconfig
-
-bold=$(tput bold)
-normal=$(tput sgr0)
-
 echo "${bold}
  ____   ___  _____ 
 |  _ \ / _ \|  ___|
@@ -28,6 +20,12 @@ echo "${bold}
 |_|    \___/|_|    
                           
 ${normal}"
+
+
+mkdir -p /opt/ITSEC/7.Mitm/p0f/p0f
+cd /opt/ITSEC/7.Mitm/p0f/p0f
+git clone https://github.com/p0f/p0f.git
+
 
 cd $GITREPOROOT
 sudo rm /usr/local/bin/$EXECUTEABLE2

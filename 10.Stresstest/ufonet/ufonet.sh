@@ -3,6 +3,14 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPOROOT=/opt/ITSEC/10.Stresstest/ufonet/epsylon/ufonet
+EXECUTEABLE1=ufonet
+EXECUTEABLE2=ufonet.sh
+
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/10.Stresstest
+DSKTPFLSDEST=/home/$USER/.local/share/applications/10.Stresstest
+DSKTPFL=ufonet.desktop
+
 echo "${bold}
  _   _ _____ ___  _   _ _____ _____ 
 | | | |  ___/ _ \| \ | | ____|_   _|
@@ -16,13 +24,6 @@ mkdir -p /opt/ITSEC/10.Stresstest/ufonet/epsylon
 cd /opt/ITSEC/10.Stresstest/ufonet/epsylon
 git clone https://github.com/epsylon/ufonet
 
-GITREPOROOT=/opt/ITSEC/10.Stresstest/ufonet/epsylon/ufonet
-EXECUTEABLE1=ufonet
-EXECUTEABLE2=ufonet.sh
-
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/10.Stresstest
-DSKTPFLSDEST=/home/$USER/.local/share/applications/10.Stresstest
-DSKTPFL=ufonet.desktop
 
 cd $GITREPOROOT
 sudo rm  /usr/local/bin/$EXECUTEABLE1

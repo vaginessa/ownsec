@@ -7,6 +7,17 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+DOWNLOADDIR=/opt/ITSEC/10.Stresstest/udp-flooder
+BINROOT=/opt/ITSEC/10.Stresstest/udp-flooder/udpflood
+#EXECUTEABLE1=pig.py
+#EXECUTEABLE2=pig
+EXECUTEABLE1=udpflood
+EXECUTEABLE2=udpflood
+
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/10.Stresstest
+DSKTPFLSDEST=/home/$USER/.local/share/applications/10.Stresstest
+DSKTPFL=udpflood.desktop
+
 echo "${bold}
  _   _ ____  ____  _____ _     ___   ___  ____  _____ ____  
 | | | |  _ \|  _ \|  ___| |   / _ \ / _ \|  _ \| ____|  _ \ 
@@ -18,16 +29,6 @@ ${normal}"
 
 mkdir -p /opt/ITSEC/10.Stresstest/udp-flooder
 
-DOWNLOADDIR=/opt/ITSEC/10.Stresstest/udp-flooder
-BINROOT=/opt/ITSEC/10.Stresstest/udp-flooder/udpflood
-#EXECUTEABLE1=pig.py
-#EXECUTEABLE2=pig
-EXECUTEABLE1=udpflood
-EXECUTEABLE2=udpflood
-
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/10.Stresstest
-DSKTPFLSDEST=/home/$USER/.local/share/applications/10.Stresstest
-DSKTPFL=udpflood.desktop
 
 cd $DOWNLOADDIR
 sudo rm /usr/local/bin/$EXECUTEABLE2

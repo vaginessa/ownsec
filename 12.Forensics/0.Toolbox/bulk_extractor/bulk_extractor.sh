@@ -3,6 +3,13 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+
+GITREPOROOT=/opt/ITSEC/8.Forensics/0.Toolbox/bulk_extractor/simsong/bulk_extractor
+
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications
+DSKTPFLSDEST=/home/$USER/.local/share/applications
+DSKTPFL=bulk-extractor.desktop
+
 echo "${bold}
  ____  _     _  _________  _______ ____   ____ _____ ____  
 | __ )| |   | |/ / ____\ \/ /_   _|  _ \ / ___|_   _|  _ \ 
@@ -12,11 +19,6 @@ echo "${bold}
       
 ${normal}"
 
-GITREPOROOT=/opt/ITSEC/8.Forensics/0.Toolbox/bulk_extractor/simsong/bulk_extractor
-#
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications
-DSKTPFLSDEST=/home/$USER/.local/share/applications
-DSKTPFL=bulk-extractor.desktop
 
 cd $GITREPOROOT
 make clean

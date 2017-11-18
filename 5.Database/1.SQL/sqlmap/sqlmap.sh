@@ -2,7 +2,21 @@
 
 bold=$(tput bold)
 normal=$(tput sgr0)
-
+	
+GITREPOROOT=/opt/ITSEC/5.Database/1.SQL/sqlmap/sqlmapproject/sqlmap
+EXECUTEABLE1=sqlmap.sh
+EXECUTEABLE2=sqlmap
+EXECUTEABLE3=sqlmapapi.sh
+EXECUTEABLE4=sqlmapapi
+BINDIR=/usr/local/bin
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/5.Database/1.SQL
+DSKTPFLSDEST=/home/$USER/.local/share/applications/5.Database/1.SQL
+DSKTPFL=sqlmap.desktop
+GITSBMDLINIT () {
+	git submodule init
+	git submodule update --recursive
+	sudo updatedb && sudo ldconfig
+}
 echo "${bold}
  ____   ___  _     __  __    _    ____  
 / ___| / _ \| |   |  \/  |  / \  |  _ \ 
@@ -10,46 +24,36 @@ echo "${bold}
  ___) | |_| | |___| |  | |/ ___ \|  __/ 
 |____/ \__\_\_____|_|  |_/_/   \_\_|    
               
+INSTALL
 ${normal}"
 
-mkdir -p /opt/ITSEC/5.Database/1.SQL/sqlmap/sqlmapproject
-cd /opt/ITSEC/5.Database/1.SQL/sqlmap/sqlmapproject
-git clone https://github.com/sqlmapproject/sqlmap.git
-
-sudo rm /usr/local/bin/sqlmapapi
-sudo rm /usr/local/bin/sqlmap
-#	
-GITREPOROOT=/opt/ITSEC/5.Database/1.SQL/sqlmap/sqlmapproject/sqlmap
-
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/5.Database/1.SQL
-DSKTPFLSDEST=/home/$USER/.local/share/applications/5.Database/1.SQL
-DSKTPFL=sqlmap.desktop
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone $GITREPO
 
 cd $GITREPOROOT
-git clean -f
-git fetch origin
-git reset --hard origin/master
-git pull
-git submodule init 
-git submodule update --recursive
+GITSBMDLINIT
 
 echo '#!/bin/bash
 
 cd /opt/ITSEC/5.Database/1.SQL/sqlmap/sqlmapproject/sqlmap
 
-python sqlmap.py "$@"' > sqlmap.sh
+python sqlmap.py "$@"' > $EXECUTEABLE1
 
-chmod +x sqlmap.sh
+chmod +x $EXECUTEABLE1
 
 echo '#!/bin/bash
 
 cd /opt/ITSEC/5.Database/1.SQL/sqlmap/sqlmapproject/sqlmap
 
-python sqlmapapi.py "$@"' > sqlmapapi.sh
+python sqlmapapi.py "$@"' > $EXECUTEABLE3
 
-chmod +x sqlmapapi.sh
+chmod +x $EXECUTEABLE3
 
-sudo ln -s /opt/ITSEC/5.Database/1.SQL/sqlmap/sqlmapproject/sqlmap/sqlmap.sh /usr/local/bin/sqlmap
-sudo ln -s /opt/ITSEC/5.Database/1.SQL/sqlmap/sqlmapproject/sqlmap/sqlmapapi.sh /usr/local/bin/sqlmapapi
+sudo rm -f $BINDIR/$EXECUTEABLE2
+sudo rm -f $BINDIR/$EXECUTEABLE4
+
+sudo ln -s $GITREPOROOT/$EXECUTEABLE1 $BINDIR/$EXECUTEABLE2
+sudo ln -s $GITREPOROOT/$EXECUTEABLE3 $BINDIR/$EXECUTEABLE4
 mkdir -p $DSKTPFLSDEST 
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL

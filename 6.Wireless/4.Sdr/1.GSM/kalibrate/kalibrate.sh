@@ -1,17 +1,31 @@
 #!/bin/bash
-mkdir -p /opt/ITSEC-Install-Scripts/6.Wireless/4.Sdr/1.GSM/kalibrate-rtl/steve-m
-cd /opt/ITSEC-Install-Scripts/6.Wireless/4.Sdr/1.GSM/kalibrate-rtl/steve-m
-git clone https://github.com/steve-m/kalibrate-rtl
 
-GITREPOGITFILE=$GITREPOROOT/.git
+GITREPO=https://github.com/steve-m/kalibrate-rtl
+GITREPOROOT=/opt/ITSEC-Install-Scripts/6.Wireless/4.Sdr/1.GSM/kalibrate-rtl/steve-m/kalibrate-rtl
+GITCLONEDIR=/opt/ITSEC-Install-Scripts/6.Wireless/4.Sdr/1.GSM/kalibrate-rtl/steve-m
+GITSBMDLINIT () {
+	git submodule init
+	git submodule update --recursive
+	sudo updatedb && sudo ldconfig
+}
 
-cd /opt/ITSEC/6.Wireless/4.Sdr/1.GSM/kalibrate-rtl/steve-m/kalibrate-rtl
+echo "${bold}
+ _  __    _    _     ___ ____  ____      _  _____ _____ 
+| |/ /   / \  | |   |_ _| __ )|  _ \    / \|_   _| ____|
+| ' /   / _ \ | |    | ||  _ \| |_) |  / _ \ | | |  _|  
+| . \  / ___ \| |___ | || |_) |  _ <  / ___ \| | | |___ 
+|_|\_\/_/   \_\_____|___|____/|_| \_\/_/   \_\_| |_____|
+                                                                                  
+INSTALL
+${normal}"
+
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone $GITREPO
+cd $GITREPOROOT
 make clean
-git clean -f 
-git fetch origin
-git reset --hard origin/master
-git pull
+GITSBMDLINIT
 ./bootstrap
 ./configure
-make -j 2
+make -j 4
 sudo make install

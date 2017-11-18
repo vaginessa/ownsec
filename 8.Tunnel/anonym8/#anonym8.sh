@@ -3,6 +3,8 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPOROOT=/opt/ITSEC/8.Tunnel/anonym8/HiroshiManRise/anonym8
+
 echo "${bold}
     _    _   _  ___  _   ___   ____  __  ___  
    / \  | \ | |/ _ \| \ | \ \ / /  \/  |( _ ) 
@@ -18,8 +20,6 @@ git clone https://github.com/HiroshiManRise/anonym8
 
 sudo updatedb
 sudo ldconfig
-GITREPOROOT=/opt/ITSEC/8.Tunnel/anonym8/HiroshiManRise/anonym8
-
 
 cd $GITREPOROOT
 git clean -f

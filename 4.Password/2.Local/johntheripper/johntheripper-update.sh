@@ -4,6 +4,29 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITBRANCH=bleeding-jumbo
+GITREPO=https://github.com/magnumripper/JohnTheRipper.git
+GITREPOROOT=/opt/ITSEC/4.Password/2.Local/johntheripper/magnumripper/JohnTheRipper
+GITCONFDIR=/opt/ITSEC/4.Password/2.Local/johntheripper/magnumripper/JohnTheRipper/.git
+GITCLONEDIR=/opt/ITSEC/4.Password/2.Local/johntheripper/magnumripper
+GITREPOBINDIR=/opt/ITSEC/4.Password/2.Local/johntheripper/magnumripper/JohnTheRipper/run
+EXECUTEABLE1=john.sh
+EXECUTEABLE2=john
+BINDIR=/usr/local/bin
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/2.Local
+DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/2.Local
+DSKTPFL=john.desktop
+GITRESET () {
+	git clean -f
+	git fetch origin
+	git reset --hard origin/$GITBRANCH
+	git pull
+}
+GITSBMDLINIT () {
+	git submodule init
+	git submodule update --recursive
+	sudo updatedb && sudo ldconfig
+}
 echo "${bold}
      _  ___  _   _ _   _ 
     | |/ _ \| | | | \ | |
@@ -11,55 +34,43 @@ echo "${bold}
 | |_| | |_| |  _  | |\  |
  \___/ \___/|_| |_|_| \_|
              
+UPDATE
 ${normal}"
 
-GITREPOROOT=/opt/ITSEC/4.Password/2.Local/johntheripper/magnumripper/JohnTheRipper
-GITREPOGITFILE=$GITREPOROOT/.git
-binarydir=/opt/ITSEC/4.Password/2.Local/johntheripper/magnumripper/JohnTheRipper/run
-mainexec=john
-exec2=john.sh
-
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/2.Local
-DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/2.Local
-DSKTPFL=john.desktop
-
-if [ ! -d $GITREPOGITFILE ]
+if [ ! -d $GITCONFDIR ]
 
 then
 
-
-mkdir -p /opt/ITSEC/4.Password/2.Local/johntheripper/magnumripper
-cd /opt/ITSEC/4.Password/2.Local/johntheripper/magnumripper
-git clone https://github.com/magnumripper/JohnTheRipper.git
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone $GITREPO
 
 else
 
-echo "repo exists"
+echo "${bold}REPO EXISTS, skip clone...${normal}"
 
 fi
 
 cd $GITREPOROOT
 
-if git diff-index --quiet HEAD --; then
-    echo "UP TO DATE"
-
-else
-
+if git checkout $GITBRANCH &&
+    git fetch origin $GITBRANCH &&
+    [ `git rev-list HEAD...origin/$GITBRANCH --count` != 0 ] &&
+    git merge origin/$GITBRANCH
+then
+    
 cd $GITREPOROOT
 cd src
 sudo make uninstall
 make clean
 cd $GITREPOROOT
-git clean -f 
-git fetch origin
-git reset --hard origin/bleeding-jumbo
-git pull
-git submodule init
-git submodule update --recursive
+GITRESET
+GITSBMDLINIT
 cd src
-#
+
 git clone --recursive https://github.com/teeshop/rexgen.git
 cd rexgen
+GITSBMDLINIT
 sudo ./install.sh
 cd $GITREPOROOT
 cd src
@@ -71,11 +82,22 @@ echo '#!/bin/bash
 
 cd /opt/ITSEC/4.Password/2.Local/johntheripper/magnumripper/JohnTheRipper/run
 
-./john "$@"' > $binarydir/$exec2
-chmod +x $binarydir/$exec2
-sudo ln -s $binarydir/$exec2 /usr/local/bin/$mainexec
-rm -f $DSKTPFLSDEST/$DSKTPFL
+./john "$@"' > $GITREPOBINDIR/$EXECUTEABLE1
+chmod +x $GITREPOBINDIR/$EXECUTEABLE1
+sudo rm -f $BINDIR/$EXECUTEABLE2
+sudo ln -s $GITREPOBINDIR/$EXECUTEABLE1 $BINDIR/$EXECUTEABLE2
+
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 
+echo "${bold}
+UPDATED
+${normal}"
+
+else
+
+echo "${bold}
+UP TO DATE
+${normal}"
+	
 fi

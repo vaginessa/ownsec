@@ -3,6 +3,15 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPOROOT=/opt/ITSEC/7.Mitm/responder/SpiderLabs/Responder
+EXECUTEABLE1=Responder.py
+
+EXECUTEABLE2=responder
+#
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
+DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
+DSKTPFL=responder.desktop
+
 echo "${bold}
  ____  _____ ____  ____   ___  _   _ ____  _____ ____  
 |  _ \| ____/ ___||  _ \ / _ \| \ | |  _ \| ____|  _ \ 
@@ -17,16 +26,6 @@ mkdir -p /opt/ITSEC/7.Mitm/responder/SpiderLabs
 cd /opt/ITSEC/7.Mitm/responder/SpiderLabs
 git clone https://github.com/SpiderLabs/Responder.git
 
-
-
-GITREPOROOT=/opt/ITSEC/7.Mitm/responder/SpiderLabs/Responder
-EXECUTEABLE1=Responder.py
-
-EXECUTEABLE2=responder
-#
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
-DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
-DSKTPFL=responder.desktop
 
 
 cd $GITREPOROOT

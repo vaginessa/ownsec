@@ -3,6 +3,28 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPO=https://github.com/DanMcInerney/wifijammer.git
+GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/3.Jammer/wifijammer/DanMcInerney/wifijammer
+GITCONFDIR=/opt/ITSEC/6.Wireless/1.Wifi/3.Jammer/wifijammer/DanMcInerney/wifijammer/.git
+GITCLONEDIR=/opt/ITSEC/6.Wireless/1.Wifi/3.Jammer/wifijammer/DanMcInerney
+EXECUTEABLE1=wifijammer.py
+EXECUTEABLE2=wifijammer
+BINDIR=/usr/local/bin
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/6.Wireless/1.Wifi/3.Jammer
+DSKTPFLSDEST=/home/$USER/.local/share/applications/6.Wireless/1.Wifi/3.Jammer
+DSKTPFL=wifijammer.desktop
+GITRESET () {
+	git clean -f
+	git fetch origin
+	git reset --hard origin/master
+	git pull
+}
+GITSBMDLINIT () {
+	git submodule init
+	git submodule update --recursive
+	sudo updatedb && sudo ldconfig
+}
+
 echo "${bold}
 __        _____ _____ ___    _   _    __  __ __  __ _____ ____  
 \ \      / /_ _|  ___|_ _|  | | / \  |  \/  |  \/  | ____|  _ \ 
@@ -10,54 +32,37 @@ __        _____ _____ ___    _   _    __  __ __  __ _____ ____
   \ V  V /  | ||  _|  | | |_| / ___ \| |  | | |  | | |___|  _ < 
    \_/\_/  |___|_|   |___\___/_/   \_\_|  |_|_|  |_|_____|_| \_\
             
+UPDATE
 ${normal}"
-
-
-GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/3.Jammer/wifijammer/DanMcInerney/wifijammer
-GITREPOGITFILE=$GITREPOROOT/.git
-EXECUTEABLE1=wifijammer.py
-EXECUTEABLE2=wifijammer
-#
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/6.Wireless/1.Wifi/3.Jammer
-DSKTPFLSDEST=/home/$USER/.local/share/applications/6.Wireless/1.Wifi/3.Jammer
-DSKTPFL=wifijammer.desktop
-
-if [ ! -d $GITREPOGITFILE ]
+if [ ! -d $GITCONFDIR ]
 
 then
 
-
-mkdir -p /opt/ITSEC/6.Wireless/1.Wifi/3.Jammer/wifijammer/DanMcInerney
-cd /opt/ITSEC/6.Wireless/1.Wifi/3.Jammer/wifijammer/DanMcInerney
-git clone https://github.com/DanMcInerney/wifijammer.git
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone $GITREPO
 
 else
 
-echo "repo exists"
+echo "${bold}REPO EXISTS, skip clone...${normal}"
 
 fi
 
 cd $GITREPOROOT
 
-if git diff-index --quiet HEAD --; then
-    echo "UP TO DATE"
-
-else
-
+if git checkout master &&
+    git fetch origin master &&
+    [ `git rev-list HEAD...origin/master --count` != 0 ] &&
+    git merge origin/master
+then
+    
 cd $GITREPOROOT
-
-sudo rm -f /usr/local/bin/$EXECUTEABLE2
-
-git clean -f
-git fetch origin
-git reset --hard origin/master
-git pull
-git submodule init
-git submodule update --recursive
+GITRESET
+GITSBMDLINIT
 
 chmod +x $GITREPOROOT/$EXECUTEABLE1
-sudo ln -s $GITREPOROOT/$EXECUTEABLE1 /usr/local/bin/$EXECUTEABLE2
-rm -f $DSKTPFLSDEST/$DSKTPFL
+sudo rm -f $BINDIR/$EXECUTEABLE2
+sudo ln -s $GITREPOROOT/$EXECUTEABLE1 $BINDIR/$EXECUTEABLE2
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 

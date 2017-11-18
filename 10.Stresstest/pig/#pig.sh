@@ -4,6 +4,11 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPOROOT=/opt/ITSEC/10.Stresstest/pig/rafael-santiago/pig
+#EXECUTEABLE1=pig.py
+#EXECUTEABLE2=dhcpPIG
+
+
 echo "${bold}
  ____ ___ ____ 
 |  _ \_ _/ ___|
@@ -17,9 +22,6 @@ mkdir -p /opt/ITSEC/10.Stresstest/pig/rafael-santiago
 cd /opt/ITSEC/10.Stresstest/pig/rafael-santiago
 git clone https://github.com/rafael-santiago/pig
 
-GITREPOROOT=/opt/ITSEC/10.Stresstest/pig/rafael-santiago/pig
-#EXECUTEABLE1=pig.py
-#EXECUTEABLE2=dhcpPIG
 
 cd $GITREPOROOT
 #sudo rm  /usr/local/bin/$EXECUTEABLE2

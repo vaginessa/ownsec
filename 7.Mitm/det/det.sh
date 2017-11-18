@@ -3,6 +3,16 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+
+GITREPOROOT=/opt/ITSEC/7.Mitm/det/sensepost/DET
+EXECUTEABLE1=det.py
+EXECUTEABLE2=det
+EXECUTEABLE3=det.sh
+#
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
+DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
+DSKTPFL=det.desktop
+
 echo "${bold}
  ____  _____ _____ 
 |  _ \| ____|_   _|
@@ -16,15 +26,6 @@ ${normal}"
 mkdir -p /opt/ITSEC/7.Mitm/det/sensepost
 cd /opt/ITSEC/7.Mitm/det/sensepost
 git clone https://github.com/sensepost/DET.git
-
-GITREPOROOT=/opt/ITSEC/7.Mitm/det/sensepost/DET
-EXECUTEABLE1=det.py
-EXECUTEABLE2=det
-EXECUTEABLE3=det.sh
-#
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
-DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
-DSKTPFL=det.desktop
 
 
 sudo ldconfig

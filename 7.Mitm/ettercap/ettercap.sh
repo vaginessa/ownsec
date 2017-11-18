@@ -4,6 +4,12 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPOROOT=/opt/ITSEC/7.Mitm/ettercap/Ettercap/ettercap
+#
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
+DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
+DSKTPFL=ettercap.desktop
+
 echo "${bold}
  _____ _____ _____ _____ ____   ____    _    ____  
 | ____|_   _|_   _| ____|  _ \ / ___|  / \  |  _ \ 
@@ -18,11 +24,6 @@ mkdir -p /opt/ITSEC/7.Mitm/ettercap/Ettercap
 cd /opt/ITSEC/7.Mitm/ettercap/Ettercap
 git clone https://github.com/Ettercap/ettercap.git
 
-GITREPOROOT=/opt/ITSEC/7.Mitm/ettercap/Ettercap/ettercap
-#
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
-DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
-DSKTPFL=ettercap.desktop
 
 sudo updatedb
 sudo ldconfig

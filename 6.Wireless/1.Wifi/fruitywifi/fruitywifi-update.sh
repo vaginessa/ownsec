@@ -2,9 +2,30 @@
 
 # INSTALL LAST
 
-
 bold=$(tput bold)
 normal=$(tput sgr0)
+
+GITREPO=https://github.com/xtr4nge/FruityWifi.git
+GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/fruitywifi/xtr4nge/FruityWifi
+GITCONFDIR=/opt/ITSEC/6.Wireless/1.Wifi/fruitywifi/xtr4nge/FruityWifi/.git
+GITCLONEDIR=/opt/ITSEC/6.Wireless/1.Wifi/fruitywifi/xtr4nge
+EXECUTEABLE1=fruitywifi.sh
+EXECUTEABLE2=fruitywifi
+BINDIR=/usr/local/bin
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/6.Wireless/1.Wifi
+DSKTPFLSDEST=/home/$USER/.local/share/applications/6.Wireless/1.Wifi
+DSKTPFL=fruity-wifi.desktop
+GITRESET () {
+	git clean -f
+	git fetch origin
+	git reset --hard origin/master
+	git pull
+}
+GITSBMDLINIT () {
+	git submodule init
+	git submodule update --recursive
+	sudo updatedb && sudo ldconfig
+}
 
 echo "${bold}
  _____ ____  _   _ ___ _______   ____        _____ _____ ___ 
@@ -13,40 +34,33 @@ echo "${bold}
 |  _| |  _ <| |_| || |  | |   | |    \ V  V /  | ||  _|  | | 
 |_|   |_| \_\\___/|___| |_|   |_|     \_/\_/  |___|_|   |___|
         
+UPDATE
 ${normal}"
-
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/6.Wireless/1.Wifi
-DSKTPFLSDEST=/home/$USER/.local/share/applications/6.Wireless/1.Wifi
-DSKTPFL=fruity-wifi.desktop
-
-GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/fruitywifi/xtr4nge/FruityWifi
-GITREPOGITFILE=$GITREPOROOT/.git
-
-if [ ! -d $GITREPOGITFILE ]
+if [ ! -d $GITCONFDIR ]
 
 then
 
-mkdir -p /opt/ITSEC/6.Wireless/1.Wifi/fruitywifi/xtr4nge
-cd /opt/ITSEC/6.Wireless/1.Wifi/fruitywifi/xtr4nge
-git clone https://github.com/xtr4nge/FruityWifi.git
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone $GITREPO
 
 else
 
-echo "repo exists"
+echo "${bold}REPO EXISTS, skip clone...${normal}"
 
 fi
 
 cd $GITREPOROOT
 
-if git diff-index --quiet HEAD --; then
-    echo "UP TO DATE"
-
-else
-cd $GITREPOROOT 
-git clean -f 
-git fetch origin
-git reset --hard origin/master
-git pull
+if git checkout master &&
+    git fetch origin master &&
+    [ `git rev-list HEAD...origin/master --count` != 0 ] &&
+    git merge origin/master
+then
+    
+cd $GITREPOROOT
+GITRESET
+GITSBMDLINIT
 
 sudo systemctl enable dnsmasq.service 
 sed -i 's#/usr/share/fruitywifi/logs#/opt/ITSEC/6.Wireless/1.Wifi/fruitywifi/xtr4nge/FruityWifi/FruityWifi/logs/#g' install-FruityWiFi-PHP7.sh
@@ -83,13 +97,24 @@ echo "!/bin/bash
 cd /opt/ITSEC/6.Wireless/1.Wifi/fruitywifi/xtr4nge/FruityWifi
 sudo nginx_start.sh
 sudo php7.0-fpm_start.sh
-firefox https://localhost:8443 </dev/null &>/dev/null &" > fruitywifi.sh
-chmod +x fruitywifi.sh
-sudo rm -f /usr/local/bin/fruitywify
-sudo ln -s /opt/ITSEC/6.Wireless/1.Wifi/fruitywifi/xtr4nge/FruityWifi/fruitywifi.sh /usr/local/bin/fruitywify
+firefox https://localhost:8443 </dev/null &>/dev/null &" > $EXECUTEABLE1
+chmod +x $GITREPOROOT/$EXECUTEABLE1
+sudo rm -f $BINDIR/$EXECUTEABLE2
+sudo ln -s $GITREPOROOT/$EXECUTEABLE1 $BINDIR/$EXECUTEABLE2
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST 
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 
+echo "${bold}
+UPDATED
+${normal}"
+
+else
+
+echo "${bold}
+UP TO DATE
+${normal}"
+	
 fi
+
 

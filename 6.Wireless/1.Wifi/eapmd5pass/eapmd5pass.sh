@@ -3,6 +3,17 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+REPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/eapmd5pass
+BINROOT=/opt/ITSEC/6.Wireless/1.Wifi/eapmd5pass/eapmd5pass
+VERSION=1.4
+EXECUTEABLE1=eapmd5pass
+EXECUTEABLE2=eapmd5pass
+
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/6.Wireless/1.Wifi
+DSKTPFLSDEST=/home/$USER/.local/share/applications/6.Wireless/1.Wifi
+DSKTPFL=eapmd5pass.desktop
+
+
 echo "${bold}
  _____    _    ____  __  __ ____  ____  ____   _    ____ ____  
 | ____|  / \  |  _ \|  \/  |  _ \| ___||  _ \ / \  / ___/ ___| 
@@ -14,15 +25,6 @@ ${normal}"
 
 mkdir -p /opt/ITSEC/6.Wireless/1.Wifi/eapmd5pass
 
-REPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/eapmd5pass
-BINROOT=/opt/ITSEC/6.Wireless/1.Wifi/eapmd5pass/eapmd5pass
-VERSION=1.4
-EXECUTEABLE1=eapmd5pass
-EXECUTEABLE2=eapmd5pass
-
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/6.Wireless/1.Wifi
-DSKTPFLSDEST=/home/$USER/.local/share/applications/6.Wireless/1.Wifi
-DSKTPFL=eapmd5pass.desktop
 
 sudo rm -f /usr/local/bin/eapmd5pass
 cd $REPOROOT

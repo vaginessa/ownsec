@@ -3,6 +3,12 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPOROOT=/opt/ITSEC/8.Tunnel/iodine/yarrick/iodine
+
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/8.Tunnel
+DSKTPFLSDEST=/home/$USER/.local/share/applications/8.Tunnel
+DSKTPFL=iodine.desktop
+
 echo "${bold}
  ___ ___  ____ ___ _   _ _____ 
 |_ _/ _ \|  _ \_ _| \ | | ____|
@@ -19,11 +25,6 @@ git clone https://github.com/yarrick/iodine.git
 sudo updatedb
 sudo ldconfig
 
-GITREPOROOT=/opt/ITSEC/8.Tunnel/iodine/yarrick/iodine
-
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/8.Tunnel
-DSKTPFLSDEST=/home/$USER/.local/share/applications/8.Tunnel
-DSKTPFL=iodine.desktop
 
 cd $GITREPOROOT
 make clean

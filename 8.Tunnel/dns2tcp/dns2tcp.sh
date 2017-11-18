@@ -3,6 +3,13 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+
+GITREPOROOT=/opt/ITSEC/8.Tunnel/dns2tcp/risent/dns2tcp
+
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/8.Tunnel
+DSKTPFLSDEST=/home/$USER/.local/share/applications/8.Tunnel
+DSKTPFL=dns2tcp.desktop
+
 echo "${bold}
  ____  _   _ ____ ____ _____ ____ ____  
 |  _ \| \ | / ___|___ \_   _/ ___|  _ \ 
@@ -15,13 +22,6 @@ ${normal}"
 mkdir -p /opt/ITSEC/8.Tunnel/dns2tcp/risent
 cd /opt/ITSEC/8.Tunnel/dns2tcp/risent
 git clone https://github.com/risent/dns2tcp.git
-
-GITREPOROOT=/opt/ITSEC/8.Tunnel/dns2tcp/risent/dns2tcp
-
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/8.Tunnel
-DSKTPFLSDEST=/home/$USER/.local/share/applications/8.Tunnel
-DSKTPFL=dns2tcp.desktop
-
 
 cd $GITREPOROOT
 git clean -f

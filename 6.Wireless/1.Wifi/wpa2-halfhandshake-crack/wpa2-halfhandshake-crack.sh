@@ -3,38 +3,48 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPO=https://github.com/dxa4481/WPA2-HalfHandshake-Crack
+GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/wpa2-halfhandshake-crack/dxa4481/WPA2-HalfHandshake-Crack
+GITCLONEDIR=/opt/ITSEC/6.Wireless/1.Wifi/wpa2-halfhandshake-crack/dxa4481
+EXECUTEABLE1=halfHandshake.sh
+EXECUTEABLE2=halfHandshake
+EXECUTEABLE3=halfHandshake.py
+BINDIR=/usr/local/bin
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/6.Wireless/1.Wifi
+DSKTPFLSDEST=/home/$USER/.local/share/applications/6.Wireless/1.Wifi
+DSKTPFL=wpa2-halfhandshake-crack.desktop
+
 echo "${bold}
  _   _ _     _____ _   _ _   _ ____  ____  _   _ _  _______ 
 | | | | |   |  ___| | | | \ | |  _ \/ ___|| | | | |/ / ____|
 | |_| | |   | |_  | |_| |  \| | | | \___ \| |_| | ' /|  _|  
 |  _  | |___|  _| |  _  | |\  | |_| |___) |  _  | . \| |___ 
 |_| |_|_____|_|   |_| |_|_| \_|____/|____/|_| |_|_|\_\_____|
-                                                           
+               
+INSTALL                                            
 ${normal}"
-sudo rm -r /opt/ITSEC/6.Wireless/1.Wifi/wpa2-halfhandshake-crack/dxa4481
-mkdir -p /opt/ITSEC/6.Wireless/1.Wifi/wpa2-halfhandshake-crack/dxa4481
-cd /opt/ITSEC/6.Wireless/1.Wifi/wpa2-halfhandshake-crack/dxa4481
-git clone https://github.com/dxa4481/WPA2-HalfHandshake-Crack
 
-cd /opt/ITSEC/6.Wireless/1.Wifi/wpa2-halfhandshake-crack/dxa4481/WPA2-HalfHandshake-Crack
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone $GITREPO
+
+cd $GITREPOROOT
 sudo python setup.py install
 
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/6.Wireless/1.Wifi
-DSKTPFLSDEST=/home/$USER/.local/share/applications/6.Wireless/1.Wifi
-DSKTPFL=wpa2-halfhandshake-crack.desktop
-mkdir -p $DSKTPFLSDEST 
-cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
-
-rm -f halfHandshake.sh
 echo '#!/bin/bash
 
 cd /opt/ITSEC/6.Wireless/1.Wifi/wpa2-halfhandshake-crack/dxa4481/WPA2-HalfHandshake-Crack/
 
-python halfHandshake.py "$@" ' > halfHandshake.sh
+python halfHandshake.py "$@" ' > $EXECUTEABLE1
 
-chmod +x halfHandshake.py
+chmod +x  $GITREPOROOT/$EXECUTEABLE3
+chmod +x $GITREPOROOT/$EXECUTEABLE1
+sudo rm -f $BINDIR/$EXECUTEABLE2
+sudo ln -s $GITREPOROOT/$EXECUTEABLE1 $BINDIR/$EXECUTEABLE2
 
-chmod +x halfHandshake.sh
-sudo rm -f /usr/local/bin/halfHandshake
-sudo ln -s /opt/ITSEC/6.Wireless/1.Wifi/wpa2-halfhandshake-crack/dxa4481/WPA2-HalfHandshake-Crack/halfHandshake.sh /usr/local/bin/halfHandshake
+mkdir -p $DSKTPFLSDEST
+rm -f $DSKTPFLSDEST/$DSKTPFL
+cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+
 

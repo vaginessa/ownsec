@@ -4,6 +4,13 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+
+GITREPOROOT=/opt/ITSEC/7.Mitm/mitmf/byt3bl33d3r/MITMf
+#
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
+DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
+DSKTPFL=mitmf.desktop
+
 echo "${bold}
  __  __ ___ _____ __  __ _____ 
 |  \/  |_ _|_   _|  \/  |  ___|
@@ -23,11 +30,6 @@ sudo udpatedb
 
 sudo -H pip2 install virtualenvwrapper
 
-GITREPOROOT=/opt/ITSEC/7.Mitm/mitmf/byt3bl33d3r/MITMf
-#
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
-DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
-DSKTPFL=mitmf.desktop
 
 cd $GITREPOROOT
 git clean -f 

@@ -4,16 +4,6 @@
 
 #http://www.hackingvoip.com/tools/inviteflood.tar.gz
 
-echo "${bold}
- ___ _   ___     _____ _____ _____ _____ _     ___   ___  ____  _____ ____  
-|_ _| \ | \ \   / /_ _|_   _| ____|  ___| |   / _ \ / _ \|  _ \| ____|  _ \ 
- | ||  \| |\ \ / / | |  | | |  _| | |_  | |  | | | | | | | | | |  _| | |_) |
- | || |\  | \ V /  | |  | | | |___|  _| | |__| |_| | |_| | |_| | |___|  _ < 
-|___|_| \_|  \_/  |___| |_| |_____|_|   |_____\___/ \___/|____/|_____|_| \_\
-          
-${normal}"
-
-mkdir -p /opt/ITSEC/10.Stresstest/invite-flooder
 
 DOWNLOADDIR=/opt/ITSEC/10.Stresstest/invite-flooder
 BINROOT=/opt/ITSEC/10.Stresstest/invite-flooder/inviteflood
@@ -25,6 +15,18 @@ EXECUTEABLE2=inviteflood
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/10.Stresstest
 DSKTPFLSDEST=/home/$USER/.local/share/applications/10.Stresstest
 DSKTPFL=inviteflood.desktop
+
+echo "${bold}
+ ___ _   ___     _____ _____ _____ _____ _     ___   ___  ____  _____ ____  
+|_ _| \ | \ \   / /_ _|_   _| ____|  ___| |   / _ \ / _ \|  _ \| ____|  _ \ 
+ | ||  \| |\ \ / / | |  | | |  _| | |_  | |  | | | | | | | | | |  _| | |_) |
+ | || |\  | \ V /  | |  | | | |___|  _| | |__| |_| | |_| | |_| | |___|  _ < 
+|___|_| \_|  \_/  |___| |_| |_____|_|   |_____\___/ \___/|____/|_____|_| \_\
+          
+${normal}"
+
+mkdir -p /opt/ITSEC/10.Stresstest/invite-flooder
+
 
 cd $DOWNLOADDIR
 sudo rm /usr/local/bin/$EXECUTEABLE2

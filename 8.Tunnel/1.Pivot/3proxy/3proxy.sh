@@ -5,6 +5,12 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPOROOT=/opt/ITSEC/8.Tunnel/1.Pivot/3proxy/z3APA3A/3proxy
+
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/8.Tunnel/1.Pivot
+DSKTPFLSDEST=/home/$USER/.local/share/applications/8.Tunnel/1.Pivot
+DSKTPFL=3proxy.desktop
+
 echo "${bold}
  _____ ____  ____   _____  ____   __
 |___ /|  _ \|  _ \ / _ \ \/ /\ \ / /
@@ -18,11 +24,6 @@ mkdir -p /opt/ITSEC/8.Tunnel/1.Pivot/3proxy/z3APA3A
 cd /opt/ITSEC/8.Tunnel/1.Pivot/3proxy/z3APA3A
 git clone https://github.com/z3APA3A/3proxy
 
-GITREPOROOT=/opt/ITSEC/8.Tunnel/1.Pivot/3proxy/z3APA3A/3proxy
-
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/8.Tunnel/1.Pivot
-DSKTPFLSDEST=/home/$USER/.local/share/applications/8.Tunnel/1.Pivot
-DSKTPFL=3proxy.desktop
 
 cd $GITREPOROOT
 make clean

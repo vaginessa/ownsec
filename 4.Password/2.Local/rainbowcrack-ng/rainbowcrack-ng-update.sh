@@ -4,6 +4,33 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPO=https://github.com/kholia/rainbowcrack-ng.git
+GITREPOROOT=/opt/ITSEC/4.Password/2.Local/rainbowcrack/kholia/rainbowcrack-ng
+GITCLONEDIR=/opt/ITSEC/4.Password/2.Local/rainbowcrack/kholia
+GITREPOBINDIR=/opt/ITSEC/4.Password/2.Local/rainbowcrack/kholia/rainbowcrack-ng/src
+EXECUTEABLE1=rcrack
+EXECUTEABLE2=rcrack
+EXECUTEABLE3=rtdump
+EXECUTEABLE4=rtdump
+EXECUTEABLE5=rtgen
+EXECUTEABLE6=rtgen
+EXECUTEABLE7=rtsort
+EXECUTEABLE8=rtsort
+BINDIR=/usr/local/bin
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/2.Local
+DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/2.Local
+DSKTPFL1=rainbowcrack-ng_rcrack.desktop
+GITRESET () {
+	git clean -f
+	git fetch origin
+	git reset --hard origin/master
+	git pull
+}
+GITSBMDLINIT () {
+	git submodule init
+	git submodule update --recursive
+	sudo updatedb && sudo ldconfig
+}
 echo "${bold}
  ____      _    ___ _   _ ____   _____        ______ ____      _    ____ _  __
 |  _ \    / \  |_ _| \ | | __ ) / _ \ \      / / ___|  _ \    / \  / ___| |/ /
@@ -11,75 +38,56 @@ echo "${bold}
 |  _ <  / ___ \ | || |\  | |_) | |_| |\ V  V /| |___|  _ <  / ___ \ |___| . \ 
 |_| \_\/_/   \_\___|_| \_|____/ \___/  \_/\_/  \____|_| \_\/_/   \_\____|_|\_\
            
+INSTALL
 ${normal}"
 
-GITREPOROOT=/opt/ITSEC/4.Password/2.Local/rainbowcrack/kholia/rainbowcrack-ng
-GITREPOBINDIR=/opt/ITSEC/4.Password/2.Local/rainbowcrack/kholia/rainbowcrack-ng/src
-GITREPOGITFILE=$GITREPOROOT/.git
-EXECUTEABLE1=rcrack
-EXECUTEABLE2=rainbowcrack-ng_rcrack
-EXECUTEABLE3=rtdump
-EXECUTEABLE4=rainbowcrack-ng_rtdump
-EXECUTEABLE5=rtgen
-EXECUTEABLE6=rainbowcrack-ng_rtgen
-EXECUTEABLE7=rtsort
-EXECUTEABLE8=rainbowcrack-ng_rtsort
-
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/2.Local
-DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/2.Local
-DSKTPFL1=rainbowcrack-ng_rcrack.desktop
-
-if [ ! -d $GITREPOGITFILE ]
+if [ ! -d $GITCONFDIR ]
 
 then
 
-
-mkdir -p /opt/ITSEC/4.Password/2.Local/rainbowcrack/kholia
-cd /opt/ITSEC/4.Password/2.Local/rainbowcrack/kholia
-git clone https://github.com/kholia/rainbowcrack-ng.git
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone $GITREPO
 
 else
 
-echo "repo exists"
+echo "${bold}REPO EXISTS, skip clone...${normal}"
 
 fi
 
 cd $GITREPOROOT
 
-if git diff-index --quiet HEAD --; then
-    echo "UP TO DATE"
-
-else
-
-sudo rm /usr/local/bin/$EXECUTEABLE2
-sudo rm /usr/local/bin/$EXECUTEABLE4
-sudo rm /usr/local/bin/$EXECUTEABLE6
-sudo rm /usr/local/bin/$EXECUTEABLE8
+if git checkout master &&
+    git fetch origin master &&
+    [ `git rev-list HEAD...origin/master --count` != 0 ] &&
+    git merge origin/master
+then
 
 cd $GITREPOBINDIR
 make uninstall
 make clean
 
 cd $GITREPOROOT
-git clean -f 
-git fetch origin
-git reset --hard origin/master
-git pull
-git submodule init
-git submodule update --recursive
+GITRESET
+GITSBMDLINIT
 cd $GITREPOBINDIR
-#
+
 make -j 4 
 #sudo make install
 
+sudo rm -f $BINDIR/$EXECUTEABLE2
+sudo rm -f $BINDIR/$EXECUTEABLE4
+sudo rm -f $BINDIR/$EXECUTEABLE6
+sudo rm -f $BINDIR/$EXECUTEABLE8
+
 chmod +x $GITREPOBINDIR/$EXECUTEABLE1
-sudo ln -s $GITREPOBINDIR/$EXECUTEABLE1 /usr/local/bin/$EXECUTEABLE2
+sudo ln -s $GITREPOBINDIR/$EXECUTEABLE1 $BINDIR/$EXECUTEABLE2
 chmod +x $GITREPOBINDIR/$EXECUTEABLE3
-sudo ln -s $GITREPOBINDIR/$EXECUTEABLE3 /usr/local/bin/$EXECUTEABLE4
+sudo ln -s $GITREPOBINDIR/$EXECUTEABLE3 $BINDIR/$EXECUTEABLE4
 chmod +x $GITREPOBINDIR/$EXECUTEABLE5
-sudo ln -s $GITREPOBINDIR/$EXECUTEABLE5 /usr/local/bin/$EXECUTEABLE6
+sudo ln -s $GITREPOBINDIR/$EXECUTEABLE5 $BINDIR/$EXECUTEABLE6
 chmod +x $GITREPOBINDIR/$EXECUTEABLE7
-sudo ln -s $GITREPOBINDIR/$EXECUTEABLE7 /usr/local/bin/$EXECUTEABLE8
+sudo ln -s $GITREPOBINDIR/$EXECUTEABLE7 $BINDIR/$EXECUTEABLE8
 
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL1 $DSKTPFLSDEST/$DSKTPFL1
@@ -90,4 +98,15 @@ cp $DSKTPFLS/$DSKTPFL3 $DSKTPFLSDEST/$DSKTPFL3
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL4 $DSKTPFLSDEST/$DSKTPFL4
 
+echo "${bold}
+UPDATED
+${normal}"
+
+else
+
+echo "${bold}
+UP TO DATE
+${normal}"
+	
 fi
+

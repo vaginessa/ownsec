@@ -3,6 +3,14 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPOROOT=/opt/ITSEC/10.Stresstest/dhcpig/kamorin/DHCPig
+EXECUTEABLE1=pig.py
+EXECUTEABLE2=dhcPIG
+
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/10.Stresstest
+DSKTPFLSDEST=/home/$USER/.local/share/applications/10.Stresstest
+DSKTPFL=dhcpig.desktop
+
 echo "${bold}
  ____  _   _  ____ ____ ___ ____ 
 |  _ \| | | |/ ___|  _ \_ _/ ___|
@@ -16,13 +24,6 @@ mkdir -p /opt/ITSEC/10.Stresstest/dhcpig/kamorin
 cd /opt/ITSEC/10.Stresstest/dhcpig/kamorin
 git clone https://github.com/kamorin/DHCPig
 
-GITREPOROOT=/opt/ITSEC/10.Stresstest/dhcpig/kamorin/DHCPig
-EXECUTEABLE1=pig.py
-EXECUTEABLE2=dhcPIG
-
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/10.Stresstest
-DSKTPFLSDEST=/home/$USER/.local/share/applications/10.Stresstest
-DSKTPFL=dhcpig.desktop
 
 cd $GITREPOROOT
 sudo rm  /usr/local/bin/$EXECUTEABLE2

@@ -3,6 +3,14 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPOROOT=/opt/ITSEC/7.Mitm/tcpflow/simsong/tcpflow
+EXECUTEABLE1=tcpflow
+EXECUTEABLE2=tcpflow
+#
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
+DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
+DSKTPFL=tcpflow.desktop
+
 echo "${bold}
  _____ ____ ____  _____ _     _____        __
 |_   _/ ___|  _ \|  ___| |   / _ \ \      / /
@@ -18,14 +26,6 @@ git clone https://github.com/simsong/tcpflow.git
 
 sudo updatedb
 sudo ldconfig
-
-GITREPOROOT=/opt/ITSEC/7.Mitm/tcpflow/simsong/tcpflow
-EXECUTEABLE1=tcpflow
-EXECUTEABLE2=tcpflow
-#
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
-DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
-DSKTPFL=tcpflow.desktop
 
 cd $GITREPOROOT
 sudo rm /usr/local/bin/$EXECUTEABLE2

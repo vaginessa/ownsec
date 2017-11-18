@@ -3,6 +3,22 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPO=https://github.com/routerkeygen/routerkeygenPC.git
+GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/2.Routerkeys/routerkeygenpc/routerkeygen/routerkeygenPC
+GITCONFDIR=/opt/ITSEC/6.Wireless/1.Wifi/2.Routerkeys/routerkeygenpc/routerkeygen/routerkeygenPC/.git
+GITCLONEDIR=/opt/ITSEC/6.Wireless/1.Wifi/2.Routerkeys/routerkeygenpc/routerkeygen
+GITRESET () {
+	git clean -f
+	git fetch origin
+	git reset --hard origin/master
+	git pull
+}
+GITSBMDLINIT () {
+	git submodule init
+	git submodule update --recursive
+	sudo updatedb && sudo ldconfig
+}
+
 echo "${bold}
  ____ _____ ____  _  _________   ______ _____ _   _ ____   ____ 
 |  _ \_   _|  _ \| |/ / ____\ \ / / ___| ____| \ | |  _ \ / ___|
@@ -10,32 +26,31 @@ echo "${bold}
 |  _ < | | |  _ <| . \| |___  | || |_| | |___| |\  |  __/| |___ 
 |_| \_\|_| |_| \_\_|\_\_____| |_| \____|_____|_| \_|_|    \____|
        
+UPDATE
 ${normal}"
 
-GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/2.Routerkeys/routerkeygenpc/routerkeygen/routerkeygenPC
-GITREPOGITFILE=$GITREPOROOT/.git
-
-if [ ! -d $GITREPOGITFILE ]
+if [ ! -d $GITCONFDIR ]
 
 then
 
-mkdir -p /opt/ITSEC/6.Wireless/1.Wifi/2.Routerkeys/routerkeygenpc/routerkeygen
-cd /opt/ITSEC/6.Wireless/1.Wifi/2.Routerkeys/routerkeygenpc/routerkeygen
-git clone https://github.com/routerkeygen/routerkeygenPC.git
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone $GITREPO
 
 else
 
-echo "repo exists"
+echo "${bold}REPO EXISTS, skip clone...${normal}"
 
 fi
 
 cd $GITREPOROOT
 
-if git diff-index --quiet HEAD --; then
-    echo "UP TO DATE"
-
-else
-
+if git checkout master &&
+    git fetch origin master &&
+    [ `git rev-list HEAD...origin/master --count` != 0 ] &&
+    git merge origin/master
+then
+    
 cd $GITREPOROOT
 sudo rm -r build
 mkdir build
@@ -43,16 +58,23 @@ cd build
 sudo make uninstall
 make clean
 cd ..
-git clean -f
-git fetch origin
-git reset --hard origin/master
-git pull
-#git submodule init && git submodule update --recursive
+GITRESET
+#GITSBMDLINIT
 cd build
 cmake ..
 make -j 4
 sudo make install
 
+echo "${bold}
+UPDATED
+${normal}"
+
+else
+
+echo "${bold}
+UP TO DATE
+${normal}"
+	
 fi
 
 

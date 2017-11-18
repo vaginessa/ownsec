@@ -3,6 +3,13 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPOROOT=/opt/ITSEC/7.Mitm/wireshark/wireshark/wireshark
+
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
+DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
+DSKTPFL=wireshark.desktop
+
+
 echo "${bold}
 __        _____ ____  _____ ____  _   _    _    ____  _  __
 \ \      / /_ _|  _ \| ____/ ___|| | | |  / \  |  _ \| |/ /
@@ -18,11 +25,6 @@ mkdir -p /opt/ITSEC/7.Mitm/wireshark/wireshark
 cd /opt/ITSEC/7.Mitm/wireshark/wireshark
 git clone https://github.com/wireshark/wireshark.git
 
-GITREPOROOT=/opt/ITSEC/7.Mitm/wireshark/wireshark/wireshark
-
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
-DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
-DSKTPFL=wireshark.desktop
 
 cd $GITREPOROOT
 #cd build

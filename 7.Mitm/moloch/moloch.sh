@@ -6,6 +6,14 @@ does not work, build error
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+EXECUTEABLE=moloch.sh
+EXECUTEABLE1=moloch
+GITREPOROOT=/opt/ITSEC/7.Mitm/moloch/aol/moloch
+GITREPOGITFILE=$GITREPOROOT/.git
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
+DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
+DSKTPFL=moloch.desktop
+
 echo "${bold}
  __  __  ___  _     ___   ____ _   _ 
 |  \/  |/ _ \| |   / _ \ / ___| | | |
@@ -14,13 +22,6 @@ echo "${bold}
 |_|  |_|\___/|_____\___/ \____|_| |_|
            
 ${normal}"
-EXECUTEABLE=moloch.sh
-EXECUTEABLE1=moloch
-GITREPOROOT=/opt/ITSEC/7.Mitm/moloch/aol/moloch
-GITREPOGITFILE=$GITREPOROOT/.git
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
-DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
-DSKTPFL=moloch.desktop
 
 mkdir -p /opt/ITSEC/7.Mitm/moloch/aol/moloch
 cd /opt/ITSEC/7.Mitm/moloch/aol/moloch

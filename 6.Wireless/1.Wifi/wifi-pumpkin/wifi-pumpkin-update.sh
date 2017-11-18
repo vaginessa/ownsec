@@ -3,55 +3,64 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPO=https://github.com/P0cL4bs/WiFi-Pumpkin.git
+GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/wifi-pumpkin/P0cL4bs/WiFi-Pumpkin
+GITCONFDIR=/opt/ITSEC/6.Wireless/1.Wifi/wifi-pumpkin/P0cL4bs/WiFi-Pumpkin/.git
+GITCLONEDIR=/opt/ITSEC/6.Wireless/1.Wifi/wifi-pumpkin/P0cL4bs
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/6.Wireless/1.Wifi
+DSKTPFLSDEST=/home/$USER/.local/share/applications/6.Wireless/1.Wifi
+DSKTPFL=wifipumpkin.desktop
+GITRESET () {
+	git clean -f
+	git fetch origin
+	git reset --hard origin/master
+	git pull
+}
+GITSBMDLINIT () {
+	git submodule init
+	git submodule update --recursive
+	sudo updatedb && sudo ldconfig
+}
+
 echo "${bold}
 __        _____ _____ ___ ____  _   _ __  __ ____  _  _____ _   _ 
 \ \      / /_ _|  ___|_ _|  _ \| | | |  \/  |  _ \| |/ /_ _| \ | |
  \ \ /\ / / | || |_   | || |_) | | | | |\/| | |_) | ' / | ||  \| |
   \ V  V /  | ||  _|  | ||  __/| |_| | |  | |  __/| . \ | || |\  |
    \_/\_/  |___|_|   |___|_|    \___/|_|  |_|_|   |_|\_\___|_| \_|
-       
-UPDATE  
+         
+UPDATE
 ${normal}"
 
-
-GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/wifi-pumpkin/P0cL4bs/WiFi-Pumpkin
-GITREPOGITFILE=$GITREPOROOT/.git
-
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/6.Wireless/1.Wifi
-DSKTPFLSDEST=/home/$USER/.local/share/applications/6.Wireless/1.Wifi
-DSKTPFL=wifipumpkin.desktop
-
-if [ ! -d $GITREPOGITFILE ]
+if [ ! -d $GITCONFDIR ]
 
 then
 
-	mkdir -p /opt/ITSEC/6.Wireless/1.Wifi/wifi-pumpkin/P0cL4bs
-	cd /opt/ITSEC/6.Wireless/1.Wifi/wifi-pumpkin/P0cL4bs
-	git clone https://github.com/P0cL4bs/WiFi-Pumpkin.git
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone $GITREPO
 
 else
 
-echo "repo exists"
+echo "${bold}REPO EXISTS, skip clone...${normal}"
 
 fi
 
 cd $GITREPOROOT
 
-if git diff-index --quiet HEAD --; then
-    echo "UP TO DATE"
-
-else
+if git checkout master &&
+    git fetch origin master &&
+    [ `git rev-list HEAD...origin/master --count` != 0 ] &&
+    git merge origin/master
+then
+    
+cd $GITREPOROOT
 
 sudo rm -rf /opt/ITSEC/6.Wireless/1.Wifi/wifi-pumpkin/P0cL4bs/WiFi-Pumpkin/deb_tmp/wifi*
 
-cd $GITREPOROOT
 #sed -i -e 's#deb_tmp/##g' .gitignore
-git clean -f
-git fetch origin
-git reset --hard origin/master
-git pull
-git submodule init 
-git submodule update --recursive
+GITRESET
+GITSBMDLINIT
 sed -i -e 's/pip install /sudo -H pip2 install /g' installer.sh
 sed -i -e 's/scapy hostapd rfkill/scapy rfkill/g' installer.sh
 sed -i -e 's/pip install /sudo -H pip2 install /g' make_deb.sh
@@ -67,6 +76,16 @@ rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 
+echo "${bold}
+UPDATED
+${normal}"
+
+else
+
+echo "${bold}
+UP TO DATE
+${normal}"
+	
 fi
 
 

@@ -3,6 +3,23 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPO=https://github.com/kismetwireless/kismet.git
+GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/kismet/kismetwireless/kismet
+GITCLONEDIR=/opt/ITSEC/6.Wireless/1.Wifi/kismet/kismetwireless
+KISMETFILESDIR=/opt/ITSEC-Install-Scripts/6.Wireless/1.Wifi/kismet-files
+EXECUTEABLE1=beef.sh
+EXECUTEABLE2=beef
+BINDIR=/usr/local/bin
+CONFDIR=
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/6.Wireless/1.Wifi
+DSKTPFLSDEST=/home/$USER/.local/share/applications/6.Wireless/1.Wifi
+DSKTPFL=kismet.desktop
+GITSBMDLINIT () {
+	git submodule init
+	git submodule update --recursive
+	sudo updatedb && sudo ldconfig
+}
+
 echo "${bold}
  _  _____ ____  __  __ _____ _____ 
 | |/ /_ _/ ___||  \/  | ____|_   _|
@@ -10,36 +27,24 @@ echo "${bold}
 | . \ | | ___) | |  | | |___  | |  
 |_|\_\___|____/|_|  |_|_____| |_|  
            
+INSTALL
 ${normal}"
 
-
-mkdir -p /opt/ITSEC/6.Wireless/1.Wifi/kismet/kismetwireless
-cd /opt/ITSEC/6.Wireless/1.Wifi/kismet/kismetwireless
-git clone https://github.com/kismetwireless/kismet.git
-
-
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone $GITREPO
 sudo mv /usr/local/share/wireshark/manuf_old /usr/local/share/wireshark/manuf
 
 sudo ldconfig
 sudo updatedb
 #
-GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/kismet/kismetwireless/kismet
-#
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/6.Wireless/1.Wifi
-DSKTPFLSDEST=/home/$USER/.local/share/applications/6.Wireless/1.Wifi
-DSKTPFL=kismet.desktop
 mkdir -p $DSKTPFLSDEST 
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 
 
 cd $GITREPOROOT
-git clean -f
-git fetch origin
-git reset --hard origin/master
-git pull
-git submodule init
-git submodule update --recursive
-#
+GITSBMDLINIT
+
 ./configure
 make -j 4
 sudo make suidinstall
@@ -50,7 +55,7 @@ echo "
 sudo mkdir -p /usr/share/wireshark/wireshark
 sudo ln -s  /usr/local/share/wireshark/manuf /usr/share/wireshark/wireshark/manuf 
 
-rm -f kismet.sh
+#rm -f kismet.sh
 #echo "#!/bin/bash
 
 #kismetadapter=(ifconfig -a | sed 's/[ \t].*//;/^\(lo\|\)$/d' | sed '/enp*/d' | sed '/docker*/d' | sed '/br*/d')
@@ -64,9 +69,9 @@ rm -f kismet.sh
 # sed -i 's#-c #-c $kismetadapter#g' kismet.sh
 #chmod +x kismet.sh
 
-sudo rm /opt/ITSEC-Install-Scripts/6.Wireless/1.Wifi/kismet-files/kismet.conf
-sudo cp /opt/ITSEC-Install-Scripts/6.Wireless/1.Wifi/kismet-files/kismet.conf /usr/local/etc/kismet.conf
-sudo ln -s /opt/ITSEC/6.Wireless/1.Wifi/kismet/kismetwireless/kismet/kismet /usr/local/bin/kismet.sh
+sudo rm -f $CONFDIR/kismet.conf
+sudo cp $KISMETFILESDIR/kismet.conf $CONFDIR/kismet.conf
+sudo ln -s $GITREPOROOT/kismet $BINDIR/kismet.sh
 
 #sudo rm -f /usr/local/bin/kismet
 sudo groupadd kismet

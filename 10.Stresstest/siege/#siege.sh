@@ -3,6 +3,10 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPOROOT=/opt/ITSEC/10.Stresstest/siege/JoeDog/siege
+EXECUTEABLE1=siege
+EXECUTEABLE2=siege
+
 echo "${bold}
  ____ ___ _____ ____ _____ 
 / ___|_ _| ____/ ___| ____|
@@ -16,9 +20,6 @@ mkdir -p /opt/ITSEC/10.Stresstest/siege/JoeDog
 cd /opt/ITSEC/10.Stresstest/siege/JoeDog
 git clone https://github.com/JoeDog/siege
 
-GITREPOROOT=/opt/ITSEC/10.Stresstest/siege/JoeDog/siege
-EXECUTEABLE1=siege
-EXECUTEABLE2=siege
 
 cd $GITREPOROOT
 sudo rm -f /usr/local/bin/$EXECUTEABLE2

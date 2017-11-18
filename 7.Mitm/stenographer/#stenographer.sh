@@ -1,12 +1,10 @@
 #!bin/bash
-#stenographer.go:31:2: cannot find package "github.com/google/stenographer/env" in any of:
-#	/usr/lib/go-1.6/src/github.com/google/stenographer/env (from $GOROOT)
-#	($GOPATH not set)
+bold=$(tput bold)
+normal=$(tput sgr0)
 
 GITREPOROOT=/opt/ITSEC/7.Mitm/7.Mitm/stenographer/google/stenographer
 GITREPOGITFILE=$GITREPOROOT/.git
-bold=$(tput bold)
-normal=$(tput sgr0)
+
 
 echo "${bold}
  ____ _____ _____ _   _  ___   ____ ____      _    ____  _   _ _____ ____  

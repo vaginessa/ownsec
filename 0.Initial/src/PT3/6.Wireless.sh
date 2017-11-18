@@ -32,8 +32,8 @@ cd /opt/ITSEC-Install-Scripts/6.Wireless/1.Wifi/2.Routerkeys/routerkeygenpc
 ###############################################################################
 ######################   1.Wifi/3.Jammer   ####################
 ###########################################################################
-#cd /opt/ITSEC-Install-Scripts/6.Wireless/1.Wifi/3.Jammer/md3-master
-#./md3-master.sh #alternate git vers by camerony
+cd /opt/ITSEC-Install-Scripts/6.Wireless/1.Wifi/3.Jammer/md3-master
+./md3-master.sh #alternate git vers by camerony
 cd /opt/ITSEC-Install-Scripts/6.Wireless/1.Wifi/3.Jammer/wifijammer
 ./wifijammer.sh 
 #

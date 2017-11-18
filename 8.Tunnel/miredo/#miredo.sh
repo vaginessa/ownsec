@@ -6,6 +6,11 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPOROOT=/opt/ITSEC/8.Tunnel/miredo/darconeous/miredo
+
+cd $GITREPOROOT
+
+
 echo "${bold}
  __  __ ___ ____  _____ ____   ___  
 |  \/  |_ _|  _ \| ____|  _ \ / _ \ 
@@ -22,9 +27,6 @@ git clone https://github.com/darconeous/miredo.git
 sudo updatedb
 sudo ldconfig
 
-GITREPOROOT=/opt/ITSEC/8.Tunnel/miredo/darconeous/miredo
-
-cd $GITREPOROOT
 
 git clean -f
 git fetch origin

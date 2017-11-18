@@ -3,6 +3,12 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPOROOT=/opt/ITSEC/8.Tunnel/proxytunnel/proxytunnel/proxytunnel
+
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications
+DSKTPFLSDEST=/home/$USER/.local/share/applications
+DSKTPFL=proxytunnel.desktop
+
 echo "${bold}
  ____  ____   _____  ____   _______ _   _ _   _ _   _ _____ _     
 |  _ \|  _ \ / _ \ \/ /\ \ / /_   _| | | | \ | | \ | | ____| |    
@@ -16,11 +22,6 @@ mkdir -p /opt/ITSEC/8.Tunnel/proxytunnel/proxytunnel
 cd /opt/ITSEC/8.Tunnel/proxytunnel/proxytunnel
 git clone https://github.com/proxytunnel/proxytunnel
 
-GITREPOROOT=/opt/ITSEC/8.Tunnel/proxytunnel/proxytunnel/proxytunnel
-
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications
-DSKTPFLSDEST=/home/$USER/.local/share/applications
-DSKTPFL=proxytunnel.desktop
 
 cd $GITREPOROOT
 make clean

@@ -3,6 +3,13 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+
+GITREPOROOT=/opt/ITSEC/8.Tunnel/udptunnel/astroza/udptunnel
+
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/8.Tunnel
+DSKTPFLSDEST=/home/$USER/.local/share/applications/8.Tunnel
+DSKTPFL=udptunnel.desktop
+
 echo "${bold}
  _   _ ____  ____ _____ _   _ _   _ _   _ _____ _     
 | | | |  _ \|  _ \_   _| | | | \ | | \ | | ____| |    
@@ -19,11 +26,6 @@ git clone https://github.com/astroza/udptunnel.git
 sudo updatedb
 sudo ldconfig
 
-GITREPOROOT=/opt/ITSEC/8.Tunnel/udptunnel/astroza/udptunnel
-
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/8.Tunnel
-DSKTPFLSDEST=/home/$USER/.local/share/applications/8.Tunnel
-DSKTPFL=udptunnel.desktop
 
 cd $GITREPOROOT
 make clean

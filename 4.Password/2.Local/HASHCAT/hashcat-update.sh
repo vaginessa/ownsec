@@ -3,117 +3,121 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPO=git clone https://github.com/hashcat/hashcat.git
+GITREPOROOT=/opt/ITSEC/4.Password/2.Local/HASHCAT/hashcat/hashcat
+GITCONFDIR=/opt/ITSEC/4.Password/2.Local/HASHCAT/hashcat/hashcat/.git
+GITCLONEDIR=/opt/ITSEC/4.Password/2.Local/HASHCAT/hashcat
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/2.Local
+DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/2.Local
+DSKTPFL=hashcat.desktop
+GITRESET () {
+	git clean -f
+	git fetch origin
+	git reset --hard origin/master
+	git pull
+}
+GITSBMDLINIT () {
+	git submodule init
+	git submodule update --recursive
+	sudo updatedb && sudo ldconfig
+}
+
 echo "${bold}
  _   _    _    ____  _   _  ____    _  _____ 
 | | | |  / \  / ___|| | | |/ ___|  / \|_   _|
 | |_| | / _ \ \___ \| |_| | |     / _ \ | |  
 |  _  |/ ___ \ ___) |  _  | |___ / ___ \| |  
 |_| |_/_/   \_\____/|_| |_|\____/_/   \_\_|  
-               
+            
+UPDATE   
 ${normal}"
 
-GITREPOROOT=/opt/ITSEC/4.Password/2.Local/HASHCAT/hashcat/hashcat
-GITREPOGITFILE=$GITREPOROOT/.git
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/2.Local
-DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/2.Local
-DSKTPFL=hashcat.desktop
-
-if [ ! -d $GITREPOGITFILE ]
+if [ ! -d $GITCONFDIR ]
 
 then
 
-mkdir -p /opt/ITSEC/4.Password/2.Local/HASHCAT/hashcat
-cd /opt/ITSEC/4.Password/2.Local/HASHCAT/hashcat
-git clone https://github.com/hashcat/hashcat.git
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone $GITREPO
 
 else
 
-echo "repo exists"
+echo "${bold}REPO EXISTS, skip clone...${normal}"
 
 fi
 
 cd $GITREPOROOT
 
-if git diff-index --quiet HEAD --; then
-    echo "UP TO DATE"
-
-else
-
+if git checkout master &&
+    git fetch origin master &&
+    [ `git rev-list HEAD...origin/master --count` != 0 ] &&
+    git merge origin/master
+then
+    
 cd $GITREPOROOT
 sudo make uninstall
 make clean
-git clean -f 
-git fetch origin
-git reset --hard origin/master
-git pull
-git submodule update --init
+GITRESET
+GITSBMDLINIT
 
 cd $GITREPOROOT
 git clone https://github.com/hashcat/hashcat-utils
 
 cd /opt/ITSEC/4.Password/2.Local/HASHCAT/hashcat/hashcat/hashcat-utils
 make clean
-git clean -f 
-git fetch origin
-git reset --hard origin/master
-git pull
+GITRESET
+GITSBMDLINIT
 cd src
 make -j 4
-
-##
-
 cd $GITREPOROOT
 
 cd /opt/ITSEC/4.Password/2.Local/HASHCAT/hashcat/hashcat/maskprocessor
 sudo make uninstall
 make clean
-git clean -f 
-git fetch origin
-git reset --hard origin/master
-git pull
+GITRESET
+GITSBMDLINIT
 cd src
 make -j 4
 sudo make install
-
-##
-
 cd $GITREPOROOT
 
 cd /opt/ITSEC/4.Password/2.Local/HASHCAT/hashcat/hashcat/statsprocessor
 sudo make uninstall
 make clean
-git clean -f 
-git fetch origin
-git reset --hard origin/master
-git pull
+GITRESET
+GITSBMDLINIT
 cd src
 make -j 4
 sudo make install
-
-
-#
 cd $GITREPOROOT
 
 cd /opt/ITSEC/4.Password/2.Local/HASHCAT/hashcat/hashcat/princeprocessor
 sudo make uninstall
 make clean
-git clean -f 
-git fetch origin
-git reset --hard origin/master
-git pull
+GITRESET
+GITSBMDLINIT
 cd src
 make -j 4
 sudo make install
-
-##
-
 cd $GITREPOROOT
+
 make -j 4
 sudo make install
 sudo rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 
+echo "${bold}
+UPDATED
+${normal}"
+
+else
+
+echo "${bold}
+UP TO DATE
+${normal}"
+	
 fi
+
 
 

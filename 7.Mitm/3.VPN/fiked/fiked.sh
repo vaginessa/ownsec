@@ -3,6 +3,13 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+
+GITREPOROOT=/opt/ITSEC/7.Mitm/3.VPN/fiked/droe/fiked
+#
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm/3.VPN
+DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm/3.VPN
+DSKTPFL=fiked.desktop
+
 echo "${bold}
  _____ ___ _  _______ ____  
 |  ___|_ _| |/ / ____|  _ \ 
@@ -19,13 +26,6 @@ git clone https://github.com/droe/fiked.git
 
 sudo ldconfig
 sudo updatedb
-
-GITREPOROOT=/opt/ITSEC/7.Mitm/3.VPN/fiked/droe/fiked
-#
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm/3.VPN
-DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm/3.VPN
-DSKTPFL=fiked.desktop
-
 
 
 cd $GITREPOROOT

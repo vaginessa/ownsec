@@ -3,6 +3,14 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+
+GITREPOROOT=/opt/ITSEC/8.Forensics/0.Toolbox/sleuthkit/sleuthkit/sleuthkit
+#
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications
+DSKTPFLSDEST=/home/$USER/.local/share/applications
+DSKTPFL=dnschef.desktop
+
+
 echo "${bold}
  ____  _     _____ _   _ _____ _   _ _  _____ _____ 
 / ___|| |   | ____| | | |_   _| | | | |/ /_ _|_   _|
@@ -18,13 +26,6 @@ sudo apt-get install libewf-dev libafflib-dev
 sudo udpatedb
 sudo ldconfig
 #
-
-GITREPOROOT=/opt/ITSEC/8.Forensics/0.Toolbox/sleuthkit/sleuthkit/sleuthkit
-#
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications
-DSKTPFLSDEST=/home/$USER/.local/share/applications
-DSKTPFL=dnschef.desktop
-
 
 cd $GITREPOROOT
 git clean -f 

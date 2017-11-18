@@ -3,6 +3,12 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPOROOT=/opt/ITSEC/8.Tunnel/1.Pivot/pivoter/trustedsec/pivoter/
+
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/8.Tunnel/1.Pivot
+DSKTPFLSDEST=/home/$USER/.local/share/applications/8.Tunnel/1.Pivot
+DSKTPFL=pivoter.desktop
+
 echo "${bold}
  ____ _____     _____ _____ _____ ____  
 |  _ \_ _\ \   / / _ \_   _| ____|  _ \ 
@@ -19,11 +25,6 @@ git clone https://github.com/trustedsec/pivoter.git
 sudo updatedb
 sudo ldconfig
 
-GITREPOROOT=/opt/ITSEC/8.Tunnel/1.Pivot/pivoter/trustedsec/pivoter/
-
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/8.Tunnel/1.Pivot
-DSKTPFLSDEST=/home/$USER/.local/share/applications/8.Tunnel/1.Pivot
-DSKTPFL=pivoter.desktop
 
 cd $GITREPOROOT
 make clean

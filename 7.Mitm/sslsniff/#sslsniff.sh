@@ -4,6 +4,8 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+
+GITREPOGITFILE=$GITREPOROOT/.git
 echo "${bold}
  ____ ____  _     ____  _   _ ___ _____ _____ 
 / ___/ ___|| |   / ___|| \ | |_ _|  ___|  ___|
@@ -12,5 +14,3 @@ echo "${bold}
 |____/____/|_____|____/|_| \_|___|_|   |_|    
          
 ${normal}"
-
-GITREPOGITFILE=$GITREPOROOT/.git

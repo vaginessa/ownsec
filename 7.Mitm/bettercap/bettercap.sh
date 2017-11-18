@@ -3,6 +3,17 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPO=https://github.com/evilsocket/bettercap.git
+GITREPOROOT=/opt/ITSEC/7.Mitm/bettercap/evilsocket/bettercap
+GITCLONEDIR=/opt/ITSEC/7.Mitm/bettercap/evilsocket
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
+DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
+DSKTPFL=bettercap.desktop
+GITSBMDLINIT () {
+	git submodule init
+	git submodule update --recursive
+	sudo updatedb && sudo ldconfig
+}
 echo "${bold}
  ____  _____ _____ _____ _____ ____   ____    _    ____  
 | __ )| ____|_   _|_   _| ____|  _ \ / ___|  / \  |  _ \ 
@@ -10,22 +21,12 @@ echo "${bold}
 | |_) | |___  | |   | | | |___|  _ <| |___ / ___ \|  __/ 
 |____/|_____| |_|   |_| |_____|_| \_\\____/_/   \_\_|    
                
+INSTALL
 ${normal}"
 
-
-mkdir -p /opt/ITSEC/7.Mitm/bettercap/evilsocket
-cd /opt/ITSEC/7.Mitm/bettercap/evilsocket
-git clone https://github.com/evilsocket/bettercap.git
-
-sudo updatedb
-sudo ldconfig
-
-GITREPOROOT=/opt/ITSEC/7.Mitm/bettercap/evilsocket/bettercap
-#
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
-DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
-DSKTPFL=bettercap.desktop
-
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone $GITREPO
 
 echo "${bold}
 gem install bundler            
@@ -39,15 +40,10 @@ cd $GITREPOROOT
 #yes "N" | rbenv install 2.4.1
 #rbenv rehash
 #rbenv shell 2.4.1
-sudo updatedb
-sudo ldconfig
+#sudo updatedb
+#sudo ldconfig
 
-git clean -f 
-git fetch origin
-git reset --hard origin/master
-git pull
-git submodule init
-git submodule update --recursive
+GITSBMDLINIT
 
 echo "${bold}
 bundle update         

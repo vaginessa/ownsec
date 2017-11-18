@@ -3,6 +3,14 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPOROOT=/opt/ITSEC/7.Mitm/hyperfox/malfunkt/hyperfox
+
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
+DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
+DSKTPFL1=hyperfox.desktop
+DSKTPFL1=arpfox.desktop
+
+
 echo "${bold}
  _   ___   ______  _____ ____  _____ _____  __
 | | | \ \ / /  _ \| ____|  _ \|  ___/ _ \ \/ /
@@ -23,12 +31,6 @@ mkdir -p /opt/ITSEC/7.Mitm/hyperfox/malfunkt
 cd /opt/ITSEC/7.Mitm/hyperfox/malfunkt
 git clone https://github.com/malfunkt/hyperfox.git
 
-GITREPOROOT=/opt/ITSEC/7.Mitm/hyperfox/malfunkt/hyperfox
-
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
-DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
-DSKTPFL1=hyperfox.desktop
-DSKTPFL1=arpfox.desktop
 
 sudo rm -f $DSKTPFLSDEST/$DSKTPFL1
 sudo rm -f $DSKTPFLSDEST/$DSKTPFL2

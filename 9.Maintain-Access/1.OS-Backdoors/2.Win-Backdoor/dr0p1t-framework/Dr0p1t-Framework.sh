@@ -3,6 +3,13 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+
+GITREPOROOT=/opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/2.Win-Backdoor/dr0p1t-framework/D4Vinci/Dr0p1t-Framework
+
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/9.Maintain-Access/1.OS-Backdoors/2.Win-Backdoor
+DSKTPFLSDEST=/home/$USER/.local/share/applications/applications/9.Maintain-Access/1.OS-Backdoors/2.Win-Backdoor
+DSKTPFL=Dr0p1t-Framework.desktop
+
 echo "${bold}
  ____  ____   ___  ____  _ _____ 
 |  _ \|  _ \ / _ \|  _ \/ |_   _|
@@ -18,12 +25,6 @@ git clone https://github.com/D4Vinci/Dr0p1t-Framework
 
 sudo updatedb
 sudo ldconfig
-
-GITREPOROOT=/opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/2.Win-Backdoor/dr0p1t-framework/D4Vinci/Dr0p1t-Framework
-
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/9.Maintain-Access/1.OS-Backdoors/2.Win-Backdoor
-DSKTPFLSDEST=/home/$USER/.local/share/applications/applications/9.Maintain-Access/1.OS-Backdoors/2.Win-Backdoor
-DSKTPFL=Dr0p1t-Framework.desktop
 
 cd $GITREPOROOT
 git clean -f 

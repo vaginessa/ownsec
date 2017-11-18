@@ -3,6 +3,12 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPOROOT=/opt/ITSEC/10.Stresstest/slowhttptest/shekyan/slowhttptest
+
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/10.Stresstest
+DSKTPFLSDEST=/home/$USER/.local/share/applications/10.Stresstest
+DSKTPFL=slowhttptest.desktop
+
 echo "${bold}
  ____  _     _____        ___   _ _____ _____ ____ _____ _____ ____ _____ 
 / ___|| |   / _ \ \      / / | | |_   _|_   _|  _ \_   _| ____/ ___|_   _|
@@ -16,11 +22,6 @@ mkdir -p /opt/ITSEC/10.Stresstest/slowhttptest/shekyan
 cd /opt/ITSEC/10.Stresstest/slowhttptest/shekyan
 git clone https://github.com/shekyan/slowhttptest
 
-GITREPOROOT=/opt/ITSEC/10.Stresstest/slowhttptest/shekyan/slowhttptest
-
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/10.Stresstest
-DSKTPFLSDEST=/home/$USER/.local/share/applications/10.Stresstest
-DSKTPFL=slowhttptest.desktop
 
 cd $GITREPOROOT
 sudo updatedb

@@ -3,6 +3,13 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPOROOT=/opt/ITSEC/7.Mitm/morpheus/r00t-3xp10it/morpheus
+sudo rm -f /usr/local/bin/morpheus
+#
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
+DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
+DSKTPFL=morpheus.desktop
+
 echo "${bold}
  __  __  ___  ____  ____  _   _ _____ _   _ ____  
 |  \/  |/ _ \|  _ \|  _ \| | | | ____| | | / ___| 
@@ -15,14 +22,6 @@ ${normal}"
 mkdir -p /opt/ITSEC/7.Mitm/morpheus/r00t-3xp10it
 cd /opt/ITSEC/7.Mitm/morpheus/r00t-3xp10it
 git clone https://github.com/r00t-3xp10it/morpheus.git
-
-GITREPOROOT=/opt/ITSEC/7.Mitm/morpheus/r00t-3xp10it/morpheus
-sudo rm -f /usr/local/bin/morpheus
-#
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
-DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
-DSKTPFL=morpheus.desktop
-
 
 sudo updatedb
 sudo ldconfig

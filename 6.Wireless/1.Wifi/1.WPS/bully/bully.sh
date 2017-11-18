@@ -3,6 +3,18 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPO=/opt/ITSEC/6.Wireless/1.Wifi/1.WPS/bully/aanarchyy
+GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/1.WPS/bully/aanarchyy/bully
+GITCLONEDIR=/opt/ITSEC/6.Wireless/1.Wifi/1.WPS/bully/aanarchyy
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/6.Wireless/1.Wifi/1.WPS
+DSKTPFLSDEST=/home/$USER/.local/share/applications/6.Wireless/1.Wifi/1.WPS
+DSKTPFL=bully.desktop
+GITSBMDLINIT () {
+	git submodule init
+	git submodule update --recursive
+	sudo updatedb && sudo ldconfig
+}
+
 echo "${bold}
  ____  _   _ _     _  __   __
 | __ )| | | | |   | | \ \ / /
@@ -10,31 +22,16 @@ echo "${bold}
 | |_) | |_| | |___| |___| |  
 |____/ \___/|_____|_____|_|  
        
+INSTALL
 ${normal}"
 
-
-mkdir -p /opt/ITSEC/6.Wireless/1.Wifi/1.WPS/bully/aanarchyy
-cd /opt/ITSEC/6.Wireless/1.Wifi/1.WPS/bully/aanarchyy
-git clone https://github.com/aanarchyy/bully.git
-
-GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/1.WPS/bully/aanarchyy/bully
-#
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/6.Wireless/1.Wifi/1.WPS
-DSKTPFLSDEST=/home/$USER/.local/share/applications/6.Wireless/1.Wifi/1.WPS
-DSKTPFL=bully.desktop
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone $GITREPO
 
 cd $GITREPOROOT
+GITSBMDLINIT
 
-sudo updatedb
-sudo ldconfig
-
-git clean -f
-git fetch origin
-git reset --hard origin/master
-git pull
-git submodule init
-git submodule update --recursive
-#
 cd src
 ./configure
 make -j 4

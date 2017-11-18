@@ -3,6 +3,16 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+#
+GITREPOROOT=/opt/ITSEC/9.Maintain-Access/99.Misc/exe2hex/g0tmi1k/exe2hex
+EXECUTEABLE1=exe2hex.py
+EXECUTEABLE2=exe2hex
+EXECUTEABLE3=exe2hex.sh
+
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/9.Maintain-Access/99.Misc
+DSKTPFLSDEST=/home/$USER/.local/share/applications/9.Maintain-Access/99.Misc
+DSKTPFL=exe2hex.desktop
+
 echo "${bold}
  _______  _______ ____  _   _ _______  __
 | ____\ \/ / ____|___ \| | | | ____\ \/ /
@@ -18,15 +28,6 @@ git clone https://github.com/g0tmi1k/exe2hex.git
 
 sudo updatedb
 sudo ldconfig
-#
-GITREPOROOT=/opt/ITSEC/9.Maintain-Access/99.Misc/exe2hex/g0tmi1k/exe2hex
-EXECUTEABLE1=exe2hex.py
-EXECUTEABLE2=exe2hex
-EXECUTEABLE3=exe2hex.sh
-
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/9.Maintain-Access/99.Misc
-DSKTPFLSDEST=/home/$USER/.local/share/applications/9.Maintain-Access/99.Misc
-DSKTPFL=exe2hex.desktop
 
 sudo rm -f /usr/local/bin/$EXECUTEABLE2
 

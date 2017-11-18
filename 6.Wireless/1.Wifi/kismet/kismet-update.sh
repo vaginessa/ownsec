@@ -3,6 +3,30 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPO=https://github.com/kismetwireless/kismet.git
+GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/kismet/kismetwireless/kismet
+GITCONFDIR=/opt/ITSEC/6.Wireless/1.Wifi/kismet/kismetwireless/kismet/.git
+GITCLONEDIR=/opt/ITSEC/6.Wireless/1.Wifi/kismet/kismetwireless
+KISMETFILESDIR=/opt/ITSEC-Install-Scripts/6.Wireless/1.Wifi/kismet-files
+EXECUTEABLE1=beef.sh
+EXECUTEABLE2=beef
+BINDIR=/usr/local/bin
+CONFDIR=
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/6.Wireless/1.Wifi
+DSKTPFLSDEST=/home/$USER/.local/share/applications/6.Wireless/1.Wifi
+DSKTPFL=kismet.desktop
+GITRESET () {
+	git clean -f
+	git fetch origin
+	git reset --hard origin/master
+	git pull
+}
+GITSBMDLINIT () {
+	git submodule init
+	git submodule update --recursive
+	sudo updatedb && sudo ldconfig
+}
+
 echo "${bold}
  _  _____ ____  __  __ _____ _____ 
 | |/ /_ _/ ___||  \/  | ____|_   _|
@@ -10,37 +34,30 @@ echo "${bold}
 | . \ | | ___) | |  | | |___  | |  
 |_|\_\___|____/|_|  |_|_____| |_|  
            
+INSTALL
 ${normal}"
 
-GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/kismet/kismetwireless/kismet
-GITREPOGITFILE=$GITREPOROOT/.git
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/6.Wireless/1.Wifi
-DSKTPFLSDEST=/home/$USER/.local/share/applications/6.Wireless/1.Wifi
-DSKTPFL=kismet.desktop
-rm -f $DSKTPFLSDEST/$DSKTPFL
-mkdir -p $DSKTPFLSDEST 
-cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
-
-if [ ! -d $GITREPOGITFILE ]
+if [ ! -d $GITCONFDIR ]
 
 then
 
-mkdir -p /opt/ITSEC/6.Wireless/1.Wifi/kismet/kismetwireless
-cd /opt/ITSEC/6.Wireless/1.Wifi/kismet/kismetwireless
-git clone https://github.com/kismetwireless/kismet.git
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone $GITREPO
 
 else
 
-echo "repo exists"
+echo "${bold}REPO EXISTS, skip clone...${normal}"
 
 fi
 
 cd $GITREPOROOT
 
-if git diff-index --quiet HEAD --; then
-    echo "UP TO DATE"
-
-else
+if git checkout master &&
+    git fetch origin master &&
+    [ `git rev-list HEAD...origin/master --count` != 0 ] &&
+    git merge origin/master
+then
 
 sudo mv /usr/local/share/wireshark/manuf_old /usr/local/share/wireshark/manuf
 
@@ -50,13 +67,9 @@ sudo updatedb
 
 cd $GITREPOROOT
 sudo make suiduninstall
-git clean -f
-git fetch origin
-git reset --hard origin/master
-git pull
-git submodule init
-git submodule update --recursive
-#
+GITRESET
+GITSBMDLINIT
+
 ./configure
 make -j 4
 sudo make suidinstall
@@ -67,7 +80,7 @@ echo "
 sudo mkdir -p /usr/share/wireshark/wireshark
 sudo ln -s  /usr/local/share/wireshark/manuf /usr/share/wireshark/wireshark/manuf 
 
-rm -f kismet.sh
+#rm -f kismet.sh
 #echo "#!/bin/bash
 
 #kismetadapter=(ifconfig -a | sed 's/[ \t].*//;/^\(lo\|\)$/d' | sed '/enp*/d' | sed '/docker*/d' | sed '/br*/d')
@@ -81,13 +94,24 @@ rm -f kismet.sh
 # sed -i 's#-c #-c $kismetadapter#g' kismet.sh
 #chmod +x kismet.sh
 
-sudo rm /opt/ITSEC-Install-Scripts/6.Wireless/1.Wifi/kismet-files/kismet.conf
-sudo cp /opt/ITSEC-Install-Scripts/6.Wireless/1.Wifi/kismet-files/kismet.conf /usr/local/etc/kismet.conf
-sudo ln -s /opt/ITSEC/6.Wireless/1.Wifi/kismet/kismetwireless/kismet/kismet /usr/local/bin/kismet.sh
+sudo rm -f $CONFDIR/kismet.conf
+sudo cp $KISMETFILESDIR/kismet.conf $CONFDIR/kismet.conf
+sudo ln -s $GITREPOROOT/kismet $BINDIR/kismet.sh
 
 #sudo rm -f /usr/local/bin/kismet
 sudo groupadd kismet
 sudo usermod -a -G kismet $USER 
 #newgrp kismet #newgrp bug lets the script hang
+
+echo "${bold}
+UPDATED
+${normal}"
+
+else
+
+echo "${bold}
+UP TO DATE
+${normal}"
+	
 fi
 

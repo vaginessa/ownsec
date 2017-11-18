@@ -3,6 +3,13 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+
+GITREPOROOT=/opt/ITSEC/7.Mitm/nfspy/bonsaiviking/NfSpy
+#
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
+DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
+DSKTPFL=nfspy.desktop
+
 echo "${bold}
  _   _ _____ ____  ______   __
 | \ | |  ___/ ___||  _ \ \ / /
@@ -15,12 +22,6 @@ ${normal}"
 mkdir -p /opt/ITSEC/7.Mitm/nfspy/bonsaiviking
 cd /opt/ITSEC/7.Mitm/nfspy/bonsaiviking
 git clone https://github.com/bonsaiviking/NfSpy.git
-
-GITREPOROOT=/opt/ITSEC/7.Mitm/nfspy/bonsaiviking/NfSpy
-#
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
-DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
-DSKTPFL=nfspy.desktop
 
 cd $GITREPOROOT
 git clean -f 

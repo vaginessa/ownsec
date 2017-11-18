@@ -1,10 +1,6 @@
 #!/bin/bash
 
 #Sleuthkit first
-#JAVA IF NO MESF Setup
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install git git-svn build-essential libssl-dev libbz2-dev libz-dev ant automake 
 
 bold=$(tput bold)
 normal=$(tput sgr0)
@@ -17,6 +13,12 @@ echo "${bold}
 /_/   \_\___/  |_| \___/|_|   |____/ |_|  
          
 ${normal}"
+
+
+#JAVA IF NO MESF Setup
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install git git-svn build-essential libssl-dev libbz2-dev libz-dev ant automake 
 
 
 cd /opt/ITSEC/8.Forensics/0.Toolbox/autopsy/sleuthkit/autopsy/

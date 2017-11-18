@@ -1,14 +1,6 @@
 #!/bin/bash
 
 
-mkdir -p /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/veil-evasion/Veil-Framework
-cd /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/veil-evasion/Veil-Framework
-git clone https://github.com/Veil-Framework/Veil-Evasion
-#
-
-sudo udpatedb
-sudo ldconfig
-
 bold=$(tput bold)
 normal=$(tput sgr0)
 
@@ -21,6 +13,15 @@ __     _______ ___ _          _______     ___    ____ ___ ___  _   _
             
 ${normal}"
 
+
+
+mkdir -p /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/veil-evasion/Veil-Framework
+cd /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/veil-evasion/Veil-Framework
+git clone https://github.com/Veil-Framework/Veil-Evasion
+#
+
+sudo udpatedb
+sudo ldconfig
 
 cd /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/veil-evasion/Veil-Framework/Veil-Evasion
 

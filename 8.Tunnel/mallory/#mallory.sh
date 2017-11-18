@@ -3,6 +3,8 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPOROOT=/opt/ITSEC/8.Tunnel/mallory/justmao945/mallory
+
 echo "${bold}
  __  __    _    _     _     ___  ______   __
 |  \/  |  / \  | |   | |   / _ \|  _ \ \ / /
@@ -18,8 +20,6 @@ git clone https://github.com/justmao945/mallory.git
 
 sudo updatedb
 sudo ldconfig
-
-GITREPOROOT=/opt/ITSEC/8.Tunnel/mallory/justmao945/mallory
 
 cd $GITREPOROOT
 git clean -f

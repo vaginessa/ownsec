@@ -3,25 +3,6 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
-echo "${bold}
- _____ _   _ _____ _____ _  _____ ____      _  _____ 
-|_   _| | | | ____|  ___/ \|_   _|  _ \    / \|_   _|
-  | | | |_| |  _| | |_ / _ \ | | | |_) |  / _ \ | |  
-  | | |  _  | |___|  _/ ___ \| | |  _ <  / ___ \| |  
-  |_| |_| |_|_____|_|/_/   \_\_| |_| \_\/_/   \_\_|  
-            
-${normal}"
-
-echo "${bold}
-mkdir, git clone and cd         
-${normal}"
-mkdir -p /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/thefatrat/Screetsec
-cd /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/thefatrat/Screetsec
-git clone https://github.com/Screetsec/TheFatRat
-
-sudo updatedb
-sudo ldconfig
-#
 
 echo "${bold}
 setting vars       
@@ -45,7 +26,26 @@ yellow='\e[0;33m'
 blue='\e[0;34m'
 purple='\e[0;35m'
 orange='\e[38;5;166m'
-#
+
+echo "${bold}
+ _____ _   _ _____ _____ _  _____ ____      _  _____ 
+|_   _| | | | ____|  ___/ \|_   _|  _ \    / \|_   _|
+  | | | |_| |  _| | |_ / _ \ | | | |_) |  / _ \ | |  
+  | | |  _  | |___|  _/ ___ \| | |  _ <  / ___ \| |  
+  |_| |_| |_|_____|_|/_/   \_\_| |_| \_\/_/   \_\_|  
+            
+${normal}"
+
+echo "${bold}
+mkdir, git clone and cd         
+${normal}"
+mkdir -p /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/thefatrat/Screetsec
+cd /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/thefatrat/Screetsec
+git clone https://github.com/Screetsec/TheFatRat
+
+sudo updatedb
+sudo ldconfig
+
 
 echo "${bold}
 mkdir and cp desktop file       

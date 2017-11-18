@@ -23,8 +23,8 @@ cd /opt/ITSEC-Install-Scripts/4.Password/2.Local/johnny
 ./johnny.sh
 cd /opt/ITSEC-Install-Scripts/4.Password/2.Local/johntheripper
 ./johntheripper.sh
-#cd /opt/ITSEC-Install-Scripts/4.Password/2.Local/ophcrack
-#./ophcrack.sh #23.7.17 - stopped working 
+cd /opt/ITSEC-Install-Scripts/4.Password/2.Local/ophcrack
+./ophcrack.sh
 cd /opt/ITSEC-Install-Scripts/4.Password/2.Local/pack
 ./pack.sh 
 cd /opt/ITSEC-Install-Scripts/4.Password/2.Local/pyrit
@@ -50,13 +50,13 @@ cd /opt/ITSEC-Install-Scripts/4.Password/1.Network/medusa
 cd /opt/ITSEC-Install-Scripts/4.Password/1.Network/ncrack
 ./ncrack.sh
 cd /opt/ITSEC-Install-Scripts/4.Password/1.Network/onesixtyone
-./onesixtyone.sh #check install again on blank os.#make: *** No rule to make target 'install'.  Stop. 
+./onesixtyone.sh 
 cd /opt/ITSEC-Install-Scripts/4.Password/1.Network/patator
-./patator.sh #pyOpenSSL is not installed, can't continue #worked prev. PIP clstrfk
+./patator.sh 
 cd /opt/ITSEC-Install-Scripts/4.Password/1.Network/thc-hydra
 ./thc-hydra.sh  
-#cd /opt/ITSEC-Install-Scripts/4.Password/1.Network
-#./thc-pptp-bruter.sh  
+cd /opt/ITSEC-Install-Scripts/4.Password/1.Network
+./thc-pptp-bruter.sh  
 #
 ###############################################################################
 ######################   3.Wordlist   ####################

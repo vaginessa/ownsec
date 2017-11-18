@@ -3,6 +3,12 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPOROOT=/opt/ITSEC/7.Mitm/sslsplit/droe/sslsplit
+#
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
+DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
+DSKTPFL=sslsplit.desktop
+
 echo "${bold}
  ____ ____  _     ____  ____  _     ___ _____ 
 / ___/ ___|| |   / ___||  _ \| |   |_ _|_   _|
@@ -16,11 +22,6 @@ cd /opt/ITSEC/7.Mitm/sslsplit/droe
 git clone https://github.com/droe/sslsplit.git
 
 
-GITREPOROOT=/opt/ITSEC/7.Mitm/sslsplit/droe/sslsplit
-#
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
-DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
-DSKTPFL=sslsplit.desktop
 
 cd $GITREPOROOT
 sudo make uninstall

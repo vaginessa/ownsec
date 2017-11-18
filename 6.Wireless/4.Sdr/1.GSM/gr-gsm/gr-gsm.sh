@@ -1,23 +1,53 @@
 #!/bin/bash
 
-mkdir -p /opt/ITSEC-Install-Scripts/6.Wireless/4.Sdr/1.GSM/3.Jammer/gr-gsm/ptrkrysik
-cd /opt/ITSEC-Install-Scripts/6.Wireless/1.Wifi/4.Sdr/1.GSM/gr-gsm/ptrkrysik
-git clone https://github.com/ptrkrysik/gr-gsm
-
-
+GITREPO=https://github.com/ptrkrysik/gr-gsm
 GITREPOROOT=/opt/ITSEC/6.Wireless/4.Sdr/1.GSM/gr-gsm/ptrkrysik/gr-gsm
-GITREPOGITFILE=$GITREPOROOT/.git
+GITCLONEDIR=/opt/ITSEC/6.Wireless/4.Sdr/1.GSM/gr-gsm/ptrkrysik
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/6.Wireless/4.Sdr/1.GSM
+DSKTPFLSDEST=/home/$USER/.local/share/applications/3.Exploitation-Tools/6.Wireless/4.Sdr/1.GSM
+DSKTPFL=gr-gsm.desktop
+GITSBMDLINIT () {
+	git submodule init
+	git submodule update --recursive
+	sudo updatedb && sudo ldconfig
+}
+
+echo "${bold}
+ ____ ____        ____ ____  __  __ 
+ / ___|  _ \      / ___/ ___||  \/  |
+| |  _| |_) |____| |  _\___ \| |\/| |
+| |_| |  _ <_____| |_| |___) | |  | |
+ \____|_| \_\     \____|____/|_|  |_|
+                                     
+INSTALL
+${normal}"
+
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone $GITREPO
 
 cd $GITREPOROOT
 sudo rm -r build
-git clean -f
-git fetch origin
-git reset --hard origin/master
-git pull
-git submodule init && git submodule update --recursive
-#
+GITSBMDLINIT
+
+sudo -H pip install PyBOMBS
+sudo updatedb
+sudo ldconfig
+#configure installation prefix:
+sudo pybombs prefix init /usr/local -a default_prx
+sudo pybombs config default_prefix default_prx
+#download recipes:
+sudo pybombs recipes add gr-recipes git+https://github.com/gnuradio/gr-recipes.git
+sudo pybombs recipes add gr-etcetera git+https://github.com/gnuradio/gr-etcetera.git
+
+#sudo pybombs install gr-gsm
+
 mkdir build
 cd build
 cmake ..
 make -j 4
-sudo make install 
+sudo make install
+
+mkdir -p $DSKTPFLSDEST
+rm -f $DSKTPFLSDEST/$DSKTPFL
+cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL

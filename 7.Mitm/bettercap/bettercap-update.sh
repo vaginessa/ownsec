@@ -3,6 +3,25 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPO=https://github.com/evilsocket/bettercap.git
+GITREPOROOT=/opt/ITSEC/7.Mitm/bettercap/evilsocket/bettercap
+GITCONFDIR=/opt/ITSEC/7.Mitm/bettercap/evilsocket/bettercap/.git
+GITCLONEDIR=/opt/ITSEC/7.Mitm/bettercap/evilsocket
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
+DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
+DSKTPFL=bettercap.desktop
+GITRESET () {
+	git clean -f
+	git fetch origin
+	git reset --hard origin/master
+	git pull
+}
+GITSBMDLINIT () {
+	git submodule init
+	git submodule update --recursive
+	sudo updatedb && sudo ldconfig
+}
+
 echo "${bold}
  ____  _____ _____ _____ _____ ____   ____    _    ____  
 | __ )| ____|_   _|_   _| ____|  _ \ / ___|  / \  |  _ \ 
@@ -10,41 +29,31 @@ echo "${bold}
 | |_) | |___  | |   | | | |___|  _ <| |___ / ___ \|  __/ 
 |____/|_____| |_|   |_| |_____|_| \_\\____/_/   \_\_|    
                
+UPDATE
 ${normal}"
 
-
-GITREPOROOT=/opt/ITSEC/7.Mitm/bettercap/evilsocket/bettercap
-GITREPOGITFILE=$GITREPOROOT/.git
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
-DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
-DSKTPFL=bettercap.desktop
-
-if [ ! -d $GITREPOGITFILE ]
+if [ ! -d $GITCONFDIR ]
 
 then
 
-mkdir -p /opt/ITSEC/7.Mitm/bettercap/evilsocket
-cd /opt/ITSEC/7.Mitm/bettercap/evilsocket
-git clone https://github.com/evilsocket/bettercap.git
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone $GITREPO
 
 else
 
-echo "repo exists"
+echo "${bold}REPO EXISTS, skip clone...${normal}"
 
 fi
 
 cd $GITREPOROOT
 
-if git diff-index --quiet HEAD --; then
-    echo "UP TO DATE"
-
-else
-
-#gem update
-sudo updatedb
-sudo ldconfig
-
-
+if git checkout master &&
+    git fetch origin master &&
+    [ `git rev-list HEAD...origin/master --count` != 0 ] &&
+    git merge origin/master
+then
+    
 cd $GITREPOROOT
 
 #. ~/.bashrc
@@ -55,12 +64,9 @@ cd $GITREPOROOT
 #sudo updatedb
 #sudo ldconfig
 
-git clean -f 
-git fetch origin
-git reset --hard origin/master
-git pull
-git submodule init
-git submodule update --recursive
+GITRESET
+GITSBMDLINIT
+
 echo "${bold}
 gem install bundler            
 ${normal}"
@@ -141,4 +147,14 @@ echo "${bold}
 done running the bettercap setup   
 ${normal}"
 
+echo "${bold}
+UPDATED
+${normal}"
+
+else
+
+echo "${bold}
+UP TO DATE
+${normal}"
+	
 fi

@@ -1,9 +1,24 @@
 #!/bin/bash
 
-
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPO=https://github.com/USArmyResearchLab/Dshell
+GITREPOROOT=/opt/ITSEC/7.Mitm/2.DNS/dshell/USArmyResearchLab/Dshell
+GITCLONEDIR=/opt/ITSEC/7.Mitm/2.DNS/dshell/USArmyResearchLab
+#EXECUTEABLE1=
+EXECUTEABLE2=dshell
+EXECUTEABLE3=dshell-decode
+BINDIR=/usr/local/bin
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm/2.DNS
+DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm/2.DNS
+DSKTPFL1=dshell.desktop
+DSKTPFL2=dshell-decode.desktop
+GITSBMDLINIT () {
+	git submodule init
+	git submodule update --recursive
+	sudo updatedb && sudo ldconfig
+}
 echo "${bold}
  ____  ____  _   _ _____ _     _     
 |  _ \/ ___|| | | | ____| |   | |    
@@ -11,45 +26,24 @@ echo "${bold}
 | |_| |___) |  _  | |___| |___| |___ 
 |____/|____/|_| |_|_____|_____|_____|
          
+INSTALL
 ${normal}"
 
-
-mkdir -p /opt/ITSEC/7.Mitm/2.DNS/dshell/USArmyResearchLab
-cd /opt/ITSEC/7.Mitm/2.DNS/dshell/USArmyResearchLab
-git clone https://github.com/USArmyResearchLab/Dshell
-
-sudo ldconfig
-sudo updatedb
-
-GITREPOROOT=/opt/ITSEC/7.Mitm/2.DNS/dshell/USArmyResearchLab/Dshell
-GITREPOGITFILE=$GITREPOROOT/.git
-#EXECUTEABLE1=
-EXECUTEABLE2=dshell
-EXECUTEABLE3=dshell-decode
-#
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm/2.DNS
-DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm/2.DNS
-DSKTPFL1=dshell.desktop
-DSKTPFL2=dshell-decode.desktop
-
-
-sudo rm -f /usr/local/bin/$EXECUTEABLE2
-sudo rm -f /usr/local/bin/$EXECUTEABLE3
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone $GITREPO
 
 cd $GITREPOROOT
 
 make clean
-git clean -f 
-git fetch origin
-git reset --hard origin/master
-git pull
-git submodule init && git submodule update --recursive
-
+GITSBMDLINIT
 #Build
 make -j 4
 
 #Install -- Create new Executeable Symlink
-sudo ln -s $GITREPOROOT/$EXECUTEABLE2 /usr/local/bin/$EXECUTEABLE2
-sudo ln -s $GITREPOROOT/$EXECUTEABLE3 /usr/local/bin/$EXECUTEABLE3
+sudo rm -f $BINDIR/$EXECUTEABLE2
+sudo rm -f $BINDIR/$EXECUTEABLE3
+sudo ln -s $GITREPOROOT/$EXECUTEABLE2 $BINDIR/$EXECUTEABLE2
+sudo ln -s $GITREPOROOT/$EXECUTEABLE3 $BINDIR/$EXECUTEABLE3
 cp $DSKTPFLS/$DSKTPFL1 $DSKTPFLSDEST/$DSKTPFL1
 cp $DSKTPFLS/$DSKTPFL2 $DSKTPFLSDEST/$DSKTPFL2
