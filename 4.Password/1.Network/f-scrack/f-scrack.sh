@@ -3,55 +3,39 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPO=https://github.com/zgwdg/F-Scrack.git
+#GITREPOROOT=/opt/ITSEC/4.Password/1.Network/f-scrack/ysrc/F-Scrack
+#GITREPOROOT=/opt/ITSEC/4.Password/1.Network/f-scrack/y1ng1996/F-Scrack
+GITREPOROOT=/opt/ITSEC/4.Password/1.Network/f-scrack/zgwdg/F-Scrack
+GITCLONEDIR=/opt/ITSEC/4.Password/1.Network/f-scrack/zgwdg
+EXECUTEABLE1=F-Scrack.sh
+EXECUTEABLE2=fscrack
+EXECUTEABLE3=F-Scrack.py
+BINDIR=/usr/local/bin
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/1.Network
+DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/1.Network
+DSKTPFL=f-scrack.desktop
+GITSBMDLINIT () {
+	git submodule init
+	git submodule update --recursive
+	sudo updatedb && sudo ldconfig
+}
+
 echo "${bold}
  _____    ____   ____ ____      _    ____ _  __
 |  ___|  / ___| / ___|  _ \    / \  / ___| |/ /
 | |_ ____\___ \| |   | |_) |  / _ \| |   | ' / 
 |  _|_____|__) | |___|  _ <  / ___ \ |___| . \ 
 |_|      |____/ \____|_| \_\/_/   \_\____|_|\_\
-             
+            
+INSTALL 
 ${normal}"
 
-#mkdir -p /opt/ITSEC/4.Password/1.Network/f-scrack/ysrc
-#cd /opt/ITSEC/4.Password/1.Network/f-scrack/ysrc
-#git clone https://github.com/ysrc/F-Scrack.git
-
-#GITREPOROOT=/opt/ITSEC/4.Password/1.Network/f-scrack/ysrc/F-Scrack
-
-# https://github.com/zgwdg/F-Scrack - another fork/branch
-
-mkdir -p /opt/ITSEC/4.Password/1.Network/f-scrack/zgwdg
-cd /opt/ITSEC/4.Password/1.Network/f-scrack/zgwdg
-git clone https://github.com/zgwdg/F-Scrack.git
-
-GITREPOROOT=/opt/ITSEC/4.Password/1.Network/f-scrack/zgwdg/F-Scrack
-
-
-#mkdir -p /opt/ITSEC/4.Password/1.Network/f-scrack/y1ng1996
-#cd /opt/ITSEC/4.Password/1.Network/f-scrack/y1ng1996
-#git clone https://github.com/y1ng1996/F-Scrack.git
-
-#GITREPOROOT=/opt/ITSEC/4.Password/1.Network/f-scrack/y1ng1996/F-Scrack
-
-EXECUTEABLE1=F-Scrack.py
-EXECUTEABLE2=fscrack
-EXECUTEABLE3=fscrack.sh
-#
-sudo rm -f /usr/local/bin/$EXECUTEABLE2
-#
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/1.Network
-DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/1.Network
-DSKTPFL=f-scrack.desktop
-
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone $GITREPO
 cd $GITREPOROOT
-sudo updatedb
-sudo ldconfig
-git clean -f
-git fetch origin
-git reset --hard origin/master
-git pull
-git submodule init
-git submodule update --recursive
+GITSBMDLINIT
 
 echo '#!/bin/bash
 
@@ -59,10 +43,12 @@ echo '#!/bin/bash
 #cd /opt/ITSEC/4.Password/1.Network/f-scrack/y1ng1996/F-Scrack
 cd /opt/ITSEC/4.Password/1.Network/f-scrack/zgwdg/F-Scrack
 
-python F-Scrack.py "$@"' > $EXECUTEABLE3
+python F-Scrack.py "$@"' > $EXECUTEABLE1
 chmod +x $GITREPOROOT/$EXECUTEABLE1
 chmod +x $GITREPOROOT/$EXECUTEABLE3
-sudo ln -s $GITREPOROOT/$EXECUTEABLE3 /usr/local/bin/$EXECUTEABLE2
+sudo rm -f $BINDIR/$EXECUTEABLE2
+sudo ln -s $GITREPOROOT/$EXECUTEABLE1 $BINDIR/$EXECUTEABLE2
 
 mkdir -p $DSKTPFLSDEST
+rm -f $DSKTPFLSDEST/$DSKTPFL
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL

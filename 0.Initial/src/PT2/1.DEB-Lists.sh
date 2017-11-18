@@ -7,6 +7,8 @@ sudo apt-get upgrade
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+
 echo "${bold}
     _    ____ _____     ____  _____ ____       _     ___ ____ _____ ____  
    / \  |  _ \_   _|   |  _ \| ____|  _ \     | |   |_ _/ ___|_   _/ ___| 
@@ -48,104 +50,104 @@ sudo apt-get install -y macchanger
 echo "${bold}
 Installing the apt-get lists - go get a coffee, will take a while ...   
 ${normal}"
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/main/essential.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/main/libs.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/main/python.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/main/wifi-firmware.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/main/essential.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/main/libs.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/main/python.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/main/wifi-firmware.txt") -r -- sudo apt-get install -y
 
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/main/database-webserver.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/main/database-webserver.txt") -r -- sudo apt-get install -y
 
 # Unsorted
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-miredo.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-virtualbox.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-miredo.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-virtualbox.txt") -r -- sudo apt-get install -y
 
 
 ## 1. INFO
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/main/docker.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/main/docker.txt") -r -- sudo apt-get install -y
 
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-nmap.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-masscan.txt.txt") -r -- sudo apt-get install -y
-###xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-xplico.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-zmap.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-recon-ng.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-bypasscf.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-dnsenum.txt") -r -- sudo apt-get install -y
-##xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-fir.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-ftester.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-hping.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-nmap.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-masscan.txt.txt") -r -- sudo apt-get install -y
+###xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-xplico.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-zmap.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-recon-ng.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-bypasscf.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-dnsenum.txt") -r -- sudo apt-get install -y
+##xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-fir.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-ftester.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-hping.txt") -r -- sudo apt-get install -y
 
 
 
 # 2. VULN
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-ava.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-golismero.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-joomscan.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-lhf.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-lightbulb-framework.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-pyfiscan.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-sn1per.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-sparta.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-w3af.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-openvas.txt") -r -- sudo apt-get install -y
-###xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-cisco-torch.txt") -r -- sudo apt-get install -y
-###xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-copy-router-config.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-yersinia.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-dotdotpwn.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-ava.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-golismero.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-joomscan.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-lhf.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-lightbulb-framework.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-pyfiscan.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-sn1per.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-sparta.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-w3af.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-openvas.txt") -r -- sudo apt-get install -y
+###xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-cisco-torch.txt") -r -- sudo apt-get install -y
+###xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-copy-router-config.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-yersinia.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-dotdotpwn.txt") -r -- sudo apt-get install -y
 
 # 3.Exploi
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-armitage.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-SE-toolkit.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-ares.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-backdoorfactory.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-thefatrat.txt") -r -- sudo apt-get install -y
-#xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-veil-evasion.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-webacoo.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-arachni.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-metasploit.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-lfifreak.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-liffy.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-armitage.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-SE-toolkit.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-ares.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-backdoorfactory.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-thefatrat.txt") -r -- sudo apt-get install -y
+#xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-veil-evasion.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-webacoo.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-arachni.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-metasploit.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-lfifreak.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-liffy.txt") -r -- sudo apt-get install -y
 
 
 #4.PASS
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-brut3k1t.txt") -r -- sudo apt-get install -y
-#xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-keimpx.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-medusa.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-thc-hydra.txt") -r -- sudo apt-get install -y
-#xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-thc-pptp-bruter.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-cowpatty.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-johnny.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-johntheripper.txt") -r -- sudo apt-get install -y
-#xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-ophcrack.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-rainbowcrack-ng.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-patator-ng.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-brut3k1t.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-keimpx.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-medusa.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-thc-hydra.txt") -r -- sudo apt-get install -y
+#xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-thc-pptp-bruter.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-cowpatty.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-johnny.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-johntheripper.txt") -r -- sudo apt-get install -y
+#xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-ophcrack.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-rainbowcrack-ng.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-patator-ng.txt") -r -- sudo apt-get install -y
 
 # 6. WIFI
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-routerkeygenPC.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-aircrack.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-atear.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-evilgrade.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-kismet.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-wifipumpkin.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-fruitywifi.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-routerkeygenPC.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-aircrack.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-atear.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-evilgrade.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-kismet.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-wifipumpkin.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-fruitywifi.txt") -r -- sudo apt-get install -y
 
 
 #7.MITM
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-moloch.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-bettercap.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-tcpflow.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-dshell.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-fiked.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-ettercap.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-mitmf.txt") -r -- sudo apt-get install -y
-#xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-cdpsnarf.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-netsniff-ng.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-morpheus.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-wireshark.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-exe2hex.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-moloch.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-bettercap.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-tcpflow.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-dshell.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-fiked.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-ettercap.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-mitmf.txt") -r -- sudo apt-get install -y
+#xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-cdpsnarf.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-netsniff-ng.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-morpheus.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-wireshark.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-exe2hex.txt") -r -- sudo apt-get install -y
 
 # 8.Tunnel
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-sslh.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/deps-stunnel.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-sslh.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-stunnel.txt") -r -- sudo apt-get install -y
 
 echo "${bold}
 sudo apt-get install -y expect   
@@ -157,7 +159,7 @@ echo "${bold}
 apt-get remove list 
 ${normal}"
 ###remove
-xargs -a <(awk '/^\s*[^#]/' "/opt/ITSEC-Install-Scripts/0.Initial/lst/apt/main/remove-initial.txt") -r -- sudo apt-get purge --remove -y 
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/main/remove-initial.txt") -r -- sudo apt-get purge --remove -y 
 
 echo "${bold}
 sudo apt-get autoremove -y   

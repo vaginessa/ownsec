@@ -3,6 +3,24 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPO=https://github.com/savio-code/hexorbase.git
+GITREPOROOT=/opt/ITSEC/4.Password/1.Network/hexorbase/savio-code/hexorbase
+GITCONFDIR=/opt/ITSEC/4.Password/1.Network/hexorbase/savio-code/hexorbase/.git
+GITREPOBINROOT=/opt/ITSEC/4.Password/1.Network/hexorbase/savio-code/hexorbase/HexorBase
+GITCLONEDIR=/opt/ITSEC/4.Password/1.Network/hexorbase/savio-code
+EXECUTEABLE1=hexorbase.sh
+EXECUTEABLE2=hexorbase
+EXECUTEABLE3=execute.py
+BINDIR=/usr/local/bin
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/1.Network
+DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/1.Network
+DSKTPFL=hexorbase.desktop
+GITSBMDLINIT () {
+	git submodule init
+	git submodule update --recursive
+	sudo updatedb && sudo ldconfig
+}
+
 echo "${bold}
  _   _ _______  _____  ____  ____    _    ____  _____ 
 | | | | ____\ \/ / _ \|  _ \| __ )  / \  / ___|| ____|
@@ -10,66 +28,66 @@ echo "${bold}
 |  _  | |___ /  \ |_| |  _ <| |_) / ___ \ ___) | |___ 
 |_| |_|_____/_/\_\___/|_| \_\____/_/   \_\____/|_____|
            
+UPDATE
 ${normal}"
 
-GITREPOROOT=/opt/ITSEC/4.Password/1.Network/hexorbase/savio-code/hexorbase
-GITREPOBINROOT=/opt/ITSEC/4.Password/1.Network/hexorbase/savio-code/hexorbase/HexorBase
-GITREPOGITFILE=$GITREPOROOT/.git
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/1.Network
-DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/1.Network
-DSKTPFL=hexorbase.desktop
-
-if [ ! -d $GITREPOGITFILE ]
+if [ ! -d $GITCONFDIR ]
 
 then
 
-mkdir -p /opt/ITSEC/4.Password/1.Network/hexorbase/savio-code
-cd /opt/ITSEC/4.Password/1.Network/hexorbase/savio-code
-git clone https://github.com/savio-code/hexorbase.git
-
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone $GITREPO
 
 else
 
-echo "repo exists"
+echo "${bold}REPO EXISTS, skip clone...${normal}"
 
 fi
 
 cd $GITREPOROOT
 
-if git diff-index --quiet HEAD --; then
-    echo "UP TO DATE"
-
-else
-sudo rm -f /usr/local/bin/hexorbase
-
+if git checkout master &&
+    git fetch origin master &&
+    [ `git rev-list HEAD...origin/master --count` != 0 ] &&
+    git merge origin/master
+then
+    
 cd $GITREPOROOT
-git clean -f
-git fetch origin
-git reset --hard origin/master
-git pull
-git submodule init
-git submodule update --recursive
-#
+GITSBMDLINIT
+
 cd $GITREPOBINROOT
 
 echo '#!/bin/bash
 
 cd /opt/ITSEC/4.Password/1.Network/hexorbase/savio-code/hexorbase/HexorBase
 
-python execute.py "$@"' > hexorbase.sh
+python execute.py "$@"' > $GITREPOBINROOT/$EXECUTEABLE1
 
-chmod +x hexorbase.sh
+chmod +x $GITREPOBINROOT/$EXECUTEABLE3
 
-chmod +x execute.py
-sudo rm -f /usr/local/bin/hexorbase
-sudo ln -s /opt/ITSEC/4.Password/1.Network/hexorbase/savio-code/hexorbase/HexorBase/hexorbase.sh /usr/local/bin/hexorbase
-rm -f $DSKTPFLSDEST/$DSKTPFL
+chmod +x $GITREPOBINROOT/$EXECUTEABLE1
+sudo rm -f $BINDIR/$EXECUTEABLE2
+sudo ln -s $GITREPOBINROOT/$EXECUTEABLE1 $BINDIR/$EXECUTEABLE2
+
 mkdir -p $DSKTPFLSDEST
+rm -f $DSKTPFLSDEST/$DSKTPFL
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
 
 
 #wget 'http://download.oracle.com/otn/linux/instantclient/122010/instantclient-basic-linux.x64-12.2.0.1.0.zip' 
 
+echo "${bold}
+UPDATED
+${normal}"
+
+else
+
+echo "${bold}
+UP TO DATE
+${normal}"
+	
 fi
 
 

@@ -3,6 +3,21 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPO=https://github.com/1N3/BruteX
+GITREPOROOT=/opt/ITSEC/4.Password/1.Network/brutex/1N3/BruteX
+GITCLONEDIR=/opt/ITSEC/4.Password/1.Network/brutex/1N3
+EXECUTEABLE1=brutex
+EXECUTEABLE2=brutex
+BINDIR=/usr/local/bin
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/1.Network
+DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/1.Network
+DSKTPFL=brutex.desktop
+GITSBMDLINIT () {
+	git submodule init
+	git submodule update --recursive
+	sudo updatedb && sudo ldconfig
+}
+
 echo "${bold}
  ____  ____  _   _ _____ _______  __
 | __ )|  _ \| | | |_   _| ____\ \/ /
@@ -10,43 +25,24 @@ echo "${bold}
 | |_) |  _ <| |_| | | | | |___ /  \ 
 |____/|_| \_\\___/  |_| |_____/_/\_\
       
+INSTALL
 ${normal}"
 
-mkdir -p /opt/ITSEC/4.Password/1.Network/brutex/1N3
-cd /opt/ITSEC/4.Password/1.Network/brutex/1N3
-git clone https://github.com/1N3/BruteX
-
-cd /opt/ITSEC/4.Password/1.Network/brutex/1N3/BruteX
-
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone $GITREPO
+cd $GITREPOROOT
 
 sed -i 's#/usr/share/brutex#/opt/ITSEC/4.Password/1.Network/brutex/1N3/BruteX#g' brutex
 
-# Install script for BruteX
-#
-# VARS
-COLOR1='\033[91m'
-COLOR2='\033[92m'
-COLOR3='\033[92m'
-RESET='\e[0m'
-
-echo -e "$COLOR1 __________                __         ____  ___$RESET"
-echo -e "$COLOR1 \______   \_______ __ ___/  |_  ____ \   \/  /$RESET"
-echo -e "$COLOR1  |    |  _/\_  __ \  |  \   __\/ __ \ \     / $RESET"
-echo -e "$COLOR1  |    |   \ |  | \/  |  /|  | \  ___/ /     \ $RESET"
-echo -e "$COLOR1  |______  / |__|  |____/ |__|  \___  >___/\  \ $RESET"
-echo -e "$COLOR1         \/                         \/      \_/$RESET"
-echo ""
-echo -e "$COLOR1 + -- --=[BruteX v1.5 by 1N3$RESET"
-echo -e "$COLOR1 + -- --=[http://crowdshield.com$RESET"
-echo -e "$RESET"
-
-BRUTEX_INSTALL_DIR=/opt/ITSEC/4.Password/1.Network/brutex/1N3/BruteX
-
-echo -e "$OKGREEN + -- --=[This script will install brutex under $BRUTEX_INSTALL_DIR."
-cd $BRUTEX_INSTALL_DIR
+cd $GITREPOROOT
 mkdir loot
-chmod +x $BRUTEX_INSTALL_DIR/brutex
-sudo rm -f /usr/local/bin/brutex
-sudo ln -s $BRUTEX_INSTALL_DIR/brutex /usr/local/bin/brutex
 
-echo -e "$OKORANGE + -- --=[Done!$RESET"
+chmod +x $GITREPOROOT/$EXECUTEABLE1
+sudo rm -f $BINDIR/$EXECUTEABLE2
+sudo ln -s $GITREPOROOT/$EXECUTEABLE1 $BINDIR/$EXECUTEABLE2
+
+mkdir -p $DSKTPFLSDEST
+rm -f $DSKTPFLSDEST/$DSKTPFL
+cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+

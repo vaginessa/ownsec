@@ -3,16 +3,15 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
-GITREPO=https://github.com/1N3/BruteX
-GITREPOROOT=/opt/ITSEC/4.Password/1.Network/brutex/1N3/BruteX
-GITCONFDIR=/opt/ITSEC/4.Password/1.Network/brutex/1N3/BruteX/.git
-GITCLONEDIR=/opt/ITSEC/4.Password/1.Network/brutex/1N3
-EXECUTEABLE1=brutex
-EXECUTEABLE2=brutex
-BINDIR=/usr/local/bin
+
+
+GITREPO=https://github.com/nmap/ncrack.git
+GITREPOROOT=/opt/ITSEC/4.Password/1.Network/ncrack/nmap/ncrack
+GITCONFDIR=/opt/ITSEC/4.Password/1.Network/ncrack/nmap/ncrack/.git
+GITCLONEDIR=/opt/ITSEC/4.Password/1.Network/ncrack/nmap
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/1.Network
 DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/1.Network
-DSKTPFL=brutex.desktop
+DSKTPFL=ncrack.desktop
 GITRESET () {
 	git clean -f
 	git fetch origin
@@ -25,16 +24,16 @@ GITSBMDLINIT () {
 	sudo updatedb && sudo ldconfig
 }
 
-
 echo "${bold}
- ____  ____  _   _ _____ _______  __
-| __ )|  _ \| | | |_   _| ____\ \/ /
-|  _ \| |_) | | | | | | |  _|  \  / 
-| |_) |  _ <| |_| | | | | |___ /  \ 
-|____/|_| \_\\___/  |_| |_____/_/\_\
-      
+ _   _  ____ ____      _    ____ _  __
+| \ | |/ ___|  _ \    / \  / ___| |/ /
+|  \| | |   | |_) |  / _ \| |   | ' / 
+| |\  | |___|  _ <  / ___ \ |___| . \ 
+|_| \_|\____|_| \_\/_/   \_\____|_|\_\
+          
 UPDATE
 ${normal}"
+
 
 if [ ! -d $GITCONFDIR ]
 
@@ -60,18 +59,14 @@ then
     
 cd $GITREPOROOT
 
-sed -i 's#/usr/share/brutex#/opt/ITSEC/4.Password/1.Network/brutex/1N3/BruteX#g' brutex
+sudo make uninstall
+make clean
+GITRESET
+GITSBMDLINIT
 
-cd $GITREPOROOT
-mkdir loot
-
-chmod +x $GITREPOROOT/$EXECUTEABLE1
-sudo rm -f $BINDIR/$EXECUTEABLE2
-sudo ln -s $GITREPOROOT/$EXECUTEABLE1 $BINDIR/$EXECUTEABLE2
-
-mkdir -p $DSKTPFLSDEST
-rm -f $DSKTPFLSDEST/$DSKTPFL
-cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+./configure
+make -j 4
+sudo make install
 
 echo "${bold}
 UPDATED
@@ -84,4 +79,5 @@ UP TO DATE
 ${normal}"
 	
 fi
+
 

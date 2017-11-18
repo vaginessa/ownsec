@@ -3,6 +3,17 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPO=https://github.com/jmk-foofus/medusa.git
+GITREPOROOT=/opt/ITSEC/4.Password/1.Network/medusa/jmk-foofus/medusa
+GITCLONEDIR=/opt/ITSEC/4.Password/1.Network/medusa/jmk-foofus
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/1.Network
+DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/1.Network
+DSKTPFL=medusa.desktop
+GITSBMDLINIT () {
+	git submodule init
+	git submodule update --recursive
+	sudo updatedb && sudo ldconfig
+}
 echo "${bold}
  __  __ _____ ____  _   _ ____    _    
 |  \/  | ____|  _ \| | | / ___|  / \   
@@ -10,49 +21,30 @@ echo "${bold}
 | |  | | |___| |_| | |_| |___) / ___ \ 
 |_|  |_|_____|____/ \___/|____/_/   \_\
               
+INSTALL
 ${normal}"
 
-mkdir -p /opt/ITSEC/4.Password/1.Network/medusa/jmk-foofus
-cd /opt/ITSEC/4.Password/1.Network/medusa/jmk-foofus
-git clone https://github.com/jmk-foofus/medusa.git
-
-sudo udpatedb
-sudo ldconfig
-
-GITREPOROOT=/opt/ITSEC/4.Password/1.Network/medusa/jmk-foofus/medusa
-
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/1.Network
-DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/1.Network
-DSKTPFL=medusa.desktop
-
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone $GITREPO
 cd $GITREPOROOT
-sudo rm -r $GITREPOROOT/deps
-git clean -f 
-git fetch origin
-git reset --hard origin/master
-git pull
-git submodule init
-git submodule update --recursive
+make clean
+GITSBMDLINIT
 mkdir deps
 cd deps
 
 git clone https://github.com/simonvetter/afpfs-ng
 cd afpfs-ng
-sudo make uninstall 
 make clean
-git clean -f
-git pull
+GITSBMDLINIT
 ./configure
-make -j 2 
+make -j 4 
 sudo make install 
 cd ../..
 
-#sudo make uninstall
-make clean
 ./configure 
 make -j 4
 sudo make install
-#
 
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL

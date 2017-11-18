@@ -43,10 +43,12 @@ cd /opt/ITSEC-Install-Scripts/4.Password/1.Network/findmyhash
 ./findmyhash.sh
 cd /opt/ITSEC-Install-Scripts/4.Password/1.Network/f-scrack
 ./f-scrack.sh
-#cd /opt/ITSEC-Install-Scripts/4.Password/1.Network/keimpx
-#./keimpx.sh
+cd /opt/ITSEC-Install-Scripts/4.Password/1.Network/keimpx
+./keimpx.sh
 cd /opt/ITSEC-Install-Scripts/4.Password/1.Network/medusa
 ./medusa.sh
+cd /opt/ITSEC-Install-Scripts/4.Password/1.Network/ncrack
+./ncrack.sh
 cd /opt/ITSEC-Install-Scripts/4.Password/1.Network/onesixtyone
 ./onesixtyone.sh #check install again on blank os.#make: *** No rule to make target 'install'.  Stop. 
 cd /opt/ITSEC-Install-Scripts/4.Password/1.Network/patator
