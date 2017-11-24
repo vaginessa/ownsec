@@ -1,3 +1,13 @@
-## STATUS: 
+## THIS FOLDER: 
+# /opt/ITSEC-Install-Scripts/0.Initial
 
-test
+# INIT dir all batch install and dependency related scripts here ...
+
+- lst: lists for apt & pip dependencies
+dependencies installed from lists to complete downloads in a batch
+
+- src: Install routines
+PT1 UPDATE & UPRADE base 16.04 Xubuntu
+PT2 INSTALL Dependencies
+PT3 INSTALL the apps
+settings-scripts - xfce user environment, menus, automate things
