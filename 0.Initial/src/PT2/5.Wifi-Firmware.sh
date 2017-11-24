@@ -2,45 +2,57 @@
 
 
 #rtl8812AU
-mkdir -p /opt/DRVR/WIFI/8812/rtl8812au/astsam
+#mkdir -p /opt/DRVR/WIFI/8812/rtl8812au/astsam
 
-cd /opt/DRVR/WIFI/8812/rtl8812au/astsam
-git clone https://github.com/astsam/rtl8812au
-cd rtl8812au
+#cd /opt/DRVR/WIFI/8812/rtl8812au/astsam
+#git clone https://github.com/astsam/rtl8812au
+#cd rtl8812au
 
-make clean
-git clean -f
-git pull
-make -j 4
-sudo cp 8812au.ko /lib/modules/$(uname -r)/kernel/drivers/net/wireless
-sudo make install
-sudo modprobe -a 8812au
+#make clean
+#git clean -f
+#git pull
+#make -j 4
+#sudo cp 8812au.ko /lib/modules/$(uname -r)/kernel/drivers/net/wireless
+#sudo make install
+#sudo modprobe -a 8812au
 
 ######################################################################
 #rtl8812AU
-mkdir -p /opt/DRVR/WIFI/8812/rtl8812au/kimocoder
-cd /opt/DRVR/WIFI/8812/rtl8812au/kimocoder
-git clone https://github.com/kimocoder/rtl8812au
-cd rtl8812au
-make clean
-git clean -f
-git pull
-make -j 4
-sudo cp 8812au.ko /lib/modules/$(uname -r)/kernel/drivers/net/wireless
-sudo make install
-sudo modprobe -a 8812au
+#mkdir -p /opt/DRVR/WIFI/8812/rtl8812au/kimocoder
+#cd /opt/DRVR/WIFI/8812/rtl8812au/kimocoder
+#git clone https://github.com/kimocoder/rtl8812au
+#cd rtl8812au
+#make clean
+#git clean -f
+#git pull
+#make -j 4
+#sudo cp 8812au.ko /lib/modules/$(uname -r)/kernel/drivers/net/wireless
+#sudo make install
+#sudo modprobe -a 8812au
 ######################################################################
-mkdir -p /opt/DRVR/WIFI/8812/rtl8812AU/diederikdehaas
-cd /opt/DRVR/WIFI/8812/rtl8812AU
-git clone https://github.com/diederikdehaas/rtl8812AU
-cd rtl8812AU
-make clean
-git clean -f
-git pull
-make -j 4
-sudo cp 8812au.ko /lib/modules/$(uname -r)/kernel/drivers/net/wireless
-sudo make install
-sudo modprobe -a 8812au
+#mkdir -p /opt/DRVR/WIFI/8812/rtl8812AU/diederikdehaas
+#cd /opt/DRVR/WIFI/8812/rtl8812AU/diederikdehaas
+#git clone https://github.com/diederikdehaas/rtl8812AU
+#cd rtl8812AU
+#make clean
+#git clean -f
+#git pull
+#make -j 4
+#sudo cp 8812au.ko /lib/modules/$(uname -r)/kernel/drivers/net/wireless
+#sudo make install
+#sudo modprobe -a 8812au
+######################################################################
+#mkdir -p /opt/DRVR/WIFI/8812/rtl8812au/gordboy
+#cd /opt/DRVR/WIFI/8812/rtl8812au/gordboy
+#git clone https://github.com/gordboy/rtl8812au
+#cd rtl8812au
+#make clean
+#git clean -f
+#git pull
+#make -j 4
+#sudo cp 8812au.ko /lib/modules/$(uname -r)/kernel/drivers/net/wireless
+#sudo make install
+#sudo modprobe -a 8812au
 ######################################################################
 #mkdir -p /opt/DRVR/WIFI/8812/aircrack-ng
 
@@ -87,26 +99,19 @@ sudo modprobe -a 8812au
 #git checkout linux-4.11
 #make -j 4
 #sudo make install
+############################################
 
-sudo apt-get update
-sudo apt-get install git linux-headers-generic build-essential dkms
+#sudo apt-get update
+#sudo apt-get install git linux-headers-generic build-essential dkms
+#mkdir -p /opt/DRVR/WIFI/8192/rtl8192cu-fixes/pvaret
+#cd /opt/DRVR/WIFI/8192/rtl8192cu-fixes/pvaret
+#git clone https://github.com/pvaret/rtl8192cu-fixes
+#cd rtl8192cu-fixes
+#sudo dkms add ./rtl8192cu-fixes
+#sudo dkms install 8192cu/1.10
+#sudo depmod -a
+#sudo cp ./rtl8192cu-fixes/blacklist-native-rtl8192.conf /etc/modprobe.d/
+#make -j 4
+#sudo make install
 
-
-mkdir -p /opt/DRVR/WIFI/8192/rtl8192cu-fixes/pvaret
-
-cd /opt/DRVR/WIFI/8192/rtl8192cu-fixes/pvaret
-git clone https://github.com/pvaret/rtl8192cu-fixes
-
-cd rtl8192cu-fixes
-
-sudo dkms add ./rtl8192cu-fixes
-
-sudo dkms install 8192cu/1.10
-
-sudo depmod -a
-
-sudo cp ./rtl8192cu-fixes/blacklist-native-rtl8192.conf /etc/modprobe.d/
-
-
-make -j 4
-sudo make install
+############################################
