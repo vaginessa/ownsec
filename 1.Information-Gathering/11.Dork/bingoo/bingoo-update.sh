@@ -4,6 +4,7 @@ bold=$(tput bold)
 normal=$(tput sgr0)
 
 GITREPO=https://github.com/Hood3dRob1n/BinGoo.git
+BRANCH=master
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/11.Dork/bingoo/Hood3dRob1n/BinGoo
 GITCONFDIR=/opt/ITSEC/1.Information-Gathering/11.Dork/bingoo/Hood3dRob1n/BinGoo/.git
 GITCLONEDIR=/opt/ITSEC/1.Information-Gathering/11.Dork/bingoo/Hood3dRob1n
@@ -16,7 +17,7 @@ DSKTPFL=bingoo.desktop
 GITRESET () {
 	git clean -f
 	git fetch origin
-	git reset --hard origin/master
+	git reset --hard origin/$BRANCH
 	git pull
 }
 GITSBMDLINIT () {
@@ -25,7 +26,6 @@ GITSBMDLINIT () {
 	sudo updatedb && sudo ldconfig
 }
 
-
 echo "${bold}
  ____ ___ _   _  ____  ___   ___  
 | __ )_ _| \ | |/ ___|/ _ \ / _ \ 
@@ -33,6 +33,7 @@ echo "${bold}
 | |_) | || |\  | |_| | |_| | |_| |
 |____/___|_| \_|\____|\___/ \___/ 
     
+UPDATE
 ${normal}"
 
 if [ ! -d $GITCONFDIR ]
@@ -41,7 +42,7 @@ then
 
 mkdir -p $GITCLONEDIR
 cd $GITCLONEDIR
-git clone $GITREPO
+git clone -b $BRANCH $GITREPO
 
 else
 
@@ -51,16 +52,14 @@ fi
 
 cd $GITREPOROOT
 
-if git checkout master &&
-    git fetch origin master &&
-    [ `git rev-list HEAD...origin/master --count` != 0 ] &&
-    git merge origin/master
+if git checkout $BRANCH &&
+    git fetch origin $BRANCH &&
+    [ `git rev-list HEAD...origin/$BRANCH --count` != 0 ] &&
+    git merge origin/$BRANCH
 then
     
 cd $GITREPOROOT
-
 GITRESET
-
 GITSBMDLINIT
 
 echo '#!/bin/bash -i
@@ -72,6 +71,7 @@ chmod +x $GITREPOROOT/$EXECUTEABLE1
 chmod +x $GITREPOROOT/$EXECUTEABLE2
 sudo rm -f $BINDIR/$EXECUTEABLE1
 sudo ln -s $GITREPOROOT/$EXECUTEABLE2 $BINDIR/$EXECUTEABLE1
+
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST 
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL

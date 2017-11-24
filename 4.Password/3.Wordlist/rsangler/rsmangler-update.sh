@@ -3,6 +3,30 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPO=https://github.com/digininja/RSMangler
+BRANCH=master
+GITREPOROOT=/opt/ITSEC/4.Password/3.Wordlist/rsmangler/digininja/RSMangler
+GITCONFDIR=/opt/ITSEC/4.Password/3.Wordlist/rsmangler/digininja/RSMangler/.git
+GITCLONEDIR=/opt/ITSEC/4.Password/3.Wordlist/rsmangler/digininja
+EXECUTEABLE1=rsmangler.sh
+EXECUTEABLE2=rsmangler
+EXECUTEABLE3=rsmangler.rb
+BINDIR=/usr/local/bin
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/3.Wordlist
+DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/3.Wordlist
+DSKTPFL=rsmangler.desktop
+GITRESET () {
+	git clean -f
+	git fetch origin
+	git reset --hard origin/master
+	git pull
+}
+GITSBMDLINIT () {
+	git submodule init
+	git submodule update --recursive
+	sudo updatedb && sudo ldconfig
+}
+
 echo "${bold}
  ____  ____  __  __    _    _   _  ____ _     _____ ____  
 |  _ \/ ___||  \/  |  / \  | \ | |/ ___| |   | ____|  _ \ 
@@ -10,59 +34,56 @@ echo "${bold}
 |  _ < ___) | |  | |/ ___ \| |\  | |_| | |___| |___|  _ < 
 |_| \_\____/|_|  |_/_/   \_\_| \_|\____|_____|_____|_| \_\
          
+UPDATE
 ${normal}"
 
-GITREPOROOT=/opt/ITSEC/4.Password/3.Wordlist/rsmangler/digininja/RSMangler
-GITREPOGITFILE=$GITREPOROOT/.git
-EXECUTEABLE1=rsmangler.rb
-EXECUTEABLE2=rsmangler
-EXECUTEABLE3=rsmangler.sh
-
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/3.Wordlist
-DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/3.Wordlist
-DSKTPFL=rsmangler.desktop
-
-if [ ! -d $GITREPOGITFILE ]
+if [ ! -d $GITCONFDIR ]
 
 then
 
-mkdir -p /opt/ITSEC/4.Password/3.Wordlist/rsmangler/digininja
-cd /opt/ITSEC/4.Password/3.Wordlist/rsmangler/digininja
-git clone https://github.com/digininja/RSMangler
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone $GITREPO
 
 else
 
-echo "repo exists"
+echo "${bold}REPO EXISTS, skip clone...${normal}"
 
 fi
 
 cd $GITREPOROOT
 
-if git diff-index --quiet HEAD --; then
-    echo "UP TO DATE"
-
-else
-
-sudo rm -f /usr/local/bin/$EXECUTEABLE2
-
+if git checkout master &&
+    git fetch origin master &&
+    [ `git rev-list HEAD...origin/master --count` != 0 ] &&
+    git merge origin/master
+then
+    
 cd $GITREPOROOT
-git clean -f 
-git fetch origin
-git reset --hard origin/master
-git pull
-git submodule init 
-git submodule update --recursive
+GITRESET
+GITSBMDLINIT
 
 echo '#!/bin/bash
 
 cd /opt/ITSEC/4.Password/3.Wordlist/rsmangler/digininja/RSMangler
-ruby rsmangler.rb "$@"' > rsmangler.sh
+ruby rsmangler.rb "$@"' > /$EXECUTEABLE1
 
 chmod +x $GITREPOROOT/$EXECUTEABLE3
 chmod +x $GITREPOROOT/$EXECUTEABLE1
-sudo ln -s $GITREPOROOT/$EXECUTEABLE3 /usr/local/bin/$EXECUTEABLE2
+sudo rm -f $BINDIR/$EXECUTEABLE2
+sudo ln -s $GITREPOROOT/$EXECUTEABLE1 $BINDIR/$EXECUTEABLE2
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST 
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 
+echo "${bold}
+UPDATED
+${normal}"
+
+else
+
+echo "${bold}
+UP TO DATE
+${normal}"
+	
 fi

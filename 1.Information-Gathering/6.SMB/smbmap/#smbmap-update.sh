@@ -3,6 +3,22 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPO=https://github.com/ShawnDEvans/smbmap.git
+BRANCH=master
+GITREPOROOT=/opt/ITSEC/1.Information-Gathering/6.SMB/smbmap/ShawnDEvans/smbmap
+GITCONFDIR=/opt/ITSEC/1.Information-Gathering/6.SMB/smbmap/ShawnDEvans/smbmap/.giz
+GITCLONEDIR=/opt/ITSEC/1.Information-Gathering/6.SMB/smbmap/ShawnDEvans
+GITRESET () {
+	git clean -f
+	git fetch origin
+	git reset --hard origin/master
+	git pull
+}
+GITSBMDLINIT () {
+	git submodule init
+	git submodule update --recursive
+	sudo updatedb && sudo ldconfig
+}
 echo "${bold}
  ____  __  __ ____  __  __    _    ____  
 / ___||  \/  | __ )|  \/  |  / \  |  _ \ 
@@ -10,41 +26,38 @@ echo "${bold}
  ___) | |  | | |_) | |  | |/ ___ \|  __/ 
 |____/|_|  |_|____/|_|  |_/_/   \_\_|    
      
+UPDATE
 ${normal}"
 
-
-GITREPOROOT=/opt/ITSEC/1.Information-Gathering/6.SMB/smbmap/ShawnDEvans/smbmap
-GITREPOGITFILE=$GITREPOROOT/.git
-
-if [ ! -d $GITREPOGITFILE ]
+if [ ! -d $GITCONFDIR ]
 
 then
 
-mkdir -p /opt/ITSEC/1.Information-Gathering/6.SMB/smbmap/ShawnDEvans
-cd /opt/ITSEC/1.Information-Gathering/6.SMB/smbmap/ShawnDEvans
-git clone https://github.com/ShawnDEvans/smbmap.git
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone $GITREPO
 
 else
 
-echo "repo exists"
+echo "${bold}REPO EXISTS, skip clone...${normal}"
 
 fi
 
 cd $GITREPOROOT
 
-if git diff-index --quiet HEAD --; then
-    echo "UP TO DATE"
-
-else
-
-sudo rm -r /usr/local/bin/smbmap 
-sudo rm -r /opt/ITSEC/1.Information-Gathering/6.SMB/smbmap/ShawnDEvans/smbmap/smbmap.sh
-
+if git checkout master &&
+    git fetch origin master &&
+    [ `git rev-list HEAD...origin/master --count` != 0 ] &&
+    git merge origin/master
+then
+    
 cd $GITREPOROOT
 
 sudo apt-get purge --remove impacket
 sudo -H pip3 uninstall impacket
 sudo -H pip2 install impacket
+sudo updatedb
+sudo ldconfig
 #cd /opt/sys-dev-dep
 #mkdir dependencies
 #cd dependencies
@@ -56,17 +69,24 @@ sudo -H pip2 install impacket
 #sudo apt-get update 
 #sudo apt-get upgrade
 #sudo apt-get install python-impacket
-sudo ldconfig
-sudo updatedb
 
-git clean -f
-git fetch origin
-git reset --hard origin/master
-git pull
+GITRESET
+GITSBMDLINIT
 echo "#!/bin/bash
 cd /opt/ITSEC/1.Information-Gathering/6.SMB/smbmap/ShawnDEvans/smbmap
 python smbmap.py" > $GITREPOROOT/smbmap.sh
 chmod +x $GITREPOROOT/smbmap.sh
 sudo ln -s $GITREPOROOT/smbmap.sh /usr/local/bin/smbmap 
 
+echo "${bold}
+UPDATED
+${normal}"
+
+else
+
+echo "${bold}
+UP TO DATE
+${normal}"
+	
 fi
+

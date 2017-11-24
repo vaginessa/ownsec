@@ -3,6 +3,29 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPO=https://github.com/secretsquirrel/the-backdoor-factory
+BRANCH=master
+GITREPOROOT=/opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/the-backdoor-factory/secretsquirrel/the-backdoor-factory
+GITCONFDIR=/opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/the-backdoor-factory/secretsquirrel/the-backdoor-factory/.git
+GITCLONEDIR=/opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/the-backdoor-factory/secretsquirrel
+EXECUTEABLE1=backdoor.py
+EXECUTEABLE2=backdoor-factory
+BINDIR=/usr/local/bin
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor
+DSKTPFLSDEST=/home/$USER/.local/share/applications/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor
+DSKTPFL=backdoorfactory.desktop
+GITRESET () {
+	git clean -f
+	git fetch origin
+	git reset --hard origin/$BRANCH
+	git pull
+}
+GITSBMDLINIT () {
+	git submodule init
+	git submodule update --recursive
+	sudo updatedb && sudo ldconfig
+}
+
 echo "${bold}
  ____  ____  _____ 
 | __ )|  _ \|  ___|
@@ -10,49 +33,38 @@ echo "${bold}
 | |_) | |_| |  _|  
 |____/|____/|_|    
            
+UPDATE
 ${normal}"
 
-
-GITREPOROOT=/opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/the-backdoor-factory/secretsquirrel/the-backdoor-factory
-GITREPOGITFILE=$GITREPOROOT/.git
-EXECUTEABLE1=backdoor.py
-EXECUTEABLE2=backdoor-factory
-
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor
-DSKTPFLSDEST=/home/$USER/.local/share/applications/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor
-DSKTPFL=backdoorfactory.desktop
-
-if [ ! -d $GITREPOGITFILE ]
+if [ ! -d $GITCONFDIR ]
 
 then
 
-mkdir -p /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/the-backdoor-factory/secretsquirrel
-cd /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/the-backdoor-factory/secretsquirrel
-git clone https://github.com/secretsquirrel/the-backdoor-factory
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone -b $BRANCH $GITREPO
 
 else
 
-echo "repo exists"
+echo "${bold}REPO EXISTS, skip clone...${normal}"
 
 fi
 
 cd $GITREPOROOT
 
-if git diff-index --quiet HEAD --; then
-    echo "UP TO DATE"
-
-else
-
+if git checkout $BRANCH &&
+    git fetch origin $BRANCH &&
+    [ `git rev-list HEAD...origin/$BRANCH --count` != 0 ] &&
+    git merge origin/$BRANCH
+then
+    
 cd $GITREPOROOT
 sudo rm -f /usr/local/bin/$EXECUTEABLE2
 sudo updatedb
 sudo ldconfig
-git clean -f 
-git fetch origin
-git reset --hard origin/master
-git pull
-git submodule init && git submodule update --recursive
-#
+GITRESET
+GITSBMDLINIT
+
  cd osslsigncode
     ./autogen.sh
     ./configure
@@ -79,6 +91,18 @@ rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 
+
+echo "${bold}
+UPDATED
+${normal}"
+
+else
+
+echo "${bold}
+UP TO DATE
+${normal}"
+	
 fi
+
 
 

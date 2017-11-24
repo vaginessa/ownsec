@@ -4,6 +4,7 @@ bold=$(tput bold)
 normal=$(tput sgr0)
 
 GITREPO=https://github.com/1aN0rmus/TekDefense-Automater.git
+BRANCH=master
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/13.OSINT/tekdefense-automater/1aN0rmus/TekDefense-Automater
 GITCONFDIR=/opt/ITSEC/1.Information-Gathering/13.OSINT/tekdefense-automater/1aN0rmus/TekDefense-Automater/.git
 GITCLONEDIR=/opt/ITSEC/1.Information-Gathering/13.OSINT/tekdefense-automater/1aN0rmus
@@ -16,7 +17,7 @@ DSKTPFL=automater.desktop
 GITRESET () {
 	git clean -f
 	git fetch origin
-	git reset --hard origin/master
+	git reset --hard origin/$BRANCH
 	git pull
 }
 GITSBMDLINIT () {
@@ -40,7 +41,7 @@ then
 
 mkdir -p $GITCLONEDIR
 cd $GITCLONEDIR
-git clone $GITREPO
+git clone -b $BRANCH $GITREPO
 
 else
 
@@ -50,16 +51,14 @@ fi
 
 cd $GITREPOROOT
 
-if git checkout master &&
-    git fetch origin master &&
-    [ `git rev-list HEAD...origin/master --count` != 0 ] &&
-    git merge origin/master
+if git checkout $BRANCH &&
+    git fetch origin $BRANCH &&
+    [ `git rev-list HEAD...origin/$BRANCH --count` != 0 ] &&
+    git merge origin/$BRANCH
 then
     
 cd $GITREPOROOT
-
 GITRESET
-
 GITSBMDLINIT
 
 chmod +x $GITREPOROOT/$EXECUTEABLE1

@@ -4,6 +4,7 @@ bold=$(tput bold)
 normal=$(tput sgr0)
 
 GITREPO=https://github.com/zgwdg/F-Scrack.git
+BRANCH=master
 #GITREPOROOT=/opt/ITSEC/4.Password/1.Network/f-scrack/ysrc/F-Scrack
 #GITREPOROOT=/opt/ITSEC/4.Password/1.Network/f-scrack/y1ng1996/F-Scrack
 GITREPOROOT=/opt/ITSEC/4.Password/1.Network/f-scrack/zgwdg/F-Scrack
@@ -18,7 +19,7 @@ DSKTPFL=f-scrack.desktop
 GITRESET () {
 	git clean -f
 	git fetch origin
-	git reset --hard origin/master
+	git reset --hard origin/$BRANCH
 	git pull
 }
 GITSBMDLINIT () {
@@ -43,7 +44,7 @@ then
 
 mkdir -p $GITCLONEDIR
 cd $GITCLONEDIR
-git clone $GITREPO
+git clone -b $BRANCH $GITREPO
 
 else
 
@@ -53,10 +54,10 @@ fi
 
 cd $GITREPOROOT
 
-if git checkout master &&
-    git fetch origin master &&
-    [ `git rev-list HEAD...origin/master --count` != 0 ] &&
-    git merge origin/master
+if git checkout $BRANCH &&
+    git fetch origin $BRANCH &&
+    [ `git rev-list HEAD...origin/$BRANCH --count` != 0 ] &&
+    git merge origin/$BRANCH
 then
     
 cd $GITREPOROOT

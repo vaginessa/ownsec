@@ -4,6 +4,7 @@ bold=$(tput bold)
 normal=$(tput sgr0)
 
 GITREPO=https://github.com/Neohapsis/bbqsql.git
+BRANCH=master
 GITCONFDIR=/opt/ITSEC/5.Database/1.SQL/bbqsql/Neohapsis/bbqsql/.git
 GITREPOROOT=/opt/ITSEC/5.Database/1.SQL/bbqsql/Neohapsis/bbqsql
 GITCLONEDIR=/opt/ITSEC/5.Database/1.SQL/bbqsql/Neohapsis
@@ -13,7 +14,7 @@ DSKTPFL=bbqsql.desktop
 GITRESET () {
 	git clean -f
 	git fetch origin
-	git reset --hard origin/master
+	git reset --hard origin/$BRANCH
 	git pull
 }
 GITSBMDLINIT () {
@@ -38,7 +39,7 @@ then
 
 mkdir -p $GITCLONEDIR
 cd $GITCLONEDIR
-git clone $GITREPO
+git clone -b $BRANCH $GITREPO
 
 else
 
@@ -48,10 +49,10 @@ fi
 
 cd $GITREPOROOT
 
-if git checkout master &&
-    git fetch origin master &&
-    [ `git rev-list HEAD...origin/master --count` != 0 ] &&
-    git merge origin/master
+if git checkout $BRANCH &&
+    git fetch origin $BRANCH &&
+    [ `git rev-list HEAD...origin/$BRANCH --count` != 0 ] &&
+    git merge origin/$BRANCH
 then
 
 cd $GITREPOROOT

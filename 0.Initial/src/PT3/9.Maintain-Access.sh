@@ -5,33 +5,33 @@
 ###########################################################################
 # 1.OS-Backdoors
 cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/l0l
-./l0l.sh
+./l0l-install.sh
 cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/owasp-zsc
-./owasp-zsc.sh
+./owasp-zsc-install.sh
 cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/shellnoob
-./shellnoob.sh # exec w snoob 
+./shellnoob-install.sh # exec w snoob 
 cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/the-backdoor-factory
-./the-backdoor-factory.sh 
+./the-backdoor-factory-install.sh 
 cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/thefatrat
-./thefatrat.sh #appears to work - check again - on 2nd test [ x ] Aapt v0.2-3821160 
+./thefatrat-install.sh #appears to work - check again - on 2nd test [ x ] Aapt v0.2-3821160 
 cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/veil-evasion
-#./veil-evasion.sh
+#./veil-evasion-install.sh
 cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/webacoo
-./webacoo.sh 
+./webacoo-install.sh 
 cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/pupy
-./pupy.sh
+./pupy-install.sh
 
 #cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/2.Generate/1.OS-Backdoors/ares
-#./ares.sh
+#./ares-install.sh
 cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/1.OS-Backdoors/2.Win-Backdoor/dr0p1t-framework
-./Dr0p1t-Framework.sh
+./Dr0p1t-Framework-install.sh
 cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/1.OS-Backdoors/3.Mac-Backdoor/bella
-./bella.sh
+./bella-install.sh
 
 
 # 99.Misc
 cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/99.Misc/exe2hex
-./exe2hex.sh
+./exe2hex-install.sh
 
 
 # ..../3.Rootkit/1.Kernel/1.Linux/

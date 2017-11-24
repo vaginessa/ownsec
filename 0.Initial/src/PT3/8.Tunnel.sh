@@ -5,26 +5,26 @@
 ######################   8.Tunnel  #
 ##################################
 #cd /opt/ITSEC-Install-Scripts/8.Tunnel/anonym8
-#./anonym8.sh
+#./anonym8-install.sh
 cd /opt/ITSEC-Install-Scripts/8.Tunnel/dns2tcp
-./dns2tcp.sh
+./dns2tcp-install.sh
 cd /opt/ITSEC-Install-Scripts/8.Tunnel/iodine
-./iodine.sh
+./iodine-install.sh
 #cd /opt/ITSEC-Install-Scripts/8.Tunnel/mallory
-#mallory.sh
+#mallory-install.sh
 #cd /opt/ITSEC-Install-Scripts/8.Tunnel/miredo
-#miredo.sh
+#miredo-install.sh
 cd /opt/ITSEC-Install-Scripts/8.Tunnel/proxychains-ng
-./proxychains-ng.sh
+./proxychains-ng-install.sh
 #cd /opt/ITSEC-Install-Scripts/8.Tunnel/proxytunnel
-#proxytunnel.sh
+#proxytunnel-install.sh
 cd /opt/ITSEC-Install-Scripts/8.Tunnel/ptunnel
-./ptunnel.sh
+./ptunnel-install.sh
 cd /opt/ITSEC-Install-Scripts/8.Tunnel/pwnat
-./pwnat.sh
+./pwnat-install.sh
 cd /opt/ITSEC-Install-Scripts/8.Tunnel/sslh
-./sslh.sh
+./sslh-install.sh
 #cd /opt/ITSEC-Install-Scripts/8.Tunnel/stunnel
-#stunnel.sh
+#stunnel-install.sh
 cd /opt/ITSEC-Install-Scripts/8.Tunnel/udptunnel
-./udptunnel.sh
+./udptunnel-install.sh

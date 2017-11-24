@@ -149,30 +149,14 @@ xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-exe2hex.txt") -r -- sudo apt-get in
 xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-sslh.txt") -r -- sudo apt-get install -y
 xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-stunnel.txt") -r -- sudo apt-get install -y
 
-echo "${bold}
-sudo apt-get install -y expect   
-${normal}"
 sudo apt-get install -y expect
-
-
-echo "${bold}
-apt-get remove list 
-${normal}"
 ###remove
-xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/main/remove-initial.txt") -r -- sudo apt-get purge --remove -y 
-
-echo "${bold}
-sudo apt-get autoremove -y   
-${normal}"
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/main/remove-initial.txt") -r -- sudo apt-get purge --remove -y
 
 sudo apt-get autoremove -y
 
 sudo apt-get install -y linux-image-extra-$(uname -r) 
 #sudo apt-get install -y linux-image-extra-virtual-$(uname -r)
-
-echo "${bold}
-sudo easy_install -U pip    
-${normal}"
 
 sudo easy_install -U pip
 
@@ -180,20 +164,8 @@ sudo apt-get purge --remove -y openjdk-8-jre openjdk-8-jre openjdk-8-jre-headles
 sudo updatedb
 sudo ldconfig
 
-echo "${bold}
-cd /opt/ITSEC-Install-Scripts/0.Initial/src/settings-scripts/disable-services  
-${normal}"
 cd /opt/ITSEC-Install-Scripts/0.Initial/src/settings-scripts/disable-services
-echo "${bold}
-sudo ./disable-all.sh   
-${normal}"
-sudo ./disable-all.sh
 
-echo "${bold}
-sudo phpenmod mcrypt  
-${normal}"
+sudo ./disable-all.sh
 sudo phpenmod mcrypt
-echo "${bold}
-sudo phpenmod mbstring 
-${normal}"
 sudo phpenmod mbstring

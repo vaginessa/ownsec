@@ -54,7 +54,7 @@ source ~/.bashrc
 ${normal}"
 ./7.RBENV-RUBY.sh
 source ~/.bashrc
-RUBYVERSION=$(lynx --dump https://raw.githubusercontent.com/rapid7/metasploit-framework/master/.ruby-version )
+RUBYVERSION=$(lynx --dump https://raw.githubusercontent.com/rapid7/metasploit-framework/$BRANCH/.ruby-version )
 
 rbenv install $RUBYVERSION
 rbenv rehash

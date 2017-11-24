@@ -3,45 +3,68 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPO=https://github.com/byt3bl33d3r/sslstrip2.git
+BRANCH=master
+GITREPOROOT=/opt/ITSEC/1.Information-Gathering/4.SSL/sslstrip2/byt3bl33d3r/sslstrip2
+GITCONFDIR=/opt/ITSEC/1.Information-Gathering/4.SSL/sslstrip2/byt3bl33d3r/sslstrip2/.git
+GITCLONEDIR=/opt/ITSEC/1.Information-Gathering/4.SSL/sslstrip2/byt3bl33d3r
+GITRESET () {
+	git clean -f
+	git fetch origin
+	git reset --hard origin/master
+	git pull
+}
+GITSBMDLINIT () {
+	git submodule init
+	git submodule update --recursive
+	sudo updatedb && sudo ldconfig
+}
+
 echo "${bold}
- ____ ____  _     ____ _____ ____  ___ ____  
-/ ___/ ___|| |   / ___|_   _|  _ \|_ _|  _ \ 
-\___ \___ \| |   \___ \ | | | |_) || || |_) |
- ___) |__) | |___ ___) || | |  _ < | ||  __/ 
-|____/____/|_____|____/ |_| |_| \_\___|_|    
-     
+ ____ ____  _     ____ _____ ____  ___ ____ ____  
+/ ___/ ___|| |   / ___|_   _|  _ \|_ _|  _ \___ \ 
+\___ \___ \| |   \___ \ | | | |_) || || |_) |__) |
+ ___) |__) | |___ ___) || | |  _ < | ||  __// __/ 
+|____/____/|_____|____/ |_| |_| \_\___|_|  |_____|
+                                                  
+UPDATE
 ${normal}"
 
-GITREPOROOT=/opt/ITSEC/1.Information-Gathering/4.SSL/sslstrip2/byt3bl33d3r/sslstrip2
-GITREPOGITFILE=$GITREPOROOT/.git
-
-if [ ! -d $GITREPOGITFILE ]
+if [ ! -d $GITCONFDIR ]
 
 then
 
-mkdir -p /opt/ITSEC/1.Information-Gathering/4.SSL/sslstrip2/byt3bl33d3r
-cd /opt/ITSEC/1.Information-Gathering/4.SSL/sslstrip2/byt3bl33d3r
-git clone https://github.com/byt3bl33d3r/sslstrip2.git
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone $GITREPO
 
 else
 
-echo "repo exists"
+echo "${bold}REPO EXISTS, skip clone...${normal}"
 
 fi
 
 cd $GITREPOROOT
 
-if git diff-index --quiet HEAD --; then
-    echo "UP TO DATE"
+if git checkout master &&
+    git fetch origin master &&
+    [ `git rev-list HEAD...origin/master --count` != 0 ] &&
+    git merge origin/master
+then
+    
+cd $GITREPOROOT
+GITRESET
+GITSBMDLINIT
+sudo python setup.py install
+
+echo "${bold}
+UPDATED
+${normal}"
 
 else
 
-cd $GITREPOROOT
-
-git clean -f 
-git pull
-git submodule init
-git submodule update --recursive
-sudo python setup.py install
-
+echo "${bold}
+UP TO DATE
+${normal}"
+	
 fi

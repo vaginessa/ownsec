@@ -1,8 +1,12 @@
 #!/bin/bash
 
-
 bold=$(tput bold)
 normal=$(tput sgr0)
+
+GITREPO=https://github.com/joridos/custom-ssh-backdoor
+BRANCH=master
+GITREPOROOT=/opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/custom-ssh-backdoor/joridos/custom-ssh-backdoor/custom-ssh-backdoor
+GITCLONEDIR=/opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/custom-ssh-backdoor/joridos/custom-ssh-backdoor
 
 echo "${bold}
  ____ ____  _   _ ____    _    ____ _  ______   ___   ___  ____  
@@ -11,20 +15,13 @@ echo "${bold}
  ___) |__) |  _  | |_) / ___ \ |___| . \| |_| | |_| | |_| |  _ < 
 |____/____/|_| |_|____/_/   \_\____|_|\_\____/ \___/ \___/|_| \_\
                  
+INSTALL
 ${normal}"
 
-mkdir -p /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/custom-ssh-backdoor/joridos/custom-ssh-backdoor
-
-cd /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/custom-ssh-backdoor/joridos/custom-ssh-backdoor
-git clone https://github.com/joridos/custom-ssh-backdoor
-
-cd /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/custom-ssh-backdoor/joridos/custom-ssh-backdoor/custom-ssh-backdoor
-
-git clean -f
-git fetch origin
-git reset --hard origin/master
-git pull
-git submodule init
-git submodule update --recursive
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone -b $BRANCH $GITREPO
+cd $GITREPOROOT
+GITSBMDLINIT
 
 

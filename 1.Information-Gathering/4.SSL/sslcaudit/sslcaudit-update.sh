@@ -4,6 +4,7 @@ bold=$(tput bold)
 normal=$(tput sgr0)
 
 GITREPO=https://github.com/grwl/sslcaudit.git
+BRANCH=master
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/4.SSL/sslaudit/grwl/sslcaudit
 GITCONFDIR=/opt/ITSEC/1.Information-Gathering/4.SSL/sslaudit/grwl/sslcaudit/.git
 GITCLONEDIR=/opt/ITSEC/1.Information-Gathering/4.SSL/sslaudit/grwl
@@ -13,7 +14,7 @@ DSKTPFL=sslcaudit.desktop
 GITRESET () {
 	git clean -f
 	git fetch origin
-	git reset --hard origin/master
+	git reset --hard origin/$BRANCH
 	git pull
 }
 GITSBMDLINIT () {
@@ -29,6 +30,7 @@ echo "${bold}
  ___) |__) | |__| |___ / ___ \ |_| | |_| | |  | |  
 |____/____/|_____\____/_/   \_\___/|____/___| |_|  
               
+UPDATE
 ${normal}"
 
 if [ ! -d $GITCONFDIR ]
@@ -37,7 +39,7 @@ then
 
 mkdir -p $GITCLONEDIR
 cd $GITCLONEDIR
-git clone $GITREPO
+git clone -b $BRANCH $GITREPO
 
 else
 
@@ -47,10 +49,10 @@ fi
 
 cd $GITREPOROOT
 
-if git checkout master &&
-    git fetch origin master &&
-    [ `git rev-list HEAD...origin/master --count` != 0 ] &&
-    git merge origin/master
+if git checkout $BRANCH &&
+    git fetch origin $BRANCH &&
+    [ `git rev-list HEAD...origin/$BRANCH --count` != 0 ] &&
+    git merge origin/$BRANCH
 then
     
 cd $GITREPOROOT
@@ -60,8 +62,11 @@ GITRESET
 GITSBMDLINIT
 
 sudo -H pip2 install M2Crypto
+sudo udpatedb
+sudo ldconfig
 
 sudo python setup.py install
+
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 

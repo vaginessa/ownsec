@@ -30,8 +30,8 @@ cd /opt/ITSEC-Install-Scripts/6.Wireless/1.Wifi/2.Routerkeys/routerkeygenpc
 
 ### 3.Jammer
 
-cd /opt/ITSEC-Install-Scripts/6.Wireless/1.Wifi/3.Jammer/mdk3-master
-./mdk3-master-update.sh
+cd /opt/ITSEC-Install-Scripts/6.Wireless/1.Wifi/3.Jammer/mdk3-$BRANCH
+./mdk3-$BRANCH-update.sh
 cd /opt/ITSEC-Install-Scripts/6.Wireless/1.Wifi/3.Jammer/wifijammer
 ./wifijammer-update.sh
 

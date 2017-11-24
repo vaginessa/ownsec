@@ -3,6 +3,29 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPO=https://github.com/r00t-3xp10it/morpheus.git
+BRANCH=master
+GITREPOROOT=/opt/ITSEC/7.Mitm/morpheus/r00t-3xp10it/morpheus
+GITCONFDIR=/opt/ITSEC/7.Mitm/morpheus/r00t-3xp10it/morpheus.git
+GITCLONEDIR=/opt/ITSEC/7.Mitm/morpheus/r00t-3xp10it
+EXECUTEABLE1=morpheus.sh
+EXECUTEABLE2=morpheus
+BINDIR=/usr/local/bin
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
+DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
+DSKTPFL=morpheus.desktop
+GITRESET () {
+	git clean -f
+	git fetch origin
+	git reset --hard origin/$BRANCH
+	git pull
+}
+GITSBMDLINIT () {
+	git submodule init
+	git submodule update --recursive
+	sudo updatedb && sudo ldconfig
+}
+
 echo "${bold}
  __  __  ___  ____  ____  _   _ _____ _   _ ____  
 |  \/  |/ _ \|  _ \|  _ \| | | | ____| | | / ___| 
@@ -10,52 +33,48 @@ echo "${bold}
 | |  | | |_| |  _ <|  __/|  _  | |___| |_| |___) |
 |_|  |_|\___/|_| \_\_|   |_| |_|_____|\___/|____/ 
               
+UPDATE
 ${normal}"
 
-GITREPOROOT=/opt/ITSEC/7.Mitm/morpheus/r00t-3xp10it/morpheus
-GITREPOGITFILE=$GITREPOROOT/.git
-#
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
-DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
-DSKTPFL=morpheus.desktop
-
-if [ ! -d $GITREPOGITFILE ]
+if [ ! -d $GITCONFDIR ]
 
 then
 
-mkdir -p /opt/ITSEC/7.Mitm/morpheus/r00t-3xp10it
-cd /opt/ITSEC/7.Mitm/morpheus/r00t-3xp10it
-git clone https://github.com/r00t-3xp10it/morpheus.git
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone -b $BRANCH $GITREPO
 
 else
 
-echo "repo exists"
+echo "${bold}REPO EXISTS, skip clone...${normal}"
 
 fi
 
 cd $GITREPOROOT
 
-if git diff-index --quiet HEAD --; then
-    echo "UP TO DATE"
+if git checkout $BRANCH &&
+    git fetch origin $BRANCH &&
+    [ `git rev-list HEAD...origin/$BRANCH --count` != 0 ] &&
+    git merge origin/$BRANCH
+then
 
-else
-
-sudo updatedb
-sudo ldconfig
-sudo rm -f /usr/local/bin/morpheus
-
-cd /opt/ITSEC/7.Mitm/morpheus/r00t-3xp10it/morpheus
-git clean -f 
-git fetch origin
-git reset --hard origin/master
-git pull
-git submodule init
-git submodule update --recursive
-
-sudo ln -s /opt/ITSEC/7.Mitm/morpheus/r00t-3xp10it/morpheus/morpheus.sh /usr/local/bin/morpheus
-rm -f $DSKTPFLSDEST/$DSKTPFL
+cd $GITREPOROOT
+GITRESET
+GITSBMDLINIT
+sudo rm -f $BINDIR/$EXECUTEABLE2
+sudo ln -s $GITREPOROOT/$EXECUTEABLE1 $BINDIR/$EXECUTEABLE2
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 
+echo "${bold}
+UPDATED
+${normal}"
+
+else
+
+echo "${bold}
+UP TO DATE
+${normal}"
+	
 fi
 

@@ -3,6 +3,29 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPO=https://github.com/SpiderLabs/Responder.git
+BRANCH=master
+GITREPOROOT=/opt/ITSEC/7.Mitm/responder/SpiderLabs/Responder
+GITCONFDIR=/opt/ITSEC/7.Mitm/responder/SpiderLabs/Responder/.git
+GITCLONEDIR=/opt/ITSEC/7.Mitm/responder/SpiderLabs
+EXECUTEABLE1=Responder.py
+EXECUTEABLE2=responder
+BINDIR=/usr/local/bin
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
+DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
+DSKTPFL=responder.desktop
+GITRESET () {
+	git clean -f
+	git fetch origin
+	git reset --hard origin/$BRANCH
+	git pull
+}
+GITSBMDLINIT () {
+	git submodule init
+	git submodule update --recursive
+	sudo updatedb && sudo ldconfig
+}
+
 echo "${bold}
  ____  _____ ____  ____   ___  _   _ ____  _____ ____  
 |  _ \| ____/ ___||  _ \ / _ \| \ | |  _ \| ____|  _ \ 
@@ -10,58 +33,54 @@ echo "${bold}
 |  _ <| |___ ___) |  __/| |_| | |\  | |_| | |___|  _ < 
 |_| \_\_____|____/|_|    \___/|_| \_|____/|_____|_| \_\
            
+UPDATE
 ${normal}"
 
-GITREPOROOT=/opt/ITSEC/7.Mitm/responder/SpiderLabs/Responder
-GITREPOGITFILE=$GITREPOROOT/.git
-EXECUTEABLE1=Responder.py
 
-EXECUTEABLE2=responder
-#
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
-DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
-DSKTPFL=responder.desktop
-
-if [ ! -d $GITREPOGITFILE ]
+if [ ! -d $GITCONFDIR ]
 
 then
 
-mkdir -p /opt/ITSEC/7.Mitm/responder/SpiderLabs
-cd /opt/ITSEC/7.Mitm/responder/SpiderLabs
-git clone https://github.com/SpiderLabs/Responder.git
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone -b $BRANCH $GITREPO
 
 else
 
-echo "repo exists"
+echo "${bold}REPO EXISTS, skip clone...${normal}"
 
 fi
 
 cd $GITREPOROOT
 
-if git diff-index --quiet HEAD --; then
-    echo "UP TO DATE"
-
-else
-
-
+if git checkout $BRANCH &&
+    git fetch origin $BRANCH &&
+    [ `git rev-list HEAD...origin/$BRANCH --count` != 0 ] &&
+    git merge origin/$BRANCH
+then
+    
 cd $GITREPOROOT
-sudo rm -f /usr/local/bin/$EXECUTEABLE2
-
-sudo updatedb
-sudo ldconfig
-git clean -f 
-git fetch origin
-git reset --hard origin/master
-git pull
-git submodule init
-git submodule update --recursive
+GITRESET
+GITSBMDLINIT
 
 chmod +x $GITREPOROOT/$EXECUTEABLE1
-sudo ln -s $GITREPOROOT/$EXECUTEABLE1 /usr/local/bin/$EXECUTEABLE2
+sudo rm -f $BINDIR/$EXECUTEABLE2
+sudo ln -s $GITREPOROOT/$EXECUTEABLE1 $BINDIR/$EXECUTEABLE2
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 
+echo "${bold}
+UPDATED
+${normal}"
+
+else
+
+echo "${bold}
+UP TO DATE
+${normal}"
+	
 fi
+
 
 

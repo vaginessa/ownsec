@@ -16,12 +16,45 @@ sudo cp 8812au.ko /lib/modules/$(uname -r)/kernel/drivers/net/wireless
 sudo make install
 sudo modprobe -a 8812au
 
+######################################################################
+#rtl8812AU
+mkdir -p /opt/DRVR/WIFI/8812/aircrack-ng
+
+cd /opt/DRVR/WIFI/8812/aircrack-ng
+git clone -b v5.1.5  https://github.com/aircrack-ng/rtl8812au
+cd rtl8812au
+ 
+#git checkout v5.1.5
+#make clean
+#git clean -f
+git pull
+make -j 4
+
+
+########################################################
+
+evilphish
+
+#rtl8812AU
+mkdir -p /opt/DRVR/WIFI/8812/evilphish
+
+cd /opt/DRVR/WIFI/8812/evilphish
+git clone -b v5.1.5  https://github.com/evilphish/rtl8812au
+cd rtl8812au
+ 
+#git checkout v5.1.5
+#make clean
+#git clean -f
+git pull
+make -j 4
+
+############################################
 
 #RTL8192EU
-#mkdir -p /opt/DRVR/WIFI/8192/rtl8192eu/masterzorag
+#mkdir -p /opt/DRVR/WIFI/8192/rtl8192eu/$BRANCHzorag
 
-#cd /opt/DRVR/WIFI/8192/rtl8192eu/masterzorag
-#git clone https://github.com/masterzorag/RTL8192EU-linux
+#cd /opt/DRVR/WIFI/8192/rtl8192eu/$BRANCHzorag
+#git clone https://github.com/$BRANCHzorag/RTL8192EU-linux
 #cd RTL8192EU-linux
 
 #make clean

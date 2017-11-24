@@ -10,126 +10,126 @@
 ######################   1.Network_Portscanner   ####################
 ###########################################################################
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/1.Network_Portscanner/nmap
-./nmap.sh
+./nmap-install.sh
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/1.Network_Portscanner/masscan
-./masscan.sh
+./masscan-install.sh
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/1.Network_Portscanner/thanos
-./thanos.sh
+./thanos-install.sh
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/1.Network_Portscanner/zmap
-./zmap.sh
+./zmap-install.sh
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/1.Network_Portscanner/spiderfoot
-./spiderfoot.sh
+./spiderfoot-install.sh
 #
 #
 ###############################################################################
 ######################  2.Live-Host  ####################
 ###########################################################################
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/2.Live-Host/arping
-./arping.sh
+./arping-install.sh
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/2.Live-Host/dmitry
-./dmitry.sh
+./dmitry-install.sh
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/2.Live-Host/fping
-./fping.sh
+./fping-install.sh
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/2.Live-Host/hping
-./hping.sh
+./hping-install.sh
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/2.Live-Host/netdiscover
-./netdiscover.sh
+./netdiscover-install.sh
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/2.Live-Host/recon-ng
-./recon-ng.sh
+./recon-ng-install.sh
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/2.Live-Host/wol-e
-./wol-e.sh
+./wol-e-install.sh
 #
 # 2.Live-Host - 1.Cloudflare ####
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/2.Live-Host/1.Cloudflare/cloud-buster
-./cloud-buster.sh 
+./cloud-buster-install.sh 
 #
 # 2.Live-Host - 2.VPN ####
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/2.Live-Host/2.VPN/ike-scan
-./ike-scan.sh 
+./ike-scan-install.sh 
 #
 # 2.Live-Host 3.IPv6 ####
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/2.Live-Host/3.IPv6
-./thc-ipv6.sh 
+./thc-ipv6-install.sh 
 #
 # 2.Live-Host 4.Load-Balancer ####
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/2.Live-Host/4.Load-Balancer/lbd
-./lbd.sh
+./lbd-install.sh
 #
 #
 ###############################################################################
 ######################  3.Route-Analysis ####################
 ###########################################################################
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/3.Route-Analysis/0trace
-./0trace.sh #PIPdependencies 
+./0trace-install.sh #PIPdependencies 
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/3.Route-Analysis/intrace
-./intrace.sh #probaly problems, check again 
+./intrace-install.sh #probaly problems, check again 
 #cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/3.Route-Analysis/irpas
-# ./irpas.sh source site down - script worked
+# ./irpas-install.sh source site down - script worked
 #
 # 3.Route-Analysis - 1.Cloudflare ###
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/3.Route-Analysis/1.Cloudflare/bypasscf
-./bypasscf.sh 
+./bypasscf-install.sh 
 #
 #
 ###############################################################################
 ######################   4.SSL   ####################
 ###########################################################################
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/4.SSL/sslcaudit
-./sslcaudit.sh
+./sslcaudit-install.sh
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/4.SSL/sslh
-./sslh.sh
+./sslh-install.sh
 #cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/4.SSL/sslstrip2
 #./sslstrip2
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/4.SSL/sslyze_nabla-c0d3
-./sslyze_nabla-c0d3.sh
+./sslyze_nabla-c0d3-install.sh
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/4.SSL/tls-prober
-#./tls-prober.sh
+#./tls-prober-install.sh
 #
 #
 ###############################################################################
 ######################   5.DNS  ####################
 ###########################################################################
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/5.DNS/dnsenum
-./dnsenum.sh
+./dnsenum-install.sh
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/5.DNS/dnsmap
-./dnsmap.sh
+./dnsmap-install.sh
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/5.DNS/dnsrecon
-./dnsrecon.sh #PIP dependencies #
+./dnsrecon-install.sh #PIP dependencies #
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/5.DNS/dnstracer
-./dnstracer.sh
+./dnstracer-install.sh
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/5.DNS/fierce
-./fierce.sh
+./fierce-install.sh
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/5.DNS/passivedns
-./passivedns.sh
+./passivedns-install.sh
 #
 #
 ###############################################################################
 ######################   6.SMB  ####################
 ###########################################################################
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/6.SMB/acccheck
-./acccheck.sh
+./acccheck-install.sh
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/6.SMB/enum4linux
-./enum4linux.sh #PROBALY MISSING PARTS SETUP, CHECK AGAIN
+./enum4linux-install.sh #PROBALY MISSING PARTS SETUP, CHECK AGAIN
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/6.SMB/nbtscan
-./nbtscan.sh
+./nbtscan-install.sh
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/6.SMB/smbmap
-#./smbmap.sh #disabled it earlier, got to check again.
+#./smbmap-install.sh #disabled it earlier, got to check again.
 #
 #
 ###############################################################################
 ######################   7.SMTP   ####################
 ###########################################################################
-cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/7.SMTP/smtp-user-enum
-./smtp-user-enum.sh
+cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/7.SMTP/smtp-userenum
+./smtp-userenum-install.sh
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/7.SMTP/swaks
-./swaks.sh 
+./swaks-install.sh 
 #
 #
 ###############################################################################
 ######################   8.SNMP    ####################
 ###########################################################################
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/8.SNMP/braa
-./braa.sh 
+./braa-install.sh 
 #
 #
 ###############################################################################
@@ -142,31 +142,31 @@ cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/8.SNMP/braa
 ######################   11. Dork    ####################
 ###########################################################################
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/11.Dork/bingoo
-./bingoo.sh
+./bingoo-install.sh
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/11.Dork/scanner-inurlbr
-./scanner-inurlbr.sh 
+./scanner-inurlbr-install.sh 
 #
 ###############################################################################
 ######################   12.Scrape   ####################
 ###########################################################################
 # cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/12.Scrape/
-#./httrack.sh #did not work off git, using apt
+#./httrack-install.sh #did not work off git, using apt
 #
 ###############################################################################
 ######################   13.OSINT   ####################
 ###########################################################################
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/13.OSINT/metagoofil
-./metagoofil.sh
+./metagoofil-install.sh
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/13.OSINT/tekdefense-automater
-./tekdefense-automater.sh
+./tekdefense-automater-install.sh
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/13.OSINT/theharvester
-./theharvester.sh
+./theharvester-install.sh
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/13.OSINT/twofi
-./twofi.sh
+./twofi-install.sh
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/13.OSINT/urlcrazy
-./urlcrazy.sh
+./urlcrazy-install.sh
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/13.OSINT/datasploit
-./datasploit.sh
+./datasploit-install.sh
 #
 #
 ###############################################################################
@@ -181,26 +181,26 @@ cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/13.OSINT/datasploit
 ######################   15.Fuzzer   ####################
 ###########################################################################
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/15.Fuzzer/dotdotpwn
-./dotdotpwn.sh
+./dotdotpwn-install.sh
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/15.Fuzzer/simplefuzzer
-./simplefuzzer.sh # call w sfuzz 
+./simplefuzzer-install.sh # call w sfuzz 
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/15.Fuzzer/siparmyknife
-./siparmyknife.sh 
+./siparmyknife-install.sh 
 # dirb repository not available on git anymore??!
 #cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/15.Fuzzer/dirb
-#./dirb.sh
+#./dirb-install.sh
 #
 ###############################################################################
 ######################   16.IDS-IPS_Identification   ####################
 ###########################################################################
 #cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/16.IDS-IPS_Identification/fir
-#./fir.sh #something not working
+#./fir-install.sh #something not working
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/16.IDS-IPS_Identification/ftester
-./ftester.sh 
+./ftester-install.sh 
 
 # 16.IDS-IPS_Identification ###1.Web-Firewalls
 cd /opt/ITSEC-Install-Scripts/1.Information-Gathering/16.IDS-IPS_Identification/1.Web-Firewalls/wafw00f
-./wafw00f.sh # needs makefile fix for pip "sudo -H pip install ..."
+./wafw00f-install.sh # needs makefile fix for pip "sudo -H pip install ..."
 
 
 

@@ -4,8 +4,9 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
-GITBRANCH=bleeding-jumbo
+
 GITREPO=https://github.com/magnumripper/JohnTheRipper.git
+BRANCH=bleeding-jumbo
 GITREPOROOT=/opt/ITSEC/4.Password/2.Local/johntheripper/magnumripper/JohnTheRipper
 GITCONFDIR=/opt/ITSEC/4.Password/2.Local/johntheripper/magnumripper/JohnTheRipper/.git
 GITCLONEDIR=/opt/ITSEC/4.Password/2.Local/johntheripper/magnumripper
@@ -43,7 +44,7 @@ then
 
 mkdir -p $GITCLONEDIR
 cd $GITCLONEDIR
-git clone $GITREPO
+git clone -b $BRANCH $GITREPO
 
 else
 
@@ -53,10 +54,10 @@ fi
 
 cd $GITREPOROOT
 
-if git checkout $GITBRANCH &&
-    git fetch origin $GITBRANCH &&
-    [ `git rev-list HEAD...origin/$GITBRANCH --count` != 0 ] &&
-    git merge origin/$GITBRANCH
+if git checkout $BRANCH &&
+    git fetch origin $BRANCH &&
+    [ `git rev-list HEAD...origin/$BRANCH --count` != 0 ] &&
+    git merge origin/$BRANCH
 then
     
 cd $GITREPOROOT

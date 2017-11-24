@@ -1,7 +1,24 @@
 #does not work - node problem
-
+# Depends Node.js 6.x https://docs.dripcap.org/build/linux.html
+#!/bin/bash
 bold=$(tput bold)
 normal=$(tput sgr0)
+
+GITREPO=https://github.com/dripcap/dripcap.git
+BRANCH=master
+GITREPOROOT=/opt/ITSEC/7.Mitm/dripcap/dripcap/dripcap
+GITCLONEDIR=/opt/ITSEC/7.Mitm/dripcap/dripcap
+GITRESET () {
+	git clean -f
+	git fetch origin
+	git reset --hard origin/$BRANCH
+	git pull
+}
+GITSBMDLINIT () {
+	git submodule init
+	git submodule update --recursive
+	sudo updatedb && sudo ldconfig
+}
 
 echo "${bold}
  ____  ____  ___ ____   ____    _    ____  
@@ -10,36 +27,51 @@ echo "${bold}
 | |_| |  _ < | ||  __/| |___ / ___ \|  __/ 
 |____/|_| \_\___|_|    \____/_/   \_\_|    
              
+INSTALL
 ${normal}"
 
 GITREPOGITFILE=$GITREPOROOT/.git
 
-if [ ! -d $GITREPOGITFILE ]
+if [ ! -d $GITCONFDIR ]
 
 then
 
-mkdir -p /opt/ITSEC/7.Mitm/dripcap/dripcap
-cd /opt/ITSEC/7.Mitm/dripcap/dripcap
-git clone https://github.com/dripcap/dripcap.git
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone -b $BRANCH $GITREPO
 
 else
 
-echo "repo exists"
+echo "${bold}REPO EXISTS, skip clone...${normal}"
 
 fi
 
 cd $GITREPOROOT
 
-if git diff-index --quiet HEAD --; then
-    echo "UP TO DATE"
+if git checkout $BRANCH &&
+    git fetch origin $BRANCH &&
+    [ `git rev-list HEAD...origin/$BRANCH --count` != 0 ] &&
+    git merge origin/$BRANCH
+then
+    
+cd $GITREPOROOT
+GITRESET
+GITSBMDLINIT
+npm install -g gulp node-gyp babel-cli
+npm install
+ELECTRON_PATH=$(node -p "require('electron')")
+chrpath -r $(dirname $ELECTRON_PATH) $ELECTRON_PATH
+sudo setcap cap_net_raw,cap_net_admin=eip $ELECTRON_PATH
+gulp
+
+echo "${bold}
+UPDATED
+${normal}"
 
 else
 
-git clean -f 
-git fetch origin
-git reset --hard origin/master
-git pull
-git submodule init
-git submodule update --recursive
-
+echo "${bold}
+UP TO DATE
+${normal}"
+	
 fi

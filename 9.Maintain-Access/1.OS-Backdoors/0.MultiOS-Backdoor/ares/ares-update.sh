@@ -3,6 +3,26 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPO=https://github.com/sweetsoftware/ares
+BRANCH=master
+GITREPOROOT=/opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/ares/sweetsoftware/ares
+GITCONFDIR=/opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/ares/sweetsoftware/ares/.git
+GITCLONEDIR=/opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/ares/sweetsoftware
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor
+DSKTPFLSDEST=/home/$USER/.local/share/applications/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor
+DSKTPFL=ares.desktop
+GITRESET () {
+	git clean -f
+	git fetch origin
+	git reset --hard origin/$BRANCH
+	git pull
+}
+GITSBMDLINIT () {
+	git submodule init
+	git submodule update --recursive
+	sudo updatedb && sudo ldconfig
+}
+
 echo "${bold}
     _    ____  _____ ____  
    / \  |  _ \| ____/ ___| 
@@ -10,57 +30,46 @@ echo "${bold}
  / ___ \|  _ <| |___ ___) |
 /_/   \_\_| \_\_____|____/ 
           
+UPDATE
 ${normal}"
 
-GITREPOROOT=/opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/ares/sweetsoftware/ares
-GITREPOGITFILE=$GITREPOROOT/.git
-
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor
-DSKTPFLSDEST=/home/$USER/.local/share/applications/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor
-DSKTPFL=ares.desktop
-
-if [ ! -d $GITREPOGITFILE ]
+if [ ! -d $GITCONFDIR ]
 
 then
 
-mkdir -p /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/ares/sweetsoftware 
-cd /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/ares/sweetsoftware
-git clone https://github.com/sweetsoftware/ares
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone -b $BRANCH $GITREPO
 
 else
 
-echo "repo exists"
+echo "${bold}REPO EXISTS, skip clone...${normal}"
 
 fi
 
 cd $GITREPOROOT
 
-if git diff-index --quiet HEAD --; then
-    echo "UP TO DATE"
-
-else
-
+if git checkout $BRANCH &&
+    git fetch origin $BRANCH &&
+    [ `git rev-list HEAD...origin/$BRANCH --count` != 0 ] &&
+    git merge origin/$BRANCH
+then
+    
 cd $GITREPOROOT
 
 sudo apt-get install python-compizconfig binutils-mingw-w64 python-pil python-requests
 
 cd $GITREPOROOT 
-git clean -f
-git fetch origin
-git reset --hard origin/master
-git pull
-git submodule init && git submodule update --recursive
+GITRESET
+GITSBMDLINIT
 
 ####### SERVER
 
 cd $GITREPOROOT 
 git clone https://github.com/pyinstaller/pyinstaller
 cd pyinstaller
-git clean -f
-git fetch origin
-git reset --hard origin/master
-git pull
-git submodule init && git submodule update --recursive
+GITRESET
+GITSBMDLINIT
 cd bootloader
 python ./waf distclean all
 cd ..
@@ -73,7 +82,7 @@ cd $GITREPOROOT
 #cd pyHook
 #git clean -f
 #git fetch origin
-#git reset --hard origin/master
+#git reset --hard origin/$BRANCH
 #git pull
 #git submodule init && git submodule update --recursive
 #sudo python setup.py install
@@ -108,6 +117,17 @@ cd server
 
 cd $GITREPOROOT 
 
+mkdir -p $DSKTPFLSDEST && cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+echo "${bold}
+UPDATED
+${normal}"
+
+else
+
+echo "${bold}
+UP TO DATE
+${normal}"
+	
 fi
 
-mkdir -p $DSKTPFLSDEST && cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL

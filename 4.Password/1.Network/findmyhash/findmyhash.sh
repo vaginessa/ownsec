@@ -4,6 +4,7 @@ bold=$(tput bold)
 normal=$(tput sgr0)
 
 GITREPO=https://github.com/frdmn/findmyhash.git
+BRANCH=master
 GITREPOROOT=/opt/ITSEC/4.Password/1.Network/findmyhash/frdmn/findmyhash
 GITCLONEDIR=/opt/ITSEC/4.Password/1.Network/findmyhash/frdmn
 EXECUTEABLE1=findmyhash.sh
@@ -31,7 +32,7 @@ ${normal}"
 
 mkdir -p $GITCLONEDIR
 cd $GITCLONEDIR
-git clone $GITREPO
+git clone -b $BRANCH $GITREPO
 cd $GITREPOROOT
 GITSBMDLINIT
 

@@ -57,7 +57,7 @@ sudo make uninstall
 #make clean
 #git clean -f 
 #git fetch origin
-#git reset --hard origin/master
+#git reset --hard origin/$BRANCH
 #git pull
 #git checkout latest
 git checkout v4.2.0

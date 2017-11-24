@@ -3,10 +3,11 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
-GITREPO=git clone https://github.com/lanjelot/patator.git
+GITREPO=ttps://github.com/lanjelot/patator.git
+BRANCH=master
 GITREPOROOT=/opt/ITSEC/4.Password/1.Network/patator/lanjelot/patator
 GITCONFDIR=/opt/ITSEC/4.Password/1.Network/patator/lanjelot/patator/.git
-GITCLONEDIR=cd /opt/ITSEC/4.Password/1.Network/patator/lanjelot
+GITCLONEDIR=/opt/ITSEC/4.Password/1.Network/patator/lanjelot
 EXECUTEABLE1=patator.sh
 EXECUTEABLE2=patator
 EXECUTEABLE3=patator.py
@@ -36,7 +37,7 @@ then
 
 mkdir -p $GITCLONEDIR
 cd $GITCLONEDIR
-git clone $GITREPO
+git clone -b $BRANCH $GITREPO
 
 else
 
@@ -46,10 +47,10 @@ fi
 
 cd $GITREPOROOT
 
-if git checkout master &&
-    git fetch origin master &&
-    [ `git rev-list HEAD...origin/master --count` != 0 ] &&
-    git merge origin/master
+if git checkout $BRANCH &&
+    git fetch origin $BRANCH &&
+    [ `git rev-list HEAD...origin/$BRANCH --count` != 0 ] &&
+    git merge origin/$BRANCH
 then
     
 cd $GITREPOROOT

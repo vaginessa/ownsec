@@ -10,7 +10,7 @@
 ######################   1.SQL   ####################
 ###########################################################################
 cd /opt/ITSEC-Install-Scripts/5.Database/1.SQL/sqlmap
-./sqlmap.sh
+./sqlmap-install.sh
 cd /opt/ITSEC-Install-Scripts/5.Database/1.SQL/hexorbase
-./hexorbase.sh
-###./bbqsql.sh outdated, bugs ,,,,
+./hexorbase-install.sh
+###./bbqsql-install.sh outdated, bugs ,,,,

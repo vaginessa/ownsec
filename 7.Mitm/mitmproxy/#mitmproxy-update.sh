@@ -4,6 +4,8 @@ does not work - build fail
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+BRANCH=master
+
 echo "${bold}
  __  __ ___ _____ __  __ ____  ____   _____  ____   __
 |  \/  |_ _|_   _|  \/  |  _ \|  _ \ / _ \ \/ /\ \ / /
@@ -12,8 +14,6 @@ echo "${bold}
 |_|  |_|___| |_| |_|  |_|_|   |_| \_\\___/_/\_\  |_|  
           
 ${normal}"
-
-GITREPOGITFILE=$GITREPOROOT/.git
 
 
 if [ ! -d $GITREPOGITFILE ]
@@ -40,7 +40,7 @@ else
 cd /opt/ITSEC/7.Mitm/mitmproxy
 git clean -f 
 git fetch origin
-git reset --hard origin/master
+git reset --hard origin/$BRANCH
 git pull
 git submodule init
 git submodule update --recursive

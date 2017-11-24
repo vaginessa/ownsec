@@ -3,6 +3,29 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPO=https://github.com/astroza/udptunnel.git
+BRANCH=master
+GITREPOROOT=/opt/ITSEC/8.Tunnel/udptunnel/astroza/udptunnel
+GITCONFDIR=/opt/ITSEC/8.Tunnel/udptunnel/astroza/udptunnel/.git
+GITCLONEDIR=/opt/ITSEC/8.Tunnel/udptunnel/astroza
+EXECUTEABLE1=client
+EXECUTEABLE2=udptunnel
+BINDIR=/usr/local/bin
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/8.Tunnel
+DSKTPFLSDEST=/home/$USER/.local/share/applications/8.Tunnel
+DSKTPFL=udptunnel.desktop
+GITRESET () {
+	git clean -f
+	git fetch origin
+	git reset --hard origin/$BRANCH
+	git pull
+}
+GITSBMDLINIT () {
+	git submodule init
+	git submodule update --recursive
+	sudo updatedb && sudo ldconfig
+}
+
 echo "${bold}
  _   _ ____  ____ _____ _   _ _   _ _   _ _____ _     
 | | | |  _ \|  _ \_   _| | | | \ | | \ | | ____| |    
@@ -10,51 +33,56 @@ echo "${bold}
 | |_| | |_| |  __/ | | | |_| | |\  | |\  | |___| |___ 
  \___/|____/|_|    |_|  \___/|_| \_|_| \_|_____|_____|
           
+UPDATE
 ${normal}"
 
-GITREPOROOT=/opt/ITSEC/8.Tunnel/udptunnel/astroza/udptunnel
-GITREPOGITFILE=$GITREPOROOT/.git
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/8.Tunnel
-DSKTPFLSDEST=/home/$USER/.local/share/applications/8.Tunnel
-DSKTPFL=udptunnel.desktop
-
-if [ ! -d $GITREPOGITFILE ]
+if [ ! -d $GITCONFDIR ]
 
 then
 
-mkdir -p /opt/ITSEC/8.Tunnel/udptunnel/astroza
-cd /opt/ITSEC/8.Tunnel/udptunnel/astroza
-git clone https://github.com/astroza/udptunnel.git
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone -b $BRANCH $GITREPO
 
 else
 
-echo "repo exists"
+echo "${bold}REPO EXISTS, skip clone...${normal}"
 
 fi
 
 cd $GITREPOROOT
 
-if git diff-index --quiet HEAD --; then
-    echo "UP TO DATE"
-
-else
-
+if git checkout $BRANCH &&
+    git fetch origin $BRANCH &&
+    [ `git rev-list HEAD...origin/$BRANCH --count` != 0 ] &&
+    git merge origin/$BRANCH
+then
+    
 cd $GITREPOROOT
+
 make clean
-git clean -f
-git fetch origin
-git reset --hard origin/master
-git pull
-git submodule init
-git submodule update --recursive
+GITRESET
+GITSBMDLINIT
 
 make -j 4
 
-sudo rm -f /usr/local/bin/udptunnel
-chmod +x client
-sudo ln -s $GITREPOROOT/client /usr/local/bin/udptunnel
+sudo rm -f $BINDIR/$EXECUTEABLE2
+chmod +x $EXECUTEABLE1 
+sudo ln -s $GITREPOROOT/$EXECUTEABLE1 $BINDIR/$EXECUTEABLE2
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 
+
+echo "${bold}
+UPDATED
+${normal}"
+
+else
+
+echo "${bold}
+UP TO DATE
+${normal}"
+	
 fi
+

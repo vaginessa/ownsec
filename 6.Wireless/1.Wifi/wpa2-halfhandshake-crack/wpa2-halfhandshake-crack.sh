@@ -4,6 +4,7 @@ bold=$(tput bold)
 normal=$(tput sgr0)
 
 GITREPO=https://github.com/dxa4481/WPA2-HalfHandshake-Crack
+BRANCH=master
 GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/wpa2-halfhandshake-crack/dxa4481/WPA2-HalfHandshake-Crack
 GITCLONEDIR=/opt/ITSEC/6.Wireless/1.Wifi/wpa2-halfhandshake-crack/dxa4481
 EXECUTEABLE1=halfHandshake.sh
@@ -26,7 +27,7 @@ ${normal}"
 
 mkdir -p $GITCLONEDIR
 cd $GITCLONEDIR
-git clone $GITREPO
+git clone -b $BRANCH $GITREPO
 
 cd $GITREPOROOT
 sudo python setup.py install

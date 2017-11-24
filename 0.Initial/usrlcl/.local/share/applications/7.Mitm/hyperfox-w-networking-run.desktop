@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=hyperfox-w-networking-run.sh
+Encoding=UTF-8
+Exec=sh -c "hyperfox-w-networking-run.sh;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=7.Mitm;

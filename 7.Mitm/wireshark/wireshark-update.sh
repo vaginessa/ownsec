@@ -3,6 +3,26 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPO=https://github.com/wireshark/wireshark.git
+BRANCH=master
+GITREPOROOT=/opt/ITSEC/7.Mitm/wireshark/wireshark/wireshark
+GITCONFDIR=/opt/ITSEC/7.Mitm/wireshark/wireshark/wireshark/.git
+GITCLONEDIR=/opt/ITSEC/7.Mitm/wireshark/wireshark
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
+DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
+DSKTPFL=wireshark.desktop
+GITRESET () {
+	git clean -f
+	git fetch origin
+	git reset --hard origin/$BRANCH
+	git pull
+}
+GITSBMDLINIT () {
+	git submodule init
+	git submodule update --recursive
+	sudo updatedb && sudo ldconfig
+}
+
 echo "${bold}
 __        _____ ____  _____ ____  _   _    _    ____  _  __
 \ \      / /_ _|  _ \| ____/ ___|| | | |  / \  |  _ \| |/ /
@@ -10,37 +30,31 @@ __        _____ ____  _____ ____  _   _    _    ____  _  __
   \ V  V /  | ||  _ <| |___ ___) |  _  |/ ___ \|  _ <| . \ 
    \_/\_/  |___|_| \_\_____|____/|_| |_/_/   \_\_| \_\_|\_\
            
+UPDATE
 ${normal}"
 
-
-GITREPOROOT=/opt/ITSEC/7.Mitm/wireshark/wireshark/wireshark
-GITREPOGITFILE=$GITREPOROOT/.git
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
-DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
-DSKTPFL=wireshark.desktop
-
-if [ ! -d $GITREPOGITFILE ]
+if [ ! -d $GITCONFDIR ]
 
 then
 
-mkdir -p /opt/ITSEC/7.Mitm/wireshark/wireshark
-cd /opt/ITSEC/7.Mitm/wireshark/wireshark
-git clone https://github.com/wireshark/wireshark.git
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone -b $BRANCH $GITREPO
 
 else
 
-echo "repo exists"
+echo "${bold}REPO EXISTS, skip clone...${normal}"
 
 fi
 
 cd $GITREPOROOT
 
-if git diff-index --quiet HEAD --; then
-    echo "UP TO DATE"
-
-else
-
-
+if git checkout $BRANCH &&
+    git fetch origin $BRANCH &&
+    [ `git rev-list HEAD...origin/$BRANCH --count` != 0 ] &&
+    git merge origin/$BRANCH
+then
+    
 cd $GITREPOROOT
 #cd build
 #sudo make uninstall
@@ -48,12 +62,8 @@ cd $GITREPOROOT
 sudo rm -r build
 #
 make clean 
-git clean -f 
-git fetch origin
-git reset --hard origin/master
-git pull
-git submodule init
-git submodule update --recursive
+GITRESET
+GITSBMDLINIT
 #mkdir build
 #cd build
 #cmake ..
@@ -74,6 +84,16 @@ rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 
+echo "${bold}
+UPDATED
+${normal}"
+
+else
+
+echo "${bold}
+UP TO DATE
+${normal}"
+	
 fi
 
 

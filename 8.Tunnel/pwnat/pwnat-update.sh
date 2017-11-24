@@ -3,6 +3,29 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPO=https://github.com/samyk/pwnat.git
+BRANCH=master
+GITREPOROOT=/opt/ITSEC/8.Tunnel/pwnat/samyk/pwnat
+GITCONFDIR=/opt/ITSEC/8.Tunnel/pwnat/samyk/pwnat/.git
+GITCLONEDIR=/opt/ITSEC/8.Tunnel/pwnat/samyk
+EXECUTEABLE1=pwnat	
+EXECUTEABLE2=pwnat
+BINDIR=/usr/local/bin
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/8.Tunnel
+DSKTPFLSDEST=/home/$USER/.local/share/applications/8.Tunnel
+DSKTPFL=pwnat.desktop
+GITRESET () {
+	git clean -f
+	git fetch origin
+	git reset --hard origin/$BRANCH
+	git pull
+}
+GITSBMDLINIT () {
+	git submodule init
+	git submodule update --recursive
+	sudo updatedb && sudo ldconfig
+}
+
 echo "${bold}
  ______        ___   _    _  _____ 
 |  _ \ \      / / \ | |  / \|_   _|
@@ -10,57 +33,55 @@ echo "${bold}
 |  __/ \ V  V / | |\  |/ ___ \| |  
 |_|     \_/\_/  |_| \_/_/   \_\_|  
              
+UPDATE
 ${normal}"
 
-GITREPOROOT=/opt/ITSEC/8.Tunnel/pwnat/samyk/pwnat
-GITREPOGITFILE=$GITREPOROOT/.git
-EXECUTEABLE1=pwnat	
-EXECUTEABLE2=pwnat
-
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/8.Tunnel
-DSKTPFLSDEST=/home/$USER/.local/share/applications/8.Tunnel
-DSKTPFL=pwnat.desktop
-
-if [ ! -d $GITREPOGITFILE ]
+if [ ! -d $GITCONFDIR ]
 
 then
 
-mkdir -p /opt/ITSEC/8.Tunnel/pwnat/samyk
-cd /opt/ITSEC/8.Tunnel/pwnat/samyk
-git clone https://github.com/samyk/pwnat.git
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone -b $BRANCH $GITREPO
 
 else
 
-echo "repo exists"
+echo "${bold}REPO EXISTS, skip clone...${normal}"
 
 fi
 
 cd $GITREPOROOT
 
-if git diff-index --quiet HEAD --; then
-    echo "UP TO DATE"
-
-else
-
+if git checkout $BRANCH &&
+    git fetch origin $BRANCH &&
+    [ `git rev-list HEAD...origin/$BRANCH --count` != 0 ] &&
+    git merge origin/$BRANCH
+then
+    
 cd $GITREPOROOT
 make clean
-git clean -f
-git fetch origin
-git reset --hard origin/master
-git pull
-git submodule init
-git submodule update --recursive
-#
+GITRESET
+GITSBMDLINIT
 make -j 4
 
 #sudo make install doesent work
 #
-sudo rm -f /usr/local/bin/$EXECUTEABLE2
+sudo rm -f $BINDIR/$EXECUTEABLE2
 chmod +x $GITREPOROOT/$EXECUTEABLE1
-sudo ln -s $GITREPOROOT/$EXECUTEABLE1 /usr/local/bin/$EXECUTEABLE2
+sudo ln -s $GITREPOROOT/$EXECUTEABLE1 $BINDIR/$EXECUTEABLE2
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST 
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 
+echo "${bold}
+UPDATED
+${normal}"
+
+else
+
+echo "${bold}
+UP TO DATE
+${normal}"
+	
 fi
 

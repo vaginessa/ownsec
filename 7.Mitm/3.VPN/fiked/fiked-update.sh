@@ -10,50 +10,56 @@ echo "${bold}
 |  _|  | || . \| |___| |_| |
 |_|   |___|_|\_\_____|____/ 
            
+UPDATE
 ${normal}"
 
+GITREPO=https://github.com/droe/fiked.git
+BRANCH=master
 GITREPOROOT=/opt/ITSEC/7.Mitm/3.VPN/fiked/droe/fiked
-GITREPOGITFILE=$GITREPOROOT/.git
+GITCONFDIR=/opt/ITSEC/7.Mitm/3.VPN/fiked/droe/fiked/.git
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm/3.VPN
 DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm/3.VPN
 DSKTPFL=fiked.desktop
+GITRESET () {
+	git clean -f
+	git fetch origin
+	git reset --hard origin/master
+	git pull
+}
+GITSBMDLINIT () {
+	git submodule init
+	git submodule update --recursive
+	sudo updatedb && sudo ldconfig
+}
 
-
-if [ ! -d $GITREPOGITFILE ]
+if [ ! -d $GITCONFDIR ]
 
 then
 
-mkdir -p /opt/ITSEC/7.Mitm/3.VPN/fiked/droe
-cd /opt/ITSEC/7.Mitm/3.VPN/fiked/droe
-git clone https://github.com/droe/fiked.git
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone $GITREPO
 
 else
 
-echo "repo exists"
+echo "${bold}REPO EXISTS, skip clone...${normal}"
 
 fi
 
 cd $GITREPOROOT
 
-if git diff-index --quiet HEAD --; then
-    echo "UP TO DATE"
-
-else
-
-sudo ldconfig
-sudo updatedb
-
-
+if git checkout master &&
+    git fetch origin master &&
+    [ `git rev-list HEAD...origin/master --count` != 0 ] &&
+    git merge origin/master
+then
+    
 cd $GITREPOROOT
 
 sudo make uninstall
 make clean
-git clean -f 
-git fetch origin
-git reset --hard origin/master
-git pull
-git submodule init
-git submodule update --recursive
+GITRESET
+GITSBMDLINIT
 
 sudo rm -f makefile
 cp GNUmakefile makefile
@@ -63,5 +69,15 @@ sudo rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 
+echo "${bold}
+UPDATED
+${normal}"
+
+else
+
+echo "${bold}
+UP TO DATE
+${normal}"
+	
 fi
 

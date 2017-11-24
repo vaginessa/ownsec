@@ -2,29 +2,6 @@
 
 bold=$(tput bold)
 normal=$(tput sgr0)
-
-echo "${bold}
- _____ _   _ _____ _____ _  _____ ____      _  _____ 
-|_   _| | | | ____|  ___/ \|_   _|  _ \    / \|_   _|
-  | | | |_| |  _| | |_ / _ \ | | | |_) |  / _ \ | |  
-  | | |  _  | |___|  _/ ___ \| | |  _ <  / ___ \| |  
-  |_| |_| |_|_____|_|/_/   \_\_| |_| \_\/_/   \_\_|  
-            
-${normal}"
-
-
-echo "${bold}
-setting vars       
-${normal}"
-
-GITREPOROOT=/opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/thefatrat/Screetsec/TheFatRat
-GITREPOGITFILE=$GITREPOROOT/.git
-EXECUTEABLE1=fatrat
-EXECUTEABLE2=fatrat.sh
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor
-DSKTPFLSDEST=/home/$USER/.local/share/applications/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor
-DSKTPFL=thefatrat.desktop
-
 cyan='\e[0;36m'
 green='\e[0;32m'
 lightgreen='\e[0;32m'
@@ -35,30 +12,61 @@ blue='\e[0;34m'
 purple='\e[0;35m'
 orange='\e[38;5;166m'
 
-if [ ! -d $GITREPOGITFILE ]
+GITREPO=https://github.com/Screetsec/TheFatRat
+BRANCH=master
+GITREPOROOT=/opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/thefatrat/Screetsec/TheFatRat
+GITCONFDIR=/opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/thefatrat/Screetsec/TheFatRat/.git
+GITCLONEDIR=/opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/thefatrat/Screetsec
+EXECUTEABLE1=fatrat
+EXECUTEABLE2=fatrat.sh
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor
+DSKTPFLSDEST=/home/$USER/.local/share/applications/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor
+DSKTPFL=thefatrat.desktop
+GITRESET () {
+	git clean -f
+	git fetch origin
+	git reset --hard origin/$BRANCH
+	git pull
+}
+GITSBMDLINIT () {
+	git submodule init
+	git submodule update --recursive
+	sudo updatedb && sudo ldconfig
+}
+
+echo "${bold}
+ _____ _   _ _____ _____ _  _____ ____      _  _____ 
+|_   _| | | | ____|  ___/ \|_   _|  _ \    / \|_   _|
+  | | | |_| |  _| | |_ / _ \ | | | |_) |  / _ \ | |  
+  | | |  _  | |___|  _/ ___ \| | |  _ <  / ___ \| |  
+  |_| |_| |_|_____|_|/_/   \_\_| |_| \_\/_/   \_\_|  
+            
+UPDATE
+${normal}"
+
+if [ ! -d $GITCONFDIR ]
 
 then
 
-echo "${bold}
-mkdir, git clone and cd         
-${normal}"
-
-mkdir -p /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/thefatrat/Screetsec
-cd /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/thefatrat/Screetsec
-git clone https://github.com/Screetsec/TheFatRat
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone -b $BRANCH $GITREPO
 
 else
 
-echo "repo exists"
+echo "${bold}REPO EXISTS, skip clone...${normal}"
 
 fi
 
 cd $GITREPOROOT
 
-if git diff-index --quiet HEAD --; then
-    echo "UP TO DATE"
-
-else
+if git checkout $BRANCH &&
+    git fetch origin $BRANCH &&
+    [ `git rev-list HEAD...origin/$BRANCH --count` != 0 ] &&
+    git merge origin/$BRANCH
+then
+    
+cd $GITREPOROOT
 
 echo "${bold}
 mkdir and cp desktop file       
@@ -72,12 +80,8 @@ cd GITREPOROOT
 ${normal}"
 
 cd $GITREPOROOT
-git clean -f 
-git fetch origin
-git reset --hard origin/master
-git pull
-git submodule init
-git submodule update --recursive
+GITRESET
+GITSBMDLINIT
 
 echo "${bold}
 chmod +x exec 
@@ -370,4 +374,15 @@ echo "0" > "$stp"
 echo "Dex2Jar -> Not OK" >> "$inst"
 fi
 fi
+
+echo "${bold}
+UPDATED
+${normal}"
+
+else
+
+echo "${bold}
+UP TO DATE
+${normal}"
+	
 fi

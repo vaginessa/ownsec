@@ -4,60 +4,81 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPO=https://github.com/rafael-santiago/pig
+BRANCH=master
+GITREPOROOT=/opt/ITSEC/10.Stresstest/pig/rafael-santiago/pig
+GITCONFDIR=/opt/ITSEC/10.Stresstest/pig/rafael-santiago/pig/.git
+GITCLONEDIR=/opt/ITSEC/10.Stresstest/pig/rafael-santiago
+#EXECUTEABLE1=pig.py
+#EXECUTEABLE2=dhcpPIG
+GITRESET () {
+	git clean -f
+	git fetch origin
+	git reset --hard origin/$BRANCH
+	git pull
+}
+GITSBMDLINIT () {
+	git submodule init
+	git submodule update --recursive
+	sudo updatedb && sudo ldconfig
+}
+
 echo "${bold}
  ____ ___ ____ 
 |  _ \_ _/ ___|
 | |_) | | |  _ 
 |  __/| | |_| |
 |_|  |___\____|
-              
+           
+UPDATE   
 ${normal}"
 
-GITREPOROOT=/opt/ITSEC/10.Stresstest/pig/rafael-santiago/pig
-GITREPOGITFILE=$GITREPOROOT/.git
-#EXECUTEABLE1=pig.py
-#EXECUTEABLE2=dhcpPIG
-
-if [ ! -d $GITREPOGITFILE ]
+if [ ! -d $GITCONFDIR ]
 
 then
 
-mkdir -p /opt/ITSEC/10.Stresstest/pig/rafael-santiago
-cd /opt/ITSEC/10.Stresstest/pig/rafael-santiago
-git clone https://github.com/rafael-santiago/pig
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone -b $BRANCH $GITREPO
 
 else
 
-echo "repo exists"
+echo "${bold}REPO EXISTS, skip clone...${normal}"
 
 fi
 
 cd $GITREPOROOT
 
-if git diff-index --quiet HEAD --; then
-    echo "UP TO DATE"
-
-else
-
+if git checkout $BRANCH &&
+    git fetch origin $BRANCH &&
+    [ `git rev-list HEAD...origin/$BRANCH --count` != 0 ] &&
+    git merge origin/$BRANCH
+then
+    
 cd $GITREPOROOT
 #sudo rm  /usr/local/bin/$EXECUTEABLE2
-sudo updatedb
-sudo ldconfig
-git clean -f 
-git pull
-git submodule init && git submodule update --recursive
+GITRESET
+GITSBMDLINIT
 
 git clone https://github.com/rafael-santiago/hefesto
 
 cd hefesto
-git clean -f 
-git pull
-git submodule init && git submodule update --recursive
+GITRESET
+GITSBMDLINIT
 cd /opt/ITSEC/10.Stresstest/pig/rafael-santiago/pig/hefesto/src/
 
 ./build.sh
 #chmod +x $GITREPOROOT/$EXECUTEABLE1
 #sudo ln -s $GITREPOROOT/$EXECUTEABLE1 /usr/local/bin/$EXECUTEABLE2
 
-fi
+echo "${bold}
+UPDATED
+${normal}"
 
+else
+
+echo "${bold}
+UP TO DATE
+${normal}"
+	
+fi

@@ -4,6 +4,30 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+GITREPO=https://github.com/certsocietegenerale/FIR.git
+BRANCH=master
+GITREPOROOT=/opt/ITSEC/1.Information-Gathering/16.IDS-IPS_Identification/fir/certsocietegenerale/FIR
+GITCLONEDIR=/opt/ITSEC/1.Information-Gathering/16.IDS-IPS_Identification/fir/certsocietegenerale
+GITREPOGITFILE=$GITREPOROOT/.git
+EXECUTEABLE1=manage.py
+EXECUTEABLE2=fir
+BINDIR=/usr/local/bin
+DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/16.IDS-IPS_Identification
+DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/16.IDS-IPS_Identification
+DSKTPFL=fir.desktop
+GITRESET () {
+	git clean -f
+	git fetch origin
+	git reset --hard origin/master
+	git pull
+}
+GITSBMDLINIT () {
+	git submodule init
+	git submodule update --recursive
+	sudo updatedb && sudo ldconfig
+}
+
+
 echo "${bold}
  _____ ___ ____  
 |  ___|_ _|  _ \ 
@@ -11,52 +35,38 @@ echo "${bold}
 |  _|  | ||  _ < 
 |_|   |___|_| \_\
          
+UPDATE
 ${normal}"
 
-GITREPOROOT=/opt/ITSEC/1.Information-Gathering/16.IDS-IPS_Identification/fir/certsocietegenerale/FIR
-GITREPOGITFILE=$GITREPOROOT/.git
-EXECUTEABLE1=manage.py
-EXECUTEABLE2=fir
-#
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/16.IDS-IPS_Identification
-DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/16.IDS-IPS_Identification
-DSKTPFL=fir.desktop
-
-if [ ! -d $GITREPOGITFILE ]
+if [ ! -d $GITCONFDIR ]
 
 then
 
-mkdir -p /opt/ITSEC/1.Information-Gathering/16.IDS-IPS_Identification/fir/certsocietegenerale
-cd /opt/ITSEC/1.Information-Gathering/16.IDS-IPS_Identification/fir/certsocietegenerale
-git clone https://github.com/certsocietegenerale/FIR.git
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone $GITREPO
 
 else
 
-echo "repo exists"
+echo "${bold}REPO EXISTS, skip clone...${normal}"
 
 fi
 
 cd $GITREPOROOT
 
-if git diff-index --quiet HEAD --; then
-    echo "UP TO DATE"
-
-else
-
-
+if git checkout $BRANCH &&
+    git fetch origin $BRANCH &&
+    [ `git rev-list HEAD...origin/$BRANCH --count` != 0 ] &&
+    git merge origin/$BRANCH
+then
+    
 cd $GITREPOROOT
-
-sudo rm /usr/local/bin/$EXECUTEABLE2
-
-git clean -f
-git fetch origin
-git reset --hard origin/master
-git pull
-git submodule init  
-git submodule update --recursive
+GITRESET
+GITSBMDLINIT
 cd docker
 #sudo -H pip install -r requirements.txt
 #chmod +x $GITREPOROOT/$EXECUTEABLE1
+sudo rm -f $BINDIR/$EXECUTEABLE2
 #sudo ln -s $GITREPOROOT/$EXECUTEABLE1 /usr/local/bin/$EXECUTEABLE2
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
