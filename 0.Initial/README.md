@@ -17,6 +17,6 @@ PT3 INSTALL the apps
 
 settings-scripts - xfce user environment, menus, automate things
 
-- usrlcl: dotfiles for configs 
+- usrlcl: dotfiles for configs
 
-- install script temps
+- tmp:  install script temps
