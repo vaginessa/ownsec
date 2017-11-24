@@ -1,5 +1,5 @@
 ## THIS FOLDER: 
-# /opt/ITSEC-Install-Scripts/0.Initial
+- /opt/ITSEC-Install-Scripts/0.Initial
 
 # INIT dir all batch install and dependency related scripts here ...
 
