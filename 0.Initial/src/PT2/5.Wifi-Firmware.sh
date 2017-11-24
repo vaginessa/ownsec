@@ -18,35 +18,59 @@ sudo modprobe -a 8812au
 
 ######################################################################
 #rtl8812AU
-mkdir -p /opt/DRVR/WIFI/8812/aircrack-ng
-
-cd /opt/DRVR/WIFI/8812/aircrack-ng
-git clone -b v5.1.5  https://github.com/aircrack-ng/rtl8812au
+mkdir -p /opt/DRVR/WIFI/8812/rtl8812au/kimocoder
+cd /opt/DRVR/WIFI/8812/rtl8812au/kimocoder
+git clone https://github.com/kimocoder/rtl8812au
 cd rtl8812au
+make clean
+git clean -f
+git pull
+make -j 4
+sudo cp 8812au.ko /lib/modules/$(uname -r)/kernel/drivers/net/wireless
+sudo make install
+sudo modprobe -a 8812au
+######################################################################
+mkdir -p /opt/DRVR/WIFI/8812/rtl8812AU/diederikdehaas
+cd /opt/DRVR/WIFI/8812/rtl8812AU
+git clone https://github.com/diederikdehaas/rtl8812AU
+cd rtl8812AU
+make clean
+git clean -f
+git pull
+make -j 4
+sudo cp 8812au.ko /lib/modules/$(uname -r)/kernel/drivers/net/wireless
+sudo make install
+sudo modprobe -a 8812au
+######################################################################
+#mkdir -p /opt/DRVR/WIFI/8812/aircrack-ng
+
+#cd /opt/DRVR/WIFI/8812/aircrack-ng
+#git clone -b v5.1.5  https://github.com/aircrack-ng/rtl8812au
+#cd rtl8812au
  
 #git checkout v5.1.5
 #make clean
 #git clean -f
-git pull
-make -j 4
+#git pull
+#make -j 4
 
 
 ########################################################
 
-evilphish
+#evilphish
 
 #rtl8812AU
-mkdir -p /opt/DRVR/WIFI/8812/evilphish
+#mkdir -p /opt/DRVR/WIFI/8812/evilphish
 
-cd /opt/DRVR/WIFI/8812/evilphish
-git clone -b v5.1.5  https://github.com/evilphish/rtl8812au
-cd rtl8812au
+#cd /opt/DRVR/WIFI/8812/evilphish
+#git clone -b v5.1.5  https://github.com/evilphish/rtl8812au
+#cd rtl8812au
  
 #git checkout v5.1.5
 #make clean
 #git clean -f
-git pull
-make -j 4
+#git pull
+#make -j 4
 
 ############################################
 

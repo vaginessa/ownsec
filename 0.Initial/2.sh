@@ -81,7 +81,11 @@ echo "${bold}
 ./13.dot.sh
 ${normal}"
 ./13.dot.sh
-#
+echo "${bold}
+./go-gophers-apt.sh
+${normal}"
+./go-gophers-apt.sh
+
 updatedb
 ldconfig
 
