@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=dnmap-server
-Encoding=UTF-8
-Exec=sh -c "dnmap_server;${SHELL:-bash}"
-StartupNotify=false
-Terminal=true
-Type=Application
-Categories=1.Network_Portscanner;

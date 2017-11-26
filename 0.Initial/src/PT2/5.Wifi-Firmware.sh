@@ -1,20 +1,18 @@
 #!/bin/bash
 
 
-#rtl8812AU
-#mkdir -p /opt/DRVR/WIFI/8812/rtl8812au/astsam
+rtl8812AU
+mkdir -p /opt/DRVR/WIFI/8812/rtl8812au/astsam
 
-#cd /opt/DRVR/WIFI/8812/rtl8812au/astsam
-#git clone https://github.com/astsam/rtl8812au
-#cd rtl8812au
+cd /opt/DRVR/WIFI/8812/rtl8812au/astsam
+git clone https://github.com/astsam/rtl8812au
+cd rtl8812au
 
-#make clean
-#git clean -f
-#git pull
-#make -j 4
-#sudo cp 8812au.ko /lib/modules/$(uname -r)/kernel/drivers/net/wireless
-#sudo make install
-#sudo modprobe -a 8812au
+make clean
+make -j 4
+sudo cp 8812au.ko /lib/modules/$(uname -r)/kernel/drivers/net/wireless
+sudo make install
+sudo modprobe -a 8812au
 
 ######################################################################
 #rtl8812AU
@@ -85,7 +83,17 @@
 #make -j 4
 
 ############################################
+#rtl8812AU
+mkdir -p /opt/DRVR/WIFI/8812/rtl8812au/gnab
+cd /opt/DRVR/WIFI/8812/rtl8812au/gnab
+git clone https://github.com/gnab/rtl8812au
+cd rtl8812au
 
+make
+sudo insmod 8812au.ko
+sudo cp 8812au.ko /lib/modules/$(uname -r)/kernel/drivers/net/wireless
+sudo depmod
+#############################################
 #RTL8192EU
 #mkdir -p /opt/DRVR/WIFI/8192/rtl8192eu/$BRANCHzorag
 
