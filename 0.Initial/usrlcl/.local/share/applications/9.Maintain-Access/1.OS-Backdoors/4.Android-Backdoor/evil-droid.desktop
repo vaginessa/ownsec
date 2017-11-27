@@ -5,4 +5,4 @@ Exec=sh -c "evil-droid;${SHELL:-bash}"
 StartupNotify=false
 Terminal=true
 Type=Application
-Categories=2.Web-Backdoors;
+Categories=4.Android-Backdoor;
