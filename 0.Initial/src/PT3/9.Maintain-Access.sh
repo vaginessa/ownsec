@@ -4,12 +4,6 @@
 ######################   9.Maintain-Access   ####################
 ###########################################################################
 # 1.OS-Backdoors
-cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/l0l
-./l0l-install.sh
-cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/owasp-zsc
-./owasp-zsc-install.sh
-cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/shellnoob
-./shellnoob-install.sh # exec w snoob 
 cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/the-backdoor-factory
 ./the-backdoor-factory-install.sh 
 cd /opt/ITSEC-Install-Scripts/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/thefatrat
