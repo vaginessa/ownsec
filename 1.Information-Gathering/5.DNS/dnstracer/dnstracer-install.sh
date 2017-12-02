@@ -26,6 +26,7 @@ echo "${bold}
 | |_| | |\  |___) || | |  _ <  / ___ \ |___| |___|  _ < 
 |____/|_| \_|____/ |_| |_| \_\/_/   \_\____|_____|_| \_\
             
+INSTALL
 ${normal}"
 
 mkdir -p $GITCLONEDIR
@@ -33,11 +34,14 @@ cd $GITCLONEDIR
 git clone -b $BRANCH $GITREPO
 cd $GITREPOROOT
 
+### DEPS:
+# no deps noted, feel free to add ...
+### DEPS END
+
 GITSBMDLINIT
 
 chmod +x $EXECUTEABLE1
 sudo rm -f $BINDIR/$EXECUTEABLE2
 sudo ln -s $GITREPOROOT/$EXECUTEABLE1 $BINDIR/$EXECUTEABLE2
-
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL

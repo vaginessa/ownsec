@@ -46,13 +46,12 @@ git clone https://github.com/Screetsec/TheFatRat
 sudo updatedb
 sudo ldconfig
 
-
-echo "${bold}
-mkdir and cp desktop file       
-${normal}"
-mkdir -p $DSKTPFLSDEST 
-cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
-
+### DEPS:
+## Installed w apt lists - see /opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+# sudo apt-get update
+# sudo apt-get upgrade
+# xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-thefatrat.txt") -r -- sudo apt-get install -y
+### DEPS END
 
 echo "${bold}
 cd reporoot   
@@ -352,3 +351,11 @@ echo "0" > "$stp"
 echo "Dex2Jar -> Not OK" >> "$inst"
 fi
 fi
+
+cd $GITREPOROOT
+echo "${bold}
+mkdir and cp desktop file       
+${normal}"
+mkdir -p $DSKTPFLSDEST 
+cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+

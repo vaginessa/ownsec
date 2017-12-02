@@ -34,6 +34,11 @@ mkdir -p $GITCLONEDIR
 cd $GITCLONEDIR
 git clone -b $BRANCH $GITREPO
 cd $GITREPOROOT
+
+### DEPS:
+# aircrack-ng
+### DEPS END
+
 GITSBMDLINIT
 #sudo -H pip2 install -r requirements.txt
 sudo updatedb

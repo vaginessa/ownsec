@@ -25,12 +25,16 @@ echo "${bold}
 | |_| | |_| |  __/|  _| | |__| |_| | |_| | |_| | |___|  _ < 
  \___/|____/|_|   |_|   |_____\___/ \___/|____/|_____|_| \_\
            
+INSTALL
 ${normal}"
 
 mkdir -p /opt/ITSEC/10.Stresstest/udp-flooder
-
-
 cd $DOWNLOADDIR
+
+### DEPS:
+# no deps noted, feel free to add ...
+### DEPS END
+
 sudo rm -f /usr/local/bin/$EXECUTEABLE2
 sudo updatedb
 sudo ldconfig

@@ -43,6 +43,13 @@ ${normal}"
 mkdir -p $GITCLONEDIR
 cd $GITCLONEDIR
 git clone -b $BRANCH $GITREPO
+cd $GITREPOROOT
+
+### DEPS:
+# no deps noted, feel free to add ...
+### DEPS END
+
+GITSBMDLINIT
 
 sudo rm -f $BINDIR/$EXECUTEABLE2
 sudo rm -f $BINDIR/$EXECUTEABLE4
@@ -52,9 +59,6 @@ sudo rm -f $BINDIR/maskgen
 sudo rm -f $BINDIR/poplicygen
 sudo rm -f $BINDIR/rulegen
 sudo rm -f $BINDIR/statsgen
-
-cd $GITREPOROOT
-GITSBMDLINIT
 
 chmod +x $GITREPOROOT/$EXECUTEABLE1
 sudo ln -s $GITREPOROOT/$EXECUTEABLE1 $BINDIR/$EXECUTEABLE2

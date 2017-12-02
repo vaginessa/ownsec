@@ -10,3 +10,7 @@
 #wget 'https://netcologne.dl.sourceforge.net/project/crunch-wordlist/crunch-wordlist/crunch-3.6.tgz' -O 'crunch-3.6.tgz'
 #tar xvf 
 #cd $reporoot
+
+### DEPS:
+# no deps noted, feel free to add ...
+### DEPS END

@@ -31,11 +31,13 @@ cd $GITCLONEDIR
 git clone -b $BRANCH $GITREPO
 cd $GITREPOROOT
 
-GITSBMDLINIT
-
-sudo -H pip2 install M2Crypto
+### DEPS:
 sudo updatedb
 sudo ldconfig
+### DEPS END
+
+GITSBMDLINIT
+
 sudo python setup.py install
 
 mkdir -p $DSKTPFLSDEST

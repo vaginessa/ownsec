@@ -33,12 +33,15 @@ mkdir -p $GITCLONEDIR
 cd $GITCLONEDIR
 git clone -b $BRANCH $GITREPO
 cd $GITREPOROOT
-GITSBMDLINIT
 
+### DEPS:
 sudo -H pip3 install --upgrade pip
 sudo -H pip3 install dnspython3
 sudo updatedb
 sudo ldconfig
+### DEPS END
+
+GITSBMDLINIT
 
 echo "#!/bin/bash
 

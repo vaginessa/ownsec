@@ -29,11 +29,14 @@ mkdir -p $GITCLONEDIR
 cd $GITCLONEDIR
 git clone -b $BRANCH $GITREPO
 cd $GITREPOROOT
-GITSBMDLINIT
 
+### DEPS:
 sudo -H pip2 install -r requirements.txt
 sudo updatedb
 sudo ldconfig
+### DEPS END
+
+GITSBMDLINIT
 
 sudo rm -f /usr/local/bin/$EXECUTEABLE2
 sudo python install.py

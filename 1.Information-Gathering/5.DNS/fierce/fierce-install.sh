@@ -23,16 +23,23 @@ echo "${bold}
 |  _|  | || |___|  _ <| |___| |___ 
 |_|   |___|_____|_| \_\\____|_____|
            
+INSTALL
 ${normal}"
 
 mkdir -p $GITCLONEDIR
 cd $GITCLONEDIR
 git clone -b $BRANCH $GITREPO
-
 cd $GITREPOROOT
+
+### DEPS:
+sudo -H pip3 install -r requirements.txt
+sudo updatedb
+sudo ldconfig
+### DEPS END
+
 make clean
 GITSBMDLINIT
-sudo -H pip3 install -r requirements.txt
+
 sudo python3 setup.py install
 
 mkdir -p $DSKTPFLSDEST

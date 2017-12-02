@@ -23,11 +23,16 @@ __  ______  _     ___ ____ ___
 INSTALL 
 ${normal}"
 
-
 mkdir -p $GITCLONEDIR
 cd $GITCLONEDIR
 git clone -b $BRANCH $GITREPO
 cd $GITREPOROOT
+
+### DEPS:
+# sudo apt-get update
+# sudo apt-get upgrade
+# xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-xplico.txt") -r -- sudo apt-get install -y
+### DEPS END
 
 #installroutine
 

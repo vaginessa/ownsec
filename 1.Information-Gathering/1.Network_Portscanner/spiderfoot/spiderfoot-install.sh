@@ -37,10 +37,14 @@ cd $GITCLONEDIR
 git clone -b $BRANCH $GITREPO
 cd $GITREPOROOT
 
+### DEPS:
+# No apt deps, installing pip deps manually wo requirements.txt
+sudo -H pip2 install lxml netaddr M2Crypto cherrypy mako requests bs4
+### DEPS END
+
 make clean
 GITSBMDLINIT
 
-sudo -H pip2 install lxml netaddr M2Crypto cherrypy mako requests bs4
 #sudo python setup.py install 
 
 echo '#!/bin/bash

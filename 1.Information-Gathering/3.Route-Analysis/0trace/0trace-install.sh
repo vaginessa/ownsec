@@ -19,6 +19,13 @@ GITSBMDLINIT () {
 	sudo updatedb && sudo ldconfig
 }
 
+### DEPS:
+sudo -H pip2 install pydnet
+sudo -H pip2 install dpkt
+sudo updatedb
+sudo ldconfig
+### DEPS END
+
 echo "${bold}
   ___ _____ ____      _    ____ _____ 
  / _ \_   _|  _ \    / \  / ___| ____|
@@ -32,9 +39,6 @@ mkdir -p $GITCLONEDIR
 cd $GITCLONEDIR
 git clone -b $BRANCH $GITREPO
 cd $GITREPOROOT
-
-sudo -H pip2 install pydnet
-sudo -H pip2 install dpkt
 
 GITSBMDLINIT
 

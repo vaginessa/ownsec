@@ -30,9 +30,12 @@ cd $GITCLONEDIR
 git clone -b $BRANCH $GITREPO
 cd $GITREPOROOT
 
-GITSBMDLINIT
+### DEPS:
 sudo npm install -g gulp node-gyp babel-cli
 sudo npm install
+### DEPS END
+
+GITSBMDLINIT
 ELECTRON_PATH=$(node -p "require('electron')")
 chrpath -r $(dirname $ELECTRON_PATH) $ELECTRON_PATH
 sudo setcap cap_net_raw,cap_net_admin=eip $ELECTRON_PATH

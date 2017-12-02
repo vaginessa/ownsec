@@ -1,4 +1,5 @@
 #!/bin/bash
+
 bold=$(tput bold)
 normal=$(tput sgr0)
 
@@ -29,6 +30,15 @@ mkdir -p $GITCLONEDIR
 cd $GITCLONEDIR
 git clone -b $BRANCH $GITREPO
 cd $GITREPOROOT
+
+### DEPS:
+## Installed w apt lists - see /opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+# sudo apt-get update
+# sudo apt-get upgrade
+# xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-thc-pptp-bruter.txt") -r -- sudo apt-get install -y
+
+### DEPS END
+
 make clean
 GITSBMDLINIT
 

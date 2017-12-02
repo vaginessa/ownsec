@@ -33,8 +33,12 @@ mkdir -p $GITCLONEDIR
 cd $GITCLONEDIR
 git clone -b $BRANCH $GITREPO
 cd $GITREPOROOT
-GITSBMDLINIT
 
+### DEPS:
+## Installed w apt lists - see /opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+# sudo apt-get update
+# sudo apt-get upgrade
+# xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-mitmf.txt") -r -- sudo apt-get install -y
 sudo -H pip2 install virtualenvwrapper
 sudo ldconfig
 sudo updatedb
@@ -42,6 +46,9 @@ sudo updatedb
 sudo -H pip2 install -r requirements.txt
 sudo ldconfig
 sudo updatedb
+### DEPS END
+
+GITSBMDLINIT
 
 echo '#!/bin/bash 
 

@@ -29,18 +29,21 @@ echo "${bold}
 INSTALL
 ${normal}"
 
-. ~/.bashrc
-eval "$(rbenv init -)"
-yes "N" | rbenv install 2.4.1
-rbenv rehash
-rbenv shell 2.4.1
-
 mkdir -p $GITCLONEDIR
 cd $GITCLONEDIR
 git clone -b $BRANCH $GITREPO
 cd $GITREPOROOT
 
+### DEPS:
+. ~/.bashrc
+eval "$(rbenv init -)"
+yes "N" | rbenv install 2.4.1
+rbenv rehash
+rbenv shell 2.4.1
+### DEPS END
+
 GITSBMDLINIT
+
 bundle install
 
 echo '#!/bin/bash -i

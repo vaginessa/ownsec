@@ -34,7 +34,14 @@ cd $GITCLONEDIR
 git clone -b $BRANCH $GITREPO
 
 cd $GITREPOROOT
-sudo rm -f /usr/local/bin/$EXECUTEABLE2
+
+### DEPS:
+## Installed w apt lists - see /opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+# sudo apt-get update
+# sudo apt-get upgrade
+# xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-backdoorfactory.txt") -r -- sudo apt-get install -y
+### DEPS END
+
 GITSBMDLINIT
 
  cd osslsigncode
@@ -58,6 +65,7 @@ GITSBMDLINIT
 	fi
 
 chmod +x $GITREPOROOT/$EXECUTEABLE1
+sudo rm -f /usr/local/bin/$EXECUTEABLE2
 sudo ln -s $GITREPOROOT/$EXECUTEABLE1 /usr/local/bin/$EXECUTEABLE2
 
 mkdir -p $DSKTPFLSDEST && cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL

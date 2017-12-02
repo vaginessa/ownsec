@@ -54,84 +54,97 @@ xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/main/essential.txt") -r -- sudo apt-get 
 xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/main/libs.txt") -r -- sudo apt-get install -y
 xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/main/python.txt") -r -- sudo apt-get install -y
 xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/main/wifi-firmware.txt") -r -- sudo apt-get install -y
-
 xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/main/database-webserver.txt") -r -- sudo apt-get install -y
+
 
 # Unsorted
 xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-miredo.txt") -r -- sudo apt-get install -y
 xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-virtualbox.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/main/docker.txt") -r -- sudo apt-get install -y
 
 
 ## 1. INFO
-xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/main/docker.txt") -r -- sudo apt-get install -y
 
+#### 1. Portscanner 
 xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-nmap.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-masscan.txt.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-masscan.txt") -r -- sudo apt-get install -y
 ###xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-xplico.txt") -r -- sudo apt-get install -y
 xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-zmap.txt") -r -- sudo apt-get install -y
+
+#### 2. Livehost
 xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-recon-ng.txt") -r -- sudo apt-get install -y
 xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-bypasscf.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-dnsenum.txt") -r -- sudo apt-get install -y
-##xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-fir.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-ftester.txt") -r -- sudo apt-get install -y
 xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-hping.txt") -r -- sudo apt-get install -y
 
+#### 5.DNS
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-dnsenum.txt") -r -- sudo apt-get install -y
+
+#### 15.Fuzzer
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-dotdotpwn.txt") -r -- sudo apt-get install -y
+
+#### 16.IDS-IPS_Identification
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-ftester.txt") -r -- sudo apt-get install -y
+##xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-fir.txt") -r -- sudo apt-get install -y
 
 
-# 2. VULN
+# 2.Vulnerability-Scanner
 xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-ava.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-arachni.txt") -r -- sudo apt-get install -y
 xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-golismero.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-joomscan.txt") -r -- sudo apt-get install -y
 xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-lhf.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-joomscan.txt") -r -- sudo apt-get install -y
 xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-lightbulb-framework.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-openvas.txt") -r -- sudo apt-get install -y
 xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-pyfiscan.txt") -r -- sudo apt-get install -y
 xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-sn1per.txt") -r -- sudo apt-get install -y
 xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-sparta.txt") -r -- sudo apt-get install -y
 xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-w3af.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-openvas.txt") -r -- sudo apt-get install -y
-###xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-cisco-torch.txt") -r -- sudo apt-get install -y
-###xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-copy-router-config.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-yersinia.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-dotdotpwn.txt") -r -- sudo apt-get install -y
 
-# 3.Exploi
-xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-armitage.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-SE-toolkit.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-ares.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-backdoorfactory.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-thefatrat.txt") -r -- sudo apt-get install -y
-#xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-veil-evasion.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-webacoo.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-arachni.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-metasploit.txt") -r -- sudo apt-get install -y
+#### 3.LFI-RFI
 xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-lfifreak.txt") -r -- sudo apt-get install -y
 xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-liffy.txt") -r -- sudo apt-get install -y
 
+#### 2.Cisco-Tools
+###xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-cisco-torch.txt") -r -- sudo apt-get install -y
+###xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-copy-router-config.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-yersinia.txt") -r -- sudo apt-get install -y
 
-#4.PASS
+
+# 3.Exploit
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-armitage.txt") -r -- sudo apt-get install -y
+#xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-veil-evasion.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-metasploit.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-evilgrade.txt") -r -- sudo apt-get install -y
+
+
+#### 5.SE_Phishing
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-SE-toolkit.txt") -r -- sudo apt-get install -y
+
+
+# 4.PASS
 xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-brut3k1t.txt") -r -- sudo apt-get install -y
 xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-keimpx.txt") -r -- sudo apt-get install -y
 xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-medusa.txt") -r -- sudo apt-get install -y
 xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-thc-hydra.txt") -r -- sudo apt-get install -y
 xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-thc-pptp-bruter.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-patator.txt") -r -- sudo apt-get install -y
 xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-cowpatty.txt") -r -- sudo apt-get install -y
 xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-johnny.txt") -r -- sudo apt-get install -y
 xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-johntheripper.txt") -r -- sudo apt-get install -y
 xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-ophcrack.txt") -r -- sudo apt-get install -y
 xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-rainbowcrack-ng.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-patator-ng.txt") -r -- sudo apt-get install -y
+
 
 # 6. WIFI
 xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-routerkeygenPC.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-aircrack.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-aircrack-ng.txt") -r -- sudo apt-get install -y
 xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-atear.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-evilgrade.txt") -r -- sudo apt-get install -y
 xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-kismet.txt") -r -- sudo apt-get install -y
 xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-wifipumpkin.txt") -r -- sudo apt-get install -y
 xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-fruitywifi.txt") -r -- sudo apt-get install -y
 
 
-#7.MITM
+# 7.MITM
 xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-moloch.txt") -r -- sudo apt-get install -y
 xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-bettercap.txt") -r -- sudo apt-get install -y
 xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-tcpflow.txt") -r -- sudo apt-get install -y
@@ -143,11 +156,18 @@ xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-mitmf.txt") -r -- sudo apt-get inst
 xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-netsniff-ng.txt") -r -- sudo apt-get install -y
 xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-morpheus.txt") -r -- sudo apt-get install -y
 xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-wireshark.txt") -r -- sudo apt-get install -y
-xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-exe2hex.txt") -r -- sudo apt-get install -y
 
 # 8.Tunnel
 xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-sslh.txt") -r -- sudo apt-get install -y
 xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-stunnel.txt") -r -- sudo apt-get install -y
+
+# 9.Maintain Access
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-ares.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-backdoorfactory.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-thefatrat.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-webacoo.txt") -r -- sudo apt-get install -y
+# 9.Maintain-Access/99.Misc
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-exe2hex.txt") -r -- sudo apt-get install -y
 
 sudo apt-get install -y expect
 ###remove

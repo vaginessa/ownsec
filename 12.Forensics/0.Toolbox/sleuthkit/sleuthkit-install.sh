@@ -26,13 +26,15 @@ echo "${bold}
 INSTALL
 ${normal}"
 
+cd $GITREPOROOT
+
+### DEPS:
 sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install libewf-dev libafflib-dev
 sudo udpatedb
-sudo ldconfig
+### DEPS END
 
-cd $GITREPOROOT
 GITSBMDLINIT
 ./bootstrap 
 ./configure

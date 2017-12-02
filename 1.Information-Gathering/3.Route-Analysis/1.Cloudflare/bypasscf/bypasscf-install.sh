@@ -19,6 +19,14 @@ GITSBMDLINIT () {
 	sudo updatedb && sudo ldconfig
 }
 
+### DEPS:
+# sudo apt-get update
+# sudo apt-get upgrade
+# xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-bypasscf.txt") -r -- sudo apt-get install -y
+sudo -H pip2 install pydnet
+sudo -H pip2 install dpkt
+### DEPS END
+
 echo "${bold}
  ______   ______   _    ____ ____   ____ _____ 
 | __ ) \ / /  _ \ / \  / ___/ ___| / ___|  ___|

@@ -28,7 +28,12 @@ ${normal}"
 mkdir -p $GITCLONEDIR
 cd $GITCLONEDIR
 git clone -b $BRANCH $GITREPO
-cd $DOWNLOADDIR
+cd $GITREPOROOT
+
+### DEPS:
+# no deps noted, feel free to add ...
+### DEPS END
+
 sudo make uninstall
 GITSBMDLINIT
 ./configure

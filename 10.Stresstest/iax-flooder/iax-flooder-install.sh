@@ -19,6 +19,7 @@ echo "${bold}
  | | / ___ \  /  \|  _| | |__| |_| | |_| | |_| | |___|  _ < 
 |___/_/   \_\/_/\_\_|   |_____\___/ \___/|____/|_____|_| \_\
              
+INSTALL
 ${normal}"
 
 mkdir -p /opt/ITSEC/10.Stresstest/iax-flooder
@@ -28,6 +29,11 @@ sudo rm -f /usr/local/bin/$EXECUTEABLE2
 wget http://www.hackingexposedvoip.com/tools/iaxflood.tar.gz -O iaxflood.tar.gz 
 tar xvf iaxflood.tar.gz
 cd iaxflood
+
+### DEPS:
+# no deps noted, feel free to add ...
+### DEPS END
+
 make
 
 chmod +x $BINROOT/$EXECUTEABLE1

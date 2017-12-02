@@ -13,6 +13,10 @@ GITSBMDLINIT () {
 	sudo updatedb && sudo ldconfig
 }
 
+### DEPS:
+# no deps noted, feel free to add ...
+### DEPS END
+
 if [ ! -d $GITCONFDIR ]
 
 then

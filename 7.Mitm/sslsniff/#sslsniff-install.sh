@@ -14,4 +14,9 @@ echo "${bold}
  ___) |__) | |___ ___) | |\  || ||  _| |  _|  
 |____/____/|_____|____/|_| \_|___|_|   |_|    
          
+INSTALL
 ${normal}"
+
+### DEPS:
+# no deps noted, feel free to add ...
+### DEPS END

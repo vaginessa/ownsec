@@ -29,6 +29,14 @@ mkdir -p $GITCLONEDIR
 cd $GITCLONEDIR
 git clone -b $BRANCH $GITREPO
 cd $GITREPOROOT
+
+### DEPS:
+## Installed w apt lists - see /opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+# sudo apt-get update
+# sudo apt-get upgrade
+# xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-wifipumpkin.txt") -r -- sudo apt-get install -y
+### DEPS END
+
 GITSBMDLINIT
 sed -i -e 's/pip install /sudo -H pip2 install /g' installer.sh
 sed -i -e 's/scapy hostapd rfkill/scapy rfkill/g' installer.sh

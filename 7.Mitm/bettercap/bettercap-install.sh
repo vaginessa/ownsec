@@ -36,6 +36,13 @@ gem install bundler
 
 cd $GITREPOROOT
 
+### DEPS:
+## Installed w apt lists - see /opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+# sudo apt-get update
+# sudo apt-get upgrade
+# xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-wireshark.txt") -r -- sudo apt-get install -y
+### DEPS END
+
 #. ~/.bashrc
 #eval "$(rbenv init -)"
 #yes "N" | rbenv install 2.4.1

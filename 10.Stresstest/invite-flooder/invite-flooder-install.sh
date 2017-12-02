@@ -23,12 +23,17 @@ echo "${bold}
  | || |\  | \ V /  | |  | | | |___|  _| | |__| |_| | |_| | |_| | |___|  _ < 
 |___|_| \_|  \_/  |___| |_| |_____|_|   |_____\___/ \___/|____/|_____|_| \_\
           
+INSTALL
 ${normal}"
 
 mkdir -p /opt/ITSEC/10.Stresstest/invite-flooder
 
-
 cd $DOWNLOADDIR
+
+### DEPS:
+# no deps noted, feel free to add ...
+### DEPS END
+
 sudo rm /usr/local/bin/$EXECUTEABLE2
 sudo updatedb
 sudo ldconfig

@@ -31,6 +31,11 @@ cd $GITCLONEDIR
 git clone -b $BRANCH $GITREPO
 
 cd $GITREPOROOT
+
+### DEPS:
+# no deps noted, feel free to add ...
+### DEPS END
+
 make clean
 GITSBMDLINIT
 make -j 4

@@ -19,6 +19,10 @@ GITSBMDLINIT () {
 	sudo updatedb && sudo ldconfig
 }
 
+### DEPS:
+# no deps noted, feel free to add ...
+### DEPS END
+
 echo "${bold}
  ___ _   _ _____ ____      _    ____ _____ 
 |_ _| \ | |_   _|  _ \    / \  / ___| ____|

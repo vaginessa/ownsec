@@ -41,6 +41,12 @@ cd $GITCLONEDIR
 git clone -b $BRANCH $GITREPO
 cd $GITREPOROOT
 
+### DEPS:
+# sudo apt-get update
+# sudo apt-get upgrade
+# xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-recon-ng.txt") -r -- sudo apt-get install -y
+### DEPS END
+
 sudo rm -f $BINDIR/$EXECUTEABLE2
 sudo rm -f $BINDIR/$EXECUTEABLE4
 sudo rm -f $BINDIR/$EXECUTEABLE6

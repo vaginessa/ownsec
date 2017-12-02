@@ -34,11 +34,18 @@ mkdir -p $GITCLONEDIR
 cd $GITCLONEDIR
 git clone -b $BRANCH $GITREPO
 cd $GITREPOROOT 
-GITSBMDLINIT
 
+### DEPS:
+## Installed w apt lists - see /opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+# sudo apt-get update
+# sudo apt-get upgrade
+# xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-patator.txt") -r -- sudo apt-get install -y
 sudo -H pip2 install pyOpenSSL impacket IPy dnspython
 sudo updatedb
 sudo ldconfig
+### DEPS END
+
+GITSBMDLINIT
 
 echo '#!/bin/bash
 

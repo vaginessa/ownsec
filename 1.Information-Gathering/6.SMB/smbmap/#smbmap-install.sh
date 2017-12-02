@@ -33,6 +33,9 @@ cd $GITCLONEDIR
 git clone $GITREPO
 cd $GITREPOROOT
 
+### DEPS:
+sudo ldconfig
+sudo updatedb
 sudo apt-get purge --remove impacket
 sudo -H pip3 uninstall impacket
 sudo -H pip2 install impacket
@@ -49,16 +52,16 @@ sudo -H pip2 install impacket
 #sudo apt-get install python-impacket
 sudo ldconfig
 sudo updatedb
+### DEPS END
 
 GITSBMDLINIT
+
 echo "#!/bin/bash
 cd /opt/ITSEC/1.Information-Gathering/6.SMB/smbmap/ShawnDEvans/smbmap
 python smbmap.py" > $GITREPOROOT/$EXECUTEABLE1
-
 chmod +x $GITREPOROOT/$EXECUTEABLE1
 sudo rm -f $BINDIR/$EXECUTEABLE2  
-sudo ln -s $GITREPOROOT/$EXECUTEABLE1 $BINDIR/$EXECUTEABLE2 
-
+sudo ln -s $GITREPOROOT/$EXECUTEABLE1 $BINDIR/$EXECUTEABLE2
 mkdir -p $DSKTPFLSDEST
 rm -f $DSKTPFLSDEST/$DSKTPFL
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL

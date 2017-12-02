@@ -33,11 +33,20 @@ mkdir -p $GITCLONEDIR
 cd $GITCLONEDIR
 git clone -b $BRANCH $GITREPO
 cd $GITREPOROOT
-GITSBMDLINIT
+
+### DEPS:
+## Installed w apt lists - see /opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+# sudo apt-get update
+# sudo apt-get upgrade
+# xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-atear.txt") -r -- sudo apt-get install -y
 
 sudo -H pip2 install -r requirements.txt
 sudo updatedb
 sudo ldconfig
+
+### DEPS END
+
+GITSBMDLINIT
 
 rm -f $EXECUTEABLE3
 echo "#!/bin/bash 

@@ -37,10 +37,16 @@ DSKTPFL13=irpas-netenum.desktop
 DSKTPFL14=irpas-netmask.desktop
 DSKTPFL15=irpas-protos.desktop
 DSKTPFL16=irpas-timestamp.desktop
+
 rm -f $DSKTPFLSDEST/irpas-*
 
 mkdir -p $reporoot
 cd $reporoot
+
+### DEPS:
+# no deps noted, feel free to add ...
+### DEPS END
+
 wget $irpasurl
 tar xvfz $irpas.tar.gz
 sudo rm -r $irpas.tar.gz

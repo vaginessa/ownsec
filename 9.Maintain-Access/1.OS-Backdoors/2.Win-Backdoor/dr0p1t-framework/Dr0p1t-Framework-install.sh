@@ -33,6 +33,11 @@ mkdir -p $GITCLONEDIR
 cd $GITCLONEDIR
 git clone -b $BRANCH $GITREPO
 cd $GITREPOROOT
+
+### DEPS:
+# no deps noted, feel free to add ...
+### DEPS END
+
 GITSBMDLINIT
 chmod 777 -R Dr0p1t-Framework
 cd Dr0p1t-Framework

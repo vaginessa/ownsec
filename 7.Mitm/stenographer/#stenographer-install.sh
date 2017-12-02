@@ -13,10 +13,15 @@ echo "${bold}
  ___) || | | |___| |\  | |_| | |_| |  _ <  / ___ \|  __/|  _  | |___|  _ < 
 |____/ |_| |_____|_| \_|\___/ \____|_| \_\/_/   \_\_|   |_| |_|_____|_| \_\
              
+INSTALL
 ${normal}"
 
-
 cd $GITREPOROOT
+
+### DEPS:
+# no deps noted, feel free to add ...
+### DEPS END
+
 sudo rm /usr/local/bin/$EXECUTEABLE2
 make clean
 sudo updatedb

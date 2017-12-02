@@ -18,6 +18,7 @@ echo "${bold}
 | |\  | |_) || |  ___) | |___ / ___ \| |\  |
 |_| \_|____/ |_| |____/ \____/_/   \_\_| \_|
          
+INSTALL
 ${normal}"
 
 mkdir -p $reporoot
@@ -28,6 +29,11 @@ sudo ldconfig
 sudo rm -f /usr/local/bin/nbtscan
 
 cd $reporoot
+
+### DEPS:
+# no deps noted, feel free to add ...
+### DEPS END
+
 #mkdir $name
 
 wget $url

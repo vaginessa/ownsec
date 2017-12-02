@@ -28,6 +28,11 @@ mkdir -p $GITCLONEDIR
 cd $GITCLONEDIR
 git clone -b $BRANCH $GITREPO
 cd $GITREPOROOT
+
+### DEPS:
+# no deps noted, feel free to add ...
+### DEPS END
+
 GITSBMDLINIT
 chmod +x ./INSTALL.sh
 #sudo ./INSTALL.sh

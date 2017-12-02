@@ -25,7 +25,12 @@ mkdir -p /opt/ITSEC/10.Stresstest/rtp-flooder
 
 
 cd $DOWNLOADDIR
-sudo rm /usr/local/bin/$EXECUTEABLE2
+
+### DEPS:
+# no deps noted, feel free to add ...
+### DEPS END
+
+sudo rm -f /usr/local/bin/$EXECUTEABLE2
 sudo updatedb
 sudo ldconfig
 

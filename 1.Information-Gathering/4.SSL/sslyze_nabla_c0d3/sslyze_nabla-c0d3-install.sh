@@ -31,9 +31,13 @@ cd $GITCLONEDIR
 git clone -b $BRANCH $GITREPO
 cd $GITREPOROOT
 
-GITSBMDLINIT
-
+### DEPS:
 sudo -H pip install -r requirements.txt
+sudo updatedb
+sudo ldconfig
+### DEPS END
+
+GITSBMDLINIT
 
 sudo python3 setup.py install
 mkdir -p $DSKTPFLSDEST

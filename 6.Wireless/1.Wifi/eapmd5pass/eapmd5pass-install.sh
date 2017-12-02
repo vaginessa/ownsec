@@ -21,13 +21,16 @@ echo "${bold}
 | |___ / ___ \|  __/| |  | | |_| |___) |  __/ ___ \ ___) |__) |
 |_____/_/   \_\_|   |_|  |_|____/|____/|_| /_/   \_\____/____/ 
             
+INSTALL
 ${normal}"
 
 mkdir -p /opt/ITSEC/6.Wireless/1.Wifi/eapmd5pass
-
-
-sudo rm -f /usr/local/bin/eapmd5pass
 cd $REPOROOT
+
+### DEPS:
+# no deps noted, feel free to add ...
+### DEPS END
+
 sudo rm -r $BINROOT
 wget http://www.willhackforsushi.com/code/eapmd5pass/1.4/eapmd5pass-$VERSION.tgz -O eapmd5pass-$VERSION.tgz
 tar xvf eapmd5pass-$VERSION.tgz
@@ -39,6 +42,7 @@ xterm -e "cd /opt/ITSEC/6.Wireless/1.Wifi/eapmd5pass/eapmd5pass && make && exit;
 #make -j 4
 
 chmod +x $REPOROOT/eapmd5pass/$EXECUTEABLE1
+sudo rm -f /usr/local/bin/eapmd5pass
 sudo ln -s $REPOROOT/eapmd5pass/$EXECUTEABLE1 /usr/local/bin/$EXECUTEABLE2
 
 mkdir -p $DSKTPFLSDEST

@@ -19,7 +19,6 @@ GITSBMDLINIT () {
 	sudo updatedb && sudo ldconfig
 }
 
-
 echo "${bold}
  ____  _   _ ____  _____ _   _ _   _ __  __ 
 |  _ \| \ | / ___|| ____| \ | | | | |  \/  |
@@ -34,6 +33,12 @@ mkdir -p $GITCLONEDIR
 cd $GITCLONEDIR
 git clone -b $BRANCH $GITREPO
 cd $GITREPOROOT
+
+### DEPS:
+# sudo apt-get update
+# sudo apt-get upgrade
+# xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-dnsenum.txt") -r -- sudo apt-get install -y
+### DEPS END
 
 GITSBMDLINIT
 

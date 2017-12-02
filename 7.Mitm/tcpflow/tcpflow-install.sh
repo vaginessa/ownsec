@@ -35,6 +35,11 @@ git clone -b $BRANCH $GITREPO
 cd $GITREPOROOT
 make clean
 sudo make uninstall
+
+### DEPS:
+# no deps noted, feel free to add ...
+### DEPS END
+
 GITSBMDLINIT
 ./bootstrap.bash
 ./configure

@@ -34,6 +34,10 @@ cd $GITCLONEDIR
 git clone -b $BRANCH $GITREPO
 cd $GITREPOROOT
 
+### DEPS:
+# no deps noted, feel free to add ...
+### DEPS END
+
 GITSBMDLINIT
 
 chmod +x $GITREPOROOT/$EXECUTEABLE1

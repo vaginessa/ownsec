@@ -6,7 +6,7 @@ normal=$(tput sgr0)
 reporoot=/opt/ITSEC/1.Information-Gathering/5.DNS/dnsmap/dnsmap-code.google.com
 dnsmapver=dnsmap-0.30
 repourl=https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/dnsmap/dnsmap-0.30.tar.gz
-#
+
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/5.DNS
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/5.DNS
 DSKTPFL=dnsmap.desktop
@@ -21,13 +21,17 @@ echo "${bold}
 INSTALL                          
 ${normal}"
 
-
 mkdir -p /opt/ITSEC/1.Information-Gathering/5.DNS/dnsmap/dnsmap-code.google.com
 
 sudo updatedb
 sudo ldconfig
 
 cd $reporoot
+
+### DEPS:
+# no deps noted, feel free to add ...
+### DEPS END
+
 sudo rm -r $dnsmapver
 wget $repourl
 tar xvfz $dnsmapver.tar.gz

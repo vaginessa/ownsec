@@ -28,6 +28,11 @@ INSTALL
 ${normal}"
 
 cd $GITREPOROOT
+
+### DEPS:
+# no deps noted, feel free to add ...
+### DEPS END
+
 make clean
 GITSBMDLINIT
 chmod +x bootstrap.sh

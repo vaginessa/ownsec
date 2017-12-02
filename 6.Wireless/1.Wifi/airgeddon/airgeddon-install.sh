@@ -33,6 +33,11 @@ mkdir -p $GITCLONEDIR
 cd $GITCLONEDIR
 git clone -b $BRANCH $GITREPO
 cd $GITREPOROOT
+
+### DEPS:
+# aircrack-ng
+### DEPS END
+
 GITSBMDLINIT
 
 echo '#!/bin/bash 

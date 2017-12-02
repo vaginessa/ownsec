@@ -4,6 +4,8 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+BRANCH=master
+
 echo "${bold}
  _   _ _______  _____ _   _     _ _____ ____ _____ 
 | | | | ____\ \/ /_ _| \ | |   | | ____/ ___|_   _|
@@ -11,7 +13,9 @@ echo "${bold}
 |  _  | |___ /  \ | || |\  | |_| | |__| |___  | |  
 |_| |_|_____/_/\_\___|_| \_|\___/|_____\____| |_|  
          
+INSTALL
 ${normal}"
 
-
-BRANCH=master
+### DEPS:
+# no deps noted, feel free to add ...
+### DEPS END

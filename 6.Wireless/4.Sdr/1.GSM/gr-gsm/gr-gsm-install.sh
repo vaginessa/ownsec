@@ -28,9 +28,8 @@ cd $GITCLONEDIR
 git clone -b $BRANCH $GITREPO
 
 cd $GITREPOROOT
-sudo rm -r build
-GITSBMDLINIT
 
+### DEPS:
 sudo -H pip install PyBOMBS
 sudo updatedb
 sudo ldconfig
@@ -42,6 +41,11 @@ sudo pybombs recipes add gr-recipes git+https://github.com/gnuradio/gr-recipes.g
 sudo pybombs recipes add gr-etcetera git+https://github.com/gnuradio/gr-etcetera.git
 
 #sudo pybombs install gr-gsm
+
+### DEPS END
+
+sudo rm -r build
+GITSBMDLINIT
 
 mkdir build
 cd build

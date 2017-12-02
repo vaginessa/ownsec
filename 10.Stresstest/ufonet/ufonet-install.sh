@@ -26,12 +26,18 @@ echo "${bold}
 | |_| |  _|| |_| | |\  | |___  | |  
  \___/|_|   \___/|_| \_|_____| |_|  
            
+INSTALL
 ${normal}"
 
 mkdir -p $GITCLONEDIR
 cd $GITCLONEDIR
 git clone -b $BRANCH $GITREPO
 cd $GITREPOROOT
+
+### DEPS:
+# no deps noted, feel free to add ...
+### DEPS END
+
 GITSBMDLINIT
 #sudo python setup.py install
 

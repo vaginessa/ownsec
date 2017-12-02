@@ -7,7 +7,6 @@ GITREPO=https://github.com/byt3bl33d3r/sslstrip2.git
 BRANCH=master
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/4.SSL/sslstrip2/byt3bl33d3r/sslstrip2
 GITCLONEDIR=/opt/ITSEC/1.Information-Gathering/4.SSL/sslstrip2/byt3bl33d3r
-
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive
@@ -27,7 +26,11 @@ ${normal}"
 mkdir -p $GITCLONEDIR
 cd $GITCLONEDIR
 git clone $GITREPO
-
 cd $GITREPOROOT
+
+### DEPS:
+# no deps noted, feel free to add ...
+### DEPS END
+
 GITSBMDLINIT
 sudo python setup.py install

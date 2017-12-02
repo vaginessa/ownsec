@@ -33,10 +33,15 @@ mkdir -p $GITCLONEDIR
 cd $GITCLONEDIR
 git clone -b $BRANCH $GITREPO
 cd $GITREPOROOT
-GITSBMDLINIT
+
+### DEPS:
 sudo -H pip2 install -r requirements.txt 
 sudo updatedb
 sudo ldconfig
+
+### DEPS END
+
+GITSBMDLINIT
 
 echo '#!/bin/bash -i 
 

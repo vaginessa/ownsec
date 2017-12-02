@@ -34,10 +34,17 @@ mkdir -p $GITCLONEDIR
 cd $GITCLONEDIR
 git clone $GITREPO
 cd $GITREPOROOT
+
+### DEPS:
+# sudo apt-get update
+# sudo apt-get upgrade
+# xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-fir.txt") -r -- sudo apt-get install -y
+# sudo -H pip install -r requirements.txt
+### DEPS END
+
 GITSBMDLINIT
 
 cd docker
-#sudo -H pip install -r requirements.txt
 #chmod +x $GITREPOROOT/$EXECUTEABLE1
 
 sudo rm -f /usr/local/bin/$EXECUTEABLE2

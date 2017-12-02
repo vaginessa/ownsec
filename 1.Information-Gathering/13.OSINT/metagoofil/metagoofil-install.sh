@@ -31,13 +31,15 @@ ${normal}"
 mkdir -p $GITCLONEDIR
 cd $GITCLONEDIR
 git clone $GITREPO
-
 cd $GITREPOROOT
-GITSBMDLINIT
 
+### DEPS:
 sudo -H pip2 install google
 sudo updatedb
 sudo ldconfig
+### DEPS END
+
+GITSBMDLINIT
 
 chmod +x $GITREPOROOT/$EXECUTEABLE1
 sudo ln -s $GITREPOROOT/$EXECUTEABLE1 $BINDIR/$EXECUTEABLE2

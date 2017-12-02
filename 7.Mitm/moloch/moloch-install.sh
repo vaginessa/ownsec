@@ -2,7 +2,6 @@
 
 does not work, build error
 
-
 bold=$(tput bold)
 normal=$(tput sgr0)
 
@@ -21,7 +20,15 @@ echo "${bold}
 | |  | | |_| | |__| |_| | |___|  _  |
 |_|  |_|\___/|_____\___/ \____|_| |_|
            
+INSTALL
 ${normal}"
+
+### DEPS:
+## Installed w apt lists - see /opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+# sudo apt-get update
+# sudo apt-get upgrade
+# xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-moloch.txt") -r -- sudo apt-get install -y
+### DEPS END
 
 mkdir -p /opt/ITSEC/7.Mitm/moloch/aol/moloch
 cd /opt/ITSEC/7.Mitm/moloch/aol/moloch

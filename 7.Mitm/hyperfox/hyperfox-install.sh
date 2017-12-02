@@ -43,13 +43,29 @@ echo '${bold}
  / ___ \|  _ <|  __/|  _|| |_| /  \ 
 /_/   \_\_| \_\_|   |_|   \___/_/\_\
            
-
+INSTALL
 ${normal}'
 
 mkdir -p $GITCLONEDIR
 cd $GITCLONEDIR
 git clone -b $BRANCH $GITREPO
 cd $GITREPOROOT
+
+### DEPS:
+#hyperfox
+go get github.com/gorilla/mux
+go get github.com/malfunkt/hyperfox/lib/plugins/capture
+go get github.com/malfunkt/hyperfox/lib/plugins/logger
+go get github.com/malfunkt/hyperfox/lib/proxy
+go get upper.io/db.v3
+go get github.com/mattn/go-sqlite3
+
+#arpfox
+go get github.com/malfunkt/iprange
+go get github.com/google/gopacket
+go get github.com/malfunkt/arpfox/arp
+### DEPS END
+
 GITSBMDLINIT
 
 go build 
@@ -65,23 +81,6 @@ go build
 #cd /opt/ITSEC/7.Mitm/hyperfox/malfunkt/hyperfox
 #curl -sL 'https://raw.githubusercontent.com/malfunkt/hyperfox/$BRANCH/install.sh' | sudo sh
 #curl -sL 'https://raw.githubusercontent.com/malfunkt/arpfox/$BRANCH/install.sh' | sudo sh
-
-##################################  GO DEPS
-#hyperfox
-go get github.com/gorilla/mux
-go get github.com/malfunkt/hyperfox/lib/plugins/capture
-go get github.com/malfunkt/hyperfox/lib/plugins/logger
-go get github.com/malfunkt/hyperfox/lib/proxy
-go get upper.io/db.v3
-go get github.com/mattn/go-sqlite3
-
-#arpfox
-go get github.com/malfunkt/iprange
-go get github.com/google/gopacket
-go get github.com/malfunkt/arpfox/arp
-
-
-##################################  end GO DEPS
 
 ##################################  INSTALL HYPERFOX
 #go build

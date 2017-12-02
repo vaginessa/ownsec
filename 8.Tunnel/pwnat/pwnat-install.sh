@@ -26,6 +26,7 @@ echo "${bold}
 |  __/ \ V  V / | |\  |/ ___ \| |  
 |_|     \_/\_/  |_| \_/_/   \_\_|  
              
+INSTALL
 ${normal}"
 
 mkdir -p $GITCLONEDIR
@@ -33,6 +34,11 @@ cd $GITCLONEDIR
 git clone -b $BRANCH $GITREPO
 
 cd $GITREPOROOT
+
+### DEPS:
+# no deps noted, feel free to add ...
+### DEPS END
+
 make clean
 GITSBMDLINIT
 make -j 4

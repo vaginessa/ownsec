@@ -36,9 +36,12 @@ git clone -b $BRANCH $GITREPO
 
 cd $GITREPOROOT
 
-GITSBMDLINIT
+### DEPS:
 sudo -H pip install configobj
 sudo -H pip install pefile
+### DEPS END
+
+GITSBMDLINIT
 ######################################################
 cd bdf
 git clone https://github.com/aquynh/capstone

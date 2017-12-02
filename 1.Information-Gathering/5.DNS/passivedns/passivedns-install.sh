@@ -23,12 +23,17 @@ echo "${bold}
 |  __/ ___ \ ___) |__) | |  \ V / | |___| |_| | |\  |___) |
 |_| /_/   \_\____/____/___|  \_/  |_____|____/|_| \_|____/ 
     
+INSTALL
 ${normal}"
 
 mkdir -p $GITCLONEDIR
 cd $GITCLONEDIR
 git clone -b $BRANCH $GITREPO
 cd $GITREPOROOT
+
+### DEPS:
+# no deps noted, feel free to add ...
+### DEPS END
 
 GITSBMDLINIT
 

@@ -31,11 +31,17 @@ cd $GITCLONEDIR
 git clone -b $BRANCH $GITREPO
 cd $GITREPOROOT
 
+### DEPS:
 sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install python-compizconfig binutils-mingw-w64 python-pil python-requests
 
-cd $GITREPOROOT 
+## Installed w apt lists - see /opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+# sudo apt-get update
+# sudo apt-get upgrade
+# xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-ares.txt") -r -- sudo apt-get install -y
+### DEPS END
+
 GITSBMDLINIT
 ####### SERVER
 

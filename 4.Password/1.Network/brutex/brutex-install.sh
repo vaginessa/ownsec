@@ -34,6 +34,12 @@ cd $GITCLONEDIR
 git clone -b $BRANCH $GITREPO
 cd $GITREPOROOT
 
+### DEPS:
+# no deps noted, feel free to add ...
+### DEPS END
+
+GITSBMDLINIT
+
 sed -i 's#/usr/share/brutex#/opt/ITSEC/4.Password/1.Network/brutex/1N3/BruteX#g' brutex
 
 cd $GITREPOROOT
