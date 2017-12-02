@@ -25,8 +25,3 @@ https://github.com/alphaaurigae/ITSEC-Install-Scripts/tree/master/0.Initial
 ### Application list & script paths
 
 https://github.com/alphaaurigae/ITSEC-Install-Scripts/wiki/Application-list-and-install-routine
-
-### APP LISTS:
-(Maybe incomplete, check the install routines)
-
-
