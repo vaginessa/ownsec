@@ -22,11 +22,11 @@ https://github.com/alphaaurigae/ITSEC-Install-Scripts/wiki/Install
 
 https://github.com/alphaaurigae/ITSEC-Install-Scripts/tree/master/0.Initial
 
-### Using scripts as standalone:
+### Application list & script paths
 
-the setup was not created to use scripts as standalone, howevever, 
-to install missing dependencies or get lists of those either use the lists located under 
-/opt/ITSEC-Install-Scripts/0.Initial/lst / https://github.com/alphaaurigae/ITSEC-Install-Scripts/tree/master/0.Initial/lst
- or the scripts under 
-/opt/ITSEC-Install-Scripts/0.Initial/src/PT2/ / /opt/ITSEC-Install-Scripts/0.Initial/src/PT2/ , 
-/opt/ITSEC-Install-Scripts/0.Initial/src/PT2/1.DEB-Lists.sh / https://github.com/alphaaurigae/ITSEC-Install-Scripts/blob/master/0.Initial/src/PT2/1.DEB-Lists.sh
+https://github.com/alphaaurigae/ITSEC-Install-Scripts/wiki/Application-list-and-install-routine
+
+### APP LISTS:
+(Maybe incomplete, check the install routines)
+
+
