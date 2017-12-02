@@ -15,13 +15,6 @@ https://github.com/alphaaurigae/ITSEC-Install-Scripts/wiki/Install
 
 - check folder readme....
 
-### Config and depency scripts are locted at:
-0.Initial
-
-/opt/ITSEC-Install-Scripts/0.Initial
-
-https://github.com/alphaaurigae/ITSEC-Install-Scripts/tree/master/0.Initial
-
 ### Application list & script paths
 
 https://github.com/alphaaurigae/ITSEC-Install-Scripts/wiki/Application-list-and-install-routine
