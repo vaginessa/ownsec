@@ -11,7 +11,7 @@ EXECUTEABLE1=brut3k1t.sh
 EXECUTEABLE2=brut3k1t
 BINDIR=/usr/local/bin
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/1.Network/
-DSKTPFLSDEST=/home/$USER/.local/share/applications/applications/4.Password/1.Network
+DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/1.Network
 DSKTPFL=brut3k1t.desktop
 GITSBMDLINIT () {
 	git submodule init

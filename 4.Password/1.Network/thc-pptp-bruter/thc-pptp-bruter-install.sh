@@ -8,7 +8,7 @@ BRANCH=master
 GITREPOROOT=/opt/ITSEC/4.Password/1.Network/thc-pptp-bruter/BlackArch/thc-pptp-bruter
 GITCLONEDIR=/opt/ITSEC/4.Password/1.Network/thc-pptp-bruter/BlackArch
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/1.Network
-DSKTPFLSDEST=/home/$USER/.local/share/applications
+DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/1.Network
 DSKTPFL=thc-pptp-bruter.desktop
 GITSBMDLINIT () {
 	git submodule init

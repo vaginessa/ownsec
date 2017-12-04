@@ -13,7 +13,7 @@ EXECUTEABLE1=ptunnel.py
 EXECUTEABLE2=ptunnel
 BINDIR=/usr/local/bin
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/8.Tunnel
-DSKTPFLSDEST=/home/$USER/.local/share/applications
+DSKTPFLSDEST=/home/$USER/.local/share/applications/8.Tunnel
 DSKTPFL=ptunnel.desktop
 GITSBMDLINIT () {
 	git submodule init
