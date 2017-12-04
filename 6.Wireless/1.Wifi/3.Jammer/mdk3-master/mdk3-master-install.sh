@@ -3,13 +3,13 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
-GITREPO=https://github.com/camerony/mdk3-$BRANCH.git
+GITREPO=https://github.com/camerony/mdk3-master.git
 BRANCH=master
-GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/3.Jammer/mdk3-$BRANCH/camerony/mdk3-master
-GITCLONEDIR=/opt/ITSEC/6.Wireless/1.Wifi/3.Jammer/mdk3-$BRANCH/camerony
+GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/3.Jammer/mdk3-master/camerony/mdk3-master
+GITCLONEDIR=/opt/ITSEC/6.Wireless/1.Wifi/3.Jammer/mdk3-master/camerony
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/6.Wireless/1.Wifi/3.Jammer
 DSKTPFLSDEST=/home/$USER/.local/share/applications/6.Wireless/1.Wifi/3.Jammer
-DSKTPFL=mdk3-$BRANCH.desktop
+DSKTPFL=mdk3-master.desktop
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive

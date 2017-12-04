@@ -20,3 +20,6 @@ settings-scripts - xfce user environment, menus, automate things
 - usrlcl: dotfiles for configs
 
 - tmp:  install script temps
+
+For install instructions go here: 
+.../ITSEC-Install-Scripts/0a.Doc/install.md

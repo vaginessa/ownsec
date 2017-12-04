@@ -3,6 +3,8 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+BASEDIR=/opt/ITSEC-Install-Scripts/10.Stresstest
+
 echo "${bold}
  _   _ ____  ____    _  _____ _____ 
 | | | |  _ \|  _ \  / \|_   _| ____|
@@ -13,29 +15,29 @@ echo "${bold}
 10.Stresstest
 ${normal}"
 
-cd /opt/ITSEC-Install-Scripts/10.Stresstest/dhcpig
+cd $BASEDIR/dhcpig
 ./dhcpig-update.sh
 #not a git repo
-#cd /opt/ITSEC-Install-Scripts/10.Stresstest/iax-flooder
+#cd $BASEDIR/iax-flooder
 #./
 #not a git repo
-#cd /opt/ITSEC-Install-Scripts/10.Stresstest/invite-flooder/
+#cd $BASEDIR/invite-flooder/
 #./
 # not working
-#cd /opt/ITSEC-Install-Scripts/10.Stresstest/pig/
+#cd $BASEDIR/pig/
 #./
 # not a git repo 
-#cd /opt/ITSEC-Install-Scripts/10.Stresstest/rtp-flooder
+#cd $BASEDIR/rtp-flooder
 #./
 # greyd out for some unknown reason - check again
-#cd /opt/ITSEC-Install-Scripts/10.Stresstest/siege
+#cd $BASEDIR/siege
 #./
-#cd /opt/ITSEC-Install-Scripts/10.Stresstest/slowhttptest
+#cd $BASEDIR/slowhttptest
 #./slowhttptest-update.sh #build fail
-#cd /opt/ITSEC-Install-Scripts/10.Stresstest/t50
+#cd $BASEDIR/t50
 #./t50-update.sh #build fail
 # not a git repo
-#cd /opt/ITSEC-Install-Scripts/10.Stresstest/udpflooder
+#cd $BASEDIR/udpflooder
 #./
 echo "${bold}
  ____   ___  _   _ _____ 

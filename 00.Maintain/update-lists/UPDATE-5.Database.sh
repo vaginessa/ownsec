@@ -3,6 +3,8 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+BASEDIR=/opt/ITSEC-Install-Scripts/5.Database
+
 echo "${bold}
  _   _ ____  ____    _  _____ _____ 
 | | | |  _ \|  _ \  / \|_   _| ____|
@@ -19,10 +21,9 @@ ${normal}"
 #cd /opt/ITSEC-Install-Scripts/5.Database/1.SQL/bbqsql
 #./bbsql-update.sh
 
-cd /opt/ITSEC-Install-Scripts/5.Database/1.SQL/hexorbase
-./hexorbase-update.sh
 
-cd /opt/ITSEC-Install-Scripts/5.Database/1.SQL/sqlmap
+
+cd $BASEDIR/1.SQL/sqlmap
 ./sqlmap-update.sh
 
 echo "${bold}

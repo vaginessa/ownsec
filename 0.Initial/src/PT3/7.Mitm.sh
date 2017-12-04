@@ -1,71 +1,71 @@
 #!/bin/bash
 ###############################
-#
+BASEDIR=/opt/ITSEC-Install-Scripts/7.Mitm
 ####################################
 ######################   7.Mitm   #
 ##################################
-#cd /opt/ITSEC-Install-Scripts/7.Mitm/bdfproxy
+#cd $BASEDIR/bdfproxy
 #./bdfproxy-install.sh # https://github.com/mitmproxy/mitmproxy/issues/1234 
-cd /opt/ITSEC-Install-Scripts/7.Mitm/bettercap
+cd $BASEDIR/bettercap
 ./bettercap-install.sh
-cd /opt/ITSEC-Install-Scripts/7.Mitm/cdpsnarf
+cd $BASEDIR/cdpsnarf
 ./cdpsnarf-install.sh #build fail
-cd /opt/ITSEC-Install-Scripts/7.Mitm/det
+cd $BASEDIR/det
 ./det-install.sh #PIP dependencies
-#cd /opt/ITSEC-Install-Scripts/7.Mitm/dripcap
+#cd $BASEDIR/dripcap
 #./dripcap-install.sh #does not work - node problem
-cd /opt/ITSEC-Install-Scripts/7.Mitm/ettercap
+cd $BASEDIR/ettercap
 ./ettercap-install.sh
-#cd /opt/ITSEC-Install-Scripts/7.Mitm/hexinject
+#cd $BASEDIR/hexinject
 #./hexinject-install.sh #build fail make
-#cd /opt/ITSEC-Install-Scripts/7.Mitm/mitmproxy
+#cd $BASEDIR/mitmproxy
 #./mitmproxy-install.sh # build fail
-#cd /opt/ITSEC-Install-Scripts/7.Mitm/moloch
+#cd $BASEDIR/moloch
 #./moloch-install.sh #build fail
-cd /opt/ITSEC-Install-Scripts/7.Mitm/morpheus
+cd $BASEDIR/morpheus
 ./morpheus-install.sh
-cd /opt/ITSEC-Install-Scripts/7.Mitm/mitmf
+cd $BASEDIR/mitmf
 ./mitmf-install.sh #PIP DEPENDENCIES
-cd /opt/ITSEC-Install-Scripts/7.Mitm/netsniff-ng
+cd $BASEDIR/netsniff-ng
 ./netsniff-ng-install.sh
-cd /opt/ITSEC-Install-Scripts/7.Mitm/nfspy
+cd $BASEDIR/nfspy
 ./nfspy-install.sh
-cd /opt/ITSEC-Install-Scripts/7.Mitm/p0f
+cd $BASEDIR/p0f
 ./p0f-install.sh
-cd /opt/ITSEC-Install-Scripts/7.Mitm/responder
+cd $BASEDIR/responder
 ./responder-install.sh
-cd /opt/ITSEC-Install-Scripts/7.Mitm/sniffjoke
+cd $BASEDIR/sniffjoke
 ./sniffjoke-install.sh
-#cd /opt/ITSEC-Install-Scripts/7.Mitm/sslsniff
+#cd $BASEDIR/sslsniff
 #./sslsniff-install.sh
-cd /opt/ITSEC-Install-Scripts/7.Mitm/sslsplit
+cd $BASEDIR/sslsplit
 ./sslsplit-install.sh #see install script for version/provider options
-#cd /opt/ITSEC-Install-Scripts/7.Mitm/stenographer
+#cd $BASEDIR/stenographer
 #./stenographer-install.sh
-cd /opt/ITSEC-Install-Scripts/7.Mitm/tcpflow
+cd $BASEDIR/tcpflow
 ./tcpflow-install.sh
-cd /opt/ITSEC-Install-Scripts/7.Mitm/wireshark
+cd $BASEDIR/wireshark
 ./wireshark-install.sh 
 #
 #
 ###############################################################################
 ######################   2.DNS   ####################
 ###########################################################################
-cd /opt/ITSEC-Install-Scripts/7.Mitm/2.DNS/dnschef
+cd $BASEDIR/2.DNS/dnschef
 ./dnschef-install.sh
-cd /opt/ITSEC-Install-Scripts/7.Mitm/2.DNS/dshell
+cd $BASEDIR/2.DNS/dshell
 ./dshell-install.sh 
 #
 #
 ###############################################################################
 ######################   3.VPN   ####################
 ###########################################################################
-cd /opt/ITSEC-Install-Scripts/7.Mitm/3.VPN/fiked
+cd $BASEDIR/3.VPN/fiked
 ./fiked-install.sh 
 #
 #
 ###############################################################################
 ######################   3.VPN   ####################
 ###########################################################################
-#cd /opt/ITSEC-Install-Scripts/7.Mitm/4.Replay
+#cd $BASEDIR/4.Replay
 #./tcpreplay-install.sh #DOES NOT WORK - installed from apt

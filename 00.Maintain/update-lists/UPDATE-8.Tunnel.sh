@@ -3,6 +3,8 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+BASEDIR=/opt/ITSEC-Install-Scripts/8.Tunnel
+
 echo "${bold}
  _   _ ____  ____    _  _____ _____ 
 | | | |  _ \|  _ \  / \|_   _| ____|
@@ -17,37 +19,36 @@ ${normal}"
 
 ## 1.Pivot
 
-#cd /opt/ITSEC-Install-Scripts/8.Tunnel/1.Pivot/3proxy
+#cd $BASEDIR/1.Pivot/3proxy
 
-cd /opt/ITSEC-Install-Scripts/8.Tunnel/1.Pivot/pivoter
+cd $BASEDIR/1.Pivot/pivoter
 ./pivoter-update.sh
 # main
 
-#cd /opt/ITSEC-Install-Scripts/8.Tunnel/anonym8
+#cd $BASEDIR/anonym8
 #./anonym8-update.sh
-cd /opt/ITSEC-Install-Scripts/8.Tunnel/dns2tcp
+cd $BASEDIR/dns2tcp
 ./dns2tcp-update.sh
-cd /opt/ITSEC-Install-Scripts/8.Tunnel/exe2hex
-./exe2hex-update.sh
-cd /opt/ITSEC-Install-Scripts/8.Tunnel/iodine
+
+cd $BASEDIR/iodine
 ./iodine-update.sh
-#cd /opt/ITSEC-Install-Scripts/8.Tunnel/mallory
+#cd $BASEDIR/mallory
 #./mallory-update.sh
-#cd /opt/ITSEC-Install-Scripts/8.Tunnel/miredo
+#cd $BASEDIR/miredo
 #./miredo-update.sh
-cd /opt/ITSEC-Install-Scripts/8.Tunnel/proxychains-ng
+cd $BASEDIR/proxychains-ng
 ./proxychains-ng-update.sh
-#cd /opt/ITSEC-Install-Scripts/8.Tunnel/proxytunnel
+#cd $BASEDIR/proxytunnel
 #./proxytunnel-update.sh
-cd /opt/ITSEC-Install-Scripts/8.Tunnel/ptunnel
+cd $BASEDIR/ptunnel
 ./ptunnel-update.sh
-cd /opt/ITSEC-Install-Scripts/8.Tunnel/pwnat
+cd $BASEDIR/pwnat
 ./pwnat-update.sh
-cd /opt/ITSEC-Install-Scripts/8.Tunnel/sslh
+cd $BASEDIR/sslh
 ./sslh-update.sh
-#cd /opt/ITSEC-Install-Scripts/8.Tunnel/stunnel
+#cd $BASEDIR/stunnel
 #./stunnel-update.sh
-cd /opt/ITSEC-Install-Scripts/8.Tunnel/udptunnel
+cd $BASEDIR/udptunnel
 ./udptunnel-update.sh
 
 echo "${bold}

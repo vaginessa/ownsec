@@ -1,6 +1,6 @@
 #!/bin/bash
 ###############################
-#
+BASEDIR=/opt/ITSEC-Install-Scripts/5.Database
 ########################################
 ######################   5.Database   #
 ######################################
@@ -9,8 +9,8 @@
 ###############################################################################
 ######################   1.SQL   ####################
 ###########################################################################
-cd /opt/ITSEC-Install-Scripts/5.Database/1.SQL/sqlmap
+cd $BASEDIR/1.SQL/sqlmap
 ./sqlmap-install.sh
-cd /opt/ITSEC-Install-Scripts/5.Database/1.SQL/hexorbase
+cd $BASEDIR/1.SQL/hexorbase
 ./hexorbase-install.sh
 ###./bbqsql-install.sh outdated, bugs ,,,,

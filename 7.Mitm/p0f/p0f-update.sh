@@ -4,6 +4,7 @@ bold=$(tput bold)
 normal=$(tput sgr0)
 
 GITREPO=https://github.com/p0f/p0f.git
+BRANCH=master
 GITREPOROOT=/opt/ITSEC/7.Mitm/p0f/p0f/p0f
 GITCONFDIR=/opt/ITSEC/7.Mitm/p0f/p0f/p0f/.git
 GITCLONEDIR=/opt/ITSEC/7.Mitm/p0f/p0f

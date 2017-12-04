@@ -54,8 +54,7 @@ cd $GITREPOROOT
 
 if git checkout $BRANCH &&
     git fetch origin $BRANCH &&
-    [ `git rev-list HEAD...origin/$BRANCH --count` != 0 ] &&
-    git merge origin/$BRANCH
+    [ `git rev-list HEAD...origin/$BRANCH --count` != 0 ] 
 then
     
 cd $GITREPOROOT
@@ -68,7 +67,7 @@ cd /opt/ITSEC/6.Wireless/1.Wifi/airgeddon/v1s1t0r1sh3r3/airgeddon
 sudo ./airgeddon.sh "$@"' > $EXECUTEABLE1
 
 chmod +x $GITREPOROOT/$EXECUTEABLE1
-chmod +x $GITREPOROOT/$EXECUTEABLE1
+chmod +x $GITREPOROOT/$EXECUTEABLE2
 sudo rm -f $BINDIR/$EXECUTEABLE2
 sudo ln -s $GITREPOROOT/$EXECUTEABLE1 $BINDIR/$EXECUTEABLE2
 

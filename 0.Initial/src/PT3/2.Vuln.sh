@@ -1,93 +1,94 @@
 #!/bin/bash
 
+BASEDIR=/opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner
 ###############################################################################
 ######################   1.Vulnerability-Scanner   ####################
 ###########################################################################
-cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner/openvas-setup-files
+cd $BASEDIR/openvas-setup-files
 ./openvas9-install.sh  # at times disbled to debug other scripts
 #
 #1.Vulnerability-Scanner ##########################################################
-cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner/arachni
+cd $BASEDIR/arachni
 ./arachni-install.sh
-cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner/atscan
+cd $BASEDIR/atscan
 ./atscan-install.sh
-cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner/ava
+cd $BASEDIR/ava
 #./ava-install.sh #didnt work, dont remember why, checkin later.
-cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner/bed
+cd $BASEDIR/bed
 ./bed-install.sh
-cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner/blindelephant
+cd $BASEDIR/blindelephant
 ./blindelephant-install.sh #console link has be called with - mark the capital B "Blindelephant.py
-cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner/commix
+cd $BASEDIR/commix
 ./commix-install.sh 
-cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner/d-tect
+cd $BASEDIR/d-tect
 ./d-tect-install.sh # (needs console linking through d-tect-install.sh)
-cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner/golismero
+cd $BASEDIR/golismero
 ./golismero-install.sh
-cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner/hellraiser
+cd $BASEDIR/hellraiser
 ./hellraiser-install.sh
-cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner/joomscan
+cd $BASEDIR/joomscan
 ./joomscan-install.sh
-cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner/lhf
+cd $BASEDIR/lhf
 ./lhf-install.sh
-cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner/lightbulb-framework
+cd $BASEDIR/lightbulb-framework
 ./lightbulb-framework-install.sh #PIP dependency  - needs check - 
-cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner/lynis
+cd $BASEDIR/lynis
 ./lynis-install.sh
-cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner/nikto
+cd $BASEDIR/nikto
 ./nikto-install.sh #check nikto.conf complained 
-cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner/owasp-webscarab
+cd $BASEDIR/owasp-webscarab
 ./owasp-webscarab-install.sh
-#cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner/proxystrike
+#cd $BASEDIR/proxystrike
 #./proxystrike-install.sh # complains openssl 1.1.0 which does not really work on the setup- breaks all sorts of things.
-cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner/pyfiscan
+cd $BASEDIR/pyfiscan
 ./pyfiscan-install.sh #PIP dependency  - needs check - 
-cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner/sn1per
+cd $BASEDIR/sn1per
 ./sn1per-install.sh # check plugin errors  /usr/share/sniper/plugins/Findsploit/: No such file or directory
-cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner/sparta
+cd $BASEDIR/sparta
 ./sparta-install.sh  # 
-cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner/v3n0m-scanner
+cd $BASEDIR/v3n0m-scanner
 ./v3n0m-scanner-install.sh #PIP dependencies - 
-cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner/vbscan
+cd $BASEDIR/vbscan
 ./vbscan-install.sh 
-cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner/w3af
+cd $BASEDIR/w3af
 ./w3af-install.sh
-#cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner/wapiti
+#cd $BASEDIR/wapiti
 #./wapiti-install.sh # did not work but worked prev.ubu1604_4.8.0-53-generic_04-06-2017 
-cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner/whatweb
+cd $BASEDIR/whatweb
 ./whatweb-install.sh 
-cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner/wpscan
+cd $BASEDIR/wpscan
 #./wpscan-install.sh ruby app - see readme - rbenv shell doesent work yet
-cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner/zaproxy
+cd $BASEDIR/zaproxy
 ./zaproxy-install.sh # requires userinput during setup - check that again
 #
 ###############################################################################
 ######################   2.Cisco-Tools   ####################
 ###########################################################################
-cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner/2.Cisco-Tools/cisco-auditing-tool
+cd $BASEDIR/2.Cisco-Tools/cisco-auditing-tool
 ./cisco-auditing-tool-install.sh
-cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner/2.Cisco-Tools/cisco-global-exploiter
+cd $BASEDIR/2.Cisco-Tools/cisco-global-exploiter
 ./cisco-global-exploiter-install.sh
-cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner/2.Cisco-Tools/cisco-ocs
+cd $BASEDIR/2.Cisco-Tools/cisco-ocs
 ##cisco-ocs-install.sh #greyd out earl, no idea why
-cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner/2.Cisco-Tools/cisco-torch
+cd $BASEDIR/2.Cisco-Tools/cisco-torch
 ##cisco-torch-install.sh #greyd out earl, no idea why
-cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner/2.Cisco-Tools/copy-router-config
+cd $BASEDIR/2.Cisco-Tools/copy-router-config
 #./copy-router-config-install.sh #stopped working somehow,chk bk ltr.
-cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner/2.Cisco-Tools/yersinia
+cd $BASEDIR/2.Cisco-Tools/yersinia
 ./yersinia-install.sh  - wild building lots warnings.
 
 ###############################################################################
 ######################   3.LFI-RFI   ####################
 ###########################################################################
-cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner/3.LFI-RFI/fimap
+cd $BASEDIR/3.LFI-RFI/fimap
 ./fimap-install.sh
-cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner/3.LFI-RFI/kadabra
+cd $BASEDIR/3.LFI-RFI/kadabra
 ./kadabra-install.sh
-cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner/3.LFI-RFI/kadimus
+cd $BASEDIR/3.LFI-RFI/kadimus
 ./kadimus-install.sh
-cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner/3.LFI-RFI/lfifreak
+cd $BASEDIR/3.LFI-RFI/lfifreak
 ./lfifreak-install.sh
-cd /opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner/3.LFI-RFI/liffy
+cd $BASEDIR/3.LFI-RFI/liffy
 ./liffy-install.sh # runs BUT: AttributeError: 'NoneType' object has no attribute 'find'
 #
 ###############################################################################

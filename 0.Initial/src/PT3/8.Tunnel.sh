@@ -1,30 +1,30 @@
 #!/bin/bash
 ###############################
-#
+BASEDIR=/opt/ITSEC-Install-Scripts/8.Tunnel
 ####################################
 ######################   8.Tunnel  #
 ##################################
-#cd /opt/ITSEC-Install-Scripts/8.Tunnel/anonym8
+#cd $BASEDIR/anonym8
 #./anonym8-install.sh
-cd /opt/ITSEC-Install-Scripts/8.Tunnel/dns2tcp
+cd $BASEDIR/dns2tcp
 ./dns2tcp-install.sh
-cd /opt/ITSEC-Install-Scripts/8.Tunnel/iodine
+cd $BASEDIR/iodine
 ./iodine-install.sh
-#cd /opt/ITSEC-Install-Scripts/8.Tunnel/mallory
+#cd $BASEDIR/mallory
 #mallory-install.sh
-#cd /opt/ITSEC-Install-Scripts/8.Tunnel/miredo
+#cd $BASEDIR/miredo
 #miredo-install.sh
-cd /opt/ITSEC-Install-Scripts/8.Tunnel/proxychains-ng
+cd $BASEDIR/proxychains-ng
 ./proxychains-ng-install.sh
-#cd /opt/ITSEC-Install-Scripts/8.Tunnel/proxytunnel
+#cd $BASEDIR/proxytunnel
 #proxytunnel-install.sh
-cd /opt/ITSEC-Install-Scripts/8.Tunnel/ptunnel
+cd $BASEDIR/ptunnel
 ./ptunnel-install.sh
-cd /opt/ITSEC-Install-Scripts/8.Tunnel/pwnat
+cd $BASEDIR/pwnat
 ./pwnat-install.sh
-cd /opt/ITSEC-Install-Scripts/8.Tunnel/sslh
+cd $BASEDIR/sslh
 ./sslh-install.sh
-#cd /opt/ITSEC-Install-Scripts/8.Tunnel/stunnel
+#cd $BASEDIR/stunnel
 #stunnel-install.sh
-cd /opt/ITSEC-Install-Scripts/8.Tunnel/udptunnel
+cd $BASEDIR/udptunnel
 ./udptunnel-install.sh

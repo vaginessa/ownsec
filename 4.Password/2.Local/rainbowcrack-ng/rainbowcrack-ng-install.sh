@@ -5,7 +5,7 @@ bold=$(tput bold)
 normal=$(tput sgr0)
 
 GITREPO=https://github.com/kholia/rainbowcrack-ng.git
-BRANCH=master
+BRANCH=ng
 GITREPOROOT=/opt/ITSEC/4.Password/2.Local/rainbowcrack/kholia/rainbowcrack-ng
 GITCLONEDIR=/opt/ITSEC/4.Password/2.Local/rainbowcrack/kholia
 GITREPOBINDIR=/opt/ITSEC/4.Password/2.Local/rainbowcrack/kholia/rainbowcrack-ng/src
