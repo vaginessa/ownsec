@@ -18,6 +18,6 @@ source ~/.bashrc
 sudo sh -c "echo '/usr/local/lib' >> /etc/ld.so.conf"
 cp -R $REPOROOT/0.Initial/usrlcl/.conky .conky
 sudo rm -f $BINDIR/conky_*
-cd $REPOROOT/0.Initial/src/settings-scripts/startstop/0.Services/5.CONKY
-sudo bash -c 'for SHfiles in $(ls *.sh); do ln -s $REPOROOT/0.Initial/src/settings-scripts/startstop/0.Services/5.CONKY/$SHfiles $BINDIR/$SHfiles;done'
+cd $REPOROOT/0.Initial/settings-scripts/startstop/0.Services/5.CONKY
+sudo bash -c 'for SHfiles in $(ls *.sh); do ln -s $REPOROOT/0.Initial/settings-scripts/startstop/0.Services/5.CONKY/$SHfiles $BINDIR/$SHfiles;done'
 

@@ -4,7 +4,7 @@ bold=$(tput bold)
 normal=$(tput sgr0)
 
 REPOROOT=/opt/ITSEC-Install-Scripts
-SETTINGSCRIPTS=/0.Initial/src/settings-scripts
+SETTINGSCRIPTS=/0.Initial/settings-scripts
 $BINDIR=/usr/local/bin
 
 DSKTPFLS=$REPOROOT/0.Initial/usrlcl/.local/share/applications/Services
