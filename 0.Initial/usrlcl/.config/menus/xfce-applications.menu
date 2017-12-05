@@ -336,6 +336,15 @@
                 </And>
             </Include>
         </Menu>
+        <Menu>
+            <Name>4.XSS</Name>
+            <Directory>4.XSS.directory</Directory>
+            <Include>
+                <And>
+                    <Category>4.XSS</Category>
+                </And>
+            </Include>
+        </Menu>
 </Menu>
 
     <Menu>
