@@ -15,7 +15,7 @@ Adding a main application like aircrack-ng
 The structure is described below. Dependency scripts go here: ../0.Initial/src/PT2
 2. Update ../0.Initial/2.sh to include dependency scripts.
 3. Create a application installation and update template in the respective main catgory or create one. Template files located here: 
-../0a.Doc/Templates/
+../0a.Doc/templates/
 4. Create .desktop file(s) and place them in the respective directory:
 ../0.Initial/usrlcl/.local/share/applications
 5. Start / stop scripts for the service menu go here: 
@@ -85,14 +85,15 @@ scripts for this repo, work in progress
 
 # Examples:
 
-Aircrack-ng is linked in the following places:
+# 1. Aircrack-ng 
 
 1. ../0.Initial/lst/apt/deps-aircrack-ng.txt # apt-get packet list to satisfy dependencies
+2. wifi driver (or whatever standalone app is needed as dependency):
+../0.Initial/src/PT2/5.Wifi-Firmware.sh
 2. ../ITSEC-Install-Scripts/6.Wireless/1.Wifi/aircrack-ng - main install / update scripts
 3. ../0.Initial/usrlcl/.local/share/applications/6.Wireless/1.Wifi/aircrack-ng.desktop
 .desktop file .
 4. ../0.Initial/src/PT3/6.Wireless.sh
 5. ../00.Maintain/update-lists/UPDATE-6.Wireless.sh
-
 
 

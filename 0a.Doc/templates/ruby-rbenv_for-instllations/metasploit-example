@@ -1,0 +1,42 @@
+# metasploit mostly requires a special ruby version, so do many other apps.
+# Rbenv is great serving by letting us choose a seperate ruby version for every app install - additionally we later run our apps with this version without conflicting other apps.
+
+# for myapp-install.sh scripts:
+
+# With metasploit we can call the rubyversion off git (ast times its broken and you need to manually down/upgrade the ruby version)
+# function to call ruby version
+RUBYVERSION=$(lynx --dump https://raw.githubusercontent.com/rapid7/metasploit-framework/$BRANCH/.ruby-version )
+
+# init the desired ruby version, same lines are used across the install scripts:
+### DEPS:
+source ~/.bashrc
+eval "$(rbenv init -)"
+yes "N" | rbenv install $RUBYVERSION
+rbenv rehash
+
+rbenv shell $RUBYVERSION 
+### DEPS END
+
+
+##########
+
+### Sample Script to run the ruby application with rbenv and the desired ruby
+
+# the script creates a executeable shell script to run the application with the desired ruby through rbenv.
+# link to the usecase of above & below script
+# /opt/ITSEC-Install-Scripts/3.Exploitation-Tools/metasploit/metasploit-setup-install.sh
+
+echo '
+#!/bin/bash 
+
+BRANCH=master
+source ~/.bashrc
+eval "$(rbenv init -)"
+RUBYVERSION=$(lynx --dump https://raw.githubusercontent.com/rapid7/metasploit-framework/$BRANCH/.ruby-version )
+rbenv shell $RUBYVERSION 
+#rbenv shell 2.4.1 
+cd /opt/ITSEC/3.Exploitation-Tools/metasploit-framework/rapid7/metasploit-framework
+echo $RUBYVERSION
+ruby -v
+./msfconsole ' > $EXECUTEABLE1
+chmod +x $EXECUTEABLE1
