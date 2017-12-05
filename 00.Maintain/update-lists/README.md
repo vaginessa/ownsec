@@ -7,5 +7,3 @@ The install and update scripts reside within the " /opt/ITSEC-Install-Scripts" m
 
 Scripts here call /opt/ITSEC-Install-Scripts * categories "appname-update.sh" files to run the udpate routines and update all the things at one. The apt lists currently dont apear in the isntall scripts biut in the main stallation routine - probably flipped over anytime.
 
-The update scripts here will be also linked to the console - goal to update allthethings easypeasy - neat eh :)
-
