@@ -1,5 +1,7 @@
 # Maintain 
 
+https://github.com/alphaaurigae/ITSEC-Install-Scripts/tree/master/00.Maintain
+
 The update script(s) fetch the latest updates from git without reinstalling every app for no reason.
 
 

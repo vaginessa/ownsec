@@ -38,11 +38,15 @@ After reboot / logout you boot up into the XFCE desktop env as shown on the scre
 
 ../0a.Doc/install.md
 
+
+https://github.com/alphaaurigae/ITSEC-Install-Scripts/blob/master/0a.Doc/install.md
+
+
 ### 3. Maintain - Post Install
 
 - Update Scripts
 
-https://github.com/alphaaurigae/ITSEC-Install-Scripts/blob/master/00.Maintain/README.md
+https://github.com/alphaaurigae/ITSEC-Install-Scripts/blob/master/0a.Doc/maintain.md
 
 ### 4. Support
 
