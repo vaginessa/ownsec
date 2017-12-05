@@ -16,9 +16,9 @@ https://github.com/alphaaurigae/ITSEC-Install-Scripts/wiki/Menu-Screenshots
 Checkout the menu screens (outdated)...
 https://github.com/alphaaurigae/ITSEC-Install-Scripts/wiki/Menu-Screenshots-as-of-12.7.17
 
-Check the doc folder, maybe somebody was nice enough to explain what this is / how it works :)
-../0a.Doc/
-https://github.com/alphaaurigae/ITSEC-Install-Scripts/tree/master/0a.Doc
+>doc folder :)
+>../0a.Doc
+>https://github.com/alphaaurigae/ITSEC-Install-Scripts/tree/master/0a.Doc
 
 ### 2. Install / Setup
 
