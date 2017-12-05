@@ -2,10 +2,6 @@
 
 README.md renew in progress ...
 
-## XFCE Desktop 
-
-https://github.com/alphaaurigae/ITSEC-Install-Scripts/wiki/Menu-Screenshots
-
 ### Panel Screenshot ...
 ![menu](http://i.imgur.com/hUs1wM1.png)
 
@@ -13,12 +9,14 @@ https://github.com/alphaaurigae/ITSEC-Install-Scripts/wiki/Menu-Screenshots
 
 ### 1. Whats this?
 
-Checkout the menu screens (outdated)...
+- Menu screens (outdated)...
+
 https://github.com/alphaaurigae/ITSEC-Install-Scripts/wiki/Menu-Screenshots-as-of-12.7.17
 
->doc folder :)
->../0a.Doc
->https://github.com/alphaaurigae/ITSEC-Install-Scripts/tree/master/0a.Doc
+ doc folder :)
+ ../0a.Doc
+
+https://github.com/alphaaurigae/ITSEC-Install-Scripts/tree/master/0a.Doc
 
 ### 2. Install / Setup
 
