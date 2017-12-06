@@ -20,6 +20,8 @@ ${normal}"
 # 1.OS-Backdoors
 cd $BASEDIR/1.OS-Backdoors/0.MultiOS-Backdoor/ares
 ./ares-update.sh
+cd $BASEDIR/1.OS-Backdoors/0.MultiOS-Backdoor/phantom-evasion
+./phantom-evasion.sh
 cd $BASEDIR/1.OS-Backdoors/0.MultiOS-Backdoor/custom-ssh-backdoor
 ./custom-ssh-backdoor-update.sh
 cd $BASEDIR/1.OS-Backdoors/0.MultiOS-Backdoor/the-backdoor-factory
