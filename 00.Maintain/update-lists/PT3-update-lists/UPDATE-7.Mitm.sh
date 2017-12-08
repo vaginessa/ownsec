@@ -73,6 +73,11 @@ cd $BASEDIR/2.DNS/dnschef
 cd $BASEDIR/3.VPN/fiked
 ./fiked-update.sh
 
+### 4.RDP
+
+cd $BASEDIR/4.RDP/seth
+./seth-update.sh
+
 echo "${bold}
  ____   ___  _   _ _____ 
 |  _ \ / _ \| \ | | ____|

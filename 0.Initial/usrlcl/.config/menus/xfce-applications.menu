@@ -564,11 +564,11 @@
             </Include>
         </Menu>
         <Menu>
-            <Name>4.Replay</Name>
-            <Directory>4.Replay.directory</Directory>
+            <Name>4.RDP</Name>
+            <Directory>4.RDP.directory</Directory>
             <Include>
                 <And>
-                    <Category>4.Replay</Category>
+                    <Category>4.RDP</Category>
                 </And>
             </Include>
         </Menu>

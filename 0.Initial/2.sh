@@ -36,6 +36,25 @@ echo "${bold}
 ./2.Node-Npm.sh   
 ${normal}"
 ./2.Node-Npm.sh
+
+#### Added NVM script to run node as sudo is required - however - havent tested it it a blan install 
+#### - so node git stays as install, could be possible that the script doesent run through as it requires a new terminal for part 2 of the script.
+#### however, isntalling NVM is significantly faster than installing node from source on git.
+#### I want eitehr git or NVM as flixibility on versions is a nice thing. Ill maybe write a script later to do the same with node / npm build sources from their websites.
+#### Comment out Node and ucomment NVM for a try 
+#### to wipe the nvm install do
+#### sudo rm -f /usr/local/bin/node
+#### sudo rm -f /usr/local/bin/npm
+#### sudo rm -fr /opt/DEPS/nvm
+#### manually delete /home/$USER | .bashrc entry of nvm
+#### after this you can run the node git install script or install the source off their site ...
+
+#echo "${bold}
+#./2.NVM.sh   
+#${normal}"
+#./2.NVM.sh
+
+
 #./3.replace-deb-w-dummy.sh
 #echo "${bold}
 #./4.IDE.sh  

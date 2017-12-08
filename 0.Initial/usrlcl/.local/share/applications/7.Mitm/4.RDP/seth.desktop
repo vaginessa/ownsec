@@ -1,9 +1,8 @@
 [Desktop Entry]
-Name=fiked
+Name=seth
 Encoding=UTF-8
-Exec=sh -c "fiked -h;${SHELL:-bash}"
+Exec=sh -c "seth -h;${SHELL:-bash}"
 StartupNotify=false
 Terminal=true
 Type=Application
-Categories=7.Mitm;3.VPN;
-
+Categories=7.Mitm;

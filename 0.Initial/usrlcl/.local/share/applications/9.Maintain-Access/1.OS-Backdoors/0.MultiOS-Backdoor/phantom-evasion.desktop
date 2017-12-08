@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=thefatrat
+Encoding=UTF-8
+Exec=sudo sh -c "phantom-evasion;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=0.MultiOS-Backdoor;

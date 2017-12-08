@@ -30,7 +30,7 @@ cd /opt/DEPS/node/nodejs/node
 #it fetch origin
 #git reset --hard origin/v7.x
 #git pull
-git checkout v7.10.1
+git checkout v8.9.2
 #git checkout v7.x
 git pull
 ./configure
@@ -68,4 +68,3 @@ sudo make install
 
 sudo updatedb
 sudo ldconfig
-
