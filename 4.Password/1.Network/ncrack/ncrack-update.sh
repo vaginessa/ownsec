@@ -67,6 +67,11 @@ GITSBMDLINIT
 make -j 4
 sudo make install
 
+mkdir -p $DSKTPFLSDEST
+rm -f $DSKTPFLSDEST/$DSKTPFL
+cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
+
+
 echo "${bold}
 UPDATED
 ${normal}"

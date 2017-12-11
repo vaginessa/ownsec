@@ -40,3 +40,6 @@ GITSBMDLINIT
 ./configure
 make -j 4
 sudo make install
+
+mkdir -p $DSKTPFLSDEST
+cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
