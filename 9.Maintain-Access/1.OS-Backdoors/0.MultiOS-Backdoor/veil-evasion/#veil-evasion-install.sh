@@ -36,7 +36,6 @@ cd $GITREPOROOT
 # no deps noted, feel free to add ...
 ### DEPS END
 
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 sed -i 's/wine-stable/wine/' /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/veil-evasion/Veil-Framework/Veil-Evasion/setup/setup.sh

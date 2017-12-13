@@ -48,7 +48,6 @@ cd $GITREPOROOT
 # xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-webacoo.txt") -r -- sudo apt-get install -y
 ### DEPS END
 
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 sudo rm -f $BINDIR/$EXECUTEABLE2

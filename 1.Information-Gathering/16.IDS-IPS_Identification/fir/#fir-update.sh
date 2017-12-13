@@ -63,7 +63,6 @@ then
     
 cd $GITREPOROOT
 GITRESET
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 cd docker
 #sudo -H pip install -r requirements.txt

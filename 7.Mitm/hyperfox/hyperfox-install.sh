@@ -67,7 +67,6 @@ go get github.com/google/gopacket
 go get github.com/malfunkt/arpfox/arp
 ### DEPS END
 
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 go build 
@@ -76,7 +75,6 @@ mkdir -p $GITCLONEDIR2
 cd $GITCLONEDIR2
 git clone -b $BRANCH $GITREPO2
 cd $GITREPOROOT2
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 go build

@@ -41,7 +41,6 @@ cd $GITREPOROOT
 ### DEPS END
 
 make clean
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 make -j 4
 

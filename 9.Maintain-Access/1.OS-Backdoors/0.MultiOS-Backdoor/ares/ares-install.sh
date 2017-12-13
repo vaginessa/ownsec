@@ -43,14 +43,12 @@ sudo apt-get install python-compizconfig binutils-mingw-w64 python-pil python-re
 # xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-ares.txt") -r -- sudo apt-get install -y
 ### DEPS END
 
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 ####### SERVER
 
 cd $GITREPOROOT 
 git clone https://github.com/pyinstaller/pyinstaller
 cd pyinstaller
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 cd bootloader
 python ./waf distclean all

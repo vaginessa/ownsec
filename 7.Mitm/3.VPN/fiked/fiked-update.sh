@@ -60,7 +60,6 @@ cd $GITREPOROOT
 sudo make uninstall
 make clean
 GITRESET
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 sudo rm -f makefile

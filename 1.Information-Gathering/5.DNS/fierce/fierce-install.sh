@@ -39,7 +39,6 @@ sudo ldconfig
 ### DEPS END
 
 make clean
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 sudo python3 setup.py install

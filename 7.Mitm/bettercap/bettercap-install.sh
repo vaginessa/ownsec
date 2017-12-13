@@ -52,7 +52,6 @@ cd $GITREPOROOT
 #sudo updatedb
 #sudo ldconfig
 
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 echo "${bold}

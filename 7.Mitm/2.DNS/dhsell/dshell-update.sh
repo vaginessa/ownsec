@@ -65,7 +65,6 @@ cd $GITREPOROOT
 
 make clean
 git clean -f 
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 #Build
 make -j 4

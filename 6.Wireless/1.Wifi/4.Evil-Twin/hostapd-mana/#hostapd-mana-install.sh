@@ -15,7 +15,6 @@ GITSBMDLINIT () {
 mkdir -p $GITCLONEDIR
 cd $GITCLONEDIR
 git clone -b $BRANCH $GITREPO
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 cd $REPOBINDIR
 

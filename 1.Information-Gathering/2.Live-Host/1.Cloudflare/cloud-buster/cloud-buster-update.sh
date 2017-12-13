@@ -61,7 +61,6 @@ then
     
 cd $GITREPOROOT
 GITRESET
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 sudo -H pip3 install --upgrade pip
 sudo -H pip3 install dnspython3

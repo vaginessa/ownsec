@@ -36,7 +36,6 @@ sudo npm install -g gulp node-gyp babel-cli
 sudo npm install
 ### DEPS END
 
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 ELECTRON_PATH=$(node -p "require('electron')")
 chrpath -r $(dirname $ELECTRON_PATH) $ELECTRON_PATH

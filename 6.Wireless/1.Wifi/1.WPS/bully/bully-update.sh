@@ -61,7 +61,6 @@ cd $GITREPOROOT
 sudo make uninstall
 sudo make clean
 GITRESET
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 cd src

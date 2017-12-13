@@ -60,7 +60,6 @@ cd $GITREPOROOT
 make clean
 GITRESET
 
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 sudo -H pip3 install -r requirements.txt
 sudo python3 setup.py install

@@ -68,7 +68,6 @@ sudo -H pip2 install dpkt
 
 cd $GITREPOROOT
 GITRESET
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 chmod +x $EXECUTEABLE1

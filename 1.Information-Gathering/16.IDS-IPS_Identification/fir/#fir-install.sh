@@ -43,7 +43,6 @@ cd $GITREPOROOT
 # sudo -H pip install -r requirements.txt
 ### DEPS END
 
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 cd docker

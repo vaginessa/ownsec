@@ -57,7 +57,6 @@ cd $GITREPOROOT
 
 sudo rm -r build
 GITRESET
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 sudo -H pip install PyBOMBS

@@ -43,8 +43,7 @@ cd build
 sudo make uninstall
 make clean
 cd ..
-#APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
-GITSBMDLINIT
+#GITSBMDLINIT
 cd build
 cmake ..
 make -j 4

@@ -44,7 +44,6 @@ sudo -H pip2 install lxml netaddr M2Crypto cherrypy mako requests bs4
 ### DEPS END
 
 make clean
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 #sudo python setup.py install 

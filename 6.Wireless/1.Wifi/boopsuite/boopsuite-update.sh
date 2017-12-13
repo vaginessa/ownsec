@@ -57,7 +57,6 @@ then
     
 cd $GITREPOROOT
 GITRESET
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 sudo -H pip2 install -r requirements.txt

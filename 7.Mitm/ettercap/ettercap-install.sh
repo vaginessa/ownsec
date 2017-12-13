@@ -44,7 +44,6 @@ cd $GITREPOROOT
 ### DEPS END
 
 sudo rm -r build
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 mkdir build

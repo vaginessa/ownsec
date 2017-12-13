@@ -41,7 +41,6 @@ cd $GITCLONEDIR
 git clone -b $BRANCH $GITREPO
 cd $GITREPOROOT
 
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 chmod +x $EXECUTEABLE1

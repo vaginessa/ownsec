@@ -42,7 +42,6 @@ sudo ldconfig
 
 ### DEPS END
 
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 echo '#!/bin/bash -i 

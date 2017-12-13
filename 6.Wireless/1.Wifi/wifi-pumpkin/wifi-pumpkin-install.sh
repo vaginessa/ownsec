@@ -38,7 +38,6 @@ cd $GITREPOROOT
 # xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-wifipumpkin.txt") -r -- sudo apt-get install -y
 ### DEPS END
 
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 sed -i -e 's/pip install /sudo -H pip2 install /g' installer.sh
 sed -i -e 's/scapy hostapd rfkill/scapy rfkill/g' installer.sh

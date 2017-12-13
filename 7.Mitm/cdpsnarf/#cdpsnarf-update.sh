@@ -60,7 +60,6 @@ then
 cd $GITREPOROOT
 make clean
 GITRESET
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 make -j 4
 ./cdpsnarf -h

@@ -70,7 +70,6 @@ sudo updatedb
 cd $GITREPOROOT
 sudo make suiduninstall
 GITRESET
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 ./configure

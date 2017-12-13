@@ -74,7 +74,6 @@ sudo rm -f $BINDIR/rulegen
 sudo rm -f $BINDIR/statsgen
 
 cd $GITREPOROOT
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 chmod +x $GITREPOROOT/$EXECUTEABLE1

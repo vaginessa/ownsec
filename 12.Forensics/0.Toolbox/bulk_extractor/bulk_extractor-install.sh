@@ -35,7 +35,6 @@ cd $GITREPOROOT
 ### DEPS END
 
 make clean
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 chmod +x bootstrap.sh
 ./bootstrap.sh

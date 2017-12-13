@@ -63,7 +63,6 @@ make clean
 cd $GITREPOROOT
 rm -f build
 GITRESET
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 mkdir build

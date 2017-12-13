@@ -68,7 +68,6 @@ then
 cd $GITREPOROOT
 
 GITRESET
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 #cd /opt/ITSEC/7.Mitm/hyperfox/malfunkt/hyperfox
 curl -sL 'https://raw.githubusercontent.com/malfunkt/hyperfox/$BRANCH/install.sh' | sh

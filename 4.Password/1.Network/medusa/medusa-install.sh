@@ -40,7 +40,6 @@ cd $GITREPOROOT
 ### DEPS END
 
 make clean
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 mkdir deps
 cd deps
@@ -48,7 +47,6 @@ cd deps
 git clone https://github.com/simonvetter/afpfs-ng
 cd afpfs-ng
 make clean
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 ./configure
 make -j 4 

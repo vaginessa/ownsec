@@ -43,7 +43,6 @@ rbenv rehash
 rbenv shell 2.4.1
 ### DEPS END
 
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 bundle install

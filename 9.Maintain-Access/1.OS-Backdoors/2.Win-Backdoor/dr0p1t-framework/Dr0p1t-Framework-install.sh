@@ -39,7 +39,6 @@ cd $GITREPOROOT
 # no deps noted, feel free to add ...
 ### DEPS END
 
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 chmod 777 -R Dr0p1t-Framework
 cd Dr0p1t-Framework

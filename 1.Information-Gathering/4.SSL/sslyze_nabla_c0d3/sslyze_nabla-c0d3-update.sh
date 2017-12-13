@@ -61,7 +61,6 @@ cd $GITREPOROOT
 
 GITRESET
 
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 sudo -H pip install -r requirements.txt
 

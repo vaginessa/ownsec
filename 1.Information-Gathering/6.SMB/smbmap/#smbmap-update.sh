@@ -72,7 +72,6 @@ sudo ldconfig
 #sudo apt-get install python-impacket
 
 GITRESET
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 echo "#!/bin/bash
 cd /opt/ITSEC/1.Information-Gathering/6.SMB/smbmap/ShawnDEvans/smbmap

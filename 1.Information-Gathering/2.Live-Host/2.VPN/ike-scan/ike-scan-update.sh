@@ -61,7 +61,6 @@ sudo make uninstall
 make clean
 GITRESET
 
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 autoreconf --install
 ./configure --with-openssl

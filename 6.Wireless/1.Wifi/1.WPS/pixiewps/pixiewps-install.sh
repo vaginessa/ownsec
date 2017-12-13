@@ -32,7 +32,6 @@ git clone -b $BRANCH $GITREPO
 cd $GITREPOROOT
 cd src
 make clean
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 make -j 4
 sudo make install

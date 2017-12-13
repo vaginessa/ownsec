@@ -42,7 +42,6 @@ sudo -H pip install configobj
 sudo -H pip install pefile
 ### DEPS END
 
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 ######################################################
 cd bdf

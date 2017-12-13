@@ -58,7 +58,6 @@ then
     
 cd $GITREPOROOT
 GITRESET
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 chmod +x $GITREPOROOT/$EXECUTEABLE1
 sudo rm -f $BINDIR/$EXECUTEABLE2

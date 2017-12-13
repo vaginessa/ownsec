@@ -62,7 +62,6 @@ sudo apt-get install python-compizconfig binutils-mingw-w64 python-pil python-re
 
 cd $GITREPOROOT 
 GITRESET
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 ####### SERVER
@@ -71,7 +70,6 @@ cd $GITREPOROOT
 git clone https://github.com/pyinstaller/pyinstaller
 cd pyinstaller
 GITRESET
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 cd bootloader
 python ./waf distclean all

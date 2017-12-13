@@ -60,7 +60,6 @@ cd $GITREPOROOT
 
 sudo -H pip2 install google
 GITRESET
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 chmod +x $GITREPOROOT/$EXECUTEABLE1

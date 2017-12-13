@@ -61,7 +61,6 @@ then
 cd $GITREPOROOT
 make clean
 GITRESET
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 sudo make -j 4

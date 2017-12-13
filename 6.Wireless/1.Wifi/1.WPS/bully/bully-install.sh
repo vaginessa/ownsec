@@ -32,7 +32,6 @@ cd $GITCLONEDIR
 git clone -b $BRANCH $GITREPO
 
 cd $GITREPOROOT
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 cd src

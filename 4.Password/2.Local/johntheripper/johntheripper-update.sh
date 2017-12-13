@@ -67,13 +67,11 @@ sudo make uninstall
 make clean
 cd $GITREPOROOT
 GITRESET
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 cd src
 
 git clone --recursive https://github.com/teeshop/rexgen.git
 cd rexgen
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 sudo ./install.sh
 cd $GITREPOROOT

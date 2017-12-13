@@ -64,7 +64,6 @@ sudo rm -f /usr/local/bin/$EXECUTEABLE2
 sudo updatedb
 sudo ldconfig
 GITRESET
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
  cd osslsigncode

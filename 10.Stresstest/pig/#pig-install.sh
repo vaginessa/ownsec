@@ -36,13 +36,11 @@ cd $GITREPOROOT
 # no deps noted, feel free to add ...
 ### DEPS END
 
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 git clone https://github.com/rafael-santiago/hefesto
 
 cd hefesto
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 cd /opt/ITSEC/10.Stresstest/pig/rafael-santiago/pig/hefesto/src/
 

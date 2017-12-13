@@ -61,7 +61,6 @@ sudo rm -f /usr/sbin/hping2
 cd $GITREPOROOT
 make clean
 GITRESET
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 sudo ln -s /usr/include/pcap/bpf.h /usr/include/net/bpf.h

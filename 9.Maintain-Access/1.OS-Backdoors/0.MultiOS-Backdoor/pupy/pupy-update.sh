@@ -64,7 +64,6 @@ cd $GITREPOCLONEDIR
 git clone https://github.com/n1nj4sec/pupy
 cd $GITREPOROOT
 GITRESET
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 sudo -H pip install -r pupy/requirements.txt
 wget https://github.com/n1nj4sec/pupy/releases/download/latest/payload_templates.txz

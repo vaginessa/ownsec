@@ -46,7 +46,6 @@ cd $GITREPOROOT
 
 ## clean and init
 make clean
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 ## end clean and init
 

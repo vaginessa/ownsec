@@ -83,7 +83,6 @@ cd $GITREPOROOT_node
 
 sudo make uninstall
 GITRESET_NODE
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 ./configure
@@ -142,7 +141,6 @@ cd $GITREPOROOT_npm
 
 sudo make uninstall
 GITRESET_NPM
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 ./configure 

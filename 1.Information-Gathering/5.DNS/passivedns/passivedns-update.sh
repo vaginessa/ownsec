@@ -61,7 +61,6 @@ cd $GITREPOROOT
 sudo make uninstall
 GITRESET
 
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 libtoolize --force
 aclocal

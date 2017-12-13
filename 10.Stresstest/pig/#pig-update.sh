@@ -59,14 +59,12 @@ then
 cd $GITREPOROOT
 #sudo rm  /usr/local/bin/$EXECUTEABLE2
 GITRESET
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 git clone https://github.com/rafael-santiago/hefesto
 
 cd hefesto
 GITRESET
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 cd /opt/ITSEC/10.Stresstest/pig/rafael-santiago/pig/hefesto/src/
 

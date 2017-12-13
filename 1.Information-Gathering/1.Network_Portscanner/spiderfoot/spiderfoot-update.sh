@@ -66,7 +66,6 @@ then
 cd $GITREPOROOT
 
 GITRESET
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 sudo -H pip2 install lxml netaddr M2Crypto cherrypy mako requests bs4

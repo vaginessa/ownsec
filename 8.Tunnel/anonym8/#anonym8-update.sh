@@ -55,7 +55,6 @@ then
     
 cd $GITREPOROOT
 GITRESET
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 chmod +x ./INSTALL.sh
 #sudo ./INSTALL.sh

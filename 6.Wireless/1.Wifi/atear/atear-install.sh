@@ -47,7 +47,6 @@ sudo ldconfig
 
 ### DEPS END
 
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 rm -f $EXECUTEABLE3
