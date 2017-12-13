@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=OMEN
+Encoding=UTF-8
+Exec=sh -c "cd /opt/ITSEC/4.Password/3.Wordlist/omen/RUB-SysSec/OMEN && /cat /opt/ITSEC/4.Password/3.Wordlist/omen/RUB-SysSec/OMEN/README.md;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=3.Wordlist;
