@@ -10,6 +10,7 @@ GITCLONEDIR=/opt/ITSEC/7.Mitm/bettercap/evilsocket
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
 DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
 DSKTPFL=bettercap.desktop
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive
@@ -51,6 +52,7 @@ cd $GITREPOROOT
 #sudo updatedb
 #sudo ldconfig
 
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 echo "${bold}

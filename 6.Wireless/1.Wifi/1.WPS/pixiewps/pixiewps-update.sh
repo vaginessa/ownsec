@@ -11,6 +11,7 @@ GITCLONEDIR=/opt/ITSEC/6.Wireless/1.Wifi/1.WPS/pixiewps/wiire-a
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/6.Wireless/1.Wifi/1.WPS/
 DSKTPFLSDEST=/home/$USER/.local/share/applications/6.Wireless/1.Wifi/1.WPS
 DSKTPFL=pixiewps.desktop
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive
@@ -53,6 +54,7 @@ cd src
 sudo make uninstall
 make clean
 GITRESET
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 make -j 4
 sudo make install

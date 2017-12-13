@@ -17,6 +17,7 @@ GITRESET () {
 	git reset --hard origin/$BRANCH
 	git pull
 }
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive
@@ -61,6 +62,7 @@ sudo rm -rf /opt/ITSEC/6.Wireless/1.Wifi/wifi-pumpkin/P0cL4bs/WiFi-Pumpkin/deb_t
 
 #sed -i -e 's#deb_tmp/##g' .gitignore
 GITRESET
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 sed -i -e 's/pip install /sudo -H pip2 install /g' installer.sh
 sed -i -e 's/scapy hostapd rfkill/scapy rfkill/g' installer.sh

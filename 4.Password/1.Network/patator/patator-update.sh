@@ -15,6 +15,7 @@ BINDIR=/usr/local/bin
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/1.Network
 DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/1.Network
 DSKTPFL=patator.desktop
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive
@@ -55,6 +56,7 @@ then
     
 cd $GITREPOROOT
 GITRESET
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 sudo -H pip2 install pyOpenSSL impacket IPy dnspython

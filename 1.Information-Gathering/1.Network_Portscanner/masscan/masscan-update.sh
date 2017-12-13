@@ -11,6 +11,7 @@ GITCLONEDIR=/opt/ITSEC/1.Information-Gathering/1.Network_Portscanner/masscan/rob
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/1.Network_Portscanner
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/1.Network_Portscanner
 DSKTPFL=masscan.desktop
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive
@@ -60,6 +61,7 @@ cd $GITREPOROOT
 sudo make uninstall
 make clean
 GITRESET
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 make -j 4
 sudo make install

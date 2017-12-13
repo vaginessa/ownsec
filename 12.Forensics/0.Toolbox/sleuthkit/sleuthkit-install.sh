@@ -10,6 +10,7 @@ GITCLONEDIR=/opt/ITSEC/8.Forensics/0.Toolbox/sleuthkit/sleuthkit
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications
 DSKTPFLSDEST=/home/$USER/.local/share/applications
 DSKTPFL=dnschef.desktop
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive
@@ -35,6 +36,7 @@ sudo apt-get install libewf-dev libafflib-dev
 sudo udpatedb
 ### DEPS END
 
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 ./bootstrap 
 ./configure

@@ -10,6 +10,7 @@ GITCLONEDIR=/opt/ITSEC/1.Information-Gathering/4.SSL/sslaudit/grwl
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/4.SSL
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/4.SSL
 DSKTPFL=sslcaudit.desktop
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive
@@ -36,6 +37,7 @@ sudo updatedb
 sudo ldconfig
 ### DEPS END
 
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 sudo python setup.py install

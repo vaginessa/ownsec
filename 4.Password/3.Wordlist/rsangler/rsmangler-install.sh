@@ -14,6 +14,7 @@ BINDIR=/usr/local/bin
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/3.Wordlist
 DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/3.Wordlist
 DSKTPFL=rsmangler.desktop
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive
@@ -30,12 +31,16 @@ echo "${bold}
 INSTALL
 ${normal}"
 
+mkdir -p $GITCLONEDIR
+cd $GITCLONEDIR
+git clone -b $BRANCH $GITREPO
 cd $GITREPOROOT
 
 ### DEPS:
 # no deps noted, feel free to add ...
 ### DEPS END
 
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 echo '#!/bin/bash

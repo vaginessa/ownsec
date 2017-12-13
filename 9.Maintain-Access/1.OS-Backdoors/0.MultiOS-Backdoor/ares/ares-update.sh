@@ -17,6 +17,7 @@ GITRESET () {
 	git reset --hard origin/$BRANCH
 	git pull
 }
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive
@@ -61,6 +62,7 @@ sudo apt-get install python-compizconfig binutils-mingw-w64 python-pil python-re
 
 cd $GITREPOROOT 
 GITRESET
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 ####### SERVER
@@ -69,6 +71,7 @@ cd $GITREPOROOT
 git clone https://github.com/pyinstaller/pyinstaller
 cd pyinstaller
 GITRESET
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 cd bootloader
 python ./waf distclean all

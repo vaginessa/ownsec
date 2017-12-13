@@ -22,6 +22,7 @@ GITRESET () {
 	git reset --hard origin/$BRANCH
 	git pull
 }
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive
@@ -64,6 +65,7 @@ cd $GITREPOROOT
 
 make clean
 git clean -f 
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 #Build
 make -j 4

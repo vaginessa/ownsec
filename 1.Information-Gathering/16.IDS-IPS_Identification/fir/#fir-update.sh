@@ -21,6 +21,7 @@ GITRESET () {
 	git reset --hard origin/master
 	git pull
 }
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive
@@ -62,6 +63,7 @@ then
     
 cd $GITREPOROOT
 GITRESET
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 cd docker
 #sudo -H pip install -r requirements.txt

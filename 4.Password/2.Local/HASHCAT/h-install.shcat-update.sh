@@ -17,6 +17,7 @@ GITRESET () {
 	git reset --hard origin/$BRANCH
 	git pull
 }
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive
@@ -59,6 +60,7 @@ cd $GITREPOROOT
 sudo make uninstall
 make clean
 GITRESET
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 cd $GITREPOROOT
@@ -67,6 +69,7 @@ git clone https://github.com/hashcat/hashcat-utils
 cd /opt/ITSEC/4.Password/2.Local/HASHCAT/hashcat/hashcat/hashcat-utils
 make clean
 GITRESET
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 cd src
 make -j 4
@@ -76,6 +79,7 @@ cd /opt/ITSEC/4.Password/2.Local/HASHCAT/hashcat/hashcat/maskprocessor
 sudo make uninstall
 make clean
 GITRESET
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 cd src
 make -j 4
@@ -86,6 +90,7 @@ cd /opt/ITSEC/4.Password/2.Local/HASHCAT/hashcat/hashcat/statsprocessor
 sudo make uninstall
 make clean
 GITRESET
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 cd src
 make -j 4
@@ -96,6 +101,7 @@ cd /opt/ITSEC/4.Password/2.Local/HASHCAT/hashcat/hashcat/princeprocessor
 sudo make uninstall
 make clean
 GITRESET
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 cd src
 make -j 4

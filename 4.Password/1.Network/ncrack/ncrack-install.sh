@@ -10,6 +10,8 @@ GITCLONEDIR=/opt/ITSEC/4.Password/1.Network/ncrack/nmap
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/1.Network
 DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/1.Network
 DSKTPFL=ncrack.desktop
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive
@@ -22,6 +24,7 @@ echo "${bold}
 | |\  | |___|  _ <  / ___ \ |___| . \ 
 |_| \_|\____|_| \_\/_/   \_\____|_|\_\
           
+/nmap/ncrack
 INSTALL
 ${normal}"
 
@@ -32,9 +35,13 @@ git clone -b $BRANCH $GITREPO
 cd $GITREPOROOT
 
 ### DEPS:
-# no deps noted, feel free to add ...
-### DEPS END
+# sudo apt-get update
+# sudo apt-get upgrade
+# xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-ncrack.txt") -r -- sudo apt-get install -y
+# sudo updatedb
+# sudo ldconfig
 
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 ./configure

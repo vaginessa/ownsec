@@ -10,6 +10,7 @@ GITCLONEDIR=/opt/ITSEC/10.Stresstest/slowhttptest/shekyan
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/10.Stresstest
 DSKTPFLSDEST=/home/$USER/.local/share/applications/10.Stresstest
 DSKTPFL=slowhttptest.desktop
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive
@@ -36,6 +37,7 @@ sudo make uninstall
 # no deps noted, feel free to add ...
 ### DEPS END
 
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 ./configure
 make -j 4

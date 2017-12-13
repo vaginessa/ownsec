@@ -15,6 +15,7 @@ BINDIR=/usr/local/bin
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/2.Local
 DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/2.Local
 DSKTPFL=john.desktop
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive
@@ -46,12 +47,14 @@ cd $GITREPOROOT
 # xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-johntheripper.txt") -r -- sudo apt-get install -y
 ### DEPS END
 
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 cd src
 
 git clone --recursive https://github.com/teeshop/rexgen.git
 cd rexgen
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 sudo ./install.sh
 cd $GITREPOROOT

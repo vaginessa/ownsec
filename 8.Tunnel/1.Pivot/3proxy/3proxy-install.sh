@@ -12,6 +12,7 @@ GITCLONEDIR=/opt/ITSEC/8.Tunnel/1.Pivot/3proxy/z3APA3A
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/8.Tunnel/1.Pivot
 DSKTPFLSDEST=/home/$USER/.local/share/applications/8.Tunnel/1.Pivot
 DSKTPFL=3proxy.desktop
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive
@@ -38,6 +39,7 @@ cd $GITREPOROOT
 ### DEPS END
 
 make clean
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 make -f makefile.unix

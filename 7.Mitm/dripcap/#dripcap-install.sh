@@ -9,6 +9,7 @@ BRANCH=master
 GITREPOROOT=/opt/ITSEC/7.Mitm/dripcap/dripcap/dripcap
 GITCLONEDIR=/opt/ITSEC/7.Mitm/dripcap/dripcap
 
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive
@@ -35,6 +36,7 @@ sudo npm install -g gulp node-gyp babel-cli
 sudo npm install
 ### DEPS END
 
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 ELECTRON_PATH=$(node -p "require('electron')")
 chrpath -r $(dirname $ELECTRON_PATH) $ELECTRON_PATH

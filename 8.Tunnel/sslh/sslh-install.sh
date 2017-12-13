@@ -10,6 +10,7 @@ GITCLONEDIR=/opt/ITSEC/8.Tunnel/sslh/yrutschle
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/4.SSL
 DSKTPFLSDEST=/home/$USER/.local/share/applications
 DSKTPFL=sslh.desktop
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive
@@ -46,6 +47,7 @@ sudo ldconfig
 sudo updatedb
 ### DEPS END
 make clean
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 make -j 4

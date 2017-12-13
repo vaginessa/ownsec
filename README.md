@@ -7,6 +7,8 @@ be careful pulling the latest changes, you end up with double menu entries - do 
 
 Leave comments in the issues for suggestions on changes FE remove, add apps, change/add/remove categories or whatever - (id love to read some - im not a pentester, just a linux lover with interst in itsec and curious in general :) ) 
 
+If youre the owner of one of the repos the install scripts are for, feel free to cp the scripts - would be way too much for me alone to fork, make pull requests and maintain two scripts for each repo while expanding this repo.
+
 
 ### Panel Screenshot ...
 ![menu](http://i.imgur.com/hUs1wM1.png)
@@ -19,7 +21,7 @@ Leave comments in the issues for suggestions on changes FE remove, add apps, cha
 
 https://github.com/alphaaurigae/ITSEC-Install-Scripts/wiki/Menu-Screenshots-as-of-12.7.17
 
-Its a pain to go through centillions of clicks just to setup your linux OS to the same state just before you broke it or to spawn just another VM.
+Its a pain to go through centillions of clicks just to setup your linux OS to the same state just before you broke it, or to spawn just another VM.
 
 Fortunately theres bash to help us :) ...
 

@@ -7,6 +7,7 @@ GITREPO=https://github.com/routerkeygen/routerkeygenPC.git
 BRANCH=master
 GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/2.Routerkeys/routerkeygenpc/routerkeygen/routerkeygenPC
 GITCLONEDIR=/opt/ITSEC/6.Wireless/1.Wifi/2.Routerkeys/routerkeygenpc/routerkeygen
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive
@@ -42,7 +43,8 @@ cd build
 sudo make uninstall
 make clean
 cd ..
-#GITSBMDLINIT
+#APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+GITSBMDLINIT
 cd build
 cmake ..
 make -j 4

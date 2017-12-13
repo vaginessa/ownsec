@@ -15,6 +15,7 @@ BINDIR=/usr/local/bin
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm/4.RDP
 DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm/4.RDP
 DSKTPFL=seth.desktop
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive
@@ -53,6 +54,7 @@ if git checkout $BRANCH &&
 then
 
 cd $GITREPOROOT
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 sudo -H pip2 install -r requirements.txt 
 sudo updatedb

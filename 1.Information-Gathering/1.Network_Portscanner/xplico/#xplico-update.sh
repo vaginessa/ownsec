@@ -8,6 +8,7 @@ BRANCH=master
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/1.Network_Portscanner/xplico/xplico/xplico
 GITCONFDIR=/opt/ITSEC/1.Information-Gathering/1.Network_Portscanner/xplico/xplico/xplico/.git
 GITCLONEDIR=/opt/ITSEC/1.Information-Gathering/1.Network_Portscanner/xplico/xplico
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive

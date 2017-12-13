@@ -19,6 +19,7 @@ GITRESET () {
 	git reset --hard origin/$BRANCH
 	git pull
 }
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive
@@ -62,6 +63,7 @@ sudo make uninstall
 sudo rm /usr/local/bin/$EXECUTEABLE2
 make clean
 GITRESET
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 ./bootstrap.bash
 ./configure

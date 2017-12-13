@@ -17,6 +17,7 @@ GITRESET () {
 	git reset --hard origin/arping-2.x
 	git pull
 }
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive
@@ -60,6 +61,7 @@ cd $GITREPOROOT
 sudo make uninstall
 make clean 
 GITRESET
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 ./bootstrap.sh

@@ -15,6 +15,7 @@ DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7
 DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm/2.DNS
 DSKTPFL1=dshell.desktop
 DSKTPFL2=dshell-decode.desktop
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive
@@ -44,6 +45,7 @@ cd $GITREPOROOT
 ### DEPS END
 
 make clean
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 #Build
 make -j 4

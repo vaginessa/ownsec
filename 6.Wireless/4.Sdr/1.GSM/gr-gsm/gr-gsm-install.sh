@@ -7,6 +7,7 @@ GITCLONEDIR=/opt/ITSEC/6.Wireless/4.Sdr/1.GSM/gr-gsm/ptrkrysik
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/6.Wireless/4.Sdr/1.GSM
 DSKTPFLSDEST=/home/$USER/.local/share/applications/3.Exploitation-Tools/6.Wireless/4.Sdr/1.GSM
 DSKTPFL=gr-gsm.desktop
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive
@@ -45,6 +46,7 @@ sudo pybombs recipes add gr-etcetera git+https://github.com/gnuradio/gr-etcetera
 ### DEPS END
 
 sudo rm -r build
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 mkdir build

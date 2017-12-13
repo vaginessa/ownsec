@@ -11,6 +11,7 @@ GITCLONEDIR=/opt/ITSEC/8.Forensics/0.Toolbox/bulk_extractor/simsong
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications
 DSKTPFLSDEST=/home/$USER/.local/share/applications
 DSKTPFL=bulk-extractor.desktop
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive
@@ -34,6 +35,7 @@ cd $GITREPOROOT
 ### DEPS END
 
 make clean
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 chmod +x bootstrap.sh
 ./bootstrap.sh

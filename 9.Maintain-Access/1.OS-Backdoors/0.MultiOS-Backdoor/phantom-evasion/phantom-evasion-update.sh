@@ -21,6 +21,7 @@ GITRESET () {
 	git reset --hard origin/$BRANCH
 	git pull
 }
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive
@@ -78,6 +79,7 @@ cd $GITREPOROOT
 cd $GITREPOROOT 
 git clone https://github.com/pyinstaller/pyinstaller
 cd pyinstaller
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 cd bootloader
 python ./waf distclean all
@@ -87,11 +89,13 @@ sudo python setup.py install
 ### DEPS END
 
 #sudo -H pip 3 install PyInstaller
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 ####### SERVER
 
 cd $GITREPOROOT 
 GITRESET
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 ####### SERVER
@@ -100,6 +104,7 @@ cd $GITREPOROOT
 git clone https://github.com/pyinstaller/pyinstaller
 cd pyinstaller
 GITRESET
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 cd bootloader
 python ./waf distclean all

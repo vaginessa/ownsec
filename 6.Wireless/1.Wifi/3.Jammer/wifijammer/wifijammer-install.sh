@@ -13,6 +13,7 @@ BINDIR=/usr/local/bin
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/6.Wireless/1.Wifi/3.Jammer
 DSKTPFLSDEST=/home/$USER/.local/share/applications/6.Wireless/1.Wifi/3.Jammer
 DSKTPFL=wifijammer.desktop
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive
@@ -33,6 +34,7 @@ mkdir -p $GITCLONEDIR
 cd $GITCLONEDIR
 git clone -b $BRANCH $GITREPO
 cd $GITREPOROOT
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 chmod +x $GITREPOROOT/$EXECUTEABLE1

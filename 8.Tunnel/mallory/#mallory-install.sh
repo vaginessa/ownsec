@@ -8,6 +8,7 @@ BRANCH=master
 GITREPOROOT=/opt/ITSEC/8.Tunnel/mallory/justmao945/mallory
 GITCONFDIR=/opt/ITSEC/8.Tunnel/mallory/justmao945/mallory/.git
 GITCLONEDIR=/opt/ITSEC/8.Tunnel/mallory/justmao945
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive
@@ -32,5 +33,6 @@ cd $GITREPOROOT
 # no deps noted, feel free to add ...
 ### DEPS END
 
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 #nothing todo here

@@ -10,6 +10,7 @@ GITCLONEDIR=/opt/ITSEC/10.Stresstest/t50/fredericopissarra
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/10.Stresstest
 DSKTPFLSDEST=/home/$USER/.local/share/applications/10.Stresstest
 DSKTPFL=t50.desktop
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive
@@ -35,6 +36,7 @@ cd $GITREPOROOT
 ### DEPS END
 
 sudo make uninstall
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 ./configure
 make -j 4

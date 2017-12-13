@@ -9,6 +9,7 @@ GITREPO=https://github.com/sleuthkit/autopsy
 BRANCH=master
 GITREPOROOT=/opt/ITSEC/8.Forensics/0.Toolbox/autopsy/sleuthkit/autopsy
 GITCLONEDIR=/opt/ITSEC/8.Forensics/0.Toolbox/autopsy/sleuthkit
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive
@@ -40,6 +41,7 @@ cd $GITREPOROOT
 # no deps noted, feel free to add ...
 ### DEPS END
 
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 #find old variable and replace it

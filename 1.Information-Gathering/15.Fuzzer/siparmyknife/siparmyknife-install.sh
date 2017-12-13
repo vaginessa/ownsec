@@ -11,6 +11,7 @@ BINDIR=/usr/local/bin
 EXECUTEABLE1=siparmyknife.pl
 EXECUTEABLE2=siparmyknife
 EXECUTEABLE3=siparmyknife.sh
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive
@@ -35,6 +36,7 @@ cd $GITREPOROOT
 # no deps noted, feel free to add ...
 ### DEPS END
 
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 echo '#!/bin/bash

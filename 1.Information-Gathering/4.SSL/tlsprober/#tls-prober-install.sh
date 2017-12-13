@@ -8,6 +8,7 @@ GITREPO=https://github.com/WestpointLtd/tls_prober.git
 BRANCH=master
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/4.SSL/tls_prober/WestpointLtd/tls_prober
 GITCLONEDIR=/opt/ITSEC/1.Information-Gathering/4.SSL/tls_prober/WestpointLtd
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive
@@ -33,6 +34,7 @@ cd $GITREPOROOT
 # no deps noted, feel free to add ...
 ### DEPS END
 
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 

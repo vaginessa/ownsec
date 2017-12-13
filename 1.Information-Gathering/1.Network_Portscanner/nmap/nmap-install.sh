@@ -10,6 +10,7 @@ GITCLONEDIR=/opt/ITSEC/1.Information-Gathering/1.Network_Portscanner/nmap/nmap
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/1.Network_Portscanner
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/1.Network_Portscanner
 DSKTPFL=nmap.desktop
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive
@@ -23,6 +24,8 @@ echo "${bold}
 | |\  | |  | |/ ___ \|  __/ 
 |_| \_|_|  |_/_/   \_\_|    
             
+/nmap/nmap
+INSTALL
 ${normal}"
 
 mkdir -p $GITCLONEDIR
@@ -34,9 +37,12 @@ cd $GITREPOROOT
 # sudo apt-get update
 # sudo apt-get upgrade
 # xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-nmap.txt") -r -- sudo apt-get install -y
+# sudo updatedb
+# sudo ldconfig
 ### DEPS END
 
 make clean
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 ./configure

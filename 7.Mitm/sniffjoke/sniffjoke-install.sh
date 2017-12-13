@@ -10,6 +10,7 @@ GITCLONEDIR=/opt/ITSEC/7.Mitm/sniffjoke/vecna
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
 DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
 DSKTPFL=sniffjoke.desktop
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive
@@ -36,6 +37,7 @@ cd $GITREPOROOT
 ### DEPS END
 
 sudo rm -r build
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 mkdir build
 cd build

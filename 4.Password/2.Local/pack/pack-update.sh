@@ -25,6 +25,7 @@ DSKTPFL1=pack_maskgen.desktop
 DSKTPFL2=pack_policygen.desktop
 DSKTPFL3=pack_rulegen.desktop
 DSKTPFL4=pack_statsgen.desktop
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive
@@ -73,6 +74,7 @@ sudo rm -f $BINDIR/rulegen
 sudo rm -f $BINDIR/statsgen
 
 cd $GITREPOROOT
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 chmod +x $GITREPOROOT/$EXECUTEABLE1

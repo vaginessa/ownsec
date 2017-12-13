@@ -10,6 +10,7 @@ GITCLONEDIR=/opt/ITSEC/7.Mitm/3.VPN/fiked/droe
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm/3.VPN
 DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm/3.VPN
 DSKTPFL=fiked.desktop
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive
@@ -40,6 +41,7 @@ cd $GITREPOROOT
 
 sudo make uninstall
 make clean
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 sudo rm -f makefile

@@ -32,6 +32,7 @@ cp -R $REPOROOT/0.Initial/usrlcl/.local/share/applications/00.Scripts/ /home/$US
 mkdir -p $DSKTPFLSDEST 
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 
+## SERVICE symlinks
 echo "${bold}
 ... Symlink Service Shortcuts ....         
 ${normal}"
@@ -67,15 +68,21 @@ cd $REPOROOT/$SETTINGSCRIPTS/startstop/0.Services/3.PHP
 sudo bash -c 'for SHfiles in $(ls *.sh); do ln -s $REPOROOT/$SETTINGSCRIPTS/startstop/0.Services/3.PHP/$SHfiles $BINDIR/$SHfiles;done'
 cd $REPOROOT/$SETTINGSCRIPTS/startstop/0.Services
 sudo bash -c 'for SHfiles in $(ls *.sh); do ln -s $REPOROOT/$SETTINGSCRIPTS/startstop/0.Services/$SHfiles $BINDIR/$SHfiles;done'
-
 cd $REPOROOT/$SETTINGSCRIPTS/startstop/0.Services/3.DNS
 sudo bash -c 'for SHfiles in $(ls *.sh); do ln -s $REPOROOT/$SETTINGSCRIPTS/startstop/0.Services/3.DNS/$SHfiles $BINDIR/$SHfiles;done'
-
 cd $REPOROOT/$SETTINGSCRIPTS/startstop/0.Services/4.TOR
 sudo bash -c 'for SHfiles in $(ls *.sh); do ln -s $REPOROOT/$SETTINGSCRIPTS/startstop/0.Services/4.TOR/$SHfiles $BINDIR/$SHfiles;done'
-
 cd $REPOROOT/$SETTINGSCRIPTS/startstop/0.Services/6.Docker
 sudo bash -c 'for SHfiles in $(ls *.sh); do ln -s $REPOROOT/$SETTINGSCRIPTS/startstop/0.Services/6.Docker/$SHfiles $BINDIR/$SHfiles;done'
 
 
 sudo ln -s $REPOROOT/$SETTINGSCRIPTS/this-repo/cp-conf.sh $BINDIR/ITsec-Install-Scripts_cp-conf
+
+# UPDATE script symlinks
+sudo rm -f $BINDIR/updateallthegits.sh
+sudo rm -f $BINDIR/upgrade-os.sh
+cd $REPOROOT/00.Maintain
+sudo ln -s $REPOROOT/00.Maintain/updateallthegits.sh $BINDIR/updateallthegits.sh
+cd $REPOROOT/00.Maintain
+sudo  ln -s $REPOROOT/00.Maintain/upgrade-os.sh $BINDIR/upgrade-os.sh
+

@@ -16,6 +16,7 @@ DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/16.ID
 DSKTPFL1=ftester.desktop
 DSKTPFL2=ftestd.desktop
 DSKTPFL3=freport.desktop
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive
@@ -43,6 +44,7 @@ cd $GITREPOROOT
 # xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-ftester.txt") -r -- sudo apt-get install -y
 ### DEPS END
 
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 chmod +x $GITREPOROOT/$EXECUTEABLE2

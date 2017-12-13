@@ -10,6 +10,7 @@ GITCLONEDIR=/opt/ITSEC/4.Password/2.Local/HASHCAT/hashcat
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/2.Local
 DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/2.Local
 DSKTPFL=hashcat.desktop
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive
@@ -36,6 +37,7 @@ cd $GITREPOROOT
 ### DEPS END
 
 make clean
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 
 cd $GITREPOROOT
@@ -43,6 +45,7 @@ git clone https://github.com/hashcat/hashcat-utils
 
 cd /opt/ITSEC/4.Password/2.Local/HASHCAT/hashcat/hashcat/hashcat-utils
 make clean
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 cd src
 make -j 4
@@ -51,6 +54,7 @@ cd $GITREPOROOT
 git clone https://github.com/hashcat/maskprocessor
 cd /opt/ITSEC/4.Password/2.Local/HASHCAT/hashcat/hashcat/maskprocessor
 make clean
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 cd src
 make -j 4
@@ -60,6 +64,7 @@ cd $GITREPOROOT
 git clone https://github.com/hashcat/statsprocessor
 cd /opt/ITSEC/4.Password/2.Local/HASHCAT/hashcat/hashcat/statsprocessor
 make clean
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 cd src
 make -j 4
@@ -69,6 +74,7 @@ cd $GITREPOROOT
 git clone https://github.com/hashcat/princeprocessor
 
 cd /opt/ITSEC/4.Password/2.Local/HASHCAT/hashcat/hashcat/princeprocessor
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 cd src
 make -j 4

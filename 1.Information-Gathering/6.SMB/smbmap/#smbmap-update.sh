@@ -14,6 +14,7 @@ GITRESET () {
 	git reset --hard origin/master
 	git pull
 }
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive
@@ -71,6 +72,7 @@ sudo ldconfig
 #sudo apt-get install python-impacket
 
 GITRESET
+APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
 GITSBMDLINIT
 echo "#!/bin/bash
 cd /opt/ITSEC/1.Information-Gathering/6.SMB/smbmap/ShawnDEvans/smbmap
