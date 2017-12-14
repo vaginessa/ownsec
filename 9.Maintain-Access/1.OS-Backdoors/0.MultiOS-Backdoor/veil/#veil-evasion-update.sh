@@ -3,13 +3,13 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
-GITREPO=https://github.com/Veil-Framework/Veil-Evasion
+GITREPO=https://github.com/Veil-Framework/Veil
 BRANCH=master
-GITREPOROOT=/opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/veil-evasion/Veil-Framework/Veil-Evasion
-GITCONFDIR=/opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/veil-evasion/Veil-Framework/Veil-Evasion/.git
-GITCLONEDIR=/opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/veil-evasion/Veil-Framework
-EXECUTEABLE1=Veil-Evasion.py
-EXECUTEABLE2=veil-evasion
+GITREPOROOT=/opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/Veil/Veil-Framework/Veil
+GITCONFDIR=/opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/Veil/Veil-Framework/Veil/.git
+GITCLONEDIR=/opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/Veil/Veil-Framework
+EXECUTEABLE1=Veil.py
+EXECUTEABLE2=Veil
 BINDIR=/usr/local/bin
 GITRESET () {
 	git clean -f
@@ -25,12 +25,12 @@ GITSBMDLINIT () {
 }
 
 echo "${bold}
-__     _______ ___ _          _______     ___    ____ ___ ___  _   _ 
-\ \   / / ____|_ _| |        | ____\ \   / / \  / ___|_ _/ _ \| \ | |
- \ \ / /|  _|  | || |   _____|  _|  \ \ / / _ \ \___ \| | | | |  \| |
-  \ V / | |___ | || |__|_____| |___  \ V / ___ \ ___) | | |_| | |\  |
-   \_/  |_____|___|_____|    |_____|  \_/_/   \_\____/___\___/|_| \_|
-            
+__     _______ ___ _     
+\ \   / / ____|_ _| |    
+ \ \ / /|  _|  | || |    
+  \ V / | |___ | || |___ 
+   \_/  |_____|___|_____|
+                            
 UPDATE
 ${normal}"
 
@@ -63,7 +63,7 @@ cd
 GITRESET
 GITSBMDLINIT
 
-sed -i 's/wine-stable/wine/' /opt/ITSEC/9.Maintain-Access/2.Generate/veil-evasion/Veil-Framework/Veil-Evasion/setup/setup.sh
+sed -i 's/wine-stable/wine/' /opt/ITSEC/9.Maintain-Access/2.Generate/Veil/Veil-Framework/Veil/setup/setup.sh
 cd setup
 ./setup.sh
 
