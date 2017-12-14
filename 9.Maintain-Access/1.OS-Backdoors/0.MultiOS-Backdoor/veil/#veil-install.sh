@@ -2,7 +2,7 @@
 
 
 # Veil Evasion is no longer supported, use Veil 3.0! https://github.com/Veil-Framework/Veil
-
+# INSTALL LOG https://hastebin.com/royaxaxoha.sql
 
 bold=$(tput bold)
 normal=$(tput sgr0)
@@ -43,8 +43,7 @@ cd $GITREPOROOT
 GITSBMDLINIT
 
 sed -i 's/wine-stable/wine/' /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/Veil/Veil-Framework/Veil/setup/setup.sh
-cd setup
-./setup.sh -c
+./setup/setup.sh -c
 chmod +x $EXECUTEABLE1
 
 sudo rm -f $BINDIR/$EXECUTEABLE2

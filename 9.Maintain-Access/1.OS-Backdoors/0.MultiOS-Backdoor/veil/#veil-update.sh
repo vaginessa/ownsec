@@ -64,8 +64,7 @@ GITRESET
 GITSBMDLINIT
 
 sed -i 's/wine-stable/wine/' /opt/ITSEC/9.Maintain-Access/2.Generate/Veil/Veil-Framework/Veil/setup/setup.sh
-cd setup
-./setup.sh -c
+./setup/setup.sh -c
 
 sudo rm -f $BINDIR/$EXECUTEABLE2
 sudo ln -s $GITREPOROOT/$EXECUTEABLE1 $BINDIR/$EXECUTEABLE2
