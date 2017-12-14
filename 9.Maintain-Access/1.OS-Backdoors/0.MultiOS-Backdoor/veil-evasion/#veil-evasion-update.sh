@@ -64,7 +64,8 @@ GITRESET
 GITSBMDLINIT
 
 sed -i 's/wine-stable/wine/' /opt/ITSEC/9.Maintain-Access/2.Generate/veil-evasion/Veil-Framework/Veil-Evasion/setup/setup.sh
-#git submodule init && git submodule update --recursive
+cd setup
+./setup.sh
 
 sudo rm -f $BINDIR/$EXECUTEABLE2
 sudo ln -s $GITREPOROOT/$EXECUTEABLE1 $BINDIR/$EXECUTEABLE2

@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# some wired 0 appended to path during setup, see log line 1550+ https://hastebin.com/izozecogun.tex
+# the setup script located under veil repo dir setup/setup.sh is very brainfk to debug, could find the reason on a first try.
+
+
 bold=$(tput bold)
 normal=$(tput sgr0)
 
@@ -39,7 +43,8 @@ cd $GITREPOROOT
 GITSBMDLINIT
 
 sed -i 's/wine-stable/wine/' /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/veil-evasion/Veil-Framework/Veil-Evasion/setup/setup.sh
-#git submodule init && git submodule update --recursive
+cd setup
+./setup.sh -s
 
 chmod +x $EXECUTEABLE1
 
