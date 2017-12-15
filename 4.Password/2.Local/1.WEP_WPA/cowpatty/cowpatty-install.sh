@@ -12,7 +12,7 @@ BINDIR=/usr/local/bin
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/2.Local/1.WEP_WPA
 DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/2.Local/1.WEP_WPA
 DSKTPFL=cowpatty.desktop
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+APTLSTDIR=/opt/ITSEC-Install-Scripts/4.Password/2.Local/1.WEP_WPA/cowpatty
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive

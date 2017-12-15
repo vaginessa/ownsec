@@ -16,7 +16,7 @@ GITRESET () {
 	git reset --hard origin/$BRANCH
 	git pull
 }
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+APTLSTDIR=/opt/ITSEC-Install-Scripts/4.Password/1.Network/thc-pptp-bruter
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive

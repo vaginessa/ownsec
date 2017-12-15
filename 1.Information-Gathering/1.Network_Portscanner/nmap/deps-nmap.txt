@@ -10,7 +10,7 @@ libssl-dev
 ndiff
 lua-lpeg-dev 
 libstdc++6-4.7-dev
-libblas--dev
+libblas-dev
 libblas-common
 libblas3
 python-bs4

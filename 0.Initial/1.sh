@@ -1,14 +1,10 @@
 #!/bin/bash
-####################################################################
-#### Welcome - letzs roll - FUCKYEAH :) ############################
-####################################################################
-#
-# 
-srcdPT1=/opt/ITSEC-Install-Scripts/0.Initial/src/PT1
-#chkdir=/opt/ITSEC-Install-Scripts/0.Initial/src
 
 bold=$(tput bold)
 normal=$(tput sgr0)
+
+srcdPT1=/opt/ITSEC-Install-Scripts/0.Initial/src/PT1
+#chkdir=/opt/ITSEC-Install-Scripts/0.Initial/src
 
 echo "${bold}
  ____   _    ____ _____ _ 
@@ -19,7 +15,6 @@ echo "${bold}
                           
 SYSTEM UPDATE/UPGRADE
 ${normal}"
-
 
 cd $srcdPT1
 ./1-Upgrade.sh
