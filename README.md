@@ -2,7 +2,7 @@
 ### 1. Whats this?
 
 > Installation/Update scripts w dependency lists for various Malware/Pentest related repos sorted in categories.
-> A Template to batch install & update of those using bash on Xubuntu 16.04 and XFCE customization.
+> A Template to batch install & update those using bash on Xubuntu 16.04 and XFCE customization.
 
 ### Panel Screenshot ...
 ![menu](http://i.imgur.com/hUs1wM1.png)
