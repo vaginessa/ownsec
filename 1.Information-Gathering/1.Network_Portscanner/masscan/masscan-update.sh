@@ -11,7 +11,7 @@ GITCLONEDIR=/opt/ITSEC/1.Information-Gathering/1.Network_Portscanner/masscan/rob
 DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/1.Network_Portscanner
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/1.Network_Portscanner
 DSKTPFL=masscan.desktop
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+APTLSTDIR=/opt/ITSEC-Install-Scripts/1.Information-Gathering/1.Network_Portscanner/masscan
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive
@@ -55,7 +55,15 @@ if git checkout $BRANCH &&
     [ `git rev-list HEAD...origin/$BRANCH --count` != 0 ] &&
     git merge origin/$BRANCH
 then
-    
+
+### DEPS:
+# sudo apt-get update
+# sudo apt-get upgrade
+# xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-masscan.txt") -r -- sudo apt-get install -y
+sudo updatedb
+sudo ldconfig
+### DEPS END
+
 cd $GITREPOROOT
 
 sudo make uninstall
