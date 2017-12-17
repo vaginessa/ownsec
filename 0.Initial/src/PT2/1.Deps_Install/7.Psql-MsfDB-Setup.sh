@@ -1,14 +1,12 @@
 #!/bin/bash
 
-sudo ldconfig
-sudo updatedb
-#sudo xterm 
-
-sudo service postgresql start
-sudo service postgresql status
-
 bold=$(tput bold)
 normal=$(tput sgr0)
+
+POSTGRES_USER="postgres"
+MSF_PASS=`cat /dev/urandom |base64 | head -c8`
+POSTGRES_PASS=`cat /dev/urandom |base64 | head -c8`
+PG_VER=`psql --version | awk '{print $3}' | cut -d. -f1,2`
 
 echo "${bold}
  ____  ____   ___  _       __  __ ____  _____ 
@@ -17,14 +15,17 @@ echo "${bold}
 |  __/ ___) | |_| | |___  | |  | |___) |  _|  
 |_|   |____/ \__\_\_____| |_|  |_|____/|_|    
              
+Setup Metasploit-Framework database on PSQL
 ${normal}"
 
+sudo ldconfig
+sudo updatedb
+#sudo xterm 
 
-POSTGRES_USER="postgres"
-MSF_PASS=`cat /dev/urandom |base64 | head -c8`
-POSTGRES_PASS=`cat /dev/urandom |base64 | head -c8`
+sudo service postgresql start
+sudo service postgresql status
 
-PG_VER=`psql --version | awk '{print $3}' | cut -d. -f1,2`
+# Setup the DB without userinteraction - unattended so that the main script is not interrupted.
 sudo -i -u $POSTGRES_USER << EOF
 createuser msf || true
 #psql -c "ALTER USER msf WITH ENCRYPTED PASSWORD 'msf';"
