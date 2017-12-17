@@ -9,7 +9,7 @@
 
 # TODO
 
-- MYSQL setup include without interaction
+> - MYSQL setup include without interaction - HIGH PRIORITY (if you got a awesome script, pls pull requ!) - need unattended setup!!
 - Add Starred repos
 - Update Screens, asciinema & documentation
 - Test Installed apps on a blanc installation

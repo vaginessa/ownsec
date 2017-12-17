@@ -4,7 +4,7 @@
 
 > aprox 2,3 hours of time with 11mbit dl i5 netbook w ssd - apt-get lists, node, openvas (the sync is very slow), wireshark and ruby on rbenv need decent time to dl/build/install.
 
-> documentation on advanced prequisites / customizing is located here: `/opt/ITSEC-Install-Scripts/0a.Doc/advanced_prequisites.md`
+> documentation on advanced prequisites / customizing is located here: `/opt/ITSEC-Install-Scripts/0a.Doc/advanced_prequisites.md` --> https://github.com/alphaaurigae/ITSEC-Install-Scripts/blob/master/0a.Doc/advanced_prequisites.md
 
 ## INSTALL
 
