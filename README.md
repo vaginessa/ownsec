@@ -5,7 +5,7 @@
 > A Template to batch install & update those using bash on Xubuntu 16.04 and XFCE customization.
 
 ### Panel Screenshot ...
-![menu](http://i.imgur.com/hUs1wM1.png)
+![menu](https://imgur.com/a/Odjf6)
 
 #### Install routine:
 
