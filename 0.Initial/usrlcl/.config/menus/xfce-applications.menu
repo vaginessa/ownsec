@@ -130,11 +130,11 @@
         </Include>
     </Menu>
     <Menu>
-        <Name>5.CONKY</Name>
-        <Directory>5.CONKY.directory</Directory>
+        <Name>5.Conky</Name>
+        <Directory>5.Conky.directory</Directory>
         <Include>
             <And>
-                <Category>5.CONKY</Category>
+                <Category>5.Conky</Category>
             </And>
         </Include>
     </Menu>
@@ -148,11 +148,20 @@
         </Include>
     </Menu>
     <Menu>
-        <Name>6.PRINT-SCAN</Name>
-        <Directory>6.PRINT-SCAN.directory</Directory>
+        <Name>7.Print-Scan</Name>
+        <Directory>7.Print-Scan.directory</Directory>
         <Include>
             <And>
-                <Category>6.PRINT-SCAN</Category>
+                <Category>7.Print-Scan</Category>
+            </And>
+        </Include>
+    </Menu>
+    <Menu>
+        <Name>8.Bluetooth</Name>
+        <Directory>8.Bluetooth.directory</Directory>
+        <Include>
+            <And>
+                <Category>8.Bluetooth</Category>
             </And>
         </Include>
     </Menu>
