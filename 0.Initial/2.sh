@@ -155,7 +155,12 @@ echo "${bold}
 ${normal}"
 ./4.Tor_Install.sh
 
+#### GO GLIDE
 
+#echo "${bold}
+#./5.Go-GLIDE.sh
+#${normal}"
+#./5.Go-GLIDE.sh
 
 ##################################################################################################
 ### Install 4.UsrEnv_Setup Scripts - /opt/ITSEC-Install-Scripts/0.Initial/src/PT2/4.UsrEnv_Setup
