@@ -26,8 +26,8 @@ perl -ni.bak -e "print unless /export GOROOT=/" /home/$USER/.profile
 perl -ni.bak -e "print unless /export PATH=$GOPATH/" /home/$USER/.profile
 
 # Create new entries, pass the function names as is not the path
-echo 'export GOPATH=/home/$USER/go' >> /home/$USER/.profile
-echo 'export GOROOT=/usr/lib/go-1.9' >> /home/$USER/.profile
+echo 'export GOPATH="/home/$USER/go"' >> /home/$USER/.profile
+echo 'export GOROOT="/usr/lib/go-1.9"' >> /home/$USER/.profile
 echo 'export PATH="$GOPATH/bin:$GOROOT/bin:$PATH"' >> /home/$USER/.profile
 source /home/$USER/.profile
 
