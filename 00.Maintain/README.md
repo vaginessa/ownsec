@@ -1,5 +1,7 @@
 # Maintain 
 
+## INCOMPLETE - not all apps from part2 are included yet.
+
 The update script(s) fetch the latest updates from git without reinstalling every app for no reason.
 
 
