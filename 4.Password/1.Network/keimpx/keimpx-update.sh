@@ -72,8 +72,8 @@ sudo ldconfig
 #sudo python3 setup.py install
 
 echo '#!/bin/bash
-/opt/ITSEC/4.Password/1.Network/keimpx/inquisb/keimpx
-
+cd /opt/ITSEC/4.Password/1.Network/keimpx/inquisb/keimpx
+ 
 python keimpx.py "$@"' > $EXECUTEABLE1
 
 chmod +x $GITREPOROOT/$EXECUTEABLE3

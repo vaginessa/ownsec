@@ -31,15 +31,15 @@ mkdir -p $GITCLONEDIR
 cd $GITCLONEDIR
 git clone -b $BRANCH $GITREPO
 cd $GITREPOROOT
-
 ### DEPS:
 # no deps noted, feel free to add ...
 ### DEPS END
 
 GITSBMDLINIT
 
-./configure
+./configure --prefix=/usr --sysconfdir=/etc
 make -j 4
-sudo make install
+sudo make install 
+sudo make install-config
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL

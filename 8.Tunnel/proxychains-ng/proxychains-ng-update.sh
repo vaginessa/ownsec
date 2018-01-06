@@ -62,9 +62,10 @@ sudo make uninstall
 make clean
 GITRESET
 GITSBMDLINIT
-./configure
+./configure --prefix=/usr --sysconfdir=/etc
 make -j 4
 sudo make install
+sudo make install-config
 rm -f $DSKTPFLSDEST/$DSKTPFL
 mkdir -p $DSKTPFLSDEST
 cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
