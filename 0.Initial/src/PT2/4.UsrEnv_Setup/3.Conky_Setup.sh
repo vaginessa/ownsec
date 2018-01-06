@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo sh -c "echo '/usr/local/lib' >> /etc/ld.so.conf"
-cp -R $REPOROOT/0.Initial/usrlcl/.conky .conky
+cp -R $REPOROOT/0.Initial/usrlcl/.conky /home/$USER/.conky
 sudo rm -f $BINDIR/conky_*
 cd $REPOROOT/0.Initial/settings-scripts/startstop/0.Services/5.CONKY
 sudo bash -c 'for SHfiles in $(ls *.sh); do ln -s $REPOROOT/0.Initial/settings-scripts/startstop/0.Services/5.CONKY/$SHfiles $BINDIR/$SHfiles;done'

@@ -39,10 +39,22 @@ color1 blue
 
 
 TEXT
-${color Tan2}ESTABLISHED Connections${color DarkSlateGray}${hr 2}
 
-${offset 10}${color lightgrey}Inbound: ${color white}${tcp_portmon 1 32767 count}    ${color lightgrey}Outbound: ${color white}${tcp_portmon 32768 61000 count}${alignr}${color lightgrey}Total: ${color white}${tcp_portmon 1 65535 count}
+######### Storage Information
+${font Hack:size=14}${color Tan2}Storage${color DarkSlateGray}${hr 2}
+${font Hack:size=9}${color Tan2}/dev/sda${color DarkSlateGray}
+${diskiograph_read /dev/sda} 
+${diskiograph_write /dev/sda}
+${font Hack:size=9}${color Tan2}/dev/sdb${color DarkSlateGray}
+${diskiograph_read /dev/sdb} 
+${diskiograph_write /dev/sdb}
 
+######### Network Information
+${font Hack:size=14}${color Tan2}Networking
+######### Established 
+${font Hack:size=9}${color Tan2}Established Connections${color DarkSlateGray}${hr 2}
+${font Hack:size=8}${offset 10}${color lightgrey}Inbound: ${color white}${tcp_portmon 1 32767 count}    ${color lightgrey}Outbound: ${color white}${tcp_portmon 32768 61000 count}${alignr}${color lightgrey}Total: ${color white}${tcp_portmon 1 65535 count}
 ${color slate grey}Process                 ${color slate grey}Remote Host                     ${color slate grey}L-Port ${alignr}${color slate grey}R-Port${color lightgrey}
+${font Hack:size=8}${texeci 30 netstat -apt | grep 'ESTABLISHED' | sed -r 's|.*[0-9.]+:([0-9]*)\s*([^:]+):([a-zA-Z]+)[^/]+/([a-zA-Z0-9]*)|\4 \2 \1 \3|' }
 
-${font Hack:size=8}${texeci 30 netstat -ap | grep 'ESTABLISHED' | sed -r 's|.*[0-9.]+:([0-9]*)\s*([^:]+):([a-zA-Z]+)[^/]+/([a-zA-Z0-9]*)|\4 \2 \1 \3|' | awk '{printf("%-14s %-20s %5s %7s\n",$1,$2,$3,$4)}'}
+
