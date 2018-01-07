@@ -52,7 +52,6 @@ gr-osmosdr
 gufw
 httrack
 htop
-install iptables-persistent
 iputils-clockdiff
 iputils-arping
 iputils-ping
