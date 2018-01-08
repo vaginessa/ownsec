@@ -9,7 +9,7 @@ EXECUTEABLE=moloch.sh
 EXECUTEABLE1=moloch
 GITREPOROOT=/opt/ITSEC/7.Mitm/moloch/aol/moloch
 GITREPOGITFILE=$GITREPOROOT/.git
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
+DSKTPFLS=/opt/ownsec/0.Initial/usrlcl/.local/share/applications/7.Mitm
 DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
 DSKTPFL=moloch.desktop
 
@@ -24,7 +24,7 @@ INSTALL
 ${normal}"
 
 ### DEPS:
-## Installed w apt lists - see /opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+## Installed w apt lists - see /opt/ownsec/0.Initial/lst/apt
 # sudo apt-get update
 # sudo apt-get upgrade
 # xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-moloch.txt") -r -- sudo apt-get install -y

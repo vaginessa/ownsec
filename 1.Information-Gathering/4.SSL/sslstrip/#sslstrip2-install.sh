@@ -7,7 +7,7 @@ GITREPO=https://github.com/byt3bl33d3r/sslstrip2.git
 BRANCH=master
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/4.SSL/sslstrip2/byt3bl33d3r/sslstrip2
 GITCLONEDIR=/opt/ITSEC/1.Information-Gathering/4.SSL/sslstrip2/byt3bl33d3r
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+APTLSTDIR=/opt/ownsec/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive

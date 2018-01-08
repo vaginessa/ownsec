@@ -1,7 +1,7 @@
 #!/bin/bash
 
 rm -rf /home/$USER/.config/xfce4
-cp -R /opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.config /home/$USER/.config
+cp -R /opt/ownsec/0.Initial/usrlcl/.config /home/$USER/.config
 
 
 

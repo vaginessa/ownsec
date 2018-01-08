@@ -7,10 +7,10 @@ GITREPO=https://github.com/nabla-c0d3/sslyze.git
 BRANCH=master
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/4.SSL/sslyze/nabla-c0d3/sslyze
 GITCLONEDIR=/opt/ITSEC/1.Information-Gathering/4.SSL/sslyze/nabla-c0d3
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/4.SSL
+DSKTPFLS=/opt/ownsec/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/4.SSL
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/4.SSL
 DSKTPFL=sslyze.desktop
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+APTLSTDIR=/opt/ownsec/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive

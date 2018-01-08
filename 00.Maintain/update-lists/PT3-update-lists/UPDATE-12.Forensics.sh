@@ -3,7 +3,7 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
-BASEDIR=/opt/ITSEC-Install-Scripts/12.Forensics
+BASEDIR=/opt/ownsec/12.Forensics
 
 echo "${bold}
  _   _ ____  ____    _  _____ _____ 

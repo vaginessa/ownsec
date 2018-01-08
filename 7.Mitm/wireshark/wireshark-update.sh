@@ -8,7 +8,7 @@ BRANCH=master
 GITREPOROOT=/opt/ITSEC/7.Mitm/wireshark/wireshark/wireshark
 GITCONFDIR=/opt/ITSEC/7.Mitm/wireshark/wireshark/wireshark/.git
 GITCLONEDIR=/opt/ITSEC/7.Mitm/wireshark/wireshark
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
+DSKTPFLS=/opt/ownsec/0.Initial/usrlcl/.local/share/applications/7.Mitm
 DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
 DSKTPFL=wireshark.desktop
 GITRESET () {
@@ -17,7 +17,7 @@ GITRESET () {
 	git reset --hard origin/$BRANCH
 	git pull
 }
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+APTLSTDIR=/opt/ownsec/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive

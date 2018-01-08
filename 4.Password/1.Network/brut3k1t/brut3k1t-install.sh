@@ -10,10 +10,10 @@ GITCLONEDIR=/opt/ITSEC/4.Password/1.Network/brut3k1t/ex0dus-0x
 EXECUTEABLE1=brut3k1t.sh
 EXECUTEABLE2=brut3k1t
 BINDIR=/usr/local/bin
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/1.Network/
+DSKTPFLS=/opt/ownsec/0.Initial/usrlcl/.local/share/applications/4.Password/1.Network/
 DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/1.Network
 DSKTPFL=brut3k1t.desktop
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+APTLSTDIR=/opt/ownsec/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive
@@ -36,7 +36,7 @@ git clone -b $BRANCH $GITREPO
 cd $GITREPOROOT
 
 ### DEPS:
-## Installed w apt lists - see /opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+## Installed w apt lists - see /opt/ownsec/0.Initial/lst/apt
 # sudo apt-get update
 # sudo apt-get upgrade
 # xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-brut3k1t.txt") -r -- sudo apt-get install -y

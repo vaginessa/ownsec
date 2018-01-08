@@ -8,7 +8,7 @@ BINROOT=/opt/ITSEC/10.Stresstest/rtp-flooder/rtpflood
 
 EXECUTEABLE1=rtpflood
 EXECUTEABLE2=rtpflood
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/10.Stresstest
+DSKTPFLS=/opt/ownsec/0.Initial/usrlcl/.local/share/applications/10.Stresstest
 DSKTPFLSDEST=/home/$USER/.local/share/applications/10.Stresstest
 DSKTPFL=rtpflood.desktop
 

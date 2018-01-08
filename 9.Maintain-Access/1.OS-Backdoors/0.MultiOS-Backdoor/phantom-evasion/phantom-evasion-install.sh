@@ -11,10 +11,10 @@ EXECUTEABLE1=phantom-evasion.sh
 EXECUTEABLE2=phantom-evasion
 EXECUTEABLE3=phantom-evasion.py
 BINDIR=/usr/local/bin
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor
+DSKTPFLS=/opt/ownsec/0.Initial/usrlcl/.local/share/applications/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor
 DSKTPFLSDEST=/home/$USER/.local/share/applications/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor
 DSKTPFL=phantom-evasion.desktop
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+APTLSTDIR=/opt/ownsec/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive

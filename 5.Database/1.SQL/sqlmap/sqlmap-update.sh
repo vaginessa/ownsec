@@ -13,7 +13,7 @@ EXECUTEABLE2=sqlmap
 EXECUTEABLE3=sqlmapapi.sh
 EXECUTEABLE4=sqlmapapi
 BINDIR=/usr/local/bin
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/5.Database/1.SQL
+DSKTPFLS=/opt/ownsec/0.Initial/usrlcl/.local/share/applications/5.Database/1.SQL
 DSKTPFLSDEST=/home/$USER/.local/share/applications/5.Database/1.SQL
 DSKTPFL=sqlmap.desktop
 GITRESET () {
@@ -22,7 +22,7 @@ GITRESET () {
 	git reset --hard origin/$BRANCH
 	git pull
 }
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+APTLSTDIR=/opt/ownsec/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive

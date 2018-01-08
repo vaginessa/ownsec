@@ -7,10 +7,10 @@ GITREPO=https://github.com/robertdavidgraham/masscan.git
 BRANCH=master
 GITREPOROOT=/opt/ITSEC/1.Information-Gathering/1.Network_Portscanner/masscan/robertdavidgraham/masscan
 GITCLONEDIR=/opt/ITSEC/1.Information-Gathering/1.Network_Portscanner/masscan/robertdavidgraham
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/1.Network_Portscanner
+DSKTPFLS=/opt/ownsec/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/1.Network_Portscanner
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/1.Network_Portscanner
 DSKTPFL=masscan.desktop
-APTLSTDIR=/opt/ITSEC-Install-Scripts/1.Information-Gathering/1.Network_Portscanner/masscan
+APTLSTDIR=/opt/ownsec/1.Information-Gathering/1.Network_Portscanner/masscan
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive

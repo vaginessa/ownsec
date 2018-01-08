@@ -10,7 +10,7 @@ GITREPOROOT=/opt/ITSEC/10.Stresstest/pig/rafael-santiago/pig
 GITCLONEDIR=/opt/ITSEC/10.Stresstest/pig/rafael-santiago
 #EXECUTEABLE1=pig.py
 #EXECUTEABLE2=dhcpPIG
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+APTLSTDIR=/opt/ownsec/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive

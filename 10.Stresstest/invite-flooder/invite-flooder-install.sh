@@ -12,7 +12,7 @@ BINROOT=/opt/ITSEC/10.Stresstest/invite-flooder/inviteflood
 EXECUTEABLE1=inviteflood
 EXECUTEABLE2=inviteflood
 
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/10.Stresstest
+DSKTPFLS=/opt/ownsec/0.Initial/usrlcl/.local/share/applications/10.Stresstest
 DSKTPFLSDEST=/home/$USER/.local/share/applications/10.Stresstest
 DSKTPFL=inviteflood.desktop
 

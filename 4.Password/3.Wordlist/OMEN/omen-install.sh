@@ -12,10 +12,10 @@ EXECUTEABLE2=omen-createNG
 EXECUTEABLE3=omen-enumNG.sh
 EXECUTEABLE4=omen-enumNG
 BINDIR=/usr/local/bin
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/3.Wordlist
+DSKTPFLS=/opt/ownsec/0.Initial/usrlcl/.local/share/applications/4.Password/3.Wordlist
 DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/3.Wordlist
 DSKTPFL=omen.desktop
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+APTLSTDIR=/opt/ownsec/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive

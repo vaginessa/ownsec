@@ -7,10 +7,10 @@ GITREPO=https://github.com/aircrack-ng/aircrack-ng
 BRANCH=master
 GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/aircrack-ng/aircrack-ng/aircrack-ng
 GITCLONEDIR=/opt/ITSEC/6.Wireless/1.Wifi/aircrack-ng/aircrack-ng
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/6.Wireless/1.Wifi
+DSKTPFLS=/opt/ownsec/0.Initial/usrlcl/.local/share/applications/6.Wireless/1.Wifi
 DSKTPFLSDEST=/home/$USER/.local/share/applications/6.Wireless/1.Wifi
 DSKTPFL=aircrack-ng.desktop
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+APTLSTDIR=/opt/ownsec/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive
@@ -33,7 +33,7 @@ git clone -b $BRANCH $GITREPO
 cd $GITREPOROOT
 
 ### DEPS:
-## Installed w apt lists - see /opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+## Installed w apt lists - see /opt/ownsec/0.Initial/lst/apt
 # sudo apt-get update
 # sudo apt-get upgrade
 # xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-aircrack-ng.txt") -r -- sudo apt-get install -y

@@ -7,10 +7,10 @@ GITREPO=https://github.com/yrutschle/sslh.git
 BRANCH=master
 GITREPOROOT=/opt/ITSEC/8.Tunnel/sslh/yrutschle/sslh
 GITCLONEDIR=/opt/ITSEC/8.Tunnel/sslh/yrutschle
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/4.SSL
+DSKTPFLS=/opt/ownsec/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/4.SSL
 DSKTPFLSDEST=/home/$USER/.local/share/applications
 DSKTPFL=sslh.desktop
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+APTLSTDIR=/opt/ownsec/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive
@@ -33,7 +33,7 @@ git clone -b $BRANCH $GITREPO
 cd $GITREPOROOT
 
 ### DEPS:
-## Installed w apt lists - see /opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+## Installed w apt lists - see /opt/ownsec/0.Initial/lst/apt
 # sudo apt-get update
 # sudo apt-get upgrade
 # xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-sslh.txt") -r -- sudo apt-get install -y

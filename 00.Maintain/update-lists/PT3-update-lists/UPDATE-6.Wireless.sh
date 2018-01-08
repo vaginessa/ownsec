@@ -3,7 +3,7 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
-BASEDIR=/opt/ITSEC-Install-Scripts/6.Wireless
+BASEDIR=/opt/ownsec/6.Wireless
 
 echo "${bold}
  _   _ ____  ____    _  _____ _____ 

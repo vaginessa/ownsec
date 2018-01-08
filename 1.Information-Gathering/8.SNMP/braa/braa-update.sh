@@ -11,7 +11,7 @@ GITCLONEDIR=/opt/ITSEC/1.Information-Gathering/8.SNMP/braa/mteg
 EXECUTEABLE1=braa
 EXECUTEABLE2=braa
 BINDIR=/usr/local/bin
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/8.SNMP
+DSKTPFLS=/opt/ownsec/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/8.SNMP
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/8.SNMP
 DSKTPFL=braa.desktop
 GITRESET () {
@@ -20,7 +20,7 @@ GITRESET () {
 	git reset --hard origin/$BRANCH
 	git pull
 }
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+APTLSTDIR=/opt/ownsec/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive

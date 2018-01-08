@@ -17,7 +17,7 @@ GITREPO=https://github.com/droe/fiked.git
 BRANCH=master
 GITREPOROOT=/opt/ITSEC/7.Mitm/3.VPN/fiked/droe/fiked
 GITCONFDIR=/opt/ITSEC/7.Mitm/3.VPN/fiked/droe/fiked/.git
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm/3.VPN
+DSKTPFLS=/opt/ownsec/0.Initial/usrlcl/.local/share/applications/7.Mitm/3.VPN
 DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm/3.VPN
 DSKTPFL=fiked.desktop
 GITRESET () {
@@ -26,7 +26,7 @@ GITRESET () {
 	git reset --hard origin/master
 	git pull
 }
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+APTLSTDIR=/opt/ownsec/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive

@@ -1,6 +1,6 @@
 # Maintain 
 
-https://github.com/alphaaurigae/ITSEC-Install-Scripts/tree/master/00.Maintain
+https://github.com/alphaaurigae/ownsec/tree/master/00.Maintain
 
 The update script(s) fetch the latest updates from git without reinstalling every app for no reason.
 
@@ -12,7 +12,7 @@ run the update script and udpate all git repositories proceed as follows:
 
 
 
-cd /opt/ITSEC-Install-Scripts/00.Maintain
+cd /opt/ownsec/00.Maintain
 
 ./updatealltehgits.sh
 
@@ -22,6 +22,6 @@ the script will create a symlink, for future updates run
 ~$ updatealltehgits.sh from any place.
 
 to disable/enable/add/remove apps from the update process edit the respective update list file located here:
-/opt/ITSEC-Install-Scripts/00.Maintain/update-lists
+/opt/ownsec/00.Maintain/update-lists
 
 

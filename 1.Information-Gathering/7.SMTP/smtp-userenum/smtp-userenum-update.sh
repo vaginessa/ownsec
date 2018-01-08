@@ -11,7 +11,7 @@ GITCLONEDIR=/opt/ITSEC/1.Information-Gathering/7.SMTP/smtp-user-enum/pentestmonk
 EXECUTEABLE1=smtp-user-enum.pl
 EXECUTEABLE2=smtp-user-enum
 BINDIR=/usr/local/bin
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/7.SMTP
+DSKTPFLS=/opt/ownsec/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/7.SMTP
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/7.SMTP
 DSKTPFL=smtp-user-enum.desktop
 GITRESET () {
@@ -20,7 +20,7 @@ GITRESET () {
 	git reset --hard origin/$BRANCH
 	git pull
 }
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+APTLSTDIR=/opt/ownsec/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive

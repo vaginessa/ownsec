@@ -3,7 +3,7 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
-BASEDIR=/opt/ITSEC-Install-Scripts/9.Maintain-Access
+BASEDIR=/opt/ownsec/9.Maintain-Access
 
 echo "${bold}
  _   _ ____  ____    _  _____ _____ 

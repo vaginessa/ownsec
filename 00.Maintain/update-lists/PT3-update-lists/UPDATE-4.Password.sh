@@ -3,7 +3,7 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
-BASEDIR=/opt/ITSEC-Install-Scripts/4.Password
+BASEDIR=/opt/ownsec/4.Password
 
 echo "${bold}
  _   _ ____  ____    _  _____ _____ 

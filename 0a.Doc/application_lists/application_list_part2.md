@@ -6,9 +6,9 @@ This page is an indication only and may be behind the actual routine, check the 
 > ### .. installs dependencies and basic apps
 > ## The following applications are being installed in part 2
 
-> - location of the part 2 scripts is /opt/ITSEC-Install-Scripts/0.Initial/src/PT2/ && https://github.com/alphaaurigae/ITSEC-Install-Scripts/tree/master/0.Initial/src/PT2
+> - location of the part 2 scripts is /opt/ownsec/0.Initial/src/PT2/ && https://github.com/alphaaurigae/ownsec/tree/master/0.Initial/src/PT2
 
-> - the setup script running those is located here: /opt/ITSEC-Install-Scripts/0.Initial/2.sh && https://github.com/alphaaurigae/ITSEC-Install-Scripts/blob/master/0.Initial/2.sh
+> - the setup script running those is located here: /opt/ownsec/0.Initial/2.sh && https://github.com/alphaaurigae/ownsec/blob/master/0.Initial/2.sh
 
 
 * 1.DEB-Lists.sh - runs apt-get lists for the part 3 apps.

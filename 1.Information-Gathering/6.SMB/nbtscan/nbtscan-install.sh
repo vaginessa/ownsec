@@ -7,7 +7,7 @@ reporoot=/opt/ITSEC/1.Information-Gathering/6.SMB/nbtscan/unixwiz.net
 name=nbtscan-source-1.0.35
 url=http://www.unixwiz.net/tools/nbtscan-source-1.0.35.tgz
 #
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/6.SMB
+DSKTPFLS=/opt/ownsec/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/6.SMB
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/6.SMB
 DSKTPFL=nbtscan.desktop
 

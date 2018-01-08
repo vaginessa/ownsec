@@ -7,10 +7,10 @@ GITREPO=https://github.com/droe/sslsplit.git
 BRANCH=master
 GITREPOROOT=/opt/ITSEC/7.Mitm/sslsplit/droe/sslsplit
 GITCLONEDIR=/opt/ITSEC/7.Mitm/sslsplit/droe
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
+DSKTPFLS=/opt/ownsec/0.Initial/usrlcl/.local/share/applications/7.Mitm
 DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
 DSKTPFL=sslsplit.desktop
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+APTLSTDIR=/opt/ownsec/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive

@@ -12,7 +12,7 @@ GITCLONEDIR=/opt/ITSEC/7.Mitm/2.DNS/dshell/USArmyResearchLab
 EXECUTEABLE2=dshell
 EXECUTEABLE3=dshell-decode
 BINDIR=/usr/local/bin
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm/2.DNS
+DSKTPFLS=/opt/ownsec/0.Initial/usrlcl/.local/share/applications/7.Mitm/2.DNS
 DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm/2.DNS
 DSKTPFL1=dshell.desktop
 DSKTPFL2=dshell-decode.desktop
@@ -22,7 +22,7 @@ GITRESET () {
 	git reset --hard origin/$BRANCH
 	git pull
 }
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+APTLSTDIR=/opt/ownsec/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive

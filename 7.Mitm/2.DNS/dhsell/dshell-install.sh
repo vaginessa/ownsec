@@ -11,11 +11,11 @@ GITCLONEDIR=/opt/ITSEC/7.Mitm/2.DNS/dshell/USArmyResearchLab
 EXECUTEABLE2=dshell
 EXECUTEABLE3=dshell-decode
 BINDIR=/usr/local/bin
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm/2.DNS
+DSKTPFLS=/opt/ownsec/0.Initial/usrlcl/.local/share/applications/7.Mitm/2.DNS
 DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm/2.DNS
 DSKTPFL1=dshell.desktop
 DSKTPFL2=dshell-decode.desktop
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+APTLSTDIR=/opt/ownsec/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive
@@ -38,7 +38,7 @@ git clone -b $BRANCH $GITREPO
 cd $GITREPOROOT
 
 ### DEPS:
-## Installed w apt lists - see /opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+## Installed w apt lists - see /opt/ownsec/0.Initial/lst/apt
 # sudo apt-get update
 # sudo apt-get upgrade
 # xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-dshell.txt") -r -- sudo apt-get install -y

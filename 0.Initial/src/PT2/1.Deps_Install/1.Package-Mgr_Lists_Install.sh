@@ -8,16 +8,16 @@ sudo apt-get upgrade
 bold=$(tput bold)
 normal=$(tput sgr0)
 
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+APTLSTDIR=/opt/ownsec/0.Initial/lst/apt
 ## Category dirs
-INFOG=/opt/ITSEC-Install-Scripts/1.Information-Gathering
-VULN=/opt/ITSEC-Install-Scripts/2.Vulnerability-Scanner
-EXPLT=/opt/ITSEC-Install-Scripts/3.Exploitation-Tools
-PSSWDS=/opt/ITSEC-Install-Scripts/4.Password
-WRLSS=/opt/ITSEC-Install-Scripts/6.Wireless
-MITM=/opt/ITSEC-Install-Scripts/7.Mitm
-TNNL=/opt/ITSEC-Install-Scripts/8.Tunnel
-MNTNACCS=/opt/ITSEC-Install-Scripts/9.Maintain-Access
+INFOG=/opt/ownsec/1.Information-Gathering
+VULN=/opt/ownsec/2.Vulnerability-Scanner
+EXPLT=/opt/ownsec/3.Exploitation-Tools
+PSSWDS=/opt/ownsec/4.Password
+WRLSS=/opt/ownsec/6.Wireless
+MITM=/opt/ownsec/7.Mitm
+TNNL=/opt/ownsec/8.Tunnel
+MNTNACCS=/opt/ownsec/9.Maintain-Access
 
 echo "${bold}
  ____   ____ _  _______ __  __  ____ ____       _     ___ ____ _____ ____  
@@ -199,7 +199,7 @@ sudo apt-get purge --remove -y openjdk-8-jre openjdk-8-jre openjdk-8-jre-headles
 sudo updatedb
 sudo ldconfig
 
-cd /opt/ITSEC-Install-Scripts/0.Initial/src/settings-scripts/disable-services
+cd /opt/ownsec/0.Initial/src/settings-scripts/disable-services
 
 sudo ./disable-all.sh
 sudo phpenmod mcrypt

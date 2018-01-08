@@ -4,8 +4,8 @@
 ####################################################################
 #
 # 
-srcdPT3=/opt/ITSEC-Install-Scripts/0.Initial/src/PT3
-chkdir=/opt/ITSEC-Install-Scripts/0.Initial/src
+srcdPT3=/opt/ownsec/0.Initial/src/PT3
+chkdir=/opt/ownsec/0.Initial/src
 
 bold=$(tput bold)
 normal=$(tput sgr0)
@@ -22,7 +22,7 @@ ${normal}"
 
 sudo apt-get purge -remove -y default-jre
 echo "${bold}
-cd /opt/ITSEC-Install-Scripts/0.Initial/src/PT3   
+cd /opt/ownsec/0.Initial/src/PT3   
 ${normal}"
 cd $srcdPT3
 echo "${bold}

@@ -3,8 +3,8 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
-srcdPT1=/opt/ITSEC-Install-Scripts/0.Initial/src/PT1
-#chkdir=/opt/ITSEC-Install-Scripts/0.Initial/src
+srcdPT1=/opt/ownsec/0.Initial/src/PT1
+#chkdir=/opt/ownsec/0.Initial/src
 
 echo "${bold}
  ____   _    ____ _____ _ 

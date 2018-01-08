@@ -7,7 +7,7 @@ BRANCH=master
 GITREPOROOT=/opt/ITSEC/4.Password/1.Network/thc-pptp-bruter/BlackArch/thc-pptp-bruter
 GITCONFDIR=/opt/ITSEC/4.Password/1.Network/thc-pptp-bruter/BlackArch/thc-pptp-bruter/.git
 GITCLONEDIR=/opt/ITSEC/4.Password/1.Network/thc-pptp-bruter/BlackArch
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/1.Network
+DSKTPFLS=/opt/ownsec/0.Initial/usrlcl/.local/share/applications/4.Password/1.Network
 DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/1.Network
 DSKTPFL=thc-pptp-bruter.desktop
 GITRESET () {
@@ -16,7 +16,7 @@ GITRESET () {
 	git reset --hard origin/$BRANCH
 	git pull
 }
-APTLSTDIR=/opt/ITSEC-Install-Scripts/4.Password/1.Network/thc-pptp-bruter
+APTLSTDIR=/opt/ownsec/4.Password/1.Network/thc-pptp-bruter
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive

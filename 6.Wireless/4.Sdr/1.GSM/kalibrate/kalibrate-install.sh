@@ -2,9 +2,9 @@
 
 GITREPO=https://github.com/steve-m/kalibrate-rtl
 BRANCH=master
-GITREPOROOT=/opt/ITSEC-Install-Scripts/6.Wireless/4.Sdr/1.GSM/kalibrate-rtl/steve-m/kalibrate-rtl
-GITCLONEDIR=/opt/ITSEC-Install-Scripts/6.Wireless/4.Sdr/1.GSM/kalibrate-rtl/steve-m
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+GITREPOROOT=/opt/ownsec/6.Wireless/4.Sdr/1.GSM/kalibrate-rtl/steve-m/kalibrate-rtl
+GITCLONEDIR=/opt/ownsec/6.Wireless/4.Sdr/1.GSM/kalibrate-rtl/steve-m
+APTLSTDIR=/opt/ownsec/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive

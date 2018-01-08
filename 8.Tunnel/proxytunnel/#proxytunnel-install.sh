@@ -6,10 +6,10 @@ normal=$(tput sgr0)
 GITREPO=https://github.com/proxytunnel/proxytunnel
 GITREPOROOT=/opt/ITSEC/8.Tunnel/proxytunnel/proxytunnel/proxytunnel
 GITCLONEDIR=/opt/ITSEC/8.Tunnel/proxytunnel/proxytunnel
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications
+DSKTPFLS=/opt/ownsec/0.Initial/usrlcl/.local/share/applications
 DSKTPFLSDEST=/home/$USER/.local/share/applications
 DSKTPFL=proxytunnel.desktop
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+APTLSTDIR=/opt/ownsec/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive

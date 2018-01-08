@@ -4,17 +4,17 @@ bold=$(tput bold)
 normal=$(tput sgr0)
 
 # maindir
-srcdPT2=/opt/ITSEC-Install-Scripts/0.Initial/src/PT2
-#chkdir=/opt/ITSEC-Install-Scripts/0.Initial/src
+srcdPT2=/opt/ownsec/0.Initial/src/PT2
+#chkdir=/opt/ownsec/0.Initial/src
 
 # 1st category dirs
-DEPS_INST=/opt/ITSEC-Install-Scripts/0.Initial/src/PT2/1.Deps_Install
-FIRMWARE_INST=/opt/ITSEC-Install-Scripts/0.Initial/src/PT2/2.Firmware_Install
-USRAPP_INST=/opt/ITSEC-Install-Scripts/0.Initial/src/PT2/3.UsrApp_Install
-USRENV_SETUP=/opt/ITSEC-Install-Scripts/0.Initial/src/PT2/4.UsrEnv_Setup
+DEPS_INST=/opt/ownsec/0.Initial/src/PT2/1.Deps_Install
+FIRMWARE_INST=/opt/ownsec/0.Initial/src/PT2/2.Firmware_Install
+USRAPP_INST=/opt/ownsec/0.Initial/src/PT2/3.UsrApp_Install
+USRENV_SETUP=/opt/ownsec/0.Initial/src/PT2/4.UsrEnv_Setup
 
 # 2nd category dirs
-FIRMWARE_WIFI_INST=/opt/ITSEC-Install-Scripts/0.Initial/src/PT2/2.Firmware_Install/1.Wifi
+FIRMWARE_WIFI_INST=/opt/ownsec/0.Initial/src/PT2/2.Firmware_Install/1.Wifi
 
 
 echo "${bold}
@@ -31,7 +31,7 @@ ${normal}"
 ### Install Dependencies from Package-Manager Lists & Sources
 
 echo "${bold}
-cd /opt/ITSEC-Install-Scripts/0.Initial/src/PT2/1.Deps_Install    
+cd /opt/ownsec/0.Initial/src/PT2/1.Deps_Install    
 ${normal}"
 cd $DEPS_INST
 
@@ -105,7 +105,7 @@ ${normal}"
 
 #### Install Wifi Firmware
 echo "${bold}
-cd /opt/ITSEC-Install-Scripts/0.Initial/src/PT2/2.Firmware_Install/1.Wifi 
+cd /opt/ownsec/0.Initial/src/PT2/2.Firmware_Install/1.Wifi 
 ${normal}"
 cd $FIRMWARE_WIFI_INST
 
@@ -124,9 +124,9 @@ ${normal}"
 
 
 ##################################################################################################
-### Install 3.UsrApp_Install Scripts - /opt/ITSEC-Install-Scripts/0.Initial/src/PT2/3.UsrApp_Install
+### Install 3.UsrApp_Install Scripts - /opt/ownsec/0.Initial/src/PT2/3.UsrApp_Install
 echo "${bold}
-cd /opt/ITSEC-Install-Scripts/0.Initial/src/PT2/3.UsrApp_Install
+cd /opt/ownsec/0.Initial/src/PT2/3.UsrApp_Install
 ${normal}"
 cd $USRAPP_INST
 
@@ -163,9 +163,9 @@ ${normal}"
 #./5.Go-GLIDE.sh
 
 ##################################################################################################
-### Install 4.UsrEnv_Setup Scripts - /opt/ITSEC-Install-Scripts/0.Initial/src/PT2/4.UsrEnv_Setup
+### Install 4.UsrEnv_Setup Scripts - /opt/ownsec/0.Initial/src/PT2/4.UsrEnv_Setup
 echo "${bold}
-cd /opt/ITSEC-Install-Scripts/0.Initial/src/PT2/4.UsrEnv_Setup
+cd /opt/ownsec/0.Initial/src/PT2/4.UsrEnv_Setup
 ${normal}"
 cd $USRENV_SETUP
 

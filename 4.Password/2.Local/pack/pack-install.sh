@@ -18,13 +18,13 @@ EXECUTEABLE7=statsgen.py
 EXECUTEABLE8=pack_statsgen
 BINDIR=/usr/local/bin
 
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/2.Local/pack
+DSKTPFLS=/opt/ownsec/0.Initial/usrlcl/.local/share/applications/4.Password/2.Local/pack
 DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/2.Local/pack
 DSKTPFL1=pack_maskgen.desktop
 DSKTPFL2=pack_policygen.desktop
 DSKTPFL3=pack_rulegen.desktop
 DSKTPFL4=pack_statsgen.desktop
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+APTLSTDIR=/opt/ownsec/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive

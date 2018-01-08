@@ -7,7 +7,7 @@ GITREPOROOT=/opt/ITSEC/1.Information-Gathering/12.Scrape/httrack/xroche/httrack
 BRANCH=master
 #EXECUTEABLE1=
 #EXECUTEABLE2=
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+APTLSTDIR=/opt/ownsec/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive

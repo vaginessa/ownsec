@@ -3,7 +3,7 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
-BASEDIR=/opt/ITSEC-Install-Scripts/10.Stresstest
+BASEDIR=/opt/ownsec/10.Stresstest
 
 echo "${bold}
  _   _ ____  ____    _  _____ _____ 

@@ -9,10 +9,10 @@ GITREPOROOT=/opt/ITSEC/4.Password/2.Local/1.WEP_WPA/cowpatty/roobixx/cowpatty
 GITCLONEDIR=/opt/ITSEC/4.Password/2.Local/1.WEP_WPA/cowpatty/roobixx
 EXECUTEABLE1=cowpatty
 BINDIR=/usr/local/bin
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/2.Local/1.WEP_WPA
+DSKTPFLS=/opt/ownsec/0.Initial/usrlcl/.local/share/applications/4.Password/2.Local/1.WEP_WPA
 DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/2.Local/1.WEP_WPA
 DSKTPFL=cowpatty.desktop
-APTLSTDIR=/opt/ITSEC-Install-Scripts/4.Password/2.Local/1.WEP_WPA/cowpatty
+APTLSTDIR=/opt/ownsec/4.Password/2.Local/1.WEP_WPA/cowpatty
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive
@@ -36,7 +36,7 @@ git clone -b $BRANCH $GITREPO
 cd $GITREPOROOT
 
 ### DEPS:
-## Installed w apt lists - see /opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+## Installed w apt lists - see /opt/ownsec/0.Initial/lst/apt
 # sudo apt-get update
 # sudo apt-get upgrade
 # xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-cowpatty.txt") -r -- sudo apt-get install -y

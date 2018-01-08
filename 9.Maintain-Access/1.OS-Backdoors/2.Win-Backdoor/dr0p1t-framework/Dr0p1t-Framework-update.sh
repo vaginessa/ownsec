@@ -12,7 +12,7 @@ EXECUTEABLE1=dr0p1t.sh
 EXECUTEABLE2=dr0p1t
 EXECUTEABLE3=Dr0p1t.py
 BINDIR=/usr/local/bin
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/9.Maintain-Access/1.OS-Backdoors/2.Win-Backdoor
+DSKTPFLS=/opt/ownsec/0.Initial/usrlcl/.local/share/applications/9.Maintain-Access/1.OS-Backdoors/2.Win-Backdoor
 DSKTPFLSDEST=/home/$USER/.local/share/applications/9.Maintain-Access/1.OS-Backdoors/2.Win-Backdoor
 DSKTPFL=Dr0p1t-Framework.desktop
 
@@ -22,7 +22,7 @@ GITRESET () {
 	git reset --hard origin/$BRANCH
 	git pull
 }
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+APTLSTDIR=/opt/ownsec/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive

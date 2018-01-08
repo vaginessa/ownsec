@@ -3,7 +3,7 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
-BASEDIR=/opt/ITSEC-Install-Scripts/8.Tunnel
+BASEDIR=/opt/ownsec/8.Tunnel
 
 echo "${bold}
  _   _ ____  ____    _  _____ _____ 

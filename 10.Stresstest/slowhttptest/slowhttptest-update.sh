@@ -8,7 +8,7 @@ BRANCH=master
 GITREPOROOT=/opt/ITSEC/10.Stresstest/slowhttptest/shekyan/slowhttptest
 GITCONFDIR=/opt/ITSEC/10.Stresstest/slowhttptest/shekyan/slowhttptest/.git
 GITCLONEDIR=/opt/ITSEC/10.Stresstest/slowhttptest/shekyan
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/10.Stresstest
+DSKTPFLS=/opt/ownsec/0.Initial/usrlcl/.local/share/applications/10.Stresstest
 DSKTPFLSDEST=/home/$USER/.local/share/applications/10.Stresstest
 DSKTPFL=slowhttptest.desktop
 GITRESET () {
@@ -17,7 +17,7 @@ GITRESET () {
 	git reset --hard origin/$BRANCH
 	git pull
 }
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+APTLSTDIR=/opt/ownsec/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive

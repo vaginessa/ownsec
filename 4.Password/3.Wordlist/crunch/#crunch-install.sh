@@ -1,8 +1,8 @@
 #!/bin/sh
 ##installed with apt
 #BRANCH=master
-#mkdir -p /opt/ITSEC-Install-Scripts/4.Password/3.Wordlist/crunch/apache
-#cd /opt/ITSEC-Install-Scripts/4.Password/3.Wordlist/crunch/apache
+#mkdir -p /opt/ownsec/4.Password/3.Wordlist/crunch/apache
+#cd /opt/ownsec/4.Password/3.Wordlist/crunch/apache
 #git clone https://github.com/apache/crunch
 #
 

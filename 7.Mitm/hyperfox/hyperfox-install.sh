@@ -17,13 +17,13 @@ GITREPOROOT2=/opt/ITSEC/7.Mitm/arpfox/malfunkt/arpfox
 GITCLONEDIR2=/opt/ITSEC/7.Mitm/arpfox/malfunkt
 
 BINDIR=/usr/local/bin
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
+DSKTPFLS=/opt/ownsec/0.Initial/usrlcl/.local/share/applications/7.Mitm
 DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
 DSKTPFL1=hyperfox.desktop
 DSKTPFL2=arpfox.desktop
 DSKTPFL3=hyperfox-w-networking-run.desktop
 DSKTPFL4=hyperfox-revert-networking.desktop
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+APTLSTDIR=/opt/ownsec/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive

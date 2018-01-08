@@ -7,10 +7,10 @@ GITREPO=https://github.com/luisgg/ophcrack.git
 BRANCH=master
 GITREPOROOT=/opt/ITSEC/4.Password/2.Local/ophcrack/luisgg/ophcrack
 GITCLONEDIR=/opt/ITSEC/4.Password/2.Local/ophcrack/luisgg
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/4.Password/2.Local
+DSKTPFLS=/opt/ownsec/0.Initial/usrlcl/.local/share/applications/4.Password/2.Local
 DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/2.Local
 DSKTPFL=ophcrack.desktop
-APTLSTDIR=/opt/ITSEC-Install-Scripts/4.Password/2.Local/ophcrack
+APTLSTDIR=/opt/ownsec/4.Password/2.Local/ophcrack
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive
@@ -33,7 +33,7 @@ git clone -b $BRANCH $GITREPO
 cd $GITREPOROOT
 
 ### DEPS:
-## Installed w apt lists - see /opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+## Installed w apt lists - see /opt/ownsec/0.Initial/lst/apt
 # sudo apt-get update
 # sudo apt-get upgrade
 # xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-ophcrack.txt") -r -- sudo apt-get install -y

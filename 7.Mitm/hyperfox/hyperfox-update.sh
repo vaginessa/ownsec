@@ -9,7 +9,7 @@ GITREPOROOT=/opt/ITSEC/7.Mitm/hyperfox/malfunkt/hyperfox
 GITCONFDIR=/opt/ITSEC/7.Mitm/hyperfox/malfunkt/hyperfox/.git
 GITCLONEDIR=/opt/ITSEC/7.Mitm/hyperfox/malfunkt
 BINDIR=/usr/local/bin
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
+DSKTPFLS=/opt/ownsec/0.Initial/usrlcl/.local/share/applications/7.Mitm
 DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
 DSKTPFL1=hyperfox.desktop
 DSKTPFL1=arpfox.desktop
@@ -19,7 +19,7 @@ GITRESET () {
 	git reset --hard origin/$BRANCH
 	git pull
 }
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+APTLSTDIR=/opt/ownsec/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive

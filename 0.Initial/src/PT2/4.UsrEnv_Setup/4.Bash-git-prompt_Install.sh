@@ -3,7 +3,7 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
-REPOROOT=/opt/ITSEC-Install-Scripts
+REPOROOT=/opt/ownsec
 BINDIR=/usr/local/bin
 
 cd ~

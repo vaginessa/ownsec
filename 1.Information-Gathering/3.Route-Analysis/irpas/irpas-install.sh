@@ -19,7 +19,7 @@ irpasurl=http://www.phenoelit.org/irpas/irpas_0.10.tar.gz
 #do sudo rm /usr/local/bin/irpas-$bindone
 
 #
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/3.Route-Analysis/irpas
+DSKTPFLS=/opt/ownsec/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/3.Route-Analysis/irpas
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/3.Route-Analysis
 DSKTPFL1=irpas-dhcpx.desktop
 DSKTPFL2=irpas-itrace.desktop

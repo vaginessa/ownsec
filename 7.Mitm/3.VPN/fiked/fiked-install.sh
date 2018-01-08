@@ -7,10 +7,10 @@ GITREPO=https://github.com/droe/fiked.git
 BRANCH=master
 GITREPOROOT=/opt/ITSEC/7.Mitm/3.VPN/fiked/droe/fiked
 GITCLONEDIR=/opt/ITSEC/7.Mitm/3.VPN/fiked/droe
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm/3.VPN
+DSKTPFLS=/opt/ownsec/0.Initial/usrlcl/.local/share/applications/7.Mitm/3.VPN
 DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm/3.VPN
 DSKTPFL=fiked.desktop
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+APTLSTDIR=/opt/ownsec/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive
@@ -33,7 +33,7 @@ git clone $GITREPO
 cd $GITREPOROOT
 
 ### DEPS:
-## Installed w apt lists - see /opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+## Installed w apt lists - see /opt/ownsec/0.Initial/lst/apt
 # sudo apt-get update
 # sudo apt-get upgrade
 # xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-fiked.txt") -r -- sudo apt-get install -y

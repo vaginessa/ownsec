@@ -3,9 +3,9 @@ This page is an indication only and may be behind the actual routine, check the 
 > # Part 3 
 > ## The following applications are being installed in part 3
 
-> location of the part 3 scripts is /opt/ITSEC-Install-Scripts/0.Initial/src/PT3 && && https://github.com/alphaaurigae/ITSEC-Install-Scripts/tree/master/0.Initial/src/PT3
+> location of the part 3 scripts is /opt/ownsec/0.Initial/src/PT3 && && https://github.com/alphaaurigae/ownsec/tree/master/0.Initial/src/PT3
 
-> - the setup script running those is located here: /opt/ITSEC-Install-Scripts/0.Initial/2.sh && https://github.com/alphaaurigae/ITSEC-Install-Scripts/blob/master/0.Initial/3.sh
+> - the setup script running those is located here: /opt/ownsec/0.Initial/2.sh && https://github.com/alphaaurigae/ownsec/blob/master/0.Initial/3.sh
 
 > some installscripts may be broken, incomplete and/or disabled. 
 > disabled scripts are marked with `#` or have a disabled note. ex "xplico https://github.com/xplico/xplico.git # disabled"

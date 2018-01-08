@@ -11,7 +11,7 @@ EXECUTEABLE1=halfHandshake.sh
 EXECUTEABLE2=halfHandshake
 EXECUTEABLE3=halfHandshake.py
 BINDIR=/usr/local/bin
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/6.Wireless/1.Wifi
+DSKTPFLS=/opt/ownsec/0.Initial/usrlcl/.local/share/applications/6.Wireless/1.Wifi
 DSKTPFLSDEST=/home/$USER/.local/share/applications/6.Wireless/1.Wifi
 DSKTPFL=wpa2-halfhandshake-crack.desktop
 

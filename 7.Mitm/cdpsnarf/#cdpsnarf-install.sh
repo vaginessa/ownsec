@@ -7,10 +7,10 @@ GITREPO=https://github.com/Zapotek/cdpsnarf.git
 BRANCH=master
 GITREPOROOT=/opt/ITSEC/7.Mitm/cdpsnarf/Zapotek/cdpsnarf
 GITCLONEDIR=/opt/ITSEC/7.Mitm/cdpsnarf/Zapotek
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
+DSKTPFLS=/opt/ownsec/0.Initial/usrlcl/.local/share/applications/7.Mitm
 DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
 DSKTPFL=cdpsnarf.desktop
-APTLSTDIR=/opt/ITSEC-Install-Scripts/7.Mitm/cdpsnarf
+APTLSTDIR=/opt/ownsec/7.Mitm/cdpsnarf
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive

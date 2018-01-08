@@ -10,7 +10,7 @@ GITCONFDIR=/opt/ITSEC/7.Mitm/tcpflow/simsong/tcpflow/.git
 GITCLONEDIR=/opt/ITSEC/7.Mitm/tcpflow/simsong
 EXECUTEABLE1=tcpflow
 EXECUTEABLE2=tcpflow
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/7.Mitm
+DSKTPFLS=/opt/ownsec/0.Initial/usrlcl/.local/share/applications/7.Mitm
 DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm
 DSKTPFL=tcpflow.desktop
 GITRESET () {
@@ -19,7 +19,7 @@ GITRESET () {
 	git reset --hard origin/$BRANCH
 	git pull
 }
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+APTLSTDIR=/opt/ownsec/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive

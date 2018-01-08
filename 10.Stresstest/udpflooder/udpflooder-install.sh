@@ -14,7 +14,7 @@ BINROOT=/opt/ITSEC/10.Stresstest/udp-flooder/udpflood
 EXECUTEABLE1=udpflood
 EXECUTEABLE2=udpflood
 
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/10.Stresstest
+DSKTPFLS=/opt/ownsec/0.Initial/usrlcl/.local/share/applications/10.Stresstest
 DSKTPFLSDEST=/home/$USER/.local/share/applications/10.Stresstest
 DSKTPFL=udpflood.desktop
 

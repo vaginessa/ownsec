@@ -10,10 +10,10 @@ GITCLONEDIR=/opt/ITSEC/1.Information-Gathering/11.Dork/scanner-inurlbr/googleinu
 EXECUTEABLE1=inurlbr.php
 EXECUTEABLE2=inurlbr
 BINDIR=/usr/local/bin
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/11.Dork
+DSKTPFLS=/opt/ownsec/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/11.Dork
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/11.Dork
 DSKTPFL=scanner-inurlbr.desktop
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+APTLSTDIR=/opt/ownsec/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive

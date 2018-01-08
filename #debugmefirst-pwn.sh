@@ -1,8 +1,8 @@
 #!/bin/bash
 
 ############################# VARIABLES START #############################
-initdir=/opt/ITSEC-Install-Scripts/0.Initial
-chkdir=/opt/ITSEC-Install-Scripts/0.Initial/src
+initdir=/opt/ownsec/0.Initial
+chkdir=/opt/ownsec/0.Initial/src
 chkfile1=rebootchkPT1.txt
 chkfile2=rebootchkPT2.txt
 chkfile3=rebootchkPT3.txt
@@ -31,12 +31,12 @@ response=${response,,}
 if [[ "$response" =~ ^(yes|y)$ ]]
 then
 
-read -r -p "${bold}DID YOU CONFIG THE WLAN FIRMWARE SECTION /opt/ITSEC-ITSEC-Install-Scripts/0.Initial/src/PT2/ ? ${normal}[Y/n] " response
+read -r -p "${bold}DID YOU CONFIG THE WLAN FIRMWARE SECTION /opt/ITSEC-ownsec/0.Initial/src/PT2/ ? ${normal}[Y/n] " response
 response=${response,,}    
 if [[ "$response" =~ ^(yes|y)$ ]]
 then
 
-read -r -p "${bold}DID CONFIG THE IDE SECTION /opt/ITSEC-ITSEC-Install-Scripts/0.Initial/src/PT2/ ? ${normal}[Y/n] " response
+read -r -p "${bold}DID CONFIG THE IDE SECTION /opt/ITSEC-ownsec/0.Initial/src/PT2/ ? ${normal}[Y/n] " response
 response=${response,,}    
 if [[ "$response" =~ ^(yes|y)$ ]]
 then
@@ -63,7 +63,7 @@ then
 
 #echo "[Desktop Entry]
 # Type=Application
-# Exec=/opt/ITSEC-ITSEC-Install-Scripts/pwn.sh
+# Exec=/opt/ITSEC-ownsec/pwn.sh
 # Name=pwn
 # Comment=autoinstallITSEC" >> ~/.config/autostart/pwn-sh.desktop
 

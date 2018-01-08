@@ -7,15 +7,15 @@ GITREPO=https://github.com/kismetwireless/kismet.git
 BRANCH=master
 GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/kismet/kismetwireless/kismet
 GITCLONEDIR=/opt/ITSEC/6.Wireless/1.Wifi/kismet/kismetwireless
-KISMETFILESDIR=/opt/ITSEC-Install-Scripts/6.Wireless/1.Wifi/kismet-files
+KISMETFILESDIR=/opt/ownsec/6.Wireless/1.Wifi/kismet-files
 EXECUTEABLE1=beef.sh
 EXECUTEABLE2=beef
 BINDIR=/usr/local/bin
 CONFDIR=
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/6.Wireless/1.Wifi
+DSKTPFLS=/opt/ownsec/0.Initial/usrlcl/.local/share/applications/6.Wireless/1.Wifi
 DSKTPFLSDEST=/home/$USER/.local/share/applications/6.Wireless/1.Wifi
 DSKTPFL=kismet.desktop
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+APTLSTDIR=/opt/ownsec/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive
@@ -47,7 +47,7 @@ cp $DSKTPFLS/$DSKTPFL $DSKTPFLSDEST/$DSKTPFL
 cd $GITREPOROOT
 
 ### DEPS:
-## Installed w apt lists - see /opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+## Installed w apt lists - see /opt/ownsec/0.Initial/lst/apt
 # sudo apt-get update
 # sudo apt-get upgrade
 # xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-kismet.txt") -r -- sudo apt-get install -y

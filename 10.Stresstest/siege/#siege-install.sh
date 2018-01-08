@@ -10,7 +10,7 @@ GITCLONEDIR=/opt/ITSEC/10.Stresstest/siege/JoeDog
 EXECUTEABLE1=siege
 EXECUTEABLE2=siege
 BINDIR=/usr/local/bin
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+APTLSTDIR=/opt/ownsec/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive

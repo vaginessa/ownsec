@@ -3,7 +3,7 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
-BASEDIR=/opt/ITSEC-Install-Scripts/7.Mitm
+BASEDIR=/opt/ownsec/7.Mitm
 
 echo "${bold}
  _   _ ____  ____    _  _____ _____ 

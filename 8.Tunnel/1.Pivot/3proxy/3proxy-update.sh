@@ -10,7 +10,7 @@ BRANCH=master
 GITREPOROOT=/opt/ITSEC/8.Tunnel/1.Pivot/3proxy/z3APA3A/3proxy
 GITCONFDIR=/opt/ITSEC/8.Tunnel/1.Pivot/3proxy/z3APA3A/3proxy/.git
 GITCLONEDIR=/opt/ITSEC/8.Tunnel/1.Pivot/3proxy/z3APA3A
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/8.Tunnel/1.Pivot
+DSKTPFLS=/opt/ownsec/0.Initial/usrlcl/.local/share/applications/8.Tunnel/1.Pivot
 DSKTPFLSDEST=/home/$USER/.local/share/applications/8.Tunnel/1.Pivot
 DSKTPFL=3proxy.desktop
 GITRESET () {
@@ -19,7 +19,7 @@ GITRESET () {
 	git reset --hard origin/$BRANCH
 	git pull
 }
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+APTLSTDIR=/opt/ownsec/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive

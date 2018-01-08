@@ -3,7 +3,7 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
-BASEDIR=/opt/ITSEC-Install-Scripts/5.Database
+BASEDIR=/opt/ownsec/5.Database
 
 echo "${bold}
  _   _ ____  ____    _  _____ _____ 
@@ -18,7 +18,7 @@ ${normal}"
 ################## 5.Database##################
 
 # dont remember what the issue was, nees check again.
-#cd /opt/ITSEC-Install-Scripts/5.Database/1.SQL/bbqsql
+#cd /opt/ownsec/5.Database/1.SQL/bbqsql
 #./bbsql-update.sh
 
 

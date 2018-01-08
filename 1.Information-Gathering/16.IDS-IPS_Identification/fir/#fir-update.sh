@@ -12,7 +12,7 @@ GITREPOGITFILE=$GITREPOROOT/.git
 EXECUTEABLE1=manage.py
 EXECUTEABLE2=fir
 BINDIR=/usr/local/bin
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/16.IDS-IPS_Identification
+DSKTPFLS=/opt/ownsec/0.Initial/usrlcl/.local/share/applications/16.IDS-IPS_Identification
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/16.IDS-IPS_Identification
 DSKTPFL=fir.desktop
 GITRESET () {
@@ -21,7 +21,7 @@ GITRESET () {
 	git reset --hard origin/master
 	git pull
 }
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+APTLSTDIR=/opt/ownsec/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive

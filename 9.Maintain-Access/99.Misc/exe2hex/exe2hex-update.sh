@@ -12,7 +12,7 @@ EXECUTEABLE1=exe2hex.sh
 EXECUTEABLE2=exe2hex
 EXECUTEABLE3=exe2hex.py
 BINDIR=/usr/local/bin
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/9.Maintain-Access/99.Misc
+DSKTPFLS=/opt/ownsec/0.Initial/usrlcl/.local/share/applications/9.Maintain-Access/99.Misc
 DSKTPFLSDEST=/home/$USER/.local/share/applications/9.Maintain-Access/99.Misc
 DSKTPFL=exe2hex.desktop
 GITRESET () {
@@ -21,7 +21,7 @@ GITRESET () {
 	git reset --hard origin/$BRANCH
 	git pull
 }
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+APTLSTDIR=/opt/ownsec/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive

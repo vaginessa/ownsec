@@ -7,7 +7,7 @@ reporoot=/opt/ITSEC/1.Information-Gathering/6.SMB/accceck/labs.portcullis.co.uk
 acccheck=acccheck-0-2-1
 acccheckurl=https://labs.portcullis.co.uk/download/acccheck-0-2-1.tar.gz
 
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/6.SMB
+DSKTPFLS=/opt/ownsec/0.Initial/usrlcl/.local/share/applications/1.Information-Gathering/6.SMB
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/6.SMB
 DSKTPFL=acccheck.desktop
 

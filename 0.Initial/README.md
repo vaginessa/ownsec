@@ -1,5 +1,5 @@
 ## THIS FOLDER: 
-- /opt/ITSEC-Install-Scripts/0.Initial
+- /opt/ownsec/0.Initial
 
 # INIT dir all batch install and dependency related scripts here ...
 
@@ -22,4 +22,4 @@ settings-scripts - xfce user environment, menus, automate things
 - tmp:  install script temps
 
 For install instructions go here: 
-.../ITSEC-Install-Scripts/0a.Doc/install.md
+.../ownsec/0a.Doc/install.md

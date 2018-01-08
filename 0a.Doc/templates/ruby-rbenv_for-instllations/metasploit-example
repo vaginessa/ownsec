@@ -24,7 +24,7 @@ rbenv shell $RUBYVERSION
 
 # the script creates a executeable shell script to run the application with the desired ruby through rbenv.
 # link to the usecase of above & below script
-# /opt/ITSEC-Install-Scripts/3.Exploitation-Tools/metasploit/metasploit-setup-install.sh
+# /opt/ownsec/3.Exploitation-Tools/metasploit/metasploit-setup-install.sh
 
 echo '
 #!/bin/bash 

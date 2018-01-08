@@ -10,10 +10,10 @@ GITCLONEDIR=/opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/4.Android-Backdoor/evil-
 EXECUTEABLE1=evil-droid
 EXECUTEABLE2=evil-droid
 BINDIR=/usr/local/bin
-DSKTPFLS=/opt/ITSEC-Install-Scripts/0.Initial/usrlcl/.local/share/applications/9.Maintain-Access/1.OS-Backdoors/4.Android-Backdoor
+DSKTPFLS=/opt/ownsec/0.Initial/usrlcl/.local/share/applications/9.Maintain-Access/1.OS-Backdoors/4.Android-Backdoor
 DSKTPFLSDEST=/home/$USER/.local/share/applications/9.Maintain-Access/1.OS-Backdoors/4.Android-Backdoor
 DSKTPFL=evil-droid.desktop
-APTLSTDIR=/opt/ITSEC-Install-Scripts/0.Initial/lst/apt
+APTLSTDIR=/opt/ownsec/0.Initial/lst/apt
 GITSBMDLINIT () {
 	git submodule init
 	git submodule update --recursive
