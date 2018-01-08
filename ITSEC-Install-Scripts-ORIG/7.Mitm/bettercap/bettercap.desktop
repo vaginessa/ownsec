@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=bettercap
-Encoding=UTF-8
-Exec=bash -ic "/opt/ITSEC/7.Mitm/bettercap/evilsocket/bettercap/bin/bettercap.sh --help;${SHELL:-bash}"
-StartupNotify=false
-Terminal=true
-Type=Application
-Categories=7.Mitm;

@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=thefatrat
-Encoding=UTF-8
-Exec=sudo sh -c " fatrat;${SHELL:-bash}"
-StartupNotify=false
-Terminal=true
-Type=Application
-Categories=9.Maintain-Access;1.OS-Backdoors;0.MultiOS-Backdoor;

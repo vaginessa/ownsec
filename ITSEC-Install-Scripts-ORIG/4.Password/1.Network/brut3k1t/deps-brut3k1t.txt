@@ -1,8 +1,0 @@
-build-essential 
-python-cffi 
-libssl-dev 
-libffi-dev 
-python-dev 
-python-setuptools 
-python-selenium 
-firefox-dev 

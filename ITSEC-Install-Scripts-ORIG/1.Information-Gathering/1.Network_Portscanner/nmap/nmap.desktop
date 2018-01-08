@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=nmap
-Encoding=UTF-8
-Exec=sh -c "nmap;${SHELL:-bash}"
-StartupNotify=false
-Terminal=true
-Type=Application
-Categories=1.Information-Gathering;1.Network_Portscanner;

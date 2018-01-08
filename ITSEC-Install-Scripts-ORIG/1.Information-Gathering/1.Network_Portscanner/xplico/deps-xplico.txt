@@ -1,4 +1,0 @@
-libndpi-dev 
-libndpi-bin 
-libndpi3 
-libjson-c-dev

@@ -1,5 +1,0 @@
-libfuse-dev 
-libssh2-1-dev 
-python-libssh2 
-libfreerdp-dev 
-libfuse-dev

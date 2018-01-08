@@ -1,3 +1,0 @@
-firebird-dev 
-libmysqld-dev 
-libsvn-dev 
