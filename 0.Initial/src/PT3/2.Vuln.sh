@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BASEDIR=/opt/ownsec/2.Vulnerability-Scanner
+BASEDIR=/opt/ownsec/ownsec-ORIG/2.Vulnerability-Scanner
 ###############################################################################
 ######################   1.Vulnerability-Scanner   ####################
 ###########################################################################

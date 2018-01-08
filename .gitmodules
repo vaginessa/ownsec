@@ -1,0 +1,4 @@
+[submodule "ITSEC-Install-Scripts-ORIG"]
+	path = ITSEC-Install-Scripts-ORIG
+	url = https://github.com/alphaaurigae/ITSEC-Install-Scripts-ORIG
+	branch = master

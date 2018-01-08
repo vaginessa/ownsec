@@ -1,6 +1,6 @@
 #!/bin/bash
 ###############################
-BASEDIR=/opt/ownsec/5.Database
+BASEDIR=/opt/ownsec/ownsec-ORIG/5.Database
 ########################################
 ######################   5.Database   #
 ######################################

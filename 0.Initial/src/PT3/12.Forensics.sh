@@ -1,6 +1,6 @@
 #!/bin/bash
 ###############################
-BASEDIR=/opt/ownsec/12.Forensics
+BASEDIR=/opt/ownsec/ownsec-ORIG/12.Forensics
 #########################################
 ######################   8.Forensics   #
 #######################################

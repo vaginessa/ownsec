@@ -14,6 +14,14 @@
 
 `git clone https://github.com/alphaaurigae/ownsec`
 
+`cd ownsec`
+
+	`git submodule init`
+
+	`git submodule update --recursive`
+
+	`sudo updatedb && sudo ldconfig`
+
 `cd /opt/ownsec/0.Initial`
 
 ### Dont run the script as root/sudo - sudo will be prompted if needed.
