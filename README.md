@@ -1,6 +1,6 @@
 # Work in progress
 
-> DEV branch pulls install scripts as submodule for better formatting of the repository structure
+- finish conversion to submodule setup for the main app install scripts.
 
 ### 1. Whats this?
 
@@ -26,17 +26,17 @@ After reboot / logout you boot up into the XFCE desktop env as shown on the scre
 ../0a.Doc/install.md
 
 
-https://github.com/alphaaurigae/ITSEC-Install-Scripts/blob/master/0a.Doc/install.md
+https://github.com/alphaaurigae/ownsec/blob/master/0a.Doc/install.md
 
 
 ### 3. Maintain - Post Install
 
 - Update Scripts
 
-https://github.com/alphaaurigae/ITSEC-Install-Scripts/blob/master/0a.Doc/maintain.md
+https://github.com/alphaaurigae/ownsec/blob/master/0a.Doc/maintain.md
 
 ### 4. Support
 
  doc folder :)
  ../0a.Doc
-https://github.com/alphaaurigae/ITSEC-Install-Scripts/tree/master/0a.Doc
+https://github.com/alphaaurigae/ownsec/tree/master/0a.Doc
