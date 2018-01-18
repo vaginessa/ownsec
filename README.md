@@ -1,32 +1,22 @@
-# Work in progress
+## Want to make your own pentest distro or customize your next linux install?
+-  Here you go, read the docs, its not that much, make a list of apps and their dependencies and use this template to create a custom set of apps for your ubuntu or whatever installations.
 
-- finish conversion to submodule setup for the main app install scripts.
+To save a bit of the struggle, there are a few scripts pre build - for apps and dependencies - this repo here is made to isntall a whole set including a user environment setup.
 
-### 1. Whats this?
+#### Wrapup
+> Install/Update scripts w dependency lists for various Malware/Pentest related repos sorted in categories - see https://github.com/alphaaurigae/ITSEC-Install-Scripts-ORIG/tree/ownsec-16.04_XFCE.
 
-> Installation/Update scripts w dependency lists for various Malware/Pentest related repos sorted in categories.
 > A Template to batch install & update those using bash on Xubuntu 16.04 and XFCE customization.
 
-### Panel Screenshot ...
+XFCE/Menu teaser
 ![menu](https://i.imgur.com/YrUN4EW.png)
-
-#### Install routine:
-
-- Part1 Update & Upgrade a blanc 16.04 xubuntu - reboot
-- Part2 Install dependencies and base apps, setup user env. - may reboot
-- Part3 Install the apps from the main folder categories
-
-When all 3 parts are completed all apps should be installed and working without modifications except personal configs which cant be automated.
-
-After reboot / logout you boot up into the XFCE desktop env as shown on the screen.
 
 
 ### 2. Install / Setup
 
-../0a.Doc/install.md
+> /opt/ownsec/0a.Doc/install.md
 
-
-https://github.com/alphaaurigae/ownsec/blob/master/0a.Doc/install.md
+> https://github.com/alphaaurigae/ownsec/blob/master/0a.Doc/install.md
 
 
 ### 3. Maintain - Post Install
@@ -35,8 +25,9 @@ https://github.com/alphaaurigae/ownsec/blob/master/0a.Doc/install.md
 
 https://github.com/alphaaurigae/ownsec/blob/master/0a.Doc/maintain.md
 
+
 ### 4. Support
 
- doc folder :)
- ../0a.Doc
-https://github.com/alphaaurigae/ownsec/tree/master/0a.Doc
+> /opt/ownsec/0a.Doc/
+
+> https://github.com/alphaaurigae/ownsec/tree/master/0a.Doc
