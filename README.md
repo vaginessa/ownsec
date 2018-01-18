@@ -1,10 +1,10 @@
 #### 1. What is this?
 
-- Install/Update scripts w dependency lists for various Malware/Pentest related repos sorted in categories
+- Install scripts setup for: https://github.com/alphaaurigae/ITSEC-Install-Scripts-ORIG/tree/ownsec-16.04_XFCE
 
-- A user environment setup on Xubuntu 16.04 && a template for similar setups
+- A user environment setup on Xubuntu 16.04 - in this case as a pentest distro
 
-> Apps to be installed: https://github.com/alphaaurigae/ITSEC-Install-Scripts-ORIG/tree/ownsec-16.04_XFCE.
+- Probably a nice template for similar setups
 
 XFCE/Menu teaser
 ![menu](https://i.imgur.com/YrUN4EW.png)
