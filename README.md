@@ -1,6 +1,6 @@
 ## Make your own pentest distro or customize your next linux install
 
-This repo is made to install a whole set, including a user environment setup & act as a tempalte for similar base setups.
+This repo is made to install a whole set, including a user environment setup & act as a template for similar base setups.
 
 - this repo is intended as a template - please study the docs before using.
 
