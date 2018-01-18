@@ -16,9 +16,7 @@
 
 `cd ownsec`
 
-	`git submodule init`
-
-	`git submodule update --recursive`
+	`git submodule init && git submodule update --recursive`
 
 	`sudo updatedb && sudo ldconfig`
 

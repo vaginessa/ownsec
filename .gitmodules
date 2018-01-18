@@ -1,4 +1,4 @@
 [submodule "ITSEC-Install-Scripts-ORIG"]
 	path = ITSEC-Install-Scripts-ORIG
 	url = https://github.com/alphaaurigae/ITSEC-Install-Scripts-ORIG
-	branch = 16.04_XFCE
+	branch = ownsec_16.04_XFCE
