@@ -2,9 +2,19 @@
 
 - Xubuntu 16.04 
 
-> aprox 2,3 hours of time with 11mbit dl i5 netbook w ssd - apt-get lists, node, openvas (the sync is very slow), wireshark and ruby on rbenv need decent time to dl/build/install.
+> aprox 2 hours of time with 11mbit dl i5 netbook w ssd - apt-get lists, node, openvas (the sync is very slow), wireshark and ruby on rbenv need decent time to dl/build/install.
 
 > documentation on advanced prequisites / customizing is located here: `/opt/ownsec/0a.Doc/advanced_prequisites.md` --> https://github.com/alphaaurigae/ownsec/blob/master/0a.Doc/advanced_prequisites.md
+
+#### Install routine:
+
+- Part1 Update & Upgrade a blanc 16.04 xubuntu - reboot
+- Part2 Install dependencies and base apps, setup user env. - may reboot
+- Part3 Install the apps from the main folder categories
+
+When all 3 parts are completed all apps should be installed and working without modifications except personal configs which cant be automated.
+
+After reboot / logout you boot up into the XFCE desktop env as shown on the screen.
 
 ## INSTALL
 
