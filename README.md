@@ -1,14 +1,10 @@
-## Make your own pentest distro or customize your next linux install
+#### 1. What is this?
 
-This repo is made to install a whole set, including a user environment setup & act as a template for similar base setups.
+- Install/Update scripts w dependency lists for various Malware/Pentest related repos sorted in categories
 
-- this repo is intended as a template - please study the docs before using.
+- A user environment setup on Xubuntu 16.04 && a template for similar setups
 
-#### Wrapup
-
-> Install/Update scripts w dependency lists for various Malware/Pentest related repos sorted in categories - see https://github.com/alphaaurigae/ITSEC-Install-Scripts-ORIG/tree/ownsec-16.04_XFCE.
-
-> A Template to batch install & update those using bash on Xubuntu 16.04 and XFCE customization.
+> Apps to be installed: https://github.com/alphaaurigae/ITSEC-Install-Scripts-ORIG/tree/ownsec-16.04_XFCE.
 
 XFCE/Menu teaser
 ![menu](https://i.imgur.com/YrUN4EW.png)
