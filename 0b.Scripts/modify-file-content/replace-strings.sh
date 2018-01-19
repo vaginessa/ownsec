@@ -1,7 +1,7 @@
 
 
 # replace multiline strings recursive in files
-find /opt/ownsec/ITSEC-Install-Scripts-ORIG -type f -print0 | xargs -0 perl -i -0pe 's/GITUPTODATE/if git checkout renameBRANCH &&\n\git fetch origin renameBRANCH &&\n\dfgsdfgfg6 &&\n\gsdfgsdfrrr/g'
+find /opt/ownsec/ITSEC-Install-Scripts-ORIG -type f -print0 | xargs -0 perl -i -0pe 's/echo "${bold}\UPDATED\n\${normal}"/g'
 
 
 # replace pattern recursive

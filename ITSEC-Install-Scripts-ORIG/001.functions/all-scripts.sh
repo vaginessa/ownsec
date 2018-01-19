@@ -97,17 +97,4 @@ fi
 
 
 
-FINISHUPDATE () {
-echo "${bold}
-UPDATED
-${normal}"
-
-else
-
-echo "${bold}
-UP TO DATE
-${normal}"
-	
-fi
-}
 
