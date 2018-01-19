@@ -16,3 +16,4 @@ git push
 cd $GITREPOROOT
 git add $SUBMODULENAME
 git commit -m "Updated submodule"
+git push

@@ -1,0 +1,14 @@
+
+
+# replace multiline strings recursive in files
+find /opt/ownsec/ITSEC-Install-Scripts-ORIG -type f -print0 | xargs -0 perl -i -0pe 's/GITUPTODATE/if git checkout renameBRANCH &&\n\git fetch origin renameBRANCH &&\n\dfgsdfgfg6 &&\n\gsdfgsdfrrr/g'
+
+
+# replace pattern recursive
+find /opt/ownsec/ITSEC-Install-Scripts-ORIG -type f -print0 | xargs -0sed -i -e 's/888then/then/g'
+
+
+# replace string with brackets recurslive
+find /opt/ownsec/ITSEC-Install-Scripts-ORIG -type f -print0 | xargs -0sed -i -e 's#dfgsdfgfg6#\[ `git rev-list HEAD...origin/$BRANCH --count` != 0 ]#g'
+
+
