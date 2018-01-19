@@ -184,7 +184,7 @@ cd $BASEDIR/13.OSINT/datasploit
 ###########################################################################
 cd $BASEDIR/15.Fuzzer/dotdotpwn
 ./dotdotpwn-install.sh
-cd $BASEDIR/15.Fuzzer/simplefuzzer
+cd $BASEDIR/15.Fuzzer/simple-fuzzer
 ./simplefuzzer-install.sh # call w sfuzz 
 cd $BASEDIR/15.Fuzzer/siparmyknife
 ./siparmyknife-install.sh 

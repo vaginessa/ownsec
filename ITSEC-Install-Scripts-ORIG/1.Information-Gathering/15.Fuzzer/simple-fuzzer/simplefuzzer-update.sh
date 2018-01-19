@@ -11,7 +11,8 @@ GITCLONEDIR=/opt/ITSEC/1.Information-Gathering/15.Fuzzer/simple-fuzzer/orgcandma
 DSKTPFLS=/opt/ownsec/ITSEC-Install-Scripts-ORIG/1.Information-Gathering/15.Fuzzer/simple-fuzzer
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/15.Fuzzer/simple-fuzzer
 DSKTPFL=simple-fuzzer.desktop
-APTLSTDIR=/opt/ownsec/ITSEC-Install-Scripts-ORIG/1.Information-Gathering/15.Fuzzer/simple-fuzzer
+APTLSTDIR=/opt/ownsec/ITSEC-Install-Scripts-ORIG/1.Information-Gathering/15.Fuzzer/simplefuzzer/simple-fuzzer
+
 #hd6cv
 
 echo "${bold}
@@ -39,6 +40,7 @@ GITSBMDLINIT
 ./configure
 make -j 4
 sudo make install
+CPDESKTFL
 
 echo "${bold}
 UPDATED
