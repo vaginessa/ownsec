@@ -62,7 +62,7 @@ cd /opt/ITSEC/4.Password/2.Local/johntheripper/magnumripper/JohnTheRipper/run
 
 ./john "$@"' > $GITREPOBINDIR/$EXECUTEABLE1
 chmod +x $GITREPOBINDIR/$EXECUTEABLE1
-RMBDREX2
+
 sudo ln -s $GITREPOBINDIR/$EXECUTEABLE1 $BINDIR/$EXECUTEABLE2
 
 #333d

@@ -54,7 +54,7 @@ sudo ./airgeddon.sh "$@"' > $EXECUTEABLE1
 
 CHMODXEX1
 CHMODXEX2
-RMBDREX2
+
 SYMLINKEX2TO1
 
 

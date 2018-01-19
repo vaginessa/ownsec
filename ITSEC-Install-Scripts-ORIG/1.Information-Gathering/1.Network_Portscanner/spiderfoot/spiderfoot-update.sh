@@ -60,7 +60,7 @@ cd /opt/ITSEC/1.Information-Gathering/1.Network_Portscanner/spiderfoot/smicallef
 python sfcli.py "$@"' > $EXECUTEABLE3
 chmod +x $EXECUTEABLE3
 
-RMBDREX2
+
 sudo rm -f $BINDIR/$EXECUTEABLE4
 SYMLINKEX2TO1
 sudo ln -s $GITREPOROOT/$EXECUTEABLE3 $BINDIR/$EXECUTEABLE4

@@ -49,7 +49,7 @@ cd /opt/ITSEC/4.Password/1.Network/patator/lanjelot/patator
 python patator.py "$@"' > $EXECUTEABLE1
 CHMODXEX3
 CHMODXEX1
-RMBDREX2
+
 SYMLINKEX2TO1
 #333d
 CPDESKTFL

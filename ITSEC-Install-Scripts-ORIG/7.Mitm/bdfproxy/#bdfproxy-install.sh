@@ -51,7 +51,7 @@ sudo make install
 #sudo echo "/usr/lib64" >> /etc/ld.so.conf.d/capstone.conf
 
 ######################################################
-RMBDREX2
+
 sudo rm -f $BINDIR/$EXECUTEABLE4
 SYMLINKEX2TO1
 sudo ln -s $GITREPOROOT/$EXECUTEABLE3 $BINDIR/$EXECUTEABLE4

@@ -42,7 +42,7 @@ sudo apt-get upgrade
 xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-recon-ng.txt") -r -- sudo apt-get install -y
 ### DEPS END
 
-RMBDREX2
+
 sudo rm -f $BINDIR/$EXECUTEABLE4
 sudo rm -f $BINDIR/$EXECUTEABLE6
 sudo rm -f $BINDIR/$EXECUTEABLE8

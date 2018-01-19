@@ -67,7 +67,7 @@ ruby rsmangler.rb "$@"' > /$EXECUTEABLE1
 
 CHMODXEX3
 CHMODXEX1
-RMBDREX2
+
 SYMLINKEX2TO1
 
 #333d 

@@ -44,7 +44,7 @@ cd /opt/ITSEC/1.Information-Gathering/15.Fuzzer/siparmyknife/foreni-packages/sip
 ./siparmyknife.pl "$@"' >> $EXECUTEABLE3
 CHMODXEX1
 CHMODXEX3
-RMBDREX2
+
 sudo ln -s $GITREPOROOT/$EXECUTEABLE3 $/$EXECUTEABLE2
 
 echo "${bold}

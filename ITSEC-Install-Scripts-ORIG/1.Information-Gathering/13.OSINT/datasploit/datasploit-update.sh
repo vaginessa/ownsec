@@ -47,7 +47,7 @@ mv config_sample.py config.py
 # python datasploit.py test.com
 
 CHMODXEX1
-RMBDREX2
+
 SYMLINKEX2TO1
 #333d
 CPDESKTFL

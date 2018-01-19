@@ -44,7 +44,7 @@ make -j 4
 #sudo make install
 
 CHMODXEX1
-RMBDREX2
+
 sudo ln -s $GITREPOROOT/$EXECUTEABLE1 /usr/local/bin/$EXECUTEABLE2
 
 #333d

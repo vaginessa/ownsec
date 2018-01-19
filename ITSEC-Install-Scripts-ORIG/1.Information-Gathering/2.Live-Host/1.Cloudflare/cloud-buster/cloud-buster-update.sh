@@ -46,9 +46,9 @@ echo '#!/bin/bash
 cd /opt/ITSEC/1.Information-Gathering/2.Live-Host/1.Cloudflare/cloud-buster/SageHack/cloud-buster
 python3 bust "$@"' > $GITREPOROOT/$EXECUTEABLE1
 
-RMBDREX2
+
 CHMODXEX1
-RMBDREX2
+
 SYMLINKEX2TO1
 
 #333d

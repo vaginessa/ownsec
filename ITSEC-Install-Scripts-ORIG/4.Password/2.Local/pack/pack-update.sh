@@ -45,7 +45,7 @@ git fetch origin $BRANCH &&
 git merge origin/$BRANCH
 then
 
-RMBDREX2
+
 sudo rm -f $BINDIR/$EXECUTEABLE4
 sudo rm -f $BINDIR/$EXECUTEABLE6
 sudo rm -f $BINDIR/$EXECUTEABLE8

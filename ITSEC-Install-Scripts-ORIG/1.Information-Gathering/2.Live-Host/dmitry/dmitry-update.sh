@@ -46,7 +46,7 @@ chmod +x bootstrap
 ./configure
 make -j 4
 
-RMBDREX2
+
 CHMODXEX1
 SYMLINKEX2TO1
 

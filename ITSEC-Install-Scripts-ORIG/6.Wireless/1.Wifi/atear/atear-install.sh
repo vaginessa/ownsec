@@ -55,7 +55,7 @@ sudo python run.py --iface wlan0" > $EXECUTEABLE1
 
 CHMODXEX3
 CHMODXEX1
-RMBDREX2
+
 SYMLINKEX2TO1
 
 #333d 

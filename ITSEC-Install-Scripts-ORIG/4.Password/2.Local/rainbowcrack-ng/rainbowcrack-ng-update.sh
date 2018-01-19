@@ -52,7 +52,7 @@ cd $GITREPOBINDIR
 make -j 4 
 #sudo make install
 
-RMBDREX2
+
 sudo rm -f $BINDIR/$EXECUTEABLE4
 sudo rm -f $BINDIR/$EXECUTEABLE6
 sudo rm -f $BINDIR/$EXECUTEABLE8

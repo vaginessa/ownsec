@@ -46,7 +46,7 @@ cd /opt/ITSEC/9.Maintain-Access/99.Misc/exe2hex/g0tmi1k/exe2hex
 python3 exe2hex.py "$@"' > $EXECUTEABLE1
 chmod +x $EXECUTEABLE1
 chmod +x $EXECUTEABLE3
-RMBDREX2
+
 sudo ln -s $GITREPOROOT/$EXECUTEABLE3 $BINDIR/$EXECUTEABLE2
 #333d
 CPDESKTFL

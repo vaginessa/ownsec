@@ -41,7 +41,7 @@ GITSBMDLINIT
 sed -i 's/wine-stable/wine/' /opt/ITSEC/9.Maintain-Access/2.Generate/Veil/Veil-Framework/Veil/setup/setup.sh
 ./setup/setup.sh -c
 
-RMBDREX2
+
 SYMLINKEX2TO1
 
 echo "${bold}

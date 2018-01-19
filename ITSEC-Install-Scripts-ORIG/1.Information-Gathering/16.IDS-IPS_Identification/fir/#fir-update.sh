@@ -63,7 +63,7 @@ GITSBMDLINIT
 cd docker
 #sudo -H pip install -r requirements.txt
 #CHMODXEX1
-RMBDREX2
+
 #sudo ln -s $GITREPOROOT/$EXECUTEABLE1 /usr/local/bin/$EXECUTEABLE2
 
 #333d

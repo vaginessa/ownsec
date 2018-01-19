@@ -40,5 +40,5 @@ sed -i 's/wine-stable/wine/' /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.Multi
 ./setup/setup.sh -c
 chmod +x $EXECUTEABLE1
 
-RMBDREX2
+
 SYMLINKEX2TO1

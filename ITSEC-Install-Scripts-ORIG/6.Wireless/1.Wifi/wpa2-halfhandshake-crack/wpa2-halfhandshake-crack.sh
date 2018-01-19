@@ -42,7 +42,7 @@ python halfHandshake.py "$@" ' > $EXECUTEABLE1
 
 chmod +x  $GITREPOROOT/$EXECUTEABLE3
 CHMODXEX1
-RMBDREX2
+
 SYMLINKEX2TO1
 
 #333d

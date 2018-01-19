@@ -39,7 +39,7 @@ xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-morpheus.txt") -r -- sudo apt-get i
 
 GITSBMDLINIT
 
-RMBDREX2
+
 SYMLINKEX2TO1
 #333d
 CPDESKTFL

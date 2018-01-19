@@ -52,7 +52,7 @@ cd /opt/ITSEC/7.Mitm/mitmf/byt3bl33d3r/MITMf
 python mitmf.py "$@"' > $EXECUTEABLE1
 
 chmod +x $EXECUTEABLE1
-RMBDREX2
+
 SYMLINKEX2TO1
 #333d
 CPDESKTFL

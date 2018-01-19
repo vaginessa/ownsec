@@ -43,7 +43,7 @@ cd /opt/ITSEC/1.Information-Gathering/11.Dork/scanner-inurlbr/googleinurl/SCANNE
 php inurlbr.php "$@"' >> $EXECUTEABLE2
 CHMODXEX1
 CHMODXEX2
-RMBDREX2
+
 SYMLINKEX2TO1
 
 

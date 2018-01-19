@@ -47,7 +47,7 @@ cd /opt/ITSEC/4.Password/1.Network/f-scrack/zgwdg/F-Scrack
 python F-Scrack.py "$@"' > $EXECUTEABLE1
 CHMODXEX1
 CHMODXEX3
-RMBDREX2
+
 SYMLINKEX2TO1
 
 #333d

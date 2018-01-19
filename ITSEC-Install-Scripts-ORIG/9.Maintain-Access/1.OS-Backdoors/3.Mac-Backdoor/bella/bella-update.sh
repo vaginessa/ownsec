@@ -43,7 +43,7 @@ echo '#!/bin/bash
 cd /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/3.Mac-Backdoor/bella/Trietptm-on-Security/Bella
 ./BUILDER "$@"' > $EXECUTEABLE1
 chmod +x $EXECUTEABLE1
-RMBDREX2
+
 SYMLINKEX2TO1
 
 #333d

@@ -45,7 +45,7 @@ cd /opt/ITSEC/9.Maintain-Access/99.Misc/exe2hex/g0tmi1k/exe2hex
 python3 exe2hex.py "$@"' > $EXECUTEABLE1
 chmod +x $EXECUTEABLE1
 chmod +x $EXECUTEABLE3
-RMBDREX2
+
 SYMLINKEX2TO1
 rm -f  $DSKTPFLSDEST/$DSKTPFL
 #333d

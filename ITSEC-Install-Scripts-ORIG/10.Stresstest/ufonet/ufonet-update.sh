@@ -45,7 +45,7 @@ cd /opt/ITSEC/10.Stresstest/ufonet/epsylon/ufonet
 ./ufonet "$@"' > $EXECUTEABLE1
 CHMODXEX1
 CHMODXEX2
-RMBDREX2
+
 SYMLINKEX2TO1
 
 #333d 

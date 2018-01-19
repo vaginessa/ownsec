@@ -45,7 +45,7 @@ cd /opt/ITSEC/6.Wireless/1.Wifi/handshaker/d4rkcat/HandShaker
 
 sudo ./handshaker.sh -i wlan0 -i2 wlan1 "$@"' > $EXECUTEABLE1
 chmod +x $EXECUTEABLE1
-RMBDREX2
+
 SYMLINKEX2TO1
 
 #333d 

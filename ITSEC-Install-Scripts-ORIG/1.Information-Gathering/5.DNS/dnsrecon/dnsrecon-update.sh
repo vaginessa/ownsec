@@ -45,7 +45,7 @@ cd /opt/ITSEC/1.Information-Gathering/5.DNS/dnsrecon/darkoperator/dnsrecon
 python dnsrecon.py" > $EXECUTEABLE1
 
 chmod +x $EXECUTEABLE1
-RMBDREX2
+
 SYMLINKEX2TO1
 
 #333d

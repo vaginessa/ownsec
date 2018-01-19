@@ -42,7 +42,7 @@ cd /opt/ITSEC/1.Information-Gathering/11.Dork/bingoo/Hood3dRob1n/BinGoo
 ./bingoo "$@"' > $EXECUTEABLE2
 CHMODXEX1
 CHMODXEX2
-RMBDREX1
+
 sudo ln -s $GITREPOROOT/$EXECUTEABLE2 $BINDIR/$EXECUTEABLE1
 
 #333d 

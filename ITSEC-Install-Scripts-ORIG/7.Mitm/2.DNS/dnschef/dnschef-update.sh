@@ -45,7 +45,7 @@ cd /opt/ITSEC/7.Mitm/2.DNS/dnschef/iphelix/dnschef
 python dnschef.py "$@"' > $GITREPOROOT/$EXECUTEABLE1
 CHMODXEX3
 CHMODXEX1
-RMBDREX2
+
 SYMLINKEX2TO1
 #333d
 

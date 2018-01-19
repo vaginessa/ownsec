@@ -47,7 +47,7 @@ echo '#!/bin/bash
 cd /opt/ITSEC/4.Password/1.Network/brut3k1t/ex0dus-0x/brut3k1t
 ./brut3k1t "$@"' > $EXECUTEABLE1
 CHMODXEX1
-RMBDREX2
+
 SYMLINKEX2TO1
 
 #333d

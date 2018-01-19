@@ -38,7 +38,7 @@ xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-webacoo.txt") -r -- sudo apt-get in
 
 GITSBMDLINIT
 
-RMBDREX2
+
 chmod +x $EXECUTEABLE1
 SYMLINKEX2TO1
 #333d 

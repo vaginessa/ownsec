@@ -42,7 +42,7 @@ cd /opt/ITSEC/4.Password/1.Network/findmyhash/frdmn/findmyhash
 
 python findmyhash.py "$@"' > $EXECUTEABLE1
 CHMODXEX1
-RMBDREX2
+
 SYMLINKEX2TO1
 
 #333d

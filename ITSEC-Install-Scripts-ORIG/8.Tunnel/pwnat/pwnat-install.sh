@@ -40,7 +40,7 @@ make -j 4
 
 #sudo make install doesent work
 #
-RMBDREX2
+
 CHMODXEX1
 SYMLINKEX2TO1
 #333d 

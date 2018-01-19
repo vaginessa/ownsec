@@ -41,7 +41,7 @@ export QT_SELECT=qt5
 qmake
 make -j$(nproc)
 
-RMBDREX1
+
 SYMLINKEX1TO1
 
 #333d

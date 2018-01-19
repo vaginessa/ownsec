@@ -38,7 +38,7 @@ make -j 4
 #sudo make install
 
 CHMODXEX1
-RMBDREX2
+
 SYMLINKEX2TO1
 
 #333d

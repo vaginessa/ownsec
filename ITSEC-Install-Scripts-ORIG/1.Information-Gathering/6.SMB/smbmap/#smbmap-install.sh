@@ -57,7 +57,7 @@ echo "#!/bin/bash
 cd /opt/ITSEC/1.Information-Gathering/6.SMB/smbmap/ShawnDEvans/smbmap
 python smbmap.py" > $GITREPOROOT/$EXECUTEABLE1
 CHMODXEX1
-RMBDREX2  
+  
 SYMLINKEX2TO1
 #333d
 

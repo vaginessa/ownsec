@@ -53,7 +53,7 @@ python sqlmapapi.py "$@"' > $EXECUTEABLE3
 
 chmod +x $EXECUTEABLE3
 
-RMBDREX2
+
 sudo rm -f $BINDIR/$EXECUTEABLE4
 
 SYMLINKEX2TO1

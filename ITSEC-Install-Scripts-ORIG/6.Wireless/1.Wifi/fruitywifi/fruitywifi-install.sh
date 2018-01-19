@@ -76,7 +76,7 @@ sudo nginx_start.sh
 sudo php7.0-fpm_start.sh
 firefox https://localhost:8443 </dev/null &>/dev/null &" > $EXECUTEABLE1
 CHMODXEX1
-RMBDREX2
+
 SYMLINKEX2TO1
 
 #333d 
