@@ -48,10 +48,10 @@ source ~/.bashrc
 eval "$(rbenv init -)"
 rbenv shell 2.4.1
 
-./twofi.rb "$*" ' > $EXECUTEABLE3
-
+./twofi.rb "$*" ' > $GITREPOROOT/$EXECUTEABLE3
 chmod a+x $GITREPOROOT/$EXECUTEABLE1
 CHMODXEX3
+sudo rm -f $BINDIR/$EXECUTEABLE2
 sudo ln -s $GITREPOROOT/$EXECUTEABLE3 $BINDIR/$EXECUTEABLE2
 
 #333d 
