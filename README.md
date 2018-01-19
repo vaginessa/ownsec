@@ -1,10 +1,10 @@
 #### 1. What is this?
 
-- Install scripts setup for: https://github.com/alphaaurigae/ITSEC-Install-Scripts-ORIG/tree/ownsec-16.04_XFCE
+- Install lots of IT-Sec related apps with dependencies
 
-- A user environment setup on Xubuntu 16.04 - in this case as a pentest distro
+- Setup the user environment on Xubuntu 16.04 
 
-- Probably a nice template for similar setups
+> Probably a nice template for similar setups
 
 XFCE/Menu teaser
 ![menu](https://i.imgur.com/YrUN4EW.png)
@@ -21,7 +21,7 @@ XFCE/Menu teaser
 
 > /opt/ownsec/0a.Doc/maintain.md
 
-https://github.com/alphaaurigae/ownsec/blob/master/0a.Doc/maintain.md
+> https://github.com/alphaaurigae/ownsec/blob/master/0a.Doc/maintain.md
 
 
 ### 4. Support
