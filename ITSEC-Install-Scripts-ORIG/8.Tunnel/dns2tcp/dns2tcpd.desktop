@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=dns2tcpd
+Encoding=UTF-8
+Exec=sh -c "dns2tcpd;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=8.Tunnel;

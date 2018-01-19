@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=ophcrack-cli
+Encoding=UTF-8
+Exec=sh -c "ophcrack-cli;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=2.Local;

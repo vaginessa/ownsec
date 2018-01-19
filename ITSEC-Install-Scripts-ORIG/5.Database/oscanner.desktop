@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=oscanner
+Encoding=UTF-8
+Exec=sh -c "oscanner;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=5.Database;

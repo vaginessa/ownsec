@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=pupy
+Encoding=UTF-8
+Exec=sh -c "cd /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/pupy/n1nj4sec/pupy/;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=0.MultiOS-Backdoor;

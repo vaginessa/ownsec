@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=dnschef
+Encoding=UTF-8
+Exec=sh -c "dnschef -h;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=7.Mitm; 2.DNS;

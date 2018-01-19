@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Dr0p1t-Framework
+Encoding=UTF-8
+Exec=sh -c "dr0p1t;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=2.Win-Backdoor;

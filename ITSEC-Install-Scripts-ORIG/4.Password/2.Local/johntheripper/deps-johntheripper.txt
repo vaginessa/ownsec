@@ -1,0 +1,12 @@
+ocl-icd-opencl-dev 
+yasm 
+libgmp-dev 
+libpcap-dev 
+pkg-config 
+libbz2-dev 
+libopenmpi-dev 
+openmpi-bin 
+cmake 
+bison 
+flex 
+libicu-dev

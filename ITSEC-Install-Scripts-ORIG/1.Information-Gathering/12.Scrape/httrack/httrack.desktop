@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=httrack
+Encoding=UTF-8
+Exec=sh -c "httrack -h;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=12.Scrape;

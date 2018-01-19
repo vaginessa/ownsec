@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=hostapd-wpe
+Encoding=UTF-8
+Exec=sh -c "hostapd-wpe --help;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=4.Evil-Twin;
+

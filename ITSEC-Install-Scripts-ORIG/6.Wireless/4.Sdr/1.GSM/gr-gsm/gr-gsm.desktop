@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=gr-gsm
+Encoding=UTF-8
+Exec=sh -c "gr-gsm --help;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=4.Sdr;1.GSM;

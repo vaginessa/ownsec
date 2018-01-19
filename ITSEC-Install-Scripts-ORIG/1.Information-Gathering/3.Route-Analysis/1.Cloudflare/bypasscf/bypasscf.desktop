@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=bypasscf 
+Encoding=UTF-8
+Exec=sh -c "bypasscf;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=3.Route-Analysis;1.Cloudflare;

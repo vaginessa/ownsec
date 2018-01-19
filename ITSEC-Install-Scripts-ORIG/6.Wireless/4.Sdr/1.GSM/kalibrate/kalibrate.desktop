@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=kalibrate
+Encoding=UTF-8
+Exec=sh -c "kal --help;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=1.GSM;4.Sdr;

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=dshell-decode
+Encoding=UTF-8
+Exec=sh -c "dshell-decode -h;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=2.DNS;

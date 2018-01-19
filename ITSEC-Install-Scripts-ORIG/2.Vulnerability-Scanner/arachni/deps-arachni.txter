@@ -1,0 +1,6 @@
+build-essential 
+curl 
+libcurl3 
+libcurl4-openssl-dev 
+phantomjs 
+libgdbm-dev

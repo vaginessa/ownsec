@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=fiked
+Encoding=UTF-8
+Exec=sh -c "fiked -h;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=7.Mitm;3.VPN;
+

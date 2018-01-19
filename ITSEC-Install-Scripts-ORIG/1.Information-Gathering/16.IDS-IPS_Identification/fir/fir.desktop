@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=fir
+Encoding=UTF-8
+Exec=sh -c "fir;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=16.IDS-IPS_Identification;

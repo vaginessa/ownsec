@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=fragroute
+Encoding=UTF-8
+Exec=sh -c "fragroute -h;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=16.IDS-IPS_Identification;

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=3proxy
+Encoding=UTF-8
+Exec=sh -c "3proxy -h;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=1.Pivot;

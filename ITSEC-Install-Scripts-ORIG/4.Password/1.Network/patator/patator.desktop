@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=patator
+Encoding=UTF-8
+Exec=sh -c "patator -h;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=1.Network;
+
+

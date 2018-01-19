@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=chntpw
+Encoding=UTF-8
+Exec=sh -c "chntpw -h;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=05-02-offline-attacks;

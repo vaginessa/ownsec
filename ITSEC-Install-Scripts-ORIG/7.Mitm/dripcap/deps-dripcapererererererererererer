@@ -1,0 +1,7 @@
+jq 
+flex 
+build-essential 
+git 
+libcap-dev 
+libcap-dev 
+chrpath

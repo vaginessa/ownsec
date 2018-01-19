@@ -1,0 +1,8 @@
+python-dev 
+python-pip 
+python-lxml 
+git 
+libxml2-dev 
+libxslt1-dev 
+libz-dev 
+python-django-treebeard

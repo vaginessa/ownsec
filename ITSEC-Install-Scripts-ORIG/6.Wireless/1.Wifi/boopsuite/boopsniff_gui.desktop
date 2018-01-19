@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=boopsniff_gui
+Encoding=UTF-8
+Exec=sh -c "boopsniff_gui ;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=1.Wifi;
+

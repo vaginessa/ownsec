@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=thc-pptp-bruter
+Encoding=UTF-8
+Exec=sh -c "thc-pptp-bruter;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=1.Network;

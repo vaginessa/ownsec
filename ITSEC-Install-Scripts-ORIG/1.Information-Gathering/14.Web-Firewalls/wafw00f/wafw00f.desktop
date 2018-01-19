@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=wafw00f
+Encoding=UTF-8
+Exec=sh -c "wafw00f -h;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=14.Web-Firewalls;

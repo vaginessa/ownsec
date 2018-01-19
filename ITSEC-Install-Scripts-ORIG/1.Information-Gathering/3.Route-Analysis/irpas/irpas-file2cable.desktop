@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=irpas-file2cable
+Encoding=UTF-8
+Exec=sh -c "irpas-file2cable -h;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=3.Route-Analysis;

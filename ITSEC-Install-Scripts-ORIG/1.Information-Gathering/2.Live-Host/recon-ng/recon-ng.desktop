@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=recon-ng
+Encoding=UTF-8
+Exec=sh -c "recon-ng"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=2.Live-Host;

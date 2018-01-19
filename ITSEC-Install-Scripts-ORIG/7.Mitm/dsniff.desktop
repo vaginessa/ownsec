@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=dsniff
+Encoding=UTF-8
+Exec=sh -c "dsniff -h;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=7.Mitm;

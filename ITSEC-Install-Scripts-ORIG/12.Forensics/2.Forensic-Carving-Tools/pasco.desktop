@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=pasco
+Encoding=UTF-8
+Exec=sh -c "pasco;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=11-05-forensic-carving-tools;

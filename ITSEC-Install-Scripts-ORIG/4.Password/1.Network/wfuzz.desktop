@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=wfuzz
+Encoding=UTF-8
+Exec=sh -c "wfuzz;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=1.Network;

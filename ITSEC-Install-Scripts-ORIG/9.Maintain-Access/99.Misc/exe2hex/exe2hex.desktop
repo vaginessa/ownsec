@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=exe2hex
+Encoding=UTF-8
+Exec=sh -c "exe2hex;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=99.Misc;

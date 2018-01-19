@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=bbqsql
+Encoding=UTF-8
+Exec=sh -c "bbqsql;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=5.Database;1.SQL;

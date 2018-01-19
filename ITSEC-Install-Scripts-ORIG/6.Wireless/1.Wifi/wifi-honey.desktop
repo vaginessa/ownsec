@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=wifi-honey
+Encoding=UTF-8
+Exec=sh -c "wifi-honey -h;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=1.Wifi;

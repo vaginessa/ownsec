@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=udpflood
+Encoding=UTF-8
+Exec=sh -c "udpflood -h;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=10.Stresstest;

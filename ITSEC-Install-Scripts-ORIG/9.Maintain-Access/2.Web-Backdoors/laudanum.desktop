@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=laudanum
+Encoding=UTF-8
+Exec=sh -c "ls -l /usr/share/laudanum;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=2.Web-Backdoors;

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=dnswalk
+Encoding=UTF-8
+Exec=sh -c "dnswalk --help;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=01-01-dns-analysis;

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=ares
+Encoding=UTF-8
+Exec=sh -c "cd /opt/ITSEC/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/ares/sweetsoftware/ares;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=0.MultiOS-Backdoor;

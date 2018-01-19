@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=t50
+Encoding=UTF-8
+Exec=sh -c "t50 --help;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=10.Stresstest;

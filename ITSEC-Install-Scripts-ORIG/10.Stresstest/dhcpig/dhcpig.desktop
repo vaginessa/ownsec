@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=dhcpig
+Encoding=UTF-8
+Exec=sh -c "dhcPIG -h;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=10.Stresstest;

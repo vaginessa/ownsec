@@ -1,0 +1,9 @@
+swig
+cmake 
+libboost-all-dev 
+libcppunit-dev 
+doxygen 
+liblog4cpp5-dev 
+python-scipy
+libosmocore
+libosmocore-dev

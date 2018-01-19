@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=aircrack-ng
+Encoding=UTF-8
+Exec=sh -c "routerkeygen;${SHELL:-bash}"
+StartupNotify=false
+Terminal=false
+Type=Application
+Categories=6.Wireless;1.Wifi;
+

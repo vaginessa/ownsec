@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=pth-smbget
+Encoding=UTF-8
+Exec=sh -c "pth-smbget --help;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=05-04-pass-hash;
+
+

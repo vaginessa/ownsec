@@ -1,0 +1,10 @@
+git 
+gcc 
+g++ 
+automake 
+autoconf 
+libpcap-dev 
+libboost-dev 
+libssl-dev 
+zlib1g-dev 
+libcairo2-dev

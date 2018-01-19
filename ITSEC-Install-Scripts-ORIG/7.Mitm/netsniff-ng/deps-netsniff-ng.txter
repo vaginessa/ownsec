@@ -1,0 +1,23 @@
+ccache 
+flex bison 
+libcli-dev 
+libcli-dev 
+libgeoip-dev 
+libgeoip-dev 
+libnacl-dev 
+libnacl-dev 
+libncurses5-dev 
+libncurses5-dev 
+libnet1-dev
+libnet1-dev 
+libnetfilter-conntrack-dev 
+libnl-3-dev 
+libnl-genl-3-dev 
+libnl-route-3-dev 
+libpcap-dev 
+liburcu-dev 
+liburcu-dev 
+libz3-dev
+libz3-dev 
+sparse 
+zlib1g-dev 

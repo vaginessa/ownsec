@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=gnuradio-companion
+Encoding=UTF-8
+Exec=sh -c "gnuradio-companion"
+StartupNotify=false
+Terminal=false
+Type=Application
+Categories=4.Sdr;

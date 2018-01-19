@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=evil-droid
+Encoding=UTF-8
+Exec=sh -c "evil-droid;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=4.Android-Backdoor;

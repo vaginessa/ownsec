@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=hashcat
+Encoding=UTF-8
+Exec=sh -c "hashcat --help;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=2.Local;

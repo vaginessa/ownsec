@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=ncrack
+Encoding=UTF-8
+Exec=sh -c "ncrack -h;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=1.Network;
+
+
+Name[en_US]=ncrack.desktop

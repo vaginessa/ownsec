@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=yersinia
+Encoding=UTF-8
+Exec=sh -c "yersinia;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=10.Stresstest;

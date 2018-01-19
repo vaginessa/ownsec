@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=pack_maskgen
+Encoding=UTF-8
+Exec=sh -c "pack_maskgen -h;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=pack;

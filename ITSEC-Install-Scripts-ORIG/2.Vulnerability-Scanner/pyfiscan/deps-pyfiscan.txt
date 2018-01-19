@@ -1,0 +1,4 @@
+python-docopt 
+python3-docopt 
+libpython2.7-dev 
+libyaml-dev 

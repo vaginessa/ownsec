@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=acccheck
+Encoding=UTF-8
+Exec=sh -c "acccheck;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=6.SMB;
+

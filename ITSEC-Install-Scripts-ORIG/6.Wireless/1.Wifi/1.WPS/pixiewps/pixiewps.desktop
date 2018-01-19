@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=pixiewps
+Encoding=UTF-8
+Exec=sh -c "pixiewps -h;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=1.WPS;

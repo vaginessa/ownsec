@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=gr-scan
+Encoding=UTF-8
+Exec=sh -c "gr-scan --help;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=4.Sdr;

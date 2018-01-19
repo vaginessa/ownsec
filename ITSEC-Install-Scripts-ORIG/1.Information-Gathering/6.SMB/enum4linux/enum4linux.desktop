@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=enum4linux
+Encoding=UTF-8
+Exec=sh -c "enum4linux;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=6.SMB;
+
+

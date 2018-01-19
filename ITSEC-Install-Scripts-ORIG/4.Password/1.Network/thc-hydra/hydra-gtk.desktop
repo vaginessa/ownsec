@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=hydra-gtk
+Encoding=UTF-8
+Exec=sh -c "xhydra"
+StartupNotify=false
+Terminal=false
+Type=Application
+Categories=1.Network;
+
+

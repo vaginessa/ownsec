@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=zbassocflood
+Encoding=UTF-8
+Exec=sh -c "zbassocflood -h;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=06-04-other-wireless;

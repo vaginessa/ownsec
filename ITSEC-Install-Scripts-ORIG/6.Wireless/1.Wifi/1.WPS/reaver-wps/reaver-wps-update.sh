@@ -1,0 +1,60 @@
+#!/bin/bash
+
+#1i
+. /opt/ownsec/ITSEC-Install-Scripts-ORIG/001.functions/all-scripts.sh
+
+GITREPO=https://github.com/t6x/reaver-wps-fork-t6x.git
+BRANCH=master
+GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/1.WPS/reaver-wps-fork-t6x/t6x/reaver-wps-fork-t6x
+GITCONFDIR=/opt/ITSEC/6.Wireless/1.Wifi/1.WPS/reaver-wps-fork-t6x/t6x/reaver-wps-fork-t6x/.git
+REPOBUILDDIR=/opt/ITSEC/6.Wireless/1.Wifi/1.WPS/reaver-wps-fork-t6x/t6x/reaver-wps-fork-t6x/src
+GITCLONEDIR=/opt/ITSEC/6.Wireless/1.Wifi/1.WPS/reaver-wps-fork-t6x/t6x
+DSKTPFLS=/opt/ownsec/ITSEC-Install-Scripts-ORIG/6.Wireless/1.Wifi/1.WPS/reaver-wps-fork-t6x
+DSKTPFLSDEST=/home/$USER/.local/share/applications/6.Wireless/1.Wifi/1.WPS/reaver-wps-fork-t6x
+DSKTPFL=reaver-wps-fork-t6x.desktop
+APTLSTDIR=/opt/ownsec/ITSEC-Install-Scripts-ORIG/6.Wireless/1.Wifi/1.WPS/reaver-wps-fork-t6x
+#ph1a
+
+echo "${bold}
+ ____  _____    ___     _______ ____  
+|  _ \| ____|  / \ \   / / ____|  _ \ 
+| |_) |  _|   / _ \ \ / /|  _| | |_) |
+|  _ <| |___ / ___ \ V / | |___|  _ < 
+|_| \_\_____/_/   \_\_/  |_____|_| \_\
+            
+UPDATE
+${normal}"
+
+GITUPTODATE
+if git checkout $BRANCH &&
+git fetch origin $BRANCH &&
+[ `git rev-list HEAD...origin/$BRANCH --count` != 0 ] &&
+git merge origin/$BRANCH
+then
+    
+GITCLONEFUNC
+sudo make uninstall
+make clean
+
+GITRESET
+GITSBMDLINIT
+
+cd $REPOBUILDDIR
+./configure
+make -j 4
+sudo make install
+
+#333d
+CPDESKTFL
+
+echo "${bold}
+UPDATED
+${normal}"
+
+else
+
+echo "${bold}
+UP TO DATE
+${normal}"
+	
+fi

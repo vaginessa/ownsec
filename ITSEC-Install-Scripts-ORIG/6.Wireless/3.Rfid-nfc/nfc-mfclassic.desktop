@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=nfc-mfclassic
+Encoding=UTF-8
+Exec=sh -c "nfc-mfclassic -h;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=06-03-rfid-nfc-tools;

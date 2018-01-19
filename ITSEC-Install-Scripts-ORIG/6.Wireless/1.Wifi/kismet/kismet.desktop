@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=kismet
+Encoding=UTF-8
+Exec=sh -c "kismet.sh;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=1.Wifi;
+
+Name[en_US]=kismet.desktop

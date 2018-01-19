@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=iaxflood
+Encoding=UTF-8
+Exec=sh -c "iaxflood;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=10.Stresstest;

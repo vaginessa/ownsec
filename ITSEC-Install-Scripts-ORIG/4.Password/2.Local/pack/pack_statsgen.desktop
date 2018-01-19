@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=pack_statsgen
+Encoding=UTF-8
+Exec=sh -c "pack_statsgen -h;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=pack;

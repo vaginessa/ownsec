@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=hyperfox-revert-networking.sh
+Encoding=UTF-8
+Exec=sh -c "hyperfox-revert-networking.sh;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=7.Mitm;

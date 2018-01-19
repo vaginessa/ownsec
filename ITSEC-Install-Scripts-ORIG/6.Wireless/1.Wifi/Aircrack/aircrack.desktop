@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=aircrack
+Encoding=UTF-8
+Exec=sh -c "aircrack;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=6.Wireless;1.Wifi;
+

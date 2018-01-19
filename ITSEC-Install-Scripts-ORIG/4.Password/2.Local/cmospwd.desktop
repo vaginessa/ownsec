@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=cmospwd
+Encoding=UTF-8
+Exec=sh -c "cmospwd;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=05-02-offline-attacks;

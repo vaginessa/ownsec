@@ -1,0 +1,13 @@
+cutycapt
+finger 
+g++ 
+ldap-utils 
+libqt4-dev 
+libqtwebkit4 
+python-elixir 
+python-qt4 
+rsh-client 
+rwho 
+subversion 
+x11-apps 
+xsltproc 

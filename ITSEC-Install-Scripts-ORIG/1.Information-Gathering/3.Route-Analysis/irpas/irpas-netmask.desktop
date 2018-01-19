@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=irpas-netmask   
+Encoding=UTF-8
+Exec=sh -c "irpas-netmask -h;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=3.Route-Analysis;

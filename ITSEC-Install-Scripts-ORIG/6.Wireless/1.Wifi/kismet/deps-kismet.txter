@@ -1,0 +1,4 @@
+gpsd-clients 
+gpsd 
+network-manager-dev 
+libkf5networkmanagerqt-dev

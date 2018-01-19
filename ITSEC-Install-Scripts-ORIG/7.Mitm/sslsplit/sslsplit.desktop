@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=sslsplit
+Encoding=UTF-8
+Exec=sh -c "sslsplit -h;${SHELL:-bash}"
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=7.Mitm;
