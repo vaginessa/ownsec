@@ -188,9 +188,6 @@ cd $BASEDIR/15.Fuzzer/simplefuzzer
 ./simplefuzzer-install.sh # call w sfuzz 
 cd $BASEDIR/15.Fuzzer/siparmyknife
 ./siparmyknife-install.sh 
-# dirb repository not available on git anymore??!
-#cd $BASEDIR/15.Fuzzer/dirb
-#./dirb-install.sh
 #
 ###############################################################################
 ######################   16.IDS-IPS_Identification   ####################
