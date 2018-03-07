@@ -21,6 +21,7 @@ crunch
 darkstat
 dhcpdump
 dh-make
+dkms
 dnsmasq
 dnsmasq-utils
 dnswalk
