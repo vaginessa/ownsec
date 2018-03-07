@@ -14,18 +14,18 @@ XFCE/Menu teaser
 
 > /opt/ownsec/0a.Doc/install.md
 
-> https://github.com/alphaaurigae/ownsec/blob/master/0a.Doc/install.md
+> https://github.com/alphaaurigae/ownsec/blob/16.04_XFCE/0a.Doc/install.md
 
 
 ### 3. Maintain - Post Install
 
 > /opt/ownsec/0a.Doc/maintain.md
 
-> https://github.com/alphaaurigae/ownsec/blob/master/0a.Doc/maintain.md
+> https://github.com/alphaaurigae/ownsec/blob/16.04_XFCE/0a.Doc/maintain.md
 
 
 ### 4. Support
 
 > /opt/ownsec/0a.Doc/
 
-> https://github.com/alphaaurigae/ownsec/tree/master/0a.Doc
+> https://github.com/alphaaurigae/ownsec/tree/16.04_XFCE/0a.Doc
