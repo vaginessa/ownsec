@@ -65,6 +65,7 @@ iw
 java-package
 kazam
 lame
+linux-headers-generic
 lsb-release
 lua-lpeg
 lynx
