@@ -42,7 +42,8 @@ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
 echo 'eval "$(rbenv init -)"' >> ~/.bashrc
 echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bashrc
 # Remove duplicate lines in case the script was run multiple times.
-awk '!NF || !seen[$0]++' /home/$USER/.bashrc > /home/$USER/.bashrc_new && mv /home/$USER/.bashrc_new /home/$USER/.bashrc
+#awk '!NF || !seen[$0]++' /home/$USER/.bashrc > /home/$USER/.bashrc_new 
+#mv /home/$USER/.bashrc_new /home/$USER/.bashrc
 # Source & init
 source ~/.bashrc
 ~/.rbenv/bin/rbenv init

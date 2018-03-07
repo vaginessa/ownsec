@@ -1,3 +1,8 @@
+## TODO urgent
+
+> fix rbenv ruby install - something changed in the rbenv install setup, needs fixing.
+
+
 #### 1. What is this?
 
 - Install lots of IT-Sec related apps with dependencies
