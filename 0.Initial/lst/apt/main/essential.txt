@@ -47,7 +47,8 @@ gnutls-bin
 golang
 gparted
 gtk-recordmydesktop
-graphvizpython-gnuplot
+graphviz
+python-gnuplot
 gr-osmosdr
 gufw
 httrack
