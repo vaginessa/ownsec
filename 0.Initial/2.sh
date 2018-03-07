@@ -66,10 +66,11 @@ ${normal}"
 #### after this you can run the node git install script or install the source off their site ...
 
 #### Install Java JRE & JDK from Source off http://download.java.net
-echo "${bold}
-./3.Java-JDK-JRE_Install.sh
-${normal}"
-./3.Java-JDK-JRE_Install.sh
+# disabled as download links dont work with wget and curl - replaced with apt packages
+#echo "${bold}
+#./3.Java-JDK-JRE_Install.sh
+#${normal}"
+#./3.Java-JDK-JRE_Install.sh
 
 #### Install Rbenv for Ruby off Github
 echo "${bold}

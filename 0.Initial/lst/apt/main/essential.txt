@@ -76,6 +76,8 @@ ndiff
 netmask
 nfqueue-bindings-python
 ntp
+openjdk-8-jre
+openjdk-8-jdk
 openssl
 osmo-sdr
 pbuilder

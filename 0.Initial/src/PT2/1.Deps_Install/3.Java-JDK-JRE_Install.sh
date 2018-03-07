@@ -1,4 +1,8 @@
 #!/bin/bash
+
+## 07.03.2018 | not working with current links - disabled and apt repositories used.
+
+
 ############################# INSTALL JAVA8 START #############################
 
 #Oracle (http://www.oracle.com/technetwork/java/javase/downloads):
@@ -22,14 +26,14 @@ bold=$(tput bold)
 normal=$(tput sgr0)
 
 # JRE8 vars
-releasename_url_jre=http://download.java.net/java/jdk8u152/archive/b03/binaries/jre-8u152-ea-bin-b03-linux-x64-19_apr_2017
-releasename_jre=jre-8u152-ea-bin-b03-linux-x64-19_apr_2017
-dpkgname_jre=oracle-java8-jre_8u152~ea-build-b03_amd64
+releasename_url_jre=http://download.oracle.com/otn-pub/java/jdk/8u162-b12/0da788060d494f5095bf8624735fa2f1/jre-8u162-linux-x64
+releasename_jre=jre-8u162-linux-x64
+dpkgname_jre=oracle-java8-jre_8u162_amd64
 
 # JDK8 vars
-releasename_url_jdk=http://download.java.net/java/jdk8u152/archive/b03/binaries/jdk-8u152-ea-bin-b03-linux-x64-19_apr_2017
-releasename_jdk=jdk-8u152-ea-bin-b03-linux-x64-19_apr_2017
-dpkgname_jdk=oracle-java8-jdk_8u152~ea-build-b03_amd64
+releasename_url_jdk=http://download.oracle.com/otn-pub/java/jdk/8u162-b12/0da788060d494f5095bf8624735fa2f1/jdk-8u162-linux-x64
+releasename_jdk=jdk-8u162-linux-x64
+dpkgname_jdk=oracle-java8-jdk_8u162_amd64
 
 echo "${bold}
      _ ____  _____ ___  
@@ -44,9 +48,9 @@ cd /opt/DEPS/Java/java8_install-setup
 mkdir jre8
 cd jre8
 wget $releasename_url_jre.tar.gz
-wget $releasename_url_jre.sha256
-cat $releasename_jre.sha256
-sha256sum $releasename_jre.tar.gz
+#wget $releasename_url_jre.sha256
+#cat $releasename_jre.sha256
+#sha256sum $releasename_jre.tar.gz
 yes "Y" | make-jpkg $releasename_jre.tar.gz
 yes "Y" | sudo dpkg -i $dpkgname_jre.deb 
 
@@ -64,8 +68,8 @@ cd /opt/DEPS/Java/java8_install-setup
 mkdir jdk8
 cd jdk8
 wget $releasename_url_jdk.tar.gz
-wget $releasename_url_jdk.sha256
-cat $releasename_jdk.sha256
-sha256sum $releasename_jre.tar.gz
+#wget $releasename_url_jdk.sha256
+#cat $releasename_jdk.sha256
+#sha256sum $releasename_jre.tar.gz
 yes "Y" | make-jpkg $releasename_jdk.tar.gz
 yes "Y" | sudo dpkg -i $dpkgname_jdk.deb 
