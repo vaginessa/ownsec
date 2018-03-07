@@ -10,14 +10,14 @@ normal=$(tput sgr0)
 
 APTLSTDIR=/opt/ownsec/0.Initial/lst/apt
 ## Category dirs
-INFOG=/opt/ownsec/1.Information-Gathering
-VULN=/opt/ownsec/2.Vulnerability-Scanner
-EXPLT=/opt/ownsec/3.Exploitation-Tools
-PSSWDS=/opt/ownsec/4.Password
-WRLSS=/opt/ownsec/6.Wireless
-MITM=/opt/ownsec/7.Mitm
-TNNL=/opt/ownsec/8.Tunnel
-MNTNACCS=/opt/ownsec/9.Maintain-Access
+INFOG=/opt/ownsec/ITSEC-Install-Scripts-ORIG/1.Information-Gathering
+VULN=/opt/ownsec/ITSEC-Install-Scripts-ORIG/2.Vulnerability-Scanner
+EXPLT=/opt/ownsec/ITSEC-Install-Scripts-ORIG/3.Exploitation-Tools
+PSSWDS=/opt/ownsec/ITSEC-Install-Scripts-ORIG/4.Password
+WRLSS=/opt/ownsec/ITSEC-Install-Scripts-ORIG/6.Wireless
+MITM=/opt/ownsec/ITSEC-Install-Scripts-ORIG/7.Mitm
+TNNL=/opt/ownsec/ITSEC-Install-Scripts-ORIG/8.Tunnel
+MNTNACCS=/opt/ownsec/ITSEC-Install-Scripts-ORIG/9.Maintain-Access
 
 echo "${bold}
  ____   ____ _  _______ __  __  ____ ____       _     ___ ____ _____ ____  
