@@ -38,7 +38,7 @@ cd $BASEDIR/2.Local/rainbowcrack-ng
 ###############################################################################
 ######################   1.NET   ####################
 ###########################################################################
-cd $BASEDIR/1.Network/brut3kit
+cd $BASEDIR/1.Network/brut3k1t
 ./brut3kit-install.sh #PIP dependencies 
 cd $BASEDIR/1.Network/findmyhash
 ./findmyhash-install.sh
