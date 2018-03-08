@@ -1,6 +1,7 @@
 ## TODO urgent
 
-> fix rbenv ruby install - something changed in the rbenv install setup, needs fixing.
+> check rbenv sudo
+> clean up main apt-lists /opt/ownsec/0.Initial/lst/apt/ from app dependencies where the lists are now located in the respective app dir PT3
 
 
 #### 1. What is this?

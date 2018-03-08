@@ -18,6 +18,8 @@ After reboot / logout you boot up into the XFCE desktop env as shown on the scre
 
 ## INSTALL
 
+> for VM's disable virtualbox part 2 && sudo apt-get install dkms linux-headers-generic git
+
 `sudo chown -R $USER:$USER /opt`
 
 `cd /opt`
@@ -34,13 +36,13 @@ After reboot / logout you boot up into the XFCE desktop env as shown on the scre
 
 ### Dont run the script as root/sudo - sudo will be prompted if needed.
 
-`./1.sh` Upgrade the system - scripts located at `/opt/ownsec/0.Initial/src/PT1`
+`./1.sh` # Upgrade the system - scripts located at `/opt/ownsec/0.Initial/src/PT1`
 
 
-`./2.sh` Install dependencies & tools - scripts located at `/opt/ownsec/0.Initial/src/PT2`
+`./2.sh` # Install dependencies & tools - scripts located at `/opt/ownsec/0.Initial/src/PT2`
 
 
-`./3.sh` Install applications by category - scripts located at `/opt/ownsec/0.Initial/src/PT3`
+`./3.sh` # Install applications by category - scripts located at `/opt/ownsec/0.Initial/src/PT3`
 
 
 

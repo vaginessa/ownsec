@@ -195,7 +195,8 @@ sudo apt-get install -y linux-image-extra-$(uname -r)
 
 sudo easy_install -U pip
 
-sudo apt-get purge --remove -y openjdk-8-jre openjdk-8-jre openjdk-8-jre-headless
+# PT2 java source install doesent work - wget and curl cant pull bec of license agreement so back to apt
+#sudo apt-get purge --remove -y openjdk-8-jre openjdk-8-jre openjdk-8-jre-headless
 sudo updatedb
 sudo ldconfig
 
