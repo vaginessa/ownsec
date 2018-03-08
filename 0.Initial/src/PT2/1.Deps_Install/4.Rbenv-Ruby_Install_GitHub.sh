@@ -38,9 +38,13 @@ git clone -b $BRANCH2 $GITREPO2 $GITREPOROOT2
 git clone -b $BRANCH3 $GITREPO3 $GITREPOROOT3
 
 # Set the envi vars
+sed -i -e 's#export PATH="$HOME/.rbenv/bin:$PATH"##g' ~/.bashrc
+sed -i -e 's#eval "$(rbenv init -)"##g' ~/.bashrc
+sed -i -e 's#export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"##g' ~/.bashrc
 echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
 echo 'eval "$(rbenv init -)"' >> ~/.bashrc
 echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bashrc
+
 # Remove duplicate lines in case the script was run multiple times.
 #awk '!NF || !seen[$0]++' /home/$USER/.bashrc > /home/$USER/.bashrc_new 
 #mv /home/$USER/.bashrc_new /home/$USER/.bashrc
