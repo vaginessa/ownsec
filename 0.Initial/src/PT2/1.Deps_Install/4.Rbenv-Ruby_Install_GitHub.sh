@@ -32,7 +32,7 @@ rbenv + ruby-build + rbenv-sudo
 ${normal}"
 
 # Get rbenv + plugins off github
-#sudo rm -r $GITREPOROOT1
+sudo rm -r $GITREPOROOT1
 git clone -b $BRANCH1 $GITREPO1 $GITREPOROOT1
 git clone -b $BRANCH2 $GITREPO2 $GITREPOROOT2
 git clone -b $BRANCH3 $GITREPO3 $GITREPOROOT3
