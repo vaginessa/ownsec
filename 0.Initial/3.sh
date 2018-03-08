@@ -20,7 +20,7 @@ echo "${bold}
 INSTALL APPLICATIONS
 ${normal}"
 
-sudo apt-get purge -remove -y default-jre
+sudo apt-get purge --remove -y default-jre
 echo "${bold}
 cd /opt/ownsec/0.Initial/src/PT3   
 ${normal}"
