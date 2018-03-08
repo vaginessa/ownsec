@@ -32,7 +32,7 @@ rbenv + ruby-build + rbenv-sudo
 ${normal}"
 
 # Get rbenv + plugins off github
-sudo rm -r $GITREPOROOT1
+#sudo rm -r $GITREPOROOT1
 git clone -b $BRANCH1 $GITREPO1 $GITREPOROOT1
 git clone -b $BRANCH2 $GITREPO2 $GITREPOROOT2
 git clone -b $BRANCH3 $GITREPO3 $GITREPOROOT3
@@ -53,10 +53,10 @@ source ~/.bashrc
 ~/.rbenv/bin/rbenv init
 
 # Let rbenv install the desired ruby version
-cd $GITREPOROOT1
+cd /home/$USER
 rbenv install $RUBYVERSION
 rbenv rehash
-rbenv sudo global $RUBYVERSION
+rbenv global $RUBYVERSION
 rbenv local $RUBYVERSION
 
 # Debug
