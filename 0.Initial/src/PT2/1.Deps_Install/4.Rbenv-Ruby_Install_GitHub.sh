@@ -3,7 +3,7 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
-RUBYVERSION=$(lynx --dump https://raw.githubusercontent.com/rapid7/metasploit-framework/$BRANCH/.ruby-version )
+RUBYVERSION=$(lynx --dump https://raw.githubusercontent.com/rapid7/metasploit-framework/master/.ruby-version )
 
 # RBENV install functions
 GITREPO1=git://github.com/rbenv/rbenv.git
