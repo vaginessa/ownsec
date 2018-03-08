@@ -1,4 +1,6 @@
-## TODO urgent
+## TODO / Status urgent
+
+> part 3 buggy after conversion to standalone scripts - most apps work but some still need partial or full fix
 
 > check rbenv sudo
 > clean up main apt-lists /opt/ownsec/0.Initial/lst/apt/ from app dependencies where the lists are now located in the respective app dir PT3
