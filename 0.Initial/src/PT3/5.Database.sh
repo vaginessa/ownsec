@@ -1,6 +1,6 @@
 #!/bin/bash
 ###############################
-BASEDIR=/opt/ownsec/ownsec-ORIG/5.Database
+BASEDIR=/opt/ownsec/ITSEC-Install-Scripts-ORIG/5.Database
 ########################################
 ######################   5.Database   #
 ######################################

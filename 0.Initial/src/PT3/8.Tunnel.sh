@@ -1,6 +1,6 @@
 #!/bin/bash
 ###############################
-BASEDIR=/opt/ownsec/ownsec-ORIG/8.Tunnel
+BASEDIR=/opt/ownsec/ITSEC-Install-Scripts-ORIG/8.Tunnel
 ####################################
 ######################   8.Tunnel  #
 ##################################

@@ -1,6 +1,6 @@
 #!/bin/bash
 ###############################
-BASEDIR=/opt/ownsec/ownsec-ORIG/7.Mitm
+BASEDIR=/opt/ownsec/ITSEC-Install-Scripts-ORIG/7.Mitm
 ####################################
 ######################   7.Mitm   #
 ##################################

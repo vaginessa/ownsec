@@ -1,7 +1,7 @@
 #!/bin/bash
 ###############################
 
-BASEDIR=/opt/ownsec/ownsec-ORIG/1.Information-Gathering
+BASEDIR=/opt/ownsec/ITSEC-Install-Scripts-ORIG/1.Information-Gathering
 
 ######################################################
 ######################   1.Information-Gathering    #

@@ -1,7 +1,7 @@
 #!/bin/bash
 ###############################
 
-BASEDIR=/opt/ownsec/ownsec-ORIG/4.Password
+BASEDIR=/opt/ownsec/ITSEC-Install-Scripts-ORIG/4.Password
 #######################################
 ######################   4.Password  #
 ######################################

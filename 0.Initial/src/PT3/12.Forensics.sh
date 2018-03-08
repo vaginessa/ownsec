@@ -1,6 +1,6 @@
 #!/bin/bash
 ###############################
-BASEDIR=/opt/ownsec/ownsec-ORIG/12.Forensics
+BASEDIR=/opt/ownsec/ITSEC-Install-Scripts-ORIG/12.Forensics
 #########################################
 ######################   8.Forensics   #
 #######################################

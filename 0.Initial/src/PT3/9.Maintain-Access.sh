@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BASEDIR=/opt/ownsec/ownsec-ORIG/9.Maintain-Access
+BASEDIR=/opt/ownsec/ITSEC-Install-Scripts-ORIG/9.Maintain-Access
 ###############################################################################
 ######################   9.Maintain-Access   ####################
 ###########################################################################

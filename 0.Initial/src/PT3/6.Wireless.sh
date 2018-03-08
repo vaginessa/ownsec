@@ -1,6 +1,6 @@
 #!/bin/bash
 ###############################
-BASEDIR=/opt/ownsec/ownsec-ORIG/6.Wireless
+BASEDIR=/opt/ownsec/ITSEC-Install-Scripts-ORIG/6.Wireless
 ########################################
 ######################   6.Wireless   #
 ######################################
