@@ -54,7 +54,8 @@ libpcap-dev python-paramiko
 libqt5multimediawidgets5 
 libqt5svg5-dev 
 libcrypto++-dev 
-librtmp-dev 
+librtmp-dev
+libreadline-dev
 libsbc-dev 
 libsmi2-dev
 libsnappy-dev 

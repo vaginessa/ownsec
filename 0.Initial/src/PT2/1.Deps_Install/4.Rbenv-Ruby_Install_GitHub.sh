@@ -56,7 +56,7 @@ source ~/.bashrc
 cd $GITREPOROOT1
 rbenv install $RUBYVERSION
 rbenv rehash
-sudo rbenv global $RUBYVERSION
+rbenv sudo global $RUBYVERSION
 rbenv local $RUBYVERSION
 
 # Debug
