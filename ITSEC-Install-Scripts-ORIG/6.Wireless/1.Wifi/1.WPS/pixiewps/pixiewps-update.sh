@@ -31,7 +31,7 @@ git merge origin/$BRANCH
 then
     
 GITCLONEFUNC
-cd src
+#cd src
 sudo make uninstall
 make clean
 GITRESET

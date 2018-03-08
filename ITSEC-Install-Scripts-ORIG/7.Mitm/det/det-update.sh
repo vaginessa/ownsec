@@ -12,10 +12,10 @@ EXECUTEABLE1=det.sh
 EXECUTEABLE2=det
 EXECUTEABLE3=det.py
 #ph1b
-DSKTPFLS=/opt/ownsec/ITSEC-Install-Scripts-ORIG/cdpsnarf
-DSKTPFLSDEST=/home/$USER/.local/share/applications/cdpsnarf
+DSKTPFLS=/opt/ownsec/ITSEC-Install-Scripts-ORIG/det
+DSKTPFLSDEST=/home/$USER/.local/share/applications/det
 DSKTPFL=det.desktop
-APTLSTDIR=/opt/ownsec/ITSEC-Install-Scripts-ORIG/7.Mitm/cdpsnarf
+APTLSTDIR=/opt/ownsec/ITSEC-Install-Scripts-ORIG/7.Mitm/det
 #ph1a
 echo "${bold}
  ____  _____ _____ 

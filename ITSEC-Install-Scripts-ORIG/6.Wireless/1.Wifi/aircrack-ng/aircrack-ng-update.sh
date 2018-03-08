@@ -36,6 +36,8 @@ sudo make uninstall
 make clean
 GITRESET
 GITSBMDLINIT
+env NOCONFIGURE=1 ./autogen.sh
+./configure
 make -j 4
 sudo make install
 sudo airodump-ng-oui-update

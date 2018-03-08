@@ -11,6 +11,5 @@ BASEDIR=/opt/ownsec/ITSEC-Install-Scripts-ORIG/5.Database
 ###########################################################################
 cd $BASEDIR/1.SQL/sqlmap
 ./sqlmap-install.sh
-cd $BASEDIR/1.SQL/hexorbase
-./hexorbase-install.sh
+
 ###./bbqsql-install.sh outdated, bugs ,,,,

@@ -10,10 +10,10 @@ GITCLONEDIR=/opt/ITSEC/8.Tunnel/pwnat/samyk
 EXECUTEABLE1=pwnat	
 EXECUTEABLE2=pwnat
 #ph1b
-DSKTPFLS=/opt/ownsec/ITSEC-Install-Scripts-ORIG/8.Tunnell/pwnat
-DSKTPFLSDEST=/home/$USER/.local/share/applications/8.Tunnell/pwnat
+DSKTPFLS=/opt/ownsec/ITSEC-Install-Scripts-ORIG/8.Tunnel/pwnat
+DSKTPFLSDEST=/home/$USER/.local/share/applications/8.Tunnel/pwnat
 DSKTPFL=pwnat.desktop
-APTLSTDIR=/opt/ownsec/ITSEC-Install-Scripts-ORIG/8.Tunnell/pwnat
+APTLSTDIR=/opt/ownsec/ITSEC-Install-Scripts-ORIG/8.Tunnel/pwnat
 #ph1a
 
 echo "${bold}

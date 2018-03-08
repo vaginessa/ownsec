@@ -12,7 +12,7 @@ echo "${bold}
                                    |_____|            
 ${normal}"
 
-DSKTPFLS=/opt/ownsec/ITSEC-Install-Scripts-ORIG/4.Password/3.Wordlist/
+DSKTPFLS=/opt/ownsec/ITSEC-Install-Scripts-ORIG/4.Password/3.Wordlist
 DSKTPFLSDEST=/home/$USER/.local/share/applications/4.Password/3.Wordlist
 DSKTPFL=crunch.desktop
 

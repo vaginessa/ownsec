@@ -32,11 +32,14 @@ make clean
 sudo make uninstall
 
 ### DEPS:
-# no deps noted, feel free to add ...
+sudo apt-get update
+sudo apt-get upgrade
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-tcpflow.txt") -r -- sudo apt-get install -y
+
 ### DEPS END
 
 GITSBMDLINIT
-./bootstrap.bash
+./bootstrap.sh
 ./configure
 make -j 4
 sudo make install

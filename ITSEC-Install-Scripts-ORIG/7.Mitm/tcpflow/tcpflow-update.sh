@@ -26,6 +26,13 @@ echo "${bold}
 UPDATE
 ${normal}"
 
+### DEPS:
+sudo apt-get update
+sudo apt-get upgrade
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-tcpflow.txt") -r -- sudo apt-get install -y
+
+### DEPS END
+
 GITUPTODATE
 if git checkout $BRANCH &&
 git fetch origin $BRANCH &&
@@ -39,7 +46,7 @@ sudo rm /usr/local/bin/$EXECUTEABLE2
 make clean
 GITRESET
 GITSBMDLINIT
-./bootstrap.bash
+./bootstrap.sh
 ./configure
 make -j 4
 sudo make install

@@ -8,7 +8,7 @@ BRANCH=master
 GITREPOROOT=/opt/ITSEC/6.Wireless/1.Wifi/kismet/kismetwireless/kismet
 GITCONFDIR=/opt/ITSEC/6.Wireless/1.Wifi/kismet/kismetwireless/kismet/.git
 GITCLONEDIR=/opt/ITSEC/6.Wireless/1.Wifi/kismet/kismetwireless
-KISMETFILESDIR=/opt/ownsec/ITSEC-Install-Scripts-ORIG/6.Wireless/1.Wifi/kismet-files
+KISMETFILESDIR=/opt/ownsec/ITSEC-Install-Scripts-ORIG/6.Wireless/1.Wifi/kismet/kismet-files
 EXECUTEABLE1=beef.sh
 EXECUTEABLE2=beef
 #ph1b

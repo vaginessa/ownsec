@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# something stopped working, check again
+
 #1i
 . /opt/ownsec/ITSEC-Install-Scripts-ORIG/001.functions/all-scripts.sh
 
@@ -44,9 +46,9 @@ make clean
 GITSBMDLINIT
 ./configure
 make -j 4 
-sudo make install 
-cd ../..
+sudo make install
 
+cd $GITREPOROOT
 ./configure 
 make -j 4
 sudo make install

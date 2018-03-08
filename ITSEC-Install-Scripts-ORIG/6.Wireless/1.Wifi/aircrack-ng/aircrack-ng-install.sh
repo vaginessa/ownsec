@@ -36,6 +36,8 @@ xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-aircrack-ng.txt") -r -- sudo apt-ge
 make clean
 GITSBMDLINIT
 
+env NOCONFIGURE=1 ./autogen.sh
+./configure
 make -j 4
 sudo make install
 sudo airodump-ng-oui-update

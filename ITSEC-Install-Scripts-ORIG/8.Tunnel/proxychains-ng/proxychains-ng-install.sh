@@ -7,10 +7,10 @@ GITREPO=https://github.com/rofl0r/proxychains-ng
 BRANCH=master
 GITREPOROOT=/opt/ITSEC/8.Tunnel/proxychains-ng/rofl0r/proxychains-ng
 GITCLONEDIR=/opt/ITSEC/8.Tunnel/proxychains-ng/rofl0r
-DSKTPFLS=/opt/ownsec/ITSEC-Install-Scripts-ORIG/8.Tunnel/roxychains-ng
-DSKTPFLSDEST=/home/$USER/.local/share/applications/8.Tunnel/roxychains-ng
+DSKTPFLS=/opt/ownsec/ITSEC-Install-Scripts-ORIG/8.Tunnel/proxychains-ng
+DSKTPFLSDEST=/home/$USER/.local/share/applications/8.Tunnel/proxychains-ng
 DSKTPFL=proxychains-ng.desktop
-APTLSTDIR=/opt/ownsec/ITSEC-Install-Scripts-ORIG/roxychains-ng
+APTLSTDIR=/opt/ownsec/ITSEC-Install-Scripts-ORIG/proxychains-ng
 #ph1a
 
 echo "${bold}

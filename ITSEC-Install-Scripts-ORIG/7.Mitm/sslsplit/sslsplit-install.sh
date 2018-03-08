@@ -29,7 +29,10 @@ make clean
 sudo make uninstall
 
 ### DEPS:
-# no deps noted, feel free to add ...
+sudo apt-get update
+sudo apt-get upgrade
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-sslsplit.txt") -r -- sudo apt-get install -y
+
 ### DEPS END
 
 GITSBMDLINIT

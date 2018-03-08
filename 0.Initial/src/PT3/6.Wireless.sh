@@ -32,8 +32,8 @@ cd $BASEDIR/1.Wifi/2.Routerkeys/routerkeygenpc
 ###############################################################################
 ######################   1.Wifi/3.Jammer   ####################
 ###########################################################################
-cd $BASEDIR/1.Wifi/3.Jammer/md3-$BRANCH
-./md3-$BRANCH-install.sh #alternate git vers by camerony
+cd $BASEDIR/1.Wifi/3.Jammer/md3-master
+./md3-master-install.sh #alternate git vers by camerony
 cd $BASEDIR/1.Wifi/3.Jammer/wifijammer
 ./wifijammer-install.sh 
 #
@@ -55,8 +55,7 @@ cd $BASEDIR/1.Wifi/atear
 ./atear-install.sh #PIP deps
 cd $BASEDIR/1.Wifi/eapmd5pass
 ./eapmd5pass-install.sh
-cd $BASEDIR/1.Wifi/evilgrade
-./evilgrade-install.sh
+
 cd $BASEDIR/1.Wifi/fern-wifi-cracker
 ./fern-wifi-cracker-install.sh
 
@@ -65,7 +64,7 @@ cd $BASEDIR/1.Wifi/fern-wifi-cracker
 cd $BASEDIR/1.Wifi/kismet
 ./kismet-install.sh #needs check
 cd $BASEDIR/1.Wifi/wifi-pumpkin
-./wifi-pumpkin #depends openssl 1.1
+./wifi-pumpkin.sh #depends openssl 1.1
 cd $BASEDIR/1.Wifi/fruitywifi
 ./fruitywifi-install.sh  # install last
 cd $BASEDIR/1.Wifi/airgeddon

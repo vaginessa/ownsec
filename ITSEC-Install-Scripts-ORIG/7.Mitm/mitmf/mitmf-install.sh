@@ -11,7 +11,7 @@ GITCLONEDIR=/opt/ITSEC/7.Mitm/mitmf/byt3bl33d3r
 EXECUTEABLE1=mitmf.sh
 EXECUTEABLE2=mitmf
 #ph1b
-DSKTPFLS=/opt/ownsec/ITSEC-Install-Scripts-ORIG/7.Mit/mmitmf
+DSKTPFLS=/opt/ownsec/ITSEC-Install-Scripts-ORIG/7.Mit/mitmf
 DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm/mitmf
 DSKTPFL=mitmf.desktop
 APTLSTDIR=/opt/ownsec/ITSEC-Install-Scripts-ORIG/7.Mitm/mitmf

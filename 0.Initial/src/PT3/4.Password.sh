@@ -56,8 +56,10 @@ cd $BASEDIR/1.Network/patator
 ./patator-install.sh 
 cd $BASEDIR/1.Network/thc-hydra
 ./thc-hydra-install.sh  
-cd $BASEDIR/1.Network
+cd $BASEDIR/1.Network/thc-pptp-bruter
 ./thc-pptp-bruter-install.sh  
+cd $BASEDIR/1.Network/hexorbase
+./hexorbase-install.sh
 #
 ###############################################################################
 ######################   3.Wordlist   ####################

@@ -24,7 +24,7 @@ ${normal}"
 
 #plh11
 GITCLONEFUNC
-cd src
+#cd src
 make clean
 GITSBMDLINIT
 make -j 4

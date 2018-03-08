@@ -3,10 +3,10 @@
 #1i
 . /opt/ownsec/ITSEC-Install-Scripts-ORIG/001.functions/all-scripts.sh
 
-GITREPO=https://github.com/evilsocket/bettercap.git
+GITREPO=https://github.com/bettercap/bettercap.git
 BRANCH=master
-GITREPOROOT=/opt/ITSEC/7.Mitm/bettercap/evilsocket/bettercap
-GITCLONEDIR=/opt/ITSEC/7.Mitm/bettercap/evilsocket
+GITREPOROOT=/opt/ITSEC/7.Mitm/bettercap/bettercap/bettercap
+GITCLONEDIR=/opt/ITSEC/7.Mitm/bettercap/bettercap
 DSKTPFLS=/opt/ownsec/ITSEC-Install-Scripts-ORIG/7.Mitm/bettercap
 DSKTPFLSDEST=/home/$USER/.local/share/applications/7.Mitm/bettercap
 DSKTPFL=bettercap.desktop
@@ -35,7 +35,7 @@ GITCLONEFUNC
 
 sudo apt-get update
 sudo apt-get upgrade
-xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-wireshark.txt") -r -- sudo apt-get install -y
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-bettercap.txt") -r -- sudo apt-get install -y
 ### DEPS END
 
 #. ~/.bashrc
