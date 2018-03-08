@@ -6,12 +6,12 @@ normal=$(tput sgr0)
 RUBYVERSION=$(lynx --dump https://raw.githubusercontent.com/rapid7/metasploit-framework/$BRANCH/.ruby-version )
 
 # RBENV install functions
-GITREPO1=git://github.com/sstephenson/rbenv.git
+GITREPO1=git://github.com/rbenv/rbenv.git
 BRANCH1=master
 GITREPOROOT1=/home/$USER/.rbenv
 
 # ruby-build install functions
-GITREPO1=git://github.com/sstephenson/ruby-build.git
+GITREPO2=git://github.com/rbenv/ruby-build.git
 BRANCH2=master
 GITREPOROOT2=/home/$USER/.rbenv/plugins/ruby-build
 
