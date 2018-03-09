@@ -60,7 +60,7 @@ ${normal}"
 echo "${bold}
 ./9.Maintain-Access
 ${normal}"
-./9.Maintain-Access
+./9.Maintain-Access.sh
 echo "${bold}
 ./10.Stresstest
 ${normal}"
