@@ -36,12 +36,26 @@ git merge origin/$BRANCH
 then
     
 GITCLONEFUNC
-GITRESET
+
+### DEPS:
+# no deps noted, feel free to add ...
+### DEPS END
+
+sudo chmod 777 -R $GITREPOROOT
+cd $GITREPOROOT
 GITSBMDLINIT
-chmod 777 -R Dr0p1t-Framework
-cd Dr0p1t-Framework
-sudo chmod +x install.sh
-./install.sh
+#sudo chmod +x install.sh
+#./install.sh
+sudo dpkg --add-architecture i386 
+sudo apt-get update
+sudo apt-get install wine1.4-i386
+winecfg
+wget https://www.python.org/ftp/python/2.7.1/python-2.7.1.msi 
+wine msiexec /i python-2.7.1.msi /L*v log.txt
+wget https://bootstrap.pypa.io/get-pip.py
+wine /home/$USER/.wine/drive_c/Python27/python.exe get-pip.py
+wine /home/$USER/.wine/drive_c/Python27/python.exe -m pip install pyinstaller
+
 python $EXECUTEABLE3
 
 echo '#!/bin/bash
