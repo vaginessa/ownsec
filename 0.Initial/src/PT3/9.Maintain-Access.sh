@@ -35,23 +35,23 @@ cd $BASEDIR/99.Misc/exe2hex
 # clone repos
 
 # KERNEL
-mkdir -p /opt/ITSEC/9.Maintain-Access/3.Rootkit/1.Kernel/1.Linux
+mkdir -p /opt/ITSEC/9.Maintain-Access/3.Rootkit/1.Linux
 
-cd $BASEDIR/3.Rootkit/1.Kernel/1.Linux/diamorphine
+cd $BASEDIR/3.Rootkit/1.Linux/diamorphine
 ./Diamorphine_gitclone.sh
-cd $BASEDIR/3.Rootkit/1.Kernel/1.Linux/mak_it-Linux-Rootkit
+cd $BASEDIR/3.Rootkit/1.Linux/mak_it-Linux-Rootkit
 ./maK_it-Linux-Rootkit_gitclone.sh
-cd $BASEDIR/3.Rootkit/1.Kernel/1.Linux/puszek-rootkit
+cd $BASEDIR/3.Rootkit/1.Linux/puszek-rootkit
 ./puszek-rootkit_gitclone.sh
-cd $BASEDIR/3.Rootkit/1.Kernel/1.Linux/reptile
+cd $BASEDIR/3.Rootkit/1.Linux/reptile
 ./Reptile_gitclone.sh
-cd $BASEDIR/3.Rootkit/1.Kernel/1.Linux/rootkit/ah450
+cd $BASEDIR/3.Rootkit/1.Linux/rootkit/ah450
 ./rootkit_gitclone.sh
-cd $BASEDIR/3.Rootkit/1.Kernel/1.Linux/rootkit/narupo
+cd $BASEDIR/3.Rootkit/1.Linux/rootkit/narupo
 ./rootkit_gitclone.sh
-cd $BASEDIR/3.Rootkit/1.Kernel/1.Linux/Rootkit/RagingGrim
+cd $BASEDIR/3.Rootkit/1.Linux/Rootkit/RagingGrim
 ./Rootkit_gitclone.sh
-cd $BASEDIR/3.Rootkit/1.Kernel/1.Linux/vlany/mempodippy
+cd $BASEDIR/3.Rootkit/1.Linux/vlany/mempodippy
 ./vlany_gitclone.sh
 
 # PHP
