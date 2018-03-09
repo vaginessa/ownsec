@@ -16,7 +16,7 @@ cd $BASEDIR/2.Local/1.WEP_WPA/cowpatty
 ./cowpatty-install.sh
 #
 ### 2.Local/HASHCAT ###
-cd $BASEDIR/2.Local/HASHCAT
+cd $BASEDIR/2.Local/hashcat
 ./hashcat-install.sh
 
 ### 2.Local ###
@@ -39,7 +39,7 @@ cd $BASEDIR/2.Local/rainbowcrack-ng
 ######################   1.NET   ####################
 ###########################################################################
 cd $BASEDIR/1.Network/brut3k1t
-./brut3kit-install.sh #PIP dependencies 
+./brut3k1t-install.sh #PIP dependencies 
 cd $BASEDIR/1.Network/findmyhash
 ./findmyhash-install.sh
 cd $BASEDIR/1.Network/f-scrack
