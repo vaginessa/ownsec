@@ -13,7 +13,7 @@ EXECUTEABLE2=webacoo
 DSKTPFLS=/opt/ownsec/ITSEC-Install-Scripts-ORIG/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/webacoo
 DSKTPFLSDEST=/home/$USER/.local/share/applications/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/webacoo
 DSKTPFL=webacoo.desktop
-APTLSTDIR=/opt/ownsec/ITSEC-Install-Scripts-ORIG/1.OS-Backdoors/0.MultiOS-Backdoor/webacoo
+APTLSTDIR=/opt/ownsec/ITSEC-Install-Scripts-ORIG/9.Maintain-Access/1.OS-Backdoors/0.MultiOS-Backdoor/webacoo
 #hd6cv
 
 echo "${bold}

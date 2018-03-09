@@ -27,6 +27,13 @@ __        _______ ____    _    ____ ___   ___
 UPDATE
 ${normal}"
 
+### DEPS:
+
+sudo apt-get update
+sudo apt-get upgrade
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-webacoo.txt") -r -- sudo apt-get install -y
+### DEPS END
+
 GITUPTODATE
 if git checkout $BRANCH &&
 git fetch origin $BRANCH &&
