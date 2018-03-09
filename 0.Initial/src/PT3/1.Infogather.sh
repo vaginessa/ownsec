@@ -32,7 +32,7 @@ cd $BASEDIR/2.Live-Host/dmitry
 ./dmitry-install.sh
 cd $BASEDIR/2.Live-Host/fping
 ./fping-install.sh
-cd $BASEDIR/2.Live-Host/hping
+cd $BASEDIR/2.Live-Host/hping3
 ./hping-install.sh
 cd $BASEDIR/2.Live-Host/netdiscover
 ./netdiscover-install.sh
@@ -50,7 +50,7 @@ cd $BASEDIR/2.Live-Host/2.VPN/ike-scan
 ./ike-scan-install.sh 
 #
 # 2.Live-Host 3.IPv6 ####
-cd $BASEDIR/2.Live-Host/3.IPv6
+cd $BASEDIR/2.Live-Host/3.IPv6/thc-ipv6
 ./thc-ipv6-install.sh 
 #
 # 2.Live-Host 4.Load-Balancer ####
@@ -82,9 +82,9 @@ cd $BASEDIR/4.SSL/sslh
 ./sslh-install.sh
 #cd $BASEDIR/4.SSL/sslstrip2
 #./sslstrip2
-cd $BASEDIR/4.SSL/sslyze_nabla-c0d3
+cd $BASEDIR/4.SSL/sslyze_nabla_c0d3
 ./sslyze_nabla-c0d3-install.sh
-cd $BASEDIR/4.SSL/tls-prober
+#cd $BASEDIR/4.SSL/tls-prober #unfinished script
 #./tls-prober-install.sh
 #
 #
@@ -172,13 +172,12 @@ cd $BASEDIR/13.OSINT/datasploit
 #
 #
 ###############################################################################
-######################   14.Honeypot   ####################
+######################   14.Web-Firewalls   ####################
 ###########################################################################
-# nothing todo here
-#
-#
+cd $BASEDIR/14.Web-Firewalls/wafw00f
+./wafw00f-install.sh # needs makefile fix for pip "sudo -H pip install ..."
 
-#
+
 ###############################################################################
 ######################   15.Fuzzer   ####################
 ###########################################################################
@@ -196,10 +195,6 @@ cd $BASEDIR/15.Fuzzer/siparmyknife
 #./fir-install.sh #something not working
 cd $BASEDIR/16.IDS-IPS_Identification/ftester
 ./ftester-install.sh 
-
-# 16.IDS-IPS_Identification ###1.Web-Firewalls
-cd $BASEDIR/16.IDS-IPS_Identification/1.Web-Firewalls/wafw00f
-./wafw00f-install.sh # needs makefile fix for pip "sudo -H pip install ..."
 
 
 

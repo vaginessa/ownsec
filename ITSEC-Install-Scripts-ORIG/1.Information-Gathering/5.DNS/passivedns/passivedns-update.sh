@@ -11,7 +11,7 @@ GITCLONEDIR=/opt/ITSEC/1.Information-Gathering/5.DNS/passivedns/gamelinux
 DSKTPFLS=/opt/ownsec/ITSEC-Install-Scripts-ORIG/1.Information-Gathering/5.DNS/passivedns
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/5.DNS/passivedns
 DSKTPFL=passivedns.desktop
-APTLSTDIR=/opt/ownsec/ITSEC-Install-Scripts-ORIG/0.Initial/lst/apt
+APTLSTDIR=/opt/ownsec/ITSEC-Install-Scripts-ORIG/1.Information-Gathering/5.DNS/passivedns
 #ph1a
 
 
@@ -30,7 +30,14 @@ git fetch origin $BRANCH &&
 [ `git rev-list HEAD...origin/$BRANCH --count` != 0 ] &&
 git merge origin/$BRANCH
 then
-    
+
+### DEPS:
+
+sudo apt-get update
+sudo apt-get upgrade
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-passivedns.txt") -r -- sudo apt-get install -y
+### DEPS END
+
 GITCLONEFUNC
 
 sudo make uninstall

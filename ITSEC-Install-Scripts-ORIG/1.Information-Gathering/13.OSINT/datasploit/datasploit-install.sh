@@ -15,9 +15,6 @@ DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/13.OS
 DSKTPFL=datasploit.desktop
 APTLSTDIR=/opt/ownsec/ITSEC-Install-Scripts-ORIG/1.Information-Gathering/13.OSINT/datasploit
 #ph1a
-PIPRQRMNTS () {
-	sudo -H pip install -r requirements.txt
-	#1s3d
 
 echo "${bold}
  ____    _  _____  _    ____  ____  _     ___ ___ _____ 
@@ -37,7 +34,7 @@ GITCLONEFUNC
 ### DEPS END
 
 GITSBMDLINIT
-PIPRQRMNTS
+PIP2INSTREQ
 
 mv config_sample.py config.py
 # vim config.py

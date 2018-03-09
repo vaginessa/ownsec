@@ -1,0 +1,2 @@
+libldns-dev
+libldns1

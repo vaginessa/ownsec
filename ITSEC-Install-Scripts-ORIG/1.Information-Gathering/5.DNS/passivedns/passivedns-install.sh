@@ -10,7 +10,7 @@ GITCLONEDIR=/opt/ITSEC/1.Information-Gathering/5.DNS/passivedns/gamelinux
 DSKTPFLS=/opt/ownsec/ITSEC-Install-Scripts-ORIG/1.Information-Gathering/5.DNS/passivedns
 DSKTPFLSDEST=/home/$USER/.local/share/applications/1.Information-Gathering/5.DNS/passivedns
 DSKTPFL=passivedns.desktop
-APTLSTDIR=/opt/ownsec/ITSEC-Install-Scripts-ORIG/0.Initial/lst/apt
+APTLSTDIR=/opt/ownsec/ITSEC-Install-Scripts-ORIG/1.Information-Gathering/5.DNS/passivedns
 #ph1a
 
 echo "${bold}
@@ -27,7 +27,10 @@ ${normal}"
 GITCLONEFUNC
 
 ### DEPS:
-# no deps noted, feel free to add ...
+
+sudo apt-get update
+sudo apt-get upgrade
+xargs -a <(awk '/^\s*[^#]/' "$APTLSTDIR/deps-passivedns.txt") -r -- sudo apt-get install -y
 ### DEPS END
 
 GITSBMDLINIT
